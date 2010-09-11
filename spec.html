@@ -16,6 +16,14 @@
           margin-top: 8px;
           margin-bottom: 16px;
         }
+        #copyright {
+          margin-top: 8px;
+          margin-bottom: 8px;
+        }
+        #license {
+          margin-top: 8px;
+          margin-bottom: 8px;
+        }
 		@page { margin-right: 1.3cm; margin-top: 1.25cm; margin-bottom: 0.5cm }
 		@page:first { margin-top: 7.75cm; margin-bottom: 0.5cm }
 		P { margin-top: 0.11cm; margin-bottom: 0.11cm; direction: ltr; color: #000000; line-height: 0.37cm; text-align: justify; widows: 2; orphans: 2 }
@@ -42,9 +50,6 @@
 		H5.western { font-family: "Arial", sans-serif; so-language: en-GB }
 		H5.cjk { font-family: "MS Mincho", "ＭＳ 明朝", monospace; so-language: ja-JP }
 		H5.ctl { font-family: "Times New Roman", serif; so-language: ar-SA; font-weight: normal }
-		P.sdfootnote-western { margin-top: 0cm; margin-bottom: 0.21cm; font-family: "Arial", sans-serif; font-size: 9pt; so-language: en-GB }
-		P.sdfootnote-cjk { margin-top: 0cm; margin-bottom: 0.21cm; font-family: "MS Mincho", "ＭＳ 明朝", monospace; font-size: 9pt; so-language: ja-JP }
-		P.sdfootnote-ctl { margin-top: 0cm; margin-bottom: 0.21cm; font-family: "Times New Roman", serif; font-size: 10pt; so-language: ar-SA }
 		A:visited { color: #800080 }
 		A.western:visited { so-language: fr-FR }
 		A.cjk:visited { so-language: ja-JP }
@@ -53,468 +58,447 @@
 		A.western:link { so-language: fr-FR }
 		STRONG.western { so-language: fr-FR }
 		STRONG.ctl { font-weight: normal }
-		A.sdfootnoteanc { font-size: 57% }
-		A.sdfootnotesym-western { font-size: 8pt; so-language: fr-FR }
-		A.sdfootnotesym-cjk { font-size: 8pt; so-language:  }
-		A.sdendnotesym-western { so-language: fr-FR }
 	-->
 	</style>
 </head>
-<BODY LANG="ja-JP" TEXT="#000000" LINK="#0000ff" VLINK="#800080" DIR="LTR">
-<DIV TYPE=HEADER>
-	<P STYLE="margin-top: 0cm; margin-bottom: 0cm; line-height: 0.39cm"><BR><BR>
-	</P>
-</DIV>
-<MULTICOL ID="Section1" DIR="LTR" COLS=2 GUTTER=35>
-	<P LANG="" CLASS="cjk" STYLE="margin-top: 0cm; margin-bottom: 10.58cm; line-height: 0.41cm">
-	<IMG SRC="tc39-2009-055_html_566ee562.jpg" NAME="graphics1" HSPACE=14 WIDTH=926 HEIGHT=1310 STYLE="position: absolute; top: 0cm; left: 0cm; margin-left: 0cm" BORDER=0><SPAN ID="Frame3" DIR="LTR" STYLE="float: left; width: 7.94cm; height: 2.54cm; margin-left: 0cm; border: none; padding: 0cm; background: #ffffff">
-		<P ALIGN=LEFT STYLE="margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 1.0pt; line-height: 100%">
-		<BR>
-		</P>
-		<P ALIGN=LEFT STYLE="margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 1.0pt; line-height: 100%">
-		<FONT COLOR="#333333"><FONT FACE="Verdana, sans-serif"><FONT SIZE=5 STYLE="font-size: 20pt"><SPAN LANG="en-GB">ECMA-262</SPAN></FONT></FONT></FONT></P>
-		<P STYLE="margin-top: 0.14cm; margin-bottom: 0cm; line-height: 100%">
-		<FONT COLOR="#333333"><FONT FACE="Verdana, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB">5<SUP>th</SUP>
-		Edition / November 2009</SPAN></FONT></FONT></FONT></P>
-	</SPAN>
-	<SPAN ID="Frame2" DIR="LTR" STYLE="float: left; width: 6.35cm; height: 1.91cm; margin-right: 0.32cm; border: none; padding: 0cm; background: #ffffff">
-		<P ALIGN=LEFT STYLE="margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 1.0pt; line-height: 100%">
-		<BR>
-		</P>
-		<P ALIGN=RIGHT STYLE="margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 1.0pt; line-height: 100%">
-		<FONT COLOR="#333333"><FONT FACE="Verdana, sans-serif"><FONT SIZE=5 STYLE="font-size: 20pt"><SPAN LANG="en-GB">Final
-		Draft</SPAN></FONT></FONT></FONT></P>
-		<P CLASS="cjk" STYLE="margin-top: 0cm; margin-bottom: 0.42cm; line-height: 0.41cm">
-		<BR><BR>
-		</P>
-	</SPAN>
-	<SPAN ID="Frame1" DIR="LTR" STYLE="float: left; width: 10.16cm; height: 13.34cm; margin-right: 0.32cm; border: none; padding: 0cm; background: #ffffff">
-		<P ALIGN=LEFT STYLE="margin-top: 0cm; margin-bottom: 0.21cm; letter-spacing: 0.3pt; line-height: 100%">
-		<FONT COLOR="#333333"><FONT FACE="Verdana, sans-serif"><FONT SIZE=5 STYLE="font-size: 20pt"><SPAN LANG="en-GB"><B>ECMAScript
-		Language Specification</B></SPAN></FONT></FONT></FONT></P>
-	</SPAN><BR><BR>
-	</P>
-	<P CLASS="cjk" STYLE="margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
-	<SPAN ID="Frame4" DIR="LTR" STYLE="float: left; width: 6.99cm; height: 1.27cm; margin-right: 0.32cm; border: none; padding: 0cm; background: #ffffff">
-		<P STYLE="margin-top: 0cm; margin-bottom: 0.21cm; line-height: 100%">
-		<FONT FACE="Arial, sans-serif"><FONT SIZE=3><SPAN LANG="en-GB"><I><B>Ecma/TC39/2009/055<BR>Ecma/GA/2009/190</B></I></SPAN></FONT></FONT></P>
-	</SPAN><BR>
-	</P>
-	<P CLASS="cjk" STYLE="margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm; page-break-before: always">
-	<BR>
-	</P>
-</MULTICOL>
+<body>
+<h1>An annotated reference to the ECMAScript language, 5th Edition</h1>
 <DIV ID="Section2" DIR="LTR">
 	<P ALIGN=LEFT STYLE="margin-top: 1.69cm; margin-bottom: 0.55cm; line-height: 0.55cm; page-break-before: always; page-break-after: avoid">
-	<FONT FACE="Arial, sans-serif"><FONT SIZE=4><SPAN LANG="en-GB"><B><SPAN LANG="fr-CH">Contents	</SPAN></B><FONT SIZE=2><SPAN LANG="fr-CH"><SPAN STYLE="font-weight: normal">Page</SPAN></SPAN></FONT></SPAN></FONT></FONT></P>
 	<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
-	<FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B>Introduction	vii</B></SPAN></FONT></FONT></P>
 	<DIV ID="Table of Contents1" DIR="LTR">
+        <p><a href="#intro">Introduction</a></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
-		<A CLASS="cjk" HREF="#__RefHeading__700_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__700_1384165354">1
-		Scope	1</A></B></SPAN></FONT></FONT></P>
+		<A CLASS="cjk" HREF="#__RefHeading__700_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__700_1384165354">1.
+		Scope</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
-		<A CLASS="cjk" HREF="#__RefHeading__702_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__702_1384165354">2
-		Conformance	1</A></B></SPAN></FONT></FONT></P>
+		<A CLASS="cjk" HREF="#__RefHeading__702_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__702_1384165354">2.
+		Conformance</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
-		<A CLASS="cjk" HREF="#__RefHeading__704_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__704_1384165354">3
-		Normative references	1</A></B></SPAN></FONT></FONT></P>
+		<A CLASS="cjk" HREF="#__RefHeading__704_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__704_1384165354">3.
+		Normative references</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
-		<A CLASS="cjk" HREF="#__RefHeading__706_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__706_1384165354">4
-		Overview	1</A></B></SPAN></FONT></FONT></P>
+		<A CLASS="cjk" HREF="#__RefHeading__706_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__706_1384165354">4.
+		Overview</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__708_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__708_1384165354">4.1
-		Web Scripting	2</A></B></SPAN></FONT></FONT></P>
+		Web Scripting</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__710_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__710_1384165354">4.2
-		Language Overview	2</A></B></SPAN></FONT></FONT></P>
+		Language Overview</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__712_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__712_1384165354">4.3
-		Definitions	4</A></B></SPAN></FONT></FONT></P>
+		Definitions</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
-		<A CLASS="cjk" HREF="#__RefHeading__714_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__714_1384165354">5
-		Notational Conventions	7</A></B></SPAN></FONT></FONT></P>
+		<A CLASS="cjk" HREF="#__RefHeading__714_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__714_1384165354">5.
+		Notational Conventions</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__716_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__716_1384165354">5.1
-		Syntactic and Lexical Grammars	7</A></B></SPAN></FONT></FONT></P>
+		Syntactic and Lexical Grammars</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__718_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__718_1384165354">5.2
-		Algorithm Conventions	11</A></B></SPAN></FONT></FONT></P>
+		Algorithm Conventions</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
-		<A CLASS="cjk" HREF="#__RefHeading__720_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__720_1384165354">6
-		Source Text	13</A></B></SPAN></FONT></FONT></P>
+		<A CLASS="cjk" HREF="#__RefHeading__720_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__720_1384165354">6.
+		Source Text</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
-		<A CLASS="cjk" HREF="#__RefHeading__722_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__722_1384165354">7
-		Lexical Conventions	13</A></B></SPAN></FONT></FONT></P>
+		<A CLASS="cjk" HREF="#__RefHeading__722_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__722_1384165354">7.
+		Lexical Conventions</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__724_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__724_1384165354">7.1
-		Unicode Format-Control Characters	14</A></B></SPAN></FONT></FONT></P>
+		Unicode Format-Control Characters</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__726_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__726_1384165354">7.2
-		White Space	15</A></B></SPAN></FONT></FONT></P>
+		White Space</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__728_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__728_1384165354">7.3
-		Line Terminators	15</A></B></SPAN></FONT></FONT></P>
+		Line Terminators</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__730_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__730_1384165354">7.4
-		Comments	16</A></B></SPAN></FONT></FONT></P>
+		Comments</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__732_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__732_1384165354">7.5
-		Tokens	17</A></B></SPAN></FONT></FONT></P>
+		Tokens</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__734_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__734_1384165354">7.6
-		Identifier Names and Identifiers	17</A></B></SPAN></FONT></FONT></P>
+		Identifier Names and Identifiers</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__736_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__736_1384165354">7.7
-		Punctuators	19</A></B></SPAN></FONT></FONT></P>
+		Punctuators</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__738_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__738_1384165354">7.8
-		Literals	20</A></B></SPAN></FONT></FONT></P>
+		Literals</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__740_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__740_1384165354">7.9
-		Automatic Semicolon Insertion	26</A></B></SPAN></FONT></FONT></P>
+		Automatic Semicolon Insertion</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
-		<A CLASS="cjk" HREF="#__RefHeading__742_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__742_1384165354">8
-		Types	28</A></B></SPAN></FONT></FONT></P>
+		<A CLASS="cjk" HREF="#__RefHeading__742_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__742_1384165354">8.
+		Types</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__744_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__744_1384165354">8.1
-		The Undefined Type	28</A></B></SPAN></FONT></FONT></P>
+		The Undefined Type</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__746_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__746_1384165354">8.2
-		The Null Type	28</A></B></SPAN></FONT></FONT></P>
+		The Null Type</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__748_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__748_1384165354">8.3
-		The Boolean Type	28</A></B></SPAN></FONT></FONT></P>
+		The Boolean Type</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__750_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__750_1384165354">8.4
-		The String Type	28</A></B></SPAN></FONT></FONT></P>
+		The String Type</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__752_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__752_1384165354">8.5
-		The Number Type	29</A></B></SPAN></FONT></FONT></P>
+		The Number Type</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__754_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__754_1384165354">8.6
-		The Object Type	30</A></B></SPAN></FONT></FONT></P>
+		The Object Type</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__756_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__756_1384165354">8.7
-		The Reference Specification Type	34</A></B></SPAN></FONT></FONT></P>
+		The Reference Specification Type</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__758_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__758_1384165354">8.8
-		The List Specification Type	36</A></B></SPAN></FONT></FONT></P>
+		The List Specification Type</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__760_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__760_1384165354">8.9
-		The Completion Specification Type	36</A></B></SPAN></FONT></FONT></P>
+		The Completion Specification Type</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__762_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__762_1384165354">8.10
 		 The Property Descriptor and Property Identifier Specification
-		Types	37</A></B></SPAN></FONT></FONT></P>
+		Types</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__764_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__764_1384165354">8.11
 		The Lexical Environment and Environment Record Specification
-		Types	39</A></B></SPAN></FONT></FONT></P>
+		Types</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__766_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__766_1384165354">8.12
-		Algorithms for Object Internal Methods	39</A></B></SPAN></FONT></FONT></P>
+		Algorithms for Object Internal Methods</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
-		<A CLASS="cjk" HREF="#__RefHeading__768_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__768_1384165354">9
-		Type Conversion and Testing	42</A></B></SPAN></FONT></FONT></P>
+		<A CLASS="cjk" HREF="#__RefHeading__768_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__768_1384165354">9.
+		Type Conversion and Testing</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__770_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__770_1384165354">9.1
-		ToPrimitive	43</A></B></SPAN></FONT></FONT></P>
+		ToPrimitive</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__772_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__772_1384165354">9.2
-		ToBoolean	43</A></B></SPAN></FONT></FONT></P>
+		ToBoolean</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__774_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__774_1384165354">9.3
-		ToNumber	43</A></B></SPAN></FONT></FONT></P>
+		ToNumber</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__776_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__776_1384165354">9.4
-		ToInteger	47</A></B></SPAN></FONT></FONT></P>
+		ToInteger</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__778_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__778_1384165354">9.5
-		ToInt32: (Signed 32 Bit Integer)	47</A></B></SPAN></FONT></FONT></P>
+		ToInt32: (Signed 32 Bit Integer)</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__780_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__780_1384165354">9.6
-		ToUint32: (Unsigned 32 Bit Integer)	47</A></B></SPAN></FONT></FONT></P>
+		ToUint32: (Unsigned 32 Bit Integer)</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__782_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__782_1384165354">9.7
-		ToUint16: (Unsigned 16 Bit Integer)	48</A></B></SPAN></FONT></FONT></P>
+		ToUint16: (Unsigned 16 Bit Integer)</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__784_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__784_1384165354">9.8
-		ToString	48</A></B></SPAN></FONT></FONT></P>
+		ToString</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__786_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__786_1384165354">9.9
-		ToObject	49</A></B></SPAN></FONT></FONT></P>
+		ToObject</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__788_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__788_1384165354">9.10
-		CheckObjectCoercible	49</A></B></SPAN></FONT></FONT></P>
+		CheckObjectCoercible</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__790_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__790_1384165354">9.11
-		IsCallable	50</A></B></SPAN></FONT></FONT></P>
+		IsCallable</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__792_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__792_1384165354">9.12
-		The SameValue Algorithm	50</A></B></SPAN></FONT></FONT></P>
+		The SameValue Algorithm</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
-		<A CLASS="cjk" HREF="#__RefHeading__794_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__794_1384165354">10
-		Executable Code and Execution Contexts	50</A></B></SPAN></FONT></FONT></P>
+		<A CLASS="cjk" HREF="#__RefHeading__794_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__794_1384165354">10.
+		Executable Code and Execution Contexts</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__796_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__796_1384165354">10.1
-		Types of Executable Code	50</A></B></SPAN></FONT></FONT></P>
+		Types of Executable Code</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__798_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__798_1384165354">10.2
-		Lexical Environments	51</A></B></SPAN></FONT></FONT></P>
+		Lexical Environments</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__800_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__800_1384165354">10.3
-		Execution Contexts	57</A></B></SPAN></FONT></FONT></P>
+		Execution Contexts</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__802_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__802_1384165354">10.4
-		Establishing an Execution Context	58</A></B></SPAN></FONT></FONT></P>
+		Establishing an Execution Context</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__804_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__804_1384165354">10.5
-		Declaration Binding Instantiation	59</A></B></SPAN></FONT></FONT></P>
+		Declaration Binding Instantiation</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__806_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__806_1384165354">10.6
-		Arguments Object	60</A></B></SPAN></FONT></FONT></P>
+		Arguments Object</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
-		<A CLASS="cjk" HREF="#__RefHeading__808_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__808_1384165354">11
-		Expressions	63</A></B></SPAN></FONT></FONT></P>
+		<A CLASS="cjk" HREF="#__RefHeading__808_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__808_1384165354">11.
+		Expressions</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__810_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__810_1384165354">11.1
-		Primary Expressions	63</A></B></SPAN></FONT></FONT></P>
+		Primary Expressions</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__812_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__812_1384165354">11.2
-		Left-Hand-Side Expressions	68</A></B></SPAN></FONT></FONT></P>
+		Left-Hand-Side Expressions</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__814_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__814_1384165354">11.3
-		Postfix Expressions	70</A></B></SPAN></FONT></FONT></P>
+		Postfix Expressions</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__816_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__816_1384165354">11.4
-		Unary Operators	71</A></B></SPAN></FONT></FONT></P>
+		Unary Operators</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__818_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__818_1384165354">11.5
-		Multiplicative Operators	75</A></B></SPAN></FONT></FONT></P>
+		Multiplicative Operators</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__820_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__820_1384165354">11.6
-		Additive Operators	76</A></B></SPAN></FONT></FONT></P>
+		Additive Operators</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__822_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__822_1384165354">11.7
-		Bitwise Shift Operators	78</A></B></SPAN></FONT></FONT></P>
+		Bitwise Shift Operators</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__824_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__824_1384165354">11.8
-		Relational Operators	79</A></B></SPAN></FONT></FONT></P>
+		Relational Operators</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__826_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__826_1384165354">11.9
-		Equality Operators	81</A></B></SPAN></FONT></FONT></P>
+		Equality Operators</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__828_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__828_1384165354">11.10
-		Binary Bitwise Operators	84</A></B></SPAN></FONT></FONT></P>
+		Binary Bitwise Operators</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__830_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__830_1384165354">11.11
-		Binary Logical Operators	85</A></B></SPAN></FONT></FONT></P>
+		Binary Logical Operators</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__832_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__832_1384165354">11.12
-		Conditional Operator ( ? : )	85</A></B></SPAN></FONT></FONT></P>
+		Conditional Operator ( ? : )</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__834_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__834_1384165354">11.13
-		Assignment Operators	86</A></B></SPAN></FONT></FONT></P>
+		Assignment Operators</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__836_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__836_1384165354">11.14
-		Comma Operator ( , )	87</A></B></SPAN></FONT></FONT></P>
+		Comma Operator ( , )</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
-		<A CLASS="cjk" HREF="#__RefHeading__838_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__838_1384165354">12
-		Statements	88</A></B></SPAN></FONT></FONT></P>
+		<A CLASS="cjk" HREF="#__RefHeading__838_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__838_1384165354">12.
+		Statements</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__840_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__840_1384165354">12.1
-		Block	88</A></B></SPAN></FONT></FONT></P>
+		Block</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__842_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__842_1384165354">12.2
-		Variable Statement	89</A></B></SPAN></FONT></FONT></P>
+		Variable Statement</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__844_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__844_1384165354">12.3
-		Empty Statement	90</A></B></SPAN></FONT></FONT></P>
+		Empty Statement</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__846_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__846_1384165354">12.4
-		Expression Statement	90</A></B></SPAN></FONT></FONT></P>
+		Expression Statement</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__848_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__848_1384165354">12.5
-		The if Statement	91</A></B></SPAN></FONT></FONT></P>
+		The if Statement</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__850_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__850_1384165354">12.6
-		Iteration Statements	91</A></B></SPAN></FONT></FONT></P>
+		Iteration Statements</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__852_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__852_1384165354">12.7
-		The continue Statement	94</A></B></SPAN></FONT></FONT></P>
+		The continue Statement</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__854_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__854_1384165354">12.8
-		The break Statement	94</A></B></SPAN></FONT></FONT></P>
+		The break Statement</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__856_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__856_1384165354">12.9
-		The return Statement	94</A></B></SPAN></FONT></FONT></P>
+		The return Statement</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__858_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__858_1384165354">12.10
-		The with Statement	95</A></B></SPAN></FONT></FONT></P>
+		The with Statement</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__860_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__860_1384165354">12.11
-		The switch Statement	95</A></B></SPAN></FONT></FONT></P>
+		The switch Statement</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__862_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__862_1384165354">12.12
-		Labelled Statements	98</A></B></SPAN></FONT></FONT></P>
+		Labelled Statements</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__864_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__864_1384165354">12.13
-		The throw Statement	98</A></B></SPAN></FONT></FONT></P>
+		The throw Statement</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__866_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__866_1384165354">12.14
-		The try Statement	98</A></B></SPAN></FONT></FONT></P>
+		The try Statement</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__868_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__868_1384165354">12.15
-		The debugger statement	99</A></B></SPAN></FONT></FONT></P>
+		The debugger statement</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
-		<A CLASS="cjk" HREF="#__RefHeading__870_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__870_1384165354">13
-		Function Definition	100</A></B></SPAN></FONT></FONT></P>
+		<A CLASS="cjk" HREF="#__RefHeading__870_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__870_1384165354">13.
+		Function Definition</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__872_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__872_1384165354">13.1
-		Strict Mode Restrictions	101</A></B></SPAN></FONT></FONT></P>
+		Strict Mode Restrictions</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__874_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__874_1384165354">13.2
-		Creating Function Objects	101</A></B></SPAN></FONT></FONT></P>
+		Creating Function Objects</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
-		<A CLASS="cjk" HREF="#__RefHeading__876_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__876_1384165354">14
-		Program	104</A></B></SPAN></FONT></FONT></P>
+		<A CLASS="cjk" HREF="#__RefHeading__876_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__876_1384165354">14.
+		Program</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__878_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__878_1384165354">14.1
-		Directive Prologues and the Use Strict Directive	104</A></B></SPAN></FONT></FONT></P>
+		Directive Prologues and the Use Strict Directive</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
-		<A CLASS="cjk" HREF="#__RefHeading__880_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__880_1384165354">15
-		Standard Built-in ECMAScript Objects	105</A></B></SPAN></FONT></FONT></P>
+		<A CLASS="cjk" HREF="#__RefHeading__880_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__880_1384165354">15.
+		Standard Built-in ECMAScript Objects</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__882_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__882_1384165354">15.1
-		The Global Object	106</A></B></SPAN></FONT></FONT></P>
+		The Global Object</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__884_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__884_1384165354">15.2
-		Object Objects	114</A></B></SPAN></FONT></FONT></P>
+		Object Objects</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__886_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__886_1384165354">15.3
-		Function Objects	120</A></B></SPAN></FONT></FONT></P>
+		Function Objects</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__888_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__888_1384165354">15.4
-		Array Objects	125</A></B></SPAN></FONT></FONT></P>
+		Array Objects</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__890_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__890_1384165354">15.5
-		String Objects	144</A></B></SPAN></FONT></FONT></P>
+		String Objects</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__892_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__892_1384165354">15.6
-		Boolean Objects	155</A></B></SPAN></FONT></FONT></P>
+		Boolean Objects</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__894_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__894_1384165354">15.7
-		Number Objects	157</A></B></SPAN></FONT></FONT></P>
+		Number Objects</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__896_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__896_1384165354">15.8
-		The Math Object	162</A></B></SPAN></FONT></FONT></P>
+		The Math Object</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__898_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__898_1384165354">15.9
-		Date Objects	169</A></B></SPAN></FONT></FONT></P>
+		Date Objects</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__900_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__900_1384165354">15.10
-		RegExp (Regular Expression) Objects	184</A></B></SPAN></FONT></FONT></P>
+		RegExp (Regular Expression) Objects</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__902_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__902_1384165354">15.11
-		Error Objects	202</A></B></SPAN></FONT></FONT></P>
+		Error Objects</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__904_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__904_1384165354">15.12
-		The JSON Object	206</A></B></SPAN></FONT></FONT></P>
+		The JSON Object</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
-		<A CLASS="cjk" HREF="#__RefHeading__906_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__906_1384165354">16
-		Errors	213</A></B></SPAN></FONT></FONT></P>
+		<A CLASS="cjk" HREF="#__RefHeading__906_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__906_1384165354">16.
+		Errors</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
-		<FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__908_1384165354">Annex&nbsp;A
-		   <BR>(informative)100<BR><BR>Grammar Summary	214</A></B></SPAN></FONT></FONT></P>
+		<FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__908_1384165354">A. Annex&nbsp;A
+		   <BR>(informative)100<BR><BR>Grammar Summary</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__910_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__910_1384165354">A.1
-		Lexical Grammar	214</A></B></SPAN></FONT></FONT></P>
+		Lexical Grammar</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__912_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__912_1384165354">A.2
-		Number Conversions	220</A></B></SPAN></FONT></FONT></P>
+		Number Conversions</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__914_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__914_1384165354">A.3
-		Expressions	221</A></B></SPAN></FONT></FONT></P>
+		Expressions</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__916_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__916_1384165354">A.4
-		Statements	225</A></B></SPAN></FONT></FONT></P>
+		Statements</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__918_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__918_1384165354">A.5
-		Functions and Programs	227</A></B></SPAN></FONT></FONT></P>
+		Functions and Programs</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__920_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__920_1384165354">A.6
-		Universal Resource Identifier Character Classes	228</A></B></SPAN></FONT></FONT></P>
+		Universal Resource Identifier Character Classes</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__922_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__922_1384165354">A.7
-		Regular Expressions	228</A></B></SPAN></FONT></FONT></P>
+		Regular Expressions</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__924_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__924_1384165354">A.8
-		JSON	231</A></B></SPAN></FONT></FONT></P>
+		JSON</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__926_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__926_1384165354">A.8.1
-		JSON Lexical Grammar	231</A></B></SPAN></FONT></FONT></P>
+		JSON Lexical Grammar</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__928_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__928_1384165354">A.8.2
-		JSON Syntactic Grammar	231</A></B></SPAN></FONT></FONT></P>
+		JSON Syntactic Grammar</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
-		<FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__930_1384165354">Annex&nbsp;B
-		   <BR>(informative)<BR>200<BR>Compatibility	234</A></B></SPAN></FONT></FONT></P>
+		<FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__930_1384165354">B. Annex&nbsp;B
+		   <BR>(informative)<BR>200<BR>Compatibility</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__932_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__932_1384165354">B.1
-		Additional Syntax	234</A></B></SPAN></FONT></FONT></P>
+		Additional Syntax</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__934_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__934_1384165354">B.1.1
-		Numeric Literals	234</A></B></SPAN></FONT></FONT></P>
+		Numeric Literals</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__936_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__936_1384165354">B.1.2
-		String Literals	234</A></B></SPAN></FONT></FONT></P>
+		String Literals</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__938_1384165354">    </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__938_1384165354">B.2
-		Additional Properties	235</A></B></SPAN></FONT></FONT></P>
+		Additional Properties</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__940_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__940_1384165354">B.2.1
-		escape (string)	235</A></B></SPAN></FONT></FONT></P>
+		escape (string)</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__942_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__942_1384165354">B.2.2
-		unescape (string)	236</A></B></SPAN></FONT></FONT></P>
+		unescape (string)</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__944_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__944_1384165354">B.2.3
-		String.prototype.substr (start, length)	237</A></B></SPAN></FONT></FONT></P>
+		String.prototype.substr (start, length)</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__946_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__946_1384165354">B.2.4
-		Date.prototype.getYear ( )	237</A></B></SPAN></FONT></FONT></P>
+		Date.prototype.getYear ( )</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__948_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__948_1384165354">B.2.5
-		Date.prototype.setYear (year)	237</A></B></SPAN></FONT></FONT></P>
+		Date.prototype.setYear (year)</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0cm; line-height: 0.41cm">
 		<A CLASS="cjk" HREF="#__RefHeading__950_1384165354">   </A><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__950_1384165354">B.2.6
-		Date.prototype.toGMTString ( )	237</A></B></SPAN></FONT></FONT></P>
+		Date.prototype.toGMTString ( )</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
-		<FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__952_1384165354">Annex&nbsp;C
-		   <BR>(informative)<BR>300<BR>The Strict Mode of ECMAScript	238</A></B></SPAN></FONT></FONT></P>
+		<FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__952_1384165354">C. Annex&nbsp;C
+		   <BR>(informative)<BR>300<BR>The Strict Mode of ECMAScript</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
-		<FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__954_1384165354">Annex&nbsp;D
+		<FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__954_1384165354">D. Annex&nbsp;D
 		   <BR>(informative)<BR>400<BR>Corrections and Clarifications in
 		the 5th Edition<BR>with Possible 3rd Edition Compatibility
-		Impact	240</A></B></SPAN></FONT></FONT></P>
+		Impact</A></B></SPAN></FONT></FONT></P>
 		<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-right: 0.88cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 0.41cm">
-		<FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__956_1384165354">Annex&nbsp;E
+		<FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><B><A CLASS="western" HREF="#__RefHeading__956_1384165354">E. Annex&nbsp;E
 		   <BR>(informative)<BR>500<BR>Additions and Changes in the 5th
 		Edition that<BR>Introduce Incompatibilities with the 3rd
-		Edition	242</A></B></SPAN></FONT></FONT></P>
+		Edition</A></B></SPAN></FONT></FONT></P>
 	</DIV>
-	<P ALIGN=LEFT STYLE="margin-right: 0.88cm; margin-top: 0.14cm; margin-bottom: 0cm; line-height: 0.41cm">
-	<BR>
-	</P>
-	<P CLASS="cjk" STYLE="margin-top: 0cm; margin-bottom: 0.42cm; line-height: 0.41cm">
-	<BR><BR>
-	</P>
-	<P ALIGN=LEFT STYLE="margin-top: 1.69cm; margin-bottom: 0.55cm; line-height: 0.55cm; page-break-before: always; page-break-after: avoid">
-	<FONT FACE="Arial, sans-serif"><FONT SIZE=4><SPAN LANG="en-GB"><B>Introduction</B></SPAN></FONT></FONT></P>
-	<P CLASS="cjk" STYLE="margin-top: 0cm; margin-bottom: 0.42cm; line-height: 0.41cm">
-	<FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-US">This
-	Ecma Standard is based on several originating technologies, the most
+        <p>This document uses verbatim text from the ECMAScript
+        Language Specification, which has the following copyright
+        notice and license statement:</p>
+  <p id="copyright">© Ecma International 2009</p>
+	<div id="license" STYLE="border: 1px solid #000000; padding: 4px;">
+	<p><I>"DISCLAIMER</I></P>
+              <I>This
+	document may be copied and furnished to others, and derivative
+	works that comment on or otherwise explain it or assist in its
+	implementation may be prepared, copied, published, and distributed,
+	in whole or in part, without restriction of any kind, provided that
+	the above copyright notice and this section are included on all such
+	copies and derivative works. However, this document itself may not
+	be modified in any way, including by removing the copyright notice
+	or references to Ecma International, except as needed for the
+	purpose of developing any document or deliverable produced by Ecma
+	International.</I>
+</p>
+<p><I>The
+	limited permissions are granted through the standardization phase
+	and will not be revoked by Ecma International or its successors or
+	assigns during this time.</I></P>
+	<P>
+	<p><I>This
+	document and the information contained herein is provided on an "AS
+	IS" basis and ECMA INTERNATIONAL DISCLAIMS ALL WARRANTIES,
+	EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT
+	THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY OWNERSHIP
+	RIGHTS OR </I>ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS
+	FOR A PARTICULAR PURPOSE."</P>
+    </div>
+    <p>No additional copyright is asserted on the current contents
+    of the present document
+    (<cite>An annotated reference to the ECMAScript language, 5th Edition</cite>)</p>
+
+        <h2 id="intro">Introduction</h2>
+        <P>This Ecma Standard is based on several originating technologies, the most
 	well known being JavaScript (Netscape) and JScript (Microsoft). The
 	language was invented by Brendan Eich at Netscape and first appeared
 	in that company’s Navigator 2.0 browser. It has appeared in all
@@ -550,7 +534,9 @@
 	the programming language that is supported by essentially all web
 	browsers. </SPAN><SPAN LANG="en-US">Significant work was done to
 	develop a fourth edition of ECMAScript. Although that work was not
-	completed and not published</SPAN><FONT SIZE=1 STYLE="font-size: 8pt"><SPAN LANG="fr-FR"><SPAN LANG="en-US"><A CLASS="sdfootnoteanc" NAME="sdfootnote1anc" HREF="#sdfootnote1sym"><SUP>1</SUP></A></SPAN></SPAN></FONT><SPAN LANG="en-US">
+	completed and not published</SPAN>
+      <A CLASS="footnote" id=sdfootnote1anc HREF="#sdfootnote1sym">[1]</A>
+      <SPAN LANG="en-US">
 	as the fourth edition of ECMAScript, it informs continuing evolution
 	of the language. The present fifth edition of ECMAScript (published
 	as ECMA-262 5</SPAN><SUP><SPAN LANG="en-US">th</SPAN></SUP><SPAN LANG="en-US">
@@ -567,72 +553,14 @@
 	is a vibrant language and the evolution of the language is not
 	complete. Significant technical enhancement will continue with
 	future editions of this specification.</SPAN></SPAN></FONT></FONT></P>
-	<P CLASS="cjk" STYLE="margin-top: 0cm; margin-bottom: 0.42cm; line-height: 0.41cm">
-	<BR><BR>
-	</P>
-	<P CLASS="cjk" STYLE="margin-top: 0cm; margin-bottom: 0.42cm; line-height: 0.41cm">
-	<BR><BR>
-	</P>
-	<P CLASS="cjk" STYLE="margin-top: 0cm; margin-bottom: 0.42cm; line-height: 0.41cm">
-	<BR><BR>
-	</P>
-	<P CLASS="cjk" STYLE="margin-top: 0cm; margin-bottom: 0.42cm; line-height: 0.41cm">
-	<BR><BR>
-	</P>
-	<P CLASS="cjk" STYLE="margin-top: 0cm; margin-bottom: 0.42cm; line-height: 0.41cm">
-	<BR><BR>
-	</P>
-	<P STYLE="margin-top: 0cm; margin-bottom: 0.21cm; letter-spacing: 0.3pt; line-height: 100%">
-	<FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB">This
-	Ecma Standard has been adopted by the General Assembly of &lt;month&gt;
-	&lt;year&gt;.</SPAN></FONT></FONT></P>
-	<P CLASS="cjk" STYLE="margin-top: 0cm; margin-bottom: 0.42cm; line-height: 0.41cm">
-	<BR><BR>
-	</P>
-	<P CLASS="cjk" STYLE="margin-top: 0cm; margin-bottom: 0.42cm; line-height: 0.41cm">
-	<BR><BR>
-	</P>
-	<P CLASS="cjk" STYLE="margin-top: 0cm; margin-bottom: 0.42cm; line-height: 0.41cm">
-	<BR><BR>
-	</P>
-	<P STYLE="margin-top: 0cm; margin-bottom: 0.21cm; border: 1px solid #000000; padding: 0.04cm 0.14cm; letter-spacing: 0.3pt; line-height: 100%">
-	<FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><I>&quot;DISCLAIMER</I></SPAN></FONT></FONT></P>
-	<P STYLE="margin-top: 0cm; margin-bottom: 0.21cm; border: 1px solid #000000; padding: 0.04cm 0.14cm; letter-spacing: 0.3pt; line-height: 100%">
-	<FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><I>This
-	draft document may be copied and furnished to others, and derivative
-	works that comment on or otherwise explain it or assist in its
-	implementation may be prepared, copied, published, and distributed,
-	in whole or in part, without restriction of any kind, provided that
-	the above copyright notice and this section are included on all such
-	copies and derivative works. However, this document itself may not
-	be modified in any way, including by removing the copyright notice
-	or references to Ecma International, except as needed for the
-	purpose of developing any document or deliverable produced by Ecma
-	International.</I></SPAN></FONT></FONT></P>
-	<P STYLE="margin-top: 0cm; margin-bottom: 0.21cm; border: 1px solid #000000; padding: 0.04cm 0.14cm; letter-spacing: 0.3pt; line-height: 100%">
-	<FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><I>This
-	disclaimer is valid only prior to final version of this document.
-	After approval all rights on the standard are reserved by Ecma
-	International.</I></SPAN></FONT></FONT></P>
-	<P STYLE="margin-top: 0cm; margin-bottom: 0.21cm; border: 1px solid #000000; padding: 0.04cm 0.14cm; letter-spacing: 0.3pt; line-height: 100%">
-	<FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><I>The
-	limited permissions are granted through the standardization phase
-	and will not be revoked by Ecma International or its successors or
-	assigns during this time.</I></SPAN></FONT></FONT></P>
-	<P CLASS="cjk" STYLE="margin-top: 0cm; margin-bottom: 0.42cm; border: 1px solid #000000; padding: 0.04cm 0.14cm; line-height: 0.41cm">
-	<FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><I>This
-	document and the information contained herein is provided on an &quot;AS
-	IS&quot; basis and ECMA INTERNATIONAL DISCLAIMS ALL WARRANTIES,
-	EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT
-	THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY OWNERSHIP
-	RIGHTS OR </I>ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS
-	FOR A PARTICULAR PURPOSE.&quot;</SPAN></FONT></FONT></P>
-	<P CLASS="cjk" STYLE="margin-top: 0cm; margin-bottom: 0.42cm; line-height: 0.41cm">
-	<BR><BR>
-	</P>
-	<P CLASS="cjk" STYLE="margin-top: 0cm; margin-bottom: 0.42cm; line-height: 0.41cm">
-	<BR><BR>
-	</P>
+<DIV ID="sdfootnote1">
+	<P CLASS="footnote">
+        <A CLASS="sdfootnotesym-western" id="sdfootnote1sym" HREF="#sdfootnote1anc">1</A>
+	Note: Please note that for ECMAScript Edition 4 the Ecma standard
+	number “ECMA-262 Edition 4” was reserved but not used in the
+	Ecma publication process. Therefore “ECMA-262 Edition 4” as an
+	Ecma International publication does not exist.</SPAN></FONT></P>
+</DIV>
 </DIV>
 <DIV ID="Section3" DIR="LTR">
 	<P LANG="" ALIGN=LEFT STYLE="margin-top: 0.71cm; margin-bottom: 1.34cm; line-height: 0.62cm; page-break-before: always">
@@ -35939,13 +35867,6 @@
 	<BR><BR>
 	</P>
 </DIV>
-<DIV ID="sdfootnote1">
-	<P CLASS="sdfootnote-cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><A CLASS="sdfootnotesym-western" NAME="sdfootnote1sym" HREF="#sdfootnote1anc">1</A>
-	Note: Please note that for ECMAScript Edition 4 the Ecma standard
-	number “ECMA-262 Edition 4” was reserved but not used in the
-	Ecma publication process. Therefore “ECMA-262 Edition 4” as an
-	Ecma International publication does not exist.</SPAN></FONT></P>
-</DIV>
 <DIV TYPE=FOOTER>
 	<TABLE WIDTH=758 BORDER=1 CELLPADDING=0 CELLSPACING=4 FRAME=VOID RULES=NONE>
 		<COL WIDTH=223>
@@ -35997,5 +35918,5 @@
 	<P STYLE="margin-top: 0cm; margin-bottom: 0cm; line-height: 0.39cm"><BR>
 	</P>
 </DIV>
-</BODY>
-</HTML>
+</body>
+</html>
