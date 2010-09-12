@@ -65,6 +65,7 @@
         .note {
           border: 1px solid #999;
           padding: 6px;
+          margin-bottom: 8px;
         }
         .note:before {
           content: "Note: ";
@@ -83,6 +84,10 @@
           margin-bottom: 0cm;
           page-break-after: avoid
         }
+        .break-after-avoid ~ p {
+          margin-top: 0;
+        }
+
         p.space-after {
           margin-top: 0cm;
           margin-bottom: 0.42cm;
@@ -138,13 +143,29 @@
            margin-top: 0cm;
            margin-bottom: 0.42cm;
         }
+        td {
+          padding: 4px;
+        }
         td > p {
           margin-top: 0px;
           margin-bottom: 0px;
         }
+        ul.outer {}
+        ul.inner {}
+        ol.inner {}
+        ol > li {
+          margin-top: 12px;
+        }
+        ol ul {
+          margin-top: 8px;
+          margin-left: 0;
+          list-style-type: disc;
+          padding-left: 20px
+        }
         li > p {
-          margin-top: 0px;
-          margin-bottom: 0px;
+          margin-top: 0;
+          margin-bottom: 0;
+          margin-left: 0;
         }
         li p.indent-1 {
            margin-left: 1.59cm;
@@ -157,6 +178,7 @@
            margin-top: 0cm;
            margin-bottom: 0.21cm;
         }
+
         span.table-header { }
 
 		@page { margin-right: 1.3cm; margin-top: 1.25cm; margin-bottom: 0.5cm }
@@ -1715,7 +1737,7 @@
 	</I><span class="sans-serif-arial"><SPAN><B>::</B></SPAN></span><I><span class="sans-serif-arial"><B>
 	</B></span></I><span class="sans-serif-arial"><SPAN><B>one
 	of</B></SPAN></span></SPAN></span></span></P>
-	<P class="definition-level-2-bottom-margin">
+	<P class="definition-level-2-alt">
 	<span class="monospace-courier-new"><span class=font-size-2><SPAN><B>1
 	 2  3  4  5  6  7  8  9</B></SPAN></span></span></P>
 	<P>
@@ -1724,7 +1746,7 @@
 	<P class="definition-level-1">
 	<span class="serif-time-new-roman"><span class=font-size-2><SPAN><I>NonZeroDigit
 	</I><span class="sans-serif-arial"><SPAN><B>::</B></SPAN></span></SPAN></span></span></P>
-	<P class="definition-level-2-bottom-margin">
+	<P class="definition-level-2-alt">
 	<span class="monospace-courier-new"><span class=font-size-2><SPAN><B>1<BR>2<BR>3<BR>4<BR>5<BR>6<BR>7<BR>8<BR>9</B></SPAN></span></span></P>
 	<P>
 	<span class="sans-serif-arial"><span class=font-size-2><SPAN>When
@@ -1759,7 +1781,7 @@
 	<P class="definition-level-1">
 	<span class="serif-time-new-roman"><span class=font-size-2><SPAN><I>SourceCharacter<B>
 	</B></I><span class="sans-serif-arial"><SPAN><B>::</B></SPAN></span></SPAN></span></span></P>
-	<P class="definition-level-2-bottom-margin"><A NAME="_Ref385215268"></A><A NAME="_Ref385215256"></A>
+	<P class="definition-level-2-alt"><A NAME="_Ref385215268"></A><A NAME="_Ref385215256"></A>
 	<span class="sans-serif-arial"><span class=font-size-2><SPAN>any
 	Unicode code unit</SPAN></span></span></P>
 	<H2><A NAME="__RefHeading__718_1384165354"></A><A NAME="_Ref456011133"></A><A NAME="_Ref455935214"></A>
@@ -1804,7 +1826,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Top-level
 		step</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Substep.</SPAN></span></span></P>
 			<LI><P>
@@ -1816,10 +1838,10 @@
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Subsubstep.</SPAN></span></span></P>
 				<LI><P>
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Subsubstep.</SPAN></span></span></P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Subsubsubstep</SPAN></span></span></P>
-					<OL STYLE="margin-left: 1.27cm">
+					<ol class="inner">
 						<LI><P>
 						<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Subsubsubsubstep</SPAN></span></span></P>
 					</OL>
@@ -1919,7 +1941,7 @@
 	<P class="definition-level-1">
 	<span class="serif-time-new-roman"><span class=font-size-2><SPAN><I>SourceCharacter
 	</I><span class="sans-serif-arial"><SPAN><B>::</B></SPAN></span></SPAN></span></span></P>
-	<P class="definition-level-2-bottom-margin">
+	<P class="definition-level-2-alt">
 	<span class="sans-serif-arial"><span class=font-size-2><SPAN>any
 	Unicode code unit</SPAN></span></span></P>
 	<P>
@@ -3407,9 +3429,9 @@
 	determined in two steps: first, a mathematical value (MV) is derived
 	from the literal; second, this mathematical value is rounded as
 	described below.</SPAN></span></span></P>
-	<UL STYLE="margin-left: 0.64cm">
-		<UL STYLE="margin-left: 1.27cm">
-			<UL STYLE="margin-left: 1.27cm">
+	<ul class="outer">
+		<ul class="inner">
+			<ul class="inner">
 				<LI><P STYLE="margin-left: 0.79cm; margin-top: 0.04cm; margin-bottom: 0cm; "><A NAME="_Ref378386289"></A>
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN><span class="sans-serif-arial">The
 				MV of</span> <I>NumericLiteral</I> <span class="sans-serif-arial"><B>::</B></span>
@@ -3703,9 +3725,9 @@
 	digit position. A digit is <I>significant</I> if it is not part of
 	an <span class="serif-time-new-roman"><I>ExponentPart</I></span>
 	and</SPAN></span></span></P>
-	<UL STYLE="margin-left: 0.64cm">
-		<UL STYLE="margin-left: 1.27cm">
-			<UL STYLE="margin-left: 1.27cm">
+	<ul class="outer">
+		<ul class="inner">
+			<ul class="inner">
 				<LI><P STYLE="margin-left: 0.79cm; margin-top: 0.04cm; margin-bottom: 0cm; ">
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN><span class="sans-serif-arial">it
 				is not </span><span class="monospace-courier-new"><B>0</B></span><span class="sans-serif-arial">;
@@ -3848,9 +3870,9 @@
 	of this process, some characters within the string literal are
 	interpreted as having a mathematical value (MV), as described below
 	or in 7.8.3.</SPAN></span></span></P>
-	<UL STYLE="margin-left: 0.64cm">
-		<UL STYLE="margin-left: 1.27cm">
-			<UL STYLE="margin-left: 1.27cm">
+	<ul class="outer">
+		<ul class="inner">
+			<ul class="inner">
 				<LI><P STYLE="margin-left: 0.79cm; margin-top: 0.04cm; margin-bottom: 0cm; ">
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN><span class="sans-serif-arial">The
 				SV of</span> <I>StringLiteral</I> <span class="sans-serif-arial"><B>::</B></span>
@@ -4182,9 +4204,9 @@
 	<P><A NAME="_Ref382649794"></A><A NAME="_Ref382649260"></A><A NAME="_Ref381506868"></A><A NAME="_Ref381174987"></A><A NAME="_Ref379873477"></A><A NAME="_Ref379172559"></A><A NAME="_Ref378393823"></A>
 	<BR><BR>
 	</P>
-	<UL STYLE="margin-left: 0.64cm">
-		<UL STYLE="margin-left: 1.27cm">
-			<UL STYLE="margin-left: 1.27cm">
+	<ul class="outer">
+		<ul class="inner">
+			<ul class="inner">
 				<LI><P STYLE="margin-left: 0.79cm; margin-top: 0.04cm; margin-bottom: 0cm; ">
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN><span class="sans-serif-arial">The
 				CV of</span> <I>CharacterEscapeSequence</I> <span class="sans-serif-arial"><B>::</B></span>
@@ -4394,10 +4416,8 @@
 	<P>
 	<span class="sans-serif-arial"><span class=font-size-2><SPAN>There
 	are three basic rules of semicolon insertion:</SPAN></span></span></P>
-	<UL STYLE="margin-left: 0.64cm">
-		<UL STYLE="margin-left: 1.27cm">
-			<OL STYLE="margin-left: 1.27cm">
-				<LI><P STYLE="margin-left: 0.79cm; margin-top: 0.04cm; margin-bottom: 0.21cm; ">
+			<ol>
+				<LI><P>
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN><span class="sans-serif-arial">When,
 				as the program is parsed from left to right, a token (called the
 				</span><span class="sans-serif-arial"><I>offending token</I></span><span class="sans-serif-arial">)
@@ -4405,29 +4425,26 @@
 				grammar, then a semicolon is automatically inserted before the
 				offending token if one or more of the following conditions is
 				true:</span></SPAN></span></span></P>
-			</OL>
-		</UL>
-	</UL>
-	<UL STYLE="margin-left: 0cm">
-		<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0cm; ">
+	<UL>
+		<LI><P>
 		<span class="sans-serif-arial"><span class=font-size-2><SPAN>The
 		offending token is separated from the previous token by at least
 		one <span class="serif-time-new-roman"><I>LineTerminator</I></span>.</SPAN></span></span></P>
-		<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0.42cm; ">
+		<LI><P>
 		<span class="sans-serif-arial"><span class=font-size-2><SPAN>The
 		offending token is <span class="monospace-courier-new"><B>}</B></span>.</SPAN></span></span></P>
 	</UL>
-	<UL STYLE="margin-left: 0.64cm">
-		<UL STYLE="margin-left: 1.27cm">
-			<OL START=2 STYLE="margin-left: 1.27cm">
-				<LI><P STYLE="margin-left: 0.79cm; margin-top: 0.04cm; margin-bottom: 0.42cm; ">
+        </li>
+			</OL>
+			<OL START=2>
+				<LI><P>
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN><span class="sans-serif-arial">When,
 				as the program is parsed from left to right, the end of the input
 				stream of tokens is encountered and the parser is unable to parse
 				the input token stream as a single complete ECMAScript </span><span class="serif-time-new-roman"><I>Program</I></span><span class="sans-serif-arial">,
 				then a semicolon is automatically inserted at the end of the
 				input stream.</span></SPAN></span></span></P>
-				<LI><P STYLE="margin-left: 0.79cm; margin-top: 0.04cm; margin-bottom: 0.42cm; ">
+				<LI><P>
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN><span class="sans-serif-arial">When,
 				as the program is parsed from left to right, a token is
 				encountered that is allowed by some production of the grammar,
@@ -4444,8 +4461,6 @@
 				then a semicolon is automatically inserted before the restricted
 				token.</span></SPAN></span></span></P>
 			</OL>
-		</UL>
-	</UL>
 	<P>
 	<span class="sans-serif-arial"><span class=font-size-2><SPAN>However,
 	there is an additional overriding condition on the preceding rules:
@@ -4454,8 +4469,9 @@
 	become one of the two semicolons in the header of a <span class="monospace-courier-new"><B>for</B></span>
 	statement (see 12.6.3).</SPAN></span></span></P>
 	<P STYLE="margin-top: 0cm; margin-bottom: 0.21cm"><A NAME="_Ref404492911"></A><A NAME="_Ref404492883"></A>
-	<span class="sans-serif-arial"><p class="note">The following
-	are the only restricted productions in the grammar:</SPAN></span></P>
+
+	<span class="sans-serif-arial"><div class="note">The following
+	are the only restricted productions in the grammar:</SPAN></span>
 	<P class="definition-level-1">
 	<span class="serif-time-new-roman"><span class=font-size-2><SPAN><I><span class=font-size-2>PostfixExpression
 	</span></I><span class="sans-serif-arial"><span class=font-size-2><SPAN><B>:</B></SPAN></span></span></SPAN></span></span></P>
@@ -4507,6 +4523,7 @@
 	</SPAN></span></span><I><span class=font-size-1>LineTerminator</span></I><span class="sans-serif-arial"><span class=font-size-1><SPAN>
 	here] </SPAN></span></span><I><span class=font-size-2>Expression
 	</span><span class=font-size-2><B>;</B></span></I></SPAN></span></span></P>
+      </div>
 	<P><A NAME="_Ref424532665"></A><A NAME="_Ref424532635"></A>
 	<span class="sans-serif-arial"><span class=font-size-2><SPAN>The
 	practical effect of these restricted productions is as follows:</SPAN></span></span></P>
@@ -5970,7 +5987,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		IsPropertyReference(<I>V</I>), then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			HasPrimitiveBase(<I>V</I>) is <B>false</B>, then let <I>get</I> be
@@ -5985,7 +6002,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 		<I>base</I> must be an environment record.</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-top: 0cm; margin-bottom: 0.21cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Return
 			the result of calling the GetBindingValue (see 10.2.1)  concrete
@@ -6048,7 +6065,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		IsUnresolvableReference(<I>V</I>), then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			IsStrictReference(<I>V</I>) is <B>true</B>, then</SPAN></span></span></P>
@@ -6066,7 +6083,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else
 		if IsPropertyReference(<I>V</I>), then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			HasPrimitiveBase(<I>V</I>) is <B>false</B>, then let <I>put</I> be
@@ -6083,7 +6100,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else
 		<I>base </I>must be a reference whose base is an environment
 		record. So,</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Call
 			the SetMutableBinding (10.2.1) concrete method of <I>base</I>,
@@ -6110,7 +6127,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		the result of calling the [[CanPut]] internal method of <I>O</I>
 		with argument <I>P</I> is <B>false</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			<I>Throw</I> is <B>true</B>, then throw a <B>TypeError</B>
@@ -6126,7 +6143,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		IsDataDescriptor(<I>ownDesc</I>) is <B>true</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			<I>Throw</I> is <B>true</B>, then throw a <B>TypeError</B>
@@ -6144,7 +6161,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		IsAccessorDescriptor(<I>desc</I>) is <B>true</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>setter</I> be <I>desc</I>.[[Set]] which cannot be <B>undefined</B>.</SPAN></span></span></P>
@@ -6157,7 +6174,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 		this is a request to create an own property on the transient object
 		<I>O</I></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			<I>Throw</I> is <B>true</B>, then throw a <B>TypeError</B>
@@ -6353,7 +6370,7 @@
 		is </span><span class="serif-time-new-roman"><B>true</B></span><span class="serif-time-new-roman">,
 		then </span></SPAN></span></span>
 		</P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-top: 0cm; margin-bottom: 0cm; ">
 			<span class="serif-tms-rmn"><span class=font-size-2><SPAN><span class="serif-time-new-roman">Call
 			the [[DefineOwnProperty]] internal method of </span><span class="serif-time-new-roman"><I>obj</I></span><span class="serif-time-new-roman">
@@ -6382,7 +6399,7 @@
 		IsAccessorDescriptor(</span><span class="serif-time-new-roman"><I>Desc</I></span><span class="serif-time-new-roman">)
 		must be </span><span class="serif-time-new-roman"><B>true</B></span><span class="serif-time-new-roman">,
 		so</span></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-top: 0cm; margin-bottom: 0cm; ">
 			<span class="serif-tms-rmn"><span class=font-size-2><SPAN><span class="serif-time-new-roman">Call
 			the [[DefineOwnProperty]] internal method of </span><span class="serif-time-new-roman"><I>obj</I></span><span class="serif-time-new-roman">
@@ -6450,7 +6467,7 @@
 		the result of calling the [[HasProperty]] internal method of <I>Obj</I>
 		with argument &quot;<span class="monospace-courier-new"><SPAN STYLE="letter-spacing: normal"><SPAN><B>enumerable</B></SPAN></SPAN></span>&quot;
 		is <B>true</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>enum</I> be the result of calling the [[Get]] internal method
@@ -6464,7 +6481,7 @@
 		the result of calling the [[HasProperty]] internal method of <I>Obj</I>
 		with argument &quot;<span class="monospace-courier-new"><SPAN STYLE="letter-spacing: normal"><SPAN><B>configurable</B></SPAN></SPAN></span>&quot;
 		is <B>true</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>conf</I>  be the result of calling the [[Get]] internal method
@@ -6478,7 +6495,7 @@
 		the result of calling the [[HasProperty]] internal method of <I>Obj</I>
 		with argument &quot;<span class="monospace-courier-new"><SPAN STYLE="letter-spacing: normal"><SPAN><B>value</B></SPAN></SPAN></span>&quot;
 		is <B>true</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>value</I> be the result of calling the [[Get]] internal method
@@ -6492,7 +6509,7 @@
 		the result of calling the [[HasProperty]] internal method of <I>Obj</I>
 		with argument &quot;<span class="monospace-courier-new"><SPAN STYLE="letter-spacing: normal"><SPAN><B>writable</B></SPAN></SPAN></span>&quot;
 		is <B>true</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>writable</I> be the result of calling the [[Get]] internal
@@ -6506,7 +6523,7 @@
 		the result of calling the [[HasProperty]] internal method of <I>Obj</I>
 		with argument &quot;<span class="monospace-courier-new"><SPAN STYLE="letter-spacing: normal"><SPAN><B>get</B></SPAN></SPAN></span>&quot;
 		is <B>true</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>getter</I> be the result of calling the [[Get]] internal method
@@ -6524,7 +6541,7 @@
 		the result of calling the [[HasProperty]] internal method of <I>Obj</I>
 		with argument &quot;<span class="monospace-courier-new"><SPAN STYLE="letter-spacing: normal"><SPAN><B>set</B></SPAN></SPAN></span>&quot;
 		is <B>true</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>setter</I> be the result of calling the [[Get]] internal method
@@ -6540,7 +6557,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		either <I>desc</I>.[[Get]] or <I>desc</I>.[[Set]] are present, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			either <I>desc</I>.[[Value]] or <I>desc</I>.[[Writable]] are
@@ -6587,7 +6604,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>X </I>is a data property, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Set
 			<I>D</I>.[[Value]] to the value of <I>X</I>’s [[Value]]
@@ -6600,7 +6617,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else
 		<I>X </I>is an accessor property, so</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Set
 			<I>D</I>.[[Get]] to the value of <I>X</I>’s [[Get]] attribute.</SPAN></span></span></P>
@@ -6699,7 +6716,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>desc</I> is not <B>undefined</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			IsAccessorDescriptor(<I>desc</I>) is <B>true</B>, then</SPAN></span></span></P>
@@ -6734,7 +6751,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		IsAccessorDescriptor(<I>inherited</I>) is <B>true</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			<I>inherited</I>.[[Set]] is <B>undefined</B>, then return <B>false</B>.</SPAN></span></span></P>
@@ -6745,7 +6762,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 		<I>inherited</I> must be a DataDescriptor</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			the [[Extensible]] internal property of <I>O</I> is <B>false</B>,
@@ -6773,7 +6790,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		the result of calling the [[CanPut]] internal method of <I>O </I>with
 		argument <I>P </I>is <B>false</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			<I>Throw </I>is <B>true</B>, then throw a <B>TypeError </B>exception.</SPAN></span></span></P>
@@ -6788,7 +6805,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		IsDataDescriptor(<I>ownDesc</I>) is <B>true</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>valueDesc</I> be the Property Descriptor {[[Value]]: <I>V</I>}.</SPAN></span></span></P>
@@ -6808,7 +6825,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		IsAccessorDescriptor(<I>desc</I>) is <B>true</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>setter </I>be <I>desc</I>.[[Set]] which cannot be <B>undefined</B>.</SPAN></span></span></P>
@@ -6821,7 +6838,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 		create a named data property named <I>P </I>on object <I>O </I>as
 		follows</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>newDesc</I> be the Property Descriptor<BR>{[[Value]]: <I>V</I>,
@@ -6873,7 +6890,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>desc</I>.[[Configurable]] is <B>true</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Remove
 			the own property with name <I>P</I> from <I>O</I>.</SPAN></span></span></P>
@@ -6902,7 +6919,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		IsCallable(<I>toString)</I> is <B>true </B>then,</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>str</I> be the result of calling the [[Call]] internal method
@@ -6920,7 +6937,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		IsCallable(<I>valueOf)</I> is <B>true</B> then, </SPAN></span></span>
 		</P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>val</I> be the result of calling the [[Call]] internal method
@@ -6946,7 +6963,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		IsCallable(<I>valueOf)</I> is <B>true</B> then,</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>val</I> be the result of calling the [[Call]] internal method
@@ -6963,7 +6980,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		IsCallable(<I>toString)</I> is <B>true</B> then,</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>str</I> be the result of calling the [[Call]] internal method
@@ -7025,7 +7042,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>current</I> is <B>undefined</B> and <I>extensible</I> is <B>true</B>,
 		then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			 IsGenericDescriptor(<I>Desc</I>) or IsDataDescriptor(<I>Desc</I>)
@@ -7067,7 +7084,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		the [[Configurable]] field of <I>current</I> is <B>false</B> then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Reject,
 			if the [[Configurable]] field of <I>Desc</I> is <B>true</B>.</SPAN></span></span></P>
@@ -7085,7 +7102,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 		if IsDataDescriptor(<I>current</I>) and IsDataDescriptor(<I>Desc</I>)
 		have different results, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Reject,
 			if the [[Configurable]] field of <I>current</I> is <B>false</B>. </SPAN></span></span>
@@ -7118,7 +7135,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 		if IsDataDescriptor(<I>current</I>) and IsDataDescriptor(<I>Desc</I>)
 		are both <B>true</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			the [[Configurable]] field of <I>current</I> is <B>false</B>, then</SPAN></span></span></P>
@@ -7130,7 +7147,7 @@
 				<LI><P>
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 				the [[Writable]] field of <I>current</I> is <B>false</B>, then</SPAN></span></span></P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Reject,
 					if the [[Value]] field of <I>Desc</I> is present and
@@ -7148,7 +7165,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 		IsAccessorDescriptor(<I>current</I>) and IsAccessorDescriptor(<I>Desc</I>)
 		are both <B>true</B> so,</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			the [[Configurable]] field of <I>current</I> is <B>false</B>, then</SPAN></span></span></P>
@@ -7637,7 +7654,7 @@
 	full. This value is determined in two steps: first, a mathematical
 	value (MV) is derived from the String numeric literal; second, this
 	mathematical value is rounded as described below.</SPAN></span></span></P>
-	<UL STYLE="margin-left: 0.64cm">
+	<ul class="outer">
 		<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0.42cm; ">
 		<span class="sans-serif-arial"><span class=font-size-2><SPAN>The
 		MV of <span class="serif-time-new-roman"><I>StringNumericLiteral</I></span>
@@ -7890,7 +7907,7 @@
 	and then incrementing the literal at the 20th digit position. A
 	digit is <I>significant</I> if it is not part of an <span class="serif-time-new-roman"><I>ExponentPart</I></span>
 	and</SPAN></span></span></P>
-	<UL STYLE="margin-left: 0.64cm">
+	<ul class="outer">
 		<LI><P STYLE="margin-left: 0.38cm; margin-top: 0.04cm; margin-bottom: 0cm; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN><span class="sans-serif-arial">it
 		is not </span><span class="sans-serif-arial"><B>0</B></span><span class="sans-serif-arial">;
@@ -7959,7 +7976,7 @@
 	</OL>
 	<P STYLE="margin-top: 0cm; margin-bottom: 0.21cm"><span class="sans-serif-arial"><p class="note">Given
 	the above definition of ToInt32:</SPAN></span></P>
-	<UL STYLE="margin-left: 0.64cm">
+	<ul class="outer">
 		<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0.42cm">
 		<span class="sans-serif-arial"><SPAN>The ToInt32
 		abstract operation is idempotent: if applied to a result that it
@@ -8010,7 +8027,7 @@
 	</OL>
 	<P STYLE="margin-top: 0cm; margin-bottom: 0.21cm"><span class="sans-serif-arial"><p class="note">Given
 	the above definition of ToUInt32:</SPAN></span></P>
-	<UL STYLE="margin-left: 0.64cm">
+	<ul class="outer">
 		<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0.42cm">
 		<span class="sans-serif-arial"><SPAN>Step 5 is the
 		only difference between ToUint32 and ToInt32.</SPAN></span></P>
@@ -8064,7 +8081,7 @@
 	</OL>
 	<P STYLE="margin-top: 0cm; margin-bottom: 0.21cm"><span class="sans-serif-arial"><p class="note">Given
 	the above definition of ToUint16:</SPAN></span></P>
-	<UL STYLE="margin-left: 0.64cm">
+	<ul class="outer">
 		<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0.42cm">
 		<span class="sans-serif-arial"><SPAN>The substitution
 		of <span class="serif-time-new-roman">2</span><SUP><span class="serif-time-new-roman">16</span></SUP>
@@ -8252,7 +8269,7 @@
 	1	The following observations may be useful as guidelines for
 	implementations, but are not part of the normative requirements of
 	this Standard:</SPAN></span></P>
-	<UL STYLE="margin-left: 0.64cm">
+	<ul class="outer">
 		<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0.42cm">
 		<span class="sans-serif-arial"><SPAN>If x is any
 		Number value other than <span class="serif-symbol"><B>&#x2212;</B></span><B>0</B>,
@@ -8605,7 +8622,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		Type(<I>x</I>) is Number, then.</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			<I>x</I> is NaN and <I>y</I> is NaN, return <B>true</B>.</SPAN></span></span></P>
@@ -8693,7 +8710,7 @@
 	three types of ECMAScript code are referred to as strict global
 	code, strict eval code, and strict function code. Code is
 	interpreted as strict mode code in the following situations:</SPAN></span></span></P>
-	<UL STYLE="margin-left: 0.64cm">
+	<ul class="outer">
 		<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0.42cm; ">
 		<span class="sans-serif-arial"><span class=font-size-2><SPAN>Global
 		code is strict global code if it begins with a Directive Prologue
@@ -9079,7 +9096,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		the binding for <I>N</I> in <I>envRec</I> is an uninitialized
 		immutable binding, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			<I>S</I> is <B>false</B>, return the value <B>undefined</B>,
@@ -9315,7 +9332,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>value</I> is <B>false</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			<I>S</I> is <B>false</B>, return the value <B>undefined</B>,
@@ -9387,7 +9404,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>lex</I> is the value <B>null</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Return
 			a value of type Reference whose base value is <B>undefined</B>,
@@ -9406,7 +9423,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>exists </I>is <span class="monospace-courier-new"><B>true</B></span>,
 		then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Return
 			a value of type Reference whose base value is <I>envRec</I>, whose
@@ -9415,7 +9432,7 @@
 		</OL>
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>outer </I>be the value of <I>lex’s</I> outer environment
@@ -9685,7 +9702,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		there is no calling context or if the eval code is not being
 		evaluated by a direct call (15.1.2.1.1) to the eval function then,</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Initialize
 			the execution context as if it was a global execution context
@@ -9693,7 +9710,7 @@
 		</OL>
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Set
 			the ThisBinding to the same value as the ThisBinding of the
@@ -9710,7 +9727,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		the eval code is strict code, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>strictVarEnv</I> be the result of calling
@@ -9815,7 +9832,7 @@
 		<I>code </I>is function code, then</SPAN></span></span></P>
 	</OL>
 	<OL STYLE="margin-left: 0cm">
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>func </I>be the function whose [[Call]] internal method
@@ -9864,7 +9881,7 @@
 		text order do</SPAN></span></span></P>
 	</OL>
 	<OL STYLE="margin-left: 0cm">
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>fn</I> be the <I>Identifier</I> in <I>FunctionDeclaration</I>
@@ -9900,7 +9917,7 @@
 		<B>false</B>, then</SPAN></span></span></P>
 	</OL>
 	<OL STYLE="margin-left: 0cm">
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>argsObj </I>be the result of calling the abstract operation
@@ -10036,7 +10053,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat
 		while <I>indx</I> &gt;= 0, </SPAN></span></span>
 		</P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>val</I> be the element of <I>args</I> at 0-origined list
@@ -10060,7 +10077,7 @@
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 				<I>strict</I> is <B>false</B> and <I>name</I> is not an element
 				of  <I>mappedNames</I>, then</SPAN></span></span></P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Add
 					<I>name</I> as an element of the list <I>mappedNames</I>.</SPAN></span></span></P>
@@ -10087,7 +10104,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>mappedNames</I> is not empty, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Set
 			the [[ParameterMap]] internal property of <I>obj</I> to <I>map</I>.</SPAN></span></span></P>
@@ -10100,7 +10117,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>strict</I> is <B>false</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Call
 			the [[DefineOwnProperty]] internal method on <I>obj</I> passing
@@ -10112,7 +10129,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 		<I>strict</I> is <B>true </B>so</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>thrower</I> be the [[ThrowTypeError]] function Object (13.2.3).</SPAN></span></span></P>
@@ -10195,7 +10212,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		the value of <I>isMapped</I> is <B>undefined</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>v</I> be the result of calling the default [[Get]] internal
@@ -10214,7 +10231,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 		<I>map</I> contains a formal parameter mapping for <I>P</I> so, </SPAN></span></span>
 		</P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-top: 0cm; margin-bottom: 0.21cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Return
 			the result of calling the [[Get]] internal method of <I>map</I>
@@ -10247,7 +10264,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		the value of <I>isMapped</I> is not <B>undefined</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Set
 			<I>desc</I>.[[Value]] to the result of calling the [[Get]]
@@ -10284,7 +10301,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>allowed</I> is <B>false</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			<I>Throw </I>is <B>true </B>then throw a <B>TypeError </B>exception,
@@ -10293,7 +10310,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		the value of <I>isMapped </I>is not <B>undefined</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			IsAccessorDescriptor(<I>Desc</I>) is <B>true</B>, then</SPAN></span></span></P>
@@ -10309,7 +10326,7 @@
 				<LI><P>
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 				<I>Desc</I>.[[Value]] is present, then</SPAN></span></span></P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Call
 					the [[Put]] internal method of <I>map </I>passing <I>P</I>,
@@ -10319,7 +10336,7 @@
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 				<I>Desc</I>.[[Writable]] is present and its value is <B>false</B>,
 				then</SPAN></span></span></P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Call
 					the [[Delete]] internal method of <I>map </I>passing <I>P </I>and
@@ -10356,7 +10373,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>result</I> is  <B>true</B> and the value of <I>isMapped</I> is
 		not <B>undefined</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Call
 			the [[Delete]] internal method of <I>map</I> passing <I>P</I>, and
@@ -10775,7 +10792,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>previous</I> is not <B>undefined</B> then throw a <B>SyntaxError</B>
 		exception if any of the following conditions are true</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-top: 0cm; margin-bottom: 0.39cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>This
 			production is contained in strict code and
@@ -11210,7 +11227,7 @@
 		<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		Type(<I>ref</I>) is Reference, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			IsPropertyReference(<I>ref</I>) is <B>true</B>, then</SPAN></span></span></P>
@@ -11232,7 +11249,7 @@
 		<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 		Type(<I>ref</I>) is not Reference.</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>thisValue</I> be <B>undefined</B>.</SPAN></span></span></P>
@@ -11493,7 +11510,7 @@
 		<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0.39cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		IsUnresolvableReference(<I>ref</I>) then,</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0.39cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			IsStrictReference(<I>ref</I>) is <B>true</B>, throw a <B>SyntaxError</B>
@@ -11505,7 +11522,7 @@
 		<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0.39cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		IsPropertyReference(<I>ref</I>) is <B>true</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0.39cm; letter-spacing: 0.3pt; "><A NAME="_Ref458400786"></A>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Return
 			the result of calling the [[Delete]] internal method on
@@ -11515,7 +11532,7 @@
 		<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0.39cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 		<I>ref</I> is a Reference to an Environment Record binding, so</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0.39cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			IsStrictReference(<I>ref</I>) is <B>true</B>, throw a <B>SyntaxError</B>
@@ -11577,7 +11594,7 @@
 		<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0.39cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		Type(<I>val</I>) is Reference, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0.39cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			IsUnresolvableReference(<I>val</I>) is <B>true</B>, return
@@ -12063,9 +12080,9 @@
 			the result is </span><span class="sans-serif-arial"><B>NaN</B></span><span class="sans-serif-arial">.</span></SPAN></span></span></P>
 		</UL>
 	</UL>
-	<UL STYLE="margin-left: 0.64cm">
-		<UL STYLE="margin-left: 1.27cm">
-			<UL STYLE="margin-left: 1.27cm">
+	<ul class="outer">
+		<ul class="inner">
+			<ul class="inner">
 				<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
 				<span class="sans-serif-arial"><span class=font-size-2><SPAN>The
 				sign of the result equals the sign of the dividend.</SPAN></span></span></P>
@@ -12144,7 +12161,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		Type(<I>lprim</I>) is String or Type(<I>rprim</I>) is String, then </SPAN></span></span>
 		</P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Return
 			the String that is the result of concatenating ToString(<I>lprim</I>)
@@ -12620,7 +12637,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		the <I>LeftFirst </I>flag is <B>true</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>px </I>be the result of calling ToPrimitive(<I>x</I>, hint
@@ -12634,7 +12651,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else
 		the order of evaluation needs to be reversed to preserve left to
 		right evaluation</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>py </I>be the result of calling ToPrimitive(<I>y</I>, hint
@@ -12649,7 +12666,7 @@
 		it is not the case that both Type(<I>px</I>) is String and Type(<I>py</I>)
 		is String, then </SPAN></span></span>
 		</P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>nx </I>be the result of calling ToNumber(<I>px</I>). Because <I>px
@@ -12701,7 +12718,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 		both <I>px </I>and <I>py </I>are Strings</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			<I>py</I> is a prefix of <I>px</I>, return <B>false</B>. (A String
@@ -12925,7 +12942,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		Type(<I>x</I>) is the same as Type(<I>y</I>), then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>	If
 			Type(<I>x</I>) is Undefined, return <B>true</B>.</SPAN></span></span></P>
@@ -13155,7 +13172,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		Type(<I>x</I>) is Number, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			<I>x</I> is <B>NaN</B>, return <B>false</B>.</SPAN></span></span></P>
@@ -13418,7 +13435,7 @@
 		<LI><P STYLE="margin-left: 1.6cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		ToBoolean(GetValue(<I>lref</I>)) is <B>true</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-left: 1.6cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>trueRef</I> be the result of evaluating the first
@@ -13429,7 +13446,7 @@
 		</OL>
 		<LI><P STYLE="margin-left: 1.6cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-left: 1.6cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>falseRef</I> be the result of evaluating the second
@@ -14153,14 +14170,14 @@
 		<LI><P STYLE="margin-left: 1.6cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		ToBoolean(GetValue(<I>exprRef</I>)) is <B>true</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-left: 1.6cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Return
 			the result of evaluating the first <I>Statement</I>.</SPAN></span></span></P>
 		</OL>
 		<LI><P STYLE="margin-left: 1.6cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-left: 1.6cm; margin-top: 0cm; margin-bottom: 0.39cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Return
 			the result of evaluating the second <I>Statement</I>.</SPAN></span></span></P>
@@ -14245,7 +14262,7 @@
 		<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat,
 		while <I>iterating</I> is <B>true</B></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>stmt</I> be the result of evaluating <I>Statement</I>.</SPAN></span></span></P>
@@ -14294,7 +14311,7 @@
 		<I>V</I> = <span class="sans-serif-arial">empty</span>.</SPAN></span></span></P>
 		<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>exprRef</I> be the result of evaluating <I>Expressio</I>n.</SPAN></span></span></P>
@@ -14318,7 +14335,7 @@
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 				<I>stmt</I>.type is <span class="sans-serif-arial">break</span>
 				and <I>stmt</I>.target is in the current label set, then</SPAN></span></span></P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Return
 					(<span class="sans-serif-arial">normal</span>, <I>V</I>, <span class="sans-serif-arial">empty</span>).</SPAN></span></span></P>
@@ -14344,7 +14361,7 @@
 		<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>ExpressionNoIn</I> is present, then.</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>exprRef</I> be the result of evaluating <I>ExpressionNoIn</I>.</SPAN></span></span></P>
@@ -14357,7 +14374,7 @@
 		<I>V</I> = <span class="sans-serif-arial">empty</span>.</SPAN></span></span></P>
 		<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			the first <I>Expression</I> is present, then</SPAN></span></span></P>
@@ -14426,7 +14443,7 @@
 		V = <span class="sans-serif-arial">empty</span>.</SPAN></span></span></P>
 		<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			the first <I>Expression</I> is present, then</SPAN></span></span></P>
@@ -14506,7 +14523,7 @@
 		<I>V</I> = <span class="sans-serif-arial">empty</span>.</SPAN></span></span></P>
 		<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>P</I> be the name of the next property of <I>obj</I> whose
@@ -14575,7 +14592,7 @@
 		<I>V</I> = <span class="sans-serif-arial">empty</span>.</SPAN></span></span></P>
 		<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>P</I> be the name of the next property of <I>obj</I> whose
@@ -14968,7 +14985,7 @@
 		<span class="sans-serif-arial"><span class=font-size-2><SPAN><span class="serif-time-new-roman"><SPAN>Repeat,
 		while </SPAN></span><span class="serif-time-new-roman"><SPAN><I>searching</I></SPAN></span><span class="serif-time-new-roman"><SPAN>
 		is </SPAN></span><span class="serif-time-new-roman"><SPAN><B>true</B></SPAN></span></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-top: 0.18cm; margin-bottom: 0.18cm; ">
 			<span class="sans-serif-arial"><span class=font-size-2><SPAN><span class="serif-time-new-roman"><SPAN>Let
 			</SPAN></span><span class="serif-time-new-roman"><SPAN><I>C</I></SPAN></span><span class="serif-time-new-roman"><SPAN>
@@ -14999,7 +15016,7 @@
 				has a </SPAN></span><span class="serif-time-new-roman"><SPAN><I>StatementList</I></SPAN></span><span class="serif-time-new-roman"><SPAN>,
 				then </SPAN></span></SPAN></span></span>
 				</P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P STYLE="margin-top: 0.18cm; margin-bottom: 0.18cm; ">
 					<span class="sans-serif-arial"><span class=font-size-2><SPAN><span class="serif-time-new-roman"><SPAN>Evaluate</SPAN></span><span class="serif-time-new-roman"><SPAN><I>
 					C</I></SPAN></span><span class="serif-time-new-roman"><SPAN>’s
@@ -15022,7 +15039,7 @@
 		</OL>
 		<LI><P STYLE="margin-top: 0.18cm; margin-bottom: 0.18cm; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-top: 0.18cm; margin-bottom: 0.18cm; ">
 			<span class="sans-serif-arial"><span class=font-size-2><SPAN><span class="serif-time-new-roman"><SPAN>Let</SPAN></span><span class="serif-time-new-roman"><SPAN><I>
 			C</I></SPAN></span><span class="serif-time-new-roman"><SPAN>
@@ -15099,7 +15116,7 @@
 		letting </SPAN></span><span class="serif-time-new-roman"><SPAN><I>C</I></SPAN></span><span class="serif-time-new-roman"><SPAN>
 		be in order each </SPAN></span><span class="serif-time-new-roman"><SPAN><I>CaseClause</I></SPAN></span><span class="serif-time-new-roman"><SPAN>
 		in </SPAN></span><span class="serif-time-new-roman"><SPAN><I>A</I></SPAN></span></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P class="smaller-bottom">
 			<span class="sans-serif-arial"><span class=font-size-2><SPAN><span class="serif-time-new-roman"><SPAN>If
 			</SPAN></span><span class="serif-time-new-roman"><SPAN><I>found</I></SPAN></span><span class="serif-time-new-roman"><SPAN>
@@ -15128,7 +15145,7 @@
 				<span class="sans-serif-arial"><span class=font-size-2><SPAN><span class="serif-time-new-roman"><SPAN>If
 				</SPAN></span><span class="serif-time-new-roman"><SPAN><I>C</I></SPAN></span><span class="serif-time-new-roman"><SPAN>
 				has a StatementList, then</SPAN></span></SPAN></span></span></P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P class="smaller-bottom">
 					<span class="sans-serif-arial"><span class=font-size-2><SPAN><span class="serif-time-new-roman"><SPAN>Evaluate
 					</SPAN></span><span class="serif-time-new-roman"><SPAN><I>C</I></SPAN></span><span class="serif-time-new-roman"><SPAN>’s
@@ -15162,7 +15179,7 @@
 		is </SPAN></span><span class="serif-time-new-roman"><SPAN><B>false</B></SPAN></span><span class="serif-time-new-roman"><SPAN>,
 		then </SPAN></span></SPAN></span></span>
 		</P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P class="smaller-bottom">
 			<span class="sans-serif-arial"><span class=font-size-2><SPAN><span class="serif-time-new-roman"><SPAN>Repeat,
 			while </SPAN></span><span class="serif-time-new-roman"><SPAN><I>foundInB</I></SPAN></span><span class="serif-time-new-roman"><SPAN>
@@ -15187,7 +15204,7 @@
 				is equal to </SPAN></span><span class="serif-time-new-roman"><SPAN><I>clauseSelector</I></SPAN></span><span class="serif-time-new-roman"><SPAN>
 				as defined by the </SPAN></span><span class="monospace-courier-new"><SPAN>===</SPAN></span><span class="serif-time-new-roman"><SPAN>
 				operator, then</SPAN></span></SPAN></span></span></P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P class="smaller-bottom">
 					<span class="sans-serif-arial"><span class=font-size-2><SPAN><span class="serif-time-new-roman"><SPAN>Set
 					</SPAN></span><span class="serif-time-new-roman"><SPAN><I>foundInB</I></SPAN></span><span class="serif-time-new-roman"><SPAN>
@@ -15202,10 +15219,10 @@
 		</OL>
 	</OL>
 	<OL STYLE="margin-left: 0cm">
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<OL TYPE=i STYLE="margin-left: 1.27cm">
-				<OL STYLE="margin-left: 1.27cm">
-					<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
+					<ol class="inner">
 						<LI><P class="smaller-bottom">
 						<span class="sans-serif-arial"><span class=font-size-2><SPAN><span class="serif-time-new-roman"><SPAN>Evaluate
 						</SPAN></span><span class="serif-time-new-roman"><SPAN><I>C</I></SPAN></span><span class="serif-time-new-roman"><SPAN>’s
@@ -15239,7 +15256,7 @@
 		and the </SPAN></span><span class="serif-time-new-roman"><SPAN><I>DefaultClause</I></SPAN></span><span class="serif-time-new-roman"><SPAN>
 		has a </SPAN></span><span class="serif-time-new-roman"><SPAN><I>StatementList</I></SPAN></span><span class="serif-time-new-roman"><SPAN>,
 		then</SPAN></span></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P class="smaller-bottom">
 			<span class="sans-serif-arial"><span class=font-size-2><SPAN><span class="serif-time-new-roman"><SPAN>Evaluate
 			the </SPAN></span><span class="serif-time-new-roman"><SPAN><I>DefaultClause’s</I></SPAN></span><span class="serif-time-new-roman"><SPAN>
@@ -15263,7 +15280,7 @@
 		<span class="sans-serif-arial"><span class=font-size-2><SPAN><span class="serif-time-new-roman"><SPAN>Repeat
 		(Note that if step 7.a.i has been performed this loop does not
 		start at the beginning of </SPAN></span><span class="serif-time-new-roman"><SPAN><I>B</I></SPAN></span><span class="serif-time-new-roman"><SPAN>)</SPAN></span></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P class="smaller-bottom">
 			<span class="sans-serif-arial"><span class=font-size-2><SPAN><span class="serif-time-new-roman"><SPAN>Let
 			</SPAN></span><span class="serif-time-new-roman"><SPAN><I>C</I></SPAN></span><span class="serif-time-new-roman"><SPAN>
@@ -15499,7 +15516,7 @@
 		<LI><P STYLE="margin-left: 1.6cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>B</I>.type is <span class="sans-serif-arial">throw</span>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-left: 1.6cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>C</I> be the result of evaluating <I>Catch</I> with parameter
@@ -15508,7 +15525,7 @@
 		<LI><P STYLE="margin-left: 1.6cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 		<I>B</I>.type is not <span class="sans-serif-arial">throw</span><B>,</B></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-left: 1.6cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>C</I> be<I> B</I>.</SPAN></span></span></P>
@@ -15619,7 +15636,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		an implementation defined debugging facility is available and
 		enabled, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-left: 1.6cm; margin-top: 0cm; margin-bottom: 0.39cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Perform
 			an implementation defined debugging action.</SPAN></span></span></P>
@@ -15630,7 +15647,7 @@
 		</OL>
 		<LI><P STYLE="margin-left: 1.6cm; margin-top: 0cm; margin-bottom: 0.39cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-left: 1.6cm; margin-top: 0cm; margin-bottom: 0.39cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>result</I> be (<span class="sans-serif-arial">normal</span>,
@@ -15955,7 +15972,7 @@
 		</span><span class="serif-time-new-roman"><I>Strict</I></span><span class="serif-time-new-roman">
 		is </span><span class="serif-time-new-roman"><B>true</B></span><span class="serif-time-new-roman">,
 		then</span></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="sans-serif-arial"><span class=font-size-2><SPAN><span class="serif-time-new-roman">Let
 			</span><span class="serif-time-new-roman"><I>thrower</I></span><span class="serif-time-new-roman">
@@ -16575,7 +16592,7 @@
 		<LI><P STYLE="margin-left: 2.4cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>R</I> <span class="serif-symbol">&#x2260;</span> 0, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-left: 2.4cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			<I>R</I> &lt; 2 or <I>R</I> &gt; 36, then return <B>NaN</B>.</SPAN></span></span></P>
@@ -16587,7 +16604,7 @@
 		<LI><P STYLE="margin-left: 2.4cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 		<I>R</I> = 0</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-left: 2.4cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>R</I> = 10.</SPAN></span></span></P>
@@ -16595,7 +16612,7 @@
 		<LI><P STYLE="margin-left: 2.4cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>stripPrefix</I> is <B>true</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-left: 2.4cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			the length of <I>S</I> is at least 2 and the first two characters
@@ -16842,7 +16859,7 @@
 		<I>k</I> be 0.</SPAN></span></span></P>
 		<LI><P STYLE="margin-left: 2cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-left: 2cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			<I>k</I> equals <I>strLen</I>, return <I>R</I>.</SPAN></span></span></P>
@@ -16873,7 +16890,7 @@
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 				the code unit value of <I>C</I> is less than 0xD800 or greater
 				than 0xDBFF, then</SPAN></span></span></P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P STYLE="margin-left: 2cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 					<I>V</I> be the code unit value of <I>C</I>.</SPAN></span></span></P>
@@ -16882,7 +16899,7 @@
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 				</SPAN></span></span>
 				</P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P STYLE="margin-left: 2cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Increase
 					<I>k</I> by 1.</SPAN></span></span></P>
@@ -16914,7 +16931,7 @@
 				<LI><P STYLE="margin-left: 2cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat,
 				while <I>j</I> &lt; <I>L</I></SPAN></span></span></P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P STYLE="margin-left: 2cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 					<I>jOctet</I> be the value at position <I>j</I> within <I>Octets</I>.</SPAN></span></span></P>
@@ -16954,7 +16971,7 @@
 		<I>k</I> be 0.</SPAN></span></span></P>
 		<LI><P STYLE="margin-left: 2cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-left: 2cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			<I>k</I> equals <I>strLen</I>, return <I>R</I>.</SPAN></span></span></P>
@@ -16996,14 +17013,14 @@
 				<LI><P STYLE="margin-left: 2cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 				the most significant bit in <I>B</I> is 0, then</SPAN></span></span></P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P STYLE="margin-left: 2cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 					<I>C</I> be the character with code unit value <I>B</I>.</SPAN></span></span></P>
 					<LI><P STYLE="margin-left: 2cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 					<I>C</I> is not in <I>reservedSet</I>, then</SPAN></span></span></P>
-					<OL STYLE="margin-left: 1.27cm">
+					<ol class="inner">
 						<LI><P STYLE="margin-left: 2cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 						<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 						<I>S</I> be the String containing only the character <I>C</I>.</SPAN></span></span></P>
@@ -17011,7 +17028,7 @@
 					<LI><P STYLE="margin-left: 2cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 					<I>C</I> is in <I>reservedSet</I></SPAN></span></span></P>
-					<OL STYLE="margin-left: 1.27cm">
+					<ol class="inner">
 						<LI><P STYLE="margin-left: 2cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 						<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 						<I>S</I> be the substring of <I>string</I> from position <I>start</I>
@@ -17021,7 +17038,7 @@
 				<LI><P STYLE="margin-left: 2cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 				the most significant bit in <I>B</I> is 1</SPAN></span></span></P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P STYLE="margin-left: 2cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 					<I>n</I> be the smallest non-negative number such that (<I>B</I>
@@ -17046,7 +17063,7 @@
 					<LI><P STYLE="margin-left: 2cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat,
 					while <I>j</I> &lt; <I>n</I></SPAN></span></span></P>
-					<OL STYLE="margin-left: 1.27cm">
+					<ol class="inner">
 						<LI><P STYLE="margin-left: 2cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 						<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Increment
 						<I>k</I> by 1.</SPAN></span></span></P>
@@ -17087,7 +17104,7 @@
 					<LI><P STYLE="margin-left: 2cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 					<I>V</I> is less than 0x10000, then</SPAN></span></span></P>
-					<OL STYLE="margin-left: 1.27cm">
+					<ol class="inner">
 						<LI><P STYLE="margin-left: 2cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 						<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 						<I>C</I> be the character with code unit value <I>V</I>.</SPAN></span></span></P>
@@ -17112,7 +17129,7 @@
 					<LI><P STYLE="margin-left: 2cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 					<I>V</I> is ≥ 0x10000</SPAN></span></span></P>
-					<OL STYLE="margin-left: 1.27cm">
+					<ol class="inner">
 						<LI><P STYLE="margin-left: 2cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 						<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 						<I>V</I> is greater than 0x10FFFF, throw a <B>URIError</B>
@@ -17717,7 +17734,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>value</I> is supplied, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			Type(<I>value</I>)  is Object, then</SPAN></span></span></P>
@@ -17848,7 +17865,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>For
 		each named own property <I>P </I>of <I>O</I></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>name </I>be the String value that is the name of <I>P</I>.</SPAN></span></span></P>
@@ -17953,7 +17970,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>For
 		each element <I>P</I> of <I>names</I> in list order,</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>descObj</I> be the result of calling the [[Get]] internal
@@ -17969,7 +17986,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>For
 		 each element <I>desc</I> of <I>descriptors</I> in list order,</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Call
 			the [[DefineOwnProperty]] internal method of <I>O</I> with
@@ -17996,7 +18013,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>For
 		each named own property name <I>P</I> of <I>O</I>,</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>desc </I>be the result of calling the [[GetOwnProperty]]
@@ -18029,7 +18046,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>For
 		each named own property name <I>P</I> of <I>O</I>,</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>desc </I>be the result of calling the [[GetOwnProperty]]
@@ -18089,7 +18106,7 @@
 		<LI><P STYLE="margin-left: 2.4cm; margin-top: 0cm; margin-bottom: 0.21cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>For
 		each named own property name <I>P</I> of <I>O</I>,</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-left: 2.4cm; margin-top: 0cm; margin-bottom: 0.21cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>desc </I>be the result of calling the [[GetOwnProperty]]
@@ -18119,7 +18136,7 @@
 		<LI><P STYLE="margin-left: 2.4cm; margin-top: 0cm; margin-bottom: 0.21cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>For
 		each named own property name <I>P</I> of <I>O</I>,</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-left: 2.4cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>desc </I>be the result of calling the [[GetOwnProperty]]
@@ -18186,7 +18203,7 @@
 		each own enumerable property of <I>O</I> whose name String is <I>P</I>
 		</SPAN></span></span>
 		</P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Call
 			the [[DefineOwnProperty]] internal method of <I>array</I> with
@@ -18293,7 +18310,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>O</I> is the result of calling the Object constructor with a
 		host object (15.2.2.1), then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Return
 			either <I>O</I> or another value such as the host object
@@ -18355,7 +18372,7 @@
 		</B>value as the argument.</SPAN></span></span></P>
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>V</I> be the value of the [[Prototype]] internal property of <I>V</I>.</SPAN></span></span></P>
@@ -18485,7 +18502,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 		<I>argCount</I> &gt; 1</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>firstArg</I> be the first argument.</SPAN></span></span></P>
@@ -18655,7 +18672,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>argArray</I> is <B>null</B> or <B>undefined</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Return
 			the result of calling the [[Call]] internal method of <I>func</I>,
@@ -18690,7 +18707,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat
 		while <I>index</I> &lt; <I>n</I></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>indexName</I> be ToString(<I>index</I>).</SPAN></span></span></P>
@@ -18826,7 +18843,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		the [[Class]] internal property of <I>Target </I>is <B>&quot;Function&quot;</B>,
 		then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>L </I>be the <B>length </B>property of <I>Target </I>minus the
@@ -19039,7 +19056,7 @@
 		Type(<I>O</I>) is not Object, throw a <B>TypeError</B> exception.</SPAN></span></span></P>
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>V</I> be the value of the [[Prototype]] internal property of <I>V</I>.</SPAN></span></span></P>
@@ -19129,7 +19146,7 @@
 		<span class="sans-serif-arial"><span class=font-size-2><SPAN><span class="serif-time-new-roman"><SPAN STYLE="letter-spacing: 0.3pt">For
 		each integer </SPAN></span><span class="serif-time-new-roman"><SPAN STYLE="letter-spacing: 0.3pt"><I>i</I></SPAN></span><span class="serif-time-new-roman"><SPAN STYLE="letter-spacing: 0.3pt">
 		in the range 0≤</SPAN></span><span class="serif-time-new-roman"><SPAN STYLE="letter-spacing: 0.3pt"><I>i</I></SPAN></span><span class="serif-time-new-roman"><SPAN STYLE="letter-spacing: 0.3pt">&lt;ToUint32(</SPAN></span><span class="serif-time-new-roman"><SPAN STYLE="letter-spacing: 0.3pt"><I>len</I></SPAN></span><span class="serif-time-new-roman"><SPAN STYLE="letter-spacing: 0.3pt">)</SPAN></span></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P class="smaller-bottom">
 			<span class="sans-serif-arial"><span class=font-size-2><SPAN><span class="serif-time-new-roman"><SPAN STYLE="letter-spacing: 0.3pt">Let
 			</SPAN></span><span class="serif-time-new-roman"><SPAN STYLE="letter-spacing: 0.3pt"><I>elem</I></SPAN></span><span class="serif-time-new-roman"><SPAN STYLE="letter-spacing: 0.3pt">
@@ -19389,7 +19406,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>firstElement</I> is <B>undefined</B> or <B>null</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>R</I> be the empty String.</SPAN></span></span></P>
@@ -19398,7 +19415,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else
 		</SPAN></span></span>
 		</P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>elementObj</I> be ToObject(<I>firstElement</I>).</SPAN></span></span></P>
@@ -19423,7 +19440,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat,
 		while <I>k</I> &lt; <I>len</I></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>S</I> be a String value produced by concatenating <I>R</I> and
@@ -19521,7 +19538,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat,
 		while <I>items</I> is not empty</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Remove
 			the first element from <I>items</I> and let <I>E</I> be the value
@@ -19542,7 +19559,7 @@
 				<LI><P>
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat,
 				while <I>k</I> &lt; <I>len</I></SPAN></span></span></P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 					<I>P</I> be ToString(<I>k</I>).</SPAN></span></span></P>
@@ -19553,7 +19570,7 @@
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 					<I>exists</I> is <B>true</B>, then</SPAN></span></span></P>
-					<OL STYLE="margin-left: 1.27cm">
+					<ol class="inner">
 						<LI><P>
 						<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 						<I>subElement</I> be the result of calling the [[Get]] internal
@@ -19653,7 +19670,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat,
 		while <I>k</I> &lt; <I>len</I></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>S</I> be the String value produced by concatenating <I>R</I>
@@ -19712,7 +19729,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>len</I> is zero, </SPAN></span></span>
 		</P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Call
 			the [[Put]] internal method of <I>O</I> with arguments <span class="monospace-courier-new"><span class=font-size-2>&quot;</span></span><span class="monospace-courier-new"><B>length</B></span><span class="monospace-courier-new"><span class=font-size-2>&quot;</span></span>,
@@ -19724,7 +19741,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 		<I>len</I> &gt; 0</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>indx</I> be ToString(<I>len</I>–1).</SPAN></span></span></P>
@@ -19784,7 +19801,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat,
 		while <I>items</I> is not empty</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Remove
 			the first element from <I>items</I> and let <I>E</I> be the value
@@ -19844,7 +19861,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat,
 		while <I>lower</I> <span class="serif-symbol">&#x2260;</span> <I>middle</I></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>upper</I> be <I>len</I><span class="serif-symbol">&#x2212;</span><I>
@@ -19956,7 +19973,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>len</I> is zero, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Call
 			the [[Put]] internal method of <I>O</I> with arguments <span class="monospace-courier-new"><span class=font-size-2>&quot;</span></span><span class="monospace-courier-new"><B>length</B></span><span class="monospace-courier-new"><span class=font-size-2>&quot;</span></span>,
@@ -19975,7 +19992,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat,
 		while <I>k</I> &lt; <I>len</I></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>from</I> be ToString(<I>k</I>).</SPAN></span></span></P>
@@ -20089,7 +20106,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat,
 		while <I>k</I> &lt; <I>final</I></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>Pk</I> be ToString(<I>k</I>).</SPAN></span></span></P>
@@ -20175,7 +20192,7 @@
 	such that all of the conditions below are satisfied then the
 	behaviour of <span class="monospace-courier-new"><B>sort</B></span>
 	is implementation-defined:</SPAN></span></span></P>
-	<UL STYLE="margin-left: 0.64cm">
+	<ul class="outer">
 		<LI><P>
 		<span class="sans-serif-arial"><span class=font-size-2><SPAN><span class="serif-time-new-roman"><I>obj</I></span>
 		is sparse (15.4)</SPAN></span></span></P>
@@ -20193,7 +20210,7 @@
 	behaviour of <span class="monospace-courier-new"><B>sort</B></span>
 	is also implementation defined if <span class="serif-time-new-roman"><I>obj
 	</I></span>is sparse and any of the following conditions are true:</SPAN></span></span></P>
-	<UL STYLE="margin-left: 0.64cm">
+	<ul class="outer">
 		<LI><P>
 		<span class="sans-serif-arial"><span class=font-size-2><SPAN>The
 		[[Extensible]] internal property of <span class="serif-time-new-roman"><I>obj</I></span>
@@ -20234,7 +20251,7 @@
 	<P STYLE="margin-top: 0cm; margin-bottom: 0.42cm; ; page-break-after: avoid">
 	<span class="sans-serif-arial"><span class=font-size-2><SPAN>The
 	returned object must have the following two properties.</SPAN></span></span></P>
-	<UL STYLE="margin-left: 0.64cm">
+	<ul class="outer">
 		<LI><P>
 		<span class="sans-serif-arial"><span class=font-size-2><SPAN>There
 		must be some mathematical permutation <span class="serif-symbol">&#x03c0;</span>
@@ -20281,7 +20298,7 @@
 	means <span class="serif-time-new-roman"><I>comparefn</I></span><span class="serif-time-new-roman">(</span><span class="serif-time-new-roman"><I>a</I></span><span class="serif-time-new-roman">,</span><span class="serif-time-new-roman"><I>b</I></span><span class="serif-time-new-roman">)&nbsp;=&nbsp;0</span>
 	(of either sign); and <span class="serif-time-new-roman"><I>a</I></span><span class="serif-time-new-roman">&nbsp;&gt;</span><SUB><span class="serif-time-new-roman">CF</span></SUB><span class="serif-time-new-roman">&nbsp;</span><span class="serif-time-new-roman"><I>b</I></span>
 	means <span class="serif-time-new-roman"><I>comparefn</I></span><span class="serif-time-new-roman">(</span><span class="serif-time-new-roman"><I>a</I></span><span class="serif-time-new-roman">,</span><span class="serif-time-new-roman"><I>b</I></span><span class="serif-time-new-roman">)&nbsp;&gt;&nbsp;0</span>.</SPAN></span></span></P>
-	<UL STYLE="margin-left: 0.64cm">
+	<ul class="outer">
 		<LI><P>
 		<span class="sans-serif-arial"><span class=font-size-2><SPAN><span class="serif-time-new-roman">Calling
 		</span><span class="serif-time-new-roman"><I>comparefn</I></span><span class="serif-time-new-roman">(</span><span class="serif-time-new-roman"><I>a</I></span><span class="serif-time-new-roman">,</span><span class="serif-time-new-roman"><I>b</I></span><span class="serif-time-new-roman">)
@@ -20383,7 +20400,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		the argument <I>comparefn</I> is not <B>undefined</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			IsCallable(<I>comparefn</I>) is <B>false</B>, throw a <B>TypeError</B>
@@ -20473,7 +20490,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat,
 		while <I>k</I> &lt; <I>actualDeleteCount</I></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>from</I> be ToString(<I>relativeStart</I>+<I>k</I>).</SPAN></span></span></P>
@@ -20511,7 +20528,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>itemCount</I> &lt; <I>actualDeleteCount</I>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>k</I> be <I>actualStart</I>.</SPAN></span></span></P>
@@ -20532,7 +20549,7 @@
 				<LI><P>
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 				<I>fromPresent</I> is <B>true</B>, then</SPAN></span></span></P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 					<I>fromValue</I> be the result of calling the [[Get]] internal
@@ -20545,7 +20562,7 @@
 				<LI><P>
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 				<I>fromPresent</I> is <B>false</B></SPAN></span></span></P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Call
 					the [[Delete]] internal method of <I>O</I> with arguments <I>to</I>
@@ -20576,7 +20593,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else
 		if <I>itemCount</I> &gt; <I>actualDeleteCount</I>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>k</I> be (<I>len</I> –<I> actualDeleteCount</I>).</SPAN></span></span></P>
@@ -20598,7 +20615,7 @@
 				<LI><P>
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 				<I>fromPresent</I> is <B>true</B>, then</SPAN></span></span></P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 					<I>fromValue</I> be the result of calling the [[Get]] internal
@@ -20611,7 +20628,7 @@
 				<LI><P>
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 				<I>fromPresent</I> is <B>false</B></SPAN></span></span></P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Call
 					the [[Delete]] internal method of <I>O</I> with argument <I>to</I>
@@ -20628,7 +20645,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat,
 		while <I>items</I> is not empty</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Remove
 			the first element from <I>items</I> and let <I>E</I> be the value
@@ -20696,7 +20713,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat,
 		while <I>k</I> &gt; 0, </SPAN></span></span>
 		</P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>from</I> be ToString(<I>k</I>–1).</SPAN></span></span></P>
@@ -20744,7 +20761,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat,
 		while <I>items</I> is not empty</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Remove
 			the first element from <I>items</I> and let <I>E</I> be the value
@@ -20825,7 +20842,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>n </I>≥ 0, then </SPAN></span></span>
 		</P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>k </I>be <I>n</I>.</SPAN></span></span></P>
@@ -20833,7 +20850,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 		<I>n</I>&lt;0</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>k </I>be <I>len</I> - abs(<I>n</I>).</SPAN></span></span></P>
@@ -20844,7 +20861,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat,
 		while <I>k</I>&lt;<I>len</I></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>kPresent</I> be the result of calling the [[HasProperty]]
@@ -20933,7 +20950,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 		 <I>n</I> &lt; 0</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>k</I> be <I>len</I> - abs(<I>n</I>).</SPAN></span></span></P>
@@ -20941,7 +20958,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat,
 		while <I>k</I>≥ <I>0</I></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>kPresent</I> be the result of calling the [[HasProperty]]
@@ -21057,7 +21074,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat,
 		while <I>k </I>&lt; <I>len</I></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>Pk</I> be ToString(<I>k</I>).</SPAN></span></span></P>
@@ -21175,7 +21192,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat,
 		while <I>k </I>&lt; <I>len</I></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>Pk</I> be ToString(<I>k</I>).</SPAN></span></span></P>
@@ -21289,7 +21306,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat,
 		while <I>k </I>&lt; <I>len</I></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>Pk</I> be ToString(<I>k</I>).</SPAN></span></span></P>
@@ -21404,7 +21421,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat,
 		while <I>k </I>&lt; <I>len</I></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>Pk</I> be ToString(<I>k</I>).</SPAN></span></span></P>
@@ -21530,7 +21547,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat,
 		while <I>k </I>&lt; <I>len</I></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>Pk</I> be ToString(<I>k</I>).</SPAN></span></span></P>
@@ -21555,7 +21572,7 @@
 				<LI><P>
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 				ToBoolean(<I>selected</I>) is <B>true</B>, then</SPAN></span></span></P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Call
 					the [[DefineOwnProperty]] internal method of <I>A</I> with
@@ -21657,7 +21674,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>initialValue</I> is present, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Set
 			<I>accumulator</I> to <I>initialValue</I>.</SPAN></span></span></P>
@@ -21665,7 +21682,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 		<I>initialValue</I> is not present</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>kPresent</I> be <B>false</B>.</SPAN></span></span></P>
@@ -21683,7 +21700,7 @@
 				<LI><P>
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 				<I>kPresent</I> is <B>true</B>, then</SPAN></span></span></P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 					<I>accumulator</I> be the result of calling the [[Get]] internal
@@ -21701,7 +21718,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat,
 		while <I>k </I>&lt; <I>len</I></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>Pk</I> be ToString(<I>k</I>).</SPAN></span></span></P>
@@ -21817,7 +21834,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>initialValue</I> is present, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Set
 			<I>accumulator</I> to <I>initialValue</I>.</SPAN></span></span></P>
@@ -21825,7 +21842,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 		<I>initialValue</I> is not present</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>kPresent</I> be <B>false</B>.</SPAN></span></span></P>
@@ -21843,7 +21860,7 @@
 				<LI><P>
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 				<I>kPresent</I> is <B>true</B>, then</SPAN></span></span></P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 					<I>accumulator</I> be the result of calling the [[Get]] internal
@@ -21861,7 +21878,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat,
 		while <I>k </I>≥ 0</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>Pk</I> be ToString(<I>k</I>).</SPAN></span></span></P>
@@ -21952,7 +21969,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>P</I> is <B>&quot;</B><span class="monospace-courier-new"><B>length</B></span><B>&quot;</B>,
 		then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			the [[Value]] field of <I>Desc</I> is absent, then</SPAN></span></span></P>
@@ -22031,7 +22048,7 @@
 				<LI><P>
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 				<I>cannotDelete</I> is <B>true</B>, then</SPAN></span></span></P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Set
 					<I>newLenDesc</I>.[[Value] to <I>oldLen+1</I>.</SPAN></span></span></P>
@@ -22067,7 +22084,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else
 		if <I>P</I> is an array index (15.4), then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>index</I> be ToUint32(<I>P</I>).</SPAN></span></span></P>
@@ -22379,7 +22396,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat,
 		while <I>args</I> is not empty</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Remove
 			the first element from <I>args</I> and let <I>next</I> be the
@@ -22653,7 +22670,7 @@
 		<I>global</I> is not <B>true</B>, then</SPAN></span></span></P>
 	</OL>
 	<OL STYLE="margin-left: 0cm">
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Return
 			the result of calling the [[Call]] internal method of <I>exec</I>
@@ -22702,7 +22719,7 @@
 				<LI><P>
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 				<I>result</I> is not <B>null</B></SPAN></span></span></P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 					<I>thisIndex</I>  be the result of calling the [[Get]] internal
@@ -22710,7 +22727,7 @@
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 					<I>thisIndex</I> = <I>previousLastIndex</I> then</SPAN></span></span></P>
-					<OL STYLE="margin-left: 1.27cm">
+					<ol class="inner">
 						<LI><P>
 						<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Call
 						the [[Put]] internal method of <I>rx</I> with arguments
@@ -23142,7 +23159,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>separator</I> is <B>undefined</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Call
 			the [[DefineOwnProperty]] internal method of <I>A</I> with
@@ -23157,7 +23174,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>s</I> = 0, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Call
 			<I>SplitMatch</I>(<I>R</I>, <I>S</I>, 0) and let <I>z</I> be its
@@ -23182,7 +23199,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat,
 		while <I>q</I> <span class="serif-symbol">&#x2260;</span> <I>s</I></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Call
 			<I>SplitMatch</I>(<I>R</I>, <I>S</I>, <I>q</I>) and let <I>z</I>
@@ -23204,7 +23221,7 @@
 				<LI><P>
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 				<I>e</I> <span class="serif-symbol">&#x2260;</span> <I>p</I></SPAN></span></span></P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 					<I>T</I> be a String value equal to the substring of <I>S</I>
@@ -23231,7 +23248,7 @@
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat,
 					while <I>i</I> is not equal to the number of elements in <I>cap</I>.</SPAN></span></span></P>
-					<OL STYLE="margin-left: 1.27cm">
+					<ol class="inner">
 						<LI><P>
 						<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 						<I>i</I> = <I>i</I>+1.</SPAN></span></span></P>
@@ -23284,7 +23301,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>R</I> is a RegExp object (its [[Class]] is <span class="monospace-courier-new"><B>&quot;RegExp&quot;</B></span>),
 		then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Call
 			the [[Match]] internal method of <I>R</I> giving it the arguments
@@ -23991,7 +24008,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>x</I> &lt; 0, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			s be &quot;<span class="monospace-courier-new"><B>-</B></span>&quot;.</SPAN></span></span></P>
@@ -24003,7 +24020,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>x</I> <span class="serif-symbol">&#x2265;</span> 10<SUP>21</SUP>,
 		then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>m</I> = ToString(<I>x</I>).</SPAN></span></span></P>
@@ -24011,7 +24028,7 @@
 		<LI><P STYLE="margin-top: 0cm; margin-bottom: 0.39cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 		<I>x</I> &lt; 10<SUP>21</SUP></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>n</I> be an integer for which the exact mathematical value of <I>n</I>
@@ -24034,7 +24051,7 @@
 				<LI><P>
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 				<I>k</I> ≤ <I>f</I>, then</SPAN></span></span></P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 					<I>z</I> be the String consisting of <I>f</I>+1–<I>k</I>
@@ -24115,7 +24132,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>x</I> <I>&lt;</I> 0, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>s</I> be <span class="monospace-courier-new"><B>&quot;-&quot;</B></span>.</SPAN></span></span></P>
@@ -24126,7 +24143,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>x</I> = +<span class="serif-symbol">&#x221e;</span>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Return
 			the concatenation of the Strings <I>s</I> and <span class="monospace-courier-new"><B>&quot;Infinity&quot;</B></span>.
@@ -24140,7 +24157,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>x</I> = 0, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>f</I> = 0.</SPAN></span></span></P>
@@ -24155,7 +24172,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else,
 		<I>x</I> <span class="serif-symbol">&#x2260;</span> 0</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			fractionDigits is not <B>undefined</B>, then</SPAN></span></span></P>
@@ -24194,7 +24211,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>f</I> <span class="serif-symbol">&#x2260;</span> 0, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>a</I> be the first character of <I>m</I>, and let <I>b</I> be
@@ -24208,7 +24225,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>e</I> = 0, then </SPAN></span></span>
 		</P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>c</I> = <span class="monospace-courier-new"><B>&quot;+&quot;.</B></span></SPAN></span></span></P>
@@ -24218,7 +24235,7 @@
 		</OL>
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			<I>e</I> &gt; 0, then let <I>c</I> = <span class="monospace-courier-new"><B>&quot;+&quot;.</B></span></SPAN></span></span></P>
@@ -24267,7 +24284,7 @@
 	by the rules above, it is recommended that the following alternative
 	version of step 9.b.i be used as a guideline:</SPAN></span></P>
 	<OL STYLE="margin-left: 3.53cm">
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<OL TYPE=i STYLE="margin-left: 1.27cm">
 				<LI><P>
 				<span class="sans-serif-arial"><span class=font-size-2><SPAN><span class="serif-time-new-roman"><span class=font-size-2>Let
@@ -24326,7 +24343,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>x</I> &lt; 0, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>s</I> be <span class="monospace-courier-new"><B>&quot;-&quot;</B></span>.</SPAN></span></span></P>
@@ -24337,7 +24354,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>x</I> = +<span class="serif-symbol">&#x221e;</span>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Return
 			the concatenation of the Strings <I>s</I> and <span class="monospace-courier-new"><B>&quot;Infinity&quot;</B></span>.</SPAN></span></span></P>
@@ -24349,7 +24366,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>x</I> = 0, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>m</I> be the String consisting of <I>p</I> occurrences of the
@@ -24361,7 +24378,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else
 		<I>x</I> <span class="serif-symbol">&#x2260;</span> 0,</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>e</I> and <I>n</I> be integers such that 10<SUP><I>p</I></SUP><SUP>–1</SUP>
@@ -24392,7 +24409,7 @@
 				<LI><P>
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 				<I>e</I> = 0, then</SPAN></span></span></P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 					<I>c</I> = <span class="monospace-courier-new"><B>&quot;+&quot;</B></span>
@@ -24401,12 +24418,12 @@
 				<LI><P>
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else
 				<I>e</I> <span class="serif-symbol">&#x2260;</span> 0,</SPAN></span></span></P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 					<I>e</I> &gt; 0,  then </SPAN></span></span>
 					</P>
-					<OL STYLE="margin-left: 1.27cm">
+					<ol class="inner">
 						<LI><P>
 						<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 						<I>c</I> = <span class="monospace-courier-new"><B>&quot;+&quot;</B></span>.</SPAN></span></span></P>
@@ -24414,7 +24431,7 @@
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else
 					<I>e</I> &lt; 0,</SPAN></span></span></P>
-					<OL STYLE="margin-left: 1.27cm">
+					<ol class="inner">
 						<LI><P>
 						<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 						<I>c</I> = <span class="monospace-courier-new"><B>&quot;-&quot;</B></span>.</SPAN></span></span></P>
@@ -24441,7 +24458,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>e</I> <span class="serif-symbol">&#x2265;</span> 0, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>m</I> be the concatenation of the first <I>e</I>+1 characters
@@ -24451,7 +24468,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else
 		<I>e</I> &lt; 0,</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>m</I> be the concatenation of the String <span class="monospace-courier-new"><B>&quot;0.&quot;</B></span>,
@@ -26117,7 +26134,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		Type(<I>v</I>) is String, then </SPAN></span></span>
 		</P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Parse
 			<I>v</I> as a date, in exactly the same manner as for the <span class="monospace-courier-new"><B>parse</B></span>
@@ -27664,9 +27681,9 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Return
 		an internal Matcher closure that takes two arguments, a State <I>x</I>
 		and a Continuation <I>c</I>, and performs the following:</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<OL TYPE=i STYLE="margin-left: 1.27cm">
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P STYLE="margin-left: 3.18cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Call
 					<I>m1</I>(<I>x</I>, <I>c</I>) and let <I>r</I> be its result.</SPAN></span></span></P>
@@ -27742,9 +27759,9 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Return
 		an internal Matcher closure that takes two arguments, a State <I>x</I>
 		and a Continuation <I>c</I>, and performs the following:</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<OL TYPE=i STYLE="margin-left: 1.27cm">
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P STYLE="margin-left: 3.18cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Create
 					a Continuation <I>d</I> that takes a State argument <I>y</I> and
@@ -27837,9 +27854,9 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Return
 		an internal Matcher closure that takes two arguments, a State <I>x</I>
 		and a Continuation <I>c</I>, and performs the following:</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<OL TYPE=i STYLE="margin-left: 1.27cm">
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P STYLE="margin-left: 3.18cm; margin-bottom: 0.39cm; letter-spacing: 0.3pt; ">
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Call
 					RepeatMatcher(<I>m</I>, <I>min</I>, <I>max</I>, <I>greedy</I>,
@@ -27870,9 +27887,9 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Create
 		an internal Continuation closure <I>d</I> that takes one State
 		argument <I>y</I> and performs the following:</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<OL TYPE=i STYLE="margin-left: 1.27cm">
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P STYLE="margin-left: 3.18cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 					<I>min</I> is zero and <I>y</I>'s <I>endIndex</I> is equal to
@@ -27917,7 +27934,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>greedy</I> is <B>false</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Call
 			<I>c</I>(<I>x</I>) and let <I>z</I> be its result.</SPAN></span></span></P>
@@ -28163,9 +28180,9 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Return
 		an internal Matcher closure that takes two arguments, a State <I>x</I>
 		and a Continuation <I>c</I>, and performs the following steps:</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<OL TYPE=i STYLE="margin-left: 1.27cm">
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P STYLE="margin-left: 3.18cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 					<I>d</I> be a Continuation that always returns its State
@@ -28208,9 +28225,9 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Return
 		an internal Matcher closure that takes two arguments, a State <I>x</I>
 		and a Continuation <I>c</I>, and performs the following steps:</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<OL TYPE=i STYLE="margin-left: 1.27cm">
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P STYLE="margin-left: 3.18cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 					<I>d</I> be a Continuation that always returns its State
@@ -28696,16 +28713,16 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Return
 		an internal Matcher closure that takes two arguments, a State <I>x</I>
 		and a Continuation <I>c</I>, and performs the following steps:</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<OL TYPE=i STYLE="margin-left: 1.27cm">
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P STYLE="margin-left: 3.18cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Create
 					an internal Continuation closure <I>d</I> that takes one State
 					argument <I>y</I> and performs the following steps:</SPAN></span></span></P>
-					<OL STYLE="margin-left: 1.27cm">
+					<ol class="inner">
 						<OL TYPE=i STYLE="margin-left: 1.27cm">
-							<OL STYLE="margin-left: 1.27cm">
+							<ol class="inner">
 								<LI><P STYLE="margin-left: 5.72cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 								<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 								<I>cap</I> be a fresh copy of <I>y</I>'s <I>captures</I>
@@ -28759,9 +28776,9 @@
 		and a Continuation <I>c</I>, and performs the following steps:</SPAN></span></span></P>
 	</OL>
 	<OL STYLE="margin-left: 0cm">
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<OL TYPE=i STYLE="margin-left: 1.27cm">
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P STYLE="margin-left: 3.18cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 					<I>e</I> be <I>x</I>'s <I>endIndex</I>.</SPAN></span></span></P>
@@ -28782,10 +28799,10 @@
 		</OL>
 	</OL>
 	<OL STYLE="margin-left: 0cm">
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<OL TYPE=i STYLE="margin-left: 1.27cm">
-				<OL STYLE="margin-left: 1.27cm">
-					<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
+					<ol class="inner">
 						<LI><P STYLE="margin-left: 4.13cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 						<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 						there does not exist a member <I>a</I> of set <I>A</I> such
@@ -28797,7 +28814,7 @@
 		</OL>
 	</OL>
 	<OL STYLE="margin-left: 0cm">
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<OL TYPE=i STYLE="margin-left: 1.27cm">
 				<OL START=6 STYLE="margin-left: 1.27cm">
 					<LI><P STYLE="margin-left: 3.18cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
@@ -28808,10 +28825,10 @@
 		</OL>
 	</OL>
 	<OL STYLE="margin-left: 0cm">
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<OL TYPE=i STYLE="margin-left: 1.27cm">
-				<OL STYLE="margin-left: 1.27cm">
-					<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
+					<ol class="inner">
 						<LI><P STYLE="margin-left: 4.13cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 						<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 						there exists a member <I>a</I> of set <I>A</I> such that
@@ -28822,7 +28839,7 @@
 		</OL>
 	</OL>
 	<OL STYLE="margin-left: 0cm">
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<OL TYPE=i STYLE="margin-left: 1.27cm">
 				<OL START=7 STYLE="margin-left: 1.27cm">
 					<LI><P STYLE="margin-left: 3.18cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
@@ -28976,7 +28993,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>E</I> is a character, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>ch</I> be <I>E</I>'s character.</SPAN></span></span></P>
@@ -28999,9 +29016,9 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Return
 		an internal Matcher closure that takes two arguments, a State <I>x</I>
 		and a Continuation <I>c</I>, and performs the following:</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<OL TYPE=i STYLE="margin-left: 1.27cm">
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P STYLE="margin-left: 3.18cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 					<I>cap</I> be <I>x</I>'s <I>captures</I> internal array.</SPAN></span></span></P>
@@ -30240,7 +30257,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat,
 		while <I>matchSucceeded</I> is <B>false</B></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			<I>i </I>&lt; 0 or <I>i </I>&gt; <I>length</I>, then</SPAN></span></span></P>
@@ -30289,7 +30306,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>global</I> is <B>true</B>,</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Call
 			the [[Put]] internal method of <I>R</I> with arguments
@@ -30344,7 +30361,7 @@
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>For
 		each integer <I>i</I> such that <I>I </I>&gt; 0 and <I>I </I><span class="serif-symbol">&#x2264;</span>
 		<I>n</I></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>captureI</I> be <I>i</I><SUP>th</SUP> element of <I>r</I>'s
@@ -30808,7 +30825,7 @@
 	in RFC 4627 &lt;http://www.ietf.org/rfc/rfc4627.txt&gt;. The JSON
 	interchange format used in this specification is exactly that
 	described by RFC 4627 with two exceptions:</SPAN></span></span></P>
-	<UL STYLE="margin-left: 0.64cm">
+	<ul class="outer">
 		<LI><P>
 		<span class="sans-serif-arial"><span class=font-size-2><SPAN>The
 		top level <span class="serif-time-new-roman"><I>JSONText</I></span>
@@ -31096,7 +31113,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		IsCallable(<I>reviver</I>) is <B>true</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>root</I> be a new object created as if by the expression <span class="monospace-courier-new"><B>new
@@ -31116,7 +31133,7 @@
 		</OL>
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P STYLE="margin-top: 0cm; margin-bottom: 0.39cm; letter-spacing: 0.3pt; ">
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Return
 			<I>unfiltered</I>.</SPAN></span></span></P>
@@ -31137,7 +31154,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>val</I> is an object, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			the [[Class]] internal property of <I>val</I> is <span class="monospace-courier-new"><B>&quot;Array&quot;</B></span></SPAN></span></span></P>
@@ -31153,7 +31170,7 @@
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat
 				while <I>I </I>&lt; <I>len</I>, </SPAN></span></span>
 				</P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 					<I>newElement</I> be the result of calling the abstract
@@ -31161,7 +31178,7 @@
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 					<I>newElement</I> is <B>undefined</B>, then</SPAN></span></span></P>
-					<OL STYLE="margin-left: 1.27cm">
+					<ol class="inner">
 						<LI><P>
 						<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Call
 						the [[Delete]] internal method of <I>val</I> with ToString(<I>I</I>)
@@ -31170,7 +31187,7 @@
 					</OL>
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else</SPAN></span></span></P>
-					<OL STYLE="margin-left: 1.27cm">
+					<ol class="inner">
 						<LI><P>
 						<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Call
 						the [[DefineOwnProperty]] internal method of <I>val</I> with
@@ -31197,7 +31214,7 @@
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>For
 				each String <I>P</I> in <I>keys</I> do, </SPAN></span></span>
 				</P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 					<I>newElement</I> be the result of calling the abstract
@@ -31206,7 +31223,7 @@
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 					<I>newElement</I> is <B>undefined</B>, then</SPAN></span></span></P>
-					<OL STYLE="margin-left: 1.27cm">
+					<ol class="inner">
 						<LI><P>
 						<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Call
 						the [[Delete]] internal method of <I>val</I> with <I>P</I> and
@@ -31215,7 +31232,7 @@
 					</OL>
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else</SPAN></span></span></P>
-					<OL STYLE="margin-left: 1.27cm">
+					<ol class="inner">
 						<LI><P>
 						<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Call
 						the [[DefineOwnProperty]] internal method of <I>val</I> with
@@ -31275,7 +31292,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		Type(<I>replacer</I>) is Object, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			IsCallable(<I>replacer</I>) is <B>true</B>, then</SPAN></span></span></P>
@@ -31297,7 +31314,7 @@
 				each value <I>v</I> of a property of <I>replacer</I> that has an
 				array index property name. The properties are enumerated in the
 				ascending array index order of their names.</SPAN></span></span></P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 					<I>item</I> be <B>undefined</B>.</SPAN></span></span></P>
@@ -31310,7 +31327,7 @@
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else
 					if Type(<I>v</I>) is Object then,</SPAN></span></span></P>
-					<OL STYLE="margin-left: 1.27cm">
+					<ol class="inner">
 						<LI><P>
 						<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 						the [[Class]] internal property of <I>v</I> is <span class="monospace-courier-new"><B>&quot;String&quot;</B></span>
@@ -31321,7 +31338,7 @@
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 					<I>item</I> is not undefined and <I>item</I> is not currently an
 					element of <I>PropertyList</I> then,</SPAN></span></span></P>
-					<OL STYLE="margin-left: 1.27cm">
+					<ol class="inner">
 						<LI><P>
 						<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Append
 						<I>item</I> to the end of <I>PropertyList</I>.</SPAN></span></span></P>
@@ -31332,7 +31349,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		Type(<I>space</I>) is Object then,</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			the [[Class]] internal property of <I>space</I> is <span class="monospace-courier-new"><B>&quot;Number&quot;</B></span>
@@ -31355,7 +31372,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		Type(<I>space</I>) is Number</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>space</I> be min(10, ToInteger(<I>space</I>)).</SPAN></span></span></P>
@@ -31367,7 +31384,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else
 		if Type(<I>space)</I> is String</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			the number of characters in <I>space</I> is 10 or less, set <I>gap</I>
@@ -31376,7 +31393,7 @@
 		</OL>
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Set
 			<I>gap</I> to the empty String.</SPAN></span></span></P>
@@ -31412,7 +31429,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		Type(<I>value</I>) is Object, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>toJSON</I> be the result of calling the [[Get]] internal method
@@ -31431,7 +31448,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>ReplacerFunction</I> is not <B>undefined</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>value</I> be the result of calling the [[Call]] internal method
@@ -31442,7 +31459,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		Type(<I>value</I>) is Object then,</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			the [[Class]] internal property of <I>value</I> is <span class="monospace-courier-new"><B>&quot;Number&quot;</B></span>
@@ -31488,7 +31505,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		Type(<I>value</I>) is Number</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			<I>value </I>is finite then return ToString(<I>value</I>).</SPAN></span></span></P>
@@ -31499,7 +31516,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		Type(<I>value</I>) is Object, and IsCallable(<I>value</I>) is <B>false</B></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			the [[Class]] internal property of <I>value</I> is <span class="monospace-courier-new"><B>&quot;Array&quot;
@@ -31532,7 +31549,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>For
 		each character <I>C</I> in <I>value</I></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			<I>C</I> is the double quote character or the backslash character</SPAN></span></span></P>
@@ -31573,7 +31590,7 @@
 	<P STYLE="margin-left: 4.76cm; margin-top: 0cm; margin-bottom: 0cm; ">
 	<span class="sans-serif-arial"><span class=font-size-2><SPAN><span class="serif-time-new-roman">tab	</span><span class="monospace-courier-new"><B>&quot;t&quot;</B></span></SPAN></span></span></P>
 	<OL STYLE="margin-left: 0cm">
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<OL TYPE=i STYLE="margin-left: 1.27cm">
 				<LI><P>
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
@@ -31641,14 +31658,14 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>PropertyList </I>is not <B>undefined</B>, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>K</I> be <I>PropertyList</I>.</SPAN></span></span></P>
 		</OL>
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>K</I> be an internal List of Strings consisting of the names of
@@ -31663,7 +31680,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>For
 		each element <I>P</I> of <I>K</I>.</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>strP</I> be the result of calling the abstract operation <I>Str</I>
@@ -31683,7 +31700,7 @@
 				<LI><P>
 				<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 				<I>gap</I> is not the empty String</SPAN></span></span></P>
-				<OL STYLE="margin-left: 1.27cm">
+				<ol class="inner">
 					<LI><P>
 					<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 					<I>member</I> be the concatenation of <I>member</I> and the
@@ -31700,14 +31717,14 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>partial</I> is empty, then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>final</I> be <span class="monospace-courier-new"><B>&quot;{}&quot;</B></span>.</SPAN></span></span></P>
 		</OL>
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			<I>gap</I> is the empty String</SPAN></span></span></P>
@@ -31796,7 +31813,7 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Repeat
 		while <I>index</I> &lt; <I>len</I></SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>strP</I> be the result of calling the abstract operation <I>Str</I>
@@ -31825,14 +31842,14 @@
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 		<I>partial</I> is empty ,then</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Let
 			<I>final</I> be <span class="monospace-courier-new"><B>&quot;[]&quot;</B></span>.</SPAN></span></span></P>
 		</OL>
 		<LI><P>
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN>Else</SPAN></span></span></P>
-		<OL STYLE="margin-left: 1.27cm">
+		<ol class="inner">
 			<LI><P>
 			<span class="serif-time-new-roman"><span class=font-size-2><SPAN>If
 			<I>gap</I> is the empty String</SPAN></span></span></P>
@@ -31898,7 +31915,7 @@
 	= JSON.stringify(a); // This must throw an TypeError.</B></SPAN></span></span></P>
 	<P STYLE="margin-top: 0cm"><span class="sans-serif-arial"><SPAN>NOTE
 	2	Symbolic primitive values are rendered as follows:</SPAN></span></P>
-	<UL STYLE="margin-left: 0.64cm">
+	<ul class="outer">
 		<LI><P STYLE="margin-top: 0cm; margin-bottom: 0cm"><span class="sans-serif-arial"><SPAN>The
 		<B>null</B> value is rendered in JSON text as the String <span class="monospace-courier-new"><span class=font-size-2><span class=font-size-2>null</span></span></span>.</SPAN></span></P>
 		<LI><P STYLE="margin-top: 0cm; margin-bottom: 0cm"><span class="sans-serif-arial"><SPAN>The
@@ -31955,7 +31972,7 @@
 	<span class="sans-serif-arial"><span class=font-size-2><SPAN>An
 	implementation must treat any instance of the following kinds of
 	errors as an early error:</SPAN></span></span></P>
-	<UL STYLE="margin-left: 0.64cm">
+	<ul class="outer">
 		<LI><P>
 		<span class="sans-serif-arial"><span class=font-size-2><SPAN>Any
 		syntax error.</SPAN></span></span></P>
@@ -32011,7 +32028,7 @@
 	<span class="sans-serif-arial"><span class=font-size-2><SPAN>An
 	implementation shall report all errors as specified, except for the
 	following:</SPAN></span></span></P>
-	<UL STYLE="margin-left: 0.64cm">
+	<ul class="outer">
 		<LI><P STYLE="margin-left: 1.91cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
 		<span class="serif-time-new-roman"><span class=font-size-2><SPAN><span class="sans-serif-arial">An
 		implementation may extend program syntax and regular expression
