@@ -212,8 +212,14 @@
         .small-caps {
           font-variant: small-caps;
         }
+        .lower-alpha {
+          list-style-type: lower-alpha;
+        }
         .lower-roman {
           list-style-type: lower-roman;
+        }
+        .decimal {
+          list-style-type: decimal;
         }
 
         span.table-header { }
@@ -7941,7 +7947,7 @@
 		<I>number</I> is <B>+0</B>, <span class="symbol"><B>&#x2212;</B></span><B>0</B>,
 		<B>+</B><span class="symbol"><B>&#x221e;</B></span><B>,</B> or <span class="symbol"><B>&#x2212;&#x221e;</B></span>,
 		return <I>number</I>.</SPAN></span></span></P>
-		<LI><P STYLE="margin-left: 1.6cm; margin-top: 0cm; margin-bottom: 0.21cm; letter-spacing: 0.3pt; "><A NAME="_Ref424667409"></A><A NAME="_Ref424532750"></A><A NAME="_Ref404492982"></A><A NAME="_Ref383595223"></A><A NAME="_Ref382713431"></A><A NAME="_Ref381179003"></A><A NAME="_Ref379906863"></A>
+		<LI><P><A NAME="_Ref424667409"></A><A NAME="_Ref424532750"></A><A NAME="_Ref404492982"></A><A NAME="_Ref383595223"></A><A NAME="_Ref382713431"></A><A NAME="_Ref381179003"></A><A NAME="_Ref379906863"></A>
 		<span class="times"><span class=size-2><SPAN>Return
 		the result of computing sign(<I>number</I>) * floor(abs(<I>number</I>)).</SPAN></span></span></P>
 	</OL>
@@ -9008,7 +9014,7 @@
 		<span class="times"><span class=size-2><SPAN>If
 		<I>envRec</I> has a binding for the name that is the value of <I>N</I>,
 		return <B>true</B>.</SPAN></span></span></P>
-		<LI><P STYLE="margin-top: 0cm; margin-bottom: 0.42cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		<span class="times"><span class=size-2><SPAN>If
 		it does not have such a binding, return <B>false</B></SPAN></span></span></P>
 	</OL>
@@ -9733,7 +9739,7 @@
 			<span class="times"><span class=size-2><SPAN>Set
 			the VariableEnvironment to <I>strictVarEnv</I>.</SPAN></span></span></P>
 		</OL>
-		<LI><P STYLE="margin-top: 0cm; margin-bottom: 0.42cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		<span class="times"><span class=size-2><SPAN>Perform
 		Declaration Binding Instantiation as described in 10.5 using the
 		eval code.</SPAN></span></span></P>
@@ -11374,22 +11380,22 @@
 		<span class="times"><span class=size-2><SPAN>Throw
 		a <B>SyntaxError</B> exception if the following conditions are all
 		true:</SPAN></span></span></P>
-	</OL>
-	<UL STYLE="margin-left: 3.33cm">
-		<LI><P STYLE="margin-left: 1.27cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
+	<UL>
+		<LI><P>
 		<span class="times"><span class=size-2><SPAN>Type(<I>lhs</I>)
 		is Reference is <B>true</B></SPAN></span></span></P>
-		<LI><P STYLE="margin-left: 1.27cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		<span class="times"><span class=size-2><SPAN>IsStrictReference(<I>lhs</I>)
 		is <B>true</B></SPAN></span></span></P>
-		<LI><P STYLE="margin-left: 1.27cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		<span class="times"><span class=size-2><SPAN>Type(GetBase(<I>lhs</I>))
 		is Enviroment Record</SPAN></span></span></P>
-		<LI><P STYLE="margin-left: 1.27cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		<span class="times"><span class=size-2><SPAN>GetReferencedName(<I>lhs</I>)
 		is either <span class="courier"><B>&quot;eval&quot;</B></span>
 		or<span class="courier"><B> &quot;arguments&quot;</B></span></SPAN></span></span></P>
 	</UL>
+	</OL>
 	<OL START=3>
 		<LI><P>
 		<span class="times"><span class=size-2><SPAN>Let
@@ -11425,22 +11431,22 @@
 		<span class="times"><span class=size-2><SPAN>Throw
 		a <B>SyntaxError</B> exception if the following conditions are all
 		true:</SPAN></span></span></P>
-	</OL>
-	<UL STYLE="margin-left: 3.33cm">
-		<LI><P STYLE="margin-left: 1.27cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
+	<UL>
+		<LI><P>
 		<span class="times"><span class=size-2><SPAN>Type(<I>lhs</I>)
 		is Reference is <B>true</B></SPAN></span></span></P>
-		<LI><P STYLE="margin-left: 1.27cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		<span class="times"><span class=size-2><SPAN>IsStrictReference(<I>lhs</I>)
 		is <B>true</B></SPAN></span></span></P>
-		<LI><P STYLE="margin-left: 1.27cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		<span class="times"><span class=size-2><SPAN>Type(GetBase(<I>lhs</I>))
 		is Enviroment Record</SPAN></span></span></P>
-		<LI><P STYLE="margin-left: 1.27cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		<span class="times"><span class=size-2><SPAN>GetReferencedName(<I>lhs</I>)
 		is either <span class="courier"><B>&quot;eval&quot;</B></span>
 		or<span class="courier"><B> &quot;arguments&quot;</B></span></SPAN></span></span></P>
 	</UL>
+	</OL>
 	<OL START=3>
 		<LI><P>
 		<span class="times"><span class=size-2><SPAN>Let
@@ -11694,8 +11700,7 @@
 		</TABLE>
 	</CENTER>
 	<H3 STYLE="margin-top: 0.53cm"><A NAME="_Ref379174898"></A><A NAME="_Ref378388513"></A>
-	<span class="arial"><SPAN>11.4.4	Prefix
-	Increment Operator</SPAN></span></H3>
+	<span class="arial"><SPAN>11.4.4	Prefix Increment Operator</SPAN></span></H3>
 	<P>
 	<span class="arial"><span class=size-2><SPAN>The
 	production <span class="times"><I>UnaryExpression</I></span><I>
@@ -11710,22 +11715,22 @@
 		<span class="times"><span class=size-2><SPAN>Throw
 		a <B>SyntaxError</B> exception if the following conditions are all
 		true:</SPAN></span></span></P>
-	</OL>
-	<UL STYLE="margin-left: 3.33cm">
-		<LI><P STYLE="margin-left: 1.27cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
+	<UL>
+		<LI><P>
 		<span class="times"><span class=size-2><SPAN>Type(<I>expr</I>)
 		is Reference is <B>true</B></SPAN></span></span></P>
-		<LI><P STYLE="margin-left: 1.27cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		<span class="times"><span class=size-2><SPAN>IsStrictReference(<I>expr</I>)
 		is <B>true</B></SPAN></span></span></P>
-		<LI><P STYLE="margin-left: 1.27cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		<span class="times"><span class=size-2><SPAN>Type(GetBase(<I>expr</I>))
 		is Enviroment Record</SPAN></span></span></P>
-		<LI><P STYLE="margin-left: 1.27cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		<span class="times"><span class=size-2><SPAN>GetReferencedName(<I>expr</I>)
 		is either <span class="courier"><B>&quot;eval&quot;</B></span>
 		or<span class="courier"><B> &quot;arguments&quot;</B></span></SPAN></span></span></P>
 	</UL>
+	</OL>
 	<OL START=3>
 		<LI><P>
 		<span class="times"><span class=size-2><SPAN>Let
@@ -11758,22 +11763,22 @@
 		<span class="times"><span class=size-2><SPAN>Throw
 		a <B>SyntaxError</B> exception if the following conditions are all
 		true:</SPAN></span></span></P>
-	</OL>
-	<UL STYLE="margin-left: 3.33cm">
-		<LI><P STYLE="margin-left: 1.27cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
+	<UL>
+		<LI><P >
 		<span class="times"><span class=size-2><SPAN>Type(<I>expr</I>)
 		is Reference is <B>true</B></SPAN></span></span></P>
-		<LI><P STYLE="margin-left: 1.27cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
+		<LI><P >
 		<span class="times"><span class=size-2><SPAN>IsStrictReference(<I>expr</I>)
 		is <B>true</B></SPAN></span></span></P>
-		<LI><P STYLE="margin-left: 1.27cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
+		<LI><P >
 		<span class="times"><span class=size-2><SPAN>Type(GetBase(<I>expr</I>))
 		is Enviroment Record</SPAN></span></span></P>
-		<LI><P STYLE="margin-left: 1.27cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
+		<LI><P >
 		<span class="times"><span class=size-2><SPAN>GetReferencedName(<I>expr</I>)
 		is either <span class="courier"><B>&quot;eval&quot;</B></span>
 		or<span class="courier"><B> &quot;arguments&quot;</B></span></SPAN></span></span></P>
 	</UL>
+	</OL>
 	<OL START=3>
 		<LI><P>
 		<span class="times"><span class=size-2><SPAN>Let
@@ -11942,26 +11947,26 @@
 	result of a floating-point multiplication is governed by the rules
 	of IEEE 754 binary double-precision arithmetic:</SPAN></span></span></P>
   <UL>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
+			<LI><P>
 			<span class="times"><span class=size-2><SPAN><span class="arial">If
 			either operand is </span><span class="arial"><B>NaN</B></span><span class="arial">,
 			the result is </span><span class="arial"><B>NaN</B></span><span class="arial">.</span></SPAN></span></span></P>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
+			<LI><P>
 			<span class="arial"><span class=size-2><SPAN>The
 			sign of the result is positive if both operands have the same
 			sign, negative if the operands have different signs.</SPAN></span></span></P>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
+			<LI><P>
 			<span class="times"><span class=size-2><SPAN><span class="arial">Multiplication
 			of an infinity by a zero results in </span><span class="arial"><B>NaN</B></span><span class="arial">.</span></SPAN></span></span></P>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
+			<LI><P>
 			<span class="arial"><span class=size-2><SPAN>Multiplication
 			of an infinity by an infinity results in an infinity. The sign is
 			determined by the rule already stated above.</SPAN></span></span></P>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
+			<LI><P>
 			<span class="arial"><span class=size-2><SPAN>Multiplication
 			of an infinity by a finite non-zero value results in a signed
 			infinity. The sign is determined by the rule already stated above.</SPAN></span></span></P>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.39cm; letter-spacing: 0.3pt; "><A NAME="_Ref382715602"></A>
+			<LI><P></A>
 			<span class="arial"><span class=size-2><SPAN>In
 			the remaining cases, where neither an infinity or NaN is involved,
 			the product is computed and rounded to the nearest representable
@@ -11982,39 +11987,39 @@
 	floating-point numbers. The result of division is determined by the
 	specification of IEEE 754 arithmetic:</SPAN></span></span></P>
   <UL>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
+			<LI><P>
 			<span class="times"><span class=size-2><SPAN><span class="arial">If
 			either operand is </span><span class="arial"><B>NaN</B></span><span class="arial">,
 			the result is </span><span class="arial"><B>NaN</B></span><span class="arial">.</span></SPAN></span></span></P>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
+			<LI><P>
 			<span class="arial"><span class=size-2><SPAN>The
 			sign of the result is positive if both operands have the same
 			sign, negative if the operands have different signs.</SPAN></span></span></P>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
+			<LI><P>
 			<span class="times"><span class=size-2><SPAN><span class="arial">Division
 			of an infinity by an infinity results in </span><span class="arial"><B>NaN</B></span><span class="arial">.</span></SPAN></span></span></P>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
+			<LI><P>
 			<span class="arial"><span class=size-2><SPAN>Division
 			of an infinity by a zero results in an infinity. The sign is
 			determined by the rule already stated above.</SPAN></span></span></P>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
+			<LI><P>
 			<span class="arial"><span class=size-2><SPAN>Division
 			of an infinity by a non-zero finite value results in a signed
 			infinity. The sign is determined by the rule already stated above.</SPAN></span></span></P>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
+			<LI><P>
 			<span class="arial"><span class=size-2><SPAN>Division
 			of a finite value by an infinity results in zero. The sign is
 			determined by the rule already stated above.</SPAN></span></span></P>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
+			<LI><P>
 			<span class="times"><span class=size-2><SPAN><span class="arial">Division
 			of a zero by a zero results in </span><span class="arial"><B>NaN</B></span><span class="arial">;
 			division of zero by any other finite value results in zero, with
 			the sign determined by the rule already stated above.</span></SPAN></span></span></P>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
+			<LI><P>
 			<span class="arial"><span class=size-2><SPAN>Division
 			of a non-zero finite value by a zero results in a signed infinity.
 			The sign is determined by the rule already stated above.</SPAN></span></span></P>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; "><A NAME="_Ref382715606"></A>
+			<LI><P><A NAME="_Ref382715606"></A>
 			<span class="times"><span class=size-2><SPAN><span class="arial">In
 			the remaining cases, where neither an infinity, nor a zero, nor
 			</span><span class="arial"><B>NaN</B></span><span class="arial">
@@ -12051,26 +12056,26 @@
 	result of an ECMAScript floating-point remainder operation is
 	determined by the rules of IEEE arithmetic:</SPAN></span></span></P>
 	<UL>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
+			<LI><P>
 			<span class="times"><span class=size-2><SPAN><span class="arial">If
 			either operand is </span><span class="arial"><B>NaN</B></span><span class="arial">,
 			the result is </span><span class="arial"><B>NaN</B></span><span class="arial">.</span></SPAN></span></span></P>
-				<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
+				<LI><P>
 				<span class="arial"><span class=size-2><SPAN>The
 				sign of the result equals the sign of the dividend.</SPAN></span></span></P>
-				<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
+				<LI><P>
 				<span class="times"><span class=size-2><SPAN><span class="arial">If
 				the dividend is an infinity, or the divisor is a zero, or both,
 				the result is </span><span class="arial"><B>NaN</B></span><span class="arial">.</span></SPAN></span></span></P>
-				<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
+				<LI><P>
 				<span class="arial"><span class=size-2><SPAN>If
 				the dividend is finite and the divisor is an infinity, the result
 				equals the dividend.</SPAN></span></span></P>
-				<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
+				<LI><P>
 				<span class="arial"><span class=size-2><SPAN>If
 				the dividend is a zero and the divisor is finite, the result is
 				the same as the dividend.</SPAN></span></span></P>
-				<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.39cm; letter-spacing: 0.3pt; ">
+				<LI><P>
 				<span class="times"><span class=size-2><SPAN><span class="arial">In
 				the remaining cases, where neither an infinity, nor a zero, nor
 				</span><span class="arial"><B>NaN</B></span><span class="arial">
@@ -12202,35 +12207,35 @@
 	result of an addition is determined using the rules of IEEE 754
 	binary double-precision arithmetic:</SPAN></span></span></P>
   <UL>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
+			<LI><P>
 			<span class="times"><span class=size-2><SPAN><span class="arial">If
 			either operand is </span><span class="arial"><B>NaN</B></span><span class="arial">,
 			the result is </span><span class="arial"><B>NaN</B></span><span class="arial">.</span></SPAN></span></span></P>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
+			<LI><P>
 			<span class="times"><span class=size-2><SPAN><span class="arial">The
 			sum of two infinities of opposite sign is </span><span class="arial"><B>NaN</B></span><span class="arial">.</span></SPAN></span></span></P>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
+			<LI><P>
 			<span class="arial"><span class=size-2><SPAN>The
 			sum of two infinities of the same sign is the infinity of that
 			sign.</SPAN></span></span></P>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
+			<LI><P>
 			<span class="arial"><span class=size-2><SPAN>The
 			sum of an infinity and a finite value is equal to the infinite
 			operand.</SPAN></span></span></P>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
+			<LI><P>
 			<span class="times"><span class=size-2><SPAN><span class="arial">The
 			sum of two negative zeros is </span><span class="symbol"><B>&#x2212;</B></span><span class="arial"><B>0</B></span><span class="arial">.
 			The sum of two positive zeros, or of two zeros of opposite sign,
 			is </span><span class="arial"><B>+0</B></span><span class="arial">.</span></SPAN></span></span></P>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
+			<LI><P>
 			<span class="arial"><span class=size-2><SPAN>The
 			sum of a zero and a nonzero finite value is equal to the nonzero
 			operand.</SPAN></span></span></P>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
+			<LI><P>
 			<span class="times"><span class=size-2><SPAN><span class="arial">The
 			sum of two nonzero finite values of the same magnitude and
 			opposite sign is </span><span class="arial"><B>+0</B></span><span class="arial">.</span></SPAN></span></span></P>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.42cm; letter-spacing: 0.3pt; ">
+			<LI><P>
 			<span class="arial"><span class=size-2><SPAN>In
 			the remaining cases, where neither an infinity, nor a zero, nor
 			NaN is involved, and the operands have the same sign or have
@@ -12305,7 +12310,7 @@
 		<I>shiftCount</I> be the result of masking out all but the least
 		significant 5 bits of <I>rnum</I>, that is, compute <I>rnum</I> &amp;
 		0x1F.</SPAN></span></span></P>
-		<LI><P STYLE="margin-top: 0cm; margin-bottom: 0.42cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		<span class="times"><span class=size-2><SPAN>Return
 		the result of left shifting <I>lnum</I> by <I>shiftCount</I> bits.
 		The result is a signed 32-bit integer.</SPAN></span></span></P>
@@ -12348,7 +12353,7 @@
 		<I>shiftCount</I> be the result of masking out all but the least
 		significant 5 bits of <I>rnum</I>, that is, compute <I>rnum</I> &amp;
 		0x1F.</SPAN></span></span></P>
-		<LI><P STYLE="margin-top: 0cm; margin-bottom: 0.42cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		<span class="times"><span class=size-2><SPAN>Return
 		the result of performing a sign-extending right shift of <I>lnum</I>
 		by <I>shiftCount</I> bits. The most significant bit is propagated.
@@ -12392,7 +12397,7 @@
 		<I>shiftCount</I> be the result of masking out all but the least
 		significant 5 bits of <I>rnum</I>, that is, compute <I>rnum</I> &amp;
 		0x1F.</SPAN></span></span></P>
-		<LI><P STYLE="margin-top: 0cm; margin-bottom: 0.42cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		<span class="times"><span class=size-2><SPAN>Return
 		the result of performing a zero-filling right shift of <I>lnum</I>
 		by <I>shiftCount</I> bits. Vacated bits are filled with zero. The
@@ -12477,7 +12482,7 @@
 		<span class="times"><span class=size-2><SPAN>Let
 		<I>r</I> be the result of performing abstract relational comparison
 		<I>lval</I> &lt; <I>rval</I>. (see 11.8.5)</SPAN></span></span></P>
-		<LI><P STYLE="margin-top: 0cm; margin-bottom: 0.42cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		<span class="times"><span class=size-2><SPAN>If
 		<I>r</I> is <B>undefined</B>, return <B>false</B>. Otherwise,
 		return <I>r</I>.</SPAN></span></span></P>
@@ -12509,7 +12514,7 @@
 		<I>r</I> be the result of performing abstract relational comparison
 		<I>rval</I> &lt; <I>lval</I> with <I>LeftFirst</I> equal to <B>false</B>.
 		(see 11.8.5).</SPAN></span></span></P>
-		<LI><P STYLE="margin-top: 0cm; margin-bottom: 0.42cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		<span class="times"><span class=size-2><SPAN>If
 		<I>r</I> is <B>undefined</B>, return <B>false</B>. Otherwise,
 		return <I>r</I>.</SPAN></span></span></P>
@@ -12541,7 +12546,7 @@
 		<I>r</I> be the result of performing abstract relational comparison
 		<I>rval</I> &lt; <I>lval</I>  with <I>LeftFirst</I> equal to <B>false</B>.
 		(see 11.8.5).</SPAN></span></span></P>
-		<LI><P STYLE="margin-top: 0cm; margin-bottom: 0.42cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		<span class="times"><span class=size-2><SPAN>If
 		<I>r</I> is <B>true </B>or<B> undefined</B>, return <B>false</B>.
 		Otherwise, return <B>true</B>.</SPAN></span></span></P>
@@ -12572,7 +12577,7 @@
 		<span class="times"><span class=size-2><SPAN>Let
 		<I>r</I> be the result of performing abstract relational comparison
 		<I>lval</I> &lt; <I>rval</I>. (see 11.8.5)</SPAN></span></span></P>
-		<LI><P STYLE="margin-top: 0cm; margin-bottom: 0.42cm; letter-spacing: 0.3pt; "><A NAME="_Ref393523057"></A><A NAME="_Ref424533139"></A>
+		<LI><P><A NAME="_Ref393523057"></A><A NAME="_Ref424533139"></A>
 		<span class="times"><span class=size-2><SPAN>If
 		<I>r</I> is <B>true </B>or<B> undefined</B>, return <B>false</B>.
 		Otherwise, return <B>true</B>.</SPAN></span></span></P>
@@ -12711,7 +12716,7 @@
 			<span class="times"><span class=size-2><SPAN>Let
 			<I>n</I> be the integer that is the code unit value for the
 			character at position <I>k</I> within <I>py</I>.</SPAN></span></span></P>
-			<LI><P STYLE="margin-top: 0cm; margin-bottom: 0.42cm; letter-spacing: 0.3pt; ">
+			<LI><P>
 			<span class="times"><span class=size-2><SPAN>If
 			<I>m</I> &lt; <I>n</I>, return <B>true</B>. Otherwise, return
 			<B>false</B>.</SPAN></span></span></P>
@@ -12992,24 +12997,24 @@
 		Type(<I>x</I>) is Object and Type(<I>y</I>) is either String or
 		Number,<BR>return the result of the comparison ToPrimitive(<I>x</I>)
 		== <I>y</I>.</SPAN></span></span></P>
-		<LI><P STYLE="margin-top: 0cm; margin-bottom: 0.42cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		<span class="times"><span class=size-2><SPAN>Return
 		<B>false</B>.</SPAN></span></span></P>
 	</OL>
 	<P STYLE="margin-top: 0cm"><span class="arial"><SPAN>NOTE
 	1	Given the above definition of equality:</SPAN></span></P>
     <UL>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
+			<LI><P>
 			<span class="times"><span class=size-2><SPAN><span class="arial"><span class=size-2>String
 			comparison can be forced by:</span></span><span class=size-2>
 			</span><span class="courier"><span class=size-2><B>&quot;&quot;
 			+ a == &quot;&quot; + b</B></span></span><span class=size-2>.</span></SPAN></span></span></P>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.07cm; letter-spacing: 0.3pt; ">
+			<LI><P>
 			<span class="times"><span class=size-2><SPAN><span class="arial"><span class=size-2>Numeric
 			comparison can be forced by:</span></span><span class=size-2>
 			</span><span class="courier"><span class=size-2><B>+a
 			== +b</B></span></span><span class=size-2>.</span></SPAN></span></span></P>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.42cm; letter-spacing: 0.3pt; ">
+			<LI><P>
 			<span class="times"><span class=size-2><SPAN><span class="arial"><span class=size-2>Boolean
 			comparison can be forced by:</span></span><span class=size-2>
 			</span><span class="courier"><span class=size-2><B>!a
@@ -13018,7 +13023,7 @@
 	<P STYLE="margin-top: 0cm"><span class="arial"><SPAN>NOTE
 	2	The equality operators maintain the following invariants:</SPAN></span></P>
     <UL>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.21cm; letter-spacing: 0.3pt; ">
+			<LI><P>
 			<span class="times"><span class=size-2><SPAN><span class="courier"><span class=size-2><B>A</B></span></span><span class=size-2>
 			</span><span class="courier"><span class=size-2><B>!=</B></span></span><span class=size-2>
 			</span><span class="courier"><span class=size-2><B>B</B></span></span><span class=size-2>
@@ -13027,7 +13032,7 @@
 			</span></span><span class="courier"><span class=size-2><B>!(A</B></span></span><span class=size-2>
 			</span><span class="courier"><span class=size-2><B>==</B></span></span><span class=size-2>
 			</span><span class="courier"><span class=size-2><B>B)</B></span></span><span class=size-2>.</span></SPAN></span></span></P>
-			<LI><P STYLE="margin-left: 1.75cm; margin-top: 0cm; margin-bottom: 0.42cm; letter-spacing: 0.3pt; ">
+			<LI><P>
 			<span class="times"><span class=size-2><SPAN><span class="courier"><span class=size-2><B>A</B></span></span><span class=size-2><B>
 			</B></span><span class="courier"><span class=size-2><B>==</B></span></span><span class=size-2><B>
 			</B></span><span class="courier"><span class=size-2><B>B</B></span></span><span class=size-2>
@@ -13570,23 +13575,21 @@
 		<span class="times"><span class=size-2><SPAN>Throw
 		a <B>SyntaxError</B> exception if the following conditions are all
 		true:</SPAN></span></span></P>
-	</OL>
-	<UL STYLE="margin-left: 3.33cm">
-		<LI><P STYLE="margin-left: 1.27cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
+	<UL>
+		<LI><P>
 		 <span class="times"><span class=size-2><SPAN>Type(<I>lref</I>)
 		is Reference is <B>true</B></SPAN></span></span></P>
-		<LI><P STYLE="margin-left: 1.27cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		 <span class="times"><span class=size-2><SPAN>IsStrictReference(<I>lref</I>)
 		is <B>true</B></SPAN></span></span></P>
-		<LI><P STYLE="margin-left: 1.27cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		 <span class="times"><span class=size-2><SPAN>Type(GetBase(<I>lref</I>))
 		is Enviroment Record</SPAN></span></span></P>
-		<LI><P STYLE="margin-left: 1.27cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		 <span class="times"><span class=size-2><SPAN>GetReferencedName(<I>lref</I>)
 		is either <span class="courier"><B>&quot;eval&quot;</B></span>
 		or<span class="courier"><B> &quot;arguments&quot;</B></span></SPAN></span></span></P>
 	</UL>
-	<OL START=5>
 		<LI><P>
 		<span class="times"><span class=size-2><SPAN>Call
 		PutValue(<I>lref</I>, <I>rval</I>).</SPAN></span></span></P>
@@ -13618,7 +13621,7 @@
 	where @ represents one of the operators indicated above, is
 	evaluated as follows:</SPAN></span></span></P>
 	<OL>
-		<LI><P STYLE="margin-left: 0.64cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ; page-break-after: avoid">
+		<LI><P>
 		<span class="times"><span class=size-2><SPAN>Let
 		<I>lref</I> be the result of evaluating <I>LeftHandSideExpression</I>.</SPAN></span></span></P>
 		<LI><P>
@@ -13638,22 +13641,22 @@
 		<span class="times"><span class=size-2><SPAN>Throw
 		a <B>SyntaxError</B> exception if the following conditions are all
 		true:</SPAN></span></span></P>
-	</OL>
-	<UL STYLE="margin-left: 3.33cm">
-		<LI><P STYLE="margin-left: 1.27cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
+	<UL>
+		<LI><P>
 		 <span class="times"><span class=size-2><SPAN>Type(<I>lref</I>)
 		is Reference is <B>true</B></SPAN></span></span></P>
-		<LI><P STYLE="margin-left: 1.27cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		 <span class="times"><span class=size-2><SPAN>IsStrictReference(<I>lref</I>)
 		is <B>true</B></SPAN></span></span></P>
-		<LI><P STYLE="margin-left: 1.27cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		 <span class="times"><span class=size-2><SPAN>Type(GetBase(<I>lref</I>))
 		is Enviroment Record</SPAN></span></span></P>
-		<LI><P STYLE="margin-left: 1.27cm; margin-top: 0cm; margin-bottom: 0cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		 <span class="times"><span class=size-2><SPAN>GetReferencedName(lref)
 		is either <span class="courier"><B>&quot;eval&quot;</B></span>
 		or<span class="courier"><B> &quot;arguments&quot;</B></span></SPAN></span></span></P>
 	</UL>
+	</OL>
 	<OL START=7>
 		<LI><P>
 		<span class="times"><span class=size-2><SPAN>Call
@@ -14163,7 +14166,7 @@
 		ToBoolean(GetValue(<I>exprRef</I>)) is <B>false</B>, return
 		(<span class="arial">normal</span>, <span class="arial">empty</span>,
 		<span class="arial">empty</span>).</SPAN></span></span></P>
-		<LI><P STYLE="margin-left: 1.6cm; margin-top: 0cm; margin-bottom: 0.21cm; letter-spacing: 0.3pt; "><A NAME="_Ref375016635"></A><A NAME="_Ref375016604"></A><A NAME="_Ref375016587"></A>
+		<LI><P><A NAME="_Ref375016635"></A><A NAME="_Ref375016604"></A><A NAME="_Ref375016587"></A>
 		<span class="times"><span class=size-2><SPAN>Return
 		the result of evaluating <I>Statement</I><span class="arial">.</span></SPAN></span></span></P>
 	</OL>
@@ -14640,7 +14643,7 @@
 		statement without the optional </span><I>Identifier</I><span class="arial">,
 		which is not nested, directly or indirectly (but not crossing
 		function boundaries), within an </span><I>IterationStatement</I><span class="arial">.</span></SPAN></span></span></P>
-		<LI><P STYLE="margin-left: 1.91cm; margin-top: 0cm; margin-bottom: 0.39cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		<span class="times"><span class=size-2><SPAN><span class="arial">The
 		program contains a </span><span class="courier"><B>continue</B></span><span class="arial">
 		statement with the optional </span><I>Identifier</I><span class="arial">,
@@ -14698,7 +14701,7 @@
 		which is not nested, directly or indirectly (but not crossing
 		function boundaries), within an </span><I>IterationStatement</I><span class="arial">
 		or a </span><I>SwitchStatement</I><span class="arial">.</span></SPAN></span></span></P>
-		<LI><P STYLE="margin-left: 1.91cm; margin-top: 0cm; margin-bottom: 0.39cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		<span class="times"><span class=size-2><SPAN><span class="arial">The
 		program contains a </span><span class="courier"><B>break</B></span><span class="arial">
 		statement with the optional </span><I>Identifier</I><span class="arial">,
@@ -16176,7 +16179,7 @@
 		<LI><P>
 		<span class="times"><span class=size-2><SPAN>Exit
 		the execution context <I>progCxt</I>.</SPAN></span></span></P>
-		<LI><P STYLE="margin-top: 0cm; margin-bottom: 0.42cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		<span class="times"><span class=size-2><SPAN>Return
 		<I>result</I>.</SPAN></span></span></P>
 	</OL>
@@ -16205,7 +16208,7 @@
 		<I>tailResult</I>.value is <span class="arial">empty</span>,
 		let <I>V</I> = <I>headResult</I>.value, otherwise let <I>V</I> =
 		<I>tailResult</I>.value.</SPAN></span></span></P>
-		<LI><P STYLE="margin-top: 0cm; margin-bottom: 0.42cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		<span class="times"><span class=size-2><SPAN>Return
 		(tailResult.type, V, tailResult.target) </SPAN></span></span>
 		</P>
@@ -17423,6 +17426,7 @@
 		</TR>
 	</TABLE>
       </CENTER>
+      <br>
 	<P class="smaller-bottom">
 	<span class="arial"><span class=size-2><SPAN>Where</SPAN></span></span></P>
 	<P STYLE="text-indent: 0.71cm; margin-top: 0cm; margin-bottom: 0.21cm; ">
@@ -18525,20 +18529,22 @@
 	<span class="courier"><B>prototype</B></span> property
 	is automatically created for every function, to provide for the
 	possibility that the function will be used as a constructor.</SPAN></span></span></P>
-	<P><span class="arial"><p class="note">It
+	<P><span class="arial">
+          <div class="note">It
 	is permissible but not necessary to have one argument for each
 	formal parameter to be specified. For example, all three of the
 	following expressions produce the same result:</SPAN></span></P>
-	<P STYLE="margin-left: 3cm; margin-top: 0cm; margin-bottom: 0.39cm; ">
+	<P class="code-example">
 	<span class="courier"><span class=size-2><SPAN><B>new
 	Function(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;return
 	a+b+c&quot;)</B></SPAN></span></span></P>
-	<P STYLE="margin-left: 3cm; margin-top: 0cm; margin-bottom: 0.39cm; ">
+	<P class="code-example">
 	<span class="courier"><span class=size-2><SPAN><B>new
 	Function(&quot;a, b, c&quot;, &quot;return a+b+c&quot;)</B></SPAN></span></span></P>
-	<P STYLE="margin-left: 3cm; margin-top: 0cm; margin-bottom: 0.39cm; ">
+	<P class="code-example">
 	<span class="courier"><span class=size-2><SPAN><B>new
 	Function(&quot;a,b&quot;, &quot;c&quot;, &quot;return a+b+c&quot;)</B></SPAN></span></span></P>
+</div>
 	<H3><A NAME="_Ref457709043"></A><A NAME="_Ref404502250"></A><A NAME="_Ref404501752"></A><A NAME="_Ref393614246"></A><A NAME="_Ref393610728"></A>
 	<span class="arial"><SPAN>15.3.3	Properties
 	of the Function Constructor</SPAN></span></H3>
@@ -27145,7 +27151,7 @@
 		<span class="times"><span class=size-2><SPAN>If
 		IsCallable(<I>toISO</I>) is <B>false</B>, throw a <B>TypeError
 		</B>exception.</SPAN></span></span></P>
-		<LI><P STYLE="margin-top: 0cm; margin-bottom: 0.42cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		<span class="times"><span class=size-2><SPAN>Return
 		the result of calling the [[Call]] internal method of <I>toISO</I>
 		with <I>O </I>as the <B>this </B>value and an empty argument list.</SPAN></span></span></P>
@@ -28686,7 +28692,7 @@
 		<span class="times"><span class=size-2><SPAN>Return
 		an internal Matcher closure that takes two arguments, a State <I>x</I>
 		and a Continuation <I>c</I>, and performs the following steps:</SPAN></span></span></P>
-		<ol style="list-style-type: decimal">
+		<ol class="decimal">
 					<LI><P>
 					<span class="times"><span class=size-2><SPAN>Let
 					<I>e</I> be <I>x</I>'s <I>endIndex</I>.</SPAN></span></span></P>
@@ -28702,7 +28708,7 @@
 					<LI><P>
 					<span class="times"><span class=size-2><SPAN>If
 					<I>invert</I> is <B>false</B>, then</SPAN></span></span></P>
-					<ol style="list-style-type: lower-alpha">
+					<ol class="lower-alpha">
 						<LI><P>
 						<span class="times"><span class=size-2><SPAN>If
 						there does not exist a member <I>a</I> of set <I>A</I> such
@@ -28712,7 +28718,7 @@
 					<LI><P>
 					<span class="times"><span class=size-2><SPAN>Else
 					<I>invert</I> is <B>true</B>,</SPAN></span></span></P>
-					<ol style="list-style-type: lower-alpha">
+					<ol class="lower-alpha">
 						<LI><P>
 						<span class="times"><span class=size-2><SPAN>If
 						there exists a member <I>a</I> of set <I>A</I> such that
@@ -30261,7 +30267,7 @@
 		<I>match</I> be the result of evaluating the <span class="courier"><B>RegExp.prototype.exec</B></span>
 		(15.10.6.3) algorithm upon this RegExp object using <I>string</I>
 		as the argument.</SPAN></span></span></P>
-		<LI><P STYLE="margin-top: 0cm; margin-bottom: 0.42cm; letter-spacing: 0.3pt; ">
+		<LI><P>
 		<span class="times"><span class=size-2><SPAN>If
 		<I>match</I> is not null, then return <B>true</B>; else return
 		<B>false</B>.</SPAN></span></span></P>
