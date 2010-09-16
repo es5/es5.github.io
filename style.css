@@ -1,0 +1,232 @@
+body {
+  margin-left: 100px;
+  margin-right: 10%;
+  font-family: sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: green;
+}
+#doc-title {
+  background-color: green;
+  color: white;
+  padding: 4px;
+  padding-left: 8px;
+}
+.toc-major {
+  margin-left: 1.27cm;
+  margin-right: 0.88cm;
+  text-indent: -1.27cm;
+  margin-top: 0.21cm;
+  margin-bottom: 0cm;
+}
+.toc-minor {
+  margin-left: 1.27cm;
+  margin-right: 0.88cm;
+  margin-top: 0cm;
+  margin-bottom: 0cm; 
+}
+/* ES5 source doc uses Courier New for monospace */
+.courier {
+  font-family: monospace;
+}
+/* note that ES5 source does not use monospace for symbols */
+.symbol {
+}
+/* below are based on other font names used in the original;
+ * we retained them here just for the sake of not discarding
+ * info from the source that could be useful */
+  .a { } /* = arial in orig */
+  .h { } /* = helvetica in orig */
+  .t { } /* = times new roman in orig */
+  .tr { } /* = literal "tms-rmn" in orig */
+  .cgt { } /* = "cg-times" in orig */
+  .figure {
+    margin: 8px;
+}
+.figure > p:first-child {
+  border: 1px solid #999;
+  padding: 6px;
+}
+.caption {
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+#copyright {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+#license {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #000000;
+  padding: 4px;
+}
+.note {
+  border: 1px solid #999;
+  padding: 6px;
+  margin-bottom: 8px;
+}
+.note:before {
+  content: "FUBAR ";
+  font-weight: bold;
+  color: green;
+}
+.note > p:first-child {
+  margin-top: 12px;
+}
+span.black { }
+.break-inside-after-avoid {
+  margin-top: 0cm;
+  margin-bottom: 0.42cm;
+  page-break-inside: avoid;
+  page-break-after: avoid
+}
+.break-after-avoid {
+  margin-top: 0cm;
+  margin-bottom: 0cm;
+  page-break-after: avoid
+}
+.break-after-avoid ~ p {
+  margin-top: 0;
+}
+p.space-after {
+  margin-top: 0cm;
+  margin-bottom: 0.42cm;
+}
+p.smaller-bottom {
+  margin-top: 0cm;
+  margin-bottom: 0.21cm;
+}
+p.tiny-bottom {
+  margin-bottom: 0.21cm;
+  page-break-inside: avoid;
+  page-break-after: avoid;
+}
+.definition-level-1 {
+  margin-left: 1.02cm;
+  margin-top: 0cm;
+  margin-bottom: 0cm;
+  page-break-after: avoid;
+}
+.definition-level-1-got-bottom {
+  margin-left: 1.02cm;
+  margin-top: 0cm;
+  margin-bottom: 0.39cm;
+  page-break-inside: avoid:
+}
+.definition-level-2 {
+  margin-left: 2.03cm;
+  margin-top: 0cm;
+  margin-bottom: 0.39cm;
+  page-break-inside: avoid;
+}
+.definition-level-2-alt {
+  margin-left: 2.03cm;
+  margin-top: 0cm;
+  margin-bottom: 0.39cm;
+  font-style: normal;
+  page-break-inside: avoid;
+}
+.code-example {
+  margin-left: 2.23cm;
+  margin-right: 2.23cm;
+  margin-top: 0cm;
+  margin-bottom: 0cm;
+}
+.code-example + p:not(.code-example) {
+  margin-top: 1em;
+}
+.date-definition {
+  margin-left: 3.23cm;
+  margin-right: 2.23cm;
+  text-indent: -1cm;
+  margin-top: 0cm;
+  margin-bottom: 12px;
+}
+caption {
+  font-weight: bold;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  page-break-after: avoid;
+}
+.biblio {
+  margin-left: 1.16cm;
+  margin-top: 0cm;
+  margin-bottom: 0.42cm;
+}
+td {
+  padding: 4px;
+}
+td > p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+ul.outer {}
+ul.inner {}
+ol.inner {}
+ol > li {
+  margin-top: 12px;
+}
+ol > li > ol {
+  list-style-type: lower-alpha;
+}
+ol > li > ol > li > ol {
+  list-style-type: lower-roman;
+}
+ol > li > ol > li > ol > li > ol {
+  list-style-type: decimal;
+}
+ol > li > ol > li > ol > li > ol > li > ol {
+  list-style-type: lower-alpha;
+}
+ol ul {
+  margin-top: 8px;
+  margin-left: 0;
+  list-style-type: disc;
+  padding-left: 20px
+}
+li > p {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+.indent-1 {
+  margin-left: 1.59cm;
+  margin-top: 0cm;
+  margin-bottom: 0.21cm;
+  letter-spacing: 0.3pt;
+}
+li p.indent-1 {
+  margin-left: 1.59cm;
+  margin-top: 0cm;
+  margin-bottom: 0.21cm;
+  letter-spacing: 0.3pt;
+}
+li p.indent-1-no-bottom {
+  margin-left: 1.59cm;
+  margin-top: 0cm;
+  margin-bottom: 0.21cm;
+}
+.pre {
+  white-space: pre;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-left: 20px;
+}
+.small-caps {
+  font-variant: small-caps;
+}
+.lower-alpha {
+  list-style-type: lower-alpha;
+}
+.lower-roman {
+  list-style-type: lower-roman;
+}
+.decimal {
+  list-style-type: decimal;
+}
+
+span.table-header { }
+
+@page { margin-right: 1.3cm; margin-top: 1.25cm; margin-bottom: 0.5cm }
+@page:first { margin-top: 7.75cm; margin-bottom: 0.5cm }
