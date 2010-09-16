@@ -1,23 +1,20 @@
-# About
+# Annotated ECMAScript 5
 
-This main HTML document in this repo is intended to become an annotated
-reference to the Fifth Edition of the ECMAScript Language Specification, **in
-HTML**.
+This repo holds a document that provides an annotated HTML view of ECMA 262,
+the ECMAScript Language Specification, 5th edition. It is **not** a normative
+version of the ECMAScript spec. Though it does include the **full text** of
+the spec, it is in fact a completely **non-normative** derivative work _based
+on_ the spec—strictly for the purpose of explaining the spec and assisting in
+its implementation.
 
-It is awaiting the addition of annotations—but because it is an **HTML**
-document and does actually contain the full text of the ES5 spec, it can be
-used a **non-normative** reference to the spec by anybody who prefers to read
-the spec content **in HTML** rather than in a PDF or Word document.
+No copyright is currently asserted on the annotations that are part of the
+Annotated ECMAScript 5 document. But the non-annotations part of the document
+is entirely verbatim text from the spec—used under the terms of that
+document’s [copyright notice][1] and [license statement][2]—so reuse of any
+non-annotation content from the Annotated ECMAScript 5 document must also
+adhere to the terms of that license.
 
-## IMPORTANT
+   [1]: spec.html#copyright
 
-This document is _not_ the ES5 spec. It is a completely **non-normative**
-_derivative work_, as permitted by the copyright notice on the spec, which
-reads in part:
-
-> This draft document may be copied and furnished to others, and derivative
-works that comment on or otherwise explain it or assist in its implementation
-may be prepared, copied, published, and distributed, in whole or in part,
-without restriction of any kind, provided that the above copyright notice and
-this section are included on all such copies and derivative works.
+   [2]: spec.html#license
 
