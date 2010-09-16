@@ -14,7 +14,7 @@ document’s [copyright notice][1] and [license statement][2]—so reuse of any
 non-annotation content from the Annotated ECMAScript 5 document must also
 adhere to the terms of that license.
 
-   [1]: spec.html#copyright
+   [1]: http://sideshowbarker.github.com/es5-spec/spec.html#copyright
 
-   [2]: spec.html#license
+   [2]: http://sideshowbarker.github.com/es5-spec/spec.html#license
 

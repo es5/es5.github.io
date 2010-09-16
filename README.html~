@@ -18,9 +18,7 @@ assisting in its implementation.</p>
 part of the <cite>Annotated ECMAScript 5</cite> document. But the
 non-annotations part of the document is entirely verbatim text
 from the spec—used under the terms of that document’s
-<a href="http://sideshowbarker.github.com/es5-spec/spec.html#copyright">copyright notice</a>
-and
-<a href="http://sideshowbarker.github.com/es5-spec/spec.html#license">license statement</a>—so
-reuse of any
+<a href="spec.html#copyright">copyright notice</a> and
+<a href="spec.html#license">license statement</a>—so reuse of any
 non-annotation content from the <cite>Annotated ECMAScript 5</cite>
 document must also adhere to the terms of that license.</p>
