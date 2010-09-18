@@ -12,22 +12,22 @@ h1, h2, h3, h4, h5, h6 {
   padding: 4px;
   padding-left: 8px;
 }
-.toc-major {
-  margin-left: 1.27cm;
-  margin-right: 0.88cm;
-  text-indent: -1.27cm;
-  margin-top: 0.21cm;
-  margin-bottom: 0cm;
+#toc > ol,
+#toc-full > ol {
+  padding-left: 24px;
 }
-.toc-minor {
-  margin-left: 1.27cm;
-  margin-right: 0.88cm;
-  margin-top: 0cm;
-  margin-bottom: 0cm; 
+#toc > ol ol,
+#toc-full > ol ol {
+  padding-left: 24px;
 }
-/* ES5 source doc uses Courier New for monospace */
-.courier {
-  font-family: monospace;
+#toc li,
+#toc-full li  {
+  list-style-type: none;
+}
+#toc,
+#toc-full {
+  margin-top: 36px;
+  line-height: 80%
 }
 /* note that ES5 source does not use monospace for symbols */
 .symbol {
@@ -75,52 +75,52 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 12px;
 }
 span.black { }
-.break-inside-after-avoid {
+.keeps {
   margin-top: 0cm;
   margin-bottom: 0.42cm;
   page-break-inside: avoid;
   page-break-after: avoid
 }
-.break-after-avoid {
+.keep {
   margin-top: 0cm;
   margin-bottom: 0cm;
   page-break-after: avoid
 }
-.break-after-avoid ~ p {
+.keep ~ p {
   margin-top: 0;
 }
-p.space-after {
+p.sp {
   margin-top: 0cm;
   margin-bottom: 0.42cm;
 }
-p.smaller-bottom {
+p.sm-btm {
   margin-top: 0cm;
   margin-bottom: 0.21cm;
 }
-p.tiny-bottom {
+p.tiny-btm {
   margin-bottom: 0.21cm;
   page-break-inside: avoid;
   page-break-after: avoid;
 }
-.definition-level-1 {
+.def1 {
   margin-left: 1.02cm;
   margin-top: 0cm;
   margin-bottom: 0cm;
   page-break-after: avoid;
 }
-.definition-level-1-got-bottom {
+.def1-btm {
   margin-left: 1.02cm;
   margin-top: 0cm;
   margin-bottom: 0.39cm;
   page-break-inside: avoid:
 }
-.definition-level-2 {
+.def2 {
   margin-left: 2.03cm;
   margin-top: 0cm;
   margin-bottom: 0.39cm;
   page-break-inside: avoid;
 }
-.definition-level-2-alt {
+.def2-alt {
   margin-left: 2.03cm;
   margin-top: 0cm;
   margin-bottom: 0.39cm;
