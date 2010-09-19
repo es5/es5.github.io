@@ -7,10 +7,10 @@ h1, h2, h3, h4, h5, h6 {
   color: green;
 }
 h4 {
-  margin-bottom: 0;
+  margin-bottom: 4px;
 }
 h4 + p {
-  margin-top: 0;
+  margin-top: 4px;
 }
 #doc-title {
   background-color: green;
@@ -68,19 +68,12 @@ h4 + p {
   padding: 4px;
 }
 .note {
-  border: 1px solid #999;
-  padding: 6px;
-  margin-bottom: 8px;
-}
-.note:before {
-  content: "FUBAR ";
   font-weight: bold;
   color: green;
 }
-.note > p:first-child {
-  margin-top: 12px;
+.note::after {
+  content: "   ";
 }
-span.black { }
 .keeps {
   margin-top: 0cm;
   margin-bottom: 0.42cm;

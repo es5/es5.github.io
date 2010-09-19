@@ -1470,7 +1470,7 @@
 	member
 	of one of the types Undefined, Null, Boolean, Number, or String as
 	defined in Clause 8.</p>
-	<p class="note">A
+	<p><b class="note">NOTE</b> A
 	primitive value is a datum that is represented directly at the
 	lowest level of the language implementation.</p>
 	<h4 id="x4.3.3">4.3.3<br/>
@@ -1478,7 +1478,7 @@
 	<p>
 	member
 	of the type Object.</p>
-	<p class="note">An
+	<p><b class="note">NOTE</b> An
 	object is a collection of properties and has a single prototype
 	object. The prototype may be the null value.</p>
 	<h4 id="x4.3.4">4.3.4<br/>
@@ -1486,7 +1486,7 @@
 	<p>
 	Function
 	object that creates and initialises objects.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	value of a constructor’s “<code>prototype</code>”
 	property is a prototype object that is used to implement inheritance
 	and shared properties.</p>
@@ -1495,7 +1495,7 @@
 	<p>
 	object
 	that provides shared properties for other objects.</p>
-	<p class="note">When
+	<p><b class="note">NOTE</b> When
 	a constructor creates an object, that object implicitly references
 	the constructor’s “<code><b>prototype</b></code>”
 	property for the purpose of resolving property references. The
@@ -1513,7 +1513,7 @@
 	object
 	in an ECMAScript implementation whose semantics are fully defined by
 	this specification rather than by  the host environment.</p>
-	<p class="note">Standard
+	<p><b class="note">NOTE</b> Standard
 	native objects are defined in this specification. Some native
 	objects are built-in; others may be constructed during the course of
 	execution of an ECMAScript program.</p>
@@ -1524,7 +1524,7 @@
 	supplied by an ECMAScript implementation, independent of the host
 	environment, that is present at the start of the execution of an
 	ECMAScript program.</p>
-	<p class="note">Standard
+	<p><b class="note">NOTE</b> Standard
 	built-in objects are defined in this specification, and an
 	ECMAScript implementation may specify and define others. Every
 	built-in object is a native object. A <i>built-in constructor</i><i><b>
@@ -1535,7 +1535,7 @@
 	object
 	supplied by the host environment to complete the execution
 	environment of ECMAScript.</p>
-	<p class="note">Any
+	<p><b class="note">NOTE</b> Any
 	object that is not native is a host object.</p>
 	<h4 id="x4.3.9">4.3.9<br/>
 	<dfn id="undefined_value">undefined value</dfn></h4>
@@ -1563,7 +1563,7 @@
 	<p>
 	member
 	of the Boolean type.</p>
-	<p class="note">There
+	<p><b class="note">NOTE</b> There
 	are only two Boolean values, <b>true</b> and <b>false</b>.</p>
 	<h4 id="x4.3.14">4.3.14<br/>
 	<dfn id="Boolean_type">Boolean type</dfn></h4>
@@ -1577,7 +1577,7 @@
 	of the Object type that is an instance of the standard built-in
 	<code><b>Boolean</b></code>
 	constructor.</p>
-	<p class="note">A
+	<p><b class="note">NOTE</b> A
 	Boolean object is created by using the <code><b>Boolean</b></code>
 	constructor in a <code><b>new</b></code>
 	expression, supplying a Boolean value as an argument. The resulting
@@ -1590,7 +1590,7 @@
 	value that is a finite ordered sequence of zero or more 16-bit
 	unsigned integer. 
 	</p>
-	<p class="note">A
+	<p><b class="note">NOTE</b> A
 	String value is a member of the String type. Each integer value in
 	the sequence usually represents a single 16-bit unit of UTF-16 text.
 	However, ECMAScript does not place any restrictions or requirements
@@ -1607,7 +1607,7 @@
 	of the Object type that is an instance of the standard built-in
 	<code><b>String</b></code>
 	constructor.</p>
-	<p class="note">A
+	<p><b class="note">NOTE</b> A
 	String object is created by using the <code><b>String</b></code>
 	constructor in a <code><b>new</b></code>
 	expression, supplying a String value as an argument. The resulting
@@ -1620,7 +1620,7 @@
 	primitive
 	value corresponding to a double-precision 64-bit binary format IEEE
 	754 value.</p>
-	<p class="note">A
+	<p><b class="note">NOTE</b> A
 	Number value is a member of the Number<b> </b>type and is a direct
 	representation of a number.</p>
 	<h4 id="x4.3.20">4.3.20<br/>
@@ -1636,7 +1636,7 @@
 	of the Object type that is an instance of the standard built-in
 	<code><b>Number</b></code>
 	constructor.</p>
-	<p class="note">A
+	<p><b class="note">NOTE</b> A
 	Number object is created by using the <code><b>Number</b></code>
 	constructor in a <code><b>new</b></code>
 	expression, supplying a Number value as an argument. The resulting
@@ -1661,7 +1661,7 @@
 	of the Object type that is an instance of the standard built-in
 	<code><b>Function</b></code>
 	constructor and that may be invoked as a subroutine.</p>
-	<p class="note">In
+	<p><b class="note">NOTE</b> In
 	addition to its named properties, a function contains executable
 	code and state that determine how it behaves when invoked. A
 	function’s code may or may not be written in ECMAScript.</p>
@@ -1670,7 +1670,7 @@
 	<p>
 	built-in
 	object that is a function.</p>
-	<p class="note">Examples
+	<p><b class="note">NOTE</b> Examples
 	of built-in functions include <code><b>parseInt</b></code>
 	and <code><b>Math.exp</b></code>. An
 	implementation may provide implementation-dependent built-in
@@ -1682,7 +1682,7 @@
 	<p>
 	association
 	between a name and a value that is a part of an object.</p>
-	<p class="note">Depending
+	<p><b class="note">NOTE</b> Depending
 	upon the form of the property the value may be represented either
 	directly as a data value (a primitive value, an object, or a
 	function object) or indirectly by a pair of accessor functions.</p>
@@ -1691,7 +1691,7 @@
 	<p>
 	function
 	that is the value of a property.</p>
-	<p class="note">When
+	<p><b class="note">NOTE</b> When
 	a function is called as a method of an object, the object is passed
 	to the function as its <b>this</b> value.</p>
 	<h4 id="x4.3.28">4.3.28<br/>
@@ -1699,7 +1699,7 @@
 	<p>
 	method
 	that is a built-in function.</p>
-	<p class="note">Standard
+	<p><b class="note">NOTE</b> Standard
 	built-in methods are defined in this specification, and an
 	ECMAScript implementation may specify and provide other additional
 	built-in methods. 
@@ -2280,7 +2280,7 @@
 	mathematical function floor(<i>x</i>)
 	yields the largest integer (closest to positive infinity) that is
 	not larger than <i>x</i>.</p>
-	<p class="note">floor(<i>x</i>)
+	<p><b class="note">NOTE</b> floor(<i>x</i>)
 	= <i>x</i><span class="symbol">−</span>(<i>x</i>
 	modulo 1).</p>
 	<p class="sp">
@@ -2339,7 +2339,7 @@
 	sequence contributes one character to the value of the literal.
 	Within an identifier, the escape sequence contributes one character
 	to the identifier.</p>
-	<p class="note">Although
+	<p><b class="note">NOTE</b> Although
 	this document sometimes refers to a “transformation” between a
 	“character” within a “string” and the 16-bit unsigned
 	integer that is the code unit of that character, there is actually
@@ -2382,7 +2382,7 @@
 	division-assignment (<code><b>/=</b></code>)
 	operator is permitted. The <i>InputElementRegExp</i>
 	symbol is used in other syntactic grammar contexts.</p>
-	<p class="note">There
+	<p><b class="note">NOTE</b> There
 	are no syntactic grammar contexts where both a leading division or
 	division-assignment, and a leading <i>RegularExpressionLiteral</i>
 	are permitted. This is not affected by semicolon insertion (see
@@ -2943,7 +2943,7 @@
 	<p class="def1-btm">
 	<i>IdentifierName<br/>Punctuator<br/>NumericLiteral<br/>StringLiteral</i></p>
 	<p class="sp">
-	</p><p class="note">The
+	</p><p><b class="note">NOTE</b> The
 	<i>DivPunctuator</i> and
 	<i>RegularExpressionLiteral</i>
 	productions define tokens, but are not included in the <i>Token</i>
@@ -3759,13 +3759,12 @@
 	must not be an <i>IdentifierStart</i>
 	or <i>DecimalDigit</i>.</p>
 	<p>
-          </p><div class="note">For example:
-      <p class="code-example">
-	<code><b>3in</b></code></p>
+	</p><p><b class="note">NOTE</b> For example:</p>
+	<p class="code-example"><code><b>3in</b></code></p>
 	<p class="sp">is
 	an error and not the two input elements <code><b>3</b></code>
 	and <code><b>in</b></code>.</p>
-  </div>
+	</div>
 	<p class="tiny-btm">
 	<b>Semantics</b></p>
 	<p>
@@ -4575,7 +4574,7 @@
 	to include <i>OctalEscapeSequence</i>
 	as described in <a href="#B.1.2">B.1.2</a>.</p>
 	<p class="sp">
-	</p><p class="note">A line
+	</p><p><b class="note">NOTE</b> A line
 	terminator character cannot appear in a string literal, except as
 	part of a <i>LineContinuation</i>
 	to produce the empty character sequence. The correct way to cause a
@@ -4692,7 +4691,7 @@
 	<p class="def1-btm">
 	[empty]<i><br/>RegularExpressionFlags
 	IdentifierPart</i></p>
-	<p class="note">Regular
+	<p><b class="note">NOTE</b> Regular
 	expression literals may not be empty; instead of representing an
 	empty regular expression literal, the characters <code><b>//</b></code>
 	start a single-line comment. To specify an empty regular expression,
@@ -4790,8 +4789,8 @@
 	statement (see <a href="#x12.6.3">12.6.3</a>).</p>
 	<p>
 
-	</p><div class="note">The following
-	are the only restricted productions in the grammar:
+	</p><p><b class="note">NOTE</b> The following
+	are the only restricted productions in the grammar:</p>
 	<p class="def1">
 	<i>PostfixExpression
 	</i><b>:</b></p>
@@ -4843,7 +4842,6 @@
 	<i>LineTerminator</i>
 	here] <i>Expression
 	<b>;</b></i></p>
-      </div>
 	<p>
 	The
 	practical effect of these restricted productions is as follows:</p>
@@ -4939,7 +4937,7 @@
 	<p class="code-example">
 	<code><b>return;<br/>a
 	+ b;</b></code></p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	expression <code><b>a + b</b></code>
 	is not treated as a value to be returned by the <code><b>return</b></code>
 	statement, because a <i>LineTerminator</i>
@@ -4954,7 +4952,7 @@
 	<p class="code-example">
 	<code><b>a
 	= b;<br/>++c;</b></code></p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	token <code><b>++</b></code> is not
 	treated as a postfix operator applying to the variable <code><b>b</b></code>,
 	because a <i>LineTerminator</i>
@@ -5062,7 +5060,7 @@
 	otherwise stated) treat them as sequences of undifferentiated 16-bit
 	unsigned integers; they do not ensure the resulting String is in
 	normalised form, nor do they ensure language-sensitive results.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	rationale behind this design was to keep the implementation of
 	Strings as simple and high-performing as possible. The intent is
 	that textual data coming into the execution environment from outside
@@ -5868,7 +5866,7 @@
 	object may not be modified.  Once the value of an [[Extensible]]
 	internal property has been set to <b>false</b> it may not be
 	subsequently changed to <b>true</b>.</p>
-	<p class="note">This
+	<p><b class="note">NOTE</b> This
 	specification defines no ECMAScript language operators or built-in
 	functions that permit a program to modify an object’s [[Class]] or
 	[[Prototype]] internal properties or to change the value of
@@ -6343,7 +6341,7 @@
 		</i>providing <i>base </i>as the <b>this</b> value and providing no
 		arguments.</p>
 	</li></ol>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	object that may be created in step 1 is not accessible outside of
 	the above method. An implementation might choose to avoid the actual
 	creation of the object. The only situation where such an actual
@@ -6479,7 +6477,7 @@
 		</li><li><p>
 		Return.</p>
 	</li></ol>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	object that may be created in step 1 is not accessible outside of
 	the above method.  An implementation might choose to avoid the
 	actual creation of that transient object. The only situations where
@@ -7470,7 +7468,7 @@
 	if <i>O</i> is an Array
 	object, it has a more elaborate [[DefineOwnProperty]] internal
 	method defined in <a href="#x15.4.5.1">15.4.5.1</a>.</p>
-	<p class="note">Step
+	<p><b class="note">NOTE</b> Step
 	10.b allows any field of Desc to be different from the corresponding
 	field of current if current’s [[Configurable]] field is <b>true</b>.
 	This even permits changing the [[Value]] of a property whose
@@ -8241,7 +8239,7 @@
 		otherwise return <i>int32bit</i>.</p>
 	</li></ol>
 	<p>
-          </p><div class="note">Given the above definition of ToInt32:
+	</p><p><b class="note">NOTE</b> Given the above definition of ToInt32:</p>
 	<ul>
 		<li><p>
 		The ToInt32
@@ -8258,7 +8256,6 @@
 		ToInt32 maps <span class="symbol"><b>−</b></span><b>0</b>
 		to <b>+0</b>.</p>
 	</li></ul>
-      </div>
 	<h3 id="x9.6">9.6 ToUint32: (Unsigned 32 Bit Integer)</h3>
 	<p>
 	The
@@ -8291,7 +8288,7 @@
 		<i>int32bit</i>.</p>
 	</li></ol>
 	<p>
-          </p><div class="note">Given the above definition of ToUInt32:
+	</p><p><b class="note">NOTE</b> Given the above definition of ToUInt32:</p>
 	<ul>
 		<li><p>
 		Step 5 is the
@@ -8311,7 +8308,6 @@
 		ToUint32 maps <span class="symbol"><b>−</b></span><b>0</b>
 		to <b>+0</b>.</p>
 	</li></ul>
-      </div>
 	<h3 id="x9.7">9.7 ToUint16: (Unsigned 16 Bit Integer)</h3>
 	<p>
 	The
@@ -8344,7 +8340,7 @@
 		<i>int16bit</i>.</p>
 	</li></ol>
 	<p>
-          </p><div class="note">Given the above definition of ToUint16:
+	</p><p><b class="note">NOTE</b> Given the above definition of ToUint16:</p>
 	<ul>
 		<li><p>
 		The substitution
@@ -8355,7 +8351,6 @@
 		ToUint16 maps <span class="symbol"><b>−</b></span><b>0</b>
 		to <b>+0</b>.</p>
 	</li></ul>
-      </div>
 	<h3 id="x9.8">9.8 ToString</h3>
 	<p class="sm-btm">
 	The
@@ -8527,8 +8522,7 @@
 		followed by the decimal representation of the integer abs(n<span class="symbol">−</span>1)
 		(with no leading zeros).</p>
 	</li></ol>
-	<p>NOTE
-	1	The following observations may be useful as guidelines for
+	<p><b class="note">NOTE 1</b> The following observations may be useful as guidelines for
 	implementations, but are not part of the normative requirements of
 	this Standard:</p>
 	<ul>
@@ -8541,8 +8535,7 @@
 		significant digit of s is not always uniquely determined by the
 		requirements listed in step 5.</p>
 	</li></ul>
-	<p>NOTE
-	2	For implementations that provide more accurate conversions than
+	<p><b class="note">NOTE 2</b> For implementations that provide more accurate conversions than
 	required by the rules above, it is recommended that the following
 	alternative version of step 5 be used as a guideline:</p>
 	<p class="indent-1">
@@ -8572,8 +8565,7 @@
 	is the number of digits in the decimal representation of <i>s</i>
 	and that <i>s</i>
 	is not divisible by 10.</p>
-	<p>NOTE
-	3	Implementers of ECMAScript may find useful the paper and code
+	<p><b class="note">NOTE 3</b> Implementers of ECMAScript may find useful the paper and code
 	written by David M. Gay for binary-to-decimal conversion of
 	floating-point numbers:</p>
 	<p class="indent-1">
@@ -10590,8 +10582,7 @@
 		Return
 		<i>result</i>.</p>
 	</li></ol>
-	<p class="sp">NOTE
-	1	For non-strict mode functions the array index (defined in <a href="#x15.4">15.4</a>)
+	<p class="sp"><b class="note">NOTE 1</b> For non-strict mode functions the array index (defined in <a href="#x15.4">15.4</a>)
 	named data properties of an arguments object whose numeric name
 	values are less than the number of formal parameters of the
 	corresponding function object initially share their values with the
@@ -10604,16 +10595,14 @@
 	properties are simply a copy of the arguments passed to the function
 	and there is no dynamic linkage between the property values and the
 	formal parameter values.</p>
-	<p class="sp">NOTE
-	2	The ParameterMap object and its property values are used as a
+	<p class="sp"><b class="note">NOTE 2</b> The ParameterMap object and its property values are used as a
 	device for specifying the arguments object correspondence to
 	argument bindings. The ParameterMap object and the objects that are
 	the values of its properties are not directly accessible from
 	ECMAScript code. An ECMAScript implementation does not need to
 	actually create or use such objects to implement the specified
 	semantics.</p>
-	<p class="sp">NOTE
-	3	Arguments objects for strict mode functions define
+	<p class="sp"><b class="note">NOTE 3</b> Arguments objects for strict mode functions define
 	non-configurable accessor properties named "<code><b>caller</b></code>"
 	and "<code><b>callee</b></code>"
 	which throw a <b>TypeError</b> exception on access. The "<code><b>callee</b></code>"
@@ -10859,7 +10848,7 @@
 		<i>preceding</i>+1.</p>
 	</li></ol>
 	<p class="sp">
-	</p><p class="note">
+	</p><p><b class="note">NOTE</b> 
 	[[DefineOwnProperty]] is used to ensure that own properties are
 	defined for the array even if the standard built-in Array prototype
 	object has been modified in a manner that would preclude the
@@ -11172,7 +11161,7 @@
 		Reference.</p>
 	</li></ol>
 	<p class="sp">
-	</p><p class="note">This
+	</p><p><b class="note">NOTE</b> This
 	algorithm does not apply GetValue to the result of evaluating
 	Expression. The principal motivation for this is so that operators
 	such as <code><b>delete</b></code> and
@@ -11457,7 +11446,7 @@
 	<i>CallExpression</i> is
 	evaluated in step 1.</p>
 	<p class="sp">
-	</p><p class="note">The returned
+	</p><p><b class="note">NOTE</b> The returned
 	result will never be of type Reference if <i>func</i>
 	is a native ECMAScript object. Whether calling a host object can
 	return a value of type Reference is implementation-dependent. If a
@@ -11724,7 +11713,7 @@
 			argument.</p>
 		</li></ol>
 	</li></ol>
-	<p class="note">When
+	<p><b class="note">NOTE</b> When
 	a <code><b>delete</b></code> operator
 	occurs within strict mode code, a <b>SyntaxError</b> exception is
 	thrown if its <i>UnaryExpression</i>
@@ -11751,7 +11740,7 @@
 		Return
 		<b>undefined</b>.</p>
 	</li></ol>
-	<p class="note">GetValue
+	<p><b class="note">NOTE</b> GetValue
 	must be called even though its value is not used because it may have
 	observable side-effects.</p>
 	<h4 id="x11.4.3">11.4.3 The typeof Operator</h4>
@@ -12209,7 +12198,7 @@
 	operator yields the remainder of its operands from an implied
 	division; the left operand is the dividend and the right operand is
 	the divisor.</p>
-	<p class="note">In
+	<p><b class="note">NOTE</b> In
 	C and C++, the remainder operator accepts only integral operands; in
 	ECMAScript, it also accepts floating-point operands.</p>
 	<p>
@@ -12315,14 +12304,12 @@
 		the result of applying the addition operation to ToNumber(<i>lprim</i>)
 		and ToNumber(<i>rprim</i>). See the Note below <a href="#x11.6.3">11.6.3</a>.</p>
 	</li></ol>
-	<p class="sp">NOTE
-	1	No hint is provided in the calls to ToPrimitive in steps 5 and 6.
+	<p class="sp"><b class="note">NOTE 1</b> No hint is provided in the calls to ToPrimitive in steps 5 and 6.
 	All native ECMAScript objects except Date objects handle the absence
 	of a hint as if the hint Number were given; Date objects handle the
 	absence of a hint as if the hint String were given. Host objects may
 	handle the absence of a hint in some other manner.</p>
-	<p class="sp">NOTE
-	2	Step 7 differs from step 3 of the comparison algorithm for the
+	<p class="sp"><b class="note">NOTE 2</b> Step 7 differs from step 3 of the comparison algorithm for the
 	relational operators (<a href="#x11.8.5">11.8.5</a>), by using the logical-or operation
 	instead of the logical-and operation.</p>
 	<h4 id="x11.6.2">11.6.2 The Subtraction Operator ( - )</h4>
@@ -12590,7 +12577,7 @@
 	ShiftExpression<br/>RelationalExpressionNoIn </i><code><b>&gt;=</b></code><i>
 	ShiftExpression<br/>RelationalExpressionNoIn </i><code><b>instanceof</b></code><i>
 	ShiftExpression</i></p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	“NoIn” variants are needed to avoid confusing the <code>in</code>
 	operator in a relational expression with the <code>in</code>
 	operator in a <code>for</code>
@@ -12867,12 +12854,10 @@
 			<b>false</b>.</p>
 		</li></ol>
 	</li></ol>
-	<p class="sp">NOTE
-	1	Step 3 differs from step 7 in the algorithm for the addition
+	<p class="sp"><b class="note">NOTE 1</b> Step 3 differs from step 7 in the algorithm for the addition
 	operator <code><b>+</b></code>
 	(<a href="#x11.6.1">11.6.1</a>) in using and instead of or.</p>
-	<p class="sp">NOTE
-	2	The comparison of Strings uses a simple lexicographic ordering on
+	<p class="sp"><b class="note">NOTE 2</b> The comparison of Strings uses a simple lexicographic ordering on
 	sequences of code unit values. There is no attempt to use the more
 	complex, semantically oriented definitions of character or string
 	equality and collating order defined in the Unicode specification.
@@ -13136,8 +13121,7 @@
 		Return
 		<b>false</b>.</p>
 	</li></ol>
-	<p>NOTE
-	1	Given the above definition of equality:</p>
+	<p><b class="note">NOTE 1</b> Given the above definition of equality:</p>
     <ul>
 			<li><p>
 			String
@@ -13155,8 +13139,7 @@
 			<code><b>!a
 			== !b</b></code>.</p>
 	</li></ul>
-	<p>NOTE
-	2	The equality operators maintain the following invariants:</p>
+	<p><b class="note">NOTE 2</b> The equality operators maintain the following invariants:</p>
     <ul>
 			<li><p>
 			<code><b>A</b></code>
@@ -13180,16 +13163,14 @@
 			and
 			<code><b>B</b></code>.</p>
 	</li></ul>
-	<p class="sp">
-	NOTE 3	The
+	<p class="sp"><b class="note">NOTE 3</b> The
 	equality operator is not always transitive. For example, there might
 	be two distinct String objects, each representing the same String
 	value; each String object would be considered equal to the String
 	value by the <code><b>==</b></code>
 	operator, but the two String objects would not be equal to each
 	other.</p>
-	<p class="sp">NOTE
-	4	Comparison of Strings uses a simple equality test on sequences of
+	<p class="sp"><b class="note">NOTE 4</b> Comparison of Strings uses a simple equality test on sequences of
 	code unit values. There is no attempt to use the more complex,
 	semantically oriented definitions of character or string equality
 	and collating order defined in the Unicode specification. Therefore
@@ -13307,7 +13288,7 @@
 		<b>true</b> if <i>x</i> and <i>y</i> refer to the same object.
 		Otherwise, return <b>false</b>.</p>
 	</li></ol>
-	<p class="note">This
+	<p><b class="note">NOTE</b> This
 	algorithm differs from the SameValue Algorithm (<a href="#x9.12">9.12</a>) in its
 	treatment of signed zeroes and NaNs.</p>
 	<h3 id="x11.10">11.10 Binary Bitwise Operators</h3>
@@ -13482,7 +13463,7 @@
 	<i>BitwiseORExpression</i>
 	and <i>LogicalORExpression</i>,
 	respectively.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	value produced by a <code><b>&amp;&amp;</b></code>
 	or <code><b>||</b></code> operator is
 	not necessarily of type Boolean. The value produced will always be
@@ -13561,7 +13542,7 @@
 	and second <i>AssignmentExpression</i>,
 	respectively.</p>
 	<p class="sp">
-	</p><p class="note">The grammar
+	</p><p><b class="note">NOTE</b> The grammar
 	for a ConditionalExpression in ECMAScript is a little bit different
 	from that in C and Java, which each allow the second subexpression
 	to be an Expression but restrict the third expression to be a
@@ -13716,7 +13697,7 @@
 		Return
 		<i>rval</i>.</p>
 	</li></ol>
-	<p class="note">When
+	<p><b class="note">NOTE</b> When
 	an assignment occurs within strict mode code, its <i>LeftHandSide</i>
 	must not evaluate to an unresolvable reference. If it does a
 	<b>ReferenceError</b> exception is thrown upon assignment. The
@@ -13783,7 +13764,7 @@
 		Return
 		<i>r</i>.</p>
 	</li></ol>
-	<p class="note">See
+	<p><b class="note">NOTE</b> See
 	NOTE <a href="#x11.13.1">11.13.1</a>.</p>
 	<h3 id="x11.14">11.14 Comma Operator ( , )</h3>
 	<p class="tiny-btm">
@@ -13835,7 +13816,7 @@
 	and <i>AssignmentExpression</i>,
 	respectively.</p>
 	<p class="sp">
-	</p><p class="note">GetValue must
+	</p><p><b class="note">NOTE</b> GetValue must
 	be called even though its value is not used because it may have
 	observable side-effects.</p>
 	<h2 id="x12">12 Statements</h2>
@@ -13861,7 +13842,7 @@
 	or a<i> SwitchStatement</i>
 	initially contains the single element <b>empty</b>. The label set of
 	any other statement is initially empty.</p>
-	<p class="note">Several
+	<p><b class="note">NOTE</b> Several
 	widely used implementations of ECMAScript are known to support the
 	use of FunctionDeclaration
 	as a Statement. However
@@ -14095,7 +14076,7 @@
 		a String value containing the same sequence of characters as in the
 		<i>Identifier</i>.</p>
 	</li></ol>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	String value of a <i>VariableDeclaration</i>
 	is used in the evaluation of for-in statements (<a href="#x12.6.4">12.6.4</a>).</p>
 	<p>
@@ -14176,7 +14157,7 @@
 	{<code><b>{</b></code>,<code><b>
 	function</b></code>}]<i>
 	Expression </i><code><b>;</b></code></p>
-	<p class="note">An
+	<p><b class="note">NOTE</b> An
 	<i>ExpressionStatement</i>
 	cannot start with an opening curly brace because that might make it
 	ambiguous with a <i>Block</i>.
@@ -14711,7 +14692,7 @@
 	recursively; but a property of a prototype is not enumerated if it
 	is “shadowed” because some previous object in the prototype
 	chain has a property with the same name.</p>
-	<p class="note">See
+	<p><b class="note">NOTE</b> See
 	NOTE <a href="#x11.13.1">11.13.1</a>.</p>
 	<h3 id="x12.7">12.7 The continue Statement</h3>
 	<p class="tiny-btm">
@@ -14934,7 +14915,7 @@
 		<i>C</i>.</p>
 	</li></ol>
 	<p class="sp">
-	</p><p class="note">No matter how
+	</p><p><b class="note">NOTE</b> No matter how
 	control leaves the embedded <i>Statement</i>,
 	whether normally or by some form of abrupt completion or exception,
 	the LexicalEnvironment is always restored to its former state.</p>
@@ -15382,7 +15363,7 @@
 		Return
 		GetValue(<i>exprRef</i>).</p>
 	</li></ol>
-	<p class="note">Evaluating
+	<p><b class="note">NOTE</b> Evaluating
 	<i>CaseClause</i> does
 	not execute the associated <i>StatementList</i>.
 	It simply evaluates the <i>Expression</i>
@@ -15629,7 +15610,7 @@
 		Return
 		<i>B</i>.</p>
 	</li></ol>
-	<p class="note">No
+	<p><b class="note">NOTE</b> No
 	matter how control leaves the <i>Block</i>
 	the LexicalEnvironment is always restored to its former state.</p>
 	<p>
@@ -15835,7 +15816,7 @@
 		Return
 		<i>closure</i>.</p>
 	</li></ol>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	Identifier in a <i>FunctionExpression</i>
 	can be referenced from inside the <i>FunctionExpression's</i>
 	<i>FunctionBody</i> to
@@ -16038,7 +16019,7 @@
 		Return
 		<i>F</i>.</p>
 	</li></ol>
-	<p class="note">A
+	<p><b class="note">NOTE</b> A
 	<code><b>prototype</b></code>
 	property is automatically created for every function, to allow for
 	the possibility that the function will be used as a constructor.</p>
@@ -16251,7 +16232,7 @@
 		Return
 		<i>result</i>.</p>
 	</li></ol>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	processes for initiating the evaluation of a <i>Program</i>
 	and for dealing with the result of such an evaluation are defined by
 	an ECMAScript implementation and not by this specification.</p>
@@ -16325,7 +16306,7 @@
 	A
 	Directive Prologue may contain more than one Use Strict Directive.
 	However, an implementation may issue a warning if this occurs.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<i>ExpressionStatement</i>
 	productions of a Directive Prologue are evaluated normally during
 	evaluation of the containing <i>SourceElements</i>
@@ -16383,7 +16364,7 @@
 	specific behaviour relating to such arguments as long as the
 	behaviour is not the throwing of a <b>TypeError</b> exception that
 	is predicated simply on the presence of an extra argument.</p>
-	<p class="note">Implementations
+	<p><b class="note">NOTE</b> Implementations
 	that add additional capabilities to the set of built-in functions
 	are encouraged to do so by adding new functions rather than adding
 	new parameters to existing functions.</p>
@@ -16427,7 +16408,7 @@
 	value is equal to the largest number of named arguments shown in the
 	subclause headings for the function description, including optional
 	parameters.</p>
-	<p class="note">For
+	<p><b class="note">NOTE</b> For
 	example, the Function object that is the initial value of the <code>slice</code>
 	property of the String prototype object is described under the
 	subclause heading “String.prototype.slice (start, end)” which
@@ -16675,7 +16656,7 @@
 		Return
 		<i>sign</i> <span class="symbol">×</span> <i>number</i>.</p>
 	</li></ol>
-	<p class="note"><code><b>parseInt</b></code>
+	<p><b class="note">NOTE</b> <code><b>parseInt</b></code>
 	may interpret only a leading portion of <i>string</i>
 	as an integer value; it ignores any characters that cannot be
 	interpreted as part of the notation of an integer, and no indication
@@ -16715,7 +16696,7 @@
 		Return
 		the Number value for the MV of <i>numberString</i>.</p>
 	</li></ol>
-	<p class="note"><code><b>parseFloat</b></code>
+	<p><b class="note">NOTE</b> <code><b>parseFloat</b></code>
 	may interpret only a leading portion of <i>string</i>
 	as a Number value; it ignores any characters that cannot be
 	interpreted as part of the notation of an decimal literal, and no
@@ -16733,7 +16714,7 @@
 		Otherwise,
 		return <b>false</b>.</p>
 	</li></ol>
-	<p class="note">A
+	<p><b class="note">NOTE</b> A
 	reliable way for ECMAScript code to test if a value <code>X</code>
 	is a <b>NaN</b> is an expression of the form <code>X
 	!== X</code>. The result will be <b>true</b> if and only if <code>X</code>
@@ -16762,7 +16743,7 @@
 	itself does not provide any support for using URIs except for
 	functions that encode and decode URIs as described in <a href="#x15.1.3.1">15.1.3.1</a>,
 	<a href="#x15.1.3.2">15.1.3.2</a>, <a href="#x15.1.3.3">15.1.3.3</a> and <a href="#x15.1.3.4">15.1.3.4</a>.</p>
-	<p class="note">Many
+	<p><b class="note">NOTE</b> Many
 	implementations of ECMAScript provide additional functions and
 	methods that manipulate web pages; these functions are beyond the
 	scope of this standard.</p>
@@ -17178,7 +17159,7 @@
 			<i>k</i> by 1.</p>
 		</li></ol>
 	</li></ol>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	syntax of Uniform Resource Identifiers is given in RFC 2396.  A
 	formal description and implementation of UTF-8 is given in RFC 3629.</p>
 	<p>
@@ -17532,7 +17513,7 @@
 		Return
 		the result of calling Decode(<i>uriString</i>, <i>reservedURISet</i>)</p>
 	</li></ol>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	character “<code><b>#</b></code>”
 	is not decoded from escape sequences even though it is not a
 	reserved URI character.</p>
@@ -17586,7 +17567,7 @@
 		Return
 		the result of calling Encode(<i>uriString</i>, <i>unescapedURISet</i>)</p>
 	</li></ol>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	character “<code><b>#</b></code>”
 	is not encoded to an escape sequence even though it is not a
 	reserved or unescaped URI character.</p>
@@ -17869,7 +17850,7 @@
 		Return
 		<i>array</i>.</p>
 	</li></ol>
-	<p class="note">If
+	<p><b class="note">NOTE</b> If
 	<i>O</i> is a String
 	instance, the set of own properties processed in step 4 includes the
 	implicit properties defined in <a href="#x15.5.5.2">15.5.5.2</a> that correspond to character
@@ -18256,15 +18237,13 @@
 		the result of calling the [[Call]] internal method of <i>toString</i>
 		passing <i>O </i>as the <b>this </b>value and no arguments.</p>
 	</li></ol>
-	<p class="sp">NOTE
-	1	This function is provided to give all Objects a generic
+	<p class="sp"><b class="note">NOTE 1</b> This function is provided to give all Objects a generic
 	<code><b>toLocaleString</b></code>
 	interface, even though not all may use it. Currently, <code><b>Array</b></code>,
 	<code><b>Number</b></code>, and <code><b>Date</b></code>
 	provide their own locale-sensitive <code><b>toLocaleString</b></code>
 	methods.</p>
-	<p class="sp">NOTE
-	2	The first parameter to this function is likely to be used in a
+	<p class="sp"><b class="note">NOTE 2</b> The first parameter to this function is likely to be used in a
 	future version of this standard; it is recommended that
 	implementations do not use this parameter position for anything
 	else.</p>
@@ -18318,11 +18297,9 @@
 		Return
 		<b>true</b>.</p>
 	</li></ol>
-	<p class="sp">NOTE
-	1	Unlike [[HasProperty]] (<a href="#x8.12.6">8.12.6</a>), this method does not consider
+	<p class="sp"><b class="note">NOTE 1</b> Unlike [[HasProperty]] (<a href="#x8.12.6">8.12.6</a>), this method does not consider
 	objects in the prototype chain.</p>
-	<p class="sp">NOTE
-	2	The ordering of steps 1 and 2 is chosen to ensure that any
+	<p class="sp"><b class="note">NOTE 2</b> The ordering of steps 1 and 2 is chosen to ensure that any
 	exception that would have been thrown by step 1 in previous editions
 	of this specification will continue to be thrown even if the <b>this</b>
 	value is <b>undefined</b> or <b>null</b>.</p>
@@ -18354,7 +18331,7 @@
 			<i>O</i> and <i>V</i> refer to the same object, return <b>true</b>.</p>
 		</li></ol>
 	</li></ol>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	ordering of steps 1 and 2 is chosen to preserve the behaviour
 	specified by previous editions of this specification for the case
 	where V is not an object and the this value is undefined or null.</p>
@@ -18383,10 +18360,8 @@
 		Return
 		the value of <i>desc</i>.[[Enumerable]].</p>
 	</li></ol>
-	<p class="sp">NOTE
-	1	This method does not consider objects in the prototype chain.</p>
-	<p class="sp">NOTE
-	2	The ordering of steps 1 and 2 is chosen to ensure that any
+	<p class="sp"><b class="note">NOTE 1</b> This method does not consider objects in the prototype chain.</p>
+	<p class="sp"><b class="note">NOTE 2</b> The ordering of steps 1 and 2 is chosen to ensure that any
 	exception that would have been thrown by step 1 in previous editions
 	of this specification will continue to be thrown even if the <b>this</b>
 	value is <b>undefined</b> or <b>null</b>.</p>
@@ -18526,10 +18501,10 @@
 	is automatically created for every function, to provide for the
 	possibility that the function will be used as a constructor.</p>
 	<p>
-          </p><div class="note">It
+	</p><p><b class="note">NOTE</b> It
 	is permissible but not necessary to have one argument for each
 	formal parameter to be specified. For example, all three of the
-	following expressions produce the same result:<p/>
+	following expressions produce the same result:</p>
 	<p class="code-example">
 	<code><b>new
 	Function("a", "b", "c", "return
@@ -18540,7 +18515,6 @@
 	<p class="code-example">
 	<code><b>new
 	Function("a,b", "c", "return a+b+c")</b></code></p>
-</div>
 	<h4 id="x15.3.3">15.3.3 Properties of the Function Constructor</h4>
 	<p>
 	The
@@ -18690,7 +18664,7 @@
 	<code><b>length</b></code> property of
 	the <code><b>apply</b></code> method
 	is <b>2</b>.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	thisArg value is passed without modification as the <b>this</b>
 	value. This is a change from Edition 3, where a <b>undefined</b> or
 	<b>null</b> thisArg is replaced with the global object and ToObject
@@ -18729,7 +18703,7 @@
 	<code><b>length</b></code> property of
 	the <code><b>call</b></code> method is
 	<b>1</b>.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	thisArg value is passed without modification as the <b>this</b>
 	value. This is a change from Edition 3, where a <b>undefined</b> or
 	<b>null</b> thisArg is replaced with the global object and ToObject
@@ -18845,7 +18819,7 @@
 	<code><b>length</b></code> property of
 	the <code><b>bind</b></code> method is
 	<b>1</b>.</p>
-	<p class="note">Function
+	<p><b class="note">NOTE</b> Function
 	objects created using <code><b>Function.prototype.bind</b></code>
 	do not have a <code><b>prototype</b></code>
 	property or the [[Code]], [[FormalParameters]], and [[Scope]]
@@ -18980,7 +18954,7 @@
 	[[Enumerable]]: <b>false</b>,
 	[[Configurable]]: <b>false</b>
 	}.</p>
-	<p class="note">Function
+	<p><b class="note">NOTE</b> Function
 	objects created using <code><b>Function.prototype.bind</b></code>
 	do not have a <code><b>prototype</b></code>
 	property.</p>
@@ -19021,7 +18995,7 @@
 		</li></ol>
 	</li></ol>
 	<p class="sp">
-	</p><p class="note">Function
+	</p><p><b class="note">NOTE</b> Function
 	objects created using <code><b>Function.prototype.bind</b></code>
 	have a different implementation of [[HasInstance]] defined in
 	<a href="#x15.3.4.5.3">15.3.4.5.3</a>.</p>
@@ -19052,7 +19026,7 @@
 		Return
 		<i>v</i>.</p>
 	</li></ol>
-	<p class="note">Function
+	<p><b class="note">NOTE</b> Function
 	objects created using <code><b>Function.prototype.bind</b></code>
 	use the default [[Get]] internal method.</p>
 	<h3 id="x15.4">15.4 Array Objects</h3>
@@ -19261,7 +19235,7 @@
 	that is the <b>this</b> value for the invocation of the function. It
 	is permitted for the <b>this</b> to be an object for which the value
 	of the [[Class]] internal property is not <code><b>"Array"</b></code>.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	Array prototype object does not have a <code><b>valueOf</b></code>
 	property of its own; however, it inherits the <code><b>valueOf</b></code>
 	property from the standard built-in Object prototype Object.</p>
@@ -19296,7 +19270,7 @@
 		arguments list.</p>
 	</li></ol>
 	<p class="sp">
-	</p><p class="note">The <code><b>toString</b></code>
+	</p><p><b class="note">NOTE</b> The <code><b>toString</b></code>
 	function is intentionally generic; it does not require that its <b>this</b>
 	value be an Array object. Therefore it can be transferred to other
 	kinds of objects for use as a method. Whether the <code><b>toString</b></code>
@@ -19429,14 +19403,11 @@
 		Return
 		<i>R</i>.</p>
 	</li></ol>
-	<p class="sp">NOTE
-	1	The first parameter to this function is likely to be used in a
+	<p class="sp"><b class="note">NOTE 1</b> The first parameter to this function is likely to be used in a
 	future version of this standard; it is recommended that
 	implementations do not use this parameter position for anything
 	else.</p>
-	<p>
-	NOTE
-	2	The <code><b>toLocaleString</b></code>
+	<p><b class="note">NOTE 2</b> The <code><b>toLocaleString</b></code>
 	function is intentionally generic; it does not require that its <b>this</b>
 	value be an Array object. Therefore it can be transferred to other
 	kinds of objects for use as a method. Whether the <code><b>toLocaleString</b></code>
@@ -19550,7 +19521,7 @@
 	<code><b>length</b></code> property of
 	the <code><b>concat</b></code> method
 	is <b>1</b>.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>concat</b></code> function is
 	intentionally generic; it does not require that its <b>this</b>
 	value be an Array object. Therefore it can be transferred to other
@@ -19636,7 +19607,7 @@
 	<code><b>length</b></code> property of
 	the <code><b>join</b></code> method is
 	<b>1</b>.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>join</b></code> function is
 	intentionally generic; it does not require that its <b>this</b>
 	value be an Array object. Therefore, it can be transferred to other
@@ -19696,7 +19667,7 @@
 			<i>element</i>.</p>
 		</li></ol>
 	</li></ol>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>pop</b></code> function is
 	intentionally generic; it does not require that its <b>this</b>
 	value be an Array object. Therefore it can be transferred to other
@@ -19760,7 +19731,7 @@
 	<code><b>length</b></code> property of
 	the <code><b>push</b></code> method is
 	<b>1</b>.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>push</b></code> function is
 	intentionally generic; it does not require that its <b>this</b>
 	value be an Array object. Therefore it can be transferred to other
@@ -19878,7 +19849,7 @@
 		Return
 		<i>O</i> .</p>
 	</li></ol>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>reverse</b></code> function
 	is intentionally generic; it does not require that its <b>this</b>
 	value be an Array object. Therefore, it can be transferred to other
@@ -19972,7 +19943,7 @@
 		Return
 		<i>first</i>.</p>
 	</li></ol>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>shift</b></code> function is
 	intentionally generic; it does not require that its <b>this</b>
 	value be an Array object. Therefore it can be transferred to other
@@ -20075,7 +20046,7 @@
 	<code><b>length</b></code> property of
 	the <code><b>slice</b></code> method
 	is <b>2</b>.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>slice</b></code> function is
 	intentionally generic; it does not require that its <b>this</b>
 	value be an Array object. Therefore it can be transferred to other
@@ -20273,7 +20244,7 @@
 		then <i>a</i> &gt;<sub>CF</sub> <i>c</i>
 		  (transitivity of &gt;<sub>CF</sub>)</p>
 	</li></ul>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	above conditions are necessary and sufficient to ensure that
 	<i>comparefn</i> divides
 	the set <i>S</i> into
@@ -20356,14 +20327,12 @@
 		Return
 		<b>+0</b>.</p>
 	</li></ol>
-	<p class="sp">NOTE
-	1	Because non-existent property values always compare greater than
+	<p class="sp"><b class="note">NOTE 1</b> Because non-existent property values always compare greater than
 	<b>undefined</b> property values, and <b>undefined</b> always
 	compares greater than any other value, undefined property values
 	always sort to the end of the result, followed by non-existent
 	property values.</p>
-	<p class="sp">
-	NOTE 2	The <code><b>sort</b></code>
+	<p class="sp"><b class="note">NOTE 2</b> The <code><b>sort</b></code>
 	function is intentionally generic; it does not require that its <b>this</b>
 	value be an Array object. Therefore, it can be transferred to other
 	kinds of objects for use as a method. Whether the <code><b>sort</b></code>
@@ -20600,7 +20569,7 @@
 	<code><b>length</b></code> property of
 	the <code><b>splice</b></code> method
 	is <b>2</b>.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>splice</b></code> function is
 	intentionally generic; it does not require that its <b>this</b>
 	value be an Array object. Therefore it can be transferred to other
@@ -20714,7 +20683,7 @@
 	<code><b>length</b></code> property of
 	the <code><b>unshift</b></code> method
 	is <b>1</b>.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>unshift</b></code> function
 	is intentionally generic; it does not require that its <b>this</b>
 	value be an Array object. Therefore it can be transferred to other
@@ -20821,7 +20790,7 @@
 	<code><b>length</b></code> property of
 	the <code><b>indexOf</b></code> method
 	is <b>1</b>.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>indexOf</b></code> function
 	is intentionally generic; it does not require that its <b>this</b>
 	value be an Array object. Therefore it can be transferred to other
@@ -20917,7 +20886,7 @@
 	<code><b>length</b></code> property of
 	the <code><b>lastIndexOf</b></code>
 	method is <b>1</b>.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>lastIndexOf</b></code>
 	function is intentionally generic; it does not require that its <b>this</b>
 	value be an Array object. Therefore it can be transferred to other
@@ -21037,7 +21006,7 @@
 	<code><b>length</b></code> property of
 	the <code><b>every</b></code> method
 	is <b>1</b>.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>every</b></code> function is
 	intentionally generic; it does not require that its <b>this</b>
 	value be an Array object. Therefore it can be transferred to other
@@ -21154,7 +21123,7 @@
 	<code><b>length</b></code> property of
 	the <code><b>some</b></code> method is
 	<b>1</b>.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>some</b></code><b> </b>function
 	is intentionally generic; it does not require that its <b>this</b>
 	value be an Array object. Therefore it can be transferred to other
@@ -21262,7 +21231,7 @@
 	<code><b>length</b></code> property of
 	the <code><b>forEach</b></code> method
 	is <b>1</b>.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>forEach</b></code><b>
 	</b>function is intentionally generic; it does not require that its
 	<b>this</b> value be an Array object. Therefore it can be
@@ -21384,7 +21353,7 @@
 	<code><b>length</b></code> property of
 	the <code><b>map</b></code> method is
 	<b>1</b>.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>map</b></code><b> </b>function
 	is intentionally generic; it does not require that its <b>this</b>
 	value be an Array object. Therefore it can be transferred to other
@@ -21517,7 +21486,7 @@
 	<code><b>length</b></code> property of
 	the <code><b>filter</b></code> method
 	is <b>1</b>.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>filter</b></code><b> </b>function
 	is intentionally generic; it does not require that its <b>this</b>
 	value be an Array object. Therefore it can be transferred to other
@@ -21673,7 +21642,7 @@
 	<code><b>length</b></code> property of
 	the <code><b>reduce</b></code> method
 	is <b>1</b>.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>reduce</b></code><b> </b>function
 	is intentionally generic; it does not require that its <b>this</b>
 	value be an Array object. Therefore it can be transferred to other
@@ -21832,7 +21801,7 @@
 	<code><b>length</b></code> property of
 	the <code><b>reduceRight</b></code>
 	method is <b>1</b>.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>reduceRight </b></code>function
 	is intentionally generic; it does not require that its this value be
 	an Array object. Therefore it can be transferred to other kinds of
@@ -22055,7 +22024,7 @@
 	[[Enumerable]]: <b>false</b>,
 	[[Configurable]]: <b>false</b>
 	}.</p>
-	<p class="note">Attempting
+	<p><b class="note">NOTE</b> Attempting
 	to set the length property of an Array object to a value that is
 	numerically less than or equal to the largest numeric property name
 	of an existing array indexed non-deletable property of the array
@@ -22220,7 +22189,7 @@
 		(leftmost) character in <i>S</i> is considered to be at position 0,
 		the next one at position 1, and so on.</p>
 	</li></ol>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>charAt</b></code> function is
 	intentionally generic; it does not require that its <b>this</b>
 	value be a String object. Therefore, it can be transferred to other
@@ -22262,7 +22231,7 @@
 		the first (leftmost) character in <i>S</i> is considered to be at
 		position 0, the next one at position 1, and so on.</p>
 	</li></ol>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>charCodeAt</b></code>
 	function is intentionally generic; it does not require that its <b>this</b>
 	value be a String object. Therefore it can be transferred to other
@@ -22316,7 +22285,7 @@
 	<code><b>length</b></code> property of
 	the <code><b>concat</b></code> method
 	is <b>1</b>.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>concat</b></code> function is
 	intentionally generic; it does not require that its <b>this</b>
 	value be a String object. Therefore it can be transferred to other
@@ -22376,7 +22345,7 @@
 	<code><b>length</b></code> property of
 	the <code><b>indexOf</b></code> method
 	is <b>1</b>.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>indexOf</b></code> function
 	is intentionally generic; it does not require that its <b>this</b>
 	value be a String object. Therefore, it can be transferred to other
@@ -22441,7 +22410,7 @@
 	<code><b>length</b></code> property of
 	the <code><b>lastIndexOf</b></code>
 	method is <b>1</b>.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>lastIndexOf</b></code>
 	function is intentionally generic; it does not require that its <b>this</b>
 	value be a String object. Therefore, it can be transferred to other
@@ -22502,13 +22471,11 @@
 	If no
 	language-sensitive comparison at all is available from the host
 	environment, this function may perform a bitwise comparison.</p>
-	<p class="sp">NOTE
-	1	The <code><b>localeCompare</b></code>
+	<p class="sp"><b class="note">NOTE 1</b> The <code><b>localeCompare</b></code>
 	method itself is not directly suitable as an argument to
 	<code><b>Array.prototype.sort</b></code>
 	because the latter requires a function of two arguments.</p>
-	<p class="sp">NOTE
-	2	This function is intended to rely on whatever language-sensitive
+	<p class="sp"><b class="note">NOTE 2</b> This function is intended to rely on whatever language-sensitive
 	comparison functionality is available to the ECMAScript environment
 	from the host environment, and to compare according to the rules of
 	the host environment’s current locale. It is strongly recommended
@@ -22517,13 +22484,11 @@
 	compare the Strings as if they had both been converted to Normalised
 	Form C or D first). It is also recommended that this function not
 	honour Unicode compatibility equivalences or decompositions.</p>
-	<p class="sp">NOTE
-	3	The second parameter to this function is likely to be used in a
+	<p class="sp"><b class="note">NOTE 3</b> The second parameter to this function is likely to be used in a
 	future version of this standard; it is recommended that
 	implementations do not use this parameter position for anything
 	else.</p>
-	<p class="sp">NOTE
-	4	The <code><b>localeCompare</b></code>
+	<p class="sp"><b class="note">NOTE 4</b> The <code><b>localeCompare</b></code>
 	function is intentionally generic; it does not require that its <b>this</b>
 	value be a String object. Therefore, it can be transferred to other
 	kinds of objects for use as a method.</p>
@@ -22656,7 +22621,7 @@
 			<i>A</i>.</p>
 		</li></ol>
 	</li></ol>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>match</b></code> function is
 	intentionally generic; it does not require that its <b>this</b>
 	value be a String object. Therefore, it can be transferred to other
@@ -22830,7 +22795,7 @@
 		</tr>
 	</tbody></table>
       </center>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>replace</b></code> function
 	is intentionally generic; it does not require that its <b>this</b>
 	value be a String object. Therefore, it can be transferred to other
@@ -22874,7 +22839,7 @@
 		Return
 		<i>result</i>.</p>
 	</li></ol>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>search</b></code> function is
 	intentionally generic; it does not require that its <b>this</b>
 	value be a String object. Therefore, it can be transferred to other
@@ -22937,7 +22902,7 @@
 	<code><b>length</b></code> property of
 	the <code><b>slice</b></code> method
 	is <b>2</b>.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>slice</b></code> function is
 	intentionally generic; it does not require that its <b>this</b>
 	value be a String object. Therefore it can be transferred to other
@@ -23220,12 +23185,10 @@
 	<code><b>length</b></code> property of
 	the <code><b>split</b></code> method
 	is <b>2</b>.</p>
-	<p class="sp">NOTE
-	1	The <code><b>split</b></code> method
+	<p class="sp"><b class="note">NOTE 1</b> The <code><b>split</b></code> method
 	ignores the value of separator<code><b>.global</b></code>
 	for separators that are RegExp objects.</p>
-	<p class="sp">NOTE
-	2	The <code><b>split</b></code>
+	<p class="sp"><b class="note">NOTE 2</b> The <code><b>split</b></code>
 	function is intentionally generic; it does not require that its <b>this</b>
 	value be a String object. Therefore, it can be transferred to other
 	kinds of objects for use as a method.</p>
@@ -23295,7 +23258,7 @@
 	<code><b>length</b></code> property of
 	the <code><b>substring</b></code>
 	method is <b>2</b>.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>substring</b></code> function
 	is intentionally generic; it does not require that its <b>this</b>
 	value be a String object. Therefore, it can be transferred to other
@@ -23334,16 +23297,14 @@
 	character database (this explicitly includes not only the
 	UnicodeData.txt file, but also the SpecialCasings.txt file that
 	accompanies it in Unicode <a href="#x2.1.8">2.1.8</a> and later).</p>
-	<p class="sp">NOTE
-	1	The case mapping of some characters may produce multiple
+	<p class="sp"><b class="note">NOTE 1</b> The case mapping of some characters may produce multiple
 	characters.  In this case the result String may not be the same
 	length as the source String. Because both <code><b>toUpperCase</b></code>
 	and <code><b>toLowerCase</b></code>
 	have context-sensitive behaviour, the functions are not symmetrical.
 	In other words, <code><b>s.toUpperCase().toLowerCase()</b></code>
 	is not necessarily equal to <code><b>s.toLowerCase()</b></code>.</p>
-	<p class="sp">NOTE
-	2	The <code><b>toLowerCase</b></code>
+	<p class="sp"><b class="note">NOTE 2</b> The <code><b>toLowerCase</b></code>
 	function is intentionally generic; it does not require that its <b>this</b>
 	value be a String object. Therefore, it can be transferred to other
 	kinds of objects for use as a method.</p>
@@ -23356,13 +23317,11 @@
 	locale-independent result. There will only be a difference in the
 	few cases (such as Turkish) where the rules for that language
 	conflict with the regular Unicode case mappings.</p>
-	<p class="sp">NOTE
-	1	The first parameter to this function is likely to be used in a
+	<p class="sp"><b class="note">NOTE 1</b> The first parameter to this function is likely to be used in a
 	future version of this standard; it is recommended that
 	implementations do not use this parameter position for anything
 	else.</p>
-	<p class="sp">NOTE
-	2	The <code><b>toLocaleLowerCase</b></code>
+	<p class="sp"><b class="note">NOTE 2</b> The <code><b>toLocaleLowerCase</b></code>
 	function is intentionally generic; it does not require that its <b>this</b>
 	value be a String object. Therefore, it can be transferred to other
 	kinds of objects for use as a method.</p>
@@ -23373,7 +23332,7 @@
 	<code><b>String.prototype.toLowerCase</b></code>,
 	except that characters are mapped to their <i>uppercase</i>
 	equivalents as specified in the Unicode Character Database.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>toUpperCase</b></code>
 	function is intentionally generic; it does not require that its <b>this</b>
 	value be a String object. Therefore, it can be transferred to other
@@ -23387,13 +23346,11 @@
 	locale-independent result. There will only be a difference in the
 	few cases (such as Turkish) where the rules for that language
 	conflict with the regular Unicode case mappings.</p>
-	<p class="sp">NOTE
-	1	The first parameter to this function is likely to be used in a
+	<p class="sp"><b class="note">NOTE 1</b> The first parameter to this function is likely to be used in a
 	future version of this standard; it is recommended that
 	implementations do not use this parameter position for anything
 	else.</p>
-	<p class="sp">NOTE
-	2	The <code><b>toLocaleUpperCase</b></code>
+	<p class="sp"><b class="note">NOTE 2</b> The <code><b>toLocaleUpperCase</b></code>
 	function is intentionally generic; it does not require that its <b>this</b>
 	value be a String object. Therefore, it can be transferred to other
 	kinds of objects for use as a method.</p>
@@ -23418,7 +23375,7 @@
 		Return
 		<i>T</i>.</p>
 	</li></ol>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>trim</b></code> function is
 	intentionally generic; it does not require that its <b>this</b>
 	value be a String object. Therefore, it can be transferred to other
@@ -23815,7 +23772,7 @@
 	to the conventions of the host environment’s current locale. This
 	function is implementation-dependent, and it is permissible, but not
 	encouraged, for it to return the same thing as <code><b>toString</b></code>.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	first parameter to this function is likely to be used in a future
 	version of this standard; it is recommended that implementations do
 	not use this parameter position for anything else.</p>
@@ -23943,7 +23900,7 @@
 	for values of <i>fractionDigits</i>
 	less than 0 or greater than 20. In this case <code><b>toFixed</b></code>
 	would not necessarily throw <b>RangeError</b> for such values.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	output of <code><b>toFixed</b></code>
 	may be more precise than <code><b>toString</b></code>
 	for some values because toString only prints enough significant
@@ -24128,7 +24085,7 @@
 	for values of <i>fractionDigits</i>
 	less than 0 or greater than 20. In this case <code><b>toExponential</b></code>
 	would not necessarily throw <b>RangeError</b> for such values.</p>
-	<p/><p class="note">For
+	<p/><p><b class="note">NOTE</b> For
 	implementations that provide more accurate conversions than required
 	by the rules above, it is recommended that the following alternative
 	version of step 9.b.i be used as a guideline:</p>
@@ -24368,7 +24325,7 @@
 	The
 	Math object does not have a [[Call]] internal property; it is not
 	possible to invoke the Math object as a function.</p>
-	<p class="note">In
+	<p><b class="note">NOTE</b> In
 	this specification, the phrase “the Number value for <i>x</i>”
 	has a technical meaning defined in <a href="#x8.5">8.5</a>.</p>
 	<h4 id="x15.8.1">15.8.1 Value Properties of the Math Object</h4>
@@ -24411,7 +24368,7 @@
 	This
 	property has the attributes { [[Writable]]: <b>false</b>,
 	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b> }.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	value of <code><b>Math.LOG2E</b></code>
 	is approximately the reciprocal of the value of <code><b>Math.LN2</b></code>.</p>
 	<h5 id="x15.8.1.5">15.8.1.5 LOG10E</h5>
@@ -24425,7 +24382,7 @@
 	This
 	property has the attributes { [[Writable]]: <b>false</b>,
 	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b> }.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	value of <code><b>Math.LOG10E</b></code>
 	is approximately the reciprocal of the value of <code><b>Math.LN10</b></code>.</p>
 	<h5 id="x15.8.1.6">15.8.1.6 PI</h5>
@@ -24447,7 +24404,7 @@
 	This
 	property has the attributes { [[Writable]]: <b>false</b>,
 	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b> }.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	value of <code><b>Math.SQRT1_2</b></code>
 	is approximately the reciprocal of the value of <code><b>Math.SQRT2</b></code>.</p>
 	<h5 id="x15.8.1.8">15.8.1.8 SQRT2</h5>
@@ -24471,7 +24428,7 @@
 	the function descriptions below, the symbols NaN, <span class="symbol">−</span>0,
 	+0, <span class="symbol">−∞</span> and +<span class="symbol">∞</span>
 	refer to the Number values described in <a href="#x8.5">8.5</a>.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	behaviour of the functions <code><b>acos</b></code>,
 	<code><b>asin</b></code>, <code><b>atan</b></code>,
 	<code><b>atan2</b></code>, <code><b>cos</b></code>,
@@ -24904,7 +24861,7 @@
 		<i>x</i>
 		is greater than 0 but less than 1, the result is +0.</p>
 	</li></ul>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	value of <code><b>Math.floor(x)</b></code>
 	is the same as the value of <code><b>-Math.ceil(-x)</b></code>.</p>
 	<h5 id="x15.8.2.10">15.8.2.10 log (x)</h5>
@@ -25178,13 +25135,11 @@
 		<i>x</i>
 		is less than 0 but greater than or equal to -0.5, the result is <span class="symbol">−</span>0.</p>
 	</li></ul>
-	<p class="sp">NOTE
-	1	<code><b>Math.round(3.5)</b></code>
+	<p class="sp"><b class="note">NOTE 1</b> <code><b>Math.round(3.5)</b></code>
 	returns 4, but
 	<code><b>Math.round(–3.5)</b></code>
 	returns –3.</p>
-	<p class="sp">NOTE
-	2	The value of <code><b>Math.round(x)</b></code>
+	<p class="sp"><b class="note">NOTE 2</b> The value of <code><b>Math.round(x)</b></code>
 	is the same as the value of <code><b>Math.floor(x+0.5)</b></code>,
 	except when <code><b>x</b></code> is
 	<span class="symbol">−</span>0<b>
@@ -25697,7 +25652,7 @@
 		<b>+0</b>.)</p>
 	</li></ol>
 	<p class="sp">
-	</p><p class="note">The point of
+	</p><p><b class="note">NOTE</b> The point of
 	step 3 is that an implementation is permitted a choice of internal
 	representations of time values, for example as a 64-bit signed
 	integer or as a 64-bit floating-point value. Depending on the
@@ -25747,16 +25702,14 @@
 	Illegal
 	values (out-of-bounds as well as syntax errors) in a format string
 	means that the format string is not a valid instance of this format.</p>
-	<p class="sp">NOTE
-	1	As every day both starts and ends with
+	<p class="sp"><b class="note">NOTE 1</b> As every day both starts and ends with
 	midnight, the two notations <code>00:00</code>
 	and <code>24:00</code>
 	are available to distinguish the two midnights that can be
 	associated with one date. This means that the following two
 	notations refer to exactly the same point in time: <code>1995-02-04T24:00</code>
 	and <code>1995-02-05T00:00</code></p>
-	<p class="sp">NOTE
-	2	There exists no international standard that
+	<p class="sp"><b class="note">NOTE 2</b> There exists no international standard that
 	specifies abbreviations for civil time zones like CET, EST, etc. and
 	sometimes the same abbreviation is even used for two very different
 	time zones. For this reason, ISO 8601 and this format specifies
@@ -25781,7 +25734,7 @@
 	<code><b>Date</b></code> is called as
 	a function rather than as a constructor, it returns a String
 	representing the current time (UTC).</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	function call <code><b>Date(</b></code><code>…</code><code><b>)</b></code>
 	is not equivalent to the object creation expression <code><b>new Date(</b></code><code>…</code><code><b>)</b></code>
 	with the same arguments.</p>
@@ -26040,7 +25993,7 @@
 	<code><b>length</b></code> property of
 	the <code><b>UTC</b></code> function
 	is <b>7</b>.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code>UTC</code> function differs from
 	the <code>Date</code> constructor in
 	two ways: it returns a time value as a Number, rather than creating
@@ -26086,7 +26039,7 @@
 	function returns a String value. The contents of the String are
 	implementation-dependent, but are intended to represent the Date in
 	the current time zone in a convenient, human-readable form.</p>
-	<p class="note">For
+	<p><b class="note">NOTE</b> For
 	any Date value <code><i>d</i></code>
 	whose milliseconds amount is zero, the result of
 	<code>Date.parse(</code><code><i>d</i></code><code>.toString())</code>
@@ -26114,7 +26067,7 @@
 	the current time zone in a convenient, human-readable form that
 	corresponds to the conventions of the host environment’s current
 	locale.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	first parameter to this function is likely to be used in a future
 	version of this standard; it is recommended that implementations do
 	not use this parameter position for anything else.</p>
@@ -26126,7 +26079,7 @@
 	portion of the Date in the current time zone in a convenient,
 	human-readable form that corresponds to the conventions of the host
 	environment’s current locale.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	first parameter to this function is likely to be used in a future
 	version of this standard; it is recommended that implementations do
 	not use this parameter position for anything else.</p>
@@ -26138,7 +26091,7 @@
 	portion of the Date in the current time zone in a convenient,
 	human-readable form that corresponds to the conventions of the host
 	environment’s current locale.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	first parameter to this function is likely to be used in a future
 	version of this standard; it is recommended that implementations do
 	not use this parameter position for anything else.</p>
@@ -26891,7 +26844,7 @@
 	function returns a String value. The contents of the String are
 	implementation-dependent, but are intended to represent the Date in
 	a convenient, human-readable form in UTC.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	intent is to produce a String representation of a date that is more
 	readable than the format specified in <a href="#x15.9.1.15">15.9.1.15</a>. It is not essential
 	that the chosen format be unambiguous or easily machine parsable. If
@@ -26943,10 +26896,8 @@
 		the result of calling the [[Call]] internal method of <i>toISO</i>
 		with <i>O </i>as the <b>this </b>value and an empty argument list.</p>
 	</li></ol>
-	<p class="sp">NOTE
-	1	The argument is ignored.</p>
-	<p class="sp">NOTE
-	2	The <code><b>toJSON</b></code>
+	<p class="sp"><b class="note">NOTE 1</b> The argument is ignored.</p>
+	<p class="sp"><b class="note">NOTE 2</b> The <code><b>toJSON</b></code>
 	function is intentionally generic; it does not require that its <b>this</b>
 	value be a Date object. Therefore, it can be transferred to other
 	kinds of objects for use as a method. However, it does require that
@@ -26969,7 +26920,7 @@
 	A
 	RegExp object contains a regular expression and the associated
 	flags.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	form and functionality of regular expressions is modelled after the
 	regular expression facility in the Perl 5 programming language.</p>
 	<h4 id="x15.10.1">15.10.1 Patterns</h4>
@@ -27343,7 +27294,7 @@
 		Call
 		<i>m</i>(<i>x</i>, <i>c</i>) and return its result.</p>
 	</li></ol>
-	<p class="note">A
+	<p><b class="note">NOTE</b> A
 	Pattern evaluates ("compiles") to an internal procedure
 	value. <code><b>RegExp.prototype.exec</b></code>
 	can then apply this procedure to a String and an offset within the
@@ -27398,7 +27349,7 @@
 		</ol>
 	</li></ol>
 	<p>
-          </p><div class="note">The
+	</p><p><b class="note">NOTE</b> The
 	<code><b>|</b></code> regular
 	expression operator separates two alternatives. The pattern first
 	tries to match the left <i>Alternative</i>
@@ -27414,7 +27365,7 @@
 	is tried instead of the left <i>Alternative</i>.
 	Any capturing parentheses inside a portion of the pattern skipped by
 	<code><b>|</b></code> produce
-	<b>undefined</b> values instead of Strings. Thus, for example,
+	<b>undefined</b> values instead of Strings. Thus, for example,</p>
 	<p class="code-example">
 	<code><b>/a|ab/.exec("abc")</b></code></p>
 	<p>returns
@@ -27435,7 +27386,6 @@
 	<code><b>["abc",
 	"ab", undefined, "ab", "c", "c",
 	undefined]</b></code></p>
-</div>
 	<h5 id="x15.10.2.4">15.10.2.4 Alternative</h5>
 	<p>
 	The
@@ -27475,7 +27425,7 @@
 			</ol>
 		</ol>
 	</li></ol>
-	<p class="note">Consecutive
+	<p><b class="note">NOTE</b> Consecutive
 	<i>Terms</i> try to
 	simultaneously match consecutive portions of the input String. If
 	the left <i>Alternative</i>,
@@ -27657,7 +27607,7 @@
 		Call
 		<i>c</i>(<i>x</i>) and return its result.</p>
 	</li></ol>
-	<p class="note">An
+	<p><b class="note">NOTE</b> An
 	<i>Atom</i> followed by a
 	<i>Quantifier</i> is
 	repeated the number of times specified by the <i>Quantifier</i>.
@@ -27670,8 +27620,7 @@
 	pattern is repeated rather than the input String that it matches, so
 	different repetitions of the <i>Atom</i>
 	can match different input substrings.</p>
-	<p class="sp">NOTE
-	2	If the <i>Atom</i> and
+	<p class="sp"><b class="note">NOTE 2</b> If the <i>Atom</i> and
 	the sequel of the regular expression all have choice points, the
 	<i>Atom</i> is first
 	matched as many (or as few, if non-greedy) times as possible. All
@@ -27723,8 +27672,7 @@
 	<p>
 	which
 	returns the gcd in unary notation <code><b>"aaaaa"</b></code>.</p>
-	<p>NOTE
-	3	Step 4 of the RepeatMatcher clears <i>Atom's</i>
+	<p><b class="note">NOTE 3</b> Step 4 of the RepeatMatcher clears <i>Atom's</i>
 	captures each time <i>Atom</i>
 	is repeated. We can see its behaviour in the regular expression</p>
 	<p class="code-example">
@@ -27744,8 +27692,7 @@
 	each iteration of the outermost <code><b>*</b></code>
 	clears all captured Strings contained in the quantified <i>Atom</i>,
 	which in this case includes capture Strings numbered 2, 3, and 4.</p>
-	<p>NOTE
-	4	Step 1 of the RepeatMatcher's <i>d</i>
+	<p><b class="note">NOTE 4</b> Step 1 of the RepeatMatcher's <i>d</i>
 	closure states that, once the minimum number of repetitions has been
 	satisfied, any more expansions of <i>Atom</i>
 	that match the empty String are not considered for further
@@ -28550,8 +28497,7 @@
 		Return
 		<i>cu</i>.</p>
 	</li></ol>
-	<p class="sp">NOTE
-	1	Parentheses of the form <code><b>(
+	<p class="sp"><b class="note">NOTE 1</b> Parentheses of the form <code><b>(
 	</b></code><i>Disjunction</i><code><b>
 	)</b></code> serve both to group the components of the <i>Disjunction</i>
 	pattern together and to save the result of the match. The result can
@@ -28562,8 +28508,7 @@
 	parentheses, use the form <code><b>(?:
 	</b></code><i>Disjunction</i><code><b>
 	)</b></code> instead.</p>
-	<p class="sp">NOTE
-	2	The form <code><b>(?= </b></code><i>Disjunction</i><code><b>
+	<p class="sp"><b class="note">NOTE 2</b> The form <code><b>(?= </b></code><i>Disjunction</i><code><b>
 	)</b></code> specifies a zero-width positive lookahead. In order for
 	it to succeed, the pattern inside <i>Disjunction</i>
 	must match at the current position, but the current position is not
@@ -28599,8 +28544,7 @@
 	<p class="code-example">
 	<code><b>["aaaba",
 	"a"]</b></code></p>
-	<p>NOTE
-	3	The form <code><b>(?! </b></code><i>Disjunction</i><code><b>
+	<p><b class="note">NOTE 3</b> The form <code><b>(?! </b></code><i>Disjunction</i><code><b>
 	)</b></code> specifies a zero-width negative lookahead. In order for
 	it to succeed, the pattern inside <i>Disjunction</i>
 	must fail to match at the current position. The current position is
@@ -28754,7 +28698,7 @@
 		<i>CharacterSetMatcher</i>(<i>A</i>, <b>false</b>) and return its
 		Matcher result.</p>
 	</li></ol>
-	<p class="note">An
+	<p><b class="note">NOTE</b> An
 	escape sequence of the form <code><b>\</b></code>
 	followed by a nonzero decimal number <i>n</i>
 	matches the result of the <i>n</i>th
@@ -28963,7 +28907,7 @@
 	The
 	definition of “the MV of <i>DecimalIntegerLiteral</i>”
 	is in <a href="#x7.8.3">7.8.3</a>.</p>
-	<p class="note">If
+	<p><b class="note">NOTE</b> If
 	<code><b>\</b></code> is followed by a
 	decimal number <i>n</i>
 	whose first digit is not <code><b>0</b></code>,
@@ -29543,8 +29487,7 @@
 		Return
 		the union of CharSets <i>D</i> and <i>C</i>.</p>
 	</li></ol>
-	<p class="sp">NOTE
-	1	<i>ClassRanges</i> can
+	<p class="sp"><b class="note">NOTE 1</b> <i>ClassRanges</i> can
 	expand into single <i>ClassAtoms</i>
 	and/or ranges of two <i>ClassAtoms</i>
 	separated by dashes. In the latter case the <i>ClassRanges</i>
@@ -29555,8 +29498,7 @@
 	or if the first <i>ClassAtom's</i>
 	code unit value is greater than the second <i>ClassAtom's</i>
 	code unit value.</p>
-	<p class="sp">NOTE
-	2	Even if the pattern ignores case, the case of the two ends of a
+	<p class="sp"><b class="note">NOTE 2</b> Even if the pattern ignores case, the case of the two ends of a
 	range is significant in determining which characters belong to the
 	range. Thus, for example, the pattern <code><b>/[E-F]/i</b></code>
 	matches only the letters <code><b>E</b></code>,
@@ -29567,9 +29509,7 @@
 	symbols <code><b>[</b></code>, <code><b>\</b></code>,
 	<code><b>]</b></code>, <code><b>^</b></code>,
 	<code><b>_</b></code>, and <code><b>`</b></code>.</p>
-	<p>
-	NOTE
-	3	A <code><b>-</b></code>
+	<p><b class="note">NOTE 3</b> A <code><b>-</b></code>
 	character can be treated literally or it can denote a range. It is
 	treated literally if it is the first or last character of
 	<i>ClassRanges</i>,
@@ -29642,7 +29582,7 @@
 	<b>:: </b><i>CharacterClassEscape</i>
 	evaluates by evaluating <i>CharacterClassEscape</i>
 	to obtain a CharSet and returning that CharSet.</p>
-	<p class="note">A
+	<p><b class="note">NOTE</b> A
 	<i>ClassAtom</i> can use
 	any of the escape sequences that are allowed in the rest of the
 	regular expression except for <code><b>\b</b></code>,
@@ -29810,7 +29750,7 @@
 	The
 	[[Class]] internal property of the newly constructed object is set
 	to <code><b>"RegExp"</b></code>.</p>
-	<p class="note">If
+	<p><b class="note">NOTE</b> If
 	pattern is a <i>StringLiteral</i>,
 	the usual escape sequence substitutions are performed before the
 	String is processed by RegExp. If pattern must contain an escape
@@ -30061,7 +30001,7 @@
 	property is <b>true</b>, and <code>"</code><code><b>m</b></code><code>"</code>
 	if the <code><b>multiline</b></code>
 	property is <b>true</b><code><b>.</b></code></p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	returned String has the form of a
 	<i>RegularExpressionLiteral</i>
 	that evaluates to another RegExp object with the same
@@ -30123,7 +30063,7 @@
 	<a href="#x15.10.6.2">15.10.6.2</a>). This property shall have the attributes
 	{ [[Writable]]: <b>true</b>, [[Enumerable]]: <b>false</b>,
 	[[Configurable]]: <b>false</b> }.</p>
-	<p class="note">Unlike
+	<p><b class="note">NOTE</b> Unlike
 	the other standard built-in properties of RegExp instances,
 	<code><b>lastIndex</b></code> is
 	writable.</p>
@@ -30436,7 +30376,7 @@
 	initial value of the<code><b> message</b></code>
 	property of the prototype for a given <i>NativeError</i> constructor
 	is the empty String.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	prototypes for the NativeError constructors do not themselves
 	provide a <code><b>toString </b></code>function,
 	but instances of errors will inherit it from the Error prototype
@@ -30882,7 +30822,7 @@
 	a modified or extended JSON interchange format it must do so by
 	defining a different parse function. 
 	</p>
-	<p class="note">In
+	<p><b class="note">NOTE</b> In
 	the case where there are duplicate name Strings within an object,
 	lexically preceding values for the same key shall be overwritten.</p>
 	<h4 id="x15.12.3">15.12.3 stringify ( value [ , replacer [ , space ] ] )</h4>
@@ -31511,8 +31451,7 @@
 		Return
 		<i>final</i>.</p>
 	</li></ol>
-	<p>NOTE
-	1	JSON structures are allowed to be nested to any depth, but they
+	<p><b class="note">NOTE 1</b> JSON structures are allowed to be nested to any depth, but they
 	must be acyclic. If <i>value</i>
 	is or contains a cyclic structure, then the stringify function must
 	throw a <b>TypeError</b> exception. This is an example of a value
@@ -31521,7 +31460,7 @@
 	<p class="code-example"><code><b>a[0] = a;</b></code></p>
 	<p class="code-example"><code><b>my_text = JSON.stringify(a); // This must throw an TypeError.</b></code></p>
         <br/>
-	<p>NOTE 2	Symbolic primitive values are rendered as follows:</p>
+	<p><b class="note">NOTE 2</b> Symbolic primitive values are rendered as follows:</p>
 	<ul>
 		<li><p>The
 		<b>null</b> value is rendered in JSON text as the String <code>null</code>.</p>
@@ -31532,8 +31471,7 @@
 		</li><li><p class="sp">The
 		<b>false</b> value is rendered in JSON text as the String <code>false</code>.</p>
 	</li></ul>
-	<p class="sp">NOTE
-	3	String values are wrapped in double quotes. The characters <code><b>"</b></code>
+	<p class="sp"><b class="note">NOTE 3</b> String values are wrapped in double quotes. The characters <code><b>"</b></code>
 	and <code><b>\</b></code> are escaped
 	with <code><b>\</b></code> prefixes.
 	Control characters are replaced with escape sequences <code><b>\u</b></code>HHHH,
@@ -31543,19 +31481,16 @@
 	(newline), <code><b>\r</b></code>
 	(carriage return), <code><b>\t</b></code>
 	(tab).</p>
-	<p class="sp">NOTE
-	4	Finite numbers are stringified as if by calling ToString<b>(</b><i>number</i><b>)</b>.
+	<p class="sp"><b class="note">NOTE 4</b> Finite numbers are stringified as if by calling ToString<b>(</b><i>number</i><b>)</b>.
 	<b>NaN</b> and Infinity regardless of sign are represented as the
 	String <code><b>null</b></code>.</p>
-	<p class="sp">NOTE
-	5	Values that do not have a JSON representation (such as <b>undefined</b>
+	<p class="sp"><b class="note">NOTE 5</b> Values that do not have a JSON representation (such as <b>undefined</b>
 	and functions) do not produce a String. Instead they produce the
 	undefined value. In arrays these values are represented as the
 	String <code><b>null</b></code>.
 	In objects an unrepresentable value causes the property to be
 	excluded from stringification.</p>
-	<p class="sp">NOTE
-	6	An object is rendered as an opening left brace followed by zero or
+	<p class="sp"><b class="note">NOTE 6</b> An object is rendered as an opening left brace followed by zero or
 	more properties, separated with commas, closed with a right brace. A
 	property is a quoted String representing the key or property name, a
 	colon, and then the stringified property value. An array is rendered
@@ -34631,7 +34566,7 @@
 		Go
 		to step 5.</p>
 	</li></ol>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	encoding is partly based on the encoding described in RFC 1738, but
 	the entire encoding specified in this standard is described above
 	without regard to the contents of RFC 1738.</p>
@@ -34772,13 +34707,13 @@
 	<code><b>length</b></code> property of
 	the <code><b>substr</b></code> method
 	is <b>2</b>.</p>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>substr</b></code> function is
 	intentionally generic; it does not require that its <b>this</b>
 	value be a String object. Therefore it can be transferred to other
 	kinds of objects for use as a method.</p>
 	<h4 id="B.2.4">B.2.4 Date.prototype.getYear ( )</h4>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>getFullYear</b></code> method
 	is preferred for nearly all purposes, because it avoids the “year
 	2000 problem.”</p>
@@ -34799,7 +34734,7 @@
 		1900.</p>
 	</li></ol>
 	<h4 id="B.2.5">B.2.5 Date.prototype.setYear (year)</h4>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	<code><b>setFullYear</b></code> method
 	is preferred for nearly all purposes, because it avoids the “year
 	2000 problem.”</p>
@@ -34841,7 +34776,7 @@
 		value.</p>
 	</li></ol>
 	<h4 id="B.2.6">B.2.6 Date.prototype.toGMTString ( )</h4>
-	<p class="note">The
+	<p><b class="note">NOTE</b> The
 	property <code><b>toUTCString</b></code>
 	is preferred. The <code><b>toGMTString</b></code>
 	property is provided principally for compatibility with old code. It
