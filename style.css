@@ -6,6 +6,12 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: green;
 }
+h4 {
+  margin-bottom: 0;
+}
+h4 + p {
+  margin-top: 0;
+}
 #doc-title {
   background-color: green;
   color: white;
@@ -224,6 +230,9 @@ li p.indent-1-no-bottom {
 }
 .decimal {
   list-style-type: decimal;
+}
+.see {
+  float: right;
 }
 
 span.table-header { }
