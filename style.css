@@ -158,11 +158,11 @@ b {
   page-break-after: avoid
 }
 .keep {
-  margin-top: 0cm;
+  margin-top: 32px;
   margin-bottom: 0cm;
   page-break-after: avoid
 }
-.keep ~ p {
+.keep + p {
   margin-top: 0;
 }
 p.sp {
@@ -180,13 +180,13 @@ p.tiny-btm {
 }
 .def1 {
   margin-left: 1.02cm;
-  margin-top: 0cm;
-  margin-bottom: 0cm;
+  margin-top: 0;
+  margin-bottom: 0;
   page-break-after: avoid;
 }
 .def1-btm {
   margin-left: 1.02cm;
-  margin-top: 0cm;
+  margin-top: 0;
   margin-bottom: 0.39cm;
   page-break-inside: avoid:
 }
