@@ -1,5 +1,5 @@
 body {
-  margin-left: 100px;
+  margin-left: 200px;
   margin-right: 10%;
   font-family: sans-serif;
 }
@@ -9,6 +9,10 @@ h1, h2, h3, h4, h5, h6 {
 
 h2 {
   margin-top: 48px;
+}
+
+#prolog h2 {
+  margin-top: 0px;
 }
 h3 {
   margin-top: 36px;
@@ -91,6 +95,10 @@ h6 {
   margin-bottom: 8px;
   border: 1px solid #000000;
   padding: 4px;
+}
+b {
+  font-weight: bold;
+  color: green;
 }
 .note {
   font-weight: bold;
@@ -251,6 +259,13 @@ li p.indent-1-no-bottom {
 }
 .see {
   float: right;
+}
+
+#mascot {
+  position: fixed;
+  top: 50px;
+  left: 10px;
+  width: 150px;
 }
 
 span.table-header { }
