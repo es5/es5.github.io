@@ -33,6 +33,7 @@ h6:hover a
   display: inline;
   text-decoration: none;
   font-weight: normal;
+  color: inherit;
 }
 
 h2:hover b.erra,
@@ -49,6 +50,15 @@ h6:hover b.anno
   display: inline;
   text-decoration: none;
   font-weight: normal;
+}
+
+h2 a:visited,
+h3 a:visited,
+h4 a:visited,
+h5 a:visited,
+h6 a:visited
+{
+  color: inherit;
 }
 
 h2 {
@@ -327,3 +337,26 @@ span.table-header { }
 
 @page { margin-right: 1.3cm; margin-top: 1.25cm; margin-bottom: 0.5cm }
 @page:first { margin-top: 7.75cm; margin-bottom: 0.5cm }
+
+.annoPanel {
+  display: inline;
+  position: absolute;
+  height: auto;
+  width: 300px;
+  margin: 4px;
+  padding: 0.5em 0.75em;
+  padding-bottom: 1em;
+  font: small sans-serif;
+  background: rgba(245, 245, 245,.9);
+  color: black;
+  border: 1px solid #ccc;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: 4px 4px 4px #888;
+  -moz-box-shadow: 4px 4px 4px #888;
+  box-shadow: 4px 4px 4px #888;
+}
+
+.annoPanel p {
+  margin-top: 0;
+}

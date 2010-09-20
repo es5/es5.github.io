@@ -20,5 +20,5 @@ with a wry smile on its face.][1]
 
    [1]: http://sideshowbarker.github.com/es5-spec/js-mascot.svg
 
-‟Ex igne vita”
+Ex igne vita.
 
