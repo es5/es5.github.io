@@ -18,7 +18,7 @@ its implementation.
 ![The Javascript mascot: A stylized line drawing of an anthropomorphized globe
 with a wry smile on its face.][1]
 
-   [1]: js-mascot.svg
+   [1]: http://sideshowbarker.github.com/es5-spec/js-mascot.svg
 
 ‟Ex igne vita”
 
