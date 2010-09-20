@@ -18,7 +18,8 @@ function xhrAnnoShow(node, panelDiv) {
       if (request.status == 200) {
         panelDiv.innerHTML = request.responseText;
       } else {
-        panelDiv.innerHTML = "<p>There aren't any annotations for section "+node.parentNode.id.substring(1)+" yet…</p>";
+        var section = node.parentNode.id.substring(0,1) == "x" ? node.parentNode.id.substring(1) : node.parentNode.id;
+        panelDiv.innerHTML = "<p class='nope'>There aren't any annotations for section <i>"+section+"</i> yet…</p>";
       }
     }
   };

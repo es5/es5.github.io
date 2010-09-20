@@ -342,11 +342,11 @@ span.table-header { }
   display: inline;
   position: absolute;
   height: auto;
-  width: 300px;
+  width: 500px;
   margin: 4px;
   padding: 0.5em 0.75em;
   padding-bottom: 1em;
-  font: small sans-serif;
+  font: sans-serif;
   background: rgba(245, 245, 245,.9);
   color: black;
   border: 1px solid #ccc;
@@ -357,6 +357,19 @@ span.table-header { }
   box-shadow: 4px 4px 4px #888;
 }
 
-.annoPanel p {
+.annoPanel p:first-child {
   margin-top: 0;
+}
+
+.annoPanel p:first-child a {
+  color: green;
+}
+
+.nope {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.nope i {
+  color: green;
 }
