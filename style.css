@@ -6,11 +6,36 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: green;
 }
-h4 {
+
+h2 {
+  margin-top: 48px;
+}
+h3 {
+  margin-top: 36px;
+}
+h3, h4, h5, h6 {
   margin-bottom: 4px;
 }
-h4 + p {
+h3 + p, h4 + p, h5 + p, h6 + p {
   margin-top: 4px;
+}
+h1 {
+  font-size: 180%;
+}
+h2 {
+  font-size: 160%;
+}
+h3 {
+  font-size: 130%;
+}
+h4 {
+  font-size: 120%;
+}
+h5 {
+  font-size: 110%;
+}
+h6 {
+  font-size: 100%;
 }
 #doc-title {
   background-color: green;
