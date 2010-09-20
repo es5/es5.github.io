@@ -7,6 +7,50 @@ h1, h2, h3, h4, h5, h6 {
   color: green;
 }
 
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a
+{
+  display: none;
+}
+
+b.erra,
+b.anno 
+{
+  display: none;
+  cursor: pointer;
+}
+
+
+h2:hover a,
+h3:hover a,
+h4:hover a,
+h5:hover a,
+h6:hover a 
+{
+  display: inline;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+h2:hover b.erra,
+h3:hover b.erra,
+h4:hover b.erra,
+h5:hover b.erra,
+h6:hover b.erra,
+h2:hover b.anno,
+h3:hover b.anno,
+h4:hover b.anno,
+h5:hover b.anno,
+h6:hover b.anno 
+{
+  display: inline;
+  text-decoration: none;
+  font-weight: normal;
+}
+
 h2 {
   margin-top: 48px;
 }
