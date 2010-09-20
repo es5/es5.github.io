@@ -15,9 +15,11 @@ function xhrAnnoShow(node, panelDiv) {
     while (networkStatus.firstChild) networkStatus.removeChild(networkStatus.firstChild);
     networkStatus.textContent = dots;
     if (request.readyState == 4) {
-      console.log(request);
+      if (request.status == 200) {
         panelDiv.innerHTML = request.responseText;
-        // panelDiv.innerHTML = "<p>There aren't any annotations for this section yet…</p>";
+      } else {
+        panelDiv.innerHTML = "<p>There aren't any annotations for section "+node.parentNode.id.substring(1)+" yet…</p>";
+      }
     }
   };
   try {
