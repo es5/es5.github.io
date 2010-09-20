@@ -261,11 +261,22 @@ li p.indent-1-no-bottom {
   float: right;
 }
 
-#mascot {
+#stamp {
   position: fixed;
   top: 50px;
   left: 10px;
   width: 150px;
+}
+
+#mascot {
+  width: 150px;
+}
+
+#slogan {
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  color: green;
 }
 
 span.table-header { }
