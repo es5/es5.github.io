@@ -353,7 +353,10 @@ span.table-header { }
 .annoPanel {
   display: inline;
   position: absolute;
-  height: auto;
+  height: 500px;
+  width: 80%;
+  overflow-y: scroll;
+  font-size: 90%;
   margin: 4px;
   padding: 0.5em 0.75em;
   padding-top: 8px;
@@ -423,4 +426,13 @@ ol li {
   cursor: pointer;
   padding-left: 8px;
   float: right;
+}
+table#date-format {
+  padding-left: 40px;
+  margin-bottom: 18px;
+}
+
+table#date-format td {
+  padding-top: 1px;
+  padding-bottom: 1px;
 }

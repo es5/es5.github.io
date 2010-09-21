@@ -1,0 +1,34 @@
+<p>(First paragraph, individual character properties should not have “array
+  index” restrictions)</p>
+	<p>
+	String
+	objects use a variation of the [[GetOwnProperty]] internal method
+	used for other native ECMAScript objects (<a href="#x8.12.1">8.12.1</a>). This special
+	internal method is used to
+	<ins>add access for</ins>
+	<del>specify the array index</del>
+	named properties
+	<ins>corresponding to individual characters</ins>
+	of String objects.</p>
+
+<p>(Algorithm corrections)</p>
+<ol start="3">
+		<li><p>
+		If
+		<ins>ToString(abs(ToInteger(<i>P</i>)))</ins>
+		is not
+		<ins>the same value as <i>P</i></ins>
+		<del>an array index (<a href="#x15.4">15.4</a>)</del>,
+		return <b>undefined</b>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>str</i> be the String value of the [[PrimitiveValue]] internal
+		property of <i>S</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>index</i> be
+		<del>ToUint32</del>
+		<ins>ToInteger</ins>(<i>P</i>).</p> </li>
+</ol>

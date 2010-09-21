@@ -1,0 +1,50 @@
+<p class="ed">(Time only variations of this string format should not have been
+  included. Ranges were not specified for some fields)</p>
+	<p>
+	Where
+	the fields are as follows:</p>
+
+<table id="date-format">
+	<tbody>
+	<tr><td><code><b>YYYY</b></code></td><td>is the decimal digits of the year in the Gregorian calendar.</td></tr>
+	<tr><td><code><b>-</b></code></td><td>“<code><b>:</b></code>” (<del>hyphon</del> <ins>hyphen</ins>) appears literally twice in the string.</td></tr>
+	<tr><td><code><b>MM</b></code></td><td>is the month of the year from 01 (January) to 12 (December).</td></tr>
+	<tr><td><code><b>DD</b></code></td><td>is the day of the month from 01 to 31.</td></tr>
+	<tr><td><code><b>T</b></code></td><td>“<code><b>T</b></code>” appears literally in the string, to indicate the beginning of the time element.</td></tr>
+	<tr><td><code><b>HH</b></code></td><td>is the number of complete hours that have passed since midnight as two decimal digits <ins>from 00 to 24</ins>.</td></tr>
+	<tr><td><code><b>:</b></code></td><td>“<code><b>:</b></code>” (colon) appears literally twice in the string.</td></tr>
+	<tr><td><code><b>mm</b></code></td><td>is the number of complete minutes since the start of the hour as two decimal digits <ins>from 00 to 59</ins>.</td></tr>
+	<tr><td><code><b>ss</b></code></td><td>is the number of complete seconds since the start of the minute as two decimal digits <ins>from 00 to 59</ins>.</td></tr>
+	<tr><td><code><b>.</b></code></td><td>“<code><b>.</b></code>” (dot) appears literally in the string.</td></tr>
+	<tr><td><code><b>sss</b></code></td><td>is the number of complete milliseconds since the start of the second as three decimal digits.</td></tr>
+	<tr><td colspan="2"><del>Both the “<code><b>.</b></code>” and the milliseconds field may be omitted.</del></td></tr>
+	<tr><td><code><b>Z</b></code></td><td>is the time zone offset specified as “<code><b>Z</b></code>” (for UTC) or either
+	“<code><b>+</b></code>” or “<code><b>-</b></code>” followed by a time expression <code><b><del>hh</del><ins>HH</ins>:mm</b></code></td></tr>
+	</tbody>
+</table>
+
+	<p class="sp">This
+	format includes date-only forms:</p>
+	<p class="sp"><code><b>YYYY<br>YYYY-MM<br>YYYY-MM-DD</b></code></p>
+	<p>
+	<ins>It also includes “date-time” forms that consist of one of the above
+	date-only forms immediately followed by one of the following time</ins>
+	<del>which It also includes time-only forms</del>
+	with an optional time zone offset appended: 
+	</p>
+	<p>
+	<code><b>THH:mm<br>THH:mm:ss<br>THH:mm:ss.sss</b></code></p>
+	<del>
+	<p>
+	Also
+	included are “date-times” which may be
+	any combination of the above.</p>
+	</del>
+	<p>
+	All
+	numbers must be base 10.
+	<ins>If the MM or DD fields are absent “01” is used as the value. If the
+	mm or ss fields are absent “00” is used as the value and the value of an
+	absent sss file is “000”. The value of an absent time zone offset is
+	“Z”.</ins>
+</p>
