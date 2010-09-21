@@ -113,6 +113,10 @@ h6 {
 #toc-full li  {
   list-style-type: none;
 }
+#toc ol > li,
+#toc-full ol > li {
+  margin-top: 8px;
+}
 #toc,
 #toc-full {
   margin-top: 36px;
@@ -250,9 +254,6 @@ td > p {
 ul.outer {}
 ul.inner {}
 ol.inner {}
-ol > li {
-  margin-top: 12px;
-}
 ol > li > ol {
   list-style-type: lower-alpha;
 }
@@ -315,38 +316,49 @@ li p.indent-1-no-bottom {
   float: right;
 }
 
-#stamp {
+span.table-header { }
+
+@page { margin-right: 1.3cm; margin-top: 1.25cm; margin-bottom: 0.5cm }
+@page:first { margin-top: 7.75cm; margin-bottom: 0.5cm }
+
+#mascot-treehouse {
   position: fixed;
   top: 50px;
   left: 10px;
-  width: 150px;
 }
 
 #mascot {
   width: 150px;
+  float: left;
 }
 
 #slogan {
+  width: 150px;
+  position: fixed;
+  top: 195px;
+  left: 10px;
   text-align: center;
   font-weight: bold;
   font-style: italic;
   color: green;
 }
 
-span.table-header { }
-
-@page { margin-right: 1.3cm; margin-top: 1.25cm; margin-bottom: 0.5cm }
-@page:first { margin-top: 7.75cm; margin-bottom: 0.5cm }
+#annotations {
+  position: fixed;
+  top: 30px;
+  left: 165px;
+  width: 80%;
+}
 
 .annoPanel {
   display: inline;
   position: absolute;
   height: auto;
-  width: 500px;
   margin: 4px;
   padding: 0.5em 0.75em;
+  padding-top: 8px;
   padding-bottom: 1em;
-  font: sans-serif;
+  /* font-size: 90%; */
   background: rgba(245, 245, 245,.9);
   color: black;
   border: 1px solid #ccc;
@@ -357,12 +369,19 @@ span.table-header { }
   box-shadow: 4px 4px 4px #888;
 }
 
-.annoPanel p:first-child {
+.annoPanel > p:first-of-type {
   margin-top: 0;
 }
 
-.annoPanel p:first-child a {
+.annoPanel > p:first-of-type a {
   color: green;
+}
+
+.annoPanel > p:first-of-type i {
+  color: green;
+  font-weight: bold;
+  font-style: normal;
+  padding-left: 10px;
 }
 
 .nope {
@@ -372,4 +391,35 @@ span.table-header { }
 
 .nope i {
   color: green;
+}
+
+del {
+  color: red;
+}
+
+del b {
+  color: red;
+}
+
+ins {
+  color: red;
+  text-decoration: none;
+  /* text-decoration: red double line-through; */
+}
+
+ins b {
+  color: red;
+}
+
+font b {
+  color: inherit;
+}
+
+ol li {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.closeBox {
+  cursor: pointer;
+  float: right;
 }

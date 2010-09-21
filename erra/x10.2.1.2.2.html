@@ -1,0 +1,15 @@
+<p class="ed">(Incorrect algorithm parameter, property should be created with
+	throw parameter true to deal with case where global object is not
+	extensible)</p>
+	<ol>
+		<li value="5"><p>
+		Call
+		the [[DefineOwnProperty]] internal method of <i>bindings</i>,
+		passing <i>N</i>, Property Descriptor {[[Value]]:<b>undefined</b>,
+		[[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b> ,
+		[[Configurable]]: <i>configValue</i>}, and
+		<ins><b>true</b></ins>
+		<del><b>false</b></del>
+		as
+		arguments.</p>
+	</li></ol>

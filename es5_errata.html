@@ -1,0 +1,1534 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OOo-dev 3.3  (Unix)">
+	<META NAME="CREATED" CONTENT="20100801;1420000">
+	<META NAME="CHANGED" CONTENT="20100801;11480000">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { size: 21.59cm 27.94cm; margin: 2.54cm }
+		P { margin-bottom: 0.21cm; direction: ltr; color: #000000; line-height: 0.41cm; text-align: justify; widows: 2; orphans: 2 }
+		P.western { font-family: "Arial", sans-serif; font-size: 10pt; so-language: en-GB }
+		P.cjk { font-family: "MS Mincho", "ＭＳ 明朝", monospace; font-size: 10pt; so-language: ja-JP }
+		P.ctl { font-family: "Calibri", sans-serif; font-size: 10pt; so-language: ar-SA }
+		H1 { margin-top: 0.48cm; margin-bottom: 0.42cm; direction: ltr; color: #000000; line-height: 0.48cm; text-align: left; widows: 2; orphans: 2 }
+		H1.western { font-family: "Arial", sans-serif; font-size: 12pt; so-language: en-GB }
+		H1.cjk { font-family: "MS Mincho", "ＭＳ 明朝", monospace; font-size: 12pt; so-language: ja-JP }
+		H1.ctl { font-family: "Calibri", sans-serif; font-size: 10pt; so-language: ar-SA; font-weight: normal }
+		H2 { margin-top: 0.11cm; margin-bottom: 0.42cm; direction: ltr; color: #000000; line-height: 0.44cm; text-align: left; widows: 2; orphans: 2 }
+		H2.western { font-family: "Arial", sans-serif; font-size: 11pt; so-language: en-GB }
+		H2.cjk { font-family: "MS Mincho", "ＭＳ 明朝", monospace; font-size: 11pt; so-language: ja-JP }
+		H2.ctl { font-family: "Calibri", sans-serif; font-size: 10pt; so-language: ar-SA; font-weight: normal }
+		H3 { margin-top: 0.11cm; margin-bottom: 0.42cm; direction: ltr; color: #000000; line-height: 0.41cm; text-align: left; widows: 2; orphans: 2 }
+		H3.western { font-family: "Arial", sans-serif; font-size: 10pt; so-language: en-GB }
+		H3.cjk { font-family: "MS Mincho", "ＭＳ 明朝", monospace; font-size: 10pt; so-language: ja-JP }
+		H3.ctl { font-family: "Calibri", sans-serif; font-size: 10pt; so-language: ar-SA; font-weight: normal }
+		H4 { margin-top: 0.11cm; margin-bottom: 0.42cm; direction: ltr; color: #000000; line-height: 0.41cm; text-align: left; widows: 2; orphans: 2 }
+		H4.western { font-family: "Arial", sans-serif; font-size: 10pt; so-language: en-GB }
+		H4.cjk { font-family: "MS Mincho", "ＭＳ 明朝", monospace; font-size: 10pt; so-language: ja-JP }
+		H4.ctl { font-family: "Calibri", sans-serif; font-size: 10pt; so-language: ar-SA; font-weight: normal }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="ja-JP" TEXT="#000000" DIR="LTR">
+<DIV ID="Section1" DIR="LTR">
+	<H3 CLASS="cjk" STYLE="margin-top: 0.64cm; border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.04cm; padding-left: 0cm; padding-right: 0cm"><A NAME="_Ref440437891"></A>
+	<FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT SIZE=4>Erratum
+	for ECMAScript, 5</FONT><SUP><FONT SIZE=4>th</FONT></SUP><FONT SIZE=4>
+	Edition Specification (ECMA-262-5)</FONT></SPAN></FONT></H3>
+	<P CLASS="cjk" STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><B>(Last
+	Updated July 31, 2010)</B></SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=5><SPAN LANG="en-GB"><I>Items
+	with Technical Significance</I></SPAN></FONT></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><A NAME="_Ref456028559"></A><A NAME="_Ref459647164"></A><A NAME="_Ref459624423"></A><A NAME="_Ref459624386"></A><A NAME="_Ref457437433"></A><A NAME="_Ref440449662"></A>
+	<FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><B>7.1	Unicode
+	Format-Control Characters</B></SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Table
+	1)</SPAN></FONT></P>
+	<CENTER>
+		<TABLE WIDTH=690 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=22 CELLSPACING=0 RULES=GROUPS>
+			<COL WIDTH=130>
+			<COL WIDTH=159>
+			<COL WIDTH=120>
+			<COL WIDTH=103>
+			<TBODY>
+				<TR VALIGN=TOP>
+					<TD WIDTH=130 BGCOLOR="#c0c0c0">
+						<P CLASS="cjk" ALIGN=LEFT STYLE="background: #c0c0c0; page-break-after: avoid">
+						<FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT COLOR="#000000"><I><B><SPAN STYLE="background: #c0c0c0">Code
+						Unit Value</SPAN></B></I></FONT></SPAN></FONT></P>
+					</TD>
+					<TD WIDTH=159 BGCOLOR="#c0c0c0">
+						<P CLASS="cjk" STYLE="background: #c0c0c0; page-break-after: avoid">
+						<FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><I><B><SPAN STYLE="background: #c0c0c0">Name</SPAN></B></I></SPAN></FONT></P>
+					</TD>
+					<TD WIDTH=120 BGCOLOR="#c0c0c0">
+						<P CLASS="cjk" STYLE="background: #c0c0c0; page-break-after: avoid">
+						<FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><I><B><SPAN STYLE="background: #c0c0c0">Formal
+						Name</SPAN></B></I></SPAN></FONT></P>
+					</TD>
+					<TD WIDTH=103 BGCOLOR="#c0c0c0">
+						<P CLASS="cjk" STYLE="background: #c0c0c0; page-break-after: avoid">
+						<FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><I><B><SPAN STYLE="background: #c0c0c0">Usage</SPAN></B></I></SPAN></FONT></P>
+					</TD>
+				</TR>
+			</TBODY>
+			<TBODY>
+				<TR VALIGN=TOP>
+					<TD WIDTH=130>
+						<P CLASS="cjk" STYLE="page-break-after: avoid"><FONT FACE="Courier New, monospace"><SPAN LANG="en-GB"><B>\u200C</B></SPAN></FONT></P>
+					</TD>
+					<TD WIDTH=159>
+						<P CLASS="cjk" STYLE="page-break-after: avoid"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">Zero
+						width non-joiner</SPAN></FONT></P>
+					</TD>
+					<TD WIDTH=120>
+						<P CLASS="cjk" STYLE="page-break-after: avoid"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">&lt;ZWNJ&gt;</SPAN></FONT></P>
+					</TD>
+					<TD WIDTH=103>
+						<P CLASS="cjk" STYLE="page-break-after: avoid"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><I>IdentifierPart</I></SPAN></FONT></P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=130>
+						<P CLASS="cjk" STYLE="page-break-after: avoid"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT FACE="Courier New, monospace"><B>\u200</B></FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><B>D</B></FONT></FONT><FONT COLOR="#ff0000"><STRIKE><FONT FACE="Courier New, monospace"><B>C</B></FONT></STRIKE></FONT></SPAN></FONT></P>
+					</TD>
+					<TD WIDTH=159>
+						<P CLASS="cjk" STYLE="page-break-after: avoid"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">Zero
+						width joiner</SPAN></FONT></P>
+					</TD>
+					<TD WIDTH=120>
+						<P CLASS="cjk" STYLE="page-break-after: avoid"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">&lt;ZWJ&gt;</SPAN></FONT></P>
+					</TD>
+					<TD WIDTH=103>
+						<P CLASS="cjk" STYLE="page-break-after: avoid"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><I>IdentifierPart</I></SPAN></FONT></P>
+					</TD>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=130>
+						<P CLASS="cjk"><FONT FACE="Courier New, monospace"><SPAN LANG="en-GB"><B>\uFEFF</B></SPAN></FONT></P>
+					</TD>
+					<TD WIDTH=159>
+						<P CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">Byte
+						Order Mark</SPAN></FONT></P>
+					</TD>
+					<TD WIDTH=120>
+						<P CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">&lt;BOM&gt;</SPAN></FONT></P>
+					</TD>
+					<TD WIDTH=103>
+						<P CLASS="cjk"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><I>Whitespace</I></SPAN></FONT></P>
+					</TD>
+				</TR>
+			</TBODY>
+		</TABLE>
+	</CENTER>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><BR><BR>
+	</P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H4 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">10.2.1.1.3	SetMutableBinding
+	(N,V,S)</SPAN></FONT></H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Algorithm
+	should only throw an exception when S is true)</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">The
+	concrete Environment Record method SetMutableBinding for declarative
+	environment records attempts to change the bound value of the
+	current binding of the identifier whose name is the value of the
+	argument <FONT FACE="Times New Roman, serif"><I>N</I></FONT> to the
+	value of argument <FONT FACE="Times New Roman, serif"><I>V</I></FONT>.
+	A binding for <FONT FACE="Times New Roman, serif"><I>N</I></FONT>
+	must already exist. If the binding is an immutable binding, a
+	<B>TypeError</B> is <FONT COLOR="#ff0000"><STRIKE>always</STRIKE></FONT>
+	thrown <FONT COLOR="#ff0000">if </FONT><FONT COLOR="#ff0000"><I>S</I></FONT><FONT COLOR="#ff0000">
+	is </FONT><FONT COLOR="#ff0000"><B>true</B></FONT>. <FONT COLOR="#ff0000"><STRIKE>The
+	</STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><FONT FACE="Times New Roman, serif"><I>S</I></FONT></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE>
+	argument is ignored because strict mode does not change the meaning
+	of setting bindings in declarative environment records.</STRIKE></FONT></SPAN></FONT></P>
+	<OL START=4>
+		<LI><P ALIGN=LEFT STYLE="line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Else
+		this must be an attempt to change the value of an immutable binding
+		so <FONT COLOR="#ff0000">if </FONT><FONT COLOR="#ff0000"><I>S</I></FONT><FONT COLOR="#ff0000">
+		is </FONT><FONT COLOR="#ff0000"><B>true</B></FONT> throw a
+		<B>TypeError</B> exception.</SPAN></FONT></P>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><BR><BR>
+	</P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H4 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">10.2.1.2.2	CreateMutableBinding
+	( N, D )</SPAN></FONT></H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Incorrect
+	algorithm parameter, property should be created with throw parameter
+	true to deal with case where global object is not extensible)</SPAN></FONT></P>
+	<OL START=5>
+		<LI><P ALIGN=LEFT STYLE="line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Call
+		the [[DefineOwnProperty]] internal method of <I>bindings</I>,
+		passing <I>N</I>, Property Descriptor {[[Value]]:<B>undefined</B>,
+		[[Writable]]: <B>true</B>, [[Enumerable]]: <B>true</B> ,
+		[[Configurable]]: <I>configValue</I>}, and <FONT COLOR="#ff0000"><B>true</B></FONT>
+		<FONT COLOR="#ff0000"><STRIKE><B>false</B></STRIKE></FONT> as
+		arguments.</SPAN></FONT></P>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H4 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">10.5	Declaration
+	Binding Instantiation</SPAN></FONT></H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Step
+	5 of original algorithm handled redefining existing global function
+	declarations in a manner that was incompatible with ES3 and which in
+	some cases would unintentionally invoke accessor functions)</SPAN></FONT></P>
+	<OL START=5>
+		<LI VALUE=1><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%">
+		<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">For each
+		<I>FunctionDeclaration</I> <I>f</I> in <I>code</I>, in source text
+		order do</SPAN></FONT></P>
+	</OL>
+	<OL START=5>
+		<OL>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+			<I>fn</I> be the <I>Identifier</I> in <I>FunctionDeclaration</I>
+			<I>f.</I></SPAN></FONT></P>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+			<I>fo</I> be the result of instantiating <I>FunctionDeclaration f
+			</I>as described in Clause 13.</SPAN></FONT></P>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+			<I>funcAlreadyDeclared </I>be the result of calling <I>env’s</I>
+			HasBinding concrete method passing <I>fn</I> as the argument.</SPAN></FONT></P>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">If
+			<I>funcAlreadyDeclared </I>is <B>false</B>, call <I>env’s</I>
+			CreateMutableBinding concrete method passing <I>fn</I> and
+			<I>configurableBindings</I> as the arguments.</SPAN></FONT></P>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000">Else
+			if </FONT><FONT COLOR="#ff0000"><I>env</I></FONT><FONT COLOR="#ff0000">
+			is the environment record component of the global environment then</FONT></SPAN></FONT></P>
+			<OL TYPE=i>
+				<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000">Let
+				</FONT><FONT COLOR="#ff0000"><I>go</I></FONT><FONT COLOR="#ff0000">
+				be the global object.</FONT></SPAN></FONT></P>
+				<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000">Let
+				</FONT><FONT COLOR="#ff0000"><I>existingProp</I></FONT><FONT COLOR="#ff0000">
+				be the resulting of calling the [[GetProperty]] internal method
+				of </FONT><FONT COLOR="#ff0000"><I>go</I></FONT><FONT COLOR="#ff0000">
+				with argument </FONT><FONT COLOR="#ff0000"><I>fn</I></FONT><FONT COLOR="#ff0000">.</FONT></SPAN></FONT></P>
+				<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000">If
+				</FONT><FONT COLOR="#ff0000"><I>existingProp</I></FONT><FONT COLOR="#ff0000">
+				.[[Configurable]] is </FONT><FONT COLOR="#ff0000"><B>true</B></FONT><FONT COLOR="#ff0000">,
+				then</FONT></SPAN></FONT></P>
+				<OL>
+					<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000">Call
+					the [[DefineOwnProperty]] internal method of </FONT><FONT COLOR="#ff0000"><I>go</I></FONT><FONT COLOR="#ff0000">,
+					passing </FONT><FONT COLOR="#ff0000"><I>fn</I></FONT><FONT COLOR="#ff0000">,
+					Property Descriptor {[[Value]]:</FONT><FONT COLOR="#ff0000"><I>
+					</I></FONT><FONT COLOR="#ff0000"><B>undefined</B></FONT><FONT COLOR="#ff0000">,
+					[[Writable]]: </FONT><FONT COLOR="#ff0000"><B>true</B></FONT><FONT COLOR="#ff0000">,
+					[[Enumerable]]: </FONT><FONT COLOR="#ff0000"><B>true</B></FONT><FONT COLOR="#ff0000">
+					, [[Configurable]]: </FONT><FONT COLOR="#ff0000"><I>configurableBindings</I></FONT><FONT COLOR="#ff0000">
+					}, and </FONT><FONT COLOR="#ff0000"><B>true</B></FONT><FONT COLOR="#ff0000">
+					as arguments.</FONT></SPAN></FONT></P>
+				</OL>
+				<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000">Else
+				if IsAccessorDescrptor(</FONT><FONT COLOR="#ff0000"><I>existingProp</I></FONT><FONT COLOR="#ff0000">)
+				or </FONT><FONT COLOR="#ff0000"><I>existingProp</I></FONT><FONT COLOR="#ff0000">
+				does not have attribute values {[[Writable]]: </FONT><FONT COLOR="#ff0000"><B>true</B></FONT><FONT COLOR="#ff0000">,
+				[[Enumerable]]: </FONT><FONT COLOR="#ff0000"><B>true</B></FONT><FONT COLOR="#ff0000">},
+				then</FONT></SPAN></FONT></P>
+				<OL>
+					<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000">Throw
+					a TypeError exception.</FONT></SPAN></FONT></P>
+				</OL>
+			</OL>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Call
+			<I>env’s</I> SetMutableBinding concrete method passing <I>fn</I>,
+			<I>fo</I>, and <I>strict</I> as the arguments.</SPAN></FONT></P>
+		</OL>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H4 CLASS="cjk"><A NAME="_Ref424667453"></A><A NAME="_Ref424530966"></A><A NAME="_Ref404493018"></A><A NAME="_Ref383837418"></A>
+	<FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">12.6.4	The <FONT FACE="Courier New, monospace">for</FONT>-<FONT FACE="Courier New, monospace">in</FONT>
+	Statement</SPAN></FONT></H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Implementers
+	have found the spec. to be unclear regarding whether shadowed
+	inherited properties are included in an enumeration)</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">The
+	mechanics and order of enumerating the properties (step 6.a in the
+	first algorithm, step 7.a in the second) is not specified.
+	Properties of the object being enumerated may be deleted during
+	enumeration. If a property that has not yet been visited during
+	enumeration is deleted, then it will not be visited. If new
+	properties are added to the object being enumerated during
+	enumeration, the newly added properties are not guaranteed to be
+	visited in the active enumeration. <FONT COLOR="#ff0000">A property
+	name must not be visited more than once in any enumeration.</FONT></SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">Enumerating
+	the properties of an object includes enumerating properties of its
+	prototype, and the prototype of the prototype, and so on,
+	recursively; but a property of a prototype is not enumerated if it
+	is “shadowed” because some previous object in the prototype
+	chain has a property with the same name. <FONT COLOR="#ff0000">The
+	values of [[Enumerable]] attributes are not considered when
+	determining if a property of a prototype object is shadowed by a
+	previous object on the prototype chain.</FONT><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></SPAN></FONT></P>
+	<H4 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.2.3.7	Object.defineProperties
+	( O, Properties )</SPAN></FONT></H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(confusing
+	use of <I>P</I> in steps 5 and 6 of algorithm)</SPAN></FONT></P>
+	<OL START=5>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">For
+		each element <I>P</I> of <I>names</I> in list order,</SPAN></FONT></P>
+		<OL>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+			<I>descObj</I> be the result of calling the [[Get]] internal
+			method of <I>props</I> with <I>P</I> as the argument.</SPAN></FONT></P>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+			<I>desc</I> be the result of calling ToPropertyDescriptor with
+			<I>descObj</I> as the argument.</SPAN></FONT></P>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Append
+			<FONT COLOR="#ff0000">the pair (a two element List) consisting of
+			</FONT><FONT COLOR="#ff0000"><I>P</I></FONT> <FONT COLOR="#ff0000">and</FONT>
+			<I>desc</I> to the end of <I>descriptors</I>.</SPAN></FONT></P>
+		</OL>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">For
+		 each element <FONT COLOR="#ff0000"><I>pair</I></FONT><FONT COLOR="#ff0000">
+		from</FONT> <FONT COLOR="#ff0000"><STRIKE><I>desc</I></STRIKE></FONT>
+		<FONT COLOR="#ff0000"><STRIKE>of</STRIKE></FONT><FONT COLOR="#ff0000">
+		</FONT><I>descriptors</I> in list order,</SPAN></FONT></P>
+		<OL>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000">Let
+			</FONT><FONT COLOR="#ff0000"><I>P</I></FONT><FONT COLOR="#ff0000">
+			be the first element of </FONT><FONT COLOR="#ff0000"><I>pair</I></FONT><FONT COLOR="#ff0000">.</FONT></SPAN></FONT></P>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000">Let
+			</FONT><FONT COLOR="#ff0000"><I>desc</I></FONT><FONT COLOR="#ff0000">
+			be the second element of </FONT><FONT COLOR="#ff0000"><I>pair</I></FONT><FONT COLOR="#ff0000">.</FONT></SPAN></FONT></P>
+		</OL>
+	</OL>
+	<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-bottom: 0cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000">c.</FONT><FONT COLOR="#ff0000"><STRIKE>a.</STRIKE></FONT>
+	Call the [[DefineOwnProperty]] internal method of <I>O</I> with
+	arguments <I>P</I>, <I>desc</I>, and <B>true</B>.</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><BR><BR>
+	</P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H4 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.2.4.2	Object.prototype.toString
+	( )</SPAN></FONT></H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Original
+	algorithm caused failure of widely used web frameworks.)</SPAN></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000">1.	If
+	the </FONT><FONT COLOR="#ff0000"><B>this</B></FONT><FONT COLOR="#ff0000">
+	value is </FONT><FONT COLOR="#ff0000"><B>undefined</B></FONT><FONT COLOR="#ff0000">,
+	return </FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><B>&quot;[object
+	Undefined]&quot;</B></FONT></FONT><FONT COLOR="#ff0000">.</FONT></SPAN></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000">2.	If
+	the </FONT><FONT COLOR="#ff0000"><B>this</B></FONT><FONT COLOR="#ff0000">
+	value is </FONT><FONT COLOR="#ff0000"><B>null</B></FONT><FONT COLOR="#ff0000">,
+	return </FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><B>&quot;[object
+	Null]&quot;</B></FONT></FONT><FONT COLOR="#ff0000">.</FONT></SPAN></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000"><STRIKE>1</STRIKE></FONT><FONT COLOR="#ff0000">3</FONT>.	Let
+	<I>O </I>be the result of calling ToObject passing the <B>this </B>value
+	as the argument.</SPAN></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000"><STRIKE>2</STRIKE></FONT><FONT COLOR="#ff0000">4</FONT>.	Let
+	<I>class</I> be the value of the [[Class]] internal property of <I>O</I>.</SPAN></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.64cm; text-indent: -0.64cm; margin-bottom: 0.39cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000"><STRIKE>3</STRIKE></FONT><FONT COLOR="#ff0000">5</FONT>.	Return
+	the String value that is the result of concatenating the three
+	Strings <FONT FACE="Courier New, monospace"><B>&quot;[object &quot;</B></FONT>,
+	<I>class</I>, and <FONT FACE="Courier New, monospace"><B>&quot;]&quot;</B></FONT>.</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H4 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.3.4.3	Function.prototype.apply
+	(thisArg, argArray)</SPAN></FONT></H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Original
+	algorithm performs validation checks in steps 5 and 7 that are
+	inconsistent with other generic array usages in the specification.)</SPAN></FONT></P>
+	<OL START=4>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+		<I>len</I> be the result of calling the [[Get]] internal method of
+		<I>argArray</I> with argument <FONT FACE="Courier New, monospace"><B>&quot;length&quot;</B></FONT>.</SPAN></FONT></P>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000"><STRIKE>If
+		</STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><I>len</I></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE>
+		is </STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><B>null</B></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE>
+		or </STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><B>undefined</B></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE>,
+		then throw a </STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><B>TypeError</B></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE>
+		exception.</STRIKE></FONT></SPAN></FONT></P>
+	</OL>
+	<OL START=5>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+		<I>n</I> be ToUint32(<I>len</I>).</SPAN></FONT></P>
+	</OL>
+	<OL START=7>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000"><STRIKE>If
+		</STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><I>n</I></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE>
+		is not equal to ToNumber(</STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><I>len</I></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE>),
+		then throw a </STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><B>TypeError</B></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE>
+		exception.</STRIKE></FONT></SPAN></FONT></P>
+	</OL>
+	<OL START=6>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+		<I>argList</I>  be an empty List.</SPAN></FONT></P>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+		<I>index</I> be 0.</SPAN></FONT></P>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Repeat
+		while <I>index</I> &lt; <I>n</I></SPAN></FONT></P>
+		<OL>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+			<I>indexName</I> be ToString(<I>index</I>).</SPAN></FONT></P>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+			<I>nextArg</I> be the result of calling the [[Get]] internal
+			method of <I>argArray</I> with <I>indexName</I> as the argument.</SPAN></FONT></P>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Append
+			<I>nextArg</I> as the last element of <I>argList</I>.</SPAN></FONT></P>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Set
+			<I>index</I> to <I>index</I> + 1.</SPAN></FONT></P>
+		</OL>
+		<LI><P ALIGN=LEFT STYLE="line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Return
+		the result of calling the [[Call]] internal method of <I>func</I>,
+		providing <I>thisArg</I> as the <B>this</B> value and <I>argList</I>
+		as the list of arguments.</SPAN></FONT></P>
+	</OL>
+	<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H4 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.4.4.18	Array.prototype.forEach
+	( callbackfn [ , thisArg ] )</SPAN></FONT></H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Return
+	value not specified in step 8)</SPAN></FONT></P>
+	<OL START=8>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.39cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Return
+		<FONT COLOR="#ff0000"><B>undefined</B></FONT>.</SPAN></FONT></P>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H4 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.4.4.21	Array.prototype.reduce
+	( callbackfn [ , initialValue ] )</SPAN></FONT></H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Fourth
+	paragraph)</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">The
+	range of elements processed by <FONT FACE="Courier New, monospace"><B>reduce</B></FONT>
+	is set before the first call to <FONT FACE="Times New Roman, serif"><I>callbackfn</I></FONT>.
+	Elements that are appended to the array after the call to <FONT FACE="Courier New, monospace"><B>reduce</B></FONT>
+	begins will not be visited by <FONT FACE="Times New Roman, serif"><I>callbackfn</I></FONT>.
+	If existing elements of the array are changed, their value as passed
+	to <FONT FACE="Times New Roman, serif"><I>callbackfn </I></FONT>will
+	be the value at the time <FONT FACE="Courier New, monospace"><B>reduce</B></FONT>
+	visits them; elements that are deleted after the call to <FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><B>reduce</B></FONT></FONT>
+	<FONT COLOR="#ff0000"><STRIKE><FONT FACE="Courier New, monospace"><B>filter</B></FONT></STRIKE></FONT>
+	begins and before being visited are not visited.</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H4 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.4.4.22	Array.prototype.reduceRight
+	( callbackfn [ , initialValue ] )</SPAN></FONT></H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Fourth
+	paragraph)</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">The
+	range of elements processed by <FONT FACE="Courier New, monospace"><B>reduceRight
+	</B></FONT>is set before the first call to <FONT FACE="Times New Roman, serif"><I>callbackfn</I></FONT>.
+	Elements that are appended to the array after the call to
+	<FONT FACE="Courier New, monospace"><B>reduceRight </B></FONT>begins
+	will not be visited by <FONT FACE="Times New Roman, serif"><I>callbackfn</I></FONT>.
+	If existing elements of the array are changed by <FONT FACE="Times New Roman, serif"><I>callbackfn</I></FONT>,
+	their value as passed to <FONT FACE="Times New Roman, serif"><I>callbackfn
+	</I></FONT>will be the value at the time <FONT FACE="Courier New, monospace"><B>reduceRight
+	</B></FONT>visits them; elements that are deleted after the call to
+	<FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><B>reduceRight</B></FONT></FONT><FONT FACE="Courier New, monospace"><B>
+	</B></FONT><FONT COLOR="#ff0000"><STRIKE><FONT FACE="Courier New, monospace"><B>filter</B></FONT></STRIKE></FONT>
+	begins and before being visited are not visited.</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Algorithm
+	step 9.c.ii)</SPAN></FONT></P>
+	<OL START=9>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Repeat,
+		while <I>k </I>≥ 0</SPAN></FONT></P>
+		<OL>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+			<I>Pk</I> be ToString(<I>k</I>).</SPAN></FONT></P>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+			<I>kPresent</I> be the result of calling the [[HasProperty]]
+			internal method of <I>O</I> with argument <I>Pk</I>.</SPAN></FONT></P>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">If
+			<I>kPresent</I> is <B>true</B>, then</SPAN></FONT></P>
+			<OL TYPE=i>
+				<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+				<I>kValue</I> be the result of calling the [[Get]] internal
+				method of <I>O</I> with argument <I>Pk</I>.</SPAN></FONT></P>
+				<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+				<I>accumulator</I> be the result of calling the [[Call]] internal
+				method of <I>callbackfn</I> with <FONT COLOR="#ff0000"><STRIKE><B>null</B></STRIKE></FONT>
+				<FONT COLOR="#ff0000"><B>undefined</B></FONT> as the <B>this</B>
+				value and argument list containing <I>accumulator</I>, <I>kValue</I>,
+				<I>k</I>, and <I>O</I>.</SPAN></FONT></P>
+			</OL>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Decrease
+			<I>k</I> by 1.</SPAN></FONT></P>
+		</OL>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><BR><BR>
+	</P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H4 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.4.5.1	[[DefineOwnProperty]]
+	( P, Desc, Throw )</SPAN></FONT></H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Algorithm
+	steps 3.l.ii and 3.l.iii: Boolean sense of variable name is
+	incorrect resulting in incorrectly inverted test)</SPAN></FONT></P>
+	<OL>
+		<OL>
+			<OL TYPE=i START=2>
+				<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+				<FONT COLOR="#ff0000"><STRIKE><I>cannotDelete</I></STRIKE></FONT>
+				<FONT COLOR="#ff0000"><I>deleteSucceeded</I></FONT> be the result
+				of calling the [[Delete]] internal method of <I>A</I> passing
+				ToString(<I>oldLen</I>) and <B>false</B> as arguments.</SPAN></FONT></P>
+				<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">If
+				<FONT COLOR="#ff0000"><STRIKE><I>cannotDelete</I></STRIKE></FONT><FONT COLOR="#ff0000"><I>
+				deleteSucceeded</I></FONT> is <FONT COLOR="#ff0000"><STRIKE><B>true</B></STRIKE></FONT><B>
+				</B><FONT COLOR="#ff0000"><B>false</B></FONT>, then</SPAN></FONT></P>
+			</OL>
+		</OL>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H4 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.5.5.2	[[GetOwnProperty]]
+	( P )</SPAN></FONT></H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(First
+	paragraph, individual character properties should not have “array
+	index” restrictions)</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">String
+	objects use a variation of the [[GetOwnProperty]] internal method
+	used for other native ECMAScript objects (8.12.1). This special
+	internal method is used to <FONT COLOR="#ff0000">add</FONT> <FONT COLOR="#ff0000">access
+	for</FONT> <FONT COLOR="#ff0000"><STRIKE>specify the array index</STRIKE></FONT>
+	named properties <FONT COLOR="#ff0000">corresponding to individual
+	characters</FONT> of String objects.</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Algorithm
+	corrections)</SPAN></FONT></P>
+	<OL START=3>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">If
+		<FONT COLOR="#ff0000">ToString(abs(ToInteger(</FONT><I>P</I><FONT COLOR="#ff0000">)))</FONT>
+		is not <FONT COLOR="#ff0000">the same value as </FONT><FONT COLOR="#ff0000"><I>P</I></FONT><FONT COLOR="#ff0000">
+		</FONT><FONT COLOR="#ff0000"><STRIKE>an array index (15.4)</STRIKE></FONT>,
+		return <B>undefined</B>.</SPAN></FONT></P>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+		<I>str</I> be the String value of the [[PrimitiveValue]] internal
+		property of <I>S</I>.</SPAN></FONT></P>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+		<I>index</I> be <FONT COLOR="#ff0000"><STRIKE>ToUint32</STRIKE></FONT>
+		<FONT COLOR="#ff0000">ToInteger</FONT>(<I>P</I>).</SPAN></FONT></P>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><BR><BR>
+	</P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H4 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.9.1.15	Date
+	Time String Format </SPAN></FONT>
+	</H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Time
+	only variations of this string format should not have been included.
+	 Ranges were not specified for some fields)</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">Where
+	the fields are as follows:</SPAN></FONT></P>
+	<P STYLE="margin-left: 1.11cm; text-indent: -0.64cm; margin-bottom: 0.07cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT FACE="Courier New, monospace"><B>YYYY</B></FONT><FONT FACE="Arial, sans-serif">	is
+	the decimal digits of the year in the Gregorian calendar.</FONT></SPAN></FONT></P>
+	<P STYLE="margin-left: 1.11cm; text-indent: -0.64cm; margin-bottom: 0.07cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT FACE="Courier New, monospace"><SPAN LANG="en-US"><B>-</B></SPAN></FONT><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">		</SPAN></FONT><FONT FACE="Arial, sans-serif">“</FONT><FONT FACE="Courier New, monospace"><B>:</B></FONT><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">”
+	(</SPAN></FONT><FONT COLOR="#ff0000"><STRIKE><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">hyphon</SPAN></FONT></STRIKE></FONT><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">
+	</SPAN></FONT><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">hyphen</SPAN></FONT></FONT><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">)
+	</SPAN></FONT><FONT FACE="Arial, sans-serif">appears literally twice
+	in the string.</FONT></SPAN></FONT></P>
+	<P STYLE="margin-left: 1.11cm; text-indent: -0.64cm; margin-bottom: 0.07cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT FACE="Courier New, monospace"><B>MM</B></FONT><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">		is
+	the month of the year from 01 (January) to 12 (December).</SPAN></FONT></SPAN></FONT></P>
+	<P STYLE="margin-left: 1.11cm; text-indent: -0.64cm; margin-bottom: 0.07cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT FACE="Courier New, monospace"><B>DD</B></FONT><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">		is
+	the day of the month from 01 to 31.</SPAN></FONT></SPAN></FONT></P>
+	<P STYLE="margin-left: 1.11cm; text-indent: -0.64cm; margin-bottom: 0.07cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT FACE="Courier New, monospace"><B>T	</B></FONT><FONT FACE="Arial, sans-serif">	“</FONT><FONT FACE="Courier New, monospace"><B>T</B></FONT><FONT FACE="Arial, sans-serif">”
+	appears literally in the string, to indicate the beginning of the
+	time element</FONT><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">.</SPAN></FONT></SPAN></FONT></P>
+	<P STYLE="margin-left: 1.59cm; text-indent: -1.11cm; margin-bottom: 0.07cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT FACE="Courier New, monospace"><B>HH	</B></FONT><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">	is
+	the number of complete hours that have passed since midnight as two
+	decimal digits</SPAN></FONT><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">
+	from 00 to 24</SPAN></FONT></FONT><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">.</SPAN></FONT></SPAN></FONT></P>
+	<P STYLE="margin-left: 1.11cm; text-indent: -0.64cm; margin-bottom: 0.07cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT FACE="Courier New, monospace"><SPAN LANG="en-US"><B>:</B></SPAN></FONT><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">		</SPAN></FONT><FONT FACE="Arial, sans-serif">“</FONT><FONT FACE="Courier New, monospace"><B>:</B></FONT><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">”
+	(colon) </SPAN></FONT><FONT FACE="Arial, sans-serif">appears
+	literally twice in the string.</FONT></SPAN></FONT></P>
+	<P STYLE="margin-left: 1.59cm; text-indent: -1.11cm; margin-bottom: 0.07cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT FACE="Courier New, monospace"><B>mm	</B></FONT><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">	is
+	the number of </SPAN></FONT><FONT FACE="Arial, sans-serif">complete</FONT><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">
+	minutes since the start of the hour as two decimal digits </SPAN></FONT><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">from
+	00 to 59</SPAN></FONT></FONT><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">.</SPAN></FONT></SPAN></FONT></P>
+	<P STYLE="margin-left: 1.59cm; text-indent: -1.11cm; margin-bottom: 0.07cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT FACE="Courier New, monospace"><B>ss</B></FONT><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">		is
+	the number of </SPAN></FONT><FONT FACE="Arial, sans-serif">complete</FONT><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">
+	seconds since the start of the minute as two decimal digits </SPAN></FONT><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">from
+	00 to 59</SPAN></FONT></FONT><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">.</SPAN></FONT></SPAN></FONT></P>
+	<P STYLE="margin-left: 1.11cm; text-indent: -0.64cm; margin-bottom: 0.07cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT FACE="Courier New, monospace"><SPAN LANG="en-US"><B>.</B></SPAN></FONT><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">		</SPAN></FONT><FONT FACE="Arial, sans-serif">“</FONT><FONT FACE="Courier New, monospace"><B>.</B></FONT><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">”
+	(dot) </SPAN></FONT><FONT FACE="Arial, sans-serif">appears literally
+	in the string.</FONT></SPAN></FONT></P>
+	<P STYLE="margin-left: 1.59cm; text-indent: -1.11cm; margin-bottom: 0.07cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT FACE="Courier New, monospace"><B>sss</B></FONT><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">	is
+	the number of complete milliseconds since the start of the second as
+	three decimal digits.</SPAN></FONT></SPAN></FONT></P>
+	<P STYLE="margin-left: 1.11cm; text-indent: -0.64cm; margin-bottom: 0.07cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000"><STRIKE><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">Both
+	the </SPAN></FONT></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><FONT FACE="Arial, sans-serif">“</FONT></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><FONT FACE="Courier New, monospace"><B>.</B></FONT></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">”
+	and the milliseconds field may be omitted.</SPAN></FONT></STRIKE></FONT></SPAN></FONT></P>
+	<P STYLE="margin-left: 1.59cm; text-indent: -1.11cm; margin-bottom: 0.39cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT FACE="Courier New, monospace"><B>Z</B></FONT><FONT FACE="Arial, sans-serif">	is
+	the time zone offset specified as “</FONT><FONT FACE="Courier New, monospace"><B>Z</B></FONT><FONT FACE="Arial, sans-serif">”
+	(for UTC) or either “</FONT><FONT FACE="Courier New, monospace"><B>+</B></FONT><FONT FACE="Arial, sans-serif">”
+	or “</FONT><FONT FACE="Courier New, monospace"><B>-</B></FONT><FONT FACE="Arial, sans-serif">”
+	followed by a time expression </FONT><FONT COLOR="#ff0000"><STRIKE><FONT FACE="Courier New, monospace"><B>hh</B></FONT></STRIKE></FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><B>HH</B></FONT></FONT><FONT FACE="Courier New, monospace"><B>:mm</B></FONT></SPAN></FONT></P>
+	<P STYLE="margin-bottom: 0.42cm; line-height: 0.37cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN LANG="en-US">This
+	format includes date-only forms:</SPAN></FONT></FONT></P>
+	<P STYLE="margin-bottom: 0.42cm; line-height: 0.37cm"><FONT FACE="Courier New, monospace"><FONT SIZE=2><SPAN LANG="en-GB"><B>YYYY<BR>YYYY-MM<BR>YYYY-MM-DD</B></SPAN></FONT></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000"><SPAN LANG="en-US">It
+	also includes “date-time” forms </SPAN></FONT><FONT COLOR="#ff0000"><SPAN LANG="en-US">that
+	consist of one of the above date-only forms immediately followed by
+	one of the following time </SPAN></FONT><FONT COLOR="#ff0000"><STRIKE><SPAN LANG="en-US">which
+	It also includes time-only</SPAN></STRIKE></FONT><SPAN LANG="en-US">
+	forms with an optional time zone offset appended: </SPAN></SPAN></FONT>
+	</P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Courier New, monospace"><SPAN LANG="en-GB"><B>THH:mm<BR>THH:mm:ss<BR>THH:mm:ss.sss</B></SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT COLOR="#ff0000"><STRIKE><FONT FACE="Arial, sans-serif"><SPAN LANG="en-US">Also
+	included are “date-times” which may be any combination of the
+	above.</SPAN></FONT></STRIKE></FONT></P>
+	<P CLASS="cjk" ALIGN=LEFT STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><SPAN LANG="en-US">All
+	numbers must be base </SPAN><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">10</SPAN></FONT><SPAN LANG="en-US">.
+	</SPAN><FONT COLOR="#ff0000"><SPAN LANG="en-US">If the </SPAN></FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><SPAN LANG="en-US"><B>MM</B></SPAN></FONT></FONT><FONT COLOR="#ff0000"><SPAN LANG="en-US">
+	or </SPAN></FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><SPAN LANG="en-US"><B>DD</B></SPAN></FONT></FONT><FONT COLOR="#ff0000"><SPAN LANG="en-US">
+	fields are absent “</SPAN></FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><SPAN LANG="en-US"><B>01</B></SPAN></FONT></FONT><FONT COLOR="#ff0000"><SPAN LANG="en-US">”
+	is used as the value. </SPAN></FONT><FONT COLOR="#ff0000"><SPAN LANG="en-US">If
+	the </SPAN></FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><SPAN LANG="en-US"><B>mm</B></SPAN></FONT></FONT><FONT COLOR="#ff0000"><SPAN LANG="en-US">
+	or </SPAN></FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><SPAN LANG="en-US"><B>ss</B></SPAN></FONT></FONT><FONT COLOR="#ff0000"><SPAN LANG="en-US">
+	fields are absent “</SPAN></FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><SPAN LANG="en-US"><B>00</B></SPAN></FONT></FONT><FONT COLOR="#ff0000"><SPAN LANG="en-US">”
+	is used as the value and the value of an absent </SPAN></FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><SPAN LANG="en-US"><B>sss</B></SPAN></FONT></FONT><FONT COLOR="#ff0000"><SPAN LANG="en-US">
+	file is “</SPAN></FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><SPAN LANG="en-US"><B>000</B></SPAN></FONT></FONT><FONT COLOR="#ff0000"><SPAN LANG="en-US">”.
+	 The value of an absent time zone offset is </SPAN></FONT><FONT COLOR="#ff0000">“</FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><B>Z</B></FONT></FONT><FONT COLOR="#ff0000">”.</FONT></SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H4 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.11.1.1
+	Error (message) </SPAN></FONT>
+	</H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Last
+	paragraph, Algorithm incorrect when message is <B>undefined</B>)</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">If
+	the argument <FONT FACE="Times New Roman, serif"><I>message</I></FONT>
+	is not <B>undefined</B>, the <FONT FACE="Courier New, monospace"><B>message</B></FONT>
+	own property of the newly constructed object is set to
+	ToString(<FONT FACE="Times New Roman, serif"><I>message</I></FONT>).
+	<FONT COLOR="#ff0000"><STRIKE>Otherwise, the </STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><FONT FACE="Courier New, monospace"><B>message</B></FONT></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE>
+	own property is set to the empty String.</STRIKE></FONT></SPAN></FONT></P>
+	<H4 CLASS="cjk"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.11.2.1
+	new Error (message) </SPAN></FONT>
+	</H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Last
+	paragraph, Algorithm incorrect when message is <B>undefined</B>)</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">If
+	the argument <FONT FACE="Times New Roman, serif"><I>message</I></FONT>
+	is not <B>undefined</B>, the <FONT FACE="Courier New, monospace"><B>message</B></FONT>
+	own property of the newly constructed object is set to
+	ToString(<FONT FACE="Times New Roman, serif"><I>message</I></FONT>).
+	<FONT COLOR="#ff0000"><STRIKE>Otherwise, the </STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><FONT FACE="Courier New, monospace"><B>message</B></FONT></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE>
+	own property is set to the empty String.</STRIKE></FONT></SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H4 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.11.4.4
+	Error.prototype.toString ( ) </SPAN></FONT>
+	</H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Algorithm
+	incorrect when message is the empty string or undefined)</SPAN></FONT></P>
+	<OL START=6>
+		<LI><P CLASS="cjk" ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%">
+		<FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">If
+		</SPAN></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>msg</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+		is undefined, then let </SPAN></FONT><FONT COLOR="#ff0000"><STRIKE><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>R</I></SPAN></FONT></STRIKE></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>
+		</I></SPAN></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>msg</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>
+		</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">be
+		</SPAN></FONT><FONT COLOR="#ff0000"><STRIKE><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>msg</I></SPAN></FONT></STRIKE></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+		</SPAN></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">the
+		empty String</SPAN></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif">;
+		else let </FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><I>msg</I></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif">
+		be ToString(</FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><I>msg</I></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif">)</FONT></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">.
+		</SPAN></FONT></SPAN></FONT>
+		</P>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000"><STRIKE>Else,
+		let </STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><I>R</I></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE>
+		be the result of concatenating </STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><I>name</I></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE>,
+		</STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><FONT FACE="Courier New, monospace">&quot;</FONT></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><FONT FACE="Courier New, monospace"><B>:</B></FONT></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><FONT FACE="Courier New, monospace">&quot;</FONT></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE>,
+		a single space character, and ToString(</STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><I>msg</I></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE>).</STRIKE></FONT></SPAN></FONT></P>
+		<LI><P CLASS="cjk" ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%">
+		<FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000"><STRIKE><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">Return
+		</SPAN></FONT></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>R</I></SPAN></FONT></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">.</SPAN></FONT></STRIKE></FONT></SPAN></FONT></P>
+	</OL>
+	<OL START=7>
+		<LI><P CLASS="cjk" ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%">
+		<FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">If
+		</SPAN></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>name</I></SPAN></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+		and </SPAN></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>msg</I></SPAN></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+		are both the empty String, return </SPAN></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace">&quot;</FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><B>Error</B></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace">&quot;.</FONT></FONT></SPAN></FONT></P>
+		<LI><P CLASS="cjk" ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%">
+		<FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">If
+		</SPAN></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>name</I></SPAN></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+		is the empty String, return </SPAN></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>msg</I></SPAN></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace">.</FONT></FONT></SPAN></FONT></P>
+		<LI><P CLASS="cjk" ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%">
+		<FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">If
+		</SPAN></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>msg</I></SPAN></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+		is the empty String, return </SPAN></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>name</I></SPAN></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace">.</FONT></FONT></SPAN></FONT></P>
+		<LI><P CLASS="cjk" ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%">
+		<FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">Return
+		</SPAN></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif">the
+		result of concatenating </FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><I>name</I></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif">,
+		&quot;</FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><B>:</B></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif">&quot;,
+		a single space character, and </FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><I>msg</I></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">.
+		</SPAN></FONT></FONT></SPAN></FONT>
+		</P>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><BR><BR>
+	</P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0cm"><BR>
+	</P>
+	<H4 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.11.7.4
+	new <I>NativeError</I> (message) </SPAN></FONT>
+	</H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Last
+	paragraph, Algorithm incorrect when message is <B>undefined</B>)</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">If
+	the argument <FONT FACE="Times New Roman, serif"><I>message</I></FONT>
+	is not <B>undefined</B>, the <FONT FACE="Courier New, monospace"><B>message</B></FONT>
+	<FONT COLOR="#ff0000">own</FONT> property of the newly constructed
+	object is set to ToString(<FONT FACE="Times New Roman, serif"><I>message</I></FONT>).
+	<FONT COLOR="#ff0000"><STRIKE>Otherwise, the </STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><FONT FACE="Courier New, monospace"><B>message</B></FONT></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE>
+	own property is set to the empty String.</STRIKE></FONT></SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H1 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">A.1	Lexical
+	Grammar</SPAN></FONT></H1>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Insert
+	between <FONT FACE="Times New Roman, serif"><I>DecimalDigit</I></FONT>
+	and <FONT FACE="Times New Roman, serif"><I>ExponentIndicator</I></FONT>
+	production)</SPAN></FONT></P>
+	<P STYLE="margin-bottom: 0cm; line-height: 100%; page-break-after: avoid">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><I>DecimalDigit
+	</I><FONT FACE="Arial, sans-serif"><SPAN STYLE="font-style: normal"><B>::</B></SPAN></FONT><I><FONT FACE="Arial, sans-serif"><B>
+	</B></FONT></I><FONT FACE="Arial, sans-serif"><SPAN STYLE="font-style: normal"><B>one
+	of</B></SPAN></FONT><I> 	<FONT FACE="Arial, sans-serif">See 7.8.3</FONT></I></SPAN></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1.02cm; margin-bottom: 0.39cm; font-style: normal; line-height: 100%; page-break-inside: avoid">
+	<FONT FACE="Courier New, monospace"><SPAN LANG="en-GB"><B>0  1  2  3
+	 4  5  6  7  8  9</B></SPAN></FONT></P>
+	<P STYLE="margin-bottom: 0cm; line-height: 100%; page-break-after: avoid">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><I><FONT COLOR="#ff0000">NonZeroDigit
+	</FONT></I><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif"><SPAN STYLE="font-style: normal"><B>::</B></SPAN></FONT></FONT><I><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif"><B>
+	</B></FONT></FONT></I><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif"><SPAN STYLE="font-style: normal"><B>one
+	of</B></SPAN></FONT></FONT><I> 	<FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif">See
+	7.8.3</FONT></FONT></I></SPAN></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1.02cm; margin-bottom: 0.39cm; font-style: normal; line-height: 100%; page-break-inside: avoid">
+	<FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><SPAN LANG="en-GB"><B>1
+	 2  3  4  5  6  7  8  9</B></SPAN></FONT></FONT></P>
+	<P STYLE="margin-bottom: 0cm; line-height: 100%; page-break-after: avoid">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><I><FONT COLOR="#ff0000">ExponentPart
+	</FONT></I><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif"><SPAN STYLE="font-style: normal"><B>::</B></SPAN></FONT></FONT><I>
+		<FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif">See 7.8.3</FONT></FONT></I></SPAN></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1.02cm; margin-bottom: 0.39cm; line-height: 100%; page-break-inside: avoid">
+	<FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><I>ExponentIndicator
+	SignedInteger</I></SPAN></FONT></FONT></P>
+	<P STYLE="margin-bottom: 0cm; line-height: 100%; page-break-after: avoid">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><I>ExponentIndicator
+	</I><FONT FACE="Arial, sans-serif"><SPAN STYLE="font-style: normal"><B>::</B></SPAN></FONT><I><FONT FACE="Arial, sans-serif"><B>
+	</B></FONT></I><FONT FACE="Arial, sans-serif"><SPAN STYLE="font-style: normal"><B>one
+	of</B></SPAN></FONT><I> 	<FONT FACE="Arial, sans-serif">See 7.8.3</FONT></I></SPAN></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1.02cm; margin-bottom: 0.39cm; font-style: normal; line-height: 100%; page-break-inside: avoid">
+	<FONT FACE="Courier New, monospace"><SPAN LANG="en-GB"><B>e  E</B></SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(incorrect
+	right-hand-side)</SPAN></FONT></P>
+	<P STYLE="margin-bottom: 0cm; line-height: 100%; page-break-after: avoid">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><I>RegularExpressionBackslashSequence
+	</I><FONT FACE="Arial, sans-serif"><SPAN STYLE="font-style: normal"><B>::</B></SPAN></FONT><I><FONT FACE="Arial, sans-serif">	See
+	7.8.5</FONT></I></SPAN></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1.02cm; margin-bottom: 0.39cm; line-height: 100%; page-break-inside: avoid">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT FACE="Courier New, monospace"><SPAN STYLE="font-style: normal"><B>\</B></SPAN></FONT><I>
+	<FONT COLOR="#ff0000">RegularExpression</FONT>NonTerminator</I></SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(missing
+	right-hand-side term)</SPAN></FONT></P>
+	<P STYLE="margin-bottom: 0cm; line-height: 100%; page-break-after: avoid">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><I>Literal
+	</I><FONT FACE="Arial, sans-serif"><SPAN STYLE="font-style: normal"><B>::</B></SPAN></FONT><I>	<FONT FACE="Arial, sans-serif">See
+	7.8</FONT></I></SPAN></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1.02cm; margin-bottom: 0.39cm; line-height: 100%; page-break-inside: avoid">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><I>NullLiteral<BR>BooleanLiteral<BR>NumericLiteral<BR>StringLiteral<BR><FONT COLOR="#ff0000">RegularExpressionLiteral</FONT></I></SPAN></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1.02cm; margin-bottom: 0.39cm; line-height: 100%; page-break-inside: avoid">
+	<BR><BR>
+	</P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H2 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">A.8.1	JSON
+	Lexical Grammar</SPAN></FONT></H2>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(incorrect
+	right-hand-side)</SPAN></FONT></P>
+	<P STYLE="margin-bottom: 0cm; line-height: 100%; page-break-after: avoid">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><I>JSONStringCharacter
+	</I><FONT FACE="Arial, sans-serif"><SPAN STYLE="font-style: normal"><B>::</B></SPAN></FONT><I><B>
+		</B> <FONT FACE="Arial, sans-serif">See 15.12.1.1</FONT></I></SPAN></FONT></P>
+	<P STYLE="margin-left: 1.02cm; margin-bottom: 0cm; line-height: 100%; page-break-after: avoid">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><I><FONT COLOR="#ff0000"><STRIKE>JSON</STRIKE></FONT>SourceCharacter
+	</I><FONT FACE="Arial, sans-serif"><SPAN STYLE="font-style: normal"><B>but
+	not</B></SPAN></FONT><I> double-quote </I><FONT FACE="Courier New, monospace"><SPAN STYLE="font-style: normal"><B>&quot;</B></SPAN></FONT><I>
+	</I><FONT FACE="Arial, sans-serif"><SPAN STYLE="font-style: normal"><B>or</B></SPAN></FONT><I>
+	backslash </I><FONT FACE="Courier New, monospace"><SPAN STYLE="font-style: normal"><B>\
+	</B></SPAN></FONT><FONT FACE="Arial, sans-serif"><SPAN STYLE="font-style: normal"><B>or</B></SPAN></FONT><I><FONT FACE="Arial, sans-serif">
+	</FONT>U+0000 <FONT FACE="Arial, sans-serif"><B>thru</B></FONT>
+	U+001F</I></SPAN></FONT></P>
+	<P STYLE="margin-left: 1.02cm; margin-bottom: 0cm; line-height: 100%; page-break-after: avoid">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT FACE="Courier New, monospace"><SPAN STYLE="font-style: normal"><B>\</B></SPAN></FONT><I>
+	JSONEscapeSequence</I></SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><SPAN LANG="en-GB"><B>ANNEX
+	C</B></SPAN></FONT></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(missing
+	item, add as first bullet item)</SPAN></FONT></P>
+	<UL>
+		<LI><P ALIGN=JUSTIFY STYLE="line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif">The
+		identifiers &quot;</FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><B>implements</B></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif">&quot;,
+		&quot;</FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><B>interface</B></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif">&quot;,
+		&quot;</FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><B>let</B></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif">&quot;,
+		&quot;</FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><B>package</B></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif">&quot;,
+		&quot;</FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><B>private</B></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif">&quot;,
+		&quot;</FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><B>protected</B></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif">&quot;,
+		&quot;</FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><B>public</B></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif">&quot;,
+		&quot;</FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><B>static</B></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif">&quot;,
+		and &quot;</FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><B>yield</B></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif">&quot;
+		are classified as </FONT></FONT><FONT COLOR="#ff0000"><I>FutureReservedWord</I></FONT><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif">
+		tokens within strict mode code. (7.6.12).</FONT></FONT></SPAN></FONT></P>
+	</UL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><BR><BR>
+	</P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(next
+	to last  bullet item, confusing wording)</SPAN></FONT></P>
+	<UL>
+		<LI><P ALIGN=JUSTIFY STYLE="line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT FACE="Arial, sans-serif">An
+		implementation may not extend</FONT><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif">,
+		beyond that defined in this specification,</FONT></FONT><FONT FACE="Arial, sans-serif">
+		the</FONT><FONT COLOR="#ff0000"><STRIKE><FONT FACE="Arial, sans-serif">
+		associate special</FONT></STRIKE></FONT><FONT FACE="Arial, sans-serif">
+		meanings within strict mode functions </FONT><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif">of</FONT></FONT><FONT FACE="Arial, sans-serif">
+		</FONT><FONT COLOR="#ff0000"><STRIKE><FONT FACE="Arial, sans-serif">to</FONT></STRIKE></FONT><FONT FACE="Arial, sans-serif">
+		properties named </FONT><FONT FACE="Courier New, monospace"><B>caller</B></FONT><FONT FACE="Arial, sans-serif">
+		or </FONT><FONT FACE="Courier New, monospace"><B>arguments</B></FONT><FONT FACE="Arial, sans-serif">
+		of function instances. ECMAScript code may not create or modify
+		properties with these names on function objects that correspond to
+		strict mode functions (</FONT><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif">10.6,</FONT></FONT><FONT FACE="Arial, sans-serif">
+		13.2</FONT><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif">,
+		15.3.4.5.3</FONT></FONT><FONT FACE="Arial, sans-serif">).</FONT></SPAN></FONT></P>
+	</UL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0cm; page-break-before: always">
+	<IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT SIZE=5><I>Editorial
+	Items with no Technical Significance</I></FONT></SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H1 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">6	Source
+	Text</SPAN></FONT></H1>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(First
+	paragraph)</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">ECMAScript
+	source text is represented as a sequence of characters in the
+	Unicode character encoding, version 3.0 or later. The text is
+	expected to have been normalised to Unicode Normalised Form C
+	(canonical composition), as described in Unicode Technical Report
+	#15. Conforming ECMAScript implementations are not required to
+	perform any normalisation of text, or behave as though they were
+	performing normalisation of text, themselves.  ECMAScript source
+	text is assumed to be a sequence of 16-bit code units for the
+	purposes of this specification. Such a source text may include
+	sequences of  16-bit code units that are not valid UTF-16 character
+	encodings. If an actual source text is encoded in a form other than
+	16-bit code units it must be processed as if it was first convert<FONT COLOR="#ff0000">ed</FONT>
+	to UTF-16.</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H2 CLASS="cjk"><A NAME="_Ref451679320"></A><A NAME="_Ref440446657"></A>
+	<FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">7.6	Identifier
+	Names and Identifiers</SPAN></FONT></H2>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Missing
+	:: in several grammar productions)</SPAN></FONT></P>
+	<P STYLE="margin-bottom: 0cm; line-height: 100%; page-break-after: avoid">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><I>UnicodeLetter
+	</I><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif"><SPAN STYLE="font-style: normal"><B>::</B></SPAN></FONT></FONT></SPAN></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1.02cm; margin-bottom: 0.39cm; font-style: normal; line-height: 100%; page-break-inside: avoid">
+	<FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">any character in
+	the Unicode categories “Uppercase letter (Lu)”, “Lowercase
+	letter (Ll)”, “Titlecase letter (Lt)”, “Modifier letter
+	(Lm)”, “Other letter (Lo)”, or “Letter number (Nl)”.</SPAN></FONT></P>
+	<P STYLE="margin-bottom: 0cm; line-height: 100%; page-break-after: avoid">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><I>UnicodeCombiningMark
+	</I><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif"><SPAN STYLE="font-style: normal"><B>::</B></SPAN></FONT></FONT></SPAN></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1.02cm; margin-bottom: 0.39cm; font-style: normal; line-height: 100%; page-break-inside: avoid">
+	<FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">any character in
+	the Unicode categories “Non-spacing mark (Mn)” or “Combining
+	spacing mark (Mc)”</SPAN></FONT></P>
+	<P STYLE="margin-bottom: 0cm; line-height: 100%; page-break-after: avoid">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><I>UnicodeDigit
+	</I><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif"><SPAN STYLE="font-style: normal"><B>::</B></SPAN></FONT></FONT></SPAN></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1.02cm; margin-bottom: 0.39cm; font-style: normal; line-height: 100%; page-break-inside: avoid">
+	<FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">any character in
+	the Unicode category “Decimal number (Nd)”</SPAN></FONT></P>
+	<P STYLE="margin-bottom: 0cm; line-height: 100%; page-break-after: avoid">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><I>UnicodeConnectorPunctuation
+	</I><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif"><SPAN STYLE="font-style: normal"><B>::</B></SPAN></FONT></FONT></SPAN></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1.02cm; margin-bottom: 0.39cm; font-style: normal; line-height: 100%; page-break-inside: avoid">
+	<FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">any character in
+	the Unicode category “Connector punctuation (Pc)”</SPAN></FONT></P>
+	<P STYLE="margin-bottom: 0cm; line-height: 100%; page-break-after: avoid">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><I>UnicodeEscapeSequence
+	</I><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif"><SPAN STYLE="font-style: normal"><B>::</B></SPAN></FONT></FONT></SPAN></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1.02cm; margin-bottom: 0.39cm; font-style: normal; line-height: 100%; page-break-inside: avoid">
+	<FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">see 7.8.4.</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><BR><BR>
+	</P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H2 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">7.8.4	String
+	Literals</SPAN></FONT></H2>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Incorrect
+	section reference)</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">The
+	definition<FONT COLOR="#ff0000"><STRIKE>s</STRIKE></FONT> of the
+	nonterminal <FONT FACE="Times New Roman, serif"><I>HexDigit</I></FONT>
+	is given in <FONT COLOR="#ff0000"><STRIKE>7.6</STRIKE></FONT> <FONT COLOR="#ff0000">7.8.3</FONT>.</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H2 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">7.9.1	Rules
+	of Automatic Semicolon Insertion</SPAN></FONT></H2>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Wrong
+	font emphasis in <I>ThrowStatement</I> production)</SPAN></FONT></P>
+	<P STYLE="margin-left: 1.02cm; margin-bottom: 0cm; line-height: 100%; page-break-after: avoid">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><I><FONT SIZE=2 STYLE="font-size: 9pt">ThrowStatement</FONT><FONT SIZE=2 STYLE="font-size: 9pt"><B>
+	</B></FONT></I><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt"><SPAN STYLE="font-style: normal"><B>:</B></SPAN></FONT></FONT></SPAN></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 2.03cm; margin-bottom: 0.39cm; line-height: 100%; page-break-inside: avoid">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000"><FONT SIZE=2 STYLE="font-size: 9pt"><SPAN STYLE="font-style: normal"><B>throw</B></SPAN></FONT></FONT><I><FONT FACE="Arial, sans-serif">
+	</FONT><FONT COLOR="#ff0000"><STRIKE><FONT SIZE=2 STYLE="font-size: 9pt"><B>throw</B></FONT></STRIKE></FONT><FONT FACE="Arial, sans-serif">
+	</FONT></I><FONT FACE="Arial, sans-serif"><FONT SIZE=1><SPAN STYLE="font-style: normal">[no
+	</SPAN></FONT></FONT><I><FONT SIZE=1>LineTerminator</FONT></I><FONT FACE="Arial, sans-serif"><FONT SIZE=1><SPAN STYLE="font-style: normal">
+	here] </SPAN></FONT></FONT><I><FONT SIZE=2 STYLE="font-size: 9pt">Expression
+	</FONT><FONT SIZE=2 STYLE="font-size: 9pt"><B>;</B></FONT></I></SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(“A”
+	should be “An” in last sentence)</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT SIZE=2 STYLE="font-size: 9pt">A</FONT><FONT COLOR="#ff0000"><FONT SIZE=2 STYLE="font-size: 9pt">n</FONT></FONT><FONT SIZE=2 STYLE="font-size: 9pt">
+	</FONT><FONT FACE="Times New Roman, serif"><I>Identifier</I></FONT><FONT SIZE=2 STYLE="font-size: 9pt">
+	in a </FONT><FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 9pt"><B>break</B></FONT></FONT><FONT SIZE=2 STYLE="font-size: 9pt">
+	or </FONT><FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 9pt"><B>continue</B></FONT></FONT><FONT SIZE=2 STYLE="font-size: 9pt">
+	statement should be on the same line as the </FONT><FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 9pt"><B>break</B></FONT></FONT><FONT SIZE=2 STYLE="font-size: 9pt">
+	or </FONT><FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 9pt"><B>continue</B></FONT></FONT><FONT SIZE=2 STYLE="font-size: 9pt">
+	token.</FONT></SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H2 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">8.12.3	[[Get]]
+	(P)</SPAN></FONT></H2>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Algorithm
+	steps incorrectly numbered starting at 8 instead of 1)</SPAN></FONT></P>
+	<OL>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+		<I>desc </I>be the result of calling the [[GetProperty]] internal
+		method of <I>O </I>with property name <I>P</I>.</SPAN></FONT></P>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">If
+		<I>desc </I>is <B>undefined</B>, return <B>undefined</B>.</SPAN></FONT></P>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">If
+		IsDataDescriptor(<I>desc</I>) is <B>true</B>, return
+		<I>desc</I>.[[Value]].</SPAN></FONT></P>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Otherwise,
+		IsAccessorDescriptor(<I>desc</I>) must be true so, let <I>getter</I>
+		be <I>desc</I>.[[Get]].</SPAN></FONT></P>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">If
+		<I>getter </I>is <B>undefined</B>, return <B>undefined</B>.</SPAN></FONT></P>
+		<LI><P ALIGN=LEFT STYLE="line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Return
+		the result calling the [[Call]] internal method of <I>getter
+		</I>providing <I>O </I>as the <B>this</B> value and providing no
+		arguments.</SPAN></FONT></P>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H2 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">9.8.1	ToString
+	Applied to the Number Type</SPAN></FONT></H2>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Incorrect
+	font emphasis for variables in algorithm step 10)</SPAN></FONT></P>
+	<OL START=10>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.39cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Return
+		the String consisting of the most significant digit of the decimal
+		representation of <FONT COLOR="#ff0000"><I>s</I></FONT>, followed
+		by a decimal point ‘<FONT FACE="Courier New, monospace">.</FONT>’,
+		followed by the remaining <FONT COLOR="#ff0000"><I>k</I></FONT><FONT FACE="Symbol, serif"></FONT>1
+		digits of the decimal representation of <FONT COLOR="#ff0000"><I>s</I></FONT>,
+		followed by the lowercase character ‘<FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace">e</FONT></FONT>’,
+		followed by a plus sign ‘<FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace">+</FONT></FONT>’
+		or minus sign ‘<FONT COLOR="#ff0000"><FONT FACE="Symbol, serif"></FONT></FONT>’
+		according to whether <FONT COLOR="#ff0000"><I>n</I></FONT><FONT FACE="Symbol, serif"></FONT>1
+		is positive or negative, followed by the decimal representation of
+		the integer abs(<FONT COLOR="#ff0000"><I>n</I></FONT><FONT FACE="Symbol, serif"></FONT>1)
+		(with no leading zeros).</SPAN></FONT></P>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H4 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">10.2.1.1.1	HasBinding
+	(N)</SPAN></FONT></H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Period
+	missing at end of step 3)</SPAN></FONT></P>
+	<OL START=3>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.42cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">If
+		it does not have such a binding, return <B>false</B><FONT COLOR="#ff0000">.</FONT></SPAN></FONT></P>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H4 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">10.5	Declaration
+	Binding Instantiation</SPAN></FONT></H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Period
+	missing at end of step 6)</SPAN></FONT></P>
+	<OL START=5>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+		<I>argumentsAlreadyDeclared </I>be the result of calling <I>env’s</I>
+		HasBinding concrete method passing <FONT FACE="Courier New, monospace"><B>&quot;arguments&quot;</B></FONT><B>
+		</B>as the argument<FONT COLOR="#ff0000">.</FONT></SPAN></FONT></P>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H2 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">11.2.3	Function
+	Calls</SPAN></FONT></H2>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Incorrect
+	font emphasis for variable in algorithm step 6.b.1)</SPAN></FONT></P>
+	<OL START=6>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">If
+		Type(<I>ref</I>) is Reference, then</SPAN></FONT></P>
+		<OL>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">If
+			IsPropertyReference(<I>ref</I>) is <B>true</B>, then</SPAN></FONT></P>
+			<OL TYPE=i>
+				<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+				<I>thisValue</I> be GetBase(<I>ref</I>).</SPAN></FONT></P>
+			</OL>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Else,
+			the base of <I>ref</I> is an Environment Record</SPAN></FONT></P>
+			<OL TYPE=i>
+				<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+				<I>thisValue</I> be the result of calling the ImplicitThisValue
+				concrete method of GetBase(<FONT COLOR="#ff0000"><I>ref</I></FONT>).</SPAN></FONT></P>
+			</OL>
+		</OL>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H4 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">12.5	The
+	<FONT FACE="Courier New, monospace">if</FONT> Statement</SPAN></FONT></H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(second
+	algorithm, step 3, the step number is in the wrong font. (should be
+	Times New Roman rather than Arial))</SPAN></FONT></P>
+	<OL>
+		<LI><P STYLE="line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Return
+		the result of evaluating <I>Statement</I><FONT FACE="Arial, sans-serif">.</FONT></SPAN></FONT></P>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H4 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">12.10	The
+	<FONT FACE="Courier New, monospace">with</FONT> Statement</SPAN></FONT></H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Period
+	missing at end of step 4)</SPAN></FONT></P>
+	<OL START=4>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+		<I>newEnv</I> be the result of calling NewObjectEnvironment passing
+		<I>obj</I> and <I>oldEnv</I> as the arguments<FONT COLOR="#ff0000">.</FONT></SPAN></FONT></P>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H4 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">12.11	The
+	<FONT FACE="Courier New, monospace">switch</FONT> Statement</SPAN></FONT></H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Incorrect
+	font emphasis for grammar productions in second <I>CaseBlock</I>
+	algorithm steps 3, 5.b.i, 9.b, and 9.b.i)</SPAN></FONT></P>
+	<OL START=3>
+		<LI><P CLASS="cjk" ALIGN=LEFT STYLE="line-height: 100%"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">Let
+		</SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>B</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+		be the list of </SPAN></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>CaseClause</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+		items in the second </SPAN></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>CaseClauses</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">,
+		in source text order.</SPAN></FONT></SPAN></FONT></P>
+		<LI><P CLASS="cjk" ALIGN=LEFT STYLE="line-height: 100%"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">Let
+		</SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>found</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+		be </SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><B>false</B></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">.</SPAN></FONT></SPAN></FONT></P>
+		<LI><P CLASS="cjk" ALIGN=LEFT STYLE="line-height: 100%"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">Repeat
+		letting </SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>C</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+		be in order each </SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>CaseClause</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+		in </SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>A</I></SPAN></FONT></SPAN></FONT></P>
+		<OL>
+			<LI><P CLASS="cjk" ALIGN=LEFT STYLE="line-height: 100%"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">If
+			</SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>found</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+			is </SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><B>false</B></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">,
+			then</SPAN></FONT></SPAN></FONT></P>
+			<OL TYPE=i>
+				<LI><P CLASS="cjk" ALIGN=LEFT STYLE="line-height: 100%"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">Let
+				</SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>clauseSelector</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+				be the result of evaluating </SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>C</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">.</SPAN></FONT></SPAN></FONT></P>
+				<LI><P CLASS="cjk" ALIGN=LEFT STYLE="line-height: 100%"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">If
+				</SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>input</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+				is equal to </SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>clauseSelector</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+				as defined by the </SPAN></FONT><FONT FACE="Courier New, monospace"><SPAN LANG="en-US">===</SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+				operator, then set </SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>found</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+				to </SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><B>true</B></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">.</SPAN></FONT></SPAN></FONT></P>
+			</OL>
+			<LI><P CLASS="cjk" ALIGN=LEFT STYLE="line-height: 100%"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">If
+			</SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>found</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+			is </SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><B>true</B></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">,
+			then</SPAN></FONT></SPAN></FONT></P>
+			<OL TYPE=i>
+				<LI><P CLASS="cjk" ALIGN=LEFT STYLE="line-height: 100%"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">If
+				</SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>C</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+				has a </SPAN></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>StatementList</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">,
+				then</SPAN></FONT></SPAN></FONT></P>
+				<OL>
+					<LI><P CLASS="cjk" ALIGN=LEFT STYLE="line-height: 100%"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">Evaluate
+					</SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>C</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">’s
+					</SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>StatementList</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+					and let </SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>R</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+					be the result.</SPAN></FONT></SPAN></FONT></P>
+					<LI><P CLASS="cjk" ALIGN=LEFT STYLE="line-height: 100%"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">If</SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>
+					R</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">.value
+					is not</SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><B>
+					</B></SPAN></FONT><SPAN LANG="en-US">empty</SPAN><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">,
+					then let</SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>
+					V</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+					=</SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>
+					R</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">.value.</SPAN></FONT></SPAN></FONT></P>
+					<LI><P CLASS="cjk" ALIGN=LEFT STYLE="line-height: 100%"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>R</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+					is an abrupt completion, then return </SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>(R</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">.type,</SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>
+					V</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">,</SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>
+					R</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">.target).</SPAN></FONT></SPAN></FONT></P>
+				</OL>
+			</OL>
+		</OL>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><BR><BR>
+	</P>
+	<OL START=9>
+		<LI><P CLASS="cjk" ALIGN=LEFT STYLE="line-height: 100%"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">Repeat
+		(Note that if step 7.a.i has been performed this loop does not
+		start at the beginning of </SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>B</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">)</SPAN></FONT></SPAN></FONT></P>
+		<OL>
+			<LI><P CLASS="cjk" ALIGN=LEFT STYLE="line-height: 100%"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">Let
+			</SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>C</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+			be the next </SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>CaseClause</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+			in </SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>B</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">.
+			If there is no such </SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>CaseClause</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">,
+			return (</SPAN></FONT><SPAN LANG="en-US">normal</SPAN><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">,
+			</SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>V</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">,
+			</SPAN></FONT><SPAN LANG="en-US">empty</SPAN><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">).</SPAN></FONT></SPAN></FONT></P>
+			<LI><P CLASS="cjk" ALIGN=LEFT STYLE="line-height: 100%"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">If
+			</SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>C</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+			has a </SPAN></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>StatementList</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">,
+			then </SPAN></FONT></SPAN></FONT>
+			</P>
+			<OL TYPE=i>
+				<LI><P CLASS="cjk" ALIGN=LEFT STYLE="line-height: 100%"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">Evaluate
+				</SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>C</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">’s
+				</SPAN></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>StatementList</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+				and let </SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>R</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+				be the result.</SPAN></FONT></SPAN></FONT></P>
+				<LI><P CLASS="cjk" ALIGN=LEFT STYLE="line-height: 100%"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">If
+				</SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>R</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">.value
+				is not </SPAN></FONT><SPAN LANG="en-US">empty</SPAN><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">,
+				then let </SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>V</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+				= </SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>R</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">.value.</SPAN></FONT></SPAN></FONT></P>
+				<LI><P CLASS="cjk" ALIGN=LEFT STYLE="line-height: 100%"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">If
+				</SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>R</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">
+				is an abrupt completion, then return (</SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>R</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">.type,
+				</SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>V</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">,
+				</SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US"><I>R</I></SPAN></FONT><FONT FACE="Times New Roman, serif"><SPAN LANG="en-US">.target).</SPAN></FONT></SPAN></FONT></P>
+			</OL>
+		</OL>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><BR><BR>
+	</P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H2 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.1.2.1	eval
+	(x)</SPAN></FONT></H2>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Incorrect
+	font emphasis for variables in algorithm step 5)</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">If
+	<FONT FACE="Times New Roman, serif"><I>radix</I></FONT> is <FONT FACE="Times New Roman, serif">16,</FONT>
+	<FONT COLOR="#ff0000">the</FONT> number may also optionally begin
+	with the character pairs <FONT FACE="Courier New, monospace"><B>0x</B></FONT>
+	or <FONT FACE="Courier New, monospace"><B>0X</B></FONT>.<IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></SPAN></FONT></P>
+	<H2 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.1.2.2	parseInt
+	(string, radix)</SPAN></FONT></H2>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Missing
+	“the” in last sentence of first paragraph)</SPAN></FONT></P>
+	<OL START=5>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.39cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Exit
+		the running execution context <FONT COLOR="#ff0000"><I>evalCtx</I></FONT>,
+		restoring the previous execution context.</SPAN></FONT></P>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H2 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.1.3	URI
+	Handling Function Properties </SPAN></FONT>
+	</H2>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(unnecessary
+	“the”)</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">A
+	URI is composed of a sequence of components separated by component
+	separators. The general form is:</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm">     <FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT FACE="Times New Roman, serif"><I>Scheme</I></FONT><FONT FACE="Courier New, monospace">
+	</FONT><FONT FACE="Courier New, monospace"><B>:</B></FONT><FONT FACE="Courier New, monospace">
+	</FONT><FONT FACE="Times New Roman, serif"><I>First</I></FONT><FONT FACE="Courier New, monospace">
+	</FONT><FONT FACE="Courier New, monospace"><B>/</B></FONT><FONT FACE="Courier New, monospace">
+	</FONT><FONT FACE="Times New Roman, serif"><I>Second</I></FONT><FONT FACE="Courier New, monospace">
+	</FONT><FONT FACE="Courier New, monospace"><B>;</B></FONT><FONT FACE="Courier New, monospace">
+	</FONT><FONT FACE="Times New Roman, serif"><I>Third</I></FONT><FONT FACE="Courier New, monospace">
+	</FONT><FONT FACE="Courier New, monospace"><B>?</B></FONT><FONT FACE="Courier New, monospace">
+	</FONT><FONT FACE="Times New Roman, serif"><I>Fourth</I></FONT></SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">where
+	the italicised names represent components and <FONT COLOR="#ff0000"><STRIKE>the</STRIKE></FONT>
+	“<FONT FACE="Courier New, monospace"><B>:</B></FONT>”, “<FONT FACE="Courier New, monospace"><B>/</B></FONT>”,
+	“<FONT FACE="Courier New, monospace"><B>;</B></FONT>” and “<FONT FACE="Courier New, monospace"><B>?</B></FONT>”
+	are reserved characters used as separators. </SPAN></FONT>
+	</P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H4 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.2.2.1	new
+	Object ([value])</SPAN></FONT></H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(“Assert”
+	misspelled in step 2)</SPAN></FONT></P>
+	<OL START=2>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Asse<FONT COLOR="#ff0000">r</FONT>t:
+		The argument <I>value</I> was not supplied or its type was Null or
+		Undefined. </SPAN></FONT>
+		</P>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><BR><BR>
+	</P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Period
+	missing at end of step 7)</SPAN></FONT></P>
+	<OL START=7>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Set
+		the all the internal methods of <I>obj</I> as specified in 8.12<FONT COLOR="#ff0000">.</FONT></SPAN></FONT></P>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><BR><BR>
+	</P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H2 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.3.2.1	new
+	Function (p1, p2, … , pn, body)</SPAN></FONT></H2>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(“th”
+	should not be superscript in algorithm steps 5.d.i and 5.e)</SPAN></FONT></P>
+	<OL>
+		<OL>
+			<OL TYPE=i>
+				<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+				<I>nextArg</I> be the <I>k</I>’<FONT COLOR="#ff0000">th</FONT>
+				argument.</SPAN></FONT></P>
+			</OL>
+		</OL>
+	</OL>
+	<P LANG="en-US" CLASS="cjk" STYLE="margin-bottom: 0.42cm"><BR><BR>
+	</P>
+	<OL>
+		<OL START=4>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+			<I>body</I> be the <I>k</I>’<FONT COLOR="#ff0000">th</FONT>
+			argument.</SPAN></FONT></P>
+		</OL>
+	</OL>
+	<P LANG="en-US" CLASS="cjk" STYLE="margin-bottom: 0.42cm"><BR><BR>
+	</P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H2 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.4.4.9	Array.prototype.shift
+	( )</SPAN></FONT></H2>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Incorrect
+	font emphasis for variables in algorithm step 7.e)</SPAN></FONT></P>
+	<OL START=5>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.39cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Else,
+		<FONT COLOR="#ff0000"><I>fromPresent</I></FONT> is <B>false</B></SPAN></FONT></P>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H4 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.4.4.22	Array.prototype.reduceRight
+	( callbackfn [ , initialValue ] )</SPAN></FONT></H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Incorrect
+	font and emphasis for variables in second paragraph)</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT FACE="Times New Roman, serif"><I>callbackfn
+	</I></FONT>is called with four arguments: the <FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><I>previousValue</I></FONT></FONT>
+	(or value from the previous call to <FONT FACE="Times New Roman, serif"><I>callbackfn</I></FONT>),
+	the <FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><I>currentValue</I></FONT></FONT>
+	(value of the current element), the <FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><I>currentIndex</I></FONT></FONT>,
+	and the object being traversed. The first time the function is
+	called, the <FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><I>previousValue</I></FONT></FONT>
+	and <FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><I>currentValue</I></FONT></FONT>
+	can be one of two values. If an <FONT FACE="Times New Roman, serif"><I>initialValue
+	</I></FONT>was provided in the call to <FONT FACE="Courier New, monospace"><B>reduceRight</B></FONT>,
+	then <FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><I>previousValue</I></FONT></FONT>
+	will be equal to <FONT FACE="Times New Roman, serif"><I>initialValue</I></FONT>
+	and <FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><I>currentValue</I></FONT></FONT>
+	will be equal to the last value in the array. If no <FONT FACE="Times New Roman, serif"><I>initialValue
+	</I></FONT>was provided, then <FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><I>previousValue</I></FONT></FONT>
+	will be equal to the last value in the array and <FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><I>currentValue</I></FONT></FONT>
+	will be equal to the second-to-last value. It is a <B>TypeError</B>
+	if the array contains no elements and <FONT FACE="Times New Roman, serif"><I>initialValue</I></FONT>
+	is not provided.</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H4 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.4.5.1	[[DefineOwnProperty]]
+	( P, Desc, Throw )</SPAN></FONT></H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Extra
+	period at end of step 3.k)</SPAN></FONT></P>
+	<OL START=11>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">If
+		<I>succeeded</I> is <B>false</B>, return <B>false</B><FONT COLOR="#ff0000"><STRIKE>.</STRIKE></FONT>.</SPAN></FONT></P>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H4 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.5.4.7	String.prototype.indexOf
+	(searchString, position)</SPAN></FONT></H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Algorithm,
+	step 8, the step number is in the wrong font. (should be Times New
+	Roman rather than Arial))</SPAN></FONT></P>
+	<OL>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.39cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Return
+		the smallest possible integer <I>k</I> not smaller than <I>start</I>
+		such that <I>k</I>+<I> searchLen</I> is not greater than <I>len</I>,
+		and for all nonnegative integers <I>j</I> less than <I>searchLen</I>,
+		the character at position <I>k</I>+<I>j</I> of <I>S</I> is the same
+		as the character at position <I>j</I> of <I>searchStr</I>); but if
+		there is no such integer <I>k</I>, then return the value <FONT FACE="Courier New, monospace"><B>-1</B></FONT><FONT FACE="Arial, sans-serif">.</FONT></SPAN></FONT></P>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H2 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.5.4.12
+	&nbsp; String.prototype.search (regexp)</SPAN></FONT></H2>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Incorrect
+	font emphasis for variables in algorithm step 5)</SPAN></FONT></P>
+	<OL START=5>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Search
+		the value <I>string</I> from its beginning for an occurrence of the
+		regular expression pattern <I>rx</I>. Let <I>result</I> be a Number
+		indicating the offset within <I>string</I> where the pattern
+		matched, or –1 if there was no match. The<I> </I><FONT FACE="Courier New, monospace"><B>lastIndex</B></FONT>
+		and <FONT FACE="Courier New, monospace"><B>global</B></FONT>
+		properties of <FONT COLOR="#ff0000"><I>regexp</I></FONT> are
+		ignored when performing the search. The <FONT FACE="Courier New, monospace"><B>lastIndex</B></FONT>
+		property of <FONT COLOR="#ff0000"><I>regexp</I></FONT> is left
+		unchanged.</SPAN></FONT></P>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><BR><BR>
+	</P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H2 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.7.3	Properties
+	of the Number Constructor</SPAN></FONT></H2>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(second
+	paragraph, last word)</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">Besides
+	the internal properties and the <FONT FACE="Courier New, monospace"><B>length</B></FONT>
+	property (whose value is <B>1</B>), the Number constructor has the
+	following <FONT COLOR="#ff0000">properties</FONT><FONT COLOR="#ff0000"><STRIKE>property</STRIKE></FONT>:</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H2 CLASS="cjk"><A NAME="_Ref455972347"></A><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.7.4.2	Number.prototype.toString
+	( [ radix ] )</SPAN></FONT></H2>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Incorrect
+	font emphasis for exception name in second paragraph)</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">If
+	<FONT FACE="Times New Roman, serif">ToInteger(</FONT><FONT FACE="Times New Roman, serif"><I>radix</I></FONT><FONT FACE="Times New Roman, serif">)</FONT>
+	is not an integer between 2 and 36 inclusive throw a <FONT COLOR="#ff0000"><B>RangeError</B></FONT>
+	exception. If <FONT FACE="Times New Roman, serif">ToInteger(</FONT><FONT FACE="Times New Roman, serif"><I>radix</I></FONT><FONT FACE="Times New Roman, serif">)</FONT>
+	is an integer from 2 to 36, but not 10, the result is a String
+	representation of this Number value using the specified radix.
+	Letters <FONT FACE="Courier New, monospace"><B>a</B></FONT>-<FONT FACE="Courier New, monospace"><B>z</B></FONT>
+	are used for digits with values 10 through 35. The precise algorithm
+	is implementation-dependent if the radix is not 10, however the
+	algorithm should be a generalization of that specified in 9.8.1.</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><A NAME="_Ref457790854"></A>
+	<FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><B>15.7.4.6	Number.prototype.toExponential
+	(fractionDigits)</B></SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Misspelling,
+	“decimal” in first sentence)</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">Return
+	a String containing this Number value represented in dec<FONT COLOR="#ff0000">i</FONT>mal
+	exponential notation with one digit before the significand's decimal
+	point and <FONT FACE="Times New Roman, serif"><I>fractionDigits</I></FONT>
+	digits after the significand's decimal point. If <FONT FACE="Times New Roman, serif"><I>fractionDigits</I></FONT>
+	is <B>undefined</B>, include as many significand digits as necessary
+	to uniquely specify the Number (just like in ToString except that in
+	this case the Number is always output in exponential notation).
+	Specifically, perform the following steps:</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><A NAME="_Ref457710673"></A>
+	<FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><B>15.8.2	Function
+	Properties of the Math Object</B></SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(First
+	NOTE paragraph)</SPAN></FONT></P>
+	<P STYLE="margin-bottom: 0.42cm; line-height: 0.37cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-GB">NOTE	The
+	behaviour of the functions <FONT FACE="Courier New, monospace"><B>acos</B></FONT>,
+	<FONT FACE="Courier New, monospace"><B>asin</B></FONT>, <FONT FACE="Courier New, monospace"><B>atan</B></FONT>,
+	<FONT FACE="Courier New, monospace"><B>atan2</B></FONT>, <FONT FACE="Courier New, monospace"><B>cos</B></FONT>,
+	<FONT FACE="Courier New, monospace"><B>exp</B></FONT>, <FONT FACE="Courier New, monospace"><B>log</B></FONT>,
+	<FONT FACE="Courier New, monospace"><B>pow</B></FONT>, <FONT FACE="Courier New, monospace"><B>sin</B></FONT>,
+	<FONT COLOR="#ff0000"><STRIKE>and</STRIKE></FONT> <FONT FACE="Courier New, monospace"><B>sqrt</B></FONT><FONT COLOR="#ff0000">,
+	and </FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><B>tan</B></FONT></FONT>
+	is not precisely specified here except to require specific results
+	for certain argument values that represent boundary cases of
+	interest. For other argument values, these functions are intended to
+	compute approximations to the results of familiar mathematical
+	functions, but some latitude is allowed in the choice of
+	approximation algorithms. The general intent is that an implementer
+	should be able to use the same mathematical library for ECMAScript
+	on a given hardware platform that is available to C programmers on
+	that platform.</SPAN></FONT></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H4 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.9.1.12	MakeDay
+	(year, month, date)</SPAN></FONT></H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Delete
+	extra right parenthesis in  step 7 following “mn”)</SPAN></FONT></P>
+	<OL START=7>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Find
+		a value <I>t</I> such that YearFromTime(<I>t</I>) <FONT FACE="Courier New, monospace"><B>==</B></FONT>
+		<I>ym</I> and MonthFromTime(<I>t</I>) <FONT FACE="Courier New, monospace"><B>==</B></FONT>
+		<I>mn</I><FONT COLOR="#ff0000"><STRIKE>)</STRIKE></FONT> and
+		DateFromTime(<I>t</I>) <FONT FACE="Courier New, monospace"><B>==</B></FONT>
+		1; but if this is not possible (because some argument is out of
+		range), return <B>NaN</B>.</SPAN></FONT></P>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H2 CLASS="cjk"><A NAME="_Ref455931278"></A><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.10.2.1	Notation</SPAN></FONT></H2>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Incorrect
+	font, emphasis, and capitalization in fifth bullet item of second
+	list)</SPAN></FONT></P>
+	<UL>
+		<LI><P CLASS="cjk" STYLE="margin-bottom: 0.11cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">A
+		<FONT FACE="Times New Roman, serif"><I>Matcher</I></FONT> procedure
+		is an internal closure that takes two arguments -- a <FONT FACE="Times New Roman, serif"><I>State</I></FONT>
+		and a <FONT FACE="Times New Roman, serif"><I>Continuation</I></FONT>
+		-- and returns a <FONT FACE="Times New Roman, serif"><I>MatchResult</I></FONT>
+		result. A <FONT FACE="Times New Roman, serif"><I>Matcher</I></FONT>
+		attempts to match a middle subpattern (specified by the closure's
+		already-bound arguments) of the pattern against the input String,
+		starting at the intermediate state given by its <FONT FACE="Times New Roman, serif"><I>State</I></FONT>
+		argument. The <FONT FACE="Times New Roman, serif"><I>Continuation</I></FONT>
+		argument should be a closure that matches the rest of the pattern.
+		After matching the subpattern of a pattern to obtain a new <FONT FACE="Times New Roman, serif"><I>State</I></FONT>,
+		the <FONT FACE="Times New Roman, serif"><I>Matcher</I></FONT> then
+		calls <FONT FACE="Times New Roman, serif"><I>Continuation</I></FONT>
+		on that new <FONT FACE="Times New Roman, serif"><I>State</I></FONT>
+		to test if the rest of the pattern can match as well. If it can,
+		the <FONT COLOR="#ff0000"><STRIKE>m</STRIKE></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><I>Matcher</I></FONT></FONT>
+		returns the <FONT FACE="Times New Roman, serif"><I>State</I></FONT>
+		returned by <FONT FACE="Times New Roman, serif"><I>Continuation</I></FONT>;
+		if not, the <FONT FACE="Times New Roman, serif"><I>Matcher</I></FONT>
+		may try different choices at its choice points, repeatedly calling
+		<FONT FACE="Times New Roman, serif"><I>Continuation</I></FONT>
+		until it either succeeds or all possibilities have been exhausted.</SPAN></FONT></P>
+	</UL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H2 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.10.2.6	Assertion</SPAN></FONT></H2>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Incorrect
+	capitalization in step 3 of second algorithm)</SPAN></FONT></P>
+	<OL START=3>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">If
+		<FONT COLOR="#ff0000"><STRIKE><I>m</I></STRIKE></FONT><FONT COLOR="#ff0000"><I>M</I></FONT><I>ultiline</I>
+		is <B>false</B>, return <B>false</B>.</SPAN></FONT></P>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><BR><BR>
+	</P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H2 CLASS="cjk"><A NAME="_Ref463788134"></A><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.10.2.15	NonemptyClassRanges</SPAN></FONT></H2>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Incorrect
+	font and emphasis for grammar productions in second and third
+	paragraph)</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">The
+	production <FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><I>NonemptyClassRanges</I></FONT></FONT>
+	<B>:: </B><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><I>ClassAtom
+	NonemptyClassRangesNoDash</I></FONT></FONT> evaluates as follows:</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">The
+	production <FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><I>NonemptyClassRanges</I></FONT></FONT>
+	<B>:: </B><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><I>ClassAtom</I></FONT></FONT><FONT FACE="Courier New, monospace"><B>
+	- </B></FONT><FONT COLOR="#ff0000"><FONT FACE="Times New Roman, serif"><I>ClassAtom
+	ClassRanges</I></FONT></FONT> evaluates as follows:</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H4 CLASS="cjk"><A NAME="_Ref404572122"></A><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.10.6.2	RegExp.prototype.exec(string)</SPAN></FONT></H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Extra
+	period at end of step 4)</SPAN></FONT></P>
+	<OL START=4>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+		<I>lastIndex</I> be the result of calling the [[Get]] internal
+		method of <I>R</I> with argument &quot;<FONT FACE="Courier New, monospace"><B>lastIndex</B></FONT>&quot;<FONT COLOR="#ff0000"><STRIKE>.</STRIKE></FONT>.</SPAN></FONT></P>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><BR><BR>
+	</P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Wrong
+	font for “null” in step 9.a.ii) </SPAN></FONT>
+	</P>
+	<OL START=9>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Repeat,
+		while <I>matchSucceeded</I> is <B>false</B></SPAN></FONT></P>
+		<OL>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">If
+			<I>i </I>&lt; 0 or <I>i </I>&gt; <I>length</I>, then</SPAN></FONT></P>
+			<OL TYPE=i>
+				<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Call
+				the [[Put]] internal method of <I>R</I> with arguments
+				&quot;<FONT FACE="Courier New, monospace"><B>lastIndex</B></FONT><FONT FACE="Courier New, monospace"><B>&quot;</B></FONT>,
+				0, and <B>true</B>.</SPAN></FONT></P>
+				<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Return
+				<FONT COLOR="#ff0000"><B>null</B></FONT>.</SPAN></FONT></P>
+			</OL>
+		</OL>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><BR><BR>
+	</P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H4 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.10.6.3	RegExp.prototype.test(string)</SPAN></FONT></H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Section
+	reference in first step of algorithm)</SPAN></FONT></P>
+	<OL>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+		<I>match</I> be the result of evaluating the <FONT FACE="Courier New, monospace"><B>RegExp.prototype.exec</B></FONT>
+		(15.10.6.<FONT COLOR="#ff0000">2</FONT><FONT COLOR="#ff0000"><STRIKE>3</STRIKE></FONT>)
+		algorithm upon this RegExp object using <I>string</I> as the
+		argument.</SPAN></FONT></P>
+	</OL>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<H4 CLASS="cjk"><A NAME="_Ref457211245"></A><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">15.11.6.5	TypeError
+	</SPAN></FONT>
+	</H4>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Incorrect
+	reference to 15.7.4.8)</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">Indicates
+	the actual type of an operand is different than the expected type.
+	See 8.6.2, 8.7.2, 8.10.5, 8.12.5, 8.12.7, 8.12.8, 8.12.9, 9.9, 9.10,
+	10.2.1, 10.2.1.1.3, 10.6, 11.2.2, 11.2.3, 11.4.1, 11.8.6, 11.8.7,
+	11.3.1, 13.2, 13.2.3, 15, 15.2.3.2, 15.2.3.3, 15.2.3.4, 15.2.3.5,
+	15.2.3.6, 15.2.3.7, 15.2.3.8, 15.2.3.9, 15.2.3.10, 15.2.3.11,
+	15.2.3.12, 15.2.3.13, 15.2.3.14, 15.2.4.3, 15.3.4.2, 15.3.4.3,
+	15.3.4.4, 15.3.4.5, 15.3.4.5.2, 15.3.4.5.3, 15.3.5, 15.3.5.3,
+	15.3.5.4, 15.4.4.3, 15.4.4.11, 15.4.4.16, 15.4.4.17, 15.4.4.18,
+	15.4.4.19, 15.4.4.20, 15.4.4.21, 15.4.4.22, 15.4.5.1, 15.5.4.2,
+	15.5.4.3, 15.6.4.2, 15.6.4.3, 15.7.4, 15.7.4.2, 15.7.4.4, <FONT COLOR="#ff0000"><STRIKE>15.7.4.8,
+	</STRIKE></FONT>15.9.5, 15.9.5.44, 15.10.4.1, 15.10.6, 15.11.4.4 and
+	15.12.3.</SPAN></FONT></P>
+	<H4 CLASS="cjk"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></H4>
+	<H1 CLASS="cjk"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">A.1	Lexical
+	Grammar</SPAN></FONT></H1>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Missing
+	:: in several grammar productions)</SPAN></FONT></P>
+	<P STYLE="margin-bottom: 0cm; line-height: 100%; page-break-after: avoid">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><I>UnicodeLetter
+	</I><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif"><SPAN STYLE="font-style: normal"><B>::</B></SPAN></FONT></FONT><I><FONT FACE="Arial, sans-serif">
+		See 7.6</FONT></I></SPAN></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1.02cm; margin-right: 2.54cm; margin-bottom: 0.39cm; font-style: normal; line-height: 100%; page-break-inside: avoid">
+	<FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">any character in
+	the Unicode categories “Uppercase letter (Lu)”, “Lowercase
+	letter (Ll)”, “Titlecase letter (Lt)”, “Modifier letter
+	(Lm)”, “Other letter (Lo)”, or “Letter number (Nl)”.</SPAN></FONT></P>
+	<P STYLE="margin-bottom: 0cm; line-height: 100%; page-break-after: avoid">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><I>UnicodeCombiningMark
+	</I><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif"><SPAN STYLE="font-style: normal"><B>::</B></SPAN></FONT></FONT><I><FONT FACE="Arial, sans-serif">
+		See 7.6</FONT></I></SPAN></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1.02cm; margin-right: 2.54cm; margin-bottom: 0.39cm; font-style: normal; line-height: 100%; page-break-inside: avoid">
+	<FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">any character in
+	the Unicode categories “Non-spacing mark (Mn)” or “Combining
+	spacing mark (Mc)”</SPAN></FONT></P>
+	<P STYLE="margin-bottom: 0cm; line-height: 100%; page-break-after: avoid">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><I>UnicodeDigit
+	</I><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif"><SPAN STYLE="font-style: normal"><B>::</B></SPAN></FONT></FONT><I><FONT FACE="Arial, sans-serif">
+		See 7.6</FONT></I></SPAN></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1.02cm; margin-bottom: 0.39cm; font-style: normal; line-height: 100%; page-break-inside: avoid">
+	<FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">any character in
+	the Unicode category “Decimal number (Nd)”</SPAN></FONT></P>
+	<P STYLE="margin-bottom: 0cm; line-height: 100%; page-break-after: avoid">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><I>UnicodeConnectorPunctuation
+	</I><FONT COLOR="#ff0000"><FONT FACE="Arial, sans-serif"><SPAN STYLE="font-style: normal"><B>::</B></SPAN></FONT></FONT><I><FONT FACE="Arial, sans-serif">
+		See 7.6</FONT></I></SPAN></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 1.02cm; margin-bottom: 0.39cm; font-style: normal; line-height: 100%; page-break-inside: avoid">
+	<FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">any character in
+	the Unicode category “Connector punctuation (Pc)”</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><IMG SRC="es5_errata_html_120d4b3d.gif" ALIGN=BOTTOM WIDTH=728 HEIGHT=2></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB"><FONT SIZE=3><B>ANNEX
+	D</B></FONT></SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(extra
+	period after “:” in items for clauses 13 and 14)</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">13:<FONT COLOR="#ff0000"><STRIKE>.</STRIKE></FONT>
+	In Edition 3, the algorithm for the production <FONT FACE="Times New Roman, serif"><I>FunctionExpression</I></FONT>
+	with an <FONT FACE="Times New Roman, serif"><I>Identifier</I></FONT>
+	adds an object created</SPAN></FONT></P>
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">14:<FONT COLOR="#ff0000"><STRIKE>.</STRIKE></FONT>
+	In Edition 3, the algorithm for the production <FONT FACE="Times New Roman, serif"><I>SourceElements
+	</I></FONT><B>:</B> <FONT FACE="Times New Roman, serif"><I>SourceElements
+	SourceElement </I></FONT>did not</SPAN></FONT></P>
+</DIV>
+</BODY>
+</HTML>

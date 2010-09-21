@@ -1,0 +1,25 @@
+	<p>
+	The
+	concrete Environment Record method SetMutableBinding for declarative
+	environment records attempts to change the bound value of the
+	current binding of the identifier whose name is the value of the
+	argument <i>N</i> to the
+	value of argument <i>V</i>.
+	A binding for <i>N</i>
+	must already exist. If the binding is an immutable binding, a
+	<b>TypeError</b> is
+	<del>always</del>
+	thrown
+	<ins>if <i>S</i> is <b>true</b></ins>. 
+	<del>The <i>S</i>
+	argument is ignored because strict mode does not change the meaning
+	of setting bindings in declarative environment records.</del>
+	</p>
+	<ol>
+		<li value="4"><p>
+		Else
+		this must be an attempt to change the value of an immutable binding
+		so
+		<ins>if <i>S</i> is <b>true</b></ins>
+		throw a <b>TypeError</b> exception.</p>
+	</li></ol>

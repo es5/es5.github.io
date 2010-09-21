@@ -1,0 +1,25 @@
+<p class="ed">(Implementers have found the spec. to be unclear regarding whether shadowed
+  inherited properties are included in an enumeration)</p>
+	<p>
+	The
+	mechanics and order of enumerating the properties (step 6.a in the
+	first algorithm, step 7.a in the second) is not specified.
+	Properties of the object being enumerated may be deleted during
+	enumeration. If a property that has not yet been visited during
+	enumeration is deleted, then it will not be visited. If new
+	properties are added to the object being enumerated during
+	enumeration, the newly added properties are not guaranteed to be
+	visited in the active enumeration.
+	<ins>A property name must not be visited more than once in any enumeration.</ins>
+	</p>
+
+	<p>
+	Enumerating
+	the properties of an object includes enumerating properties of its
+	prototype, and the prototype of the prototype, and so on,
+	recursively; but a property of a prototype is not enumerated if it
+	is “shadowed” because some previous object in the prototype
+	chain has a property with the same name.
+	<ins>The values of [[Enumerable]] attributes are not considered when
+	determining if a property of a prototype object is shadowed by a previous
+	object on the prototype chain.</ins></p>

@@ -1,0 +1,69 @@
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Step
+	5 of original algorithm handled redefining existing global function
+	declarations in a manner that was incompatible with ES3 and which in
+	some cases would unintentionally invoke accessor functions)</SPAN></FONT></P>
+	<OL START=5>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%">
+		<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">For each
+		<I>FunctionDeclaration</I> <I>f</I> in <I>code</I>, in source text
+		order do</SPAN></FONT></P>
+	</OL>
+	<OL>
+		<OL style="list-style-type: lower-alpha">
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+			<I>fn</I> be the <I>Identifier</I> in <I>FunctionDeclaration</I>
+			<I>f.</I></SPAN></FONT></P>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+			<I>fo</I> be the result of instantiating <I>FunctionDeclaration f
+			</I>as described in Clause 13.</SPAN></FONT></P>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+			<I>funcAlreadyDeclared </I>be the result of calling <I>env’s</I>
+			HasBinding concrete method passing <I>fn</I> as the argument.</SPAN></FONT></P>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">If
+			<I>funcAlreadyDeclared </I>is <B>false</B>, call <I>env’s</I>
+			CreateMutableBinding concrete method passing <I>fn</I> and
+			<I>configurableBindings</I> as the arguments.</SPAN></FONT></P>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000">Else
+			if </FONT><FONT COLOR="#ff0000"><I>env</I></FONT><FONT COLOR="#ff0000">
+			is the environment record component of the global environment then</FONT></SPAN></FONT></P>
+			<OL style="list-style-type: lower-roman">
+				<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000">Let
+				</FONT><FONT COLOR="#ff0000"><I>go</I></FONT><FONT COLOR="#ff0000">
+				be the global object.</FONT></SPAN></FONT></P>
+				<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000">Let
+				</FONT><FONT COLOR="#ff0000"><I>existingProp</I></FONT><FONT COLOR="#ff0000">
+				be the resulting of calling the [[GetProperty]] internal method
+				of </FONT><FONT COLOR="#ff0000"><I>go</I></FONT><FONT COLOR="#ff0000">
+				with argument </FONT><FONT COLOR="#ff0000"><I>fn</I></FONT><FONT COLOR="#ff0000">.</FONT></SPAN></FONT></P>
+				<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000">If
+				</FONT><FONT COLOR="#ff0000"><I>existingProp</I></FONT><FONT COLOR="#ff0000">
+				.[[Configurable]] is </FONT><FONT COLOR="#ff0000"><B>true</B></FONT><FONT COLOR="#ff0000">,
+				then</FONT></SPAN></FONT></P>
+				<OL style="list-style-type: decimal">
+					<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000">Call
+					the [[DefineOwnProperty]] internal method of </FONT><FONT COLOR="#ff0000"><I>go</I></FONT><FONT COLOR="#ff0000">,
+					passing </FONT><FONT COLOR="#ff0000"><I>fn</I></FONT><FONT COLOR="#ff0000">,
+					Property Descriptor {[[Value]]:</FONT><FONT COLOR="#ff0000"><I>
+					</I></FONT><FONT COLOR="#ff0000"><B>undefined</B></FONT><FONT COLOR="#ff0000">,
+					[[Writable]]: </FONT><FONT COLOR="#ff0000"><B>true</B></FONT><FONT COLOR="#ff0000">,
+					[[Enumerable]]: </FONT><FONT COLOR="#ff0000"><B>true</B></FONT><FONT COLOR="#ff0000">
+					, [[Configurable]]: </FONT><FONT COLOR="#ff0000"><I>configurableBindings</I></FONT><FONT COLOR="#ff0000">
+					}, and </FONT><FONT COLOR="#ff0000"><B>true</B></FONT><FONT COLOR="#ff0000">
+					as arguments.</FONT></SPAN></FONT></P>
+				</OL>
+				<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000">Else
+				if IsAccessorDescrptor(</FONT><FONT COLOR="#ff0000"><I>existingProp</I></FONT><FONT COLOR="#ff0000">)
+				or </FONT><FONT COLOR="#ff0000"><I>existingProp</I></FONT><FONT COLOR="#ff0000">
+				does not have attribute values {[[Writable]]: </FONT><FONT COLOR="#ff0000"><B>true</B></FONT><FONT COLOR="#ff0000">,
+				[[Enumerable]]: </FONT><FONT COLOR="#ff0000"><B>true</B></FONT><FONT COLOR="#ff0000">},
+				then</FONT></SPAN></FONT></P>
+				<OL style="list-style-type: decimal">
+					<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000">Throw
+					a TypeError exception.</FONT></SPAN></FONT></P>
+				</OL>
+			</OL>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Call
+			<I>env’s</I> SetMutableBinding concrete method passing <I>fn</I>,
+			<I>fo</I>, and <I>strict</I> as the arguments.</SPAN></FONT></P>
+		</OL>
+	</OL>
