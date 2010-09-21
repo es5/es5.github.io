@@ -1,0 +1,55 @@
+<p class="ed">(Fourth paragraph)</p>
+	<p>
+	The
+	range of elements processed by <code><b>reduceRight
+	</b></code>is set before the first call to <i>callbackfn</i>.
+	Elements that are appended to the array after the call to
+	<code><b>reduceRight </b></code>begins
+	will not be visited by <i>callbackfn</i>.
+	If existing elements of the array are changed by <i>callbackfn</i>,
+	their value as passed to <i>callbackfn
+	</i>will be the value at the time <code><b>reduceRight
+	</b></code>visits them; elements that are deleted after the call to
+	<ins><code><b>reduceRight </b></code></ins>
+	<del><code><b>filter</b></code></del>
+	begins and
+	before being visited are not visited.</p>
+
+<p class="ed">(Algorithm step 9.c.ii)</p>
+
+<ol>
+<li value="9"><p>
+		Repeat,
+		while <i>k </i>≥ 0</p>
+		<ol>
+			<li><p>
+			Let
+			<i>Pk</i> be ToString(<i>k</i>).</p>
+			</li><li><p>
+			Let
+			<i>kPresent</i> be the result of calling the [[HasProperty]]
+			internal method of <i>O</i> with argument <i>Pk</i>.</p>
+			</li><li><p>
+			If
+			<i>kPresent</i> is <b>true</b>, then</p>
+			<ol>
+				<li><p>
+				Let
+				<i>kValue</i> be the result of calling the [[Get]] internal
+				method of <i>O</i> with argument <i>Pk</i>.</p>
+				</li><li><p>
+				Let
+				<i>accumulator</i> be the result of calling the [[Call]] internal
+				method of <i>callbackfn</i> with
+				<del><b>null</b></del>
+				<ins><b>undefined</b></ins>
+				as the <b>this</b>
+				value and argument list containing <i>accumulator</i>, <i>kValue</i>,
+				<i>k</i>, and <i>O</i>.</p>
+			</li></ol>
+			</li><li><p>
+			Decrease
+			<i>k</i> by 1.</p>
+		</li></ol>
+		</li>
+</ol>

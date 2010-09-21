@@ -1,0 +1,48 @@
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Original
+	algorithm performs validation checks in steps 5 and 7 that are
+	inconsistent with other generic array usages in the specification.)</SPAN></FONT></P>
+	<OL START=4>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+		<I>len</I> be the result of calling the [[Get]] internal method of
+		<I>argArray</I> with argument <FONT FACE="Courier New, monospace"><B>&quot;length&quot;</B></FONT>.</SPAN></FONT></P>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000"><STRIKE>If
+		</STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><I>len</I></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE>
+		is </STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><B>null</B></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE>
+		or </STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><B>undefined</B></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE>,
+		then throw a </STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><B>TypeError</B></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE>
+		exception.</STRIKE></FONT></SPAN></FONT></P>
+	</OL>
+	<OL START=5>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+		<I>n</I> be ToUint32(<I>len</I>).</SPAN></FONT></P>
+	</OL>
+	<OL START=7>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000"><STRIKE>If
+		</STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><I>n</I></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE>
+		is not equal to ToNumber(</STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><I>len</I></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE>),
+		then throw a </STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE><B>TypeError</B></STRIKE></FONT><FONT COLOR="#ff0000"><STRIKE>
+		exception.</STRIKE></FONT></SPAN></FONT></P>
+	</OL>
+	<OL START=6>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+		<I>argList</I>  be an empty List.</SPAN></FONT></P>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+		<I>index</I> be 0.</SPAN></FONT></P>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Repeat
+		while <I>index</I> &lt; <I>n</I></SPAN></FONT></P>
+		<OL>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+			<I>indexName</I> be ToString(<I>index</I>).</SPAN></FONT></P>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+			<I>nextArg</I> be the result of calling the [[Get]] internal
+			method of <I>argArray</I> with <I>indexName</I> as the argument.</SPAN></FONT></P>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Append
+			<I>nextArg</I> as the last element of <I>argList</I>.</SPAN></FONT></P>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Set
+			<I>index</I> to <I>index</I> + 1.</SPAN></FONT></P>
+		</OL>
+		<LI><P ALIGN=LEFT STYLE="line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Return
+		the result of calling the [[Call]] internal method of <I>func</I>,
+		providing <I>thisArg</I> as the <B>this</B> value and <I>argList</I>
+		as the list of arguments.</SPAN></FONT></P>
+	</OL>

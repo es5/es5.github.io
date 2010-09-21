@@ -1,0 +1,35 @@
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(confusing
+	use of <I>P</I> in steps 5 and 6 of algorithm)</SPAN></FONT></P>
+	<OL START=5>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">For
+		each element <I>P</I> of <I>names</I> in list order,</SPAN></FONT></P>
+		<OL>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+			<I>descObj</I> be the result of calling the [[Get]] internal
+			method of <I>props</I> with <I>P</I> as the argument.</SPAN></FONT></P>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Let
+			<I>desc</I> be the result of calling ToPropertyDescriptor with
+			<I>descObj</I> as the argument.</SPAN></FONT></P>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">Append
+			<FONT COLOR="#ff0000">the pair (a two element List) consisting of
+			</FONT><FONT COLOR="#ff0000"><I>P</I></FONT> <FONT COLOR="#ff0000">and</FONT>
+			<I>desc</I> to the end of <I>descriptors</I>.</SPAN></FONT></P>
+		</OL>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB">For
+		 each element <FONT COLOR="#ff0000"><I>pair</I></FONT><FONT COLOR="#ff0000">
+		from</FONT> <FONT COLOR="#ff0000"><STRIKE><I>desc</I></STRIKE></FONT>
+		<FONT COLOR="#ff0000"><STRIKE>of</STRIKE></FONT><FONT COLOR="#ff0000">
+		</FONT><I>descriptors</I> in list order,</SPAN></FONT></P>
+		<OL>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000">Let
+			</FONT><FONT COLOR="#ff0000"><I>P</I></FONT><FONT COLOR="#ff0000">
+			be the first element of </FONT><FONT COLOR="#ff0000"><I>pair</I></FONT><FONT COLOR="#ff0000">.</FONT></SPAN></FONT></P>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000">Let
+			</FONT><FONT COLOR="#ff0000"><I>desc</I></FONT><FONT COLOR="#ff0000">
+			be the second element of </FONT><FONT COLOR="#ff0000"><I>pair</I></FONT><FONT COLOR="#ff0000">.</FONT></SPAN></FONT></P>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000"><STRIKE>a.</STRIKE></FONT>
+	Call the [[DefineOwnProperty]] internal method of <I>O</I> with
+	arguments <I>P</I>, <I>desc</I>, and <B>true</B>.</SPAN></FONT></P></li>
+		</OL>
+	</OL>

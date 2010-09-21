@@ -1,0 +1,22 @@
+	<P CLASS="cjk" STYLE="margin-bottom: 0.42cm"><FONT FACE="Arial, sans-serif"><SPAN LANG="en-GB">(Original
+	algorithm caused failure of widely used web frameworks.)</SPAN></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000">1.	If
+	the </FONT><FONT COLOR="#ff0000"><B>this</B></FONT><FONT COLOR="#ff0000">
+	value is </FONT><FONT COLOR="#ff0000"><B>undefined</B></FONT><FONT COLOR="#ff0000">,
+	return </FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><B>&quot;[object
+	Undefined]&quot;</B></FONT></FONT><FONT COLOR="#ff0000">.</FONT></SPAN></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000">2.	If
+	the </FONT><FONT COLOR="#ff0000"><B>this</B></FONT><FONT COLOR="#ff0000">
+	value is </FONT><FONT COLOR="#ff0000"><B>null</B></FONT><FONT COLOR="#ff0000">,
+	return </FONT><FONT COLOR="#ff0000"><FONT FACE="Courier New, monospace"><B>&quot;[object
+	Null]&quot;</B></FONT></FONT><FONT COLOR="#ff0000">.</FONT></SPAN></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000"><STRIKE>1</STRIKE></FONT><FONT COLOR="#ff0000">3</FONT>.	Let
+	<I>O </I>be the result of calling ToObject passing the <B>this </B>value
+	as the argument.</SPAN></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000"><STRIKE>2</STRIKE></FONT><FONT COLOR="#ff0000">4</FONT>.	Let
+	<I>class</I> be the value of the [[Class]] internal property of <I>O</I>.</SPAN></FONT></P>
+	<P ALIGN=LEFT STYLE="margin-left: 0.64cm; text-indent: -0.64cm; margin-bottom: 0.39cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><SPAN LANG="en-GB"><FONT COLOR="#ff0000"><STRIKE>3</STRIKE></FONT><FONT COLOR="#ff0000">5</FONT>.	Return
+	the String value that is the result of concatenating the three
+	Strings <FONT FACE="Courier New, monospace"><B>&quot;[object &quot;</B></FONT>,
+	<I>class</I>, and <FONT FACE="Courier New, monospace"><B>&quot;]&quot;</B></FONT>.</SPAN></FONT></P>

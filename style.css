@@ -421,5 +421,6 @@ ol li {
 }
 .closeBox {
   cursor: pointer;
+  padding-left: 8px;
   float: right;
 }
