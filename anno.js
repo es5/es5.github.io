@@ -15,19 +15,19 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
     while (networkStatus.firstChild) networkStatus.removeChild(networkStatus.firstChild);
     networkStatus.textContent = dots;
     if (request.readyState == 4) {
-      panelDiv.innerHTML = request.responseText;
-      // if (request.status == 200) {
-        // panelDiv.innerHTML = request.responseText;
-      // } else {
-        // var section = node.parentNode.id.substring(0,1) == "x" ? node.parentNode.id.substring(1) : node.parentNode.id;
-        // if (annoClicked) {
-          // panelDiv.innerHTML = "<p class='nope'>There aren't any annotations for section <i>"+section+"</i> yet…</p>"
-          // + "<p>If you’d like to contribute annotations, see the "
-          // + "<a href='http://sideshowbarker.github.com/es5-spec/README.html#contributing'>instructions on how to do so</a>.</p>";
-        // } else {
-          // panelDiv.innerHTML = "<p class='nope'>There are no errata for section <i>"+section+"</i>.</p>";
-        // }
-      // }
+      // panelDiv.innerHTML = request.responseText;
+      if (request.status == 200) {
+        panelDiv.innerHTML = request.responseText;
+      } else {
+        var section = node.parentNode.id.substring(0,1) == "x" ? node.parentNode.id.substring(1) : node.parentNode.id;
+        if (annoClicked) {
+          panelDiv.innerHTML = "<p class='nope'>There aren't any annotations for section <i>"+section+"</i> yet…</p>"
+          + "<p>If you’d like to contribute annotations, see the "
+          + "<a href='http://sideshowbarker.github.com/es5-spec/README.html#contributing'>instructions on how to do so</a>.</p>";
+        } else {
+          panelDiv.innerHTML = "<p class='nope'>There are no errata for section <i>"+section+"</i>.</p>";
+        }
+      }
     }
   };
   try {
@@ -66,14 +66,9 @@ function annoShow(event) {
   } else if (node.className == "erra") {
     erraClicked = true;
   }
-  // while (node && node.parentNode && (node.nodeType != event.target.ELEMENT_NODE || node.tagName == "A" || !node.hasAttribute("id"))) {
-    // if (node.parentNode.nodeType == node.parentNode.ELEMENT_NODE && node.parentNode.tagName == "DFN") {
-      // annoClicked = true;
-    // }
-    // node = node.parentNode;
-  // }
   var panel = document.createElement('div');
   panel.className = 'annoPanel';
+  panel.setAttribute("draggable","true");
   if (node && (annoClicked || erraClicked)) {
     var permalinkP = document.createElement('p');
     var permalinkA = document.createElement('a');

@@ -1,0 +1,26 @@
+<p class="ed">(Algorithm incorrect when message is the empty
+string or undefined)</p>
+<ol start="6" style="margin-bottom: 0">
+		<li><p>If
+		<ins><i>msg</i></ins> is undefined, then let
+		<del><i>R</i></del>
+		<ins><i>msg</i></ins>
+		be
+		<del><i>msg</i></del>
+		<ins>the empty String; else let <i>msg</i> be ToString(<i>msg</i>).</ins></p></li>
+		<li><p><del>Else,
+		let <i>R</i> be the result of concatenating <i>name</i>, <code>"</code><code><b>:</b></code><code>"</code>,
+		a single space character, and
+		ToString(<i>msg</i>).</del></p></li>
+		<li><p><del>Return
+		<i>R</i>.</del></p></li>
+</ol>
+<ins>
+<ol start="7" style="margin-top: 0">
+		<li><p>If name and <i>msg</i> are both the empty String, return <code>"Error"</code>.</p></li>
+		<li><p>If <i>name</i> is the empty String, return <i>msg</i>.</p></li>
+		<li><p>If <i>msg</i> is the empty String, return <i>name</i>.</p></li>
+		<li><p>Return the result of concatenating <i>name</i>, <code>":"</code>, a single space
+		character, and <i>msg</i>.</p></li>
+</ol>
+</ins>
