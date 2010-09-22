@@ -34,11 +34,11 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
   };
   try {
     if (annoClicked) {
-      self.request.send(null);
       self.request.open('GET', 'anno/'+node.parentNode.id+'.html', true);
-    } else {
       self.request.send(null);
+    } else {
       self.request.open('GET', 'erra/'+node.parentNode.id+'.html', true);
+      self.request.send(null);
     }
   } catch (e) {
     console.log(e);
