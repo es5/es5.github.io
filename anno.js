@@ -1,32 +1,25 @@
 // No copyright is asserted on this file.
 
 function xhrAnnoShow(node, panelDiv, annoClicked) {
-  var request = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
-  var loading = document.createElement("i");
-  loading.textContent = "loading";
+  var self = this;
+  var this.request = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+  var this.loading = document.createElement("i");
+  this.loading.textContent = "loading";
   panelDiv.appendChild(loading);
-  request.onreadystatechange = function () {
-    console.log(request.readyState);
+  this.request.onreadystatechange = function () {
+    console.log(self.request.readyState);
     var networkStatus = document.createElement("span");
     panelDiv.appendChild(networkStatus);
     var dots = "..";
-    for (var i = 0; i < parseInt(request.readyState); i++) {
+    for (var i = 0; i < parseInt(self.request.readyState); i++) {
       dots += ".";
     }
-    console.log("removing status indicator?");
     while (networkStatus.firstChild) networkStatus.removeChild(networkStatus.firstChild);
     networkStatus.textContent = dots;
-    console.log(request.readyState);
-    console.log("early request.status:");
-    console.log(request.status);
-    if (request.readyState == 4) {
-      console.log("readyState to 4");
-      console.log("request.status:");
-      console.log(request.status);
+    if (self.request.readyState == 4) {
       // panelDiv.innerHTML = request.responseText;
-      if (request.status == 200) {
-        console.log("GOt a 200!!");
-        panelDiv.innerHTML = request.responseText;
+      if (self.request.status == 200) {
+        panelDiv.innerHTML = self.request.responseText;
       } else {
         var section = node.parentNode.id.substring(0,1) == "x" ? node.parentNode.id.substring(1) : node.parentNode.id;
         if (annoClicked) {
@@ -41,11 +34,11 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
   };
   try {
     if (annoClicked) {
-      request.open('GET', 'anno/'+node.parentNode.id+'.html', true);
+      self.request.open('GET', 'anno/'+node.parentNode.id+'.html', true);
     } else {
-      request.open('GET', 'erra/'+node.parentNode.id+'.html', true);
+      self.request.open('GET', 'erra/'+node.parentNode.id+'.html', true);
     }
-    request.send(null);
+    self.request.send(null);
   } catch (e) {
     console.log(e);
     return -1;
