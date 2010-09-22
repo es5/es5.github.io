@@ -6,6 +6,7 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
   this.loading = document.createElement("i");
   this.loading.textContent = "loading";
   panelDiv.appendChild(loading);
+  self.request.send(null);
   this.request.onreadystatechange = function () {
     console.log(self.request.readyState);
     var networkStatus = document.createElement("span");
@@ -38,7 +39,6 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
     } else {
       self.request.open('GET', 'erra/'+node.parentNode.id+'.html', true);
     }
-    self.request.send(null);
   } catch (e) {
     console.log(e);
     return -1;
