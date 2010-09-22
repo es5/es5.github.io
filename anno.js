@@ -76,6 +76,7 @@ function annoShow(event) {
     win.document.documentElement.firstChild.appendChild(winTitle);
     var annoBody = win.document.importNode(document.getElementById("annotation"),true);
     win.document.body.appendChild(annoBody);
+    win.document.close();
     document.getElementById("bubble").setAttribute("style","display: none");
     annotations.removeChild(annoPanel);
     annoPanel = null;
