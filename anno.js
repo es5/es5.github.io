@@ -41,8 +41,8 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
       self.request.send(null);
     }
   } catch (e) {
+    console.log("problem");
     console.log(e);
-    self.request.send(null);
   }
 }
 var annoPanel;
