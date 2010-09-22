@@ -47,7 +47,6 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
     request.send(null);
   } catch (e) {
     console.log(e);
-    return -1;
   }
 }
 var annoPanel;
