@@ -49,6 +49,7 @@ document.addEventListener("keyup", function(e) {
   if(!e) e=window.event;
   var key = e.keyCode ? e.keyCode : e.which;
   if ( key == 27 && annoPanel) {
+    document.getElementById("bubble").setAttribute("style","display: none");
     annotations.removeChild(annoPanel);
     annoPanel = null;
   }
@@ -70,16 +71,18 @@ function annoShow(event) {
     var sectionNum = annoType == " Errata" ? annoHref.substring(annoHref.indexOf('#') + 1) : annoHref.substring(annoHref.indexOf('#') + 2);
     winTitle.textContent = "ES5 "+sectionNum+" "+annoType;
     styles.setAttribute("rel", "stylesheet");
-    styles.setAttribute("href", "style.css");
+    styles.setAttribute("href", "http://sideshowbarker.github.com/es5-spec/style.css");
     win.document.documentElement.firstChild.appendChild(styles);
     win.document.documentElement.firstChild.appendChild(winTitle);
     var annoBody = win.document.importNode(document.getElementById("annotation"),true);
     win.document.body.appendChild(annoBody);
+    document.getElementById("bubble").setAttribute("style","display: none");
     annotations.removeChild(annoPanel);
     annoPanel = null;
     return;
   }
   if (annoPanel) {
+    document.getElementById("bubble").setAttribute("style","display: none");
     annotations.removeChild(annoPanel);
     annoPanel = null;
   }
@@ -116,6 +119,7 @@ function annoShow(event) {
       return -1;
     }
     annotations.appendChild(panel);
+    document.getElementById("bubble").setAttribute("style","display: inline");
     annoPanel = panel;
   } else {
     // Do nothing: The user just clicked at some place in the page

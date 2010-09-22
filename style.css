@@ -339,6 +339,15 @@ span.table-header { }
   float: left;
 }
 
+#bubble {
+  display: none;
+  position: fixed;
+  top: 45px;
+  left: 157px;
+  width: 50px;
+  height: 70px;
+}
+
 #slogan {
   width: 150px;
   position: fixed;
@@ -352,8 +361,8 @@ span.table-header { }
 
 #annotations {
   position: fixed;
-  top: 30px;
-  left: 165px;
+  top: 50px;
+  left: 178px;
   width: 80%;
 }
 
@@ -370,7 +379,7 @@ span.table-header { }
   /* font-size: 90%; */
   background: rgba(245, 245, 245,.9);
   color: black;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   -moz-border-radius: 8px;
   border-radius: 8px;
   -webkit-box-shadow: 4px 4px 4px #888;
