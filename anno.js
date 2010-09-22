@@ -7,7 +7,6 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
   this.loading.textContent = "loading";
   panelDiv.appendChild(loading);
   this.request.onreadystatechange = function () {
-    console.log(self.request.readyState);
     var networkStatus = document.createElement("span");
     panelDiv.appendChild(networkStatus);
     var dots = "..";
@@ -114,7 +113,6 @@ function annoShow(event) {
       xhrAnnoShow(node, panelDiv, annoClicked);
       panel.appendChild(panelDiv);
     } else {
-      console.log(node);
       return -1;
     }
     annotations.appendChild(panel);
