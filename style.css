@@ -16,8 +16,15 @@ h6 a
   display: none;
 }
 
+a.bak,
 b.erra,
-b.anno 
+b.anno
+{
+  font-size: 80%;
+}
+
+b.erra,
+b.anno
 {
   display: none;
   cursor: pointer;
