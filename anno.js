@@ -25,6 +25,7 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
       console.log(request.status);
       // panelDiv.innerHTML = request.responseText;
       if (request.status == 200) {
+        console.log("GOt a 200!!");
         panelDiv.innerHTML = request.responseText;
       } else {
         var section = node.parentNode.id.substring(0,1) == "x" ? node.parentNode.id.substring(1) : node.parentNode.id;
@@ -47,6 +48,7 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
     request.send(null);
   } catch (e) {
     console.log(e);
+    return -1;
   }
 }
 var annoPanel;
