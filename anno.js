@@ -42,7 +42,7 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
     }
   } catch (e) {
     console.log(e);
-    return -1;
+    self.request.send(null);
   }
 }
 var annoPanel;
