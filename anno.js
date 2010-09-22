@@ -32,11 +32,12 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
       }
     }
   };
-  self.request.send(null);
   try {
     if (annoClicked) {
+      self.request.send(null);
       self.request.open('GET', 'anno/'+node.parentNode.id+'.html', true);
     } else {
+      self.request.send(null);
       self.request.open('GET', 'erra/'+node.parentNode.id+'.html', true);
     }
   } catch (e) {
