@@ -179,7 +179,7 @@ b {
   page-break-after: avoid
 }
 .keep {
-  margin-top: 32px;
+  margin-top: 24px;
   margin-bottom: 0cm;
   page-break-after: avoid
 }
@@ -430,14 +430,19 @@ ol li {
 }
 .closeBox {
   cursor: pointer;
-  padding-left: 4px;
+  padding: 4px;
   float: right;
 }
 .newWin{
   cursor: pointer;
-  padding-left: 8px;
   float: right;
+  padding: 4px;
   font-weight: bold;
+}
+.newWin:hover,
+.closeBox:hover,
+#anno-section-id:hover {
+  background-color: #ccc;
 }
 table#date-format {
   padding-left: 40px;
@@ -447,4 +452,17 @@ table#date-format {
 table#date-format td {
   padding-top: 1px;
   padding-bottom: 1px;
+}
+p.ed {
+  color: #444;
+  margin-bottom: 4px;
+}
+p.ed + p.keep {
+  margin-top: 4px;
+}
+#anno-section-id {
+  padding: 4px;
+}
+#anno-type {
+  padding: 4px;
 }

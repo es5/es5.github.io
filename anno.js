@@ -15,19 +15,19 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
     while (networkStatus.firstChild) networkStatus.removeChild(networkStatus.firstChild);
     networkStatus.textContent = dots;
     if (request.readyState == 4) {
-      panelDiv.innerHTML = request.responseText;
-      // if (request.status == 200) {
-        // panelDiv.innerHTML = request.responseText;
-      // } else {
-        // var section = node.parentNode.id.substring(0,1) == "x" ? node.parentNode.id.substring(1) : node.parentNode.id;
-        // if (annoClicked) {
-          // panelDiv.innerHTML = "<p class='nope'>There aren't any annotations for section <i>"+section+"</i> yet…</p>"
-          // + "<p>If you’d like to contribute annotations, see the "
-          // + "<a href='http://sideshowbarker.github.com/es5-spec/README.html#contributing'>instructions on how to do so</a>.</p>";
-        // } else {
-          // panelDiv.innerHTML = "<p class='nope'>There are no errata for section <i>"+section+"</i>.</p>";
-        // }
-      // }
+      // panelDiv.innerHTML = request.responseText;
+      if (request.status == 200) {
+        panelDiv.innerHTML = request.responseText;
+      } else {
+        var section = node.parentNode.id.substring(0,1) == "x" ? node.parentNode.id.substring(1) : node.parentNode.id;
+        if (annoClicked) {
+          panelDiv.innerHTML = "<p class='nope'>There aren't any annotations for section <i>"+section+"</i> yet…</p>"
+          + "<p>If you’d like to contribute annotations, see the "
+          + "<a href='http://sideshowbarker.github.com/es5-spec/README.html#contributing'>instructions on how to do so</a>.</p>";
+        } else {
+          panelDiv.innerHTML = "<p class='nope'>There are no errata for section <i>"+section+"</i>.</p>";
+        }
+      }
     }
   };
   try {
@@ -67,7 +67,8 @@ function annoShow(event) {
     var winTitle = document.createElement("title");
     var annoHref = document.getElementById("anno-section-id").textContent;
     var annoType = document.getElementById("anno-type").textContent;
-    winTitle.textContent = "ES5 "+annoHref.substring(annoHref.indexOf('#') + 2)+annoType;
+    var sectionNum = annoType == " Errata" ? annoHref.substring(annoHref.indexOf('#') + 1) : annoHref.substring(annoHref.indexOf('#') + 2);
+    winTitle.textContent = "ES5 "+sectionNum+" "+annoType;
     styles.setAttribute("rel", "stylesheet");
     styles.setAttribute("href", "style.css");
     win.document.documentElement.firstChild.appendChild(styles);
@@ -98,6 +99,7 @@ function annoShow(event) {
     panel.appendChild(permalinkP);
     var newWin = document.createElement('span');
     newWin.className = "newWin";
+    newWin.setAttribute("title","Open in new window/tab");
     newWin.textContent = "⇧";
     var closeBox = document.createElement('span');
     closeBox.className = "closeBox";
