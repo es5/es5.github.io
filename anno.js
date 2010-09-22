@@ -6,12 +6,9 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
   this.loading = document.createElement("i");
   this.loading.textContent = "loading";
   panelDiv.appendChild(loading);
-  if (annoClicked) {
-    self.request.open('GET', 'anno/'+node.parentNode.id+'.html', true);
-  } else {
-    self.request.open('GET', 'erra/'+node.parentNode.id+'.html', true);
-  }
-  this.request.onreadystatechange = function () {
+  this.request.onreadystatechange = handleRequest;
+  function handleRequest() {
+    // console.log(self.request.readyState);
     var networkStatus = document.createElement("span");
     panelDiv.appendChild(networkStatus);
     var dots = "..";
@@ -36,7 +33,13 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
       }
     }
   };
-  self.request.send(null);
+  if (annoClicked) {
+    self.request.open('GET', 'anno/'+node.parentNode.id+'.html', true);
+    self.request.send(null);
+  } else {
+    self.request.open('GET', 'erra/'+node.parentNode.id+'.html', true);
+    self.request.send(null);
+  }
 }
 var annoPanel;
 var annotations = document.getElementById("annotations");
@@ -112,6 +115,7 @@ function annoShow(event) {
       xhrAnnoShow(node, panelDiv, annoClicked);
       panel.appendChild(panelDiv);
     } else {
+      // console.log(node);
       return -1;
     }
     annotations.appendChild(panel);
