@@ -40,6 +40,7 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
       self.request.open('GET', 'erra/'+node.parentNode.id+'.html', true);
       self.request.send(null);
     }
+    console.log("success");
   } catch (e) {
     console.log("problem");
     console.log(e);
