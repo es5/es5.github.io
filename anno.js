@@ -16,6 +16,8 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
     while (networkStatus.firstChild) networkStatus.removeChild(networkStatus.firstChild);
     networkStatus.textContent = dots;
     console.log(request.readyState);
+    console.log("early request.status:");
+    console.log(request.status);
     if (request.readyState == 4) {
       console.log("readyState to 4");
       console.log("request.status:");
