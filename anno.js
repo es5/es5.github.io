@@ -54,10 +54,6 @@ document.addEventListener("keyup", function(e) {
   }
 }, true);
 function annoShow(event) {
-  if (annoPanel) {
-    annotations.removeChild(annoPanel);
-    annoPanel = null;
-  }
   var annoClicked = false
   var erraClicked = false
   var node = event.target;
@@ -65,25 +61,49 @@ function annoShow(event) {
     annoClicked = true;
   } else if (node.className == "erra") {
     erraClicked = true;
+  } else if (node.className == "newWin") {
+    var win = window.open();
+    var styles = document.createElement("link");
+    var winTitle = document.createElement("title");
+    var annoHref = document.getElementById("anno-section-id").textContent;
+    var annoType = document.getElementById("anno-type").textContent;
+    winTitle.textContent = "ES5 "+annoHref.substring(annoHref.indexOf('#') + 2)+annoType;
+    styles.setAttribute("rel", "stylesheet");
+    styles.setAttribute("href", "style.css");
+    win.document.documentElement.firstChild.appendChild(styles);
+    win.document.documentElement.firstChild.appendChild(winTitle);
+    var annoBody = win.document.importNode(document.getElementById("annotation"),true);
+    win.document.body.appendChild(annoBody);
+    return;
+  }
+  if (annoPanel) {
+    annotations.removeChild(annoPanel);
+    annoPanel = null;
   }
   var panel = document.createElement('div');
   panel.className = 'annoPanel';
-  panel.setAttribute("draggable","true");
   if (node && (annoClicked || erraClicked)) {
     var permalinkP = document.createElement('p');
     var permalinkA = document.createElement('a');
     var titleI = document.createElement('i');
+    permalinkA.id = 'anno-section-id';
     permalinkA.href = '#' + node.parentNode.id;
     permalinkA.textContent = '#' + node.parentNode.id;
     permalinkP.appendChild(permalinkA);
     permalinkP.appendChild(titleI);
+    titleI.setAttribute("id","anno-type");
     titleI.textContent = annoClicked ? " Annotations" : " Errata";
     panel.appendChild(permalinkP);
+    var newWin = document.createElement('span');
+    newWin.className = "newWin";
+    newWin.textContent = "⇧";
     var closeBox = document.createElement('span');
     closeBox.className = "closeBox";
     closeBox.textContent = "×";
     permalinkP.appendChild(closeBox);
+    permalinkP.appendChild(newWin);
     panelDiv = document.createElement('div');
+    panelDiv.setAttribute("id","annotation");
     if (node.parentNode.id) {
       xhrAnnoShow(node, panelDiv, annoClicked);
       panel.appendChild(panelDiv);

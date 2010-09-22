@@ -352,7 +352,6 @@ span.table-header { }
 
 .annoPanel {
   display: inline;
-  cursor: move;
   position: absolute;
   height: auto;
   width: 80%;
@@ -424,8 +423,14 @@ ol li {
 }
 .closeBox {
   cursor: pointer;
+  padding-left: 4px;
+  float: right;
+}
+.newWin{
+  cursor: pointer;
   padding-left: 8px;
   float: right;
+  font-weight: bold;
 }
 table#date-format {
   padding-left: 40px;
