@@ -330,7 +330,7 @@ span.table-header { }
 
 #mascot-treehouse {
   position: fixed;
-  top: 50px;
+  top: 70px;
   left: 10px;
 }
 
@@ -342,16 +342,15 @@ span.table-header { }
 #bubble {
   display: none;
   position: fixed;
-  top: 45px;
+  top: 75px;
   left: 157px;
-  width: 50px;
-  height: 70px;
+  z-index: 10;
 }
 
 #slogan {
   width: 150px;
   position: fixed;
-  top: 195px;
+  top: 215px;
   left: 10px;
   text-align: center;
   font-weight: bold;
@@ -361,8 +360,8 @@ span.table-header { }
 
 #annotations {
   position: fixed;
-  top: 50px;
-  left: 178px;
+  top: 48px;
+  left: 177px;
   width: 80%;
 }
 
@@ -379,7 +378,7 @@ span.table-header { }
   /* font-size: 90%; */
   background: rgba(245, 245, 245,.9);
   color: black;
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
   -moz-border-radius: 8px;
   border-radius: 8px;
   -webkit-box-shadow: 4px 4px 4px #888;
