@@ -2,8 +2,8 @@
 
 function xhrAnnoShow(node, panelDiv, annoClicked) {
   var self = this;
-  var this.request = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
-  var this.loading = document.createElement("i");
+  this.request = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+  this.loading = document.createElement("i");
   this.loading.textContent = "loading";
   panelDiv.appendChild(loading);
   this.request.onreadystatechange = function () {
