@@ -6,6 +6,7 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
   loading.textContent = "loading";
   panelDiv.appendChild(loading);
   request.onreadystatechange = function () {
+    console.log(request.readyState);
     var networkStatus = document.createElement("span");
     panelDiv.appendChild(networkStatus);
     var dots = "..";
