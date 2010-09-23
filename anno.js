@@ -2,35 +2,35 @@
 
 function xhrAnnoShow(node, panelDiv, annoClicked) {
   var self = this;
-  this.request = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
-  this.loading = document.createElement("i");
-  this.loading.textContent = "waiting";
-  panelDiv.appendChild(this.loading);
+  request = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+  loading = document.createElement("i");
+  loading.textContent = "waiting";
+  panelDiv.appendChild(loading);
   if (annoClicked) {
-    self.request.open('GET', 'anno/'+node.parentNode.id+'.html', true);
+    request.open('GET', 'anno/'+node.parentNode.id+'.html', true);
   } else {
-    self.request.open('GET', 'erra/'+node.parentNode.id+'.html', true);
+    request.open('GET', 'erra/'+node.parentNode.id+'.html', true);
   }
-  this.request.onreadystatechange = handleRequest;
-  self.request.send(null);
+  request.onreadystatechange = handleRequest;
+  request.send(null);
   function handleRequest() {
-    // console.log(self.request.readyState);
+    // console.log(request.readyState);
     var networkStatus = document.createElement("span");
     panelDiv.appendChild(networkStatus);
     var dots = "..";
-    for (var i = 0; i < parseInt(self.request.readyState); i++) {
+    for (var i = 0; i < parseInt(request.readyState); i++) {
       dots += ".";
     }
     while (networkStatus.firstChild) networkStatus.removeChild(networkStatus.firstChild);
     networkStatus.textContent = dots;
-    if (self.request.readyState == 4) {
+    if (request.readyState == 4) {
       // panelDiv.innerHTML = request.responseText;
-      console.log("self.request.status: ");
-      console.log(self.request.status);
       console.log("request.status: ");
       console.log(request.status);
-      if (self.request.status == 200) {
-        panelDiv.innerHTML = self.request.responseText;
+      console.log("request.status: ");
+      console.log(request.status);
+      if (request.status == 200) {
+        panelDiv.innerHTML = request.responseText;
       } else {
         var section = node.parentNode.id.substring(0,1) == "x" ? node.parentNode.id.substring(1) : node.parentNode.id;
         if (annoClicked) {
