@@ -69,11 +69,12 @@ function annoShow(event) {
     winTitle.textContent = "ES5 "+sectionNum+" "+annoType;
     styles.setAttribute("rel", "stylesheet");
     styles.setAttribute("href", "http://sideshowbarker.github.com/es5-spec/style.css");
+    win.document.write("<!doctype html>");
+    win.document.close();
     win.document.documentElement.firstChild.appendChild(styles);
     win.document.documentElement.firstChild.appendChild(winTitle);
     var annoBody = win.document.importNode(document.getElementById("annotation"),true);
     win.document.body.appendChild(annoBody);
-    win.document.close();
     document.getElementById("bubble").setAttribute("style","display: none");
     annotations.removeChild(annoPanel);
     annoPanel = null;
