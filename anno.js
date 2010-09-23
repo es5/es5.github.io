@@ -4,7 +4,7 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
   var self = this;
   request = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
   loading = document.createElement("i");
-  loading.textContent = "waiting for load...";
+  loading.textContent = "loading...";
   panelDiv.appendChild(loading);
   if (annoClicked) {
     request.open('GET', 'anno/'+node.parentNode.id+'.html', true);
@@ -14,7 +14,6 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
   request.send(null);
   request.onreadystatechange = handleRequest;
   function handleRequest() {
-    // console.log(request.readyState);
     var networkStatus = document.createElement("span");
     panelDiv.appendChild(networkStatus);
     var dots = "..";
@@ -25,14 +24,12 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
     networkStatus.textContent = dots;
     if (request.readyState == 4) {
       // panelDiv.innerHTML = request.responseText;
-      console.log("request.status: ");
-      console.log(request.status);
       if (request.status == 200) {
         panelDiv.innerHTML = request.responseText;
       } else {
         var section = node.parentNode.id.substring(0,1) == "x" ? node.parentNode.id.substring(1) : node.parentNode.id;
         if (annoClicked) {
-          panelDiv.innerHTML = "<p class='nope'>There aren't any annotations for section <i>"+section+"</i> yet…</p>"
+          panelDiv.innerHTML = "<p class='nope'>There aren't any annotations for section <i>"+section+"</i> yet...</p>"
           + "<p>If you’d like to contribute annotations, see the "
           + "<a href='http://sideshowbarker.github.com/es5-spec/README.html#contributing'>instructions on how to do so</a>.</p>";
         } else {
@@ -116,7 +113,6 @@ function annoShow(event) {
       xhrAnnoShow(node, panelDiv, annoClicked);
       panel.appendChild(panelDiv);
     } else {
-      // console.log(node);
       return -1;
     }
     annotations.appendChild(panel);
