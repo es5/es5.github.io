@@ -4,7 +4,7 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
   var self = this;
   request = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
   loading = document.createElement("i");
-  loading.textContent = "waiting...";
+  loading.textContent = "waiting for load...";
   panelDiv.appendChild(loading);
   if (annoClicked) {
     request.open('GET', 'anno/'+node.parentNode.id+'.html', true);
