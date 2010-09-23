@@ -7,6 +7,16 @@ h1, h2, h3, h4, h5, h6 {
   color: green;
 }
 
+h1:after,
+h2:after,
+h3:after,
+h4:after,
+h5:after,
+h6:after {
+  content: " Ⓞ";
+  opacity: 0;
+}
+
 h2 a,
 h3 a,
 h4 a,
@@ -16,16 +26,7 @@ h6 a
   display: none;
 }
 
-a.bak,
-b.erra,
-b.anno
-{
-  font-size: 80%;
-}
-
-b.erra,
-b.anno
-{
+b.erra, b.anno {
   display: none;
   cursor: pointer;
 }
