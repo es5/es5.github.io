@@ -24,6 +24,7 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
     while (networkStatus.firstChild) networkStatus.removeChild(networkStatus.firstChild);
     networkStatus.textContent = dots;
     console.log("request.status? ");
+    console.log(request.status);
     if (request.readyState == 4) {
       // panelDiv.innerHTML = request.responseText;
       console.log("request.status: ");
