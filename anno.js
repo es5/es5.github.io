@@ -4,7 +4,7 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
   var self = this;
   request = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
   loading = document.createElement("i");
-  loading.textContent = "waiting";
+  loading.textContent = "waiting...";
   panelDiv.appendChild(loading);
   if (annoClicked) {
     request.open('GET', 'anno/'+node.parentNode.id+'.html', true);
@@ -23,10 +23,9 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
     }
     while (networkStatus.firstChild) networkStatus.removeChild(networkStatus.firstChild);
     networkStatus.textContent = dots;
+    console.log("request.status? ");
     if (request.readyState == 4) {
       // panelDiv.innerHTML = request.responseText;
-      console.log("request.status: ");
-      console.log(request.status);
       console.log("request.status: ");
       console.log(request.status);
       if (request.status == 200) {
