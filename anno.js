@@ -21,10 +21,10 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
     for (var i = 0; i < parseInt(request.readyState); i++) {
       dots += ".";
     }
-    while (networkStatus.firstChild) networkStatus.removeChild(networkStatus.firstChild);
-    networkStatus.textContent = dots;
     console.log("request.status? ");
     console.log(request.status);
+    while (networkStatus.firstChild) networkStatus.removeChild(networkStatus.firstChild);
+    networkStatus.textContent = dots;
     if (request.readyState == 4) {
       // panelDiv.innerHTML = request.responseText;
       console.log("request.status: ");
