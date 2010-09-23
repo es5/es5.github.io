@@ -11,8 +11,8 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
   } else {
     request.open('GET', 'erra/'+node.parentNode.id+'.html', true);
   }
-  request.onreadystatechange = handleRequest;
   request.send(null);
+  request.onreadystatechange = handleRequest;
   function handleRequest() {
     // console.log(request.readyState);
     var networkStatus = document.createElement("span");
@@ -21,8 +21,6 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
     for (var i = 0; i < parseInt(request.readyState); i++) {
       dots += ".";
     }
-    console.log("request.status? ");
-    console.log(request.status);
     while (networkStatus.firstChild) networkStatus.removeChild(networkStatus.firstChild);
     networkStatus.textContent = dots;
     if (request.readyState == 4) {
