@@ -24,10 +24,10 @@ filename.
 document fragment (not a complete document—you should omit the `html`, `head`,
 and `body` elements).
 
-  6. Add your name and e-mail address to the `anno/AUTHORS` file.
+  6. Add your name and e-mail address to the `anno/AUTHORS.txt` file.
 
-  7. Commit the new annotation and updated `anno/AUTHORS` to your local git
-repository, then push it to your GitHub es5-spec fork.
+  7. Commit the new annotation and updated `anno/AUTHORS.txt` to your local
+git repository, then push it to your GitHub es5-spec fork.
 
   8. Send a [GitHub es5-spec pull request][3] so that your change can be
 committed into this repository and incorporated into the document.
