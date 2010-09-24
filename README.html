@@ -7,10 +7,39 @@
 <h1>Annotated ECMAScript 5</h1>
 <p>This repo holds a document that provides an annotated HTML view
 of ECMA 262, the
-<cite>ECMAScript Language Specification</cite> (5th edition).</p>
+<cite>ECMAScript Language Specification</cite> (5th edition).
+The annotations are intended to be collaboratively maintained.</p>
 
 <h2 id="contributing">How to contribute annotations</h2>
-<p>[details to come]</p>
+<p>If you would like to contribute annotations, here are the
+preferred steps:</p>
+<ol start="0">
+<li>If you don’t have one already, create a
+ <a href="https://github.com/signup/free">GitHub user account</a>.</li>
+<li>Use the GitHub Web UI to
+<a href="http://github.com/sideshowbarker/es5-spec#fork_box"
+>create your own fork of the es5-spec git repository</a>
+and check it out to make a local es5-spec workspace.</li>
+<li>Create the annotation in your workspace.
+  <ol style="list-style-type: lower-alph">
+    <li>To make an annotation for, for example, section 10.2.1.2 of
+    the ES5 specification, create a file in the <code>anno</code>
+    subdirectory of your local es5-spec workspace named
+    <code>x10.2.1.2.html</code> (note the literal <code>x</code> at
+    the beginning of the filename.</li>
+    <li>Add your content to that file. The contents of the file
+    should be and HTML document fragment (not a complete
+    document—you should omit the <code>html</code>,
+    <code>head</code>, and <code>body</code> elements).</li>
+  </ol>
+</li>
+<li>Commit the new annotation to your local git repository,
+    then push it to your GitHub esf-spec fork.</li>
+<li>Send a
+  <a href="http://github.com/sideshowbarker/es5-spec/pulls">GitHub es5-spec pull request</a>
+   so that your change can be committed into this repository and
+   incorporated into the document.</li>
+</ol>
 
 <h2>Important</h2>
 It is important to note that <cite>Annotated ECMAScript 5</cite>
@@ -22,6 +51,6 @@ assisting in its implementation.</p>
 
 <div id="stamp">
   <p><img id="mascot" src="http://sideshowbarker.github.com/es5-spec/js-mascot.svg"
-        alt="The Javascript mascot: A stylized line drawing of an anthropomorphized globe with a wry smile on its face."></p>
+        alt=""></p>
   <p id="slogan">Ex igne vita.</p>
 </div>
