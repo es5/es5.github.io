@@ -13,26 +13,26 @@ If you would like to contribute annotations, here are the preferred steps:
   2. Use the GitHub Web UI to [create your own fork of the es5-spec git
 repository][2] and check it out to make a local es5-spec workspace.
 
-  3. Create the annotation in your workspace.
+  3. Create the annotation in your workspace, using the next two steps.
 
-   [1]: https://github.com/signup/free
-
-   [2]: http://github.com/sideshowbarker/es5-spec#fork_box
-
-    1. To make an annotation for, for example, section 10.2.1.2 of the ES5
+  4. To make an annotation for, for example, section 10.2.1.2 of the ES5
 specification, create a file in the `anno` subdirectory of your local es5-spec
 workspace named `x10.2.1.2.html` (note the literal `x` at the beginning of the
 filename.
 
-    2. Add your content to that file. The contents of the file should be and
+  5. Add your content to that file. The contents of the file should be and
 HTML document fragment (not a complete document—you should omit the `html`,
 `head`, and `body` elements).
 
-  4. Commit the new annotation to your local git repository, then push it to
+  6. Commit the new annotation to your local git repository, then push it to
 your GitHub esf-spec fork.
 
-  5. Send a [GitHub es5-spec pull request][3] so that your change can be
+  7. Send a [GitHub es5-spec pull request][3] so that your change can be
 committed into this repository and incorporated into the document.
+
+   [1]: https://github.com/signup/free
+
+   [2]: http://github.com/sideshowbarker/es5-spec#fork_box
 
    [3]: http://github.com/sideshowbarker/es5-spec/pulls
 
@@ -44,8 +44,7 @@ the spec, it is in fact a completely **non-normative** derivative work _based
 on_ the spec—strictly for the purpose of explaining the spec and assisting in
 its implementation.
 
-![The Javascript mascot: A stylized line drawing of an anthropomorphized globe
-with a wry smile on its face.][4]
+![][4]
 
    [4]: http://sideshowbarker.github.com/es5-spec/js-mascot.svg
 
