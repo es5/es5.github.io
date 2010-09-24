@@ -20,14 +20,16 @@ specification, create a file in the `anno` subdirectory of your local es5-spec
 workspace named `x10.2.1.2.html` (note the literal `x` at the beginning of the
 filename.
 
-  5. Add your content to that file. The contents of the file should be and
-HTML document fragment (not a complete document—you should omit the `html`,
-`head`, and `body` elements).
+  5. Add your content to that file. The contents of the file should be an HTML
+document fragment (not a complete document—you should omit the `html`, `head`,
+and `body` elements).
 
-  6. Commit the new annotation to your local git repository, then push it to
-your GitHub esf-spec fork.
+  6. Add your name and e-mail address to the `anno/AUTHORS` file.
 
-  7. Send a [GitHub es5-spec pull request][3] so that your change can be
+  7. Commit the new annotation and updated `anno/AUTHORS` to your local git
+repository, then push it to your GitHub es5-spec fork.
+
+  8. Send a [GitHub es5-spec pull request][3] so that your change can be
 committed into this repository and incorporated into the document.
 
    [1]: https://github.com/signup/free
