@@ -1,9 +1,8 @@
 // No copyright is asserted on this file.
 
 function xhrAnnoShow(node, panelDiv, annoClicked) {
-  var self = this;
-  request = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
-  loading = document.createElement("i");
+  var request = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+  var loading = document.createElement("i");
   loading.textContent = "loading...";
   panelDiv.appendChild(loading);
   if (annoClicked) {
@@ -17,27 +16,26 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
     var networkStatus = document.createElement("span");
     panelDiv.appendChild(networkStatus);
     var dots = "..";
-    for (var i = 0; i < parseInt(request.readyState); i++) {
+    for (var i = 0; i < parseInt(request.readyState,10); i++) {
       dots += ".";
     }
     while (networkStatus.firstChild) networkStatus.removeChild(networkStatus.firstChild);
     networkStatus.textContent = dots;
     if (request.readyState == 4) {
-      // panelDiv.innerHTML = request.responseText;
       if (request.status == 200) {
         panelDiv.innerHTML = request.responseText;
       } else {
         var section = node.parentNode.id.substring(0,1) == "x" ? node.parentNode.id.substring(1) : node.parentNode.id;
         if (annoClicked) {
-          panelDiv.innerHTML = "<p class='nope'>There aren't any annotations for section <i>"+section+"</i> yet...</p>"
-          + "<p>If you’d like to contribute annotations, see the "
-          + "<a href='http://sideshowbarker.github.com/es5-spec/README.html#contributing'>instructions on how to do so</a>.</p>";
+          panelDiv.innerHTML = "<p class='nope'>There aren't any annotations for section <i>"+section+"</i> yet...</p>"+
+          "<p>If you’d like to contribute annotations, see the "+
+          "<a href='http://sideshowbarker.github.com/es5-spec/README.html#contributing'>instructions on how to do so</a>.</p>";
         } else {
           panelDiv.innerHTML = "<p class='nope'>There are no errata for section <i>"+section+"</i>.</p>";
         }
       }
     }
-  };
+  }
 }
 var annoPanel;
 var annotations = document.getElementById("annotations");
@@ -52,8 +50,8 @@ document.addEventListener("keyup", function(e) {
   }
 }, true);
 function annoShow(event) {
-  var annoClicked = false
-  var erraClicked = false
+  var annoClicked = false;
+  var erraClicked = false;
   var node = event.target;
   if (node.className == "anno") {
     annoClicked = true;
@@ -78,7 +76,7 @@ function annoShow(event) {
     document.getElementById("bubble").setAttribute("style","display: none");
     annotations.removeChild(annoPanel);
     annoPanel = null;
-    return;
+    return 0;
   }
   if (annoPanel) {
     document.getElementById("bubble").setAttribute("style","display: none");
@@ -108,7 +106,7 @@ function annoShow(event) {
     closeBox.textContent = "×";
     permalinkP.appendChild(closeBox);
     permalinkP.appendChild(newWin);
-    panelDiv = document.createElement('div');
+    var panelDiv = document.createElement('div');
     panelDiv.setAttribute("id","annotation");
     if (node.parentNode.id) {
       xhrAnnoShow(node, panelDiv, annoClicked);
@@ -122,5 +120,7 @@ function annoShow(event) {
   } else {
     // Do nothing: The user just clicked at some place in the page
     // that's not special.
+    return 0;
   }
+  return 0;
 }
