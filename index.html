@@ -11,14 +11,26 @@
   standard
   <cite><a href="http://www.ecmascript.org/">ECMA 262</a>, Edition 5</cite>,
   which is also known as
-  <cite><a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">ECMAScript Language Specification</a>, 5th edition</cite>.</p>
+  <cite><a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">ECMAScript Language Specification</a>, 5th edition</cite>,
+  and which is the same spec that in practice defines, too, what is
+  also colloquially still referred to as “the JavaScript language”.</p>
 
 <p><b class="note">NOTE</b> The present document is <b>not</b> a
-  normative version of the ECMAScript spec. Though it does include
-  the <b>full text</b> of the spec, it is in fact a completely
-  <b>non-normative</b> derivative work that is <i>based on</i> the
-  spec—and is provided here strictly for the purpose of explaining
-  the spec and assisting in its implementation.</p>
+  normative version of the ECMAScript spec, which is 
+  <a href="#copyright">copyrighted</a>
+  and of which derivative works may be made available only under
+  the specific terms of a particular
+  <a href="#license">license</a>.
+  Though the present document does include
+  the <b>full text</b> of the ECMAScript spec, it is meant in
+  fact to be a completely <b>non-normative</b> derivative work
+  based on the spec. It is provided as the means for making
+  annotations to the spec easy available online in HTML—at
+  point-of-use—for the explicit purposes of “explaining the spec
+  and assisting in its implementation” that are provided for in
+  the spec license. But it is important to note that any reuse of
+  the actual body text from this version also must adhere to the
+  terms of the license on the normative spec.</p>
 
 <p>To view annotations for a particular section of the present
   document, hover over any heading and follow the hyperlinks
@@ -35,16 +47,22 @@
   <a href="http://github.com/sideshowbarker/es5-spec#readme">instructions on the Annotated ES5 project page</a>.</p>
 
 <p>The <b>Ⓔ</b> links
-  are to errata copied from an
+  are to errata copied from the “Items with Technical Significance”
+  section of an
   <a href="http://wiki.ecmascript.org/doku.php?id=es3.1:es3.1_proposal_working_draft">erratum document available at a wiki maintained by ECMA TC39</a>
-  (the ECMA technical committee responsible for standardization of ECMAScript).</p>
+  (the ECMA technical committee responsible for standardization of ECMAScript).
+  Note that only the contents of the “Items with Technical
+  Significance” section were copied over; the contents of the
+  “Editorial Items with no Technical Significance” section were
+  not.
+</p>
 
-<p>The spec text and errata are covered under the same
+<p>The errata are currently assumed to be covered under the same
   <a href="#copyright">copyright</a>
-  and are made available under the terms of the same
+  as the spec text, and made available under the terms of the same
   <a href="#license">license</a>.
-  Any reuse of the spec text or errata must adhere to the terms of
-  that license.</p>
+  So any reuse of the errata also must adhere to the terms of that
+  license.</p>
 </div>
 <h1 id="doc-title">ECMAScript Language Specification</h1>
 <div id="toc">
@@ -456,8 +474,8 @@
       <li><a href="#x13.1" id="x13.1-toc">13.1 Strict Mode Restrictions</a></li>
       <li><a href="#x13.2" id="x13.2-toc">13.2 Creating Function Objects</a>
         <ol>
-          <li><a href="#x13.2.1" id="x13.2.1-toc">13.2.1 </a></li>
-          <li><a href="#x13.2.2" id="x13.2.2-toc">13.2.2 </a></li>
+          <li><a href="#x13.2.1" id="x13.2.1-toc">13.2.1 [[Call]]</a></li>
+          <li><a href="#x13.2.2" id="x13.2.2-toc">13.2.2 [[Construct]]</a></li>
           <li><a href="#x13.2.3" id="x13.2.3-toc">13.2.3 The Function Object</a></li>
         </ol>
       </li>
