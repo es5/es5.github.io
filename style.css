@@ -408,13 +408,15 @@ del b {
 }
 
 ins {
-  color: red;
+  color: blue;
   text-decoration: none;
+  font-weight: bold;
   /* text-decoration: red double line-through; */
 }
 
 ins b {
-  color: red;
+  color: blue;
+  font-weight: bold;
 }
 
 font b {
@@ -498,10 +500,10 @@ p.ed + p.keep {
   color: green;
 }
 
-#x7\.8\.4 .rev1
+#x7\.8\.4 .rev1,
+#x11\.5\.3 .rev1
 {
   display: inline;
   cursor: pointer;
   color: green;
 }
-
