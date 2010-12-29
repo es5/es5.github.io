@@ -434,7 +434,7 @@ ol li {
   float: right;
 }
 .newWin{
-  cursor: pointer;
+  text-decoration: none;
   float: right;
   padding: 4px;
   font-weight: bold;

@@ -45,10 +45,9 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
 }
 function annoShow(event) {
   var
-    annoBody,
     annoClicked = false,
     annoHref,
-    annoType,
+    annoUrl,
     closeBox,
     erraClicked = false,
     newWin,
@@ -58,36 +57,11 @@ function annoShow(event) {
     permalinkA,
     permalinkP,
     sectionNum,
-    styles,
-    titleI,
-    win,
-    winTitle;
+    titleI;
   if (node.className === "anno") {
     annoClicked = true;
   } else if (node.className === "erra") {
     erraClicked = true;
-  } else if (node.className === "newWin") {
-    styles = document.createElement("link");
-    winTitle = document.createElement("title");
-    annoHref = document.getElementById("anno-section-id").textContent;
-    annoType = document.getElementById("anno-type").textContent;
-    sectionNum = annoType === " Errata" ? annoHref.substring(annoHref.indexOf('#') + 1) : annoHref.substring(annoHref.indexOf('#') + 2);
-    winTitle.textContent = "ES5 " + sectionNum + " " + annoType;
-    styles.setAttribute("rel", "stylesheet");
-    styles.setAttribute("href", "http://sideshowbarker.github.com/es5-spec/style.css");
-    win = window.open(annoType.toLowerCase().substring(1, 5) + "/" + sectionNum + ".html");
-    console.log(annoType.toLowerCase().substring(1, 5) + "/" + sectionNum + ".html");
-    win.document.open("text/html");
-    win.document.write("<!doctype html>");
-    win.document.close();
-    win.document.documentElement.firstChild.appendChild(styles);
-    win.document.documentElement.firstChild.appendChild(winTitle);
-    annoBody = win.document.importNode(document.getElementById("annotation"), true);
-    win.document.body.appendChild(annoBody);
-    document.getElementById("bubble").setAttribute("style", "display: none");
-    annotations.removeChild(annoPanel);
-    annoPanel = null;
-    return 0;
   }
   if (annoPanel) {
     document.getElementById("bubble").setAttribute("style", "display: none");
@@ -108,15 +82,10 @@ function annoShow(event) {
     titleI.setAttribute("id", "anno-type");
     titleI.textContent = annoClicked ? " Annotations" : " Errata";
     panel.appendChild(permalinkP);
-    newWin = document.createElement('span');
-    newWin.className = "newWin";
-    newWin.setAttribute("title", "Open in new window/tab");
-    newWin.textContent = "\u21e7";
     closeBox = document.createElement('span');
     closeBox.className = "closeBox";
     closeBox.textContent = "\u00d7";
     permalinkP.appendChild(closeBox);
-    permalinkP.appendChild(newWin);
     panelDiv = document.createElement('div');
     panelDiv.setAttribute("id", "annotation");
     if (node.parentNode.id) {
@@ -128,6 +97,16 @@ function annoShow(event) {
     annotations.appendChild(panel);
     document.getElementById("bubble").setAttribute("style", "display: inline");
     annoPanel = panel;
+    annoHref = document.getElementById("anno-section-id").textContent;
+    sectionNum = annoHref.substring(annoHref.indexOf('#') + 1);
+    annoUrl = node.className + "/" + sectionNum + ".html";
+    newWin = document.createElement('a');
+    newWin.className = "newWin";
+    newWin.setAttribute("href", annoUrl);
+    newWin.setAttribute("title", "Open in new window/tab");
+    newWin.setAttribute("target", "_blank");
+    newWin.textContent = "\u21e7";
+    permalinkP.appendChild(newWin);
   } else {
     // Do nothing: The user just clicked at some place in the page
     // that's not special.
