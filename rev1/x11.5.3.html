@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="../style.css">
+<p class="ed">(In the final bullet item, use of IEEE 754 round-to-nearest
+mode is specified.)</p>
+<ul>
+<li><p>
+In
+the remaining cases, where neither an infinity, nor a zero, nor
+<b>NaN</b>
+is involved, the floating-point remainder r from a dividend n and
+a divisor d is defined by the mathematical relation r = n <span class="symbol">−</span>
+(d * q) where q is an integer that is negative only if n/d is
+negative and positive only if n/d is positive, and whose
+magnitude is as large as possible without exceeding the magnitude
+of the true mathematical quotient of n and d.
+<ins>r is computed and rounded to the nearest representable value using
+IEEE 754 round-to-nearest mode.</ins>
+</p>

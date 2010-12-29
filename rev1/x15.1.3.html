@@ -1,0 +1,78 @@
+<link rel="stylesheet" href="../style.css">
+<p class="ed">(Added notes clarifying that ECMAScript’s URI syntax is based
+upon RFC 2369 and not the newer RFC 3986. In the algorithm for Decode, a
+step was remove that immediately preceded the current step 4.d.vii.10.a
+because it tested for a condition that cannot occur.)</p>
+
+	<p>
+	The
+	following lexical grammar specifies the form of encoded URIs.</p>
+
+<p>…</p>
+
+<ins>
+	<p><b class="note">NOTE</b> The above syntax is based upon RFC 2396
+	and does not reflect changes introduced by the more recent RFC 3986.</p>
+</ins>
+
+	<p>
+	The
+	unescaping and decoding process is described by the abstract
+	operation Decode taking two String arguments <i>string</i>
+	and <i>reservedSet</i>.</p>
+	<ol>
+		<li value="1"><p>
+		Let
+		<i>strLen</i> be the number of characters in <i>string</i>.</p>
+<p>…</p>
+		</li>
+		<li value="4"><p>
+		Repeat</p>
+<p>…</p>
+		<ol type="a">
+			<li value="4"><p>
+			Else,
+			<i>C</i> is ‘<code><b>%</b></code>’</p>
+<p>…</p>
+			<ol type="i">
+				<li value="7"><p>
+				Else,
+				the most significant bit in <i>B</i> is 1</p>
+<p>…</p>
+				<ol>
+					<li value="10"><p>
+					Else,
+					<i>V</i> is ≥ 0x10000</p>
+					<ol>
+						<li><del><p>
+						If
+						<i>V</i> is greater than 0x10FFFF, throw a <b>URIError</b>
+						exception.</p></del>
+						</li>
+						<li value="1"><p>
+						Let
+						<i>L</i> be (((<i>V</i> – 0x10000) &amp; 0x3FF) + 0xDC00).</p>
+						</li>
+						<li><p>
+						Let
+						<i>H</i> be ((((<i>V</i> – 0x10000) &gt;&gt; 10) &amp; 0x3FF)
+						+ 0xD800).</p>
+						</li>
+						<li><p>
+						Let
+						<i>S</i> be the String containing the two characters with code
+						unit values <i>H</i> and <i>L</i>.</p>
+					</li></ol>
+				</li>
+</ol>
+			</li>
+<p>…</p>
+</ol>
+			</li>
+</ol>
+	</li></ol>
+	<p><b class="note">NOTE</b> The
+	syntax of Uniform Resource Identifiers is given in RFC 2396 <ins>and
+	does not reflect the more recent RFC 3986 which replaces RFC 2396</ins>. A
+	formal description and implementation of UTF-8 is given in RFC 3629.</p>
+

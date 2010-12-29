@@ -453,7 +453,7 @@ table#date-format td {
   padding-bottom: 1px;
 }
 p.ed {
-  color: #444;
+  color: #999;
   margin-bottom: 4px;
 }
 p.ed + p.keep {
@@ -501,7 +501,14 @@ p.ed + p.keep {
 }
 
 #x7\.8\.4 .rev1,
-#x11\.5\.3 .rev1
+#x11\.5\.3 .rev1,
+#x12\.7 .rev1,
+#x12\.8 .rev1,
+#x12\.9 .rev1,
+#x12\.14 .rev1,
+#x15\.1\.2\.2 .rev1,
+#x15\.1\.2\.3 .rev1,
+#x15\.1\.3 .rev1
 {
   display: inline;
   cursor: pointer;

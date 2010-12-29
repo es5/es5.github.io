@@ -1,0 +1,71 @@
+<link rel="stylesheet" href="../style.css">
+<p class="ed">(Step 3 of algorithm 1 and step 2.a of algorithm 3 are
+corrected such that the value field of <i>B</i> is passed
+as a parameter rather than <i>B</i> itself.)</p>
+
+	<p>
+	The
+	production <i>TryStatement</i>
+	<b>:</b> <code><b>try</b></code> <i>Block</i>
+	<i>Catch</i> is evaluated
+	as follows:</p>
+	<ol>
+		<li><p>
+		Let
+		<i>B</i> be the result of evaluating <i>Block</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>B</i>.type is not throw,
+		return <i>B</i>.</p>
+		</li>
+		<li><p>
+		Return
+		the result of evaluating <i>Catch</i> with parameter
+		<i>B</i><ins>.value</ins>.</p>
+	</li></ol>
+
+
+	<p>
+	The
+	production <i>TryStatement</i>
+	<b>:</b> <code><b>try</b></code> <i>Block</i>
+	<i>Catch</i> <i>Finally</i>
+	is evaluated as follows:</p>
+	<ol>
+		<li><p>
+		Let
+		<i>B</i> be the result of evaluating <i>Block</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>B</i>.type is throw, then</p>
+		<ol>
+			<li><p>
+			Let
+			<i>C</i> be the result of evaluating <i>Catch</i> with parameter
+			<i>B</i><ins>.value</ins>.</p>
+		</li></ol>
+		</li>
+		<li><p>
+		Else,
+		<i>B</i>.type is not throw<b>,</b></p>
+		<ol>
+			<li><p>
+			Let
+			<i>C</i> be<i> B</i>.</p>
+		</li></ol>
+		</li>
+		<li><p>
+		Let
+		<i>F</i> be the result of evaluating <i>Finally</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>F</i>.type is normal,
+		return <i>C</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>F</i>.</p>
+	</li></ol>
