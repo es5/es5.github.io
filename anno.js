@@ -1,7 +1,7 @@
 // No copyright is asserted on this file.
 var annoPanel;
 var annotations = document.getElementById("annotations");
-function xhrAnnoShow(node, panelDiv, annoClicked) {
+function xhrAnnoShow(node, panelDiv, annoType) {
   var
     request = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP"),
     loading = document.createElement("i");
@@ -39,10 +39,12 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
         permalinkP.appendChild(newWin);
       } else {
         section = node.parentNode.id.substring(0, 1) === "x" ? node.parentNode.id.substring(1) : node.parentNode.id;
-        if (annoClicked) {
+        if (annoType === "anno") {
           panelDiv.innerHTML = "<p class='nope'>There aren't any annotations for section <i>" + section + "</i> yet...</p>" +
           "<p>If you\u2019d like to contribute annotations, see the " +
           "<a href='http://sideshowbarker.github.com/es5-spec/README.html#contributing'>instructions on how to do so</a>.</p>";
+        } else if (annoType === "rev1") {
+          panelDiv.innerHTML = "<p class='nope'>There are no changes in revision 1 for section <i>" + section + "</i>.</p>";
         } else {
           panelDiv.innerHTML = "<p class='nope'>There are no errata for section <i>" + section + "</i>.</p>";
         }
@@ -51,8 +53,10 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
   }
   loading.textContent = "loading...";
   panelDiv.appendChild(loading);
-  if (annoClicked) {
+  if (annoType === "anno") {
     request.open('GET', 'anno/' + node.parentNode.id + '.html', true);
+  } else if (annoType === "rev1") {
+    request.open('GET', 'rev1/' + node.parentNode.id + '.html', true);
   } else {
     request.open('GET', 'erra/' + node.parentNode.id + '.html', true);
   }
@@ -61,20 +65,13 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
 }
 function annoShow(event) {
   var
-    annoClicked = false,
     closeBox,
-    erraClicked = false,
     node = event.target,
     panel,
     panelDiv,
     permalinkA,
     permalinkP,
     titleI;
-  if (node.className === "anno") {
-    annoClicked = true;
-  } else if (node.className === "erra") {
-    erraClicked = true;
-  }
   if (annoPanel) {
     document.getElementById("bubble").setAttribute("style", "display: none");
     annotations.removeChild(annoPanel);
@@ -82,7 +79,7 @@ function annoShow(event) {
   }
   panel = document.createElement('div');
   panel.className = 'annoPanel';
-  if (node && (annoClicked || erraClicked)) {
+  if (node && (node.className === "anno" || node.className === "rev1" || node.className === "erra")) {
     permalinkP = document.createElement('p');
     permalinkP.id = "permalinkP";
     permalinkA = document.createElement('a');
@@ -93,7 +90,13 @@ function annoShow(event) {
     permalinkP.appendChild(permalinkA);
     permalinkP.appendChild(titleI);
     titleI.setAttribute("id", "anno-type");
-    titleI.textContent = annoClicked ? " Annotations" : " Errata";
+    if (node.className === "anno") {
+      titleI.textContent = " Annotations";
+    } else if (node.className === "rev1") {
+      titleI.textContent = " Changes in 5.1";
+    } else if (node.className === "erra") {
+      titleI.textContent = " Errata";
+    } 
     panel.appendChild(permalinkP);
     closeBox = document.createElement('span');
     closeBox.className = "closeBox";
@@ -102,7 +105,7 @@ function annoShow(event) {
     panelDiv = document.createElement('div');
     panelDiv.setAttribute("id", "annotation");
     if (node.parentNode.id) {
-      xhrAnnoShow(node, panelDiv, annoClicked);
+      xhrAnnoShow(node, panelDiv, node.className);
       panel.appendChild(panelDiv);
     } else {
       return -1;

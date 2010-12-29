@@ -41,6 +41,7 @@ h6 a:hover
 }
 
 b.erra,
+b.rev1,
 b.anno
 {
   display: none;
@@ -496,3 +497,11 @@ p.ed + p.keep {
   cursor: pointer;
   color: green;
 }
+
+#x7\.8\.4 .rev1
+{
+  display: inline;
+  cursor: pointer;
+  color: green;
+}
+
