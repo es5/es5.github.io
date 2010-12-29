@@ -23,41 +23,31 @@ h4 a,
 h5 a,
 h6 a
 {
-  display: none;
+  text-decoration: none;
+  font-weight: normal;
+  color: #bbb;
 }
 
-b.erra, b.anno {
-  display: none;
+
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover,
+b.erra:hover,
+b.anno:hover
+{
+  text-decoration: none;
+  font-weight: normal;
+  color: green !important;
+}
+
+b.erra,
+b.anno
+{
   cursor: pointer;
-}
-
-
-h2:hover a,
-h3:hover a,
-h4:hover a,
-h5:hover a,
-h6:hover a 
-{
-  display: inline;
-  text-decoration: none;
   font-weight: normal;
-  color: inherit;
-}
-
-h2:hover b.erra,
-h3:hover b.erra,
-h4:hover b.erra,
-h5:hover b.erra,
-h6:hover b.erra,
-h2:hover b.anno,
-h3:hover b.anno,
-h4:hover b.anno,
-h5:hover b.anno,
-h6:hover b.anno 
-{
-  display: inline;
-  text-decoration: none;
-  font-weight: normal;
+  color: #bbb;
 }
 
 h2 a:visited,
@@ -67,6 +57,7 @@ h5 a:visited,
 h6 a:visited
 {
   color: inherit;
+  color: #bbb;
 }
 
 h2 {
