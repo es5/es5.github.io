@@ -2,13 +2,19 @@
 var annoPanel;
 var annotations = document.getElementById("annotations");
 function xhrAnnoShow(node, panelDiv, annoClicked) {
-  var request = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP"),
-       loading = document.createElement("i");
+  var
+    request = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP"),
+    loading = document.createElement("i");
   function handleRequest() {
     var
+      annoHref,
+      annoUrl,
       dots = "..",
       networkStatus = document.createElement("span"),
+      newWin,
+      permalinkP = document.getElementById("permalinkP"),
       section = "",
+      sectionNum,
       state;
     panelDiv.appendChild(networkStatus);
     for (state = 0; state < parseInt(request.readyState, 10); state += 1) {
@@ -21,6 +27,16 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
     if (request.readyState === 4) {
       if (request.status === 200) {
         panelDiv.innerHTML = request.responseText;
+        annoHref = document.getElementById("anno-section-id").textContent;
+        sectionNum = annoHref.substring(annoHref.indexOf('#') + 1);
+        annoUrl = node.className + "/" + sectionNum + ".html";
+        newWin = document.createElement('a');
+        newWin.className = "newWin";
+        newWin.setAttribute("href", annoUrl);
+        newWin.setAttribute("title", "Open in new window/tab");
+        newWin.setAttribute("target", "_blank");
+        newWin.textContent = "\u21e7";
+        permalinkP.appendChild(newWin);
       } else {
         section = node.parentNode.id.substring(0, 1) === "x" ? node.parentNode.id.substring(1) : node.parentNode.id;
         if (annoClicked) {
@@ -46,17 +62,13 @@ function xhrAnnoShow(node, panelDiv, annoClicked) {
 function annoShow(event) {
   var
     annoClicked = false,
-    annoHref,
-    annoUrl,
     closeBox,
     erraClicked = false,
-    newWin,
     node = event.target,
     panel,
     panelDiv,
     permalinkA,
     permalinkP,
-    sectionNum,
     titleI;
   if (node.className === "anno") {
     annoClicked = true;
@@ -72,6 +84,7 @@ function annoShow(event) {
   panel.className = 'annoPanel';
   if (node && (annoClicked || erraClicked)) {
     permalinkP = document.createElement('p');
+    permalinkP.id = "permalinkP";
     permalinkA = document.createElement('a');
     titleI = document.createElement('i');
     permalinkA.id = 'anno-section-id';
@@ -97,16 +110,6 @@ function annoShow(event) {
     annotations.appendChild(panel);
     document.getElementById("bubble").setAttribute("style", "display: inline");
     annoPanel = panel;
-    annoHref = document.getElementById("anno-section-id").textContent;
-    sectionNum = annoHref.substring(annoHref.indexOf('#') + 1);
-    annoUrl = node.className + "/" + sectionNum + ".html";
-    newWin = document.createElement('a');
-    newWin.className = "newWin";
-    newWin.setAttribute("href", annoUrl);
-    newWin.setAttribute("title", "Open in new window/tab");
-    newWin.setAttribute("target", "_blank");
-    newWin.textContent = "\u21e7";
-    permalinkP.appendChild(newWin);
   } else {
     // Do nothing: The user just clicked at some place in the page
     // that's not special.
