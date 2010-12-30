@@ -470,13 +470,6 @@ p.ed + p.keep {
   padding: 4px;
 }
 
-#x15\.1\.2\.2 .anno
-{
-  display: inline;
-  cursor: pointer;
-  color: green;
-}
-
 #x7\.1 .erra,
 #x10\.2\.1\.1\.3 .erra,
 #x10\.2\.1\.2\.2 .erra,
@@ -520,9 +513,19 @@ p.ed + p.keep {
 #x15\.10\.2\.2 .rev1,
 #x15\.10\.2\.6 .rev1,
 #x15\.10\.2\.8 .rev1,
-#x15\.10\.6\.2 .rev1
+#x15\.10\.6\.2 .rev1,
+#x15\.12\.3 .rev1,
+#B\.2\.1 .rev1
 {
   display: inline;
   cursor: pointer;
   color: green;
 }
+
+#x15\.1\.2\.2 .anno
+{
+  display: inline;
+  cursor: pointer;
+  color: green;
+}
+
