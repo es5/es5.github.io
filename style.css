@@ -312,6 +312,10 @@ li p.indent-1-no-bottom {
   float: right;
 }
 
+ol.indent1 {
+  margin-left: 40px;
+}
+
 span.table-header { }
 
 @page { margin-right: 1.3cm; margin-top: 1.25cm; margin-bottom: 0.5cm }
@@ -512,7 +516,11 @@ p.ed + p.keep {
 #x15\.4\.4\.12 .rev1,
 #x15\.4\.4\.15 .rev1,
 #x15\.5\.4\.9 .rev1,
-#x15\.5\.4\.14 .rev1
+#x15\.5\.4\.14 .rev1,
+#x15\.10\.2\.2 .rev1,
+#x15\.10\.2\.6 .rev1,
+#x15\.10\.2\.8 .rev1,
+#x15\.10\.6\.2 .rev1
 {
   display: inline;
   cursor: pointer;

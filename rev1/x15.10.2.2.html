@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="../style.css">
+<p class="ed">(The step numbers of the algorithm for the internal closure
+produced by step 2 were incorrectly numbered in a manner that implied that
+they were steps of the outer algorithm.)</p>
+
+	<p>
+	The
+	production <i>Pattern</i><b>
+	:: </b><i>Disjunction</i><b>
+	</b>evaluates as follows:</p>
+	<ol>
+		<li><p>
+		Evaluate
+		<i>Disjunction</i> to obtain a Matcher <i>m</i>.</p>
+		</li>
+		<li><p>
+		Return
+		an internal closure that takes two arguments, a String <i>str</i>
+		and an integer <i>index</i>, and performs the following:</p>
+</li>
+</ol>
+    <ol class="indent1">
+		<li><p>
+		Let
+		<i>Input</i> be the given String <i>str</i>. This variable will be
+		used throughout the algorithms in <a href="#x15.10.2">15.10.2</a>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>InputLength</i> be the length of <i>Input</i>. This variable
+		will be used throughout the algorithms in <a href="#x15.10.2">15.10.2</a>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>c</i> be a Continuation that always returns its State argument
+		as a successful MatchResult.</p>
+		</li>
+		<li><p>
+		Let
+		<i>cap</i> be an internal array of <i>NcapturingParens</i>
+		<b>undefined</b> values, indexed 1 through <i>NcapturingParens</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>x</i> be the State (<i>index</i>, <i>cap</i>).</p>
+		</li>
+		<li><p>
+		Call
+		<i>m</i>(<i>x</i>, <i>c</i>) and return its result.</p>
+	</li></ol>

@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="../style.css">
+<p class="ed">(Step 9.e was deleted because It performed an extra increment
+of <i>i</i>.)</p>
+
+<ol>
+		<li value="9"><p>
+		Repeat,
+		while <i>matchSucceeded</i> is <b>false</b></p>
+		<ol>
+			<li><p>
+			If
+			<i>i </i>&lt; 0 or <i>i </i>&gt; <i>length</i>, then</p>
+			<ol>
+				<li><p>
+				Call
+				the [[Put]] internal method of <i>R</i> with arguments
+				"<code><b>lastIndex</b></code><code><b>"</b></code>,
+				0, and <b>true</b>.</p>
+				</li>
+				<li><p>
+				Return
+				<code><b>null</b></code>.</p>
+			</li></ol>
+			</li>
+			<li><p>
+			Call
+			the [[Match]] <i>internal</i> method of <i>R</i> with arguments <i>S</i>
+			and <i>i</i>.</p>
+			</li>
+			<li><p>
+			If
+			[[Match]] returned <b>failure</b>, then 
+			</p>
+			<ol>
+				<li><p>
+				<i>Let
+				i = i+1.</i></p>
+			</li></ol>
+			</li>
+			</li>
+			<li><p>
+			else
+			
+			</p>
+			<ol>
+				<li><p>
+				Let
+				<i>r</i> be the State result of the call to [[Match]].</p>
+				</li>
+				<li><p>
+				Set
+				<i>matchSucceeded</i> to <b>true</b>.</p>
+			</li></ol>
+			</li>
+			<li><p><del>
+			Let
+			<i>i</i> = <i>i</i>+1.</del></p>
+		</li></ol>
+		</li>
+</ol>
