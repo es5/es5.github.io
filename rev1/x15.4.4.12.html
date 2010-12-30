@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="../style.css">
+<p class="ed">(In step 9.a, incorrect reference to <i>relativeStart</i> was
+replaced with a reference to <i>actualStart</i>.)</p>
+
+	<p>
+	When
+	the <code><b>splice</b></code> method
+	is called with two or more arguments <i>start</i>,
+	<i>deleteCount</i> and
+	(optionally) <i>item1</i>,
+	<i>item2</i>, etc., the
+	<i>deleteCount</i>
+	elements of the array starting at array index <i>start</i>
+	are replaced by the arguments <i>item1</i>,
+	<i>item2</i>, etc. An
+	Array object containing the deleted elements (if any) is returned.
+	The following steps are taken:</p>
+	<ol>
+		<li><p>
+		Let
+		<i>O </i>be the result of calling ToObject passing the <b>this
+		</b>value as the argument.</p>
+<p>…</p>
+		</li>
+		<li value="9"><p>
+		Repeat,
+		while <i>k</i> &lt; <i>actualDeleteCount</i></p>
+		<ol>
+			<li><p>
+			Let
+			<i>from</i> be ToString(<del><i>relativeStart</i></del><ins><i>actualStart</i></ins>+<i>k</i>).</p>
+<p>…</p>
+		</li></ol>
+<p>…</p>
+	</li></ol>
