@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="../style.css">
+<h5>Web Platform requirements</h5>
+<p>Identifiers containing escape sequences are not equivalent to fully
+unescaped identifiers in the case that, after fully unescaping <i>Identifier</i>,
+it is a <i>ReservedWord</i>. In particular it is possible to create Identifiers
+that unescape to a reserved word so long as at least one character is fully
+escaped. Subsequent use of such identifiers must also have at least one
+character escaped (otherwise the reserved word will be used instead) but it
+need not be the same character(s) as that originally used to create the
+identifier.</p>
+<p>See also <a
+href="http://wiki.whatwg.org/wiki/Web_ECMAScript#Identifiers">http://wiki.whatwg.org/wiki/Web_ECMAScript#Identifiers</a></p>

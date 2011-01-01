@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="../style.css">
+<h5>Web Platform requirements</h5>
+<p>Use of <code><b>eval</b></code> not called “eval”: Shouldd work but
+implementations differ on the scope (Spidermonkey first tries global and
+then local if the object as not found globally, JScript uses local scope,
+others use global scope); may not have strong compat requirements.</p>
+
+<p><code><b>eval.apply(this,</b></code> <i>code</i><code><b>)</b></code>
+should work but scope varies when “this” is not the global object.</p>
+
+<p><code><b>eval.apply({},</b></code> <i>code</i><code><b>)</b></code> should throw <i>EvalError</i>.</p>
+
+<p>See also <a
+href="http://wiki.whatwg.org/wiki/Web_ECMAScript#Eval">http://wiki.whatwg.org/wiki/Web_ECMAScript#Eval</a></p>

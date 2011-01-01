@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="../style.css">
+<h5>Web Platform requirements</h5>
+<p>Several extra methods are found on String.prototype for wrapping text in HTML elements (these are all generic; the this value need not be a String object):
+</p><p>Algorithm ToHTMLTag(tag_name, content, attribute_name, attribute_value):
+</p>
+<ol><li>if attribute_name is undefined return "&lt;" + tag_name + "&gt;" + content + "&lt;/" + tag_name + "&gt;"
+</li><li>otherwise return "&lt;" + tag_name + " " + attribute_name + "=\"" + attribute_value + "\"&gt;" + content + "&lt;/" + tag_name + "&gt;"
+</li></ol>
+<p>See also <a
+href="http://wiki.whatwg.org/wiki/Web_ECMAScript#15.5.4_Properties_of_the_String_Prototype_Object">http://wiki.whatwg.org/wiki/Web_ECMAScript#15.5.4_Properties_of_the_String_Prototype_Object</a></p>
+<h5> <span class="mw-headline" id="String.prototype.anchor.28name.29"> String.prototype.anchor(name) </span></h5>
+<ol><li> Let content be ToString(this)
+</li><li> Let attribute_value be ToString(name)
+</li><li> Return ToHTMLTag("a", content, "name", attribute_value)
+</li></ol>
+<h5> <span class="mw-headline" id="String.prototype.big.28.29"> String.prototype.big() </span></h5>
+<ol><li> Let content be ToString(this)
+</li><li> Return ToHTMLTag("big", content)
+</li></ol>
+<h5> <span class="mw-headline" id="String.prototype.blink.28.29"> String.prototype.blink() </span></h5>
+<ol><li> Let content be ToString(this)
+</li><li> Return ToHTMLTag("blink", content)
+</li></ol>
+<h5> <span class="mw-headline" id="String.prototype.bold.28.29"> String.prototype.bold() </span></h5>
+<ol><li> Let content be ToString(this)
+</li><li> Return ToHTMLTag("b", content)
+</li></ol>
+<h5> <span class="mw-headline" id="String.prototype.fixed.28.29"> String.prototype.fixed() </span></h5>
+<ol><li> Let content be ToString(this)
+</li><li> Return ToHTMLTag("tt", content)
+</li></ol>
+<h5> <span class="mw-headline" id="String.prototype.fontcolor.28color.29"> String.prototype.fontcolor(color) </span></h5>
+<ol><li> Let content be ToString(this)
+</li><li> Let attribute_value be ToString(color)
+</li><li> Return ToHTMLTag("font", content, "color", attribute_value)
+</li></ol>
+<h5> <span class="mw-headline" id="String.prototype.fontsize.28size.29"> String.prototype.fontsize(size) </span></h5>
+<ol><li> Let content be ToString(this)
+</li><li> Let attribute_value be ToString(size)
+</li><li> Return ToHTMLTag("font", content, "size", attribute_value)
+</li></ol>
+<h5> <span class="mw-headline" id="String.prototype.italics.28.29"> String.prototype.italics() </span></h5>
+<ol><li> Let content be ToString(this)
+</li><li> Return ToHTMLTag("i", content)
+</li></ol>
+<h5> <span class="mw-headline" id="String.prototype.link.28href.29"> String.prototype.link(href) </span></h5>
+<ol><li> Let content be ToString(this)
+</li><li> Let attribute_value be ToString(href)
+</li><li> Return ToHTMLTag("a", content, "href", attribute_value)
+</li></ol>
+<h5> <span class="mw-headline" id="String.prototype.small.28.29"> String.prototype.small() </span></h5>
+<ol><li> Let content be ToString(this)
+</li><li> Return ToHTMLTag("small", content)
+</li></ol>
+<h5> <span class="mw-headline" id="String.prototype.strike.28.29"> String.prototype.strike() </span></h5>
+<ol><li> Let content be ToString(this)
+</li><li> Return ToHTMLTag("strike", content)
+</li></ol>
+<h5> <span class="mw-headline" id="String.prototype.sub.28.29"> String.prototype.sub() </span></h5>
+<ol><li> Let content be ToString(this)
+</li><li> Return ToHTMLTag("sub", content)
+</li></ol>
+<h5> <span class="mw-headline" id="String.prototype.sup.28.29"> String.prototype.sup() </span></h5>
+<ol><li> Let content be ToString(this)
+</li><li> Return ToHTMLTag("sup", content)
+</li></ol>

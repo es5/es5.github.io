@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="../style.css">
+<h5>Web Platform requirements</h5>
+
+<p>All objects have a mutable <code>__proto__</code> property that is a
+reference to the prototype of the object. Note that the spec required that
+objects with extensible:false must not have their prototype mutated. In the
+case that setting an object’s <code>__proto__</code> would cause a prototype
+chain to become cyclic, the setter must fail and throw <code>Error()</code>.
+
+<p>See also <a
+href="http://wiki.whatwg.org/wiki/Web_ECMAScript#Object_Properties">http://wiki.whatwg.org/wiki/Web_ECMAScript#Object_Properties</a></p>

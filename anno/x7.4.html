@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="../style.css">
+<h5>Web Platform requirements</h5>
+
+<p>"<code>&lt;!--</code>" is a line comment (same as "<code>//</code>").</p>
+
+<p>In JScript, the following are ignored if they are at the end of the script
+(i.e., just followed by whitespace lines):</p>
+
+<p>Either:
+<ol type="A">
+
+<li>A line that starts
+with just whitespace and comments and consists of "<code>--></code>" followed by
+anything except new lines and finally followed by another "<code>--></code>"; or</li>
+
+<li>one or two lines that start with just whitespace and comments and
+consist of just "<code>--></code>".</li>
+</ol>
+
+<p>"<code>--></code>" at the end of the last line of the script causes
+the line to be ignored unless the "<code>--></code>" occurs within a
+comment. The last non-whitespace line of the script is ignored if it ends
+with "<code>--></code>" and doesn't contain "<code>//</code>" or
+"<code>&lt;!--</code>" (but not in <code><b>eval</b></code>).</p>
+
+<p>In SpiderMonkey, "<code>--></code>" on any line that starts with just
+whitespace and comments is treated as a line comment (same as
+<code>//</code>). (Also, <code>;version=1.6, 1.7 or 1.8</code> or
+<code>1;e4x=1</code> enables E4X "<code>&lt;!-- --></code>" comments.)</p>
+
+<p>In Carakan, Nitro and V8, "<code>--></code>" on any line that starts
+with just whitespace (but not comments) is treated as a line comment (same
+as "<code>//</code>").
+
+<p>See also <a
+href="http://wiki.whatwg.org/wiki/Web_ECMAScript#HTML_comments">http://wiki.whatwg.org/wiki/Web_ECMAScript#HTML_comments</a></p>
