@@ -7,11 +7,13 @@ h1, h2, h3, h4, h5, h6 {
   color: green;
 }
 
+#toc-full a {
+  text-decoration: none !important;
+}
 .toc-anno {
   color: green;
-  text-decoration: none !important;
   padding-left: 4px;
-  padding-right: 4px;
+  font-weight: bold;
 }
 
 h1:after,
