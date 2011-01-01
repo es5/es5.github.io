@@ -120,6 +120,40 @@ function annoShow(event) {
   }
   return 0;
 }
+function annotateToc() {
+  var
+  i,
+  anno = document.getElementsByClassName("anno"),
+  erra = document.getElementsByClassName("erra"),
+  rev1 = document.getElementsByClassName("rev1"),
+  A,
+  E,
+  R;
+  for (i = 0; i < erra.length; i = i + 1) {
+    if (erra[i].offsetHeight !== 0) {
+      E = document.createElement("span");
+      E.setAttribute("class", "toc-anno");
+      E.textContent = "\u24ba";
+      document.getElementById(erra[i].parentNode.id + "-toc").parentNode.firstChild.appendChild(E);
+    }
+  }
+  for (i = 0; i < rev1.length; i = i + 1) {
+    if (rev1[i].offsetHeight !== 0) {
+      R = document.createElement("span");
+      R.setAttribute("class", "toc-anno");
+      R.textContent = "\u2460";
+      document.getElementById(rev1[i].parentNode.id + "-toc").parentNode.firstChild.appendChild(R);
+    }
+  }
+  for (i = 0; i < anno.length; i = i + 1) {
+    if (anno[i].offsetHeight !== 0) {
+      A = document.createElement("span");
+      A.setAttribute("class", "toc-anno");
+      A.textContent = "\u24b6";
+      document.getElementById(anno[i].parentNode.id + "-toc").parentNode.firstChild.appendChild(A);
+    }
+  }
+}
 document.addEventListener('click', annoShow, false);
 // enable annotation pop-up to be dismissed by hitting esc key
 document.addEventListener("keyup", function (e) {
@@ -134,3 +168,4 @@ document.addEventListener("keyup", function (e) {
     annoPanel = null;
   }
 }, true);
+window.addEventListener('load', annotateToc, false);
