@@ -1345,10 +1345,15 @@
 	attempt by executed ECMAScript code to change the value of the
 	property fails. Properties are containers that hold other objects,
 	<i><b>primitive values</b></i>, or <i><b>functions</b></i>. A
-	<a href="#primitive_value" class="term-ref">primitive value</a> is a member of one of the following built-in types:
-	<b>Undefined</b>, <b>Null</b>, <b>Boolean</b>, <b>Number</b>, and
-	<b>String</b>; an object is a member of the remaining built-in type
-	<b>Object</b>; and a function is a
+	primitive value is a member of one of the following built-in types:
+<a href="#x8.1" class="term-ref"><b>Undefined</b></a>,
+<a href="#x8.2" class="term-ref"><b>Null</b></a>,
+<a href="#x8.3" class="term-ref"><b>Boolean</b></a>,
+<a href="#x8.5" class="term-ref"><b>Number</b></a>,
+and
+<a href="#x8.4" class="term-ref"><b>String</b></a>;
+an object is a member of the remaining built-in type
+<a href="#x8.6" class="term-ref"><b>Object</b></a>; and a function is a
  <a href="#callable" class="term-ref">callable object</a>. A function that
 	is associated with an object via a property is a <i><b>method</b></i>.</p>
 	<p>
@@ -1361,10 +1366,17 @@
 	<p>
 	ECMAScript
 	also defines a set of built-in <i><b>operators</b></i>. ECMAScript
-	operators include various unary operations, multiplicative
-	operators, additive operators, bitwise shift operators, relational
-	operators, equality operators, binary bitwise operators, binary
-	logical operators, assignment operators, and the comma operator.</p>
+	operators include various
+<a href="#x11.4" class="term-ref">unary operations</a>,
+<a href="#x11.5" class="term-ref">multiplicative operators</a>,
+<a href="#x11.6" class="term-ref">additive operators</a>,
+<a href="#x11.7" class="term-ref">bitwise shift operators</a>,
+<a href="#x11.8" class="term-ref">relational operators</a>,
+<a href="#x11.9" class="term-ref">equality operators</a>,
+<a href="#x11.10" class="term-ref">binary bitwise operators</a>,
+<a href="#x11.11" class="term-ref">binary logical operators</a>,
+<a href="#x11.13" class="term-ref">assignment operators</a>, and
+<a href="#x11.14" class="term-ref">the comma operator</a>.</p>
 	<p>
 	ECMAScript
 	syntax intentionally resembles Java syntax. ECMAScript syntax
@@ -1481,7 +1493,7 @@
 	A complete ECMAScript program may be composed for both strict mode
 	and non-strict mode ECMAScript code units. In this case, strict mode
 	only applies when actually executing code that is defined within a
-	strict mode code unit. 
+	<a href="#x10.1.1" class="term-ref">strict mode code</a> unit. 
 	</p>
 	<p>
 	In
@@ -1489,7 +1501,7 @@
 	must implement both the full unrestricted ECMAScript language and
 	the strict mode variant of the ECMAScript language as defined by
 	this specification. In addition, an implementation must support the
-	combination of unrestricted and strict mode code units into a single
+	combination of unrestricted and <a href="#x10.1.1" class="term-ref">strict mode code</a> units into a single
 	composite program.</p>
 	<h3 id="x4.3">4.3 Definitions <a href="#x4.3">#</a> <a href="#x4.3-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
 	<p>
@@ -1499,12 +1511,12 @@
 	<h4 id="x4.3.1">4.3.1<br><dfn id="type">type</dfn> <a href="#x4.3.1">#</a> <a href="#x4.3.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	set
-	of data values as defined in Clause 8 of this specification.</p>
+	of data values as defined in <a href="#x8">Clause 8</a> of this specification.</p>
 	<h4 id="x4.3.2">4.3.2<br><dfn id="primitive_value">primitive value</dfn> <a href="#x4.3.2">#</a> <a href="#x4.3.2-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	member
 	of one of the types Undefined, Null, Boolean, Number, or String as
-	defined in Clause 8.</p>
+	defined in <a href="#x8">Clause 8</a>.</p>
 	<p><b class="note">NOTE</b> A
 	primitive value is a datum that is represented directly at the
 	lowest level of the language implementation.</p>
@@ -1745,10 +1757,10 @@
 	<h4 id="x5.1.2">5.1.2 The Lexical and RegExp Grammars <a href="#x5.1.2">#</a> <a href="#x5.1.2-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	A
-	<i>lexical grammar</i> for ECMAScript is given in clause 7. This
+	<i>lexical grammar</i> for ECMAScript is given in <a href="#x7">clause 7</a>. This
 	grammar has as its terminal symbols characters (Unicode code units) 
 	that conform to the rules for <i>SourceCharacter</i>
-	defined in Clause 6. It defines a set of productions, starting from
+	defined in <a href="#x6">Clause 6</a>. It defines a set of productions, starting from
 	the goal symbol <i>InputElementDiv</i>
 	or <i>InputElementRegExp</i>,
 	that describe how sequences of such characters are translated into a
@@ -3233,8 +3245,8 @@
 	<p>
 	The
 	following tokens are also considered to be <i>FutureReservedWords</i>
-	when they occur within strict mode code (see <a href="#x10.1.1">10.1.1</a>). The
-	occurrence of any of these tokens within strict mode code in any
+	when they occur within <a href="#x10.1.1" class="term-ref">strict mode code</a> (see <a href="#x10.1.1">10.1.1</a>). The
+	occurrence of any of these tokens within <a href="#x10.1.1" class="term-ref">strict mode code</a> in any
 	context where the occurrence of a <i>FutureReservedWord</i>
 	would produce an error must also produce an equivalent error:</p>
 	<table width="737" border="0" cellpadding="8" cellspacing="0">
@@ -3997,7 +4009,7 @@
 	</li></ul>
 	<p>
 	A
-	conforming implementation, when processing strict mode code (see
+	conforming implementation, when processing <a href="#x10.1.1" class="term-ref">strict mode code</a> (see
 	<a href="#x10.1.1">10.1.1</a>), must not extend the syntax of <i>NumericLiteral</i>
 	to include <i>OctalIntegerLiteral</i>
 	as described in <a href="#B.1.1">B.1.1</a>.</p>
@@ -4092,7 +4104,7 @@
 	The
 	definitions of the nonterminal <i>HexDigit</i>
 	is given in <a href="#x7.6">7.6</a>. <i>SourceCharacter</i>
-	is defined in clause 6.</p>
+	is defined in <a href="#x6">clause 6</a>.</p>
 	<p class="tiny-btm">
 	<b>Semantics</b></p>
 	<p>
@@ -4481,7 +4493,7 @@
 	
 	<p>
 	A
-	conforming implementation, when processing strict mode code (see
+	conforming implementation, when processing <a href="#x10.1.1" class="term-ref">strict mode code</a> (see
 	<a href="#x10.1.1">10.1.1</a>), may not extend the syntax of <i>EscapeSequence</i>
 	to include <i>OctalEscapeSequence</i>
 	as described in <a href="#B.1.2">B.1.2</a>.</p>
@@ -4616,7 +4628,7 @@
 	<i>RegularExpressionLiteral</i>.
 	If the call to <code><b>new RegExp</b></code>
 	would generate an error as specified in <a href="#x15.10.4.1">15.10.4.1</a>, the error must be
-	treated as an early error (Clause 16).</p>
+	treated as an early error (<a href="#x16">Clause 16</a>).</p>
 	<h3 id="x7.9">7.9 Automatic Semicolon Insertion <a href="#x7.9">#</a> <a href="#x7.9-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
 	<p>
 	Certain
@@ -4938,7 +4950,7 @@
 	more 16-bit unsigned integer values (“elements”). The String
 	type is generally used to represent textual data in a running
 	ECMAScript program, in which case each element in the String is
-	treated as a code unit value (see Clause 6). Each element is
+	treated as a code unit value (see <a href="#x6">Clause 6</a>). Each element is
 	regarded as occupying a position within the sequence. These
 	positions are indexed with nonnegative integers. The first element
 	(if any) is at position 0, the next element (if any) at position 1,
@@ -5477,7 +5489,7 @@
 	The
 	“Value Type Domain” columns of the following tables define the
 	types of values associated with internal properties. The type names
-	refer to the types defined in Clause 8 augmented by the following
+	refer to the types defined in <a href="#x8">Clause 8</a> augmented by the following
 	additional names. “<i>any</i>” means the value may be any
 	ECMAScript language type. “<i>primitive</i>” means Undefined,
 	Null, Boolean, String, or Number. “<i>SpecOp</i>” means the
@@ -6806,7 +6818,7 @@
 	The
 	Lexical Environment and Environment Record types are used to explain
 	the behaviour of name resolution in nested functions and blocks.
-	These types and the operations upon them are defined in Clause 10.</p>
+	These types and the operations upon them are defined in <a href="#x10">Clause 10</a>.</p>
 	<h3 id="x8.12">8.12 Algorithms for Object Internal Methods <a href="#x8.12">#</a> <a href="#x8.12-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
 	<p>
 	In
@@ -9024,7 +9036,7 @@
 	mode syntax and semantics. When processed using strict mode the
 	three types of ECMAScript code are referred to as strict global
 	code, strict eval code, and strict function code. Code is
-	interpreted as strict mode code in the following situations:</p>
+	interpreted as <a href="#x10.1.1" class="term-ref">strict mode code</a> in the following situations:</p>
 	<ul>
 		<li><p>
 		Global
@@ -9036,7 +9048,7 @@
 		code is strict eval code if it begins with a Directive Prologue
 		that contains a Use Strict Directive or if the call to eval is a
 		direct call (see <a href="#x15.1.2.1.1">15.1.2.1.1</a>) to the eval function that is contained
-		in strict mode code. 
+		in <a href="#x10.1.1" class="term-ref">strict mode code</a>. 
 		</p>
 		</li>
 		<li><p>
@@ -9047,7 +9059,7 @@
 		is strict function code if its <i>FunctionDeclaration</i>,
 		<i>FunctionExpression</i>,
 		or <i>PropertyAssignment</i>
-		is contained in strict mode code or if the function code begins
+		is contained in <a href="#x10.1.1" class="term-ref">strict mode code</a> or if the function code begins
 		with a Directive Prologue that contains a Use Strict Directive.</p>
 		</li>
 		<li><p>
@@ -9958,7 +9970,7 @@
 		<li><p>
 		If
 		the syntactic production that is being evaluated is contained in a
-		strict mode code, then let <i>strict</i> be <b>true</b>, else let
+		<a href="#x10.1.1" class="term-ref">strict mode code</a>, then let <i>strict</i> be <b>true</b>, else let
 		<i>strict</i> be <b>false</b>.</p>
 		</li>
 		<li><p>
@@ -10167,7 +10179,7 @@
 		</li>
 		<li><p>
 		If
-		<i>code </i>is strict mode code, then let <i>strict</i> be <b>true</b>
+		<i>code </i>is <a href="#x10.1.1" class="term-ref">strict mode code</a>, then let <i>strict</i> be <b>true</b>
 		else let <i>strict</i> be <b>false</b>.</p>
 		</li>
 		<li><p>
@@ -10235,7 +10247,7 @@
 			</li>
 			<li><p>
 			Let
-			<i>fo</i> be the result of instantiating <i>FunctionDeclaration f </i>as described in Clause 13.</p>
+			<i>fo</i> be the result of instantiating <i>FunctionDeclaration f </i>as described in <a href="#x13">Clause 13</a>.</p>
 			</li>
 			<li><p>
 			Let
@@ -11227,7 +11239,7 @@
 	<p>
 	If
 	the above steps would throw a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> then an
-	implementation must treat the error as an early error (Clause 16).</p>
+	implementation must treat the error as an early error (<a href="#x16">Clause 16</a>).</p>
 	<p>
 	The
 	production  <i>PropertyAssignment</i>
@@ -11495,7 +11507,7 @@
 		<li><p>
 		If
 		the syntactic production that is being evaluated is contained in
-		strict mode code, let <i>strict</i> be <b>true</b>, else let <i>strict</i>
+		<a href="#x10.1.1" class="term-ref">strict mode code</a>, let <i>strict</i> be <b>true</b>, else let <i>strict</i>
 		be <b>false</b>.</p>
 		</li>
 		<li><p>
@@ -11936,11 +11948,11 @@
 	</li></ol>
 	<p><b class="note">NOTE</b> When
 	a <code><b>delete</b></code> operator
-	occurs within strict mode code, a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception is
+	occurs within <a href="#x10.1.1" class="term-ref">strict mode code</a>, a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception is
 	thrown if its <i>UnaryExpression</i>
 	is a direct reference to a variable, function argument, or function
 	name. In addition, if a <code><b>delete</b></code>
-	operator occurs within strict mode code and the property to be
+	operator occurs within <a href="#x10.1.1" class="term-ref">strict mode code</a> and the property to be
 	deleted has the attribute { [[Configurable]]: <b>false</b> }, a
 	<b>TypeError </b>exception is thrown.</p>
 	<h4 id="x11.4.2">11.4.2 The void Operator <a href="#x11.4.2">#</a> <a href="#x11.4.2-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
@@ -14031,7 +14043,7 @@
 		<i>rval</i>.</p>
 	</li></ol>
 	<p><b class="note">NOTE</b> When
-	an assignment occurs within strict mode code, its <i>LeftHandSide</i>
+	an assignment occurs within <a href="#x10.1.1" class="term-ref">strict mode code</a>, its <i>LeftHandSide</i>
 	must not evaluate to an unresolvable reference. If it does a
 	<b><a href="#x15.11.6.3" class="term-ref">ReferenceError</a></b> exception is thrown upon assignment. The
 	<i>LeftHandSide</i> also
@@ -16114,17 +16126,17 @@
 	<ol>
 		<li><p>
 		The
-		code of this <i>FunctionBody </i>is strict mode code
+		code of this <i>FunctionBody </i>is <a href="#x10.1.1" class="term-ref">strict mode code</a>
 		if it is part of a <i>FunctionDeclaration</i>
 		or <i>FunctionExpression</i>
-		that is contained in strict mode code or if the Directive Prologue
+		that is contained in <a href="#x10.1.1" class="term-ref">strict mode code</a> or if the Directive Prologue
 		(<a href="#x14.1">14.1</a>) of its <i>SourceElements</i>
 		contains a Use Strict Directive or if any of the conditions in
-		<a href="#x10.1.1">10.1.1</a> apply.  If the code of this <i>FunctionBody </i>is strict mode code,
+		<a href="#x10.1.1">10.1.1</a> apply.  If the code of this <i>FunctionBody </i>is <a href="#x10.1.1" class="term-ref">strict mode code</a>,
 		<i>SourceElements</i>
-		is evaluated in the following steps as strict mode code. Otherwise,
+		is evaluated in the following steps as <a href="#x10.1.1" class="term-ref">strict mode code</a>. Otherwise,
 		<i>SourceElements</i>
-		is evaluated in the following steps as non-strict mode code.</p>
+		is evaluated in the following steps as non-<a href="#x10.1.1" class="term-ref">strict mode code</a>.</p>
 		</li>
 		<li><p>
 		If
@@ -16516,13 +16528,13 @@
 	<ol>
 		<li><p>
 		The
-		code of this <i>Program</i> is strict mode code if the Directive
+		code of this <i>Program</i> is <a href="#x10.1.1" class="term-ref">strict mode code</a> if the Directive
 		Prologue (<a href="#x14.1">14.1</a>) of its <i>SourceElements</i> contains a Use Strict
 		Directive or if any of the conditions of <a href="#x10.1.1">10.1.1</a> apply. If the code
-		of this <i>Program</i> is strict mode code, <i>SourceElements</i>
-		is evaluated in the following steps as strict mode code.  Otherwise
+		of this <i>Program</i> is <a href="#x10.1.1" class="term-ref">strict mode code</a>, <i>SourceElements</i>
+		is evaluated in the following steps as <a href="#x10.1.1" class="term-ref">strict mode code</a>.  Otherwise
 		<i>SourceElements</i> is evaluated in the following steps as
-		non-strict mode code.</p>
+		non-<a href="#x10.1.1" class="term-ref">strict mode code</a>.</p>
 		</li>
 		<li><p>
 		If
@@ -16810,7 +16822,7 @@
 		<i>prog </i>be
 		the ECMAScript code that is the result of parsing <i>x </i>as a <i>Program</i>.
 		If the parse fails, throw a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
-		exception (but see also clause 16).</p>
+		exception (but see also <a href="#x16">clause 16</a>).</p>
 		</li>
 		<li><p>
 		Let
@@ -18914,7 +18926,7 @@
 		<b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception.</p>
 		</li>
 		<li><p>
-		If<i>body </i>is strict mode code (see <a href="#x10.1.1">10.1.1</a>) then let <i>strict</i> be
+		If<i>body </i>is <a href="#x10.1.1" class="term-ref">strict mode code</a> (see <a href="#x10.1.1">10.1.1</a>) then let <i>strict</i> be
 		<b>true</b>, else let <i>strict</i> be <b>false</b>.</p>
 		</li>
 		<li><p>
@@ -25077,7 +25089,7 @@
 	If
 	the <code><b>toExponential</b></code>
 	method is called with more than one argument, then the behaviour is
-	undefined (see clause 15).</p>
+	undefined (see <a href="#x15">clause 15</a>).</p>
 	<p>
 	An
 	implementation is permitted to extend the behaviour of <code><b>toExponential</b></code>
@@ -25311,7 +25323,7 @@
 	If
 	the <code><b>toPrecision</b></code>
 	method is called with more than one argument, then the behaviour is
-	undefined (see clause 15).</p>
+	undefined (see <a href="#x15">clause 15</a>).</p>
 	<p>
 	An
 	implementation is permitted to extend the behaviour of <code><b>toPrecision</b></code>
@@ -32919,13 +32931,13 @@
 		</li>
 		<li><p>
 		Attempts
-		in strict mode code to define an <i>ObjectLiteral</i>
+		in <a href="#x10.1.1" class="term-ref">strict mode code</a> to define an <i>ObjectLiteral</i>
 		that has multiple data property assignments with the same name.</p>
 		</li>
 		<li><p>
 		The
 		occurrence of a <i>WithStatement</i>
-		in strict mode code.</p>
+		in <a href="#x10.1.1" class="term-ref">strict mode code</a>.</p>
 		</li>
 		<li><p>
 		The
@@ -32995,16 +33007,16 @@
 	<h2 id="A">Annex A (informative) Grammar Summary <a href="#A">#</a> <a href="#A-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h2>
 	<h3 id="A.1">A.1 Lexical Grammar <a href="#A.1">#</a> <a href="#A.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
 	<p class="keep">
-	<i>SourceCharacter </i><b>::</b><i class="see">See clause 6</i></p>
+	<i>SourceCharacter </i><b>::</b><i class="see">See <a href="#x6">clause 6</a></i></p>
 	<p class="def1-btm">
 	any
 	Unicode code unit</p>
 	<p class="keep">
-	<i>InputElementDiv </i><b>::</b><i class="see">See clause 7</i></p>
+	<i>InputElementDiv </i><b>::</b><i class="see">See <a href="#x7">clause 7</a></i></p>
 	<p class="def1-btm">
 	<i>WhiteSpace<br>LineTerminator<br>Comment<br>Token<br>DivPunctuator</i></p>
 	<p class="keep">
-	<i>InputElementRegExp </i><b>::</b><i class="see">See clause 7</i></p>
+	<i>InputElementRegExp </i><b>::</b><i class="see">See <a href="#x7">clause 7</a></i></p>
 	<p class="def1-btm">
 	<i>WhiteSpace<br>LineTerminator<br>Comment<br>Token<br>RegularExpressionLiteral</i></p>
 	<p class="keep">
@@ -33314,7 +33326,7 @@
 					<td colspan="4" width="575" height="16" valign="TOP">
 						<p>
 						<code>or
-						in strict mode code <b>one
+						in <a href="#x10.1.1" class="term-ref">strict mode code</a> <b>one
 						of</b></code></p>
 					</td>
 				</tr>
@@ -34167,7 +34179,7 @@
 	<i>AssignmentExpressionNoIn<br>ExpressionNoIn </i><code><b>,</b></code><i>AssignmentExpressionNoIn</i></p>
 	<h3 id="A.4">A.4 Statements <a href="#A.4">#</a> <a href="#A.4-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
 	<p class="keep">
-	<i>Statement </i><b>:</b><i class="see">See clause 12</i></p>
+	<i>Statement </i><b>:</b><i class="see">See <a href="#x12">clause 12</a></i></p>
 	<p class="def1-btm">
 	<i>Block<br>VariableStatement<br>EmptyStatement<br>ExpressionStatement<br>IfStatement<br>IterationStatement<br>ContinueStatement<br>BreakStatement<br>ReturnStatement<br>WithStatement<br>LabelledStatement<br>SwitchStatement<br>ThrowStatement<br>TryStatement<br>DebuggerStatement</i></p>
 	<p class="keep">
@@ -34299,32 +34311,32 @@
 	<code><b>debugger</b></code><i></i><code><b>;</b></code></p>
 	<h3 id="A.5">A.5 Functions and Programs <a href="#A.5">#</a> <a href="#A.5-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
 	<p class="keep">
-	<i>FunctionDeclaration </i><b>:</b><i class="see">See clause 13</i></p>
+	<i>FunctionDeclaration </i><b>:</b><i class="see">See <a href="#x13">clause 13</a></i></p>
 	<p class="def1-btm">
 	<code><b>function</b></code><i>Identifier </i><code><b>(</b></code><i>FormalParameterList</i><sub>opt</sub><i></i><code><b>)</b></code><i></i><code><b>{</b></code><i>FunctionBody </i><code><b>}</b></code></p>
 	<p class="keep">
-	<i>FunctionExpression </i><b>:</b><i class="see">See clause 13</i></p>
+	<i>FunctionExpression </i><b>:</b><i class="see">See <a href="#x13">clause 13</a></i></p>
 	<p class="def1-btm">
 	<code><b>function</b></code><i>Identifier</i><sub>opt</sub><i></i><code><b>(</b></code><i>FormalParameterList</i><sub>opt</sub><i></i><code><b>)</b></code><i></i><code><b>{</b></code><i>FunctionBody </i><code><b>}</b></code></p>
 	<p class="keep">
-	<i>FormalParameterList </i><b>:</b><i class="see">See clause 13</i></p>
+	<i>FormalParameterList </i><b>:</b><i class="see">See <a href="#x13">clause 13</a></i></p>
 	<p class="def1-btm">
 	<i>Identifier<br>FormalParameterList </i><code><b>,</b></code><i>Identifier</i></p>
 	<p class="keep">
-	<i>FunctionBody </i><b>:</b><i class="see">See clause 13</i></p>
+	<i>FunctionBody </i><b>:</b><i class="see">See <a href="#x13">clause 13</a></i></p>
 	<p class="def1-btm">
 	<i>SourceElements</i><sub>opt</sub></p>
 	<p class="keep">
-	<i>Program </i><b>:</b><i class="see">See clause 14</i></p>
+	<i>Program </i><b>:</b><i class="see">See <a href="#x14">clause 14</a></i></p>
 	<p class="def1-btm">
 	<i>SourceElements</i><sub>opt</sub></p>
 	<p class="keep">
-	<i>SourceElements </i><b>:</b><i class="see">See clause 14</i></p>
+	<i>SourceElements </i><b>:</b><i class="see">See <a href="#x14">clause 14</a></i></p>
 	<p class="def1-btm">
 	<i>SourceElement<br>SourceElements
 	SourceElement</i></p>
 	<p class="keep">
-	<i>SourceElement </i><b>:</b><i class="see">See clause 14</i></p>
+	<i>SourceElement </i><b>:</b><i class="see">See <a href="#x14">clause 14</a></i></p>
 	<p class="def1-btm">
 	<i>Statement<br>FunctionDeclaration</i></p>
 	<h3 id="A.6">A.6 Universal Resource Identifier Character Classes <a href="#A.6">#</a> <a href="#A.6-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
@@ -34625,7 +34637,7 @@
 	<p>
 	The
 	syntax and semantics of <a href="#x7.8.3">7.8.3</a> can be extended as follows except that
-	this extension is not allowed for strict mode code:</p>
+	this extension is not allowed for <a href="#x10.1.1" class="term-ref">strict mode code</a>:</p>
 	<p class="tiny-btm">
 	<b>Syntax</b></p>
 	<p class="keep">
@@ -34725,7 +34737,7 @@
 	<p>
 	The
 	syntax and semantics of <a href="#x7.8.4">7.8.4</a> can be extended as follows except that
-	this extension is not allowed for strict mode code:</p>
+	this extension is not allowed for <a href="#x10.1.1" class="term-ref">strict mode code</a>:</p>
 	<p class="tiny-btm">
 	<b>Syntax</b></p>
 	<p class="keep">
@@ -35217,7 +35229,7 @@
 	<ul>
 		<li><p>
 		A
-		conforming implementation, when processing strict mode code, may
+		conforming implementation, when processing <a href="#x10.1.1" class="term-ref">strict mode code</a>, may
 		not extend the syntax of <i>NumericLiteral</i>
 		(<a href="#x7.8.3">7.8.3</a>) to include <i>OctalIntegerLiteral</i>
 		as described in <a href="#B.1.1">B.1.1</a>.</p>
@@ -35225,7 +35237,7 @@
 		<li><p>
 		A
 		conforming implementation, when
-		processing strict mode code (see <a href="#x10.1.1">10.1.1</a>), may not extend the syntax
+		processing <a href="#x10.1.1" class="term-ref">strict mode code</a> (see <a href="#x10.1.1">10.1.1</a>), may not extend the syntax
 		of <i>EscapeSequence</i> to
 		include <i>OctalEscapeSequence</i>
 		as described in <a href="#B.1.2">B.1.2</a>.</p>
@@ -35234,7 +35246,7 @@
 		Assignment
 		to an undeclared identifier or otherwise unresolvable reference
 		does not create a property in the <a href="#x15.1" class="term-ref">global object</a>. When a simple
-		assignment occurs within strict mode code, its <i>LeftHandSide </i>must not evaluate to an
+		assignment occurs within <a href="#x10.1.1" class="term-ref">strict mode code</a>, its <i>LeftHandSide </i>must not evaluate to an
 		unresolvable Reference. If it does a <b><a href="#x15.11.6.3" class="term-ref">ReferenceError</a></b>
 		exception is thrown (<a href="#x8.7.2">8.7.2</a>). The <i>LeftHandSide </i>also
 		may not be a reference to a data property with the attribute value
@@ -35283,7 +35295,7 @@
 		<li><p>
 		It
 		is a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
-		if strict mode code contains an
+		if <a href="#x10.1.1" class="term-ref">strict mode code</a> contains an
 		<i>ObjectLiteral</i> with
 		more than one definition of any data property (<a href="#x11.1.5">11.1.5</a>).</p>
 		</li>
@@ -35311,7 +35323,7 @@
 		<li><p>
 		If
 		<b>this</b>
-		is evaluated within strict mode code, then the <b>this
+		is evaluated within <a href="#x10.1.1" class="term-ref">strict mode code</a>, then the <b>this
 		</b>value is not coerced to
 		an object. A <b>this</b>
 		value of <b>null</b>
@@ -35327,7 +35339,7 @@
 		<li><p>
 		When
 		a <code><b>delete</b></code>
-		operator occurs within strict mode code, a <b>SyntaxError
+		operator occurs within <a href="#x10.1.1" class="term-ref">strict mode code</a>, a <b>SyntaxError
 		</b>is thrown if its
 		<i>UnaryExpression</i> is a
 		direct reference to a variable, function argument, or function
@@ -35336,7 +35348,7 @@
 		<li><p>
 		When
 		a <code><b>delete</b></code>
-		operator occurs within strict mode code, a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b><code>
+		operator occurs within <a href="#x10.1.1" class="term-ref">strict mode code</a>, a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b><code>
 		</code>is thrown if the property to
 		be deleted has the attribute { [[Configurable]]:<b>false</b>
 		} (<a href="#x11.4.1">11.4.1</a>).</p>
@@ -35400,7 +35412,7 @@
 		<li><p>
 		It
 		is a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
-		to use within strict mode code the identifiers <code><b>eval</b></code>
+		to use within <a href="#x10.1.1" class="term-ref">strict mode code</a> the identifiers <code><b>eval</b></code>
 		or <code><b>arguments</b></code>
 		as the <i>Identifier</i> of a
 		<i>FunctionDeclaration</i> or
