@@ -1106,7 +1106,7 @@
   <li><a href="#bibliography" id="bibliography-toc">Bibliography</a></li>
 </ol>
 </div>
-	<p id="copyright">© Ecma International 2009</p>
+	<p id="copyright">© Ecma International 2010</p>
 	<div id="license">
 	<p><i>"DISCLAIMER</i></p>
 	<i>This
@@ -2506,7 +2506,7 @@ an object is a member of the remaining built-in type
 				<tr valign="TOP">
 					<td width="130">
 						<p>
-						<code><b>\u200C</b></code></p>
+						<code><b>\u200D</b></code></p>
 					</td>
 					<td width="159">
 						<p>
@@ -9365,6 +9365,8 @@ an object is a member of the remaining built-in type
 		call.</p>
 	</li></ol>
 	<h6 id="x10.2.1.1.3">10.2.1.1.3 SetMutableBinding (N,V,S) <a href="#x10.2.1.1.3">#</a> <a href="#x10.2.1.1.3-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h6>
+
+
 	<p>
 	The
 	concrete Environment Record method SetMutableBinding for declarative
@@ -9374,9 +9376,11 @@ an object is a member of the remaining built-in type
 	value of argument <i>V</i>.
 	A binding for <i>N</i>
 	must already exist. If the binding is an immutable binding, a
-	<b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> is always thrown. The <i>S</i>
-	argument is ignored because strict mode does not change the meaning
-	of setting bindings in declarative environment records.</p>
+	<b>TypeError</b> is
+	thrown
+	if <i>S</i> is <b>true</b>. 
+	</p>
+
 	<ol>
 		<li><p>
 		Let
@@ -9395,8 +9399,13 @@ an object is a member of the remaining built-in type
 		<li><p>
 		Else
 		this must be an attempt to change the value of an immutable binding
-		so throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
-	</li></ol>
+		so
+		if <i>S</i> is <b>true</b>
+		throw a
+ <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
+ exception.</p>
+	</li>
+</ol>
 	<h6 id="x10.2.1.1.4">10.2.1.1.4 GetBindingValue(N,S) <a href="#x10.2.1.1.4">#</a> <a href="#x10.2.1.1.4-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h6>
 	<p>
 	The
@@ -9607,14 +9616,18 @@ an object is a member of the remaining built-in type
 		 D is <b>true</b> then let <i>configValue</i> be <b>true</b>
 		otherwise let <i>configValue</i> be <b>false</b>.</p>
 		</li>
+
 		<li><p>
 		Call
 		the [[DefineOwnProperty]] internal method of <i>bindings</i>,
 		passing <i>N</i>, Property Descriptor {[[Value]]:<b>undefined</b>,
 		[[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b> ,
-		[[Configurable]]: <i>configValue</i>}, and <b>false</b> as
+		[[Configurable]]: <i>configValue</i>}, and
+		<b>true</b>
+		as
 		arguments.</p>
-	</li></ol>
+	</li>
+</ol>
 	<h6 id="x10.2.1.2.3">10.2.1.2.3 SetMutableBinding (N,V,S) <a href="#x10.2.1.2.3">#</a> <a href="#x10.2.1.2.3-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h6>
 	<p>
 	The
@@ -10234,38 +10247,72 @@ an object is a member of the remaining built-in type
 			</li></ol>
 		</li></ol>
 	</li></ol>
+
 	<ol start="5">
-		<li><p>
-		For
-		each <i>FunctionDeclaration</i> <i>f</i> in <i>code</i>, in source
-		text order do</p>
+		<LI><p>
+		For each
+		<I>FunctionDeclaration</I> <I>f</I> in <I>code</I>, in source text
+		order do</P>
 		<ol>
-			<li><p>
-			Let
-			<i>fn</i> be the <i>Identifier</i> in <i>FunctionDeclaration</i>
-			<i>f.</i></p>
-			</li>
-			<li><p>
-			Let
-			<i>fo</i> be the result of instantiating <i>FunctionDeclaration f </i>as described in <a href="#x13">Clause 13</a>.</p>
-			</li>
-			<li><p>
-			Let
-			<i>funcAlreadyDeclared </i>be the result of calling <i>env’s</i>
-			HasBinding concrete method passing <i>fn</i> as the argument.</p>
-			</li>
-			<li><p>
-			If
-			<i>funcAlreadyDeclared </i>is <b>false</b>, call <i>env’s</i>
-			CreateMutableBinding concrete method passing <i>fn</i> and
-			<i>configurableBindings</i> as the arguments.</p>
-			</li>
-			<li><p>
-			Call
-			<i>env’s</i> SetMutableBinding concrete method passing <i>fn</i>,
-			<i>fo</i>, and <i>strict</i> as the arguments.</p>
-		</li></ol>
-	</li></ol>
+			<LI><p>Let
+			<I>fn</I> be the <I>Identifier</I> in <I>FunctionDeclaration</I>
+			<I>f.</I></P>
+			<LI><p>Let
+			<I>fo</I> be the result of instantiating <I>FunctionDeclaration f
+			</I>as described in <a href="#x13">Clause 13</a>.</P>
+			<LI><p>Let
+			<I>funcAlreadyDeclared </I>be the result of calling <I>env’s</I>
+			HasBinding concrete method passing <I>fn</I> as the argument.</P>
+			<LI><p>If
+			<I>funcAlreadyDeclared </I>is <B>false</B>, call <I>env’s</I>
+			CreateMutableBinding concrete method passing <I>fn</I> and
+			<I>configurableBindings</I> as the arguments.</P>
+			<LI><p>Else
+			if <I>env</I>
+			is the environment record component of the global environment then</P>
+			<ol>
+				<LI><p>Let
+				<I>go</I>
+				be the global object.</P>
+				<LI><p>Let
+				<I>existingProp</I>
+				be the resulting of calling the [[GetProperty]] internal method
+				of <I>go</I>
+				with argument <I>fn</I>.</P>
+				<LI><p>If
+				<I>existingProp</I>
+				.[[Configurable]] is <B>true</B>,
+				then</P>
+				<ol>
+					<LI><p>Call
+					the [[DefineOwnProperty]] internal method of <I>go</I>,
+					passing <I>fn</I>,
+					Property Descriptor {[[Value]]:<I>
+					</I><B>undefined</B>,
+					[[Writable]]: <B>true</B>,
+					[[Enumerable]]: <B>true</B>
+					, [[Configurable]]: <I>configurableBindings</I>
+					}, and <B>true</B>
+					as arguments.</P>
+				</OL>
+				<LI><p>Else
+				if IsAccessorDescrptor(<I>existingProp</I>)
+				or <I>existingProp</I>
+				does not have attribute values {[[Writable]]: <B>true</B>,
+				[[Enumerable]]: <B>true</B>},
+				then</P>
+				<ol>
+					<LI><p>Throw
+					a TypeError exception.</P>
+				</OL>
+			</OL>
+			<LI><p>Call
+			<I>env’s</I> SetMutableBinding concrete method passing <I>fn</I>,
+			<I>fo</I>, and <I>strict</I> as the arguments.</P>
+	</OL>
+</li>
+</ol>
+
 	<ol start="6">
 		<li><p>
 		Let
@@ -15006,6 +15053,7 @@ an object is a member of the remaining built-in type
 			</li></ol>
 		</li></ol>
 	</li></ol>
+
 	<p>
 	The
 	mechanics and order of enumerating the properties (step 6.a in the
@@ -15015,14 +15063,21 @@ an object is a member of the remaining built-in type
 	enumeration is deleted, then it will not be visited. If new
 	properties are added to the object being enumerated during
 	enumeration, the newly added properties are not guaranteed to be
-	visited in the active enumeration.</p>
+	visited in the active enumeration.
+	A property name must not be visited more than once in any enumeration.
+	</p>
+
 	<p>
 	Enumerating
 	the properties of an object includes enumerating properties of its
 	prototype, and the prototype of the prototype, and so on,
 	recursively; but a property of a prototype is not enumerated if it
 	is “shadowed” because some previous object in the prototype
-	chain has a property with the same name.</p>
+	chain has a property with the same name.
+	The values of [[Enumerable]] attributes are not considered when
+	determining if a property of a prototype object is shadowed by a previous
+	object on the prototype chain.</p>
+
 	<p><b class="note">NOTE</b> See
 	NOTE <a href="#x11.13.1">11.13.1</a>.</p>
 	<h3 id="x12.7">12.7 The continue Statement <a href="#x12.7">#</a> <a href="#x12.7-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
@@ -33635,7 +33690,7 @@ an object is a member of the remaining built-in type
 	<p class="keep">
 	<i>Literal </i><b>::</b><i class="see">See <a href="#x7.8">7.8</a></i></p>
 	<p class="def1-btm">
-	<i>NullLiteral<br>BooleanLiteral<br>NumericLiteral<br>StringLiteral</i></p>
+	<i>NullLiteral<br>BooleanLiteral<br>NumericLiteral<br>StringLiteral</i><br><i>RegularExpressionLiteral</i></p>
 	<p class="keep">
 	<i>NullLiteral </i><b>::</b><i class="see">See <a href="#x7.8.1">7.8.1</a></i></p>
 	<p class="def1-btm">
@@ -33671,6 +33726,16 @@ an object is a member of the remaining built-in type
 	<p class="def1-btm">
 	<code><b>0
 	 1  2  3  4  5  6  7  8  9</b></code></p>
+	<p class="keep">
+	<i>NonZeroDigit</i><b>::</b><i><b>
+	</b></i><b>one
+	of</b><i class="see">See <b>7.8.3</b></i></p>
+	<p class="def1-btm">
+	<code><b>1  2  3  4  5  6  7  8  9</b></code></p>
+	<p class="keep">
+	<i>ExponentPart</i><b>::</b><i><b>
+	</b></i> <i class="see">See <b>7.8.3</b></i></p>
+	<p class="def1-btm"><i>ExponentIndicator SignedInteger</i></p>
 	<p class="keep">
 	<i>ExponentIndicator </i><b>::</b><i><b>
 	</b></i><b>one
@@ -33803,7 +33868,7 @@ an object is a member of the remaining built-in type
 	<p class="keep">
 	<i>RegularExpressionBackslashSequence </i><b>::</b><i class="see">See <a href="#x7.8.5">7.8.5</a></i></p>
 	<p class="def1-btm">
-	<code><b>\</b></code><i>NonTerminator</i></p>
+	<code><b>\</b></code><i>RegularExpressionNonTerminator</i></p>
 	<p class="keep">
 	<i>RegularExpressionNonTerminator </i><b>::</b><i class="see">See <a href="#x7.8.5">7.8.5</a></i></p>
 	<p class="def1-btm">
@@ -34550,7 +34615,7 @@ an object is a member of the remaining built-in type
 	<p class="keep">
 	<i>JSONStringCharacter </i><b>::</b><i class="see">See <a href="#x15.12.1.1">15.12.1.1</a></i></p>
 	<p class="def1">
-	<i>JSONSourceCharacter </i><b>but
+	<i>SourceCharacter </i><b>but
 	not</b><i> double-quote </i><code><b>"</b></code><i></i> <b>or</b> <i>backslash </i><code><b>\
 	</b></code> <b>or</b> <i>U+0000 <b>thru</b>
 	U+001F</i></p>
@@ -35227,6 +35292,11 @@ an object is a member of the remaining built-in type
 	<strong>The
 	strict mode restriction and exceptions</strong></p>
 	<ul>
+<li>The identifiers "<code><b>implements</b></code>", "<code><b>interface</b></code>",
+"<code><b>let</b></code>", "<code><b>package</b></code>", "<code><b>private</b></code>",
+"<code><b>protected</b></code>", "<code><b>public</b></code>", "<code><b>static</b></code>", and
+"<code><b>yield</b></code>" are classified as <i>FutureReservedWord</i> tokens
+within strict mode code.  (<a href="#x7.6.12">7.6.12</a>).</li>
 		<li><p>
 		A
 		conforming implementation, when processing <a href="#x10.1.1" class="term-ref">strict mode code</a>, may
@@ -35400,15 +35470,18 @@ an object is a member of the remaining built-in type
 		constructor is a <b>SyntaxError
 		</b>(<a href="#x13.1">13.1</a>, <a href="#x15.3.2">15.3.2</a>).</p>
 		</li>
+
 		<li><p>
 		An
-		implementation may not associate special meanings within strict
-		mode functions to properties named <code><b>caller</b></code>
+		implementation may not extend, beyond that defined in this specification,
+    meanings within strict mode functions of properties named <code><b>caller</b></code>
 		or <code><b>arguments</b></code>
 		of function instances. ECMAScript code may not create or modify
 		properties with these names on function objects that correspond to
-		strict mode functions (<a href="#x13.2">13.2</a>).</p>
+		strict mode functions
+    (<a href="#x10.6">10.6</a>, <a href="#x13.2">13.2</a>, <a href="#x15.3.4.5.3">15.3.4.5.3</a>).</p>
 		</li>
+
 		<li><p>
 		It
 		is a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
