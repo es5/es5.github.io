@@ -1345,21 +1345,19 @@
 	attempt by executed ECMAScript code to change the value of the
 	property fails. Properties are containers that hold other objects,
 	<i><b>primitive values</b></i>, or <i><b>functions</b></i>. A
-	primitive value is a member of one of the following built-in types:
+	<a href="#primitive_value" class="term-ref">primitive value</a> is a member of one of the following built-in types:
 	<b>Undefined</b>, <b>Null</b>, <b>Boolean</b>, <b>Number</b>, and
 	<b>String</b>; an object is a member of the remaining built-in type
-	<b>Object</b>; and a function is a callable object. A function that
+	<b>Object</b>; and a function is a
+ <a href="#callable" class="term-ref">callable object</a>. A function that
 	is associated with an object via a property is a <i><b>method</b></i>.</p>
 	<p>
 	ECMAScript
 	defines a collection of <i><b>built-in objects</b></i> that round
 	out the definition of ECMAScript entities. These built-in objects
-	include the global object, the <b>Object</b> object, the <b>Function</b>
-	object, the <b>Array</b> object, the <b>String</b> object, the
-	<b>Boolean</b> object, the <b>Number</b> object, the <b>Math</b>
-	object, the <b>Date</b> object, the <b>RegExp</b> object, the <b>JSON</b>
-	object, and the Error objects <b>Error, EvalError</b>, <b>RangeError,
-	ReferenceError, SyntaxError, TypeError </b>and <b>URIError</b>.</p>
+	include the <a href="#x15.1" class="term-ref">global object</a>, the <b><a href="#x15.2" class="term-ref">Object</a></b> object, the <b><a href="#x15.3" class="term-ref">Function</a></b> object, the <b><a href="#x15.4" class="term-ref">Array</a></b> object, the <b><a href="#x15.5" class="term-ref">String</a></b> object, the
+	<b><a href="#x15.6" class="term-ref">Boolean</a></b> object, the <b><a href="#x15.7" class="term-ref">Number</a></b> object, the <b><a href="#x15.8" class="term-ref">Math</a></b> object, the <b><a href="#x15.9" class="term-ref">Date</a></b> object, the <b><a href="#x15.10" class="term-ref">RegExp</a></b> object, the <b><a href="#x15.12" class="term-ref">JSON</a></b> object, and the Error objects <b><a href="#x15.11" class="term-ref">Error</a></b>, <b><a href="#x15.11.6.1" class="term-ref">EvalError</a></b>, <b><a href="#x15.11.6.2" class="term-ref">RangeError</a></b>,
+	<b><a href="#x15.11.6.3" class="term-ref">ReferenceError</a></b>, <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>, <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> and <b><a href="#x15.11.6.6" class="term-ref">URIError</a></b>.</p>
 	<p>
 	ECMAScript
 	also defines a set of built-in <i><b>operators</b></i>. ECMAScript
@@ -1570,8 +1568,7 @@
 	object that is not native is a host object.</p>
 	<h4 id="x4.3.9">4.3.9<br><dfn id="undefined_value">undefined value</dfn> <a href="#x4.3.9">#</a> <a href="#x4.3.9-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
-	primitive
-	value used when a variable has not been assigned a value.</p>
+	<a href="#primitive_value" class="term-ref">primitive value</a> used when a variable has not been assigned a value.</p>
 	<h4 id="x4.3.10">4.3.10<br><dfn id="Undefined_type">Undefined type</dfn> <a href="#x4.3.10">#</a> <a href="#x4.3.10-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	type
@@ -1579,8 +1576,7 @@
 	</p>
 	<h4 id="x4.3.11">4.3.11<br><dfn id="null_value">null value</dfn> <a href="#x4.3.11">#</a> <a href="#x4.3.11-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
-	primitive
-	value that represents the intentional absence of any object value.</p>
+	<a href="#primitive_value" class="term-ref">primitive value</a> that represents the intentional absence of any object value.</p>
 	<h4 id="x4.3.12">4.3.12<br><dfn id="Null_type">Null type</dfn> <a href="#x4.3.12">#</a> <a href="#x4.3.12-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	type
@@ -1609,8 +1605,7 @@
 	Boolean object can be coerced to a Boolean value.</p>
 	<h4 id="x4.3.16">4.3.16<br><dfn id="String_value">String value</dfn> <a href="#x4.3.16">#</a> <a href="#x4.3.16-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
-	primitive
-	value that is a finite ordered sequence of zero or more 16-bit
+	<a href="#primitive_value" class="term-ref">primitive value</a> that is a finite ordered sequence of zero or more 16-bit
 	unsigned integer. 
 	</p>
 	<p><b class="note">NOTE</b> A
@@ -1637,8 +1632,7 @@
 	constructor as a function (<a href="#x15.5.1">15.5.1</a>).</p>
 	<h4 id="x4.3.19">4.3.19<br><dfn id="Number_value">Number value</dfn> <a href="#x4.3.19">#</a> <a href="#x4.3.19-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
-	primitive
-	value corresponding to a double-precision 64-bit binary format IEEE
+	<a href="#primitive_value" class="term-ref">primitive value</a> corresponding to a double-precision 64-bit binary format IEEE
 	754 value.</p>
 	<p><b class="note">NOTE</b> A
 	Number value is a member of the Number<b> </b>type and is a direct
@@ -1697,7 +1691,7 @@
 	between a name and a value that is a part of an object.</p>
 	<p><b class="note">NOTE</b> Depending
 	upon the form of the property the value may be represented either
-	directly as a data value (a primitive value, an object, or a
+	directly as a data value (a <a href="#primitive_value" class="term-ref">primitive value</a>, an object, or a
 	function object) or indirectly by a pair of accessor functions.</p>
 	<h4 id="x4.3.27">4.3.27<br><dfn id="method">method</dfn> <a href="#x4.3.27">#</a> <a href="#x4.3.27-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
@@ -5466,7 +5460,7 @@
 	the manner described here. The names of internal properties are
 	enclosed in double square brackets [[ ]]. When an algorithm uses an
 	internal property of an object and the object does not implement the
-	indicated internal property, a <b>TypeError</b> exception is thrown.</p>
+	indicated internal property, a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception is thrown.</p>
 	<p>
 	The
 	Table 8 summarises the internal properties used by this
@@ -5731,7 +5725,7 @@
 	Every
 	object (including host objects) must implement all of the internal
 	properties listed in Table 8. However, the [[DefaultValue]] internal
-	method may, for some objects, simply throw a <b>TypeError</b>
+	method may, for some objects, simply throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 	exception.</p>
 	<p>
 	All
@@ -5806,7 +5800,7 @@
 	property values but [[HasProperty]] always generates <b>false</b>.
 	However, if any specified manipulation of a host object's internal
 	properties is not supported by an implementation, that manipulation
-	must throw a <b>TypeError</b> exception when attempted.</p>
+	must throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception when attempted.</p>
 	<p class="sm-btm">
 	The
 	[[GetOwnProperty]] internal method of a host object must conform to
@@ -5920,7 +5914,7 @@
 			<tr valign="TOP">
 				<td width="153">
 					<p class="keep">
-					[[Call]]</p>
+					<dfn id="callable">[[Call]]</dfn></p>
 				</td>
 				<td width="143">
 					<p class="keep">
@@ -6179,7 +6173,7 @@
 		</li>
 		<li><p>
 		If
-		IsUnresolvableReference(<i>V</i>), throw a <b>ReferenceError</b>
+		IsUnresolvableReference(<i>V</i>), throw a <b><a href="#x15.11.6.3" class="term-ref">ReferenceError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -6259,7 +6253,7 @@
 	<ol>
 		<li><p>
 		If
-		Type(<i>V</i>) is not Reference, throw a <b>ReferenceError</b>
+		Type(<i>V</i>) is not Reference, throw a <b><a href="#x15.11.6.3" class="term-ref">ReferenceError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -6276,12 +6270,12 @@
 			<ol>
 				<li><p>
 				Throw
-				<b>ReferenceError</b> exception.</p>
+				<b><a href="#x15.11.6.3" class="term-ref">ReferenceError</a></b> exception.</p>
 			</li></ol>
 			</li>
 			<li><p>
 			Call
-			the [[Put]] internal method of the global object, passing
+			the [[Put]] internal method of the <a href="#x15.1" class="term-ref">global object</a>, passing
 			GetReferencedName(<i>V</i>) for the property name, <i>W</i> for
 			the value, and <b>false</b> for the <i>Throw</i> flag.</p>
 		</li></ol>
@@ -6340,7 +6334,7 @@
 		<ol>
 			<li><p>
 			If
-			<i>Throw</i> is <b>true</b>, then throw a <b>TypeError</b>
+			<i>Throw</i> is <b>true</b>, then throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 			exception.</p>
 			</li>
 			<li><p>
@@ -6359,7 +6353,7 @@
 		<ol>
 			<li><p>
 			If
-			<i>Throw</i> is <b>true</b>, then throw a <b>TypeError</b>
+			<i>Throw</i> is <b>true</b>, then throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 			exception.</p>
 			</li>
 			<li><p>
@@ -6395,7 +6389,7 @@
 		<ol>
 			<li><p>
 			If
-			<i>Throw</i> is <b>true</b>, then throw a <b>TypeError</b>
+			<i>Throw</i> is <b>true</b>, then throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 			exception.</p>
 		</li></ol>
 		</li>
@@ -6786,7 +6780,7 @@
 			<li><p>
 			If
 			IsCallable(<i>setter</i>) is <b>false </b>and <i>setter</i> is not
-			<b>undefined</b>, then throw a <b>TypeError</b> exception.</p>
+			<b>undefined</b>, then throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 			</li>
 			<li><p>
 			Set
@@ -6800,7 +6794,7 @@
 			<li><p>
 			If
 			either <i>desc</i>.[[Value]] or <i>desc</i>.[[Writable]] are
-			present, then throw a <b>TypeError</b> exception.</p>
+			present, then throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 		</li></ol>
 		</li>
 		<li><p>
@@ -7174,7 +7168,7 @@
 		</li>
 		<li><p>
 		Else
-		if <i>Throw</i>, then throw a <b>TypeError</b> exception.</p>
+		if <i>Throw</i>, then throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 		</li>
 		<li><p>
 		Return
@@ -7203,7 +7197,7 @@
 			</li>
 			<li><p>
 			If
-			<i>str</i> is a primitive value, return <i>str</i>.</p>
+			<i>str</i> is a <a href="#primitive_value" class="term-ref">primitive value</a>, return <i>str</i>.</p>
 		</li></ol>
 		</li>
 		<li><p>
@@ -7224,12 +7218,12 @@
 			</li>
 			<li><p>
 			If
-			<i>val</i> is a primitive value, return <i>val</i>.</p>
+			<i>val</i> is a <a href="#primitive_value" class="term-ref">primitive value</a>, return <i>val</i>.</p>
 		</li></ol>
 		</li>
 		<li><p>
 		Throw
-		a <b>TypeError</b> exception.</p>
+		a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 	</li></ol>
 	<p>
 	When
@@ -7253,7 +7247,7 @@
 			</li>
 			<li><p>
 			If
-			<i>val</i> is a primitive value, return <i>val</i>.</p>
+			<i>val</i> is a <a href="#primitive_value" class="term-ref">primitive value</a>, return <i>val</i>.</p>
 		</li></ol>
 		</li>
 		<li><p>
@@ -7273,7 +7267,7 @@
 			</li>
 			<li><p>
 			If
-			<i>str</i> is a primitive value, return <i>str</i>.</p>
+			<i>str</i> is a <a href="#primitive_value" class="term-ref">primitive value</a>, return <i>str</i>.</p>
 		</li></ol>
 		</li>
 		<li><p>
@@ -7290,14 +7284,14 @@
 	<p>
 	The
 	above specification of [[DefaultValue]] for native objects can
-	return only primitive values. If a host object implements its own
+	return only <a href="#primitive_value" class="term-ref">primitive value</a>s. If a host object implements its own
 	[[DefaultValue]] internal method, it must ensure that its
-	[[DefaultValue]] internal method can return only primitive values.</p>
+	[[DefaultValue]] internal method can return only <a href="#primitive_value" class="term-ref">primitive value</a>s.</p>
 	<h4 id="x8.12.9">8.12.9 [[DefineOwnProperty]] (P, Desc, Throw) <a href="#x8.12.9">#</a> <a href="#x8.12.9-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	In
 	the following algorithm, the term “Reject” means “If <i>Throw</i>
-	is <b>true</b>, then throw a <b>TypeError</b> exception, otherwise
+	is <b>true</b>, then throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception, otherwise
 	return <b>false</b>”. The algorithm contains steps that test
 	various fields of the Property Descriptor <i>Desc</i>
 	for specific values. The fields that are tested in this manner need
@@ -8677,7 +8671,7 @@
 				<td width="518">
 					<p>
 					Throw
-					a <b>TypeError</b> exception.</p>
+					a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 				</td>
 			</tr>
 			<tr valign="TOP">
@@ -8688,7 +8682,7 @@
 				<td width="518">
 					<p>
 					Throw
-					a <b>TypeError</b> exception.</p>
+					a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 				</td>
 			</tr>
 			<tr valign="TOP">
@@ -8771,7 +8765,7 @@
 				<td width="518">
 					<p>
 					Throw
-					a <b>TypeError</b> exception.</p>
+					a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 				</td>
 			</tr>
 			<tr valign="TOP">
@@ -8782,7 +8776,7 @@
 				<td width="518">
 					<p>
 					Throw
-					a <b>TypeError</b> exception.</p>
+					a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 				</td>
 			</tr>
 			<tr valign="TOP">
@@ -9008,8 +9002,7 @@
 		does not include any source text that is parsed as part of a nested
 		<i>FunctionBody</i>. <i>Function
 		code</i> also denotes the
-		source text supplied when using the built-in <code><b>Function</b></code>
-		object as a constructor. More precisely, the last parameter
+		source text supplied when <a href="#x15.3.2" class="term-ref">using the built-in <code><b>Function</b></code> object as a constructor</a>. More precisely, the last parameter
 		provided to the <code><b>Function</b></code>
 		constructor is converted to a String and treated as the
 		<i>FunctionBody</i>. If more
@@ -9193,7 +9186,7 @@
 					ECMAScript language type. <i>S</i>
 					is a Boolean flag.  If <i>S</i>
 					is <b>true</b> and
-					the binding cannot be set throw a <b>TypeError</b> exception. <i>S</i>
+					the binding cannot be set throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception. <i>S</i>
 					is used to identify strict mode references.</p>
 				</td>
 			</tr>
@@ -9211,7 +9204,7 @@
 					is used to identify strict mode references. If <i>S</i>
 					is <b>true</b> and
 					the binding does not exist or is uninitialized throw a
-					<b>ReferenceError</b> exception. 
+					<b><a href="#x15.11.6.3" class="term-ref">ReferenceError</a></b> exception. 
 					</p>
 				</td>
 			</tr>
@@ -9369,7 +9362,7 @@
 	value of argument <i>V</i>.
 	A binding for <i>N</i>
 	must already exist. If the binding is an immutable binding, a
-	<b>TypeError</b> is always thrown. The <i>S</i>
+	<b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> is always thrown. The <i>S</i>
 	argument is ignored because strict mode does not change the meaning
 	of setting bindings in declarative environment records.</p>
 	<ol>
@@ -9390,7 +9383,7 @@
 		<li><p>
 		Else
 		this must be an attempt to change the value of an immutable binding
-		so throw a <b>TypeError</b> exception.</p>
+		so throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 	</li></ol>
 	<h6 id="x10.2.1.1.4">10.2.1.1.4 GetBindingValue(N,S) <a href="#x10.2.1.1.4">#</a> <a href="#x10.2.1.1.4-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h6>
 	<p>
@@ -9400,7 +9393,7 @@
 	whose name is the value of the argument <i>N</i>.
 	The binding must already exist. If <i>S</i>
 	is <b>true</b> and the binding is an uninitialized immutable binding
-	throw a <b>ReferenceError</b> exception.</p>
+	throw a <b><a href="#x15.11.6.3" class="term-ref">ReferenceError</a></b> exception.</p>
 	<ol>
 		<li><p>
 		Let
@@ -9419,7 +9412,7 @@
 			<li><p>
 			If
 			<i>S</i> is <b>false</b>, return the value <b>undefined</b>,
-			otherwise throw a <b>ReferenceError</b> exception.</p>
+			otherwise throw a <b><a href="#x15.11.6.3" class="term-ref">ReferenceError</a></b> exception.</p>
 		</li></ol>
 		</li>
 		<li><p>
@@ -9843,12 +9836,12 @@
 	<i>global environment</i> is a unique Lexical Environment which is
 	created before any ECMAScript code is executed. The global
 	environment’s Environment Record is an object environment record
-	whose binding object is the global object (<a href="#x15.1">15.1</a>). The global
+	whose binding object is the <a href="#x15.1" class="term-ref">global object</a> (<a href="#x15.1">15.1</a>). The global
 	environment’s outer environment reference is <b>null</b>.</p>
 	<p>
 	As
 	ECMAScript code is executed, additional properties may be added to
-	the global object and the initial properties may be modified.
+	the <a href="#x15.1" class="term-ref">global object</a> and the initial properties may be modified.
 	
 	</p>
 	<h3 id="x10.3">10.3 Execution Contexts <a href="#x10.3">#</a> <a href="#x10.3-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
@@ -10026,7 +10019,7 @@
 		</li>
 		<li><p>
 		Set
-		the ThisBinding to the global object.</p>
+		the ThisBinding to the <a href="#x15.1" class="term-ref">global object</a>.</p>
 	</li></ol>
 	<h4 id="x10.4.2">10.4.2 Entering Eval Code <a href="#x10.4.2">#</a> <a href="#x10.4.2-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
@@ -10111,7 +10104,7 @@
 		<li><p>
 		Else
 		if <i>thisArg</i> is <b>null</b> or <b>undefined</b>, set the
-		ThisBinding to the global object.</p>
+		ThisBinding to the <a href="#x15.1" class="term-ref">global object</a>.</p>
 		</li>
 		<li><p>
 		Else
@@ -10609,7 +10602,7 @@
 			 If
 			<i>P</i> is <code><b>"caller"
 			</b></code>and <i>v</i> is a strict mode Function object, throw a
-			<b>TypeError</b> exception.</p>
+			<b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 			</li>
 			<li><p>
 			Return
@@ -10811,7 +10804,7 @@
 	<p class="sp"><b class="note">NOTE 3</b> Arguments objects for strict mode functions define
 	non-configurable accessor properties named "<code><b>caller</b></code>"
 	and "<code><b>callee</b></code>"
-	which throw a <b>TypeError</b> exception on access. The "<code><b>callee</b></code>"
+	which throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception on access. The "<code><b>callee</b></code>"
 	property has a more specific meaning for non-strict mode functions
 	and a "<code><b>caller</b></code>"
 	property has historically been provided as an implementation-defined
@@ -11194,7 +11187,7 @@
 		</li>
 		<li><p>
 		If
-		<i>previous</i> is not <b>undefined</b> then throw a <b>SyntaxError</b>
+		<i>previous</i> is not <b>undefined</b> then throw a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 		exception if any of the following conditions are true</p>
 		<ol>
 			<li><p>
@@ -11233,7 +11226,7 @@
 	</li></ol>
 	<p>
 	If
-	the above steps would throw a <b>SyntaxError</b> then an
+	the above steps would throw a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> then an
 	implementation must treat the error as an early error (Clause 16).</p>
 	<p>
 	The
@@ -11334,7 +11327,7 @@
 	</li></ol>
 	<p>
 	It is
-	a <b>SyntaxError</b> if the <i>Identifier</i>
+	a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> if the <i>Identifier</i>
 	<code><b>"eval"</b></code>
 	or the <i>Identifier </i><code><b>"arguments"</b></code>
 	occurs as the <i>Identifier</i>
@@ -11532,13 +11525,13 @@
 		</li>
 		<li><p>
 		If
-		Type(<i>constructor</i>) is not Object, throw a <b>TypeError</b>
+		Type(<i>constructor</i>) is not Object, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
 		If
 		<i>constructor</i> does not implement the [[Construct]] internal
-		method, throw a <b>TypeError</b> exception.</p>
+		method, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 		</li>
 		<li><p>
 		Return
@@ -11569,13 +11562,13 @@
 		</li>
 		<li><p>
 		If
-		Type(<i>constructor</i>) is not Object, throw a <b>TypeError</b>
+		Type(<i>constructor</i>) is not Object, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
 		If
 		<i>constructor</i> does not implement the [[Construct]] internal
-		method, throw a <b>TypeError</b> exception.</p>
+		method, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 		</li>
 		<li><p>
 		Return
@@ -11606,12 +11599,12 @@
 		</li>
 		<li><p>
 		If
-		Type(<i>func</i>) is not Object, throw a <b>TypeError</b>
+		Type(<i>func</i>) is not Object, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
 		If
-		IsCallable(<i>func</i>) is <b>false</b>, throw a <b>TypeError</b>
+		IsCallable(<i>func</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -11777,7 +11770,7 @@
 		</li>
 		<li><p>
 		Throw
-		a <b>SyntaxError</b> exception if the following conditions are all
+		a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception if the following conditions are all
 		true:</p>
 	<ul>
 		<li><p>
@@ -11832,7 +11825,7 @@
 		</li>
 		<li><p>
 		Throw
-		a <b>SyntaxError</b> exception if the following conditions are all
+		a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception if the following conditions are all
 		true:</p>
 	<ul>
 		<li><p>
@@ -11902,7 +11895,7 @@
 		<ol>
 			<li><p>
 			If
-			IsStrictReference(<i>ref</i>) is <b>true</b>, throw a <b>SyntaxError</b>
+			IsStrictReference(<i>ref</i>) is <b>true</b>, throw a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 			exception.</p>
 			</li>
 			<li><p>
@@ -11927,7 +11920,7 @@
 		<ol>
 			<li><p>
 			If
-			IsStrictReference(<i>ref</i>) is <b>true</b>, throw a <b>SyntaxError</b>
+			IsStrictReference(<i>ref</i>) is <b>true</b>, throw a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 			exception.</p>
 			</li>
 			<li><p>
@@ -11943,7 +11936,7 @@
 	</li></ol>
 	<p><b class="note">NOTE</b> When
 	a <code><b>delete</b></code> operator
-	occurs within strict mode code, a <b>SyntaxError</b> exception is
+	occurs within strict mode code, a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception is
 	thrown if its <i>UnaryExpression</i>
 	is a direct reference to a variable, function argument, or function
 	name. In addition, if a <code><b>delete</b></code>
@@ -12117,7 +12110,7 @@
 		</li>
 		<li><p>
 		Throw
-		a <b>SyntaxError</b> exception if the following conditions are all
+		a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception if the following conditions are all
 		true:</p>
 	<ul>
 		<li><p>
@@ -12170,7 +12163,7 @@
 		</li>
 		<li><p>
 		Throw
-		a <b>SyntaxError</b> exception if the following conditions are all
+		a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception if the following conditions are all
 		true:</p>
 	<ul>
 		<li><p>
@@ -13070,7 +13063,7 @@
 		<ol>
 			<li><p>
 			Let
-			<i>nx </i>be the result of calling ToNumber(<i>px</i>). Because <i>px </i>and <i>py </i>are primitive values evaluation order is not
+			<i>nx </i>be the result of calling ToNumber(<i>px</i>). Because <i>px </i>and <i>py </i>are <a href="#primitive_value" class="term-ref">primitive value</a>s evaluation order is not
 			important.</p>
 			</li>
 			<li><p>
@@ -13206,13 +13199,13 @@
 		</li>
 		<li><p>
 		If
-		Type(<i>rval</i>) is not Object, throw a <b>TypeError</b>
+		Type(<i>rval</i>) is not Object, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
 		If
 		<i>rval</i> does not have a [[HasInstance]] internal method, throw
-		a <b>TypeError</b> exception.</p>
+		a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 		</li>
 		<li><p>
 		Return
@@ -13245,7 +13238,7 @@
 		</li>
 		<li><p>
 		If
-		Type(<i>rval</i>) is not Object, throw a <b>TypeError</b>
+		Type(<i>rval</i>) is not Object, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -14008,7 +14001,7 @@
 		</li>
 		<li><p>
 		Throw
-		a <b>SyntaxError</b> exception if the following conditions are all
+		a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception if the following conditions are all
 		true:</p>
 	<ul>
 		<li><p>
@@ -14040,7 +14033,7 @@
 	<p><b class="note">NOTE</b> When
 	an assignment occurs within strict mode code, its <i>LeftHandSide</i>
 	must not evaluate to an unresolvable reference. If it does a
-	<b>ReferenceError</b> exception is thrown upon assignment. The
+	<b><a href="#x15.11.6.3" class="term-ref">ReferenceError</a></b> exception is thrown upon assignment. The
 	<i>LeftHandSide</i> also
 	may not be a reference to a data property with the attribute value
 	{[[Writable]]:<b>false</b>},
@@ -14048,7 +14041,7 @@
 	{[[Set]]:<b>undefined</b>},<b>
 	</b>nor to a non-existent property of an object whose [[Extensible]]
 	internal property has the value <b>false</b>. In these cases a
-	<b>TypeError</b> exception is thrown.</p>
+	<b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception is thrown.</p>
 	<h4 id="x11.13.2">11.13.2 Compound Assignment ( op= ) <a href="#x11.13.2">#</a> <a href="#x11.13.2-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	The
@@ -14079,7 +14072,7 @@
 		</li>
 		<li><p>
 		Throw
-		a <b>SyntaxError</b> exception if the following conditions are all
+		a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception if the following conditions are all
 		true:</p>
 	<ul>
 		<li><p>
@@ -14445,7 +14438,7 @@
 	<h4 id="x12.2.1">12.2.1 Strict Mode Restrictions <a href="#x12.2.1">#</a> <a href="#x12.2.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	It is
-	a <b>SyntaxError</b> if a <i>VariableDeclaration</i>
+	a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> if a <i>VariableDeclaration</i>
 	or <i>VariableDeclarationNoIn</i>
 	occurs within strict code and its <i>Identifier</i>
 	is either <code><b>"eval"</b></code><b>
@@ -15247,7 +15240,7 @@
 	Strict
 	mode code may not include a <i>WithStatement</i>.
 	The occurrence of a <i>WithStatement</i>
-	in such a context is treated as a <b>SyntaxError</b>.</p>
+	in such a context is treated as a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>.</p>
 	<h3 id="x12.11">12.11 The switch Statement <a href="#x12.11">#</a> <a href="#x12.11-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
 	<p class="tiny-btm">
 	<b>Syntax</b></p>
@@ -15939,7 +15932,7 @@
 	<h4 id="x12.14.1">12.14.1 Strict Mode Restrictions <a href="#x12.14.1">#</a> <a href="#x12.14.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	It is
-	an <b>SyntaxError</b> if a <i>TryStatement</i>
+	an <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> if a <i>TryStatement</i>
 	with a <i>Catch</i>
 	occurs within strict code and the <i>Identifier</i>
 	of the <i>Catch</i>
@@ -16147,13 +16140,13 @@
 	<h3 id="x13.1">13.1 Strict Mode Restrictions <a href="#x13.1">#</a> <a href="#x13.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
 	<p>
 	It is
-	a <b>SyntaxError</b> if any <i>Identifier</i>
+	a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> if any <i>Identifier</i>
 	value occurs more than once within a <i>FormalParameterList</i>
 	of a strict mode <i>FunctionDeclaration</i>
 	or <i>FunctionExpression</i>.</p>
 	<p>
 	It is
-	a <b>SyntaxError</b> if the <i>Identifier</i>
+	a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> if the <i>Identifier</i>
 	<code><b>"eval"</b></code>
 	or the <i>Identifier </i><code><b>"arguments"</b></code>
 	occurs within a <i>FormalParameterList</i>
@@ -16161,7 +16154,7 @@
 	or <i>FunctionExpression</i>.</p>
 	<p>
 	It is
-	a <b>SyntaxError</b> if the <i>Identifier</i>
+	a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> if the <i>Identifier</i>
 	<code><b>"eval"</b></code>
 	or the <i>Identifier </i><code><b>"arguments"</b></code>
 	occurs as the <i>Identifier</i>
@@ -16475,7 +16468,7 @@
 		<li><p>
 		Set
 		the [[Code]] internal property of <i>F </i>to be a <i>FunctionBody</i>
-		that unconditionally throws a <b>TypeError</b>
+		that unconditionally throws a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception and performs no other action.</p>
 		</li>
 		<li><p>
@@ -16644,9 +16637,9 @@
 	<p>
 	There
 	are certain built-in objects available whenever an ECMAScript
-	program begins execution. One, the global object, is part of the
+	program begins execution. One, the <a href="#x15.1" class="term-ref">global object</a>, is part of the
 	lexical environment of the executing program. Others are accessible
-	as initial properties of the global object.</p>
+	as initial properties of the <a href="#x15.1" class="term-ref">global object</a>.</p>
 	<p>
 	Unless
 	specified otherwise, the [[Class]] internal property of a built-in
@@ -16684,7 +16677,7 @@
 	arguments are evaluated by the call and then ignored  by the
 	function. However, an implementation may define implementation
 	specific behaviour relating to such arguments as long as the
-	behaviour is not the throwing of a <b>TypeError</b> exception that
+	behaviour is not the throwing of a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception that
 	is predicated simply on the presence of an extra argument.</p>
 	<p><b class="note">NOTE</b> Implementations
 	that add additional capabilities to the set of built-in functions
@@ -16749,7 +16742,7 @@
 	<h3 id="x15.1">15.1 The Global Object <a href="#x15.1">#</a> <a href="#x15.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
 	<p>
 	The
-	unique <i>global object</i> is created before control enters any
+	unique <i><a href="#x15.1" class="term-ref">global object</a></i> is created before control enters any
 	execution context. 
 	</p>
 	<p>
@@ -16759,24 +16752,24 @@
 	<b>false</b>, [[Configurable]]: <b>true</b>}.</p>
 	<p>
 	The
-	global object does not have a [[Construct]] internal property; it is
-	not possible to use the global object as a constructor with the <code><b>new</b></code>
+	<a href="#x15.1" class="term-ref">global object</a> does not have a [[Construct]] internal property; it is
+	not possible to use the <a href="#x15.1" class="term-ref">global object</a> as a constructor with the <code><b>new</b></code>
 	operator.</p>
 	<p>
 	The
-	global object does not have a [[Call]] internal property; it is not
-	possible to invoke the global object as a function.</p>
+	<a href="#x15.1" class="term-ref">global object</a> does not have a [[Call]] internal property; it is not
+	possible to invoke the <a href="#x15.1" class="term-ref">global object</a> as a function.</p>
 	<p>
 	The
 	values of the [[Prototype]] and [[Class]] internal properties of the
-	global object are implementation-dependent.</p>
+	<a href="#x15.1" class="term-ref">global object</a> are implementation-dependent.</p>
 	<p>
 	In
 	addition to the properties defined in this specification the global
 	object may have additional host defined properties. This may include
-	a property whose value is the global object itself; for example, in
+	a property whose value is the <a href="#x15.1" class="term-ref">global object</a> itself; for example, in
 	the HTML document object model the <code><b>window</b></code>
-	property of the global object is the global object itself.</p>
+	property of the <a href="#x15.1" class="term-ref">global object</a> is the <a href="#x15.1" class="term-ref">global object</a> itself.</p>
 	<h4 id="x15.1.1">15.1.1 Value Properties of the Global Object <a href="#x15.1.1">#</a> <a href="#x15.1.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<h5 id="x15.1.1.1">15.1.1.1 NaN <a href="#x15.1.1.1">#</a> <a href="#x15.1.1.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
@@ -16816,7 +16809,7 @@
 		Let
 		<i>prog </i>be
 		the ECMAScript code that is the result of parsing <i>x </i>as a <i>Program</i>.
-		If the parse fails, throw a <b>SyntaxError</b>
+		If the parse fails, throw a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 		exception (but see also clause 16).</p>
 		</li>
 		<li><p>
@@ -17231,7 +17224,7 @@
 				<li><p>
 				If
 				the code unit value of <i>C</i> is not less than 0xDC00 and not
-				greater than 0xDFFF, throw a <b>URIError</b> exception.</p>
+				greater than 0xDFFF, throw a <b><a href="#x15.11.6.6" class="term-ref">URIError</a></b> exception.</p>
 				</li>
 				<li><p>
 				If
@@ -17254,7 +17247,7 @@
 					</li>
 					<li><p>
 					If
-					<i>k</i> equals <i>strLen</i>, throw a <b>URIError</b>
+					<i>k</i> equals <i>strLen</i>, throw a <b><a href="#x15.11.6.6" class="term-ref">URIError</a></b>
 					exception.</p>
 					</li>
 					<li><p>
@@ -17265,7 +17258,7 @@
 					<li><p>
 					If
 					<i>kChar</i> is less than 0xDC00 or greater than 0xDFFF, throw a
-					<b>URIError</b> exception.</p>
+					<b><a href="#x15.11.6.6" class="term-ref">URIError</a></b> exception.</p>
 					</li>
 					<li><p>
 					Let
@@ -17363,13 +17356,13 @@
 				<li><p>
 				If
 				<i>k</i> + 2 is greater than or equal to <i>strLen</i>, throw a
-				<b>URIError</b> exception.</p>
+				<b><a href="#x15.11.6.6" class="term-ref">URIError</a></b> exception.</p>
 				</li>
 				<li><p>
 				If
 				the characters at position (<i>k</i>+1) and (<i>k</i> + 2) within
 				<i>string </i>do not represent hexadecimal digits, throw a
-				<b>URIError</b> exception.</p>
+				<b><a href="#x15.11.6.6" class="term-ref">URIError</a></b> exception.</p>
 				</li>
 				<li><p>
 				Let
@@ -17420,7 +17413,7 @@
 					<li><p>
 					If
 					<i>n</i> equals 1 or <i>n</i> is greater than 4, throw a
-					<b>URIError</b> exception.</p>
+					<b><a href="#x15.11.6.6" class="term-ref">URIError</a></b> exception.</p>
 					</li>
 					<li><p>
 					Let
@@ -17433,7 +17426,7 @@
 					<li><p>
 					If
 					<i>k</i> + (3 * (<i>n</i> – 1)) is greater than or equal to
-					<i>strLen</i>, throw a <b>URIError</b> exception.</p>
+					<i>strLen</i>, throw a <b><a href="#x15.11.6.6" class="term-ref">URIError</a></b> exception.</p>
 					</li>
 					<li><p>
 					Let
@@ -17450,13 +17443,13 @@
 						<li><p>
 						If
 						the character at position <i>k</i> is not ‘%’, throw a
-						<b>URIError</b> exception.</p>
+						<b><a href="#x15.11.6.6" class="term-ref">URIError</a></b> exception.</p>
 						</li>
 						<li><p>
 						If
 						the characters at position (<i>k</i> +1) and (<i>k</i> + 2)
 						within <i>string</i> do not represent hexadecimal digits, throw
-						a <b>URIError</b> exception.</p>
+						a <b><a href="#x15.11.6.6" class="term-ref">URIError</a></b> exception.</p>
 						</li>
 						<li><p>
 						Let
@@ -17466,7 +17459,7 @@
 						<li><p>
 						If
 						the two most significant bits in <i>B</i> are not 10, throw a
-						<b>URIError</b> exception.</p>
+						<b><a href="#x15.11.6.6" class="term-ref">URIError</a></b> exception.</p>
 						</li>
 						<li><p>
 						Increment
@@ -17486,7 +17479,7 @@
 					<i>V</i> be the value obtained by applying the UTF-8
 					transformation to <i>Octets</i>, that is, from an array of
 					octets into a 32-bit value. If <i>Octets</i> does not contain a
-					valid UTF-8 encoding of a Unicode code point throw a <b>URIError</b>
+					valid UTF-8 encoding of a Unicode code point throw a <b><a href="#x15.11.6.6" class="term-ref">URIError</a></b>
 					exception.</p>
 					</li>
 					<li><p>
@@ -17523,7 +17516,7 @@
 					<ol>
 						<li><p>
 						If
-						<i>V</i> is greater than 0x10FFFF, throw a <b>URIError</b>
+						<i>V</i> is greater than 0x10FFFF, throw a <b><a href="#x15.11.6.6" class="term-ref">URIError</a></b>
 						exception.</p>
 						</li>
 						<li><p>
@@ -17818,7 +17811,7 @@
 	3629 prohibits the decoding of invalid UTF-8 octet sequences. For
 	example, the invalid sequence C0 80 must not decode into the
 	character U+0000. Implementations of the Decode algorithm are
-	required to throw a <b>URIError</b>
+	required to throw a <b><a href="#x15.11.6.6" class="term-ref">URIError</a></b>
 	when encountering such invalid sequences.</p>
 	<h5 id="x15.1.3.1">15.1.3.1 decodeURI (encodedURI) <a href="#x15.1.3.1">#</a> <a href="#x15.1.3.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
@@ -18291,7 +18284,7 @@
 	<ol>
 		<li><p>
 		If
-		Type(<i>O</i>) is not Object throw a <b>TypeError</b> exception.</p>
+		Type(<i>O</i>) is not Object throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 		</li>
 		<li><p>
 		Let
@@ -18543,7 +18536,7 @@
 	<ol>
 		<li><p>
 		If
-		the Type(<i>O</i>) is not Object, throw a <b>TypeError</b>
+		the Type(<i>O</i>) is not Object, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -18913,12 +18906,12 @@
 		<li><p>
 		If
 		<i>P</i> is not parsable as a <i>FormalParameterList</i><sub>opt</sub>
-		then throw a <b>SyntaxError</b> exception.</p>
+		then throw a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception.</p>
 		</li>
 		<li><p>
 		If
 		<i>body</i> is not parsable as <i>FunctionBody</i> then throw a
-		<b>SyntaxError</b> exception.</p>
+		<b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception.</p>
 		</li>
 		<li><p>
 		If<i>body </i>is strict mode code (see <a href="#x10.1.1">10.1.1</a>) then let <i>strict</i> be
@@ -19025,7 +19018,7 @@
 	<p>
 	The
 	<code><b>toString</b></code> function
-	is not generic; it throws a <b>TypeError</b> exception if its <b>this</b>
+	is not generic; it throws a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception if its <b>this</b>
 	value is not a Function object. Therefore, it cannot be transferred
 	to other kinds of objects for use as a method.</p>
 	<h5 id="x15.3.4.3">15.3.4.3 Function.prototype.apply (thisArg, argArray) <a href="#x15.3.4.3">#</a> <a href="#x15.3.4.3-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
@@ -19040,7 +19033,7 @@
 	<ol>
 		<li><p>
 		If
-		IsCallable(<i>func</i>) is <b>false</b>, then throw a <b>TypeError</b>
+		IsCallable(<i>func</i>) is <b>false</b>, then throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -19056,7 +19049,7 @@
 		</li>
 		<li><p>
 		If
-		Type(<i>argArray</i>) is not Object, then throw a <b>TypeError</b>
+		Type(<i>argArray</i>) is not Object, then throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -19067,7 +19060,7 @@
 		<li><p>
 		If
 		<i>len</i> is <b>null</b> or <b>undefined</b>, then throw a
-		<b>TypeError</b> exception.</p>
+		<b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 		</li>
 		<li><p>
 		Let
@@ -19076,7 +19069,7 @@
 		<li><p>
 		If
 		<i>n</i> is not equal to ToNumber(<i>len</i>), then throw a
-		<b>TypeError</b> exception.</p>
+		<b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 		</li>
 		<li><p>
 		Let
@@ -19122,7 +19115,7 @@
 	<p><b class="note">NOTE</b> The
 	thisArg value is passed without modification as the <b>this</b>
 	value. This is a change from Edition 3, where a <b>undefined</b> or
-	<b>null</b> thisArg is replaced with the global object and ToObject
+	<b>null</b> thisArg is replaced with the <a href="#x15.1" class="term-ref">global object</a> and ToObject
 	is applied to all other values and that result is passed as the <b>this</b>
 	value.</p>
 	<h5 id="x15.3.4.4">15.3.4.4 Function.prototype.call (thisArg [ , arg1 [ , arg2, … ] ] ) <a href="#x15.3.4.4">#</a> <a href="#x15.3.4.4-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
@@ -19137,7 +19130,7 @@
 	<ol>
 		<li><p>
 		 If
-		IsCallable(<i>func</i>) is <b>false</b>, then throw a <b>TypeError</b>
+		IsCallable(<i>func</i>) is <b>false</b>, then throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -19164,7 +19157,7 @@
 	<p><b class="note">NOTE</b> The
 	thisArg value is passed without modification as the <b>this</b>
 	value. This is a change from Edition 3, where a <b>undefined</b> or
-	<b>null</b> thisArg is replaced with the global object and ToObject
+	<b>null</b> thisArg is replaced with the <a href="#x15.1" class="term-ref">global object</a> and ToObject
 	is applied to all other values and that result is passed as the <b>this</b>
 	value.</p>
 	<h5 id="x15.3.4.5">15.3.4.5 Function.prototype.bind (thisArg [, arg1 [, arg2, …]]) <a href="#x15.3.4.5">#</a> <a href="#x15.3.4.5-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
@@ -19354,7 +19347,7 @@
 		</li>
 		<li><p>
 		If
-		<i>target</i> has no [[Construct]] internal method, a <b>TypeError</b>
+		<i>target</i> has no [[Construct]] internal method, a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception is thrown.</p>
 		</li>
 		<li><p>
@@ -19386,7 +19379,7 @@
 		</li>
 		<li><p>
 		If
-		<i>target</i> has no [[HasInstance]] internal method, a <b>TypeError</b>
+		<i>target</i> has no [[HasInstance]] internal method, a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception is thrown.</p>
 		</li>
 		<li><p>
@@ -19413,7 +19406,7 @@
 	instances that correspond to strict mode functions (<a href="#x13.2">13.2</a>) and
 	function instances created using the <b>Function.prototype.bind
 	method</b> (<a href="#x15.3.4.5">15.3.4.5</a>) have properties named “caller” and
-	“arguments” that throw a <b>TypeError</b> exception. An
+	“arguments” that throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception. An
 	ECMAScript implementation must not associate any implementation
 	specific behaviour  with accesses of these properties from strict
 	mode function code. 
@@ -19468,7 +19461,7 @@
 		</li>
 		<li><p>
 		If
-		Type(<i>O</i>) is not Object, throw a <b>TypeError</b> exception.</p>
+		Type(<i>O</i>) is not Object, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 		</li>
 		<li><p>
 		Repeat</p>
@@ -19514,7 +19507,7 @@
 		If
 		<i>P</i> is <code><b>"caller"
 		</b></code>and <i>v</i> is a strict mode Function object, throw a
-		<b>TypeError</b> exception. 
+		<b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception. 
 		</p>
 		</li>
 		<li><p>
@@ -19666,7 +19659,7 @@
 	If the argument <i>len</i>
 	is a Number and ToUint32(<i>len</i>)
 	is not equal to <i>len</i>,
-	a <b>RangeError</b> exception is thrown.</p>
+	a <b><a href="#x15.11.6.2" class="term-ref">RangeError</a></b> exception is thrown.</p>
 	<p>
 	If
 	the argument <i>len</i>
@@ -19848,7 +19841,7 @@
 			</li>
 			<li><p>
 			If
-			IsCallable(<i>func</i>) is <b>false</b>, throw a <b>TypeError</b>
+			IsCallable(<i>func</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 			exception.</p>
 			</li>
 			<li><p>
@@ -19902,7 +19895,7 @@
 				</li>
 				<li><p>
 				If
-				IsCallable(<i>func</i>) is <b>false</b>, throw a <b>TypeError</b>
+				IsCallable(<i>func</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 				exception.</p>
 				</li>
 				<li><p>
@@ -20939,7 +20932,7 @@
 		<ol>
 			<li><p>
 			If
-			IsCallable(<i>comparefn</i>) is <b>false</b>, throw a <b>TypeError</b>
+			IsCallable(<i>comparefn</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 			exception.</p>
 			</li>
 			<li><p>
@@ -21679,7 +21672,7 @@
 		</li>
 		<li><p>
 		If
-		IsCallable(<i>callbackfn</i>) is <b>false</b>, throw a <b>TypeError</b>
+		IsCallable(<i>callbackfn</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -21807,7 +21800,7 @@
 		</li>
 		<li><p>
 		If
-		IsCallable(<i>callbackfn</i>) is <b>false</b>, throw a <b>TypeError</b>
+		IsCallable(<i>callbackfn</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -21931,7 +21924,7 @@
 		</li>
 		<li><p>
 		If
-		IsCallable(<i>callbackfn</i>) is <b>false</b>, throw a <b>TypeError</b>
+		IsCallable(<i>callbackfn</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -22048,7 +22041,7 @@
 		</li>
 		<li><p>
 		If
-		IsCallable(<i>callbackfn</i>) is <b>false</b>, throw a <b>TypeError</b>
+		IsCallable(<i>callbackfn</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -22184,7 +22177,7 @@
 		</li>
 		<li><p>
 		If
-		IsCallable(<i>callbackfn</i>) is <b>false</b>, throw a <b>TypeError</b>
+		IsCallable(<i>callbackfn</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -22288,7 +22281,7 @@
 	then <i>previousValue</i> will be equal to <i>initialValue </i>and <i>currentValue</i> will be equal to the first value
 	in the array. If no <i>initialValue </i>was provided, then <i>previousValue</i> will be equal to
 	the first value in the array and <i>currentValue</i> will be equal
-	to the second. It is a <b>TypeError</b> if the array contains no
+	to the second. It is a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> if the array contains no
 	elements and <i>initialValue</i>
 	is not provided.</p>
 	<p>
@@ -22328,12 +22321,12 @@
 		</li>
 		<li><p>
 		If
-		IsCallable(<i>callbackfn</i>) is <b>false</b>, throw a <b>TypeError</b>
+		IsCallable(<i>callbackfn</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
 		If
-		len is 0 and <i>initialValue</i> is not present, throw a <b>TypeError</b>
+		len is 0 and <i>initialValue</i> is not present, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -22387,7 +22380,7 @@
 			</li>
 			<li><p>
 			If
-			<i>kPresent</i> is <b>false</b>, throw a <b>TypeError</b>
+			<i>kPresent</i> is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 			exception.</p>
 		</li></ol>
 		</li>
@@ -22461,7 +22454,7 @@
 	<i>initialValue </i>was
 	provided, then previousValue will be equal to the last value in the
 	array and currentValue will be equal to the second-to-last value. It
-	is a <b>TypeError</b> if the array contains no elements and
+	is a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> if the array contains no elements and
 	<i>initialValue</i> is
 	not provided.</p>
 	<p>
@@ -22502,12 +22495,12 @@
 		</li>
 		<li><p>
 		If
-		IsCallable(<i>callbackfn</i>) is <b>false</b>, throw a <b>TypeError</b>
+		IsCallable(<i>callbackfn</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
 		If
-		len is 0 and <i>initialValue</i> is not present, throw a <b>TypeError</b>
+		len is 0 and <i>initialValue</i> is not present, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -22561,7 +22554,7 @@
 			</li>
 			<li><p>
 			If
-			<i>kPresent</i> is <b>false</b>, throw a <b>TypeError</b>
+			<i>kPresent</i> is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 			exception.</p>
 		</li></ol>
 		</li>
@@ -22636,7 +22629,7 @@
 	In
 	the following algorithm, the term “Reject”
 	means “If <i>Throw </i>is <b>true</b>,
-	then throw a <b>TypeError</b>
+	then throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 	exception, otherwise return <b>false</b>.”</p>
 	<p>
 	When
@@ -22685,7 +22678,7 @@
 			<li><p>
 			If
 			<i>newLen</i> is not equal to ToNumber(<i> Desc</i>.[[Value]]),
-			throw a <b>RangeError</b> exception.</p>
+			throw a <b><a href="#x15.11.6.2" class="term-ref">RangeError</a></b> exception.</p>
 			</li>
 			<li><p>
 			Set
@@ -22969,7 +22962,7 @@
 	<p>
 	The
 	<code><b>toString</b></code> function
-	is not generic; it throws a <b>TypeError</b> exception if its <b>this</b>
+	is not generic; it throws a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception if its <b>this</b>
 	value is not a String or a String object. Therefore, it cannot be
 	transferred to other kinds of objects for use as a method.</p>
 	<h5 id="x15.5.4.3">15.5.4.3 String.prototype.valueOf ( ) <a href="#x15.5.4.3">#</a> <a href="#x15.5.4.3-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
@@ -22979,7 +22972,7 @@
 	<p>
 	The
 	<code><b>valueOf</b></code> function
-	is not generic; it throws a <b>TypeError</b> exception if its <b>this</b>
+	is not generic; it throws a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception if its <b>this</b>
 	value is not a String or String object. Therefore, it cannot be
 	transferred to other kinds of objects for use as a method.</p>
 	<h5 id="x15.5.4.4">15.5.4.4 String.prototype.charAt (pos) <a href="#x15.5.4.4">#</a> <a href="#x15.5.4.4-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
@@ -24514,7 +24507,7 @@
 		</li>
 		<li><p>
 		Else
-		throw a <b>TypeError</b> exception.</p>
+		throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 		</li>
 		<li><p>
 		If
@@ -24543,7 +24536,7 @@
 		</li>
 		<li><p>
 		Else
-		throw a <b>TypeError</b> exception.</p>
+		throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 		</li>
 		<li><p>
 		Return
@@ -24693,7 +24686,7 @@
 	“this Number value” refers to either the Number value
 	represented by this Number object, that is, the value of the
 	[[PrimitiveValue]] internal property of this Number object or the
-	<b>this</b> value if its type is Number.  A <b>TypeError</b>
+	<b>this</b> value if its type is Number.  A <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 	exception is thrown if the <b>this</b> value is neither an object
 	for which the value of the [[Class]] internal property is <code><b>"Number"</b></code>
 	or a value whose type is Number.</p>
@@ -24729,7 +24722,7 @@
 	<p>
 	The
 	<code><b>toString</b></code> function
-	is not generic; it throws a <b>TypeError</b> exception if its <b>this</b>
+	is not generic; it throws a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception if its <b>this</b>
 	value is not a Number or a Number object. Therefore, it cannot be
 	transferred to other kinds of objects for use as a method.</p>
 	<h5 id="x15.7.4.3">15.7.4.3 Number.prototype.toLocaleString() <a href="#x15.7.4.3">#</a> <a href="#x15.7.4.3-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
@@ -24750,7 +24743,7 @@
 	<p>
 	The
 	<code><b>valueOf</b></code> function
-	is not generic; it throws a <b>TypeError</b> exception if its <b>this</b>
+	is not generic; it throws a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception if its <b>this</b>
 	value is not a Number or a Number object. Therefore, it cannot be
 	transferred to other kinds of objects for use as a method.</p>
 	<h5 id="x15.7.4.5">15.7.4.5 Number.prototype.toFixed (fractionDigits) <a href="#x15.7.4.5">#</a> <a href="#x15.7.4.5-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
@@ -24769,7 +24762,7 @@
 		</li>
 		<li><p>
 		If
-		<i>f</i> &lt; 0 or <i>f</i> &gt; 20, throw a <b>RangeError</b>
+		<i>f</i> &lt; 0 or <i>f</i> &gt; 20, throw a <b><a href="#x15.11.6.2" class="term-ref">RangeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -24882,7 +24875,7 @@
 	implementation is permitted to extend the behaviour of <code><b>toFixed</b></code>
 	for values of <i>fractionDigits</i>
 	less than 0 or greater than 20. In this case <code><b>toFixed</b></code>
-	would not necessarily throw <b>RangeError</b> for such values.</p>
+	would not necessarily throw <b><a href="#x15.11.6.2" class="term-ref">RangeError</a></b> for such values.</p>
 	<p><b class="note">NOTE</b> The
 	output of <code><b>toFixed</b></code>
 	may be more precise than <code><b>toString</b></code>
@@ -24949,7 +24942,7 @@
 		<li><p>
 		If
 		<i>fractionDigits</i> is not <b>undefined</b> and  (<i>f</i> &lt; 0
-		or <i>f</i> &gt; 20), throw a <b>RangeError</b> exception.</p>
+		or <i>f</i> &gt; 20), throw a <b><a href="#x15.11.6.2" class="term-ref">RangeError</a></b> exception.</p>
 		</li>
 		<li><p>
 		If
@@ -25090,7 +25083,7 @@
 	implementation is permitted to extend the behaviour of <code><b>toExponential</b></code>
 	for values of <i>fractionDigits</i>
 	less than 0 or greater than 20. In this case <code><b>toExponential</b></code>
-	would not necessarily throw <b>RangeError</b> for such values.</p>
+	would not necessarily throw <b><a href="#x15.11.6.2" class="term-ref">RangeError</a></b> for such values.</p>
 	<p></p><p><b class="note">NOTE</b> For
 	implementations that provide more accurate conversions than required
 	by the rules above, it is recommended that the following alternative
@@ -25175,7 +25168,7 @@
 		</li>
 		<li><p>
 		If
-		<i>p</i> &lt; 1 or <i>p</i> &gt; 21, throw a <b>RangeError</b>
+		<i>p</i> &lt; 1 or <i>p</i> &gt; 21, throw a <b><a href="#x15.11.6.2" class="term-ref">RangeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -25324,7 +25317,7 @@
 	implementation is permitted to extend the behaviour of <code><b>toPrecision</b></code>
 	for values of <i>precision</i>
 	less than 1 or greater than 21. In this case <code><b>toPrecision</b></code>
-	would not necessarily throw <b>RangeError</b> for such values.</p>
+	would not necessarily throw <b><a href="#x15.11.6.2" class="term-ref">RangeError</a></b> for such values.</p>
 	<h4 id="x15.7.5">15.7.5 Properties of Number Instances <a href="#x15.7.5">#</a> <a href="#x15.7.5-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	Number
@@ -25448,8 +25441,7 @@
 	<h4 id="x15.8.2">15.8.2 Function Properties of the Math Object <a href="#x15.8.2">#</a> <a href="#x15.8.2-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	Each
-	of the following <code><b>Math</b></code>
-	object functions applies the ToNumber abstract operator to each of
+	of the following <code><b><a href="#x15.8" class="term-ref">Math</a></b></code> object functions applies the ToNumber abstract operator to each of
 	its arguments (in left-to-right order if there is more than one) and
 	then performs a computation on the resulting Number value(s).</p>
 	<p>
@@ -27191,7 +27183,7 @@
 	prototype object, the phrase “this Date object” refers to the
 	object that is the <b>this</b> value for the invocation of the
 	function. Unless explicitly noted otherwise, none of these functions
-	are generic; a <b>TypeError</b> exception is thrown if the <b>this</b>
+	are generic; a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception is thrown if the <b>this</b>
 	value is not an object for which the value of the [[Class]] internal
 	property is <code><b>"Date"</b></code>.
 	Also, the phrase “this time value” refers to the Number value
@@ -28151,7 +28143,7 @@
 	represented by this Date object. The format of the String is the
 	Date Time string format defined in <a href="#x15.9.1.15">15.9.1.15</a>. All fields are present
 	in the String. The time zone is always UTC, denoted by the suffix Z.
-	If the time value of this object is not a finite Number a <b>RangeError</b>
+	If the time value of this object is not a finite Number a <b><a href="#x15.11.6.2" class="term-ref">RangeError</a></b>
 	exception is thrown.</p>
 	<h5 id="x15.9.5.44">15.9.5.44 Date.prototype.toJSON ( key ) <a href="#x15.9.5.44">#</a> <a href="#x15.9.5.44-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
@@ -28579,7 +28571,7 @@
 	exactly that offset within the String, and, if it does match, what
 	the values of the capturing parentheses would be. The algorithms in
 	<a href="#x15.10.2">15.10.2</a> are designed so that compiling a pattern may throw a
-	<b>SyntaxError</b> exception; on the other hand, once the pattern is
+	<b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception; on the other hand, once the pattern is
 	successfully compiled, applying its result internal procedure to
 	find a match in a String cannot throw an exception (except for any
 	host-defined exceptions that can occur anywhere such as
@@ -28772,7 +28764,7 @@
 		<li><p>
 		If
 		<i>max</i> is finite and less than <i>min</i>, then throw a
-		<b>SyntaxError</b> exception.</p>
+		<b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception.</p>
 		</li>
 		<li><p>
 		Let
@@ -29966,7 +29958,7 @@
 		<li><p>
 		If
 		<i>n</i>=0 or <i>n</i>&gt;<i>NCapturingParens</i> then throw a
-		<b>SyntaxError</b> exception.</p>
+		<b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception.</p>
 		</li>
 		<li><p>
 		Return
@@ -30737,7 +30729,7 @@
 		<li><p>
 		If
 		<i>A</i> does not contain exactly one character or <i>B</i> does
-		not contain exactly one character then throw a <b>SyntaxError</b>
+		not contain exactly one character then throw a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -30758,7 +30750,7 @@
 		</li>
 		<li><p>
 		If
-		<i>i </i>&gt; <i>j</i> then throw a <b>SyntaxError</b> exception.</p>
+		<i>i </i>&gt; <i>j</i> then throw a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception.</p>
 		</li>
 		<li><p>
 		Return
@@ -30888,7 +30880,7 @@
 		</li>
 		<li><p>
 		If
-		<i>E</i> is not a character then throw a <b>SyntaxError</b>
+		<i>E</i> is not a character then throw a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -30966,7 +30958,7 @@
 	object <i>R</i> whose
 	[[Class]] internal property is <code><b>"RegExp"</b></code>
 	and <i>flags</i> is not
-	<b>undefined</b>, then throw a <b>TypeError</b> exception.
+	<b>undefined</b>, then throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.
 	Otherwise, let <i>P</i>
 	be the empty String if <i>pattern</i>
 	is <b>undefined</b> and ToString(<i>pattern</i>)
@@ -30978,7 +30970,7 @@
 	If
 	the characters of <i>P</i>
 	do not have the syntactic form <i>Pattern</i>,
-	then throw a <b>SyntaxError</b>
+	then throw a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 	exception. Otherwise let the newly constructed object have a
 	[[Match]] internal property obtained by
 	evaluating ("compiling") the characters of <i>P</i>
@@ -30992,12 +30984,12 @@
 	<code><b>"i"</b></code>,
 	or <code><b>"m"</b></code>,
 	or if it contains the same character more than once, then throw a
-	<b>SyntaxError</b>
+	<b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 	exception. 
 	</p>
 	<p>
 	If
-	a <b>SyntaxError</b>
+	a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 	exception is not thrown, then: 
 	</p>
 	<p>
@@ -31138,7 +31130,7 @@
 	the following descriptions of functions that are properties of the
 	RegExp prototype object, the phrase “this RegExp object” refers
 	to the object that is the <b>this</b> value for the invocation of
-	the function; a <b>TypeError</b> exception is thrown if the <b>this</b>
+	the function; a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception is thrown if the <b>this</b>
 	value is not an object or an object for which the value of the
 	[[Class]] internal property is not <code><b>"RegExp"</b></code>.</p>
 	<h5 id="x15.10.6.1">15.10.6.1 RegExp.prototype.constructor <a href="#x15.10.6.1">#</a> <a href="#x15.10.6.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
@@ -31554,7 +31546,7 @@
 		</li>
 		<li><p>
 		If
-		Type(<i>O</i>) is not Object, throw a <b>TypeError</b> exception.</p>
+		Type(<i>O</i>) is not Object, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 		</li>
 		<li><p>
 		Let
@@ -31951,7 +31943,7 @@
 		</li>
 		<li><p>
 		Parse
-		<i>JText</i> using the grammars in <a href="#x15.12.1">15.12.1</a>. Throw a <b>SyntaxError</b>
+		<i>JText</i> using the grammars in <a href="#x15.12.1">15.12.1</a>. Throw a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 		exception if <i>JText</i> did not conform to the JSON grammar for
 		the goal symbol <i>JSONText</i>. 
 		</p>
@@ -31962,7 +31954,7 @@
 		as if it was the source text of an ECMAScript <i>program</i> but
 		using<i> JSONString </i>in place<i> </i>of<i> StringLiteral</i>.
 		Note that since <i>JText</i> conforms to the JSON grammar this
-		result will be either a primitive value or an object that is
+		result will be either a <a href="#primitive_value" class="term-ref">primitive value</a> or an object that is
 		defined by either an <i>ArrayLiteral</i> or an <i>ObjectLiteral</i>.</p>
 		</li>
 		<li><p>
@@ -32544,7 +32536,7 @@
 	<ol>
 		<li><p>
 		If
-		<i>stack</i> contains <i>value</i> then throw a <b>TypeError</b>
+		<i>stack</i> contains <i>value</i> then throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception because the structure is cyclical.</p>
 		</li>
 		<li><p>
@@ -32710,7 +32702,7 @@
 	<ol>
 		<li><p>
 		If
-		<i>stack</i> contains <i>value</i> then throw a <b>TypeError</b>
+		<i>stack</i> contains <i>value</i> then throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception because the structure is cyclical.</p>
 		</li>
 		<li><p>
@@ -32841,13 +32833,13 @@
 	<p><b class="note">NOTE 1</b> JSON structures are allowed to be nested to any depth, but they
 	must be acyclic. If <i>value</i>
 	is or contains a cyclic structure, then the stringify function must
-	throw a <b>TypeError</b> exception. This is an example of a value
+	throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception. This is an example of a value
 	that cannot be stringified:</p>
 	<p class="code-example"><code><b>a = [];</b></code></p>
 	<p class="code-example"><code><b>a[0] = a;</b></code></p>
 	<p class="code-example"><code><b>my_text = JSON.stringify(a); // This must throw an TypeError.</b></code></p>
 	<br>
-	<p><b class="note">NOTE 2</b> Symbolic primitive values are rendered as follows:</p>
+	<p><b class="note">NOTE 2</b> Symbolic <a href="#primitive_value" class="term-ref">primitive value</a>s are rendered as follows:</p>
 	<ul>
 		<li><p>The
 		<b>null</b> value is rendered in JSON text as the String <code>null</code>.</p>
@@ -32974,9 +32966,9 @@
 		calling <code><b>eval</b></code>,
 		using a regular expression literal, or using the <code><b>Function</b></code>
 		or <code><b>RegExp</b></code>
-		constructor) that are allowed to throw <b>SyntaxError</b>
+		constructor) that are allowed to throw <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 		are permitted to exhibit implementation-defined behaviour instead
-		of throwing <b>SyntaxError</b>
+		of throwing <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 		when they encounter an implementation-defined extension to the
 		program syntax or regular expression pattern or flag syntax.</p>
 		</li>
@@ -32986,11 +32978,11 @@
 		properties, and functions beyond those described in this
 		specification. This may cause constructs (such as looking up a
 		variable in the global scope) to have implementation-defined
-		behaviour instead of throwing an error (such as <b>ReferenceError</b>).</p>
+		behaviour instead of throwing an error (such as <b><a href="#x15.11.6.3" class="term-ref">ReferenceError</a></b>).</p>
 		</li>
 		<li><p>
 		An
-		implementation may define behaviour other than throwing <b>RangeError</b>
+		implementation may define behaviour other than throwing <b><a href="#x15.11.6.2" class="term-ref">RangeError</a></b>
 		for <code><b>toFixed</b></code>,
 		<code><b>toExponential</b></code>,
 		and <code><b>toPrecision</b></code>
@@ -34873,7 +34865,7 @@
 	<p>
 	The
 	<code><b>escape</b></code> function is
-	a property of the global object. It computes a new version of a
+	a property of the <a href="#x15.1" class="term-ref">global object</a>. It computes a new version of a
 	String value in which certain characters have been replaced by a
 	hexadecimal escape sequence.</p>
 	<p>
@@ -34970,7 +34962,7 @@
 	<p>
 	The
 	<code><b>unescape</b></code> function
-	is a property of the global object. It computes a new version of a
+	is a property of the <a href="#x15.1" class="term-ref">global object</a>. It computes a new version of a
 	String value in which each escape sequence of the sort that might be
 	introduced by the <code><b>escape</b></code>
 	function is replaced with the character that it represents.</p>
@@ -35241,9 +35233,9 @@
 		<li><p>
 		Assignment
 		to an undeclared identifier or otherwise unresolvable reference
-		does not create a property in the global object. When a simple
+		does not create a property in the <a href="#x15.1" class="term-ref">global object</a>. When a simple
 		assignment occurs within strict mode code, its <i>LeftHandSide </i>must not evaluate to an
-		unresolvable Reference. If it does a <b>ReferenceError</b>
+		unresolvable Reference. If it does a <b><a href="#x15.11.6.3" class="term-ref">ReferenceError</a></b>
 		exception is thrown (<a href="#x8.7.2">8.7.2</a>). The <i>LeftHandSide </i>also
 		may not be a reference to a data property with the attribute value
 		{[[Writable]]:<b>false</b>},
@@ -35252,7 +35244,7 @@
 		 </b>nor to a non-existent
 		property of an object whose [[Extensible]] internal property has
 		the value <b>false</b>.
-		In these cases a <code><b>TypeError</b></code>
+		In these cases a <code><b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b></code>
 		exception is thrown (<a href="#x11.13.1">11.13.1</a>).</p>
 		</li>
 		<li><p>
@@ -35290,14 +35282,14 @@
 		</li>
 		<li><p>
 		It
-		is a <b>SyntaxError</b>
+		is a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 		if strict mode code contains an
 		<i>ObjectLiteral</i> with
 		more than one definition of any data property (<a href="#x11.1.5">11.1.5</a>).</p>
 		</li>
 		<li><p>
 		It
-		is a <b>SyntaxError</b>
+		is a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 		if the <i>Identifier</i>
 		<code><b>"eval"</b></code>
 		or the <i>Identifier </i><code><b>"arguments"</b></code>
@@ -35324,7 +35316,7 @@
 		an object. A <b>this</b>
 		value of <b>null</b>
 		or <b>undefined</b>
-		is not converted to the global object and primitive values are not
+		is not converted to the <a href="#x15.1" class="term-ref">global object</a> and <a href="#primitive_value" class="term-ref">primitive value</a>s are not
 		converted to wrapper objects. The <b>this</b>
 		value passed via a function call (including calls made using
 		<code><b>Function.prototype.apply</b></code>
@@ -35344,14 +35336,14 @@
 		<li><p>
 		When
 		a <code><b>delete</b></code>
-		operator occurs within strict mode code, a <b>TypeError</b><code>
+		operator occurs within strict mode code, a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b><code>
 		</code>is thrown if the property to
 		be deleted has the attribute { [[Configurable]]:<b>false</b>
 		} (<a href="#x11.4.1">11.4.1</a>).</p>
 		</li>
 		<li><p>
 		It
-		is a <b>SyntaxError</b>
+		is a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 		if a <i>VariableDeclaration</i>
 		or <i>VariableDeclarationNoIn</i>
 		occurs within strict code and its  <i>Identifier</i>
@@ -35364,12 +35356,12 @@
 		Strict
 		mode code may not include a <i>WithStatement</i>.
 		The occurrence of a <i>WithStatement</i>
-		in such a context is an <b>SyntaxError</b>
+		in such a context is an <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 		(<a href="#x12.10">12.10</a>).</p>
 		</li>
 		<li><p>
 		It
-		is a <b>SyntaxError</b> if a <i>TryStatement</i>
+		is a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> if a <i>TryStatement</i>
 		with a  <i>Catch</i>
 		occurs within strict code and the <i>Identifier</i>
 		of the <i>Catch</i>
@@ -35379,7 +35371,7 @@
 		</li>
 		<li><p>
 		It
-		is a <b>SyntaxError</b> if  the identifier <code><b>eval</b></code>
+		is a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> if  the identifier <code><b>eval</b></code>
 		or<b> </b><code><b>arguments</b></code>
 		appears within a <i>FormalParameterList</i>
 		of a strict mode <i>FunctionDeclaration</i>
@@ -35407,7 +35399,7 @@
 		</li>
 		<li><p>
 		It
-		is a <b>SyntaxError</b>
+		is a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 		to use within strict mode code the identifiers <code><b>eval</b></code>
 		or <code><b>arguments</b></code>
 		as the <i>Identifier</i> of a
@@ -35415,7 +35407,7 @@
 		<i>FunctionExpression</i> or
 		as a formal parameter name (<a href="#x13.1">13.1</a>). Attempting to dynamically define
 		such a strict mode function using the <code><b>Function</b></code>
-		constructor (<a href="#x15.3.2">15.3.2</a>) will throw a <b>SyntaxError</b>
+		constructor (<a href="#x15.3.2">15.3.2</a>) will throw a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 		exception.</p>
 	</li></ul>
 	<h2 id="D">Annex D (informative) Corrections and Clarifications in the 5th Edition with Possible 3rd Edition Compatibility Impact <a href="#D">#</a> <a href="#D-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h2>
@@ -35547,7 +35539,7 @@
 	In Edition 5 all methods of <code><b>Array.prototype</b></code>
 	are intentionally generic. In Edition 3 <code><b>toString</b></code>
 	and <code><b>toLocaleString</b></code>
-	were not generic and would throw a <code><b>TypeError</b></code>
+	were not generic and would throw a <code><b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b></code>
 	exception if applied to objects that were not instances of Array.</p>
 	<p>
 	<a href="#x10.6">10.6</a>:
@@ -35564,7 +35556,7 @@
 	</p>
 	<p>
 	<a href="#x12.6.4">12.6.4</a>:
-	for-in statements no longer throw a <b>TypeError</b> if the <code><b>in</b></code>
+	for-in statements no longer throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> if the <code><b>in</b></code>
 	expression evaluates to <b>null</b> or <b>undefined</b>. Instead,
 	the statement behaves as if the value of the expression was an
 	object with no enumerable properties.</p>
@@ -35602,7 +35594,7 @@
 	Implementations are now required to ignore extra arguments to
 	standard built-in methods unless otherwise explicitly specified. In
 	Edition 3 the handling of extra arguments was unspecified and
-	implementations were explicitly allowed to throw a <b>TypeError</b>
+	implementations were explicitly allowed to throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 	exception.</p>
 	<p>
 	<a href="#x15.1.1">15.1.1</a>:
@@ -35622,7 +35614,7 @@
 	character as octal values.</p>
 	<p>
 	<a href="#x15.3.4.3">15.3.4.3</a>:
-	In Edition 3, a <b>TypeError</b> is thrown if the second argument
+	In Edition 3, a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> is thrown if the second argument
 	passed to <code><b>Function.prototype.apply</b></code>
 	is neither an array object nor an arguments object. In Edition 5,
 	the second argument may be any kind of generic array-like object
@@ -35633,10 +35625,9 @@
 	In Edition 3 passing <b>undefined</b> or <b>null</b> as the first
 	argument to either <code><b>Function.prototype.apply</b></code>
 	or <code><b>Function.prototype.call</b></code>
-	causes the global object to be passed to the indirectly invoked
+	causes the <a href="#x15.1" class="term-ref">global object</a> to be passed to the indirectly invoked
 	target function as the <b>this</b> value. If the first argument is a
-	primitive value the result of calling ToObject on the primitive
-	value is passed as the <b>this</b> value. In Edition 5, these
+	<a href="#primitive_value" class="term-ref">primitive value</a> the result of calling ToObject on the <a href="#primitive_value" class="term-ref">primitive value</a> is passed as the <b>this</b> value. In Edition 5, these
 	transformations are not performed and the actual first argument
 	value is passed as the <b>this</b> value. This difference will
 	normally be unobservable to existing ECMAScript Edition 3 code
@@ -35650,7 +35641,7 @@
 	cause behaviour in Edition 5 implementations that differ from
 	Edition 3 behaviour. In particular, in Edition 5 built-in functions
 	that are specified to actually use the passed <b>this</b> value as
-	an object typically throw a <b>TypeError</b> exception if passed
+	an object typically throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception if passed
 	<b>null</b> or <b>undefined</b> as the <b>this</b> value.</p>
 	<p>
 	<a href="#x15.3.5.2">15.3.5.2</a>:
