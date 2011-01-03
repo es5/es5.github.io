@@ -2075,11 +2075,8 @@ an object is a member of the remaining built-in type
 	followed by one or more decimal digits the first of which is even,
 	or a decimal digit not followed by another decimal digit.</p>
 	<p>
-	If
-	the phrase “[no <i>LineTerminator</i>
-	here]” appears in the right-hand side of a production of
-	the syntactic grammar, it indicates that the production is <i>a
-	restricted production</i>: it may not be used if a <i>LineTerminator</i>
+	<dfn id="restricted-production">If the phrase “[no <i>LineTerminator</i> here]” appears in the right-hand side of a production of
+	the syntactic grammar, it indicates that the production is <i>a restricted production</i></dfn>: it may not be used if a <i>LineTerminator</i>
 	occurs in the input stream at the indicated position. For example,
 	the production:</p>
 	<p class="def1">
@@ -2087,9 +2084,7 @@ an object is a member of the remaining built-in type
 	</b></i><b>:</b></p>
 	<p class="def2">
 	<code><b>return
-	</b></code>[no
-	<i>LineTerminator</i>
-	here]<code><b>
+	</b></code><a href="#restricted-production">[no <i>LineTerminator</i> here]</a><code><b>
 	</b></code><i>Expression</i><sub>opt</sub><i></i><code><b>;</b></code></p>
 	<p>
 	indicates
@@ -2252,7 +2247,7 @@ an object is a member of the remaining built-in type
 	then the corresponding mathematical value is simply <b>0</b>.</p>
 	<p>
 	The
-	mathematical function abs(<i>x</i>)
+	mathematical function <dfn id="abs">abs(<i>x</i>)</dfn>
 	yields the absolute value of <i>x</i>,
 	which is <span class="symbol">−</span><i>x</i>
 	if <i>x</i> is negative
@@ -2260,7 +2255,7 @@ an object is a member of the remaining built-in type
 	itself.</p>
 	<p>
 	The
-	mathematical function sign(<i>x</i>)
+	mathematical function <dfn id="sign">sign</dfn>(<i>x</i>)
 	yields 1 if <i>x</i>
 	is positive and <span class="symbol">−</span>1
 	if <i>x</i> is negative.
@@ -2268,18 +2263,18 @@ an object is a member of the remaining built-in type
 	is zero.</p>
 	<p>
 	The
-	notation “<i>x </i>modulo<i>y</i>” (<i>y</i>
+	notation <dfn id="modulo">“<i>x</i> modulo <i>y</i>” (<i>y</i>
 	must be finite and nonzero) computes a value <i>k</i>
 	of the same sign as <i>y</i>
-	(or zero) such that abs(<i>k</i>)
-	&lt; abs(<i>y</i>)
+	(or zero) such that <a href="#abs">abs</a>(<i>k</i>)
+	&lt; <a href="#abs">abs</a>(<i>y</i>)
 	and <i>x</i><span class="symbol">−</span><i>k </i>= <i>q</i>
 	<span class="symbol">×</span>
 	<i>y</i> for some
 	integer <i>q</i>.</p>
 	<p>
 	The
-	mathematical function floor(<i>x</i>)
+	mathematical function <dfn id="floor">floor</dfn>(<i>x</i>)
 	yields the largest integer (closest to positive infinity) that is
 	not larger than <i>x</i>.</p>
 	<p><b class="note">NOTE</b> floor(<i>x</i>)
@@ -4693,9 +4688,7 @@ the empty character sequence.</P></LI>
 				but the production is a <i>restricted
 				production</i> and the
 				token would be the first token for a terminal or nonterminal
-				immediately following the annotation “[no
-				<i>LineTerminator</i>
-				here]”
+				immediately following the annotation “<a href="#restricted-production">[no <i>LineTerminator</i> here]</a>”
 				within the restricted production
 				(and therefore such a token is called a restricted token), and
 				the restricted token is separated from the previous token by at
@@ -4718,45 +4711,27 @@ the empty character sequence.</P></LI>
 	<i>PostfixExpression </i><b>:</b></p>
 	<p class="def2">
 	<i>LeftHandSideExpression</i><code><b>
-	</b></code>[no
-	<i>LineTerminator</i>
-	here]<code><b>
+	</b></code><a href="#restricted-production">[no <i>LineTerminator</i> here]</a><code><b>
 	++</b></code><i><br>LeftHandSideExpression</i><code><b>
-	</b></code>[no
-	<i>LineTerminator</i>
-	here]<code><b>
+	</b></code><a href="#restricted-production">[no <i>LineTerminator</i> here]</a><code><b>
 	--</b></code></p>
 	<p class="def1">
 	<i>ContinueStatement </i><b>:</b></p>
 	<p class="def2">
-	<code><b>continue
-	</b></code>[no
-	<i>LineTerminator</i>
-	here] <i>Identifier</i><sub>opt</sub><i></i><code><b>;</b></code></p>
+	<code><b>continue</b></code> <a href="#restricted-production">[no <i>LineTerminator</i> here]</a> <i>Identifier</i><code><b>;</b></code></p>
 	<p class="def1">
 	<i>BreakStatement </i><b>:</b></p>
 	<p class="def2">
-	<code><b>break
-	</b></code>[no
-	<i>LineTerminator</i>
-	here]
-	<i>Identifier</i><sub>opt</sub><i></i><code><b>;</b></code></p>
+	<code><b>break</b></code> <a href="#restricted-production">[no <i>LineTerminator</i> here]</a> <i>Identifier</i><code><b>;</b></code></p>
 	<p class="def1">
 	<i>ReturnStatement </i><b>:</b></p>
 	<p class="def2">
-	<code><b>return
-	</b></code>[no
-	<i>LineTerminator</i>
-	here]<code><b>
-	</b></code><i>Expression</i><sub>opt</sub><i></i><code><b>;</b></code></p>
+	<code><b>return</b></code> <a href="#restricted-production">[no <i>LineTerminator</i> here]</a> <i>Expression</i><code><b>;</b></code></p>
 	<p class="def1">
 	<i>ThrowStatement<b>
 	</b></i><b>:</b></p>
 	<p class="def2">
-	<i><b>throw</b> </i>[no
-	<i>LineTerminator</i>
-	here] <i>Expression
-	<b>;</b></i></p>
+	<code><b>throw</b></code> </i><a href="#restricted-production">[no <i>LineTerminator</i> here]</a> <i>Expression<b>;</b></i></p>
 	<p>
 	The
 	practical effect of these restricted productions is as follows:</p>
@@ -8262,7 +8237,7 @@ the empty character sequence.</P></LI>
 		</li>
 		<li><p>
 		Return
-		the result of computing sign(<i>number</i>) * floor(abs(<i>number</i>)).</p>
+		the result of computing <a href="#sign">sign</a>(<i>number</i>) * <a href="#floor">floor</a>(<a href="#abs">abs</a>(<i>number</i>)).</p>
 	</li></ol>
 	<h3 id="x9.5">9.5 ToInt32: (Signed 32 Bit Integer) <a href="#x9.5">#</a> <a href="#x9.5-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
 	<p>
@@ -8285,11 +8260,11 @@ the empty character sequence.</P></LI>
 		</li>
 		<li><p>
 		Let
-		<i>posInt</i> be sign(<i>number</i>) * floor(abs(<i>number</i>)).</p>
+		<i>posInt</i> be <a href="#sign">sign</a>(<i>number</i>) * <a href="#floor">floor</a>(<a href="#abs">abs</a>(<i>number</i>)).</p>
 		</li>
 		<li><p>
 		Let
-		<i>int32bit</i> be <i>posInt</i> modulo 2<sup>32</sup>; that is, a
+		<i>int32bit</i> be <i>posInt</i> <a href="#modulo">modulo</a> 2<sup>32</sup>; that is, a
 		finite integer value k of Number type with positive sign and less
 		than 2<sup>32</sup> in magnitude such that the mathematical
 		difference of <i>posInt</i> and k is mathematically an integer
@@ -8342,11 +8317,11 @@ the empty character sequence.</P></LI>
 		</li>
 		<li><p>
 		Let
-		<i>posInt</i> be sign(<i>number</i>) * floor(abs(<i>number</i>)).</p>
+		<i>posInt</i> be <a href="#sign">sign</a>(<i>number</i>) * <a href="#floor">floor</a>(<a href="#abs">abs</a>(<i>number</i>)).</p>
 		</li>
 		<li><p>
 		Let
-		<i>int32bit</i> be <i>posInt</i> modulo 2<sup>32</sup>; that is, a
+		<i>int32bit</i> be <i>posInt</i> <a href="#modulo">modulo</a> 2<sup>32</sup>; that is, a
 		finite integer value k of Number type with positive sign and less
 		than 2<sup>32</sup> in magnitude such that the mathematical
 		difference of <i>posInt</i> and k is mathematically an integer
@@ -8401,11 +8376,11 @@ the empty character sequence.</P></LI>
 		</li>
 		<li><p>
 		Let
-		<i>posInt</i> be sign(<i>number</i>) * floor(abs(<i>number</i>)).</p>
+		<i>posInt</i> be <a href="#sign">sign</a>(<i>number</i>) * <a href="#floor">floor</a>(<a href="#abs">abs</a>(<i>number</i>)).</p>
 		</li>
 		<li><p>
 		Let
-		<i>int16bit</i> be <i>posInt</i> modulo 2<sup>16</sup>; that is, a
+		<i>int16bit</i> be <i>posInt</i> <a href="#modulo">modulo</a> 2<sup>16</sup>; that is, a
 		finite integer value <i>k</i> of Number type with positive sign and
 		less than 2<sup>16</sup> in magnitude such that the mathematical
 		difference of <i>posInt</i> and <i>k</i> is mathematically an
@@ -8590,7 +8565,7 @@ the empty character sequence.</P></LI>
 		or minus sign ‘<span class="symbol"><b>−</b></span>’
 		according to whether <i>n</i><span class="symbol">−</span>1
 		is positive or negative, followed by the decimal representation of
-		the integer abs(<i>n</i><span class="symbol">−</span>1)
+		the integer <a href="#abs">abs</a>(<i>n</i><span class="symbol">−</span>1)
 		(with no leading zeros).</p>
 		</li>
 		<li><p>
@@ -8602,7 +8577,7 @@ the empty character sequence.</P></LI>
 		character ‘e’, followed by a plus sign ‘+’ or minus sign
 		‘<span class="symbol">−</span>’ according to whether
 		n<span class="symbol">−</span>1 is positive or negative,
-		followed by the decimal representation of the integer abs(n<span class="symbol">−</span>1)
+		followed by the decimal representation of the integer <a href="#abs">abs</a>(n<span class="symbol">−</span>1)
 		(with no leading zeros).</p>
 	</li></ol>
 	<p><b class="note">NOTE 1</b> The following observations may be useful as guidelines for
@@ -11813,22 +11788,16 @@ the empty character sequence.</P></LI>
 	<i>PostfixExpression </i><b>:</b></p>
 	<p class="def1-btm">
 	<i>LeftHandSideExpression<br>LeftHandSideExpression</i><code><b>
-	</b></code>[no
-	<i>LineTerminator</i>
-	here]<code><b>
+	</b></code><a href="#restricted-production">[no <i>LineTerminator</i> here]</a><code><b>
 	++</b></code><i><br>LeftHandSideExpression</i><code><b>
-	</b></code>[no
-	<i>LineTerminator</i>
-	here]<code><b>
+	</b></code><a href="#restricted-production">[no <i>LineTerminator</i> here]</a><code><b>
 	--</b></code></p>
 	<h4 id="x11.3.1">11.3.1 Postfix Increment Operator <a href="#x11.3.1">#</a> <a href="#x11.3.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	The
 	production <i>PostfixExpression</i>
 	<b>:</b> <i>LeftHandSideExpression</i><code>
-	</code>[no
-	<i>LineTerminator</i>
-	here]<code> </code><code><b>++
+	</code><a href="#restricted-production">[no <i>LineTerminator</i> here]</a><code> </code><code><b>++
 	</b></code>is evaluated as follows:</p>
 	<ol>
 		<li><p>
@@ -15101,9 +15070,7 @@ IEEE 754 round-to-nearest mode.
 	<code><b>continue</b></code> <code><b>;</b></code></p>
 	<p class="def1-btm">
 	<code><b>continue
-	</b></code>[no
-	<i>LineTerminator</i>
-	here]<i> Identifier</i><code><b>;</b></code></p>
+	</b></code><a href="#restricted-production">[no <i>LineTerminator</i> here]</a><i> Identifier</i><code><b>;</b></code></p>
 
 	<p class="tiny-btm">
 	<b>Semantics</b></p>
@@ -15158,9 +15125,7 @@ IEEE 754 round-to-nearest mode.
 	<code><b>break</b></code> <code><b>;</b></code></p>
 	<p class="def1-btm">
 	<code><b>break</b></code><i><b>
-	</b></i>[no
-	<i>LineTerminator</i>
-	here] <i>Identifier</i> <code><b>;</b></code></p>
+	</b></i><a href="#restricted-production">[no <i>LineTerminator</i> here]</a> <i>Identifier</i> <code><b>;</b></code></p>
 
 	<p class="tiny-btm">
 	<b>Semantics</b></p>
@@ -15215,9 +15180,7 @@ IEEE 754 round-to-nearest mode.
 	<code><b>return</b></code> <code><b>;</b></code></p>
 	<p class="def1-btm">
 	<code><b>return
-	</b></code>[no
-	<i>LineTerminator</i>
-	here]<i><b> </b>Expression</i> <code><b>;</b></code></p>
+	</b></code><a href="#restricted-production">[no <i>LineTerminator</i> here]</a><i><b> </b>Expression</i> <code><b>;</b></code></p>
 	<p class="tiny-btm">
 	<b>Semantics</b></p>
 	<p>
@@ -15234,9 +15197,7 @@ IEEE 754 round-to-nearest mode.
 	The
 	production <i>ReturnStatement</i>
 	<b>:</b> <code><b>return</b></code><b>
-	</b>[no
-	<i>LineTerminator</i>
-	here]<b>
+	</b><a href="#restricted-production">[no <i>LineTerminator</i> here]</a><b>
 	</b><i>Expression</i><sub>opt</sub>
 	<code><b>;</b></code> is
 	evaluated as:</p>
@@ -15813,18 +15774,14 @@ IEEE 754 round-to-nearest mode.
 	</b></i><b>:</b></p>
 	<p class="def1-btm">
 	<code><b>throw</b></code><i><b>
-	</b></i>[no
-	<i>LineTerminator</i>
-	here] <i>Expression </i><code><b>;</b></code></p>
+	</b></i><a href="#restricted-production">[no <i>LineTerminator</i> here]</a> <i>Expression </i><code><b>;</b></code></p>
 	<p class="tiny-btm">
 	<b>Semantics</b></p>
 	<p>
 	The
 	production <i>ThrowStatement</i>
 	<b>:</b> <code><b>throw</b></code><b>
-	</b>[no
-	<i>LineTerminator</i>
-	here]<i><b>
+	</b><a href="#restricted-production">[no <i>LineTerminator</i> here]</a><i><b>
 	</b></i><i>Expression</i>
 	<code><b>;</b></code> is evaluated as:</p>
 	<ol>
@@ -16694,8 +16651,8 @@ IEEE 754 round-to-nearest mode.
 	and where each <i>ExpressionStatement </i>in the sequence
 	consists entirely of a <i>StringLiteral</i>
 	token followed a semicolon.
-	The semicolon may appear explicitly or may be inserted by automatic
-	semicolon insertion. A Directive Prologue may be an empty sequence.</p>
+	The semicolon may appear explicitly or may be inserted by
+<a href="#x7.9">automatic semicolon insertion</a>. A Directive Prologue may be an empty sequence.</p>
 	<p>
 	A Use
 	Strict Directive is an <i>ExpressionStatement</i>
@@ -20426,7 +20383,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>middle</i> be  floor(<i>len</i>/2).</p>
+		<i>middle</i> be  <a href="#floor">floor</a>(<i>len</i>/2).</p>
 		</li>
 		<li><p>
 		Let<i>lower</i> be <b>0</b>.</p>
@@ -21548,7 +21505,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<ol>
 			<li><p>
 			Let
-			<i>k </i>be <i>len</i> - abs(<i>n</i>).</p>
+			<i>k </i>be <i>len</i> - <a href="#abs">abs</a>(<i>n</i>).</p>
 			</li>
 			<li><p>
 			If
@@ -21660,7 +21617,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<ol>
 			<li><p>
 			Let
-			<i>k</i> be <i>len</i> - abs(<i>n</i>).</p>
+			<i>k</i> be <i>len</i> - <a href="#abs">abs</a>(<i>n</i>).</p>
 		</li></ol>
 		</li>
 		<li><p>
@@ -24490,7 +24447,7 @@ If <i>inputString</i> does not contain any such characters, let
 
 		<li><p>
 		If
-		ToString(abs(ToInteger(<i>P</i>)))
+		ToString(<a href="#abs">abs</a>(ToInteger(<i>P</i>)))
 		is not
 		the same value as <i>P</i>,
 		return <b>undefined</b>.</p>
@@ -26168,42 +26125,42 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		If
-		abs(<i>x</i>)&gt;1
+		<a href="#abs">abs</a>(<i>x</i>)&gt;1
 		and <i>y</i>
 		is +<span class="symbol">∞</span>,
 		the result is +<span class="symbol">∞</span>.</p>
 		</li>
 		<li><p>
 		If
-		abs(<i>x</i>)&gt;1
+		<a href="#abs">abs</a>(<i>x</i>)&gt;1
 		and <i>y</i>
 		is <span class="symbol">−∞</span>,
 		the result is +0.</p>
 		</li>
 		<li><p>
 		If
-		abs(<i>x</i>)==1
+		<a href="#abs">abs</a>(<i>x</i>)==1
 		and <i>y</i>
 		is +<span class="symbol">∞</span>,
 		the result is NaN.</p>
 		</li>
 		<li><p>
 		If
-		abs(<i>x</i>)==1
+		<a href="#abs">abs</a>(<i>x</i>)==1
 		and <i>y</i>
 		is <span class="symbol">−∞</span>,
 		the result is NaN.</p>
 		</li>
 		<li><p>
 		If
-		abs(<i>x</i>)&lt;1
+		<a href="#abs">abs</a>(<i>x</i>)&lt;1
 		and <i>y</i>
 		is +<span class="symbol">∞</span>,
 		the result is +0.</p>
 		</li>
 		<li><p>
 		If
-		abs(<i>x</i>)&lt;1
+		<a href="#abs">abs</a>(<i>x</i>)&lt;1
 		and <i>y</i>
 		is <span class="symbol">−∞</span>,
 		the result is +<span class="symbol">∞</span>.</p>
@@ -26508,7 +26465,7 @@ If <i>inputString</i> does not contain any such characters, let
 	given time value <i>t</i> belongs to day number</p>
 	<p class="code-example">
 	Day(<i>t</i>)
-	= floor(<i>t</i> / msPerDay)</p>
+	= <a href="#floor">floor</a>(<i>t</i> / msPerDay)</p>
 	<p class="sm-btm">
 	where
 	the number of milliseconds per day is</p>
@@ -26520,7 +26477,7 @@ If <i>inputString</i> does not contain any such characters, let
 	remainder is called the time within the day:</p>
 	<p class="code-example">
 	TimeWithinDay(<i>t</i>)
-	= <i>t </i>modulo msPerDay</p>
+	= <i>t </i><a href="#modulo">modulo</a> msPerDay</p>
 	<h5 id="x15.9.1.3">15.9.1.3 Year Number <a href="#x15.9.1.3">#</a> <a href="#x15.9.1.3-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p class="sm-btm">
 	ECMAScript
@@ -26533,10 +26490,10 @@ If <i>inputString</i> does not contain any such characters, let
 	is therefore defined by</p>
 	<p class="code-example">
 	DaysInYear(<i>y</i>)
-		= 365  if (<i>y</i> modulo 4) <span class="symbol">≠</span>
-	0<br>= 366  if (<i>y</i> modulo 4) = 0 and (y modulo 100) <span class="symbol">≠</span>
-	0<br>= 365  if (<i>y</i> modulo 100) = 0 and (y modulo 400) <span class="symbol">≠</span>
-	0<br>= 366  if (<i>y</i> modulo 400) = 0</p>
+		= 365  if (<i>y</i> <a href="#modulo">modulo</a> 4) <span class="symbol">≠</span>
+	0<br>= 366  if (<i>y</i> <a href="#modulo">modulo</a> 4) = 0 and (y <a href="#modulo">modulo</a> 100) <span class="symbol">≠</span>
+	0<br>= 365  if (<i>y</i> <a href="#modulo">modulo</a> 100) = 0 and (y <a href="#modulo">modulo</a> 400) <span class="symbol">≠</span>
+	0<br>= 366  if (<i>y</i> <a href="#modulo">modulo</a> 400) = 0</p>
 	<p class="sm-btm">
 	All
 	non-leap years have 365
@@ -26546,9 +26503,9 @@ If <i>inputString</i> does not contain any such characters, let
 	<p class="code-example">
 	DayFromYear(<i>y</i>)	=
 	365 <span class="symbol">×</span> (<i>y</i><span class="symbol">−</span>1970)
-	+ floor((<i>y</i><span class="symbol">−</span>1969)/4) <span class="symbol">−</span>
-	floor((<i>y</i><span class="symbol">−</span>1901)/100) +
-	floor((<i>y</i><span class="symbol">−</span>1601)/400)</p>
+	+ <a href="#floor">floor</a>((<i>y</i><span class="symbol">−</span>1969)/4) <span class="symbol">−</span>
+	<a href="#floor">floor</a>((<i>y</i><span class="symbol">−</span>1901)/100) +
+	<a href="#floor">floor</a>((<i>y</i><span class="symbol">−</span>1601)/400)</p>
 	<p class="sm-btm">
 	The
 	time value of the start of a year is:</p>
@@ -26658,7 +26615,7 @@ If <i>inputString</i> does not contain any such characters, let
 	is defined as</p>
 	<p class="code-example">
 	WeekDay(<i>t</i>)	
-	= (Day(<i>t</i>) + 4) modulo 7</p>
+	= (Day(<i>t</i>) + 4) <a href="#modulo">modulo</a> 7</p>
 	<p>
 	A
 	weekday value of 0
@@ -26747,16 +26704,16 @@ If <i>inputString</i> does not contain any such characters, let
 	following functions are useful in decomposing time values:</p>
 	<p class="code-example">
 	HourFromTime(<i>t</i>)	=
-	floor(<i>t</i> / msPerHour) modulo HoursPerDay</p>
+	<a href="#floor">floor</a>(<i>t</i> / msPerHour) <a href="#modulo">modulo</a> HoursPerDay</p>
 	<p class="code-example">
 	MinFromTime(<i>t</i>)	=
-	floor(<i>t</i> / msPerMinute) modulo MinutesPerHour</p>
+	<a href="#floor">floor</a>(<i>t</i> / msPerMinute) <a href="#modulo">modulo</a> MinutesPerHour</p>
 	<p class="code-example">
 	SecFromTime(<i>t</i>)	=
-	floor(<i>t</i> / msPerSecond) modulo SecondsPerMinute</p>
+	<a href="#floor">floor</a>(<i>t</i> / msPerSecond) <a href="#modulo">modulo</a> SecondsPerMinute</p>
 	<p class="code-example">
 	msFromTime(<i>t</i>)	=
-	t modulo msPerSecond</p>
+	t <a href="#modulo">modulo</a> msPerSecond</p>
 	<p class="sm-btm">
 	where</p>
 	<p class="code-example">
@@ -26848,11 +26805,11 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>ym</i> be <i>y</i> + floor(<i>m</i> /12).</p>
+		<i>ym</i> be <i>y</i> + <a href="#floor">floor</a>(<i>m</i> /12).</p>
 		</li>
 		<li><p>
 		Let
-		<i>mn</i> be <i>m</i> modulo 12.</p>
+		<i>mn</i> be <i>m</i> <a href="#modulo">modulo</a> 12.</p>
 		</li>
 		<li><p>
 		Find
@@ -26894,7 +26851,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		If
-		abs(<i>time</i>) &gt; 8.64&nbsp;x&nbsp;10<sup>15</sup>,
+		<a href="#abs">abs</a>(<i>time</i>) &gt; 8.64&nbsp;x&nbsp;10<sup>15</sup>,
 		return <b>NaN</b>.</p>
 		</li>
 		<li><p>

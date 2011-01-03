@@ -1,3 +1,15 @@
+a,
+a:visited
+{
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 2px dotted gray;
+}
+
+dfn {
+  font-style: normal;
+}
+
 body {
   margin-left: 200px;
   margin-right: 10%;
@@ -7,8 +19,10 @@ h1, h2, h3, h4, h5, h6 {
   color: green;
 }
 
+#toc a,
 #toc-full a {
   text-decoration: none !important;
+  border: none;
 }
 .toc-anno {
   color: green;
@@ -33,6 +47,7 @@ h5 a,
 h6 a
 {
   text-decoration: none;
+  border: none;
   font-weight: normal;
   color: #bbb;
 }
@@ -44,6 +59,7 @@ h4 a:hover,
 h5 a:hover,
 h6 a:hover
 {
+  border: none;
   text-decoration: none;
   font-weight: normal;
   color: green !important;
