@@ -4199,6 +4199,10 @@ an object is a member of the remaining built-in type
 				</code><i>EscapeSequence</i> is
 				the CV of the<i> EscapeSequence</i>.</p>
 				</li>
+<LI><P>The
+CV of <I>DoubleStringCharacter</I> <B>::</B>
+<I>LineContinuation</I> is the
+empty character sequence.</P></LI>
 				<li><p>
 				The
 				CV of <i>SingleStringCharacter</i> <b>::</b>
@@ -4216,6 +4220,10 @@ an object is a member of the remaining built-in type
 				</code><i>EscapeSequence</i> is
 				the CV of the<i> EscapeSequence</i>.</p>
 				</li>
+<LI><P>The
+CV of <I>SingleStringCharacter</I> <B>::</B>
+<I>LineContinuation</I> is
+the empty character sequence.</P></LI>
 				<li><p>
 				The
 				CV of <i>EscapeSequence </i><b>::</b>
@@ -12562,7 +12570,10 @@ an object is a member of the remaining built-in type
 				(d * q) where q is an integer that is negative only if n/d is
 				negative and positive only if n/d is positive, and whose
 				magnitude is as large as possible without exceeding the magnitude
-				of the true mathematical quotient of n and d.</p>
+				of the true mathematical quotient of n and d.
+r is computed and rounded to the nearest representable value using
+IEEE 754 round-to-nearest mode.
+</p>
 	</li></ul>
 	<h3 id="x11.6">11.6 Additive Operators <a href="#x11.6">#</a> <a href="#x11.6-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
 	<p class="tiny-btm">
@@ -15083,13 +15094,17 @@ an object is a member of the remaining built-in type
 	<h3 id="x12.7">12.7 The continue Statement <a href="#x12.7">#</a> <a href="#x12.7-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
 	<p class="tiny-btm">
 	<b>Syntax</b></p>
+
 	<p class="keep">
 	<i>ContinueStatement </i><b>:</b></p>
+	<p class="def1-btm">
+	<code><b>continue</b></code> <code><b>;</b></code></p>
 	<p class="def1-btm">
 	<code><b>continue
 	</b></code>[no
 	<i>LineTerminator</i>
-	here]<i> Identifier</i><sub>opt</sub><i></i><code><b>;</b></code></p>
+	here]<i> Identifier</i><code><b>;</b></code></p>
+
 	<p class="tiny-btm">
 	<b>Semantics</b></p>
 	<p>
@@ -15140,10 +15155,13 @@ an object is a member of the remaining built-in type
 	<p class="keep">
 	<i>BreakStatement </i><b>:</b></p>
 	<p class="def1-btm">
+	<code><b>break</b></code> <code><b>;</b></code></p>
+	<p class="def1-btm">
 	<code><b>break</b></code><i><b>
 	</b></i>[no
 	<i>LineTerminator</i>
-	here] <i>Identifier</i><sub>opt</sub><i></i><code><b>;</b></code></p>
+	here] <i>Identifier</i> <code><b>;</b></code></p>
+
 	<p class="tiny-btm">
 	<b>Semantics</b></p>
 	<p>
@@ -15194,10 +15212,12 @@ an object is a member of the remaining built-in type
 	<p class="keep">
 	<i>ReturnStatement </i><b>:</b></p>
 	<p class="def1-btm">
+	<code><b>return</b></code> <code><b>;</b></code></p>
+	<p class="def1-btm">
 	<code><b>return
 	</b></code>[no
 	<i>LineTerminator</i>
-	here]<i><b> </b>Expression</i><sub>opt</sub><i></i><code><b>;</b></code></p>
+	here]<i><b> </b>Expression</i> <code><b>;</b></code></p>
 	<p class="tiny-btm">
 	<b>Semantics</b></p>
 	<p>
@@ -16963,7 +16983,9 @@ an object is a member of the remaining built-in type
 		<i>S</i> be a newly created substring of <i>inputString</i>
 		consisting of the first character that is not a <i>StrWhiteSpaceChar</i>
 		and all characters following that character. (In other words,
-		remove leading white space.)</p>
+		remove leading white space.)
+If <i>inputString</i> does not contain any such characters, let <i>S</i> be the
+empty string.</p>
 		</li>
 		<li><p>
 		Let
@@ -17085,7 +17107,9 @@ an object is a member of the remaining built-in type
 		<i>trimmedString</i> be a substring of <i>inputString</i>
 		consisting of the leftmost character that is not a
 		<i>StrWhiteSpaceChar</i> and all characters to the right of that
-		character. (In other words, remove leading white space.)</p>
+		character. (In other words, remove leading white space.)
+If <i>inputString</i> does not contain any such characters, let
+<i>trimmedString</i> be the empty string.</p>
 		</li>
 		<li><p>
 		If
@@ -17230,6 +17254,10 @@ an object is a member of the remaining built-in type
 	<p class="def1-btm">
 	<code><b>-
 	 _  .  !  ~  *  '  (  )</b></code></p>
+
+	<p><b class="note">NOTE</b> The above syntax is based upon RFC 2396
+	and does not reflect changes introduced by the more recent RFC 3986.</p>
+
 	<p>
 	When
 	a character to be included in a URI is not listed above or is not
@@ -17582,11 +17610,6 @@ an object is a member of the remaining built-in type
 					<i>V</i> is ≥ 0x10000</p>
 					<ol>
 						<li><p>
-						If
-						<i>V</i> is greater than 0x10FFFF, throw a <b><a href="#x15.11.6.6" class="term-ref">URIError</a></b>
-						exception.</p>
-						</li>
-						<li><p>
 						Let
 						<i>L</i> be (((<i>V</i> – 0x10000) &amp; 0x3FF) + 0xDC00).</p>
 						</li>
@@ -17613,9 +17636,12 @@ an object is a member of the remaining built-in type
 			<i>k</i> by 1.</p>
 		</li></ol>
 	</li></ol>
+
 	<p><b class="note">NOTE</b> The
-	syntax of Uniform Resource Identifiers is given in RFC 2396.  A
+	syntax of Uniform Resource Identifiers is given in RFC 2396 and
+	does not reflect the more recent RFC 3986 which replaces RFC 2396. A
 	formal description and implementation of UTF-8 is given in RFC 3629.</p>
+
 	<p>
 	In
 	UTF-8, characters are encoded using sequences of 1 to 6 octets. The
@@ -21110,7 +21136,7 @@ an object is a member of the remaining built-in type
 		<ol>
 			<li><p>
 			Let
-			<i>from</i> be ToString(<i>relativeStart</i>+<i>k</i>).</p>
+			<i>from</i> be ToString(<i>actualStart</i>+<i>k</i>).</p>
 			</li>
 			<li><p>
 			Let
@@ -21589,7 +21615,7 @@ an object is a member of the remaining built-in type
 	<p>
 	The
 	optional second argument <i>fromIndex</i>
-	defaults to the array's length (i.e. the whole array is searched).
+	defaults to the array's length minus one (i.e. the whole array is searched).
 	If it is greater than or equal to the length of the array, the whole
 	array will be searched. If it is negative, it is used as the offset
 	from the end of the array to compute <i>fromIndex</i>.
@@ -23395,10 +23421,7 @@ an object is a member of the remaining built-in type
 	method, if considered as a function of two arguments <b>this</b> and
 	<i>that</i>,  is a
 	consistent comparison function (as defined in <a href="#x15.4.4.11">15.4.4.11</a>) on the set
-	of all Strings. Furthermore, <code><b>localeCompare</b></code>
-	returns <code><b>0</b></code> or <code><b>–0</b></code>
-	when comparing two Strings that are considered canonically
-	equivalent by the Unicode standard.</p>
+	of all Strings.</p>
 	<p>
 	The
 	actual return values are implementation-defined to permit
@@ -24009,7 +24032,7 @@ an object is a member of the remaining built-in type
 		<ol>
 			<li><p>
 			Call
-			<i>SplitMatch</i>(<i>R</i>, <i>S</i>, 0) and let <i>z</i> be its
+			<i>SplitMatch</i>(<i>S</i>, 0, <i>R</i>) and let <i>z</i> be its
 			MatchResult result.</p>
 			</li>
 			<li><p>
@@ -24037,11 +24060,13 @@ an object is a member of the remaining built-in type
 		Repeat,
 		while <i>q</i> <span class="symbol">≠</span> <i>s</i></p>
 		<ol>
+
 			<li><p>
 			Call
-			<i>SplitMatch</i>(<i>R</i>, <i>S</i>, <i>q</i>) and let <i>z</i>
+			<i>SplitMatch</i>(<i>S</i>, <i>q</i>, <i>R</i>) and let <i>z</i>
 			be its MatchResult result.</p>
 			</li>
+
 			<li><p>
 			If
 			<i>z</i> is <b>failure</b>, then let <i>q</i> = <i>q</i>+1.</p>
@@ -24112,11 +24137,14 @@ an object is a member of the remaining built-in type
 						Increment
 						<i>lengthA</i> by 1.</p>
 						</li>
-						<li><p>
+
+			<li><p>
 						If
-						<i>A</i><code><b>.length</b></code>
+						<i>lengthA</i>
 						= <i>lim</i>, return <i>A</i>.</p>
-					</li></ol>
+					</li>
+
+</ol>
 					</li>
 					<li><p>
 					Let
@@ -28624,6 +28652,8 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		an internal closure that takes two arguments, a String <i>str</i>
 		and an integer <i>index</i>, and performs the following:</p>
 		</li>
+</ol>
+<ol class="indent1">
 		<li><p>
 		Let
 		<i>Input</i> be the given String <i>str</i>. This variable will be
@@ -28651,7 +28681,8 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		<li><p>
 		Call
 		<i>m</i>(<i>x</i>, <i>c</i>) and return its result.</p>
-	</li></ol>
+	</li>
+</ol>
 	<p><b class="note">NOTE</b> A
 	Pattern evaluates ("compiles") to an internal procedure
 	value. <code><b>RegExp.prototype.exec</b></code>
@@ -29359,7 +29390,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 			</colgroup><thead>
 				<tr valign="TOP">
 					<td width="22">
-						<p><code><b>A</b></code></p>
+						<p><code><b>a</b></code></p>
 					</td>
 					<td width="22">
 						<p><code><b>b</b></code></p>
@@ -29843,11 +29874,11 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 					</li>
 					<li><p>
 					Let
-					<i>c</i> be the character <i>Input</i>[<i>e</i>].</p>
+					<i>ch</i> be the character <i>Input</i>[<i>e</i>].</p>
 					</li>
 					<li><p>
 					Let
-					<i>cc</i> be the result of <i>Canonicalize</i>(<i>c</i>).</p>
+					<i>cc</i> be the result of <i>Canonicalize</i>(<i>ch</i>).</p>
 					</li>
 					<li><p>
 					If
@@ -31323,10 +31354,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 				<i>matchSucceeded</i> to <b>true</b>.</p>
 			</li></ol>
 			</li>
-			<li><p>
-			Let
-			<i>i</i> = <i>i</i>+1.</p>
-		</li></ol>
+</ol>
 		</li>
 		<li><p>
 		Let
@@ -32893,9 +32921,9 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 				</li>
 				<li><p>
 				Let
-				<i>final</i> be the result of concatenating <code><b>"["</b></code>,
+				<i>final</i> be the result of concatenating "<code><b>[</b></code>",
 				the line feed character, <i>indent</i>, <i>properties</i>, the
-				line feed character, <i>stepback</i>, and <code><b>"[</b></code>".</p>
+				line feed character, <i>stepback</i>, and "<code><b>]</b></code>".</p>
 			</li></ol>
 		</li></ol>
 		</li>
@@ -35045,10 +35073,13 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		Go
 		to step 5.</p>
 	</li></ol>
+
 	<p><b class="note">NOTE</b> The
 	encoding is partly based on the encoding described in RFC 1738, but
 	the entire encoding specified in this standard is described above
-	without regard to the contents of RFC 1738.</p>
+	without regard to the contents of RFC 1738. This encoding does not
+	reflect changes to RFC 1738 made by RFC 3986.</p>
+
 	<h4 id="B.2.2">B.2.2 unescape (string) <a href="#B.2.2">#</a> <a href="#B.2.2-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	The
