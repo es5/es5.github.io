@@ -18385,20 +18385,37 @@ an object is a member of the remaining built-in type
 			<i>desc</i> to the end of <i>descriptors</i>.</p>
 		</li></ol>
 		</li>
-		<li><p>
-		For
-		 each element <i>desc</i> of <i>descriptors</i> in list order,</p>
-		<ol>
-			<li><p>
-			Call
-			the [[DefineOwnProperty]] internal method of <i>O</i> with
-			arguments <i>P</i>, <i>desc</i>, and <b>true</b>.</p>
-		</li></ol>
-		</li>
-		<li><p>
-		Return
-		<i>O</i>.</p>
-	</li></ol>
+
+		<LI><p>For
+		each element <I>P</I> of <I>names</I> in list order,</P>
+		<OL>
+			<LI><p>Let
+			<I>descObj</I> be the result of calling the [[Get]] internal
+			method of <I>props</I> with <I>P</I> as the argument.</P>
+			<LI><p>Let
+			<I>desc</I> be the result of calling ToPropertyDescriptor with
+			<I>descObj</I> as the argument.</P>
+			<LI><p>Append
+			the pair (a two element List) consisting of
+			<I>P</I> and
+			<I>desc</I> to the end of <I>descriptors</I>.</P>
+		</OL>
+		<LI><p>For
+		 each element <I>pair</I>
+		from <I>descriptors</I> in list order,</P>
+		<OL>
+			<LI><p>Let
+			<I>P</I>
+			be the first element of <I>pair</I>.</P>
+			<LI><p>Let
+			<I>desc</I>
+			be the second element of <I>pair</I>.</P>
+			<LI><p>Call the [[DefineOwnProperty]] internal method of <I>O</I> with
+	arguments <I>P</I>, <I>desc</I>, and <B>true</B>.</P></li>
+		</OL>
+</li>
+</ol>
+
 	<p>
 	If an
 	implementation defines a specific order of enumeration for the
@@ -18668,21 +18685,25 @@ an object is a member of the remaining built-in type
 	the <code><b>toString</b></code>
 	method is called, the following steps are taken:</p>
 	<ol>
-		<li><p>
-		Let
-		<i>O </i>be the result of calling ToObject passing the <b>this
-		</b>value as the argument.</p>
-		</li>
-		<li><p>
-		Let
-		<i>class</i> be the value of the [[Class]] internal property of <i>O</i>.</p>
-		</li>
-		<li><p>
-		Return
-		the String value that is the result of concatenating the three
-		Strings <code><b>"[object "</b></code>,
-		<i>class</i>, and <code><b>"]"</b></code>.</p>
-	</li></ol>
+	<li><p>If
+	the <B>this</B>
+	value is <B>undefined</B>,
+	return "<B>[object Undefined]</B>".</p></li>
+	<li><p>If
+	the <B>this</B>
+	value is <B>null</B>,
+	return "<B>[object Null]</B>".</p></li>
+	<li><p>Let
+	<I>O </I>be the result of calling ToObject passing the <B>this </B>value
+	as the argument.</p></li>
+	<li><p>Let
+	<I>class</I> be the value of the [[Class]] internal property of <I>O</I>.</p></li>
+	<li><p>Return
+	the String value that is the result of concatenating the three
+	Strings "<B>[object </B>",
+	<I>class</I>, and "<B>]</B>".</p></li>
+</ol>
+
 	<h5 id="x15.2.4.3">15.2.4.3 Object.prototype.toLocaleString ( ) <a href="#x15.2.4.3">#</a> <a href="#x15.2.4.3-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	When
@@ -19125,18 +19146,8 @@ an object is a member of the remaining built-in type
 		<i>argArray</i> with argument <code><b>"length"</b></code>.</p>
 		</li>
 		<li><p>
-		If
-		<i>len</i> is <b>null</b> or <b>undefined</b>, then throw a
-		<b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
-		</li>
-		<li><p>
 		Let
 		<i>n</i> be ToUint32(<i>len</i>).</p>
-		</li>
-		<li><p>
-		If
-		<i>n</i> is not equal to ToNumber(<i>len</i>), then throw a
-		<b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 		</li>
 		<li><p>
 		Let
@@ -22038,7 +22049,7 @@ an object is a member of the remaining built-in type
 		</li></ol>
 		</li>
 		<li><p>
-		Return.</p>
+		Return <b>undefined</b>.</p>
 	</li></ol>
 	<p>
 	The
@@ -22364,7 +22375,7 @@ an object is a member of the remaining built-in type
 	If existing elements of the array are changed, their value as passed
 	to <i>callbackfn </i>will
 	be the value at the time <code><b>reduce</b></code>
-	visits them; elements that are deleted after the call to <code><b>filter</b></code>
+	visits them; elements that are deleted after the call to <code><b>reduce</b></code>
 	begins and before being visited are not visited.</p>
 	<p>
 	When
@@ -22533,12 +22544,12 @@ an object is a member of the remaining built-in type
 	range of elements processed by <code><b>reduceRight
 	</b></code>is set before the first call to <i>callbackfn</i>.
 	Elements that are appended to the array after the call to
-	<code><b>reduceRight </b></code>begins
+	<code><b>reduceRight</b></code> begins
 	will not be visited by <i>callbackfn</i>.
 	If existing elements of the array are changed by <i>callbackfn</i>,
 	their value as passed to <i>callbackfn </i>will be the value at the time <code><b>reduceRight
 	</b></code>visits them; elements that are deleted after the call to
-	<code><b>filter</b></code> begins and
+	<code><b>reduceRight</b></code> begins and
 	before being visited are not visited.</p>
 	<p>
 	When
@@ -22650,7 +22661,7 @@ an object is a member of the remaining built-in type
 				<li><p>
 				Let
 				<i>accumulator</i> be the result of calling the [[Call]] internal
-				method of <i>callbackfn</i> with <b>null</b> as the <b>this</b>
+				method of <i>callbackfn</i> with <b>undefined</b> as the <b>this</b>
 				value and argument list containing <i>accumulator</i>, <i>kValue</i>,
 				<i>k</i>, and <i>O</i>.</p>
 			</li></ol>
@@ -22809,13 +22820,15 @@ an object is a member of the remaining built-in type
 				</li>
 				<li><p>
 				Let
-				<i>cannotDelete</i>  be the result of calling the [[Delete]]
+				<i>deleteSucceeded</i>
+				be the result of calling the [[Delete]]
 				internal method of <i>A</i> passing ToString(<i>oldLen</i>) and
 				<b>false</b> as arguments.</p>
 				</li>
 				<li><p>
 				If
-				<i>cannotDelete</i> is <b>true</b>, then</p>
+				<i>deleteSucceeded</i>
+				is <b>true</b>, then</p>
 				<ol>
 					<li><p>
 					Set
@@ -24422,9 +24435,10 @@ an object is a member of the remaining built-in type
 	<p>
 	String
 	objects use a variation of the [[GetOwnProperty]] internal method
-	used for other native ECMAScript objects (<a href="#x8.12.1">8.12.1</a>). This special
-	internal method is used to specify the array index named properties
-	of String objects.</p>
+	used for other native ECMAScript objects (<a href="#x8.12.1">8.12.1</a>).
+
+ This special internal method is used to add access for named properties
+ corresponding to individual characters of String objects.</p>
 	<p>
 	Assume
 	<i>S </i>is a String
@@ -24445,19 +24459,26 @@ an object is a member of the remaining built-in type
 		<i>desc</i> is not <b>undefined </b>return <i>desc</i>. 
 		</p>
 		</li>
+
 		<li><p>
 		If
-		<i>P</i> is not an array index (<a href="#x15.4">15.4</a>), return <b>undefined</b>.</p>
+		ToString(abs(ToInteger(<i>P</i>)))
+		is not
+		the same value as <i>P</i>,
+		return <b>undefined</b>.</p>
 		</li>
+
 		<li><p>
 		Let
 		<i>str</i> be the String value of the [[PrimitiveValue]] internal
 		property of <i>S</i>.</p>
 		</li>
+
 		<li><p>
 		Let
-		<i>index</i> be ToUint32(<i>P</i>).</p>
-		</li>
+		<i>index</i> be
+		ToInteger(<i>P</i>).</p> </li>
+
 		<li><p>
 		Let
 		<i>len</i> be the number of characters in <i>str</i>.</p>
@@ -26875,7 +26896,7 @@ an object is a member of the remaining built-in type
 <table id="date-format">
 	<tbody>
 	<tr><td><code><b>YYYY</b></code></td><td>is the decimal digits of the year in the Gregorian calendar.</td></tr>
-	<tr><td><code><b>-</b></code></td><td>“<code><b>:</b></code>” (hyphon) appears literally twice in the string.</td></tr>
+	<tr><td><code><b>-</b></code></td><td>“<code><b>:</b></code>” (hyphen) appears literally twice in the string.</td></tr>
 	<tr><td><code><b>MM</b></code></td><td>is the month of the year from 01 (January) to 12 (December).</td></tr>
 	<tr><td><code><b>DD</b></code></td><td>is the day of the month from 01 to 31.</td></tr>
 	<tr><td><code><b>T</b></code></td><td>“<code><b>T</b></code>” appears literally in the string, to indicate the beginning of the time element.</td></tr>
@@ -26885,7 +26906,6 @@ an object is a member of the remaining built-in type
 	<tr><td><code><b>ss</b></code></td><td>is the number of complete seconds since the start of the minute as two decimal digits.</td></tr>
 	<tr><td><code><b>.</b></code></td><td>“<code><b>.</b></code>” (dot) appears literally in the string.</td></tr>
 	<tr><td><code><b>sss</b></code></td><td>is the number of complete milliseconds since the start of the second as three decimal digits.</td></tr>
-	<tr><td colspan="2">Both the “<code><b>.</b></code>” and the milliseconds field may be omitted.</td></tr>
 	<tr><td><code><b>Z</b></code></td><td>is the time zone offset specified as “<code><b>Z</b></code>” (for UTC) or either
 	“<code><b>+</b></code>” or “<code><b>-</b></code>” followed by a time expression <code><b>hh:mm</b></code></td></tr>
 	</tbody>
@@ -26893,20 +26913,22 @@ an object is a member of the remaining built-in type
 	<p class="sp">This
 	format includes date-only forms:</p>
 	<p class="sp"><code><b>YYYY<br>YYYY-MM<br>YYYY-MM-DD</b></code></p>
-	<p>
-	It
-	also includes time-only forms with an
-	optional time zone offset appended: 
-	</p>
+	<p>It also includes “date-time” forms that consist of one of the above
+date-only forms immediately followed by “<code>T</code>”
+and one of the following time forms with an optional time zone offset
+appended:</p>
 	<p>
 	<code><b>THH:mm<br>THH:mm:ss<br>THH:mm:ss.sss</b></code></p>
-	<p>
-	Also
-	included are “date-times” which may be
-	any combination of the above.</p>
-	<p>
-	All
-	numbers must be base 10.</p>
+
+
+	<p>All
+	numbers must be base 10.
+If the <code>MM</code> or <code>DD</code> fields are absent
+“<code>01</code>” is used as the value. If the <code>mm</code> or
+<code>ss</code> fields are absent “<code>00</code>” is used as the value
+and the value of an absent <code>sss</code> file is “<code>000</code>”. The
+value of an absent time zone offset is “<code>Z</code>”.</p>
+
 	<p>
 	Illegal
 	values (out-of-bounds as well as syntax errors) in a format string
