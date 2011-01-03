@@ -31547,9 +31547,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	the argument <i>message</i>
 	is not <b>undefined</b>, the <code><b>message</b></code>
 	own property of the newly constructed object is set to
-	ToString(<i>message</i>).
-	Otherwise, the <code><b>message</b></code>
-	own property is set to the empty String.</p>
+	ToString(<i>message</i>).</p>
 	<h4 id="x15.11.2">15.11.2 The Error Constructor <a href="#x15.11.2">#</a> <a href="#x15.11.2-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	When
@@ -31577,9 +31575,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	the argument <i>message</i>
 	is not <b>undefined</b>, the <code><b>message</b></code>
 	own property of the newly constructed object is set to
-	ToString(<i>message</i>).
-	Otherwise, the <code><b>message</b></code>
-	own property is set to the empty String.</p>
+	ToString(<i>message</i>).</p>
 	<h4 id="x15.11.3">15.11.3 Properties of the Error Constructor <a href="#x15.11.3">#</a> <a href="#x15.11.3-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	The
@@ -31652,19 +31648,17 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		<i>msg</i> be the result of calling the [[Get]] internal method of
 		<i>O</i> with argument <code>"</code><code><b>message</b></code><code>"</code>.</p>
 		</li>
-		<li><p>
-		If
-		msg is undefined, then let <i>R</i> be <i>msg</i>.</p>
-		</li>
-		<li><p>
-		Else,
-		let <i>R</i> be the result of concatenating <i>name</i>, <code>"</code><code><b>:</b></code><code>"</code>,
-		a single space character, and ToString(<i>msg</i>).</p>
-		</li>
-		<li><p>
-		Return
-		<i>R</i>.</p>
-	</li></ol>
+		<li><p>If
+		<i>msg</i> is undefined, then let
+		<i>msg</i>
+		be
+		the empty String; else let <i>msg</i> be ToString(<i>msg</i>).</p></li>
+		<li><p>If name and <i>msg</i> are both the empty String, return <code>"Error"</code>.</p></li>
+		<li><p>If <i>name</i> is the empty String, return <i>msg</i>.</p></li>
+		<li><p>If <i>msg</i> is the empty String, return <i>name</i>.</p></li>
+		<li><p>Return the result of concatenating <i>name</i>, <code>":"</code>, a single space
+		character, and <i>msg</i>.</p></li>
+</ol>
 	<h4 id="x15.11.5">15.11.5 Properties of Error Instances <a href="#x15.11.5">#</a> <a href="#x15.11.5-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	Error
@@ -31776,9 +31770,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	the argument <i>message</i>
 	is not <b>undefined</b>, the <code><b>message
 	</b></code>property of the newly constructed object is set to
-	ToString(<i>message</i>).
-	Otherwise, the <code><b>message</b></code>
-	own property is set to the empty String.</p>
+	ToString(<i>message</i>).</p>
 	<h5 id="x15.11.7.5">15.11.7.5 Properties of the NativeError Constructors <a href="#x15.11.7.5">#</a> <a href="#x15.11.7.5-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	The
