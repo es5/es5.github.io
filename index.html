@@ -1549,7 +1549,7 @@ an object is a member of the remaining built-in type
 	and properties added to an object’s prototype are shared, through
 	inheritance, by all objects sharing the prototype. Alternatively, a
 	new object may be created with an explicitly specified prototype by
-	using the <code><b>Object.create</b></code>
+	using the <code><b><a href="#x15.2.3.5">Object.create</a></b></code>
 	built-in function.</p>
 	<h4 id="x4.3.6">4.3.6<br><dfn id="native_object">native object</dfn> <a href="#x4.3.6">#</a> <a href="#x4.3.6-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
@@ -1692,7 +1692,7 @@ an object is a member of the remaining built-in type
 	object that is a function.</p>
 	<p><b class="note">NOTE</b> Examples
 	of built-in functions include <code><b>parseInt</b></code>
-	and <code><b>Math.exp</b></code>. An
+	and <code><b><a href="#x15.8.2.8">Math.exp</a></b></code>. An
 	implementation may provide implementation-dependent built-in
 	functions that are not described in this specification.
 	
@@ -5799,7 +5799,7 @@ the empty character sequence.</P></LI>
 	The value of a [[Class]] internal property is used internally to
 	distinguish different kinds of objects. Note that this specification
 	does not provide any means for a program to access that value except
-	through <code><b>Object.prototype.toString</b></code>
+	through <code><b><a href="#x15.2.4.2">Object.prototype.toString</a></b></code>
 	(see <a href="#x15.2.4.2">15.2.4.2</a>).</p>
 	<p>
 	Unless
@@ -16774,13 +16774,13 @@ IEEE 754 round-to-nearest mode.
 	Every
 	built-in function and every built-in constructor has the Function
 	prototype object, which is the initial value of the expression
-	<code><b>Function.prototype</b></code>
+	<code><b><a href="#x15.3.3.1">Function.prototype</a></b></code>
 	(<a href="#x15.3.4">15.3.4</a>), as the value of its [[Prototype]] internal property.</p>
 	<p>
 	Unless
 	otherwise specified every built-in prototype object has the Object
 	prototype object, which is the initial value of the expression
-	<code><b>Object.prototype</b></code>
+	<code><b><a href="#x15.2.3.1">Object.prototype</a></b></code>
 	(<a href="#x15.2.4">15.2.4</a>), as the value of its [[Prototype]] internal property,
 	except the Object prototype object itself.</p>
 	<p>
@@ -19540,7 +19540,7 @@ If <i>inputString</i> does not contain any such characters, let
 	[[Configurable]]: <b>false</b>
 	}.</p>
 	<p><b class="note">NOTE</b> Function
-	objects created using <code><b>Function.prototype.bind</b></code>
+	objects created using <code><b><a href="#x15.3.4.5">Function.prototype.bind</a></b></code>
 	do not have a <code><b>prototype</b></code>
 	property.</p>
 	<h5 id="x15.3.5.3">15.3.5.3 [[HasInstance]] (V) <a href="#x15.3.5.3">#</a> <a href="#x15.3.5.3-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
@@ -19586,7 +19586,7 @@ If <i>inputString</i> does not contain any such characters, let
 	</li></ol>
 	<p class="sp">
 	</p><p><b class="note">NOTE</b> Function
-	objects created using <code><b>Function.prototype.bind</b></code>
+	objects created using <code><b><a href="#x15.3.4.5">Function.prototype.bind</a></b></code>
 	have a different implementation of [[HasInstance]] defined in
 	<a href="#x15.3.4.5.3">15.3.4.5.3</a>.</p>
 	<h5 id="x15.3.5.4">15.3.5.4 [[Get]] (P) <a href="#x15.3.5.4">#</a> <a href="#x15.3.5.4-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
@@ -19619,7 +19619,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<i>v</i>.</p>
 	</li></ol>
 	<p><b class="note">NOTE</b> Function
-	objects created using <code><b>Function.prototype.bind</b></code>
+	objects created using <code><b><a href="#x15.3.4.5">Function.prototype.bind</a></b></code>
 	use the default [[Get]] internal method.</p>
 	<h3 id="x15.4">15.4 Array Objects <a href="#x15.4">#</a> <a href="#x15.4-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
 	<p>
@@ -19861,7 +19861,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<li><p>
 		If
 		IsCallable(<i>func</i>) is <b>false</b>, then let <i>func</i> be
-		the standard built-in method Object.prototype.toString (<a href="#x15.2.4.2">15.2.4.2</a>).</p>
+		the standard built-in method <a href="#x15.2.4.2">Object.prototype.toString</a> (<a href="#x15.2.4.2">15.2.4.2</a>).</p>
 		</li>
 		<li><p>
 		Return
@@ -23436,7 +23436,7 @@ If <i>inputString</i> does not contain any such characters, let
 	environment, this function may perform a bitwise comparison.</p>
 	<p class="sp"><b class="note">NOTE 1</b> The <code><b>localeCompare</b></code>
 	method itself is not directly suitable as an argument to
-	<code><b>Array.prototype.sort</b></code>
+	<code><b><a href="#x15.4.4.11">Array.prototype.sort</a></b></code>
 	because the latter requires a function of two arguments.</p>
 	<p class="sp"><b class="note">NOTE 2</b> This function is intended to rely on whatever language-sensitive
 	comparison functionality is available to the ECMAScript environment
@@ -23492,7 +23492,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>exec</i> be the standard built-in function <code><b>RegExp.prototype.exec</b></code>
+		<i>exec</i> be the standard built-in function <code><b><a href="#x15.10.6.2">RegExp.prototype.exec</a></b></code>
 		(see <a href="#x15.10.6.2">15.10.6.2</a>)</p>
 		</li>
 		<li><p>
@@ -23635,7 +23635,7 @@ If <i>inputString</i> does not contain any such characters, let
 	If <i>searchValue</i>.global
 	is <b>true</b>, then search <i>string</i>
 	for all matches of the regular expression <i>searchValue</i>.
-	Do the search in the same manner as in <code><b>String.prototype.match</b></code>,
+	Do the search in the same manner as in <code><b><a href="#x15.5.4.10">String.prototype.match</a></b></code>,
 	including the update of <i>searchValue</i>.<code><b>lastIndex</b></code>.
 	Let <i>m</i> be the
 	number of left capturing parentheses in <i>searchValue</i>
@@ -24379,7 +24379,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<p>
 	This
 	function behaves in exactly the same way as
-	<code><b>String.prototype.toLowerCase</b></code>,
+	<code><b><a href="#x15.5.4.16">String.prototype.toLowerCase</a></b></code>,
 	except that characters are mapped to their <i>uppercase</i>
 	equivalents as specified in the Unicode Character Database.</p>
 	<p><b class="note">NOTE</b> The
@@ -27005,7 +27005,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	by the expression <code><b>(new
 	Date()).toString()</b></code> where <code><b>Date</b></code>
 	is the standard built-in constructor with that name and <code><b>toString</b></code>
-	is the standard built-in method <code><b>Date.prototype.toString</b></code>.</p>
+	is the standard built-in method <code><b><a href="#x15.9.5.2">Date.prototype.toString</a></b></code>.</p>
 	<h4 id="x15.9.3">15.9.3 The Date Constructor <a href="#x15.9.3">#</a> <a href="#x15.9.3-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	When
@@ -28685,7 +28685,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 </ol>
 	<p><b class="note">NOTE</b> A
 	Pattern evaluates ("compiles") to an internal procedure
-	value. <code><b>RegExp.prototype.exec</b></code>
+	value. <code><b><a href="#x15.10.6.2">RegExp.prototype.exec</a></b></code>
 	can then apply this procedure to a String and an offset within the
 	String to determine whether the pattern would match starting at
 	exactly that offset within the String, and, if it does match, what
@@ -29928,7 +29928,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		<li><p>
 		Let
 		<i>u</i> be <i>ch</i> converted to upper case as if by calling the
-		standard built-in method <code><b>String.prototype.toUpperCase</b></code>
+		standard built-in method <code><b><a href="#x15.5.4.18">String.prototype.toUpperCase</a></b></code>
 		on the one-character String <i>ch</i>.</p>
 		</li>
 		<li><p>
@@ -31452,8 +31452,8 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>match</i> be the result of evaluating the <code><b>RegExp.prototype.exec</b></code>
-		(<a href="#x15.10.6.3">15.10.6.3</a>) algorithm upon this RegExp object using <i>string</i>
+		<i>match</i> be the result of evaluating the <code><b><a href="#x15.10.6.2">RegExp.prototype.exec</a></b></code>
+		(<a href="#x15.10.6.2">15.10.6.2</a>) algorithm upon this RegExp object using <i>string</i>
 		as the argument.</p>
 		</li>
 		<li><p>
@@ -31845,7 +31845,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<h5 id="x15.11.7.10">15.11.7.10 NativeError.prototype.message <a href="#x15.11.7.10">#</a> <a href="#x15.11.7.10-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	The
-	initial value of the<code><b> message</b></code>
+	initial value of the <code><b>message</b></code>
 	property of the prototype for a given <i>NativeError</i> constructor
 	is the empty String.</p>
 	<p><b class="note">NOTE</b> The
@@ -32174,7 +32174,8 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 				<i>keys</i> be an internal List of String values consisting of
 				the names of all the own properties of <i>val</i> whose
 				[[Enumerable]] attribute is <b>true</b>. The ordering of the
-				Strings should be the same as that used by the <b>Object.keys</b>
+				Strings should be the same as that used by the
+				<b><a href="#x15.2.3.14">Object.keys</a></b>
 				standard built-in function.</p>
 				</li>
 				<li><p>
@@ -32677,7 +32678,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 			<i>K</i> be an internal List of Strings consisting of the names of
 			all the own properties of <i>value</i> whose [[Enumerable]]
 			attribute is <b>true</b>. The ordering of the Strings should be
-			the same as that used by the <b>Object.keys</b> standard built-in
+			the same as that used by the <b><a href="#x15.2.3.14">Object.keys</a></b> standard built-in
 			function.</p>
 		</li></ol>
 		</li>
@@ -35331,7 +35332,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	Function object that is the initial value of
 	<code><b>Date.prototype.toGMTString</b></code>
 	is the same Function object that is the initial value of
-	<code><b>Date.prototype.toUTCString</b></code>.</p>
+	<code><b><a href="#x15.9.5.42">Date.prototype.toUTCString</a></b></code>.</p>
 	<h2 id="C">Annex C (informative) The Strict Mode of ECMAScript <a href="#C">#</a> <a href="#C-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h2>
 	<p>
 	<strong>The
@@ -35446,8 +35447,8 @@ within strict mode code.  (<a href="#x7.6.12">7.6.12</a>).</li>
 		is not converted to the <a href="#x15.1" class="term-ref">global object</a> and <a href="#primitive_value" class="term-ref">primitive value</a>s are not
 		converted to wrapper objects. The <b>this</b>
 		value passed via a function call (including calls made using
-		<code><b>Function.prototype.apply</b></code>
-		and <code><b>Function.prototype.call</b></code><b>)</b>
+		<code><b><a href="#x15.3.4.3">Function.prototype.apply</a></b></code>
+		and <code><b><a href="#x15.3.4.4">Function.prototype.call</a></b></code><b>)</b>
 		do not coerce the passed this value to an object (<a href="#x10.4.3">10.4.3</a>, <a href="#x11.1.1">11.1.1</a>,
 		<a href="#x15.3.4.3">15.3.4.3</a>, <a href="#x15.3.4.4">15.3.4.4</a>).</p>
 		</li>
@@ -35616,8 +35617,8 @@ within strict mode code.  (<a href="#x7.6.12">7.6.12</a>).</li>
 	<a href="#x15.10.6">15.10.6</a>:
 	RegExp.prototype is now a RegExp object rather than an instance of
 	Object. The value of its [[Class]] internal property which is
-	observable using Object.prototype.toString is now “RegExp”
-	rather than “Object”.</p>
+	observable using <a href="#x15.2.4.2">Object.prototype.toString</a>
+  is now “RegExp” rather than “Object”.</p>
 	<h2 id="E">Annex E (informative) Additions and Changes in the 5th Edition that Introduce Incompatibilities with the 3rd Edition <a href="#E">#</a> <a href="#E-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h2>
 	<p>
 	<a href="#x7.1">7.1</a>:
@@ -35666,7 +35667,7 @@ within strict mode code.  (<a href="#x7.6.12">7.6.12</a>).</li>
 	was used as the environments for the eval code.</p>
 	<p>
 	<a href="#x15.4.4">15.4.4</a>:
-	In Edition 5 all methods of <code><b>Array.prototype</b></code>
+	In Edition 5 all methods of <code><b><a href="#x15.4.3.1">Array.prototype</a></b></code>
 	are intentionally generic. In Edition 3 <code><b>toString</b></code>
 	and <code><b>toLocaleString</b></code>
 	were not generic and would throw a <code><b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b></code>
@@ -35693,10 +35694,12 @@ within strict mode code.  (<a href="#x7.6.12">7.6.12</a>).</li>
 	<p>
 	<a href="#x15">15</a>:
 	In Edition 5, the following new properties are defined on built-in
-	objects that exist in Edition 3: <code><b>Object.getPrototypeOf</b></code>,<b>
-	</b><code><b>Object.getOwnPropertyDescriptor</b></code>,<code><b>
-	Object.getOwnPropertyNames</b></code>, <code><b>Object.create</b></code><b>,</b><code>
-	</code><code><b>Object.defineProperty</b></code>,
+	objects that exist in Edition 3: 
+<code><b>Object.getPrototypeOf</b></code>,
+<code><b>Object.getOwnPropertyDescriptor</b></code>,
+<code><b>Object.getOwnPropertyNames</b></code>,
+<code><b>Object.create</b></code><b>,
+<code><b>Object.defineProperty</b></code>,
 	<code><b>Object.defineProperties</b></code>,
 	<code><b>Object.seal</b></code>,
 	<code><b>Object.freeze</b></code>,
@@ -35707,7 +35710,7 @@ within strict mode code.  (<a href="#x7.6.12">7.6.12</a>).</li>
 	<code><b>Object.keys</b></code>,
 	<code><b>Function.prototype.bind</b></code>,
 	<code><b>Array.prototype.indexOf</b></code>,
-	 <code><b>Array.prototype.lastIndexOf</b></code>,
+	<code><b>Array.prototype.lastIndexOf</b></code>,
 	<code><b>Array.prototype.every</b></code>,
 	<code><b>Array.prototype.some</b></code>,
 	<code><b>Array.prototype.forEach</b></code>,
@@ -35717,8 +35720,8 @@ within strict mode code.  (<a href="#x7.6.12">7.6.12</a>).</li>
 	<code><b>Array.prototype.reduceRight</b></code>,
 	<code><b>String.prototype.trim</b></code>,
 	<code><b>Date.now</b></code>,
-	<code><b>Date.prototype.toISOString,
-	Date.prototype.toJSON</b></code>.</p>
+	<code><b>Date.prototype.toISOString</b></code>,
+	<code><b>Date.prototype.toJSON</b></code>.</p>
 	<p>
 	<a href="#x15">15</a>:
 	Implementations are now required to ignore extra arguments to
@@ -35745,7 +35748,7 @@ within strict mode code.  (<a href="#x7.6.12">7.6.12</a>).</li>
 	<p>
 	<a href="#x15.3.4.3">15.3.4.3</a>:
 	In Edition 3, a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> is thrown if the second argument
-	passed to <code><b>Function.prototype.apply</b></code>
+	passed to <code><b><a href="#x15.3.4.3">Function.prototype.apply</a></b></code>
 	is neither an array object nor an arguments object. In Edition 5,
 	the second argument may be any kind of generic array-like object
 	that has a valid <code><b>length</b></code>
@@ -35753,8 +35756,8 @@ within strict mode code.  (<a href="#x7.6.12">7.6.12</a>).</li>
 	<p>
 	<a href="#x15.3.4.3">15.3.4.3</a>,&nbsp;<a href="#x15.3.4.4">15.3.4.4</a>:
 	In Edition 3 passing <b>undefined</b> or <b>null</b> as the first
-	argument to either <code><b>Function.prototype.apply</b></code>
-	or <code><b>Function.prototype.call</b></code>
+	argument to either <code><b><a href="#x15.3.4.3">Function.prototype.apply</a></b></code>
+	or <code><b><a href="#x15.3.4.4">Function.prototype.call</a></b></code>
 	causes the <a href="#x15.1" class="term-ref">global object</a> to be passed to the indirectly invoked
 	target function as the <b>this</b> value. If the first argument is a
 	<a href="#primitive_value" class="term-ref">primitive value</a> the result of calling ToObject on the <a href="#primitive_value" class="term-ref">primitive value</a> is passed as the <b>this</b> value. In Edition 5, these
@@ -35790,7 +35793,7 @@ within strict mode code.  (<a href="#x7.6.12">7.6.12</a>).</li>
 	</p>
 	<p>
 	<a href="#x15.9.4.2">15.9.4.2</a>:
-	<code><b>Date.parse</b></code> is now
+	<code><b><a href="#x15.9.4.2">Date.parse</a></b></code> is now
 	required to first attempt to parse its argument as an ISO format
 	string. Programs that use this format but depended upon
 	implementation specific behaviour (including failure) may behave
@@ -35808,7 +35811,7 @@ within strict mode code.  (<a href="#x7.6.12">7.6.12</a>).</li>
 	from that produced by an Edition 3 implementation.</p>
 	<p>
 	<a href="#x15.10.6.4">15.10.6.4</a>:
-	In Edition 3, the result of <code><b>RegExp.prototype.toString</b></code>
+	In Edition 3, the result of <code><b><a href="#x15.10.6.4">RegExp.prototype.toString</a></b></code>
 	need not be derived from the value of the RegExp object’s <code><b>source</b></code>
 	property.  In Edition 5 the result must be derived from the <code><b>source</b></code>
 	property in a specified manner and hence may be different from the
