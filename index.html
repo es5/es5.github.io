@@ -1903,9 +1903,9 @@ an object is a member of the remaining built-in type
 	<p class="def1">
 	<i>WhileStatement </i><b>:</b></p>
 	<p class="def2">
-	<code><b>while</b></code><i><b>
-	</b></i><code><b>(</b></code><i><b>
-	</b>Expression<b> </b></i><code><b>)</b></code><i><b>
+	<code><b>while</b></code> <i><b>
+	</b></i><code><b>(</b></code> <i><b>
+	</b>Expression<b> </b></i><code><b>)</b></code> <i><b>
 	</b>Statement</i></p>
 	<p>
 	states
@@ -1922,7 +1922,7 @@ an object is a member of the remaining built-in type
 	</b></i><b>:</b></p>
 	<p class="def2">
 	<i>AssignmentExpression<br>ArgumentList</i><code><b>
-	, </b></code><i>AssignmentExpression</i></p>
+	,</b></code> <i>AssignmentExpression</i></p>
 	<p>
 	states
 	that an <i>ArgumentList</i>
@@ -1965,10 +1965,10 @@ an object is a member of the remaining built-in type
 	</b></i><b>:</b></p>
 	<p class="def2">
 	<code><b>for
-	( </b></code><i>ExpressionNoIn</i><sub>opt</sub><code><b>
-	; </b></code><i>Expression</i><sub>opt</sub><code><b>
-	; </b></code><i>Expression</i><sub>opt</sub><code><b>
-	) </b></code><i>Statement</i></p>
+	(</b></code> <i>ExpressionNoIn</i><sub>opt</sub><code><b>
+	;</b></code> <i>Expression</i><sub>opt</sub><code><b>
+	;</b></code> <i>Expression</i><sub>opt</sub><code><b>
+	)</b></code> <i>Statement</i></p>
 	<p>
 	is a
 	convenient abbreviation for:</p>
@@ -1977,13 +1977,13 @@ an object is a member of the remaining built-in type
 	</b></i><b>:</b></p>
 	<p class="def2">
 	<code><b>for
-	( ; </b></code><i>Expression</i><sub>opt</sub><code><b>
-	; </b></code><i>Expression</i><sub>opt</sub><code><b>
-	) </b></code><i>Statement</i><code><b><br>for
-	( </b></code><i>ExpressionNoIn</i><code><b>
-	; </b></code><i>Expression</i><sub>opt</sub><code><b>
-	; </b></code><i>Expression</i><sub>opt</sub><code><b>
-	) </b></code><i>Statement</i></p>
+	( ;</b></code> <i>Expression</i><sub>opt</sub><code><b>
+	;</b></code> <i>Expression</i><sub>opt</sub><code><b>
+	)</b></code> <i>Statement</i><code><b><br>for
+	(</b></code> <i>ExpressionNoIn</i><code><b>
+	;</b></code> <i>Expression</i><sub>opt</sub><code><b>
+	;</b></code> <i>Expression</i><sub>opt</sub><code><b>
+	)</b></code> <i>Statement</i></p>
 	<p>
 	which
 	in turn is an abbreviation for:</p>
@@ -1992,21 +1992,21 @@ an object is a member of the remaining built-in type
 	</b></i><b>:</b></p>
 	<p class="def2">
 	<code><b>for
-	( ; ; </b></code><i>Expression</i><sub>opt</sub><code><b>
-	) </b></code><i>Statement</i><code><b><br>for
-	( ; </b></code><i>Expression</i><code><b>
-	; </b></code><i>Expression</i><sub>opt</sub><i><sub>
+	( ; ;</b></code> <i>Expression</i><sub>opt</sub><code><b>
+	)</b></code> <i>Statement</i><code><b><br>for
+	( ;</b></code> <i>Expression</i><code><b>
+	;</b></code> <i>Expression</i><sub>opt</sub><i><sub>
 	</sub></i><code><b>)
-	</b></code><i>Statement</i><code><b><br>for
-	( </b></code><i>ExpressionNoIn</i><code><b>
-	; ; </b></code><i>Expression</i><sub>opt</sub><i><sub>
+	</b></code> <i>Statement</i><code><b><br>for
+	(</b></code> <i>ExpressionNoIn</i><code><b>
+	; ;</b></code> <i>Expression</i><sub>opt</sub><i><sub>
 	</sub></i><code><b>)
-	</b></code><i>Statement</i><code><b><br>for
-	( </b></code><i>ExpressionNoIn</i><code><b>
-	; </b></code><i>Expression</i><code><b>
-	; </b></code><i>Expression</i><sub>opt</sub><i><sub>
+	</b></code> <i>Statement</i><code><b><br>for
+	(</b></code> <i>ExpressionNoIn</i><code><b>
+	;</b></code> <i>Expression</i><code><b>
+	;</b></code> <i>Expression</i><sub>opt</sub><i><sub>
 	</sub></i><code><b>)
-	</b></code><i>Statement</i></p>
+	</b></code> <i>Statement</i></p>
 	<p>
 	which
 	in turn is an abbreviation for:</p>
@@ -2015,26 +2015,26 @@ an object is a member of the remaining built-in type
 	</b></i><b>:</b></p>
 	<p class="def2">
 	<code><b>for
-	( ; ; ) </b></code><i>Statement<br></i><code><b>for
-	( ; ; </b></code><i>Expression</i><code><b>
-	) </b></code><i>Statement</i><code><b><br>for
-	( ; </b></code><i>Expression</i><code><b>
-	; ) </b></code><i>Statement</i><code><b><br>for
-	( ; </b></code><i>Expression</i><code><b>
-	; </b></code><i>Expression</i><code><b>
-	) </b></code><i>Statement</i><code><b><br>for
-	( </b></code><i>ExpressionNoIn </i><code><b>;
-	; ) </b></code><i>Statement</i><code><b><br>for
-	( </b></code><i>ExpressionNoIn </i><code><b>;
-	; </b></code><i>Expression</i><code><b>
-	) </b></code><i>Statement</i><code><b><br>for
-	( </b></code><i>ExpressionNoIn </i><code><b>;
-	</b></code><i>Expression</i><code><b>
-	; ) </b></code><i>Statement</i><code><b><br>for
-	( </b></code><i>ExpressionNoIn </i><code><b>;
-	</b></code><i>Expression</i><code><b>
-	; </b></code><i>Expression</i><code><b>
-	) </b></code><i>Statement</i></p>
+	( ; ; )</b></code> <i>Statement<br></i><code><b>for
+	( ; ;</b></code> <i>Expression</i><code><b>
+	)</b></code> <i>Statement</i><code><b><br>for
+	( ;</b></code> <i>Expression</i><code><b>
+	; )</b></code> <i>Statement</i><code><b><br>for
+	( ;</b></code> <i>Expression</i><code><b>
+	;</b></code> <i>Expression</i><code><b>
+	)</b></code> <i>Statement</i><code><b><br>for
+	(</b></code> <i>ExpressionNoIn </i><code><b>;
+	; )</b></code> <i>Statement</i><code><b><br>for
+	(</b></code> <i>ExpressionNoIn </i><code><b>;
+	;</b></code> <i>Expression</i><code><b>
+	)</b></code> <i>Statement</i><code><b><br>for
+	(</b></code> <i>ExpressionNoIn </i><code><b>;
+	</b></code> <i>Expression</i><code><b>
+	; )</b></code> <i>Statement</i><code><b><br>for
+	(</b></code> <i>ExpressionNoIn </i><code><b>;
+	</b></code> <i>Expression</i><code><b>
+	;</b></code> <i>Expression</i><code><b>
+	)</b></code> <i>Statement</i></p>
 	<p>
 	so
 	the nonterminal <i>IterationStatement</i>
@@ -2047,8 +2047,8 @@ an object is a member of the remaining built-in type
 	nonterminals.</p>
 	<p>
 	If
-	the phrase “[lookahead <span class="symbol">∉</span>
-	<i>set</i>]”
+	the phrase
+ <dfn id="lookahead-not-in">“[lookahead <span class="symbol">∉</span> <i>set</i>]”
 	appears in the right-hand side of a production, it indicates that
 	the production may not be used if the immediately following input
 	token is a member of the given <i>set</i>.
@@ -2078,10 +2078,10 @@ an object is a member of the remaining built-in type
 	</b></i><b>::</b></p>
 	<p class="def2">
 	<code><b>n</b></code>
-	[lookahead
-	<span class="symbol">∉</span>
-	{<code><b>1</b></code><i>, </i><code><b>3</b></code><i>, </i><code><b>5</b></code><i>, </i><code><b>7</b></code><i>, </i><code><b>9</b></code>}]<i>DecimalDigits<br>DecimalDigit  </i>[lookahead
-	<span class="symbol">∉</span>
+	[<a href="#lookahead-not-in">lookahead
+	<span class="symbol">∉</span></a>
+	{<code><b>1</b></code> <i>, </i><code><b>3</b></code> <i>, </i><code><b>5</b></code> <i>, </i><code><b>7</b></code> <i>, </i><code><b>9</b></code>}]<i>DecimalDigits<br>DecimalDigit  </i>[<a href="#lookahead-not-in">lookahead
+	<span class="symbol">∉</span></a>
 	<i>DecimalDigit </i>]</p>
 	<p>
 	matches
@@ -2099,7 +2099,7 @@ an object is a member of the remaining built-in type
 	<p class="def2">
 	<code><b>return
 	</b></code><a href="#restricted-production">[no <i>LineTerminator</i> here]</a><code><b>
-	</b></code><i>Expression</i><sub>opt</sub><i></i><code><b>;</b></code></p>
+	</b></code> <i>Expression</i><sub>opt</sub> <code><b>;</b></code></p>
 	<p>
 	indicates
 	that the production may not be used if a <i>LineTerminator</i>
@@ -2838,8 +2838,8 @@ an object is a member of the remaining built-in type
 	<i>LineTerminatorSequence </i><b>::</b></p>
 	<p class="def1-btm">
 	&lt;LF&gt;<br>&lt;CR&gt;
-	[lookahead
-	<span class="symbol">∉</span>
+	[<a href="#lookahead-not-in">lookahead
+	<span class="symbol">∉</span></a>
 	&lt;LF&gt;
 	]<br>&lt;LS&gt;<br>&lt;PS&gt;<br>&lt;CR&gt;
 	&lt;LF&gt;</p>
@@ -2877,17 +2877,17 @@ an object is a member of the remaining built-in type
 	<p class="keep">
 	<i>MultiLineComment </i><b>::</b></p>
 	<p class="def1-btm">
-	<code><b>/*</b></code><i>MultiLineCommentChars</i><sub>opt</sub><i></i><code><b>*/</b></code></p>
+	<code><b>/*</b></code> <i>MultiLineCommentChars</i><sub>opt</sub> <code><b>*/</b></code></p>
 	<p class="keep">
 	<i>MultiLineCommentChars </i><b>::</b></p>
 	<p class="def1-btm">
 	<i>MultiLineNotAsteriskChar
-	MultiLineCommentChars</i><sub>opt</sub><i><br></i><code><b>*</b></code><i>PostAsteriskCommentChars</i><sub>opt</sub></p>
+	MultiLineCommentChars</i><sub>opt</sub><i><br></i><code><b>*</b></code> <i>PostAsteriskCommentChars</i><sub>opt</sub></p>
 	<p class="keep">
 	<i>PostAsteriskCommentChars </i><b>::</b></p>
 	<p class="def1-btm">
 	<i>MultiLineNotForwardSlashOrAsteriskChar
-	MultiLineCommentChars</i><sub>opt</sub><i><br></i><code><b>*</b></code><i>PostAsteriskCommentChars</i><sub>opt</sub></p>
+	MultiLineCommentChars</i><sub>opt</sub><i><br></i><code><b>*</b></code> <i>PostAsteriskCommentChars</i><sub>opt</sub></p>
 	<p class="keep">
 	<i>MultiLineNotAsteriskChar<b>
 	</b></i><b>::</b></p>
@@ -2899,12 +2899,12 @@ an object is a member of the remaining built-in type
 	<p class="def1-btm">
 	<i>SourceCharacter<b>
 	</b></i><b>but
-	not</b><i> forward-slash </i><code><b>/</b></code><i><b>
+	not</b><i> forward-slash </i><code><b>/</b></code> <i><b>
 	</b></i><b>or</b><i>asterisk </i><code><b>*</b></code></p>
 	<p class="keep">
 	<i>SingleLineComment </i><b>::</b></p>
 	<p class="def1-btm">
-	<code><b>//</b></code><i>SingleLineCommentChars</i><sub>opt</sub></p>
+	<code><b>//</b></code> <i>SingleLineCommentChars</i><sub>opt</sub></p>
 	<p class="keep">
 	<i>SingleLineCommentChars </i><b>::</b></p>
 	<p class="def1-btm">
@@ -2957,7 +2957,7 @@ an object is a member of the remaining built-in type
 	does not contribute a character to the <i>IdentifierName</i>.
 	A <i>UnicodeEscapeSequence</i>
 	cannot be used to put a character into an <i>IdentifierName </i>that would otherwise be illegal. In other words, if a <code><b>\
-	</b></code><i>UnicodeEscapeSequence</i>
+	</b></code> <i>UnicodeEscapeSequence</i>
 	sequence were replaced by its <i>UnicodeEscapeSequence</i>'s
 	CV, the result must still be a valid <i>IdentifierName </i>that has the exact same sequence of characters as the
 	original <i>IdentifierName</i>.
@@ -2995,8 +2995,8 @@ an object is a member of the remaining built-in type
 	<p class="keep">
 	<i>IdentifierStart </i><b>::</b></p>
 	<p class="def1-btm">
-	<i>UnicodeLetter<br></i><code><b>$<br>_</b></code><i><br></i><code><b>\
-	</b></code><i>UnicodeEscapeSequence</i></p>
+	<i>UnicodeLetter<br></i><code><b>$<br>_</b></code> <i><br></i><code><b>\
+	</b></code> <i>UnicodeEscapeSequence</i></p>
 	<p class="keep">
 	<i>IdentifierPart </i><b>::</b></p>
 	<p class="def1-btm">
@@ -3050,7 +3050,7 @@ an object is a member of the remaining built-in type
 	<p class="tiny-btm">
 	<b>Syntax</b></p>
 	<p class="keep">
-	<i>Keyword </i>::<i></i><b>one
+	<i>Keyword </i>:: <b>one
 	of</b></p>
 	<dl>
 		<dl>
@@ -3311,7 +3311,7 @@ an object is a member of the remaining built-in type
 	<p class="tiny-btm">
 	<b>Syntax</b></p>
 	<p class="keep">
-	<i>Punctuator </i><b>::</b><i></i><b>one
+	<i>Punctuator </i><b>::</b> <b>one
 	of</b></p>
 	<dl>
 		<dd>
@@ -3529,7 +3529,7 @@ an object is a member of the remaining built-in type
 		</tbody></table>
 	</dd></dl>
 	<p class="keep">
-	<i>DivPunctuator </i><b>::</b><i></i><b>one
+	<i>DivPunctuator </i><b>::</b> <b>one
 	of</b></p>
 	<dl>
 		<dd>
@@ -3609,14 +3609,14 @@ an object is a member of the remaining built-in type
 	<p class="keep">
 	<i>DecimalLiteral </i><b>::</b></p>
 	<p class="def1-btm">
-	<i>DecimalIntegerLiteral </i><code><b>.</b></code><i>DecimalDigits</i><sub>opt</sub><i><sub>
-	</sub>  ExponentPart</i><sub>opt</sub><i><br></i><code><b>.</b></code><i>DecimalDigits ExponentPart</i><sub>opt</sub><i><br>DecimalIntegerLiteral
+	<i>DecimalIntegerLiteral </i><code><b>.</b></code> <i>DecimalDigits</i><sub>opt</sub><i><sub>
+	</sub>  ExponentPart</i><sub>opt</sub><i><br></i><code><b>.</b></code> <i>DecimalDigits ExponentPart</i><sub>opt</sub><i><br>DecimalIntegerLiteral
 	ExponentPart</i><sub>opt</sub></p>
 	<p class="keep">
 	<i>DecimalIntegerLiteral<b>
 	</b></i><b>::</b></p>
 	<p class="def1-btm">
-	<code><b>0</b></code><i><br>NonZeroDigit
+	<code><b>0</b></code> <i><br>NonZeroDigit
 	DecimalDigits</i><sub>opt</sub></p>
 	<p class="keep">
 	<i>DecimalDigits </i><b>::</b></p>
@@ -3653,13 +3653,13 @@ an object is a member of the remaining built-in type
 	<i>SignedInteger<b>
 	</b></i><b>::</b></p>
 	<p class="def1-btm">
-	<i>DecimalDigits<br></i><code><b>+</b></code><i>DecimalDigits<br></i><code><b>-</b></code><i>DecimalDigits</i></p>
+	<i>DecimalDigits<br></i><code><b>+</b></code> <i>DecimalDigits<br></i><code><b>-</b></code> <i>DecimalDigits</i></p>
 	<p class="keep">
 	<i>HexIntegerLiteral </i><b>::</b></p>
 	<p class="def1-btm">
-	<code><b>0x</b></code><i>HexDigit<br></i><code><b>0X</b></code><i>HexDigit<br>HexIntegerLiteral HexDigit</i></p>
+	<code><b>0x</b></code> <i>HexDigit<br></i><code><b>0X</b></code> <i>HexDigit<br>HexIntegerLiteral HexDigit</i></p>
 	<p class="keep">
-	<i>HexDigit </i>::<i></i>one
+	<i>HexDigit </i>:: one
 	of<i>	</i></p>
 	<p class="def1-btm">
 	<code><b>0
@@ -3699,14 +3699,14 @@ an object is a member of the remaining built-in type
 				<li><p>
 				The
 				MV of <i>DecimalLiteral </i><b>::</b><b>
-				</b><i>DecimalIntegerLiteral </i><code><b>.</b></code><i><b>
+				</b><i>DecimalIntegerLiteral </i><code><b>.</b></code> <i><b>
 				</b></i>is the MV of
 				<i>DecimalIntegerLiteral</i>.</p>
 				</li>
 				<li><p>
 				The
 				MV of <i>DecimalLiteral </i><b>::</b><b>
-				</b><i>DecimalIntegerLiteral </i><code><b>.</b></code><i>DecimalDigits</i><i><b> </b></i>is
+				</b><i>DecimalIntegerLiteral </i><code><b>.</b></code> <i>DecimalDigits</i><i><b> </b></i>is
 				the MV of <i>DecimalIntegerLiteral</i> plus
 				(the MV of <i>DecimalDigits</i><i><b> </b></i>times
 				10<sup>–</sup><sup><i>n</i></sup>),
@@ -3716,7 +3716,7 @@ an object is a member of the remaining built-in type
 				<li><p>
 				The
 				MV of <i>DecimalLiteral </i><b>::</b><b>
-				</b><i>DecimalIntegerLiteral </i><code><b>.</b></code><i>ExponentPart </i>is the MV of
+				</b><i>DecimalIntegerLiteral </i><code><b>.</b></code> <i>ExponentPart </i>is the MV of
 				<i>DecimalIntegerLiteral</i> times
 				10<sup><i>e</i></sup>,
 				where <i>e</i> is
@@ -3725,7 +3725,7 @@ an object is a member of the remaining built-in type
 				<li><p>
 				The
 				MV of <i>DecimalLiteral </i><b>::</b><b>
-				</b><i>DecimalIntegerLiteral </i><code><b>.</b></code><i>DecimalDigits ExponentPart </i>is
+				</b><i>DecimalIntegerLiteral </i><code><b>.</b></code> <i>DecimalDigits ExponentPart </i>is
 				(the MV of <i>DecimalIntegerLiteral</i> plus
 				(the MV of <i>DecimalDigits</i><i><b> </b></i>times
 				10<sup>–</sup><sup><i>n</i></sup>))
@@ -3737,7 +3737,7 @@ an object is a member of the remaining built-in type
 				</li>
 				<li><p>
 				The
-				MV of <i>DecimalLiteral </i><b>::</b><code><b>.</b></code><i>DecimalDigits</i> is the MV of
+				MV of <i>DecimalLiteral </i><b>::</b><code><b>.</b></code> <i>DecimalDigits</i> is the MV of
 				<i>DecimalDigits</i><i><b> </b></i>times
 				10<sup>–</sup><sup><i>n</i></sup>,
 				where <i>n</i> is the
@@ -3746,7 +3746,7 @@ an object is a member of the remaining built-in type
 				<li><p>
 				The
 				MV
-				of <i>DecimalLiteral </i><b>::</b><code><b>.</b></code><i>DecimalDigits ExponentPart </i>is
+				of <i>DecimalLiteral </i><b>::</b><code><b>.</b></code> <i>DecimalDigits ExponentPart </i>is
 				the MV of <i>DecimalDigits</i><i><b> </b></i>times
 				10<sup><i>e</i></sup><sup>–</sup><sup><i>n</i></sup>,
 				where <i>n</i> is the
@@ -3812,13 +3812,13 @@ an object is a member of the remaining built-in type
 				<li><p>
 				The
 				MV of <i>SignedInteger </i><b>::</b><b>
-				</b><code><b>+</b></code><i>DecimalDigits</i><i><b> </b></i>is
+				</b><code><b>+</b></code> <i>DecimalDigits</i><i><b> </b></i>is
 				the MV of <i>DecimalDigits</i>.</p>
 				</li>
 				<li><p>
 				The
 				MV of <i>SignedInteger </i><b>::</b><b>
-				</b><code><b>-</b></code><i>DecimalDigits</i><i><b> </b></i>is
+				</b><code><b>-</b></code> <i>DecimalDigits</i><i><b> </b></i>is
 				the negative of the MV of <i>DecimalDigits</i>.</p>
 				</li>
 				<li><p>
@@ -4036,8 +4036,8 @@ an object is a member of the remaining built-in type
 	<p class="keep">
 	<i>StringLiteral </i><b>::</b></p>
 	<p class="def1-btm">
-	<code><b>"</b></code><i>DoubleStringCharacters</i><sub>opt</sub><i><b>
-	</b></i><code><b>"<br>'</b></code><i>SingleStringCharacters</i><sub>opt</sub><i><sub>
+	<code><b>"</b></code> <i>DoubleStringCharacters</i><sub>opt</sub><i><b>
+	</b></i><code><b>"<br>'</b></code> <i>SingleStringCharacters</i><sub>opt</sub><i><sub>
 	</sub> </i><code><b>'</b></code></p>
 	<p class="keep">
 	<i>DoubleStringCharacters </i><b>::</b></p>
@@ -4053,29 +4053,29 @@ an object is a member of the remaining built-in type
 	<i>DoubleStringCharacter </i><b>::</b></p>
 	<p class="def1-btm">
 	<i>SourceCharacter </i><b>but
-	not</b><i> double-quote </i><code><b>"</b></code><i><b>
+	not</b><i> double-quote </i><code><b>"</b></code> <i><b>
 	</b></i><b>or</b><i><b>
-	</b>backslash </i><code><b>\</b></code><i></i><b>or</b><i><b>
+	</b>backslash </i><code><b>\</b></code> <b>or</b><i><b>
 	</b>LineTerminator<br></i><code><b>\
-	</b></code><i>EscapeSequence<br>LineContinuation</i></p>
+	</b></code> <i>EscapeSequence<br>LineContinuation</i></p>
 	<p class="keep">
 	<i>SingleStringCharacter </i><b>::</b></p>
 	<p class="def1-btm">
 	<i>SourceCharacter </i><b>but
-	not</b><i> single-quote </i><code><b>'</b></code><i><b>
-	</b></i><b>or</b><i>backslash </i><code><b>\</b></code><i></i><b>or</b><i><b>
+	not</b><i> single-quote </i><code><b>'</b></code> <i><b>
+	</b></i><b>or</b><i>backslash </i><code><b>\</b></code> <b>or</b><i><b>
 	</b>LineTerminator<br></i><code><b>\
-	</b></code><i>EscapeSequence<br>LineContinuation</i></p>
+	</b></code> <i>EscapeSequence<br>LineContinuation</i></p>
 	<p class="keep">
 	<i>LineContinuation </i><b>::</b></p>
 	<p class="def1-btm">
 	<code><b>\
-	</b></code><i>LineTerminatorSequence</i></p>
+	</b></code> <i>LineTerminatorSequence</i></p>
 	<p class="keep">
 	<i>EscapeSequence </i><b>::</b></p>
 	<p class="def1-btm">
-	<i>CharacterEscapeSequence<br></i><code><b>0</b></code><i></i>[lookahead
-	<span class="symbol">∉</span>
+	<i>CharacterEscapeSequence<br></i><code><b>0</b></code> [<a href="#lookahead-not-in">lookahead
+	<span class="symbol">∉</span></a>
 	<i>DecimalDigit</i>]<i><br>HexEscapeSequence<br>UnicodeEscapeSequence</i></p>
 	<p class="keep">
 	<i>CharacterEscapeSequence </i><b>::</b></p>
@@ -4099,16 +4099,16 @@ an object is a member of the remaining built-in type
 	<p class="keep">
 	<i>EscapeCharacter </i><b>::</b></p>
 	<p class="def1-btm">
-	<i>SingleEscapeCharacter<br>DecimalDigit<br></i><code><b>x</b></code><i><b><br></b></i><code><b>u</b></code></p>
+	<i>SingleEscapeCharacter<br>DecimalDigit<br></i><code><b>x</b></code> <i><b><br></b></i><code><b>u</b></code></p>
 	<p class="keep">
 	<i>HexEscapeSequence </i><b>::</b></p>
 	<p class="def1-btm">
 	<code><b>x
-	</b></code><i>HexDigit HexDigit</i></p>
+	</b></code> <i>HexDigit HexDigit</i></p>
 	<p class="keep">
 	<i>UnicodeEscapeSequence </i><b>::</b></p>
 	<p class="def1-btm">
-	<code><b>u</b></code><i>HexDigit HexDigit HexDigit HexDigit</i></p>
+	<code><b>u</b></code> <i>HexDigit HexDigit HexDigit HexDigit</i></p>
 	<p>
 	The
 	definitions of the nonterminal <i>HexDigit</i>
@@ -4242,8 +4242,8 @@ the empty character sequence.</P></LI>
 				<li><p>
 				The
 				CV of <i>EscapeSequence </i><b>::</b>
-				<code><b>0</b></code>  [lookahead
-				<span class="symbol">∉</span>
+				<code><b>0</b></code>  [<a href="#lookahead-not-in">lookahead
+				<span class="symbol">∉</span></a>
 				<i>DecimalDigit</i>]
 				is a &lt;NUL&gt;
 				character (Unicode value 0000).</p>
@@ -4487,7 +4487,7 @@ the empty character sequence.</P></LI>
 				<li><p>
 				The
 				CV of <i>HexEscapeSequence</i> <b>::</b>
-				<code><b>x</b></code><i> HexDigit</i>
+				<code><b>x</b></code> <i> HexDigit</i>
 				<i>HexDigit</i> is the character
 				whose code unit value is (16
 				times the MV of the first <i>HexDigit</i>)
@@ -4496,7 +4496,7 @@ the empty character sequence.</P></LI>
 				<li><p>
 				The
 				CV of <i>UnicodeEscapeSequence</i> <b>::</b>
-				<code><b>u</b></code><i> </i><i>HexDigit</i>
+				<code><b>u</b></code> <i> </i><i>HexDigit</i>
 				<i>HexDigit</i> <i>HexDigit</i> <i>HexDigit</i> is the
 				character whose code unit value is (4096
 				times the MV of the first <i>HexDigit</i>)
@@ -4551,7 +4551,7 @@ the empty character sequence.</P></LI>
 	<p class="keep">
 	<i>RegularExpressionLiteral </i><b>::</b></p>
 	<p class="def1-btm">
-	<code><b>/</b></code><i>RegularExpressionBody<b> </b></i><code><b>/</b></code><i><b>
+	<code><b>/</b></code> <i>RegularExpressionBody<b> </b></i><code><b>/</b></code> <i><b>
 	</b>RegularExpressionFlags</i></p>
 	<p class="keep">
 	<i>RegularExpressionBody<b>
@@ -4568,26 +4568,26 @@ the empty character sequence.</P></LI>
 	<i>RegularExpressionFirstChar </i><b>::</b></p>
 	<p class="def1-btm">
 	<i>RegularExpressionNonTerminator </i><b>but
-	not</b><i> </i><code><b>*</b></code><i><b>
+	not</b><i> </i><code><b>*</b></code> <i><b>
 	</b></i><b>or</b><i><b>
-	</b></i><code><b>\</b></code><i></i><b>or</b><i><b>
+	</b></i><code><b>\</b></code> <b>or</b><i><b>
 	</b></i><code><b>/
 	</b></code><b>or</b><code><b>
-	[</b></code><i><br>RegularExpressionBackslashSequence<br>RegularExpressionClass</i></p>
+	[</b></code> <i><br>RegularExpressionBackslashSequence<br>RegularExpressionClass</i></p>
 	<p class="keep">
 	<i>RegularExpressionChar </i><b>::</b></p>
 	<p class="def1-btm">
 	<i>RegularExpressionNonTerminator<b>
 	</b></i><b>but
-	not</b><i><b> </b></i><code><b>\</b></code><i><b>
+	not</b><i><b> </b></i><code><b>\</b></code> <i><b>
 	</b></i><b>or</b><i><b>
 	</b></i><code><b>/
 	</b></code><b>or</b><code><b>
-	[</b></code><i><br>RegularExpressionBackslashSequence<br>RegularExpressionClass</i></p>
+	[</b></code> <i><br>RegularExpressionBackslashSequence<br>RegularExpressionClass</i></p>
 	<p class="keep">
 	<i>RegularExpressionBackslashSequence </i><b>::</b></p>
 	<p class="def1-btm">
-	<code><b>\</b></code><i>RegularExpressionNonTerminator</i></p>
+	<code><b>\</b></code> <i>RegularExpressionNonTerminator</i></p>
 	<p class="keep">
 	<i>RegularExpressionNonTerminator </i><b>::</b></p>
 	<p class="def1-btm">
@@ -4598,23 +4598,23 @@ the empty character sequence.</P></LI>
 	<i>RegularExpressionClass </i><b>::</b></p>
 	<p class="def1-btm">
 	<code><b>[
-	</b></code><i>RegularExpressionClassChars</i><code><b>
+	</b></code> <i>RegularExpressionClassChars</i><code><b>
 	]</b></code></p>
 	<p class="keep">
 	<i>RegularExpressionClassChars</i><code><b>
 	</b></code><b>::</b></p>
 	<p class="def1-btm">
 	[empty]<i><br>RegularExpressionClassChars</i><code><b>
-	</b></code><i>RegularExpressionClassChar</i></p>
+	</b></code> <i>RegularExpressionClassChar</i></p>
 	<p class="keep">
 	<i>RegularExpressionClassChar</i><code><b>
 	</b></code><b>::</b></p>
 	<p class="def1-btm">
 	<i>RegularExpressionNonTerminator<b>
 	</b></i><b>but
-	not</b><i><b> </b></i><code><b>]</b></code><i><b>
+	not</b><i><b> </b></i><code><b>]</b></code> <i><b>
 	</b></i><b>or</b><i><b>
-	</b></i><code><b>\</b></code><i><b><br></b>RegularExpressionBackslashSequence</i></p>
+	</b></i><code><b>\</b></code> <i><b><br></b>RegularExpressionBackslashSequence</i></p>
 	<p class="keep">
 	<i>RegularExpressionFlags<b>
 	</b></i><b>::</b></p>
@@ -4726,7 +4726,7 @@ the empty character sequence.</P></LI>
 	<p class="def2">
 	<i>LeftHandSideExpression</i><code><b>
 	</b></code><a href="#restricted-production">[no <i>LineTerminator</i> here]</a><code><b>
-	++</b></code><i><br>LeftHandSideExpression</i><code><b>
+	++</b></code> <i><br>LeftHandSideExpression</i><code><b>
 	</b></code><a href="#restricted-production">[no <i>LineTerminator</i> here]</a><code><b>
 	--</b></code></p>
 	<p class="def1">
@@ -7850,14 +7850,14 @@ and
 	<i>StrDecimalLiteral </i><b>:::</b></p>
 	<p class="def1-btm">
 	<i>StrUnsignedDecimalLiteral<br></i><code><b>+
-	</b></code><i>StrUnsignedDecimalLiteral<br></i><code><b>-
-	</b></code><i>StrUnsignedDecimalLiteral</i></p>
+	</b></code> <i>StrUnsignedDecimalLiteral<br></i><code><b>-
+	</b></code> <i>StrUnsignedDecimalLiteral</i></p>
 	<p class="keep">
 	<i>StrUnsignedDecimalLiteral </i><b>:::</b></p>
 	<p class="def1-btm">
-	<code><b>Infinity</b></code><i><br>
-	DecimalDigits </i><code><b>.</b></code><i>DecimalDigits</i><sub>opt</sub><i><sub>
-	</sub>ExponentPart</i><sub>opt</sub><i><br></i><code><b>.</b></code><i>DecimalDigits ExponentPart</i><sub>opt</sub><i><br>DecimalDigits
+	<code><b>Infinity</b></code> <i><br>
+	DecimalDigits </i><code><b>.</b></code> <i>DecimalDigits</i><sub>opt</sub><i><sub>
+	</sub>ExponentPart</i><sub>opt</sub><i><br></i><code><b>.</b></code> <i>DecimalDigits ExponentPart</i><sub>opt</sub><i><br>DecimalDigits
 	ExponentPart</i><sub>opt</sub></p>
 	<p class="keep">
 	<i>DecimalDigits </i><b>:::</b></p>
@@ -7887,14 +7887,14 @@ and
 	<i>SignedInteger </i><b>:::</b></p>
 	<p class="def1-btm">
 	<i>DecimalDigits<br></i><code><b>+
-	</b></code><i>DecimalDigits<br></i><code><b>-
-	</b></code><i>DecimalDigits</i></p>
+	</b></code> <i>DecimalDigits<br></i><code><b>-
+	</b></code> <i>DecimalDigits</i></p>
 	<p class="keep">
 	<i>HexIntegerLiteral </i><b>:::</b></p>
 	<p class="def1-btm">
-	<code><b>0x</b></code><i>HexDigit<br></i><code><b>0X</b></code><i>HexDigit<br>HexIntegerLiteral HexDigit</i></p>
+	<code><b>0x</b></code> <i>HexDigit<br></i><code><b>0X</b></code> <i>HexDigit<br>HexIntegerLiteral HexDigit</i></p>
 	<p class="keep">
-	<i>HexDigit </i>:::<i></i><b>one
+	<i>HexDigit </i>::: <b>one
 	of</b></p>
 	<p class="def1-btm">
 	<code><b>0
@@ -8014,7 +8014,7 @@ and
 		<li><p>
 		The
 		MV of <i>StrUnsignedDecimalLiteral</i><b>:::
-		</b><i>DecimalDigits </i><code><b>.</b></code><i></i><i>DecimalDigits</i><b>
+		</b><i>DecimalDigits </i><code><b>.</b></code> <i>DecimalDigits</i><b>
 		</b>is the MV of the first <i>DecimalDigits</i>
 		plus (the MV of the second <i>DecimalDigits</i><b>
 		</b>times 10<sup><span class="symbol">−</span></sup><sup><i>n</i></sup>),
@@ -8023,13 +8023,13 @@ and
 		</li>
 		<li><p>
 		The
-		MV of <i>StrUnsignedDecimalLiteral</i><b>::: </b><i>DecimalDigits</i><code><b>.</b></code><i>ExponentPart </i>is the MV of
+		MV of <i>StrUnsignedDecimalLiteral</i><b>::: </b><i>DecimalDigits</i><code><b>.</b></code> <i>ExponentPart </i>is the MV of
 		<i>DecimalDigits</i> times 10<sup><i>e</i></sup>, where <i>e</i>
 		is the MV of <i>ExponentPart</i>.</p>
 		</li>
 		<li><p>
 		The
-		MV of <i>StrUnsignedDecimalLiteral</i><b>::: </b><i>DecimalDigits</i><code><b>.</b></code><i>DecimalDigits ExponentPart </i>is (the MV of the first
+		MV of <i>StrUnsignedDecimalLiteral</i><b>::: </b><i>DecimalDigits</i><code><b>.</b></code> <i>DecimalDigits ExponentPart </i>is (the MV of the first
 		<i>DecimalDigits</i> plus (the MV of the second <i>DecimalDigits</i><i><b>
 		</b></i>times 10<sup><span class="symbol">−</span></sup><sup><i>n</i></sup>))
 		times 10<sup><i>e</i></sup>, where <i>n</i> is the number of
@@ -8038,13 +8038,13 @@ and
 		</li>
 		<li><p>
 		The
-		MV of <i>StrUnsignedDecimalLiteral</i><b>:::</b><code><b>.</b></code><i>DecimalDigits</i> is the MV of
+		MV of <i>StrUnsignedDecimalLiteral</i><b>:::</b><code><b>.</b></code> <i>DecimalDigits</i> is the MV of
 		<i>DecimalDigits</i><i><b> </b></i>times 10<sup><span class="symbol">−</span></sup><sup><i>n</i></sup>,
 		where <i>n</i> is the number of characters in <i>DecimalDigit</i>s.</p>
 		</li>
 		<li><p>
 		The
-		MV of <i>StrUnsignedDecimalLiteral</i><b>:::</b><code><b>.</b></code><i>DecimalDigits ExponentPart </i>is
+		MV of <i>StrUnsignedDecimalLiteral</i><b>:::</b><code><b>.</b></code> <i>DecimalDigits ExponentPart </i>is
 		the MV of <i>DecimalDigits</i><i><b> </b></i>times 10<sup><i>e</i></sup><sup><span class="symbol">−</span></sup><sup><i>n</i></sup>,
 		where <i>n</i> is the number of characters in <i>DecimalDigit</i>s
 		and <i>e</i> is the MV of
@@ -8086,12 +8086,12 @@ and
 		</li>
 		<li><p>
 		The
-		MV of <i>SignedInteger </i><b>::: </b><code><b>+</b></code><i>DecimalDigits</i><i><b> </b></i>is
+		MV of <i>SignedInteger </i><b>::: </b><code><b>+</b></code> <i>DecimalDigits</i><i><b> </b></i>is
 		the MV of <i>DecimalDigits</i>.</p>
 		</li>
 		<li><p>
 		The
-		MV of <i>SignedInteger </i><b>::: </b><code><b>-</b></code><i>DecimalDigits</i><i><b> </b></i>is the negative of the MV of
+		MV of <i>SignedInteger </i><b>::: </b><code><b>-</b></code> <i>DecimalDigits</i><i><b> </b></i>is the negative of the MV of
 		<i>DecimalDigits</i>.</p>
 		</li>
 		<li><p>
@@ -9964,7 +9964,7 @@ and
 	Identifier
 	resolution is the process of determining the binding of an
 	<i>Identifier</i> using
-	the LexicalEnvironment of the running execution context. During
+	the <a href="#x10.2">LexicalEnvironment</a> of the running execution context. During
 	execution of ECMAScript code, the syntactic production
 	<i>PrimaryExpression</i>
 	<b>:</b>
@@ -9973,7 +9973,7 @@ and
 	<ol>
 		<li><p>
 		Let
-		<i>env</i> be the running execution context’s LexicalEnvironment.</p>
+		<i>env</i> be the running execution context’s <a href="#x10.2">LexicalEnvironment</a>.</p>
 		</li>
 		<li><p>
 		If
@@ -10068,7 +10068,7 @@ and
 			</li>
 			<li><p>
 			Set
-			the LexicalEnvironment to the same value as the LexicalEnvironment
+			the LexicalEnvironment to the same value as the <a href="#x10.2">LexicalEnvironment</a>
 			of the calling execution context.</p>
 			</li>
 			<li><p>
@@ -10452,7 +10452,7 @@ and
 		<i>map</i> be the result of creating a new object as if by the
 		expression <code><b>new Object()</b></code>
 		where <code><b>Object</b></code> is
-		the standard built-in constructor with that name</p>
+		<a href="#x15.2">the standard built-in constructor with that name</a></p>
 		</li>
 		<li><p>
 		Let
@@ -10874,7 +10874,7 @@ and
 	<p class="keep">
 	<i>PrimaryExpression </i><b>:</b></p>
 	<p class="def1-btm">
-	<code><b>this</b></code><i><br>Identifier<br>Literal<br>ArrayLiteral<br>ObjectLiteral<br></i><code><b>(</b></code><i>Expression </i><code><b>)</b></code></p>
+	<code><b>this</b></code> <i><br>Identifier<br>Literal<br>ArrayLiteral<br>ObjectLiteral<br></i><code><b>(</b></code> <i>Expression </i><code><b>)</b></code></p>
 	<h4 id="x11.1.1">11.1.1 The this Keyword <a href="#x11.1.1">#</a> <a href="#x11.1.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	The
@@ -10916,28 +10916,28 @@ and
 	<i>ArrayLiteral </i><b>:</b></p>
 	<p class="def1-btm">
 	<code><b>[
-	</b></code><i>Elision</i><sub>opt</sub><code>
+	</b></code> <i>Elision</i><sub>opt</sub><code>
 	</code><code><b>]<br>[
-	</b></code><i>ElementList</i><code>
+	</b></code> <i>ElementList</i><code>
 	</code><code><b>]<br>[
-	</b></code><i>ElementList <b>,</b> Elision</i><sub>opt</sub><code>
+	</b></code> <i>ElementList <b>,</b> Elision</i><sub>opt</sub><code>
 	</code><code><b>]</b></code></p>
 	<p class="keep">
 	<i>ElementList </i><b>:</b></p>
 	<p class="def1-btm">
 	<i>Elision</i><sub>opt</sub><sub><code>
-	</code></sub><i>AssignmentExpression<br>ElementList </i><code><b>,</b></code><i>Elision</i><sub>opt</sub><sub><code>
+	</code></sub><i>AssignmentExpression<br>ElementList </i><code><b>,</b></code> <i>Elision</i><sub>opt</sub><sub><code>
 	</code></sub><i>AssignmentExpression</i></p>
 	<p class="keep">
 	<i>Elision </i><b>:</b></p>
 	<p class="def1-btm">
-	<code><b>,</b></code><i><br>Elision </i><code><b>,</b></code></p>
+	<code><b>,</b></code> <i><br>Elision </i><code><b>,</b></code></p>
 	<p class="tiny-btm">
 	<b>Semantics</b></p>
 	<p>
 	The
 	production  <i>ArrayLiteral</i>
-	<b>:</b>  <code><b>[ </b></code><i>Elision</i><sub>opt</sub><code>
+	<b>:</b>  <code><b>[</b></code> <i>Elision</i><sub>opt</sub><code>
 	</code><code><b>]</b></code>  is
 	evaluated as follows:</p>
 	<ol>
@@ -10966,7 +10966,7 @@ and
 	<p>
 	The
 	production  <i>ArrayLiteral</i>
-	<b>:</b> <code><b>[ </b></code><i>ElementList</i><code>
+	<b>:</b> <code><b>[</b></code> <i>ElementList</i><code>
 	</code><code><b>]</b></code>  is
 	evaluated as follows:</p>
 	<ol>
@@ -10977,8 +10977,8 @@ and
 	<p>
 	The
 	production  <i>ArrayLiteral</i>
-	<b>: </b><code><b>[ </b></code><i>ElementList</i>
-	<code><b>,</b></code><i> </i><i>Elision</i><sub>opt</sub><code>
+	<b>: </b><code><b>[</b></code> <i>ElementList</i>
+	<code><b>,</b></code> <i> </i><i>Elision</i><sub>opt</sub><code>
 	</code><code><b>]</b></code>  is
 	evaluated as follows:</p>
 	<ol>
@@ -11130,10 +11130,10 @@ and
 	<i>ObjectLiteral </i><b>:</b></p>
 	<p class="def1-btm">
 	<code><b>{
-	}</b></code><i><br></i><code><b>{
-	</b></code><i>PropertyNameAndValueList</i><code>
+	}</b></code> <i><br></i><code><b>{
+	</b></code> <i>PropertyNameAndValueList</i><code>
 	</code><code><b>}<br>{
-	</b></code><i>PropertyNameAndValueList</i><code>
+	</b></code> <i>PropertyNameAndValueList</i><code>
 	, </code><code><b>}</b></code></p>
 	<p class="keep">
 	<i>PropertyNameAndValueList </i><b>:</b></p>
@@ -11145,12 +11145,12 @@ and
 	<i>PropertyAssignment<b>
 	</b></i><b>:</b></p>
 	<p class="def1-btm">
-	<i>PropertyName </i><code><b>:</b></code><i>AssignmentExpression<br></i><code><b>get</b></code><i><b>
+	<i>PropertyName </i><code><b>:</b></code> <i>AssignmentExpression<br></i><code><b>get</b></code> <i><b>
 	</b>PropertyName </i><code><b>(
-	)</b></code><i> </i><code><b>{</b></code><i>FunctionBody </i><code><b>}</b></code><i><b><br></b></i><code><b>set</b></code><i><b>
-	</b>PropertyName </i><code><b>(</b></code><i><b>
+	)</b></code> <i> </i><code><b>{</b></code> <i>FunctionBody </i><code><b>}</b></code> <i><b><br></b></i><code><b>set</b></code> <i><b>
+	</b>PropertyName </i><code><b>(</b></code> <i><b>
 	</b>PropertySetParameterList<b> </b></i><code><b>)
-	{</b></code><i><b> </b>FunctionBody </i><code><b>}</b></code></p>
+	{</b></code> <i><b> </b>FunctionBody </i><code><b>}</b></code></p>
 	<p class="keep">
 	<i>PropertyName </i><b>:</b></p>
 	<p class="def1-btm">
@@ -11173,7 +11173,7 @@ and
 		Return
 		a new object created as if by the expression <code><b>new
 		Object() </b></code>where <code><b>Object</b></code>
-		is the standard built-in constructor with that name.</p>
+		is <a href="#x15.2">the standard built-in constructor with that name</a>.</p>
 	</li></ol>
 	<p>
 	The
@@ -11202,7 +11202,7 @@ and
 		<i>obj </i>be the result of creating a new object as if by the
 		expression <code><b>new Object()
 		</b></code>where <code><b>Object</b></code>
-		is the standard built-in constructor with that name.</p>
+		is <a href="#x15.2">the standard built-in constructor with that name</a>.</p>
 		</li>
 		<li><p>
 		Let
@@ -11327,7 +11327,7 @@ and
 		Let
 		<i>closure </i>be the result of creating a new Function object as
 		specified in <a href="#x13.2">13.2</a> with an empty parameter list and body specified
-		by <i>FunctionBody</i>. Pass in the LexicalEnvironment of the
+		by <i>FunctionBody</i>. Pass in the <a href="#x10.2">LexicalEnvironment</a> of the
 		running execution context as the <i>Scope</i>. Pass in <b>true</b>
 		as the <i>Strict</i> flag if the <i>PropertyAssignment</i>
 		is contained in <a href="#x10.1.1">strict code</a> or if its <i>FunctionBody</i> is <a href="#x10.1.1">strict code</a>.</p>
@@ -11346,7 +11346,7 @@ and
 	production  <i>PropertyAssignment</i>
 	<b>:</b> <code><b>set</b></code>
 	<i>PropertyName</i> <code><b>(
-	</b></code><i>PropertySetParameterList</i><code><b>
+	</b></code> <i>PropertySetParameterList</i><code><b>
 	)</b></code><code> </code><code><b>{</b></code><code>
 	</code><i>FunctionBody</i>
 	<code><b>}</b></code> is evaluated as
@@ -11361,7 +11361,7 @@ and
 		<i>closure</i> be the result of creating a new Function object as
 		specified in <a href="#x13.2">13.2</a> with parameters specified by
 		<i>PropertySetParameterList </i>and body specified by <i>FunctionBody</i>.
-		Pass in the LexicalEnvironment of the running execution context as
+		Pass in the <a href="#x10.2">LexicalEnvironment</a> of the running execution context as
 		the <i>Scope</i>. Pass in <b>true</b> as the <i>Strict</i> flag if
 		the <i>PropertyAssignment</i>
 		is contained in <a href="#x10.1.1">strict code</a> or if its <i>FunctionBody</i> is <a href="#x10.1.1">strict code</a>.</p>
@@ -11449,26 +11449,26 @@ and
 	<p class="keep">
 	<i>MemberExpression </i><b>:</b></p>
 	<p class="def1-btm">
-	<i>PrimaryExpression<br>FunctionExpression<br>MemberExpression </i><code><b>[</b></code><i>Expression </i><code><b>]<br></b></code><i>MemberExpression </i><code><b>.</b></code><i>IdentifierName<br></i><code><b>new</b></code><i>MemberExpression</i><code><b>
-	</b></code><i>Arguments</i></p>
+	<i>PrimaryExpression<br>FunctionExpression<br>MemberExpression </i><code><b>[</b></code> <i>Expression </i><code><b>]<br></b></code> <i>MemberExpression </i><code><b>.</b></code> <i>IdentifierName<br></i><code><b>new</b></code> <i>MemberExpression</i><code><b>
+	</b></code> <i>Arguments</i></p>
 	<p class="keep">
 	<i>NewExpression </i><b>:</b></p>
 	<p class="def1-btm">
-	<i>MemberExpression</i><code><b><br>new</b></code><i>NewExpression</i></p>
+	<i>MemberExpression</i><code><b><br>new</b></code> <i>NewExpression</i></p>
 	<p class="keep">
 	<i>CallExpression </i><b>:</b></p>
 	<p class="def1-btm">
 	<i>MemberExpression</i><code><b>
-	</b></code><i>Arguments</i><code><b><br></b></code><i>CallExpression</i><code><b>
-	</b></code><i>Arguments</i><code><b><br></b></code><i>CallExpression </i><code><b>[</b></code><i>Expression </i><code><b>]<br></b></code><i>CallExpression </i><code><b>.</b></code><i>IdentifierName</i></p>
+	</b></code> <i>Arguments</i><code><b><br></b></code> <i>CallExpression</i><code><b>
+	</b></code> <i>Arguments</i><code><b><br></b></code> <i>CallExpression </i><code><b>[</b></code> <i>Expression </i><code><b>]<br></b></code> <i>CallExpression </i><code><b>.</b></code> <i>IdentifierName</i></p>
 	<p class="keep">
 	<i>Arguments </i><b>:</b></p>
 	<p class="def1-btm">
-	<code><b>(</b></code><i></i><code><b>)<br>(</b></code><i>ArgumentList  </i><code><b>)</b></code></p>
+	<code><b>(</b></code> <code><b>)<br>(</b></code> <i>ArgumentList  </i><code><b>)</b></code></p>
 	<p class="keep">
 	<i>ArgumentList </i><b>:</b></p>
 	<p class="def1-btm">
-	<i>AssignmentExpression<br>ArgumentList </i><code><b>,</b></code><i>AssignmentExpression</i></p>
+	<i>AssignmentExpression<br>ArgumentList </i><code><b>,</b></code> <i>AssignmentExpression</i></p>
 	<p class="keep">
 	<i>LeftHandSideExpression </i><b>:</b></p>
 	<p class="def1-btm">
@@ -11478,32 +11478,32 @@ and
 	Properties
 	are accessed by name, using either the dot notation:</p>
 	<p class="code-example">
-	<i>MemberExpression </i><code><b>.</b></code><i>IdentifierName<br>CallExpression </i><code><b>.</b></code><i>IdentifierName</i></p>
+	<i>MemberExpression </i><code><b>.</b></code> <i>IdentifierName<br>CallExpression </i><code><b>.</b></code> <i>IdentifierName</i></p>
 	<p class="sm-btm">
 	or
 	the bracket notation:</p>
 	<p class="code-example">
-	<i>MemberExpression </i><code><b>[</b></code><i>Expression </i><code><b>]</b></code><i><br>CallExpression </i><code><b>[</b></code><i>Expression </i><code><b>]</b></code></p>
+	<i>MemberExpression </i><code><b>[</b></code> <i>Expression </i><code><b>]</b></code> <i><br>CallExpression </i><code><b>[</b></code> <i>Expression </i><code><b>]</b></code></p>
 	<p class="sm-btm">
 	The
 	dot notation is explained by the following syntactic conversion:</p>
 	<p class="code-example">
-	<i>MemberExpression </i><code><b>.</b></code><i>IdentifierName</i></p>
+	<i>MemberExpression </i><code><b>.</b></code> <i>IdentifierName</i></p>
 	<p class="sm-btm">
 	is
 	identical in its behaviour to</p>
 	<p class="code-example">
-	<i>MemberExpression </i><code><b>[</b></code><i>&lt;identifier-name-string&gt; </i><code><b>]</b></code></p>
+	<i>MemberExpression </i><code><b>[</b></code> <i>&lt;identifier-name-string&gt; </i><code><b>]</b></code></p>
 	<p class="sm-btm">
 	and
 	similarly</p>
 	<p class="code-example">
-	<i>CallExpression </i><code><b>.</b></code><i>IdentifierName</i></p>
+	<i>CallExpression </i><code><b>.</b></code> <i>IdentifierName</i></p>
 	<p>
 	is
 	identical in its behaviour to</p>
 	<p class="code-example">
-	<i>CallExpression </i><code><b>[</b></code><i>&lt;identifier-name-string&gt; </i><code><b>]</b></code></p>
+	<i>CallExpression </i><code><b>[</b></code> <i>&lt;identifier-name-string&gt; </i><code><b>]</b></code></p>
 	<p>
 	where
 	<i>&lt;identifier-name-string&gt;</i>
@@ -11557,13 +11557,13 @@ and
 	<p>
 	The
 	production <i>CallExpression</i>
-	<b>:</b><i> </i><i>CallExpression</i><i></i><code><b>[</b></code><i></i><i>Expression</i><i></i><code><b>]</b></code> is evaluated
+	<b>:</b><i> </i><i>CallExpression</i> <code><b>[</b></code> <i>Expression</i> <code><b>]</b></code> is evaluated
 	in exactly the same manner, except that the contained <i>CallExpression</i>
 	is evaluated in step 1.</p>
 	<h4 id="x11.2.2">11.2.2 The new Operator <a href="#x11.2.2">#</a> <a href="#x11.2.2-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	The
-	production <i>NewExpression</i><i></i><b>:</b><i> </i><code><b>new</b></code><i></i><i>NewExpression</i><i></i>is evaluated as follows:</p>
+	production <i>NewExpression</i> <b>:</b><i> </i><code><b>new</b></code> <i>NewExpression</i> is evaluated as follows:</p>
 	<ol>
 		<li><p>
 		Let
@@ -11727,8 +11727,8 @@ and
 	</li></ol>
 	<p>
 	The
-	production <i>Arguments</i><i></i><b>:</b><i> </i><code><b>(
-	</b></code><i>ArgumentList</i><code><b>
+	production <i>Arguments</i> <b>:</b><i> </i><code><b>(
+	</b></code> <i>ArgumentList</i><code><b>
 	)</b></code> is evaluated as follows:</p>
 	<ol>
 		<li><p>
@@ -11737,8 +11737,8 @@ and
 	</li></ol>
 	<p>
 	The
-	production <i>ArgumentList</i><i></i><b>:</b><code><b>
-	</b></code><i>AssignmentExpression</i><code><b>
+	production <i>ArgumentList</i> <b>:</b><code><b>
+	</b></code> <i>AssignmentExpression</i><code><b>
 	</b></code>is evaluated as follows:</p>
 	<ol>
 		<li><p>
@@ -11755,8 +11755,8 @@ and
 	</li></ol>
 	<p>
 	The
-	production <i>ArgumentList</i><i></i><b>:</b><code><b> </b></code><i>ArgumentList</i><code><b>
-	, </b></code><i>AssignmentExpression</i><code><b>
+	production <i>ArgumentList</i> <b>:</b><code><b></b></code> <i>ArgumentList</i><code><b>
+	,</b></code> <i>AssignmentExpression</i><code><b>
 	</b></code>is evaluated as follows:</p>
 	<ol>
 		<li><p>
@@ -11797,7 +11797,7 @@ and
 	<p class="def1-btm">
 	<i>LeftHandSideExpression<br>LeftHandSideExpression</i><code><b>
 	</b></code><a href="#restricted-production">[no <i>LineTerminator</i> here]</a><code><b>
-	++</b></code><i><br>LeftHandSideExpression</i><code><b>
+	++</b></code> <i><br>LeftHandSideExpression</i><code><b>
 	</b></code><a href="#restricted-production">[no <i>LineTerminator</i> here]</a><code><b>
 	--</b></code></p>
 	<h4 id="x11.3.1">11.3.1 Postfix Increment Operator <a href="#x11.3.1">#</a> <a href="#x11.3.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
@@ -11859,7 +11859,7 @@ and
 	The
 	production <i>PostfixExpression</i>
 	<b>:</b> <i>LeftHandSideExpression</i><code>
-	</code>[no<i></i><i>LineTerminator</i><i></i>here]<code>
+	</code>[no <i>LineTerminator</i> here]<code>
 	</code><code><b>-- </b></code>is
 	evaluated as follows:</p>
 	<ol>
@@ -11916,14 +11916,14 @@ and
 	<i>UnaryExpression </i><b>:</b></p>
 	<p class="def1-btm">
 	<i>PostfixExpression</i><code><b><br>delete
-	</b></code><i>UnaryExpression<br></i><code><b>void
-	</b></code><i>UnaryExpression<br></i><code><b>typeof
-	</b></code><i>UnaryExpression</i><code><b><br>++</b></code><i>UnaryExpression<br></i><code><b>--</b></code><i>UnaryExpression<br></i><code><b>+</b></code><i>UnaryExpression<br></i><code><b>-</b></code><i>UnaryExpression<br></i><code><b>~</b></code><i>UnaryExpression<br></i><code><b>!</b></code><i>UnaryExpression</i></p>
+	</b></code> <i>UnaryExpression<br></i><code><b>void
+	</b></code> <i>UnaryExpression<br></i><code><b>typeof
+	</b></code> <i>UnaryExpression</i><code><b><br>++</b></code> <i>UnaryExpression<br></i><code><b>--</b></code> <i>UnaryExpression<br></i><code><b>+</b></code> <i>UnaryExpression<br></i><code><b>-</b></code> <i>UnaryExpression<br></i><code><b>~</b></code> <i>UnaryExpression<br></i><code><b>!</b></code> <i>UnaryExpression</i></p>
 	<h4 id="x11.4.1">11.4.1 The delete Operator <a href="#x11.4.1">#</a> <a href="#x11.4.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	The
 	production <i>UnaryExpression</i>
-	<b>:</b> <code><b>delete</b></code><i>UnaryExpression</i> is evaluated as follows:</p>
+	<b>:</b> <code><b>delete</b></code> <i>UnaryExpression</i> is evaluated as follows:</p>
 	<ol>
 		<li><p>
 		Let
@@ -12014,7 +12014,7 @@ and
 	<p>
 	The
 	production <i>UnaryExpression</i>
-	<b>:</b> <code><b>typeof</b></code><i></i><i>UnaryExpression</i>
+	<b>:</b> <code><b>typeof</b></code> <i>UnaryExpression</i>
 	is evaluated as follows:</p>
 	<ol>
 		<li><p>
@@ -12144,8 +12144,8 @@ and
 	<h4 id="x11.4.4">11.4.4 Prefix Increment Operator <a href="#x11.4.4">#</a> <a href="#x11.4.4-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	The
-	production <i>UnaryExpression</i><i></i><b>:</b><i> </i><code><b>++
-	</b></code><i>UnaryExpression</i>
+	production <i>UnaryExpression</i> <b>:</b><i> </i><code><b>++
+	</b></code> <i>UnaryExpression</i>
 	is evaluated as follows:</p>
 	<ol>
 		<li><p>
@@ -12197,8 +12197,8 @@ and
 	<h4 id="x11.4.5">11.4.5 Prefix Decrement Operator <a href="#x11.4.5">#</a> <a href="#x11.4.5-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	The
-	production <i>UnaryExpression</i><i></i><b>:</b><i> </i><code><b>--
-	</b></code><i>UnaryExpression</i>
+	production <i>UnaryExpression</i> <b>:</b><i> </i><code><b>--
+	</b></code> <i>UnaryExpression</i>
 	is evaluated as follows:</p>
 	<ol>
 		<li><p>
@@ -12253,7 +12253,7 @@ and
 	unary + operator converts its operand to Number type.</p>
 	<p>
 	The
-	production <i>UnaryExpression</i><i></i><b>:</b><i> </i><code><b>+</b></code>
+	production <i>UnaryExpression</i> <b>:</b><i> </i><code><b>+</b></code>
 	<i>UnaryExpression</i> is
 	evaluated as follows:</p>
 	<ol>
@@ -12275,7 +12275,7 @@ and
 	produces <b>+0</b>.</p>
 	<p>
 	The
-	production <i>UnaryExpression</i><i></i><b>:</b><i> </i><code><b>-</b></code>
+	production <i>UnaryExpression</i> <b>:</b><i> </i><code><b>-</b></code>
 	<i>UnaryExpression</i> is
 	evaluated as follows:</p>
 	<ol>
@@ -12299,7 +12299,7 @@ and
 	<h4 id="x11.4.8">11.4.8 Bitwise NOT Operator ( ~ ) <a href="#x11.4.8">#</a> <a href="#x11.4.8-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	The
-	production <i>UnaryExpression</i><i></i><b>:</b><i> </i><code><b>~</b></code>
+	production <i>UnaryExpression</i> <b>:</b><i> </i><code><b>~</b></code>
 	<i>UnaryExpression</i> is
 	evaluated as follows:</p>
 	<ol>
@@ -12319,7 +12319,7 @@ and
 	<h4 id="x11.4.9">11.4.9 Logical NOT Operator ( ! ) <a href="#x11.4.9">#</a> <a href="#x11.4.9-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	The
-	production <i>UnaryExpression</i><i></i><b>:</b><i> </i><code><b>!</b></code>
+	production <i>UnaryExpression</i> <b>:</b><i> </i><code><b>!</b></code>
 	<i>UnaryExpression</i> is
 	evaluated as follows:</p>
 	<ol>
@@ -12345,7 +12345,7 @@ and
 	<p class="keep">
 	<i>MultiplicativeExpression </i><b>:</b></p>
 	<p class="def1-btm">
-	<i>UnaryExpression<br>MultiplicativeExpression </i><code><b>*</b></code><i>UnaryExpression<br>MultiplicativeExpression </i><code><b>/</b></code><i>UnaryExpression<br>MultiplicativeExpression </i><code><b>%</b></code><i>UnaryExpression</i></p>
+	<i>UnaryExpression<br>MultiplicativeExpression </i><code><b>*</b></code> <i>UnaryExpression<br>MultiplicativeExpression </i><code><b>/</b></code> <i>UnaryExpression<br>MultiplicativeExpression </i><code><b>%</b></code> <i>UnaryExpression</i></p>
 	<p class="tiny-btm">
 	<b>Semantics</b></p>
 	<p>
@@ -12558,7 +12558,7 @@ IEEE 754 round-to-nearest mode.
 	<p class="keep">
 	<i>AdditiveExpression </i><b>:</b></p>
 	<p class="def1-btm">
-	<i>MultiplicativeExpression<br>AdditiveExpression </i><code><b>+</b></code><i>MultiplicativeExpression<br>AdditiveExpression </i><code><b>-</b></code><i>MultiplicativeExpression</i></p>
+	<i>MultiplicativeExpression<br>AdditiveExpression </i><code><b>+</b></code> <i>MultiplicativeExpression<br>AdditiveExpression </i><code><b>-</b></code> <i>MultiplicativeExpression</i></p>
 	<h4 id="x11.6.1">11.6.1 The Addition operator ( + ) <a href="#x11.6.1">#</a> <a href="#x11.6.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	The
@@ -12733,7 +12733,7 @@ IEEE 754 round-to-nearest mode.
 	<p class="keep">
 	<i>ShiftExpression </i><b>:</b></p>
 	<p class="def1-btm">
-	<i>AdditiveExpression<br>ShiftExpression </i><code><b>&lt;&lt;</b></code><i>AdditiveExpression<br>ShiftExpression </i><code><b>&gt;&gt;</b></code><i>AdditiveExpression<br>ShiftExpression </i><code><b>&gt;&gt;&gt;</b></code><i>AdditiveExpression</i></p>
+	<i>AdditiveExpression<br>ShiftExpression </i><code><b>&lt;&lt;</b></code> <i>AdditiveExpression<br>ShiftExpression </i><code><b>&gt;&gt;</b></code> <i>AdditiveExpression<br>ShiftExpression </i><code><b>&gt;&gt;&gt;</b></code> <i>AdditiveExpression</i></p>
 	<h4 id="x11.7.1">11.7.1 The Left Shift Operator ( &lt;&lt; ) <a href="#x11.7.1">#</a> <a href="#x11.7.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	Performs
@@ -12886,11 +12886,11 @@ IEEE 754 round-to-nearest mode.
 	<p class="keep">
 	<i>RelationalExpression </i><b>:</b></p>
 	<p class="def1-btm">
-	<i>ShiftExpression<br>RelationalExpression </i><code><b>&lt;</b></code><i>ShiftExpression<br>RelationalExpression </i><code><b>&gt;</b></code><i>ShiftExpression<br>RelationalExpression </i><code><b>&lt;=</b></code><i>ShiftExpression<br>RelationalExpression </i><code><b>&gt;=</b></code><i>ShiftExpression<br>RelationalExpression </i><code><b>instanceof</b></code><i>ShiftExpression<br>RelationalExpression </i><code><b>in</b></code><i>ShiftExpression</i></p>
+	<i>ShiftExpression<br>RelationalExpression </i><code><b>&lt;</b></code> <i>ShiftExpression<br>RelationalExpression </i><code><b>&gt;</b></code> <i>ShiftExpression<br>RelationalExpression </i><code><b>&lt;=</b></code> <i>ShiftExpression<br>RelationalExpression </i><code><b>&gt;=</b></code> <i>ShiftExpression<br>RelationalExpression </i><code><b>instanceof</b></code> <i>ShiftExpression<br>RelationalExpression </i><code><b>in</b></code> <i>ShiftExpression</i></p>
 	<p class="keep">
 	<i>RelationalExpressionNoIn </i><b>:</b></p>
 	<p class="def1-btm">
-	<i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>&lt;</b></code><i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>&gt;</b></code><i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>&lt;=</b></code><i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>&gt;=</b></code><i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>instanceof</b></code><i>ShiftExpression</i></p>
+	<i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>&lt;</b></code> <i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>&gt;</b></code> <i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>&lt;=</b></code> <i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>&gt;=</b></code> <i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>instanceof</b></code> <i>ShiftExpression</i></p>
 	<p><b class="note">NOTE</b> The
 	“NoIn” variants are needed to avoid confusing the <code>in</code>
 	operator in a relational expression with the <code>in</code>
@@ -13299,11 +13299,11 @@ IEEE 754 round-to-nearest mode.
 	<p class="keep">
 	<i>EqualityExpression </i><b>:</b></p>
 	<p class="def1-btm">
-	<i>RelationalExpression<br>EqualityExpression </i><code><b>==</b></code><i>RelationalExpression<br>EqualityExpression </i><code><b>!=</b></code><i>RelationalExpression<br>EqualityExpression </i><code><b>===</b></code><i>RelationalExpression<br>EqualityExpression </i><code><b>!==</b></code><i>RelationalExpression</i></p>
+	<i>RelationalExpression<br>EqualityExpression </i><code><b>==</b></code> <i>RelationalExpression<br>EqualityExpression </i><code><b>!=</b></code> <i>RelationalExpression<br>EqualityExpression </i><code><b>===</b></code> <i>RelationalExpression<br>EqualityExpression </i><code><b>!==</b></code> <i>RelationalExpression</i></p>
 	<p class="keep">
 	<i>EqualityExpressionNoIn </i><b>:</b></p>
 	<p class="def1-btm">
-	<i>RelationalExpressionNoIn<br>EqualityExpressionNoIn </i><code><b>==</b></code><i>RelationalExpressionNoIn<br>EqualityExpressionNoIn </i><code><b>!=</b></code><i>RelationalExpressionNoIn<br>EqualityExpressionNoIn </i><code><b>===</b></code><i>RelationalExpressionNoIn<br>EqualityExpressionNoIn </i><code><b>!==</b></code><i>RelationalExpressionNoIn</i></p>
+	<i>RelationalExpressionNoIn<br>EqualityExpressionNoIn </i><code><b>==</b></code> <i>RelationalExpressionNoIn<br>EqualityExpressionNoIn </i><code><b>!=</b></code> <i>RelationalExpressionNoIn<br>EqualityExpressionNoIn </i><code><b>===</b></code> <i>RelationalExpressionNoIn<br>EqualityExpressionNoIn </i><code><b>!==</b></code> <i>RelationalExpressionNoIn</i></p>
 	<p class="tiny-btm">
 	<b>Semantics</b></p>
 	<p>
@@ -13698,32 +13698,32 @@ IEEE 754 round-to-nearest mode.
 	<p class="keep">
 	<i>BitwiseANDExpression </i><b>:</b></p>
 	<p class="def1-btm">
-	<i>EqualityExpression<br>BitwiseANDExpression </i><code><b>&amp;</b></code><i>EqualityExpression</i></p>
+	<i>EqualityExpression<br>BitwiseANDExpression </i><code><b>&amp;</b></code> <i>EqualityExpression</i></p>
 	<p class="keep">
 	<i>BitwiseANDExpressionNoIn </i><b>:</b></p>
 	<p class="def1-btm">
-	<i>EqualityExpressionNoIn<br>BitwiseANDExpressionNoIn </i><code><b>&amp;</b></code><i>EqualityExpressionNoIn</i></p>
+	<i>EqualityExpressionNoIn<br>BitwiseANDExpressionNoIn </i><code><b>&amp;</b></code> <i>EqualityExpressionNoIn</i></p>
 	<p class="keep">
 	<i>BitwiseXORExpression </i><b>:</b></p>
 	<p class="def1-btm">
-	<i>BitwiseANDExpression<br>BitwiseXORExpression </i><code><b>^</b></code><i>BitwiseANDExpression</i></p>
+	<i>BitwiseANDExpression<br>BitwiseXORExpression </i><code><b>^</b></code> <i>BitwiseANDExpression</i></p>
 	<p class="keep">
 	<i>BitwiseXORExpressionNoIn </i><b>:</b></p>
 	<p class="def1-btm">
-	<i>BitwiseANDExpressionNoIn<br>BitwiseXORExpressionNoIn </i><code><b>^</b></code><i>BitwiseANDExpressionNoIn</i></p>
+	<i>BitwiseANDExpressionNoIn<br>BitwiseXORExpressionNoIn </i><code><b>^</b></code> <i>BitwiseANDExpressionNoIn</i></p>
 	<p class="keep">
 	<i>BitwiseORExpression </i><b>:</b></p>
 	<p class="def1-btm">
-	<i>BitwiseXORExpression<br>BitwiseORExpression </i><code><b>|</b></code><i>BitwiseXORExpression</i></p>
+	<i>BitwiseXORExpression<br>BitwiseORExpression </i><code><b>|</b></code> <i>BitwiseXORExpression</i></p>
 	<p class="keep">
 	<i>BitwiseORExpressionNoIn </i><b>:</b></p>
 	<p class="def1-btm">
-	<i>BitwiseXORExpressionNoIn<br>BitwiseORExpressionNoIn </i><code><b>|</b></code><i>BitwiseXORExpressionNoIn</i></p>
+	<i>BitwiseXORExpressionNoIn<br>BitwiseORExpressionNoIn </i><code><b>|</b></code> <i>BitwiseXORExpressionNoIn</i></p>
 	<p class="tiny-btm">
 	<b>Semantics</b></p>
 	<p>
 	The
-	production <i>A </i><b>:</b><i></i><i>A</i><i> @ </i><i>B</i>,
+	production <i>A </i><b>:</b> <i>A</i><i> @ </i><i>B</i>,
 	where @ is one of the bitwise operators in the productions above, is
 	evaluated as follows:</p>
 	<ol>
@@ -13762,19 +13762,19 @@ IEEE 754 round-to-nearest mode.
 	<p class="keep">
 	<i>LogicalANDExpression </i><b>:</b></p>
 	<p class="def1-btm">
-	<i>BitwiseORExpression<br>LogicalANDExpression </i><code><b>&amp;&amp;</b></code><i>BitwiseORExpression</i></p>
+	<i>BitwiseORExpression<br>LogicalANDExpression </i><code><b>&amp;&amp;</b></code> <i>BitwiseORExpression</i></p>
 	<p class="keep">
 	<i>LogicalANDExpressionNoIn </i><b>:</b></p>
 	<p class="def1-btm">
-	<i>BitwiseORExpressionNoIn<br>LogicalANDExpressionNoIn </i><code><b>&amp;&amp;</b></code><i>BitwiseORExpressionNoIn</i></p>
+	<i>BitwiseORExpressionNoIn<br>LogicalANDExpressionNoIn </i><code><b>&amp;&amp;</b></code> <i>BitwiseORExpressionNoIn</i></p>
 	<p class="keep">
 	<i>LogicalORExpression </i><b>:</b></p>
 	<p class="def1-btm">
-	<i>LogicalANDExpression<br>LogicalORExpression </i><code><b>||</b></code><i>LogicalANDExpression</i></p>
+	<i>LogicalANDExpression<br>LogicalORExpression </i><code><b>||</b></code> <i>LogicalANDExpression</i></p>
 	<p class="keep">
 	<i>LogicalORExpressionNoIn </i><b>:</b></p>
 	<p class="def1-btm">
-	<i>LogicalANDExpressionNoIn<br>LogicalORExpressionNoIn </i><code><b>||</b></code><i>LogicalANDExpressionNoIn</i></p>
+	<i>LogicalANDExpressionNoIn<br>LogicalORExpressionNoIn </i><code><b>||</b></code> <i>LogicalANDExpressionNoIn</i></p>
 	<p class="tiny-btm">
 	<b>Semantics</b></p>
 	<p>
@@ -13859,12 +13859,12 @@ IEEE 754 round-to-nearest mode.
 	<i>ConditionalExpression </i><b>:</b></p>
 	<p class="def1-btm">
 	<i>LogicalORExpression<br>LogicalORExpression</i><code><b>
-	?</b></code><i>AssignmentExpression </i><code><b>:</b></code><i>AssignmentExpression</i></p>
+	?</b></code> <i>AssignmentExpression </i><code><b>:</b></code> <i>AssignmentExpression</i></p>
 	<p class="keep">
 	<i>ConditionalExpressionNoIn </i><b>:</b></p>
 	<p class="def1-btm">
 	<i>LogicalORExpressionNoIn<br>LogicalORExpressionNoIn</i><code><b>
-	?</b></code><i>AssignmentExpression </i><code><b>:</b></code><i>AssignmentExpressionNoIn</i></p>
+	?</b></code> <i>AssignmentExpression </i><code><b>:</b></code> <i>AssignmentExpressionNoIn</i></p>
 	<p class="tiny-btm">
 	<b>Semantics</b></p>
 	<p>
@@ -14021,7 +14021,7 @@ IEEE 754 round-to-nearest mode.
 	<i>AssignmentExpressionNoIn</i>
 	productions are evaluated in the same manner as the
 	<i>AssignmentExpression</i>
-	productions except that the contained <i>ConditionalExpressionNoIn</i><i></i>and<i>AssignmentExpressionNoIn</i> are evaluated instead of the
+	productions except that the contained <i>ConditionalExpressionNoIn</i> and<i>AssignmentExpressionNoIn</i> are evaluated instead of the
 	contained <i>ConditionalExpression</i>
 	and <i>AssignmentExpression</i>,
 	respectively.</p>
@@ -14092,7 +14092,7 @@ IEEE 754 round-to-nearest mode.
 	<h4 id="x11.13.2">11.13.2 Compound Assignment ( op= ) <a href="#x11.13.2">#</a> <a href="#x11.13.2-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	The
-	production <i>AssignmentExpression</i><i></i><b>:</b><i></i><i>LeftHandSideExpression</i><i>@ </i><code><b>=</b></code><i></i><i>AssignmentExpression</i>,
+	production <i>AssignmentExpression</i> <b>:</b> <i>LeftHandSideExpression</i><i>@ </i><code><b>=</b></code> <i>AssignmentExpression</i>,
 	where @ represents one of the operators indicated above, is
 	evaluated as follows:</p>
 	<ol>
@@ -14155,13 +14155,13 @@ IEEE 754 round-to-nearest mode.
 	<p class="tiny-btm">
 	<b>Syntax</b></p>
 	<p class="keep">
-	Expression<i></i><b>:</b></p>
+	Expression <b>:</b></p>
 	<p class="def1-btm">
-	AssignmentExpression<i><br>Expression </i><code><b>,</b></code><i>AssignmentExpression</i></p>
+	AssignmentExpression<i><br>Expression </i><code><b>,</b></code> <i>AssignmentExpression</i></p>
 	<p class="keep">
 	<i>ExpressionNoIn </i><b>:</b></p>
 	<p class="def1-btm">
-	<i>AssignmentExpressionNoIn<br>ExpressionNoIn </i><code><b>,</b></code><i>AssignmentExpressionNoIn</i></p>
+	<i>AssignmentExpressionNoIn<br>ExpressionNoIn </i><code><b>,</b></code> <i>AssignmentExpressionNoIn</i></p>
 	<p class="tiny-btm">
 	<b>Semantics</b></p>
 	<p>
@@ -14246,7 +14246,7 @@ IEEE 754 round-to-nearest mode.
 	<p class="keep">
 	<i>Block </i><b>:</b></p>
 	<p class="def1-btm">
-	<code><b>{</b></code><i>StatementList</i><sub>opt</sub><i></i><code><b>}</b></code></p>
+	<code><b>{</b></code> <i>StatementList</i><sub>opt</sub> <code><b>}</b></code></p>
 	<p class="keep">
 	<i>StatementList </i><b>:</b></p>
 	<p class="def1-btm">
@@ -14256,7 +14256,7 @@ IEEE 754 round-to-nearest mode.
 	<b>Semantics</b></p>
 	<p>
 	The
-	production <i>Block </i><b>:</b><i></i><code><b>{</b></code> <code><b>}</b></code><b>
+	production <i>Block </i><b>:</b> <code><b>{</b></code> <code><b>}</b></code><b>
 	</b>is evaluated as follows:</p>
 	<ol>
 		<li><p>
@@ -14265,7 +14265,7 @@ IEEE 754 round-to-nearest mode.
 	</li></ol>
 	<p>
 	The
-	production <i>Block </i><b>:</b><i></i><code><b>{</b></code>
+	production <i>Block </i><b>:</b> <code><b>{</b></code>
 	<i>StatementList</i> <code><b>}</b></code>is
 	evaluated as follows:</p>
 	<ol>
@@ -14330,15 +14330,15 @@ IEEE 754 round-to-nearest mode.
 	<p class="keep">
 	<i>VariableStatement </i><b>:</b></p>
 	<p class="def1-btm">
-	<code><b>var</b></code><i>VariableDeclarationList </i><code><b>;</b></code></p>
+	<code><b>var</b></code> <i>VariableDeclarationList </i><code><b>;</b></code></p>
 	<p class="keep">
 	<i>VariableDeclarationList </i><b>:</b></p>
 	<p class="def1-btm">
-	<i>VariableDeclaration<br>VariableDeclarationList </i><code><b>,</b></code><i>VariableDeclaration</i></p>
+	<i>VariableDeclaration<br>VariableDeclarationList </i><code><b>,</b></code> <i>VariableDeclaration</i></p>
 	<p class="keep">
 	<i>VariableDeclarationListNoIn </i><b>:</b></p>
 	<p class="def1-btm">
-	<i>VariableDeclarationNoIn<br>VariableDeclarationListNoIn </i><code><b>,</b></code><i>VariableDeclarationNoIn</i></p>
+	<i>VariableDeclarationNoIn<br>VariableDeclarationListNoIn </i><code><b>,</b></code> <i>VariableDeclarationNoIn</i></p>
 	<p class="keep">
 	<i>VariableDeclaration </i><b>:</b></p>
 	<p class="def1-btm">
@@ -14352,11 +14352,11 @@ IEEE 754 round-to-nearest mode.
 	<p class="keep">
 	<i>Initialiser </i><b>:</b></p>
 	<p class="def1-btm">
-	<code><b>=</b></code><i>AssignmentExpression</i></p>
+	<code><b>=</b></code> <i>AssignmentExpression</i></p>
 	<p class="keep">
 	<i>InitialiserNoIn </i><b>:</b></p>
 	<p class="def1-btm">
-	<code><b>=</b></code><i>AssignmentExpressionNoIn</i></p>
+	<code><b>=</b></code> <i>AssignmentExpressionNoIn</i></p>
 	<p>
 	A
 	variable statement declares variables that are created as defined in
@@ -14369,7 +14369,7 @@ IEEE 754 round-to-nearest mode.
 	<b>Semantics</b></p>
 	<p>
 	The
-	production <i>VariableStatement </i><b>:</b><i> </i><code><b>var</b></code><i>VariableDeclarationList </i><code><b>;</b></code>
+	production <i>VariableStatement </i><b>:</b><i> </i><code><b>var</b></code> <i>VariableDeclarationList </i><code><b>;</b></code>
 	is evaluated as follows:</p>
 	<ol>
 		<li><p>
@@ -14384,7 +14384,7 @@ IEEE 754 round-to-nearest mode.
 	<p>
 	The
 	production <i>VariableDeclarationList</i>
-	<b>:</b><i>VariableDeclaration</i>
+	<b>:</b> <i>VariableDeclaration</i>
 	is evaluated as follows:</p>
 	<ol>
 		<li><p>
@@ -14409,7 +14409,7 @@ IEEE 754 round-to-nearest mode.
 	</li></ol>
 	<p>
 	The
-	production <i>VariableDeclaration </i><b>:</b><i>Identifier</i> is evaluated as follows:</p>
+	production <i>VariableDeclaration </i><b>:</b> <i>Identifier</i> is evaluated as follows:</p>
 	<ol>
 		<li><p>
 		Return
@@ -14458,7 +14458,7 @@ IEEE 754 round-to-nearest mode.
 	of the <i>Identifier</i>.</p>
 	<p>
 	The
-	production <i>Initialiser </i><b>:</b><i></i><code><b>=</b></code><i>AssignmentExpression</i> is evaluated as follows:</p>
+	production <i>Initialiser </i><b>:</b> <code><b>=</b></code> <i>AssignmentExpression</i> is evaluated as follows:</p>
 	<ol>
 		<li><p>
 		Return
@@ -14501,7 +14501,7 @@ IEEE 754 round-to-nearest mode.
 	<b>Semantics</b></p>
 	<p>
 	The
-	production <i>EmptyStatement </i><b>:</b><i></i><code><b>;</b></code> is
+	production <i>EmptyStatement </i><b>:</b> <code><b>;</b></code> is
 	evaluated as follows:</p>
 	<ol>
 		<li><p>
@@ -14515,10 +14515,10 @@ IEEE 754 round-to-nearest mode.
 	<p class="keep">
 	<i>ExpressionStatement </i><b>:</b></p>
 	<p class="def1-btm">
-	[lookahead
-	<span class="symbol">∉</span>
+	[<a href="#lookahead-not-in">lookahead
+	<span class="symbol">∉</span></a>
 	{<code><b>{</b></code>,<code><b>
-	function</b></code>}]<i>Expression </i><code><b>;</b></code></p>
+	function</b></code>}] <i>Expression </i><code><b>;</b></code></p>
 	<p><b class="note">NOTE</b> An
 	<i>ExpressionStatement</i>
 	cannot start with an opening curly brace because that might make it
@@ -14531,7 +14531,7 @@ IEEE 754 round-to-nearest mode.
 	<b>Semantics</b></p>
 	<p>
 	The
-	production <i>ExpressionStatement </i><b>:</b><i></i>[lookahead <span class="symbol">∉</span>
+	production <i>ExpressionStatement </i><b>:</b> [<a href="#lookahead-not-in">lookahead <span class="symbol">∉</span></a>
 	{<code><b>{</b></code><b>,</b><code><b>
 	function</b></code>}]<i>Expression</i><code><b>;</b></code>
 	is evaluated as follows:</p>
@@ -14551,7 +14551,7 @@ IEEE 754 round-to-nearest mode.
 	<p class="keep">
 	<i>IfStatement </i><b>:</b></p>
 	<p class="def1-btm">
-	<code><b>if</b></code><i></i><code><b>(</b></code><i>Expression </i><code><b>)</b></code><i>Statement  </i><code><b>else</b></code><i>Statement<br></i><code><b>if</b></code><i></i><code><b>(</b></code><i>Expression </i><code><b>)</b></code><i>Statement</i></p>
+	<code><b>if</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement  </i><code><b>else</b></code> <i>Statement<br></i><code><b>if</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement</i></p>
 	<p>
 	Each
 	<code><b>else</b></code> for which the
@@ -14562,7 +14562,7 @@ IEEE 754 round-to-nearest mode.
 	<b>Semantics</b></p>
 	<p>
 	The
-	production <i>IfStatement </i><b>:</b><i></i><code><b>if</b></code><i></i><code><b>(</b></code><i>Expression </i><code><b>)</b></code><i>Statement </i><code><b>else</b></code><i>Statement</i> is evaluated as follows:</p>
+	production <i>IfStatement </i><b>:</b> <code><b>if</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement </i><code><b>else</b></code> <i>Statement</i> is evaluated as follows:</p>
 	<ol>
 		<li><p>
 		Let
@@ -14587,7 +14587,7 @@ IEEE 754 round-to-nearest mode.
 	</li></ol>
 	<p>
 	The
-	production <i>IfStatement </i><b>:</b><i></i><code><b>if</b></code><i></i><code><b>(</b></code><i>Expression </i><code><b>)</b></code><i>Statement</i> is evaluated as follows:</p>
+	production <i>IfStatement </i><b>:</b> <code><b>if</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement</i> is evaluated as follows:</p>
 	<ol>
 		<li><p>
 		Let
@@ -14610,12 +14610,12 @@ IEEE 754 round-to-nearest mode.
 	<i>IterationStatement </i><b>:</b></p>
 	<p class="def1-btm">
 	<code><b>do
-	</b></code><i>Statement</i><code><b>
-	while</b></code><i> </i><code><b>(</b></code><i>Expression </i><code><b>);</b></code><i><br></i><code><b>while</b></code><i></i><code><b>(</b></code><i>Expression </i><code><b>)</b></code><i>Statement<br></i><code><b>for</b></code><i></i><code><b>(</b></code><i>ExpressionNoIn</i><sub>opt</sub><code><b>;</b></code><i>Expression</i><sub>opt</sub><i></i><code><b>;</b></code><i>Expression</i><sub>opt</sub><i></i><code><b>)</b></code><i>Statement<br></i><code><b>for</b></code><i></i><code><b>(</b></code><i></i><code><b>var</b></code><i>VariableDeclarationListNoIn</i><code><b>;</b></code><i>Expression</i><sub>opt</sub><i></i><code><b>;</b></code><i>Expression</i><sub>opt</sub><i></i><code><b>)</b></code><i>Statement<br></i><code><b>for</b></code><i></i><code><b>(</b></code><i>LeftHandSideExpression </i><code><b>in</b></code><i>Expression </i><code><b>)</b></code><i>Statement<br></i><code><b>for</b></code><i></i><code><b>(</b></code><i></i><code><b>var</b></code><i>VariableDeclarationNoIn </i><code><b>in</b></code><i>Expression </i><code><b>)</b></code><i>Statement</i></p>
+	</b></code> <i>Statement</i><code><b>
+	while</b></code> <i> </i><code><b>(</b></code> <i>Expression </i><code><b>);</b></code> <i><br></i><code><b>while</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement<br></i><code><b>for</b></code> <code><b>(</b></code> <i>ExpressionNoIn</i><sub>opt</sub><code><b>;</b></code> <i>Expression</i><sub>opt</sub> <code><b>;</b></code> <i>Expression</i><sub>opt</sub> <code><b>)</b></code> <i>Statement<br></i><code><b>for</b></code> <code><b>(</b></code> <code><b>var</b></code> <i>VariableDeclarationListNoIn</i><code><b>;</b></code> <i>Expression</i><sub>opt</sub> <code><b>;</b></code> <i>Expression</i><sub>opt</sub> <code><b>)</b></code> <i>Statement<br></i><code><b>for</b></code> <code><b>(</b></code> <i>LeftHandSideExpression </i><code><b>in</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement<br></i><code><b>for</b></code> <code><b>(</b></code> <code><b>var</b></code> <i>VariableDeclarationNoIn </i><code><b>in</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement</i></p>
 	<h4 id="x12.6.1">12.6.1 The do-while Statement <a href="#x12.6.1">#</a> <a href="#x12.6.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	The
-	production <code><b>do </b></code><i>Statement </i><code><b>while</b></code><i></i><code><b>(</b></code><i>Expression </i><code><b>);</b></code>
+	production <code><b>do</b></code> <i>Statement </i><code><b>while</b></code> <code><b>(</b></code> <i>Expression </i><code><b>);</b></code>
 	is evaluated as follows:</p>
 	<ol>
 		<li><p>
@@ -14672,7 +14672,7 @@ IEEE 754 round-to-nearest mode.
 	<h4 id="x12.6.2">12.6.2 The while Statement <a href="#x12.6.2">#</a> <a href="#x12.6.2-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	The
-	production <i>IterationStatement </i><b>:</b><i> </i><code><b>while</b></code><i></i><code><b>(</b></code><i>Expression </i><code><b>)</b></code><i>Statement</i> is evaluated as follows:</p>
+	production <i>IterationStatement </i><b>:</b><i> </i><code><b>while</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement</i> is evaluated as follows:</p>
 	<ol>
 		<li><p>
 		Let
@@ -14725,7 +14725,7 @@ IEEE 754 round-to-nearest mode.
 	The
 	production<br>    <i>IterationStatement</i>
 	<b>:</b> <code><b>for</b></code>
-	<code><b>(</b></code><i>ExpressionNoIn</i><sub>opt</sub>
+	<code><b>(</b></code> <i>ExpressionNoIn</i><sub>opt</sub>
 	<code><b>;</b></code> <i>Expression</i><sub>opt</sub>
 	<code><b>;</b></code> <i>Expression</i><sub>opt</sub><code><b>)</b></code>
 	<i>Statement</i><br>is
@@ -14812,8 +14812,8 @@ IEEE 754 round-to-nearest mode.
 	<b>:</b>  <code><b>for</b></code> <code><b>(</b></code>
 	<code><b>var</b></code>
 	<i>VariableDeclarationListNoIn</i>
-	<code><b>;</b></code> <i>Expression</i><sub>opt</sub><i></i><code><b>;</b></code>
-	<i>Expression</i><sub>opt</sub><i></i><code><b>)</b></code> <i>Statement</i><br>is
+	<code><b>;</b></code> <i>Expression</i><sub>opt</sub> <code><b>;</b></code>
+	<i>Expression</i><sub>opt</sub> <code><b>)</b></code> <i>Statement</i><br>is
 	evaluated as follows:</p>
 	<ol>
 		<li><p>
@@ -15132,7 +15132,7 @@ IEEE 754 round-to-nearest mode.
 	<p class="def1-btm">
 	<code><b>break</b></code> <code><b>;</b></code></p>
 	<p class="def1-btm">
-	<code><b>break</b></code><i><b>
+	<code><b>break</b></code> <i><b>
 	</b></i><a href="#restricted-production">[no <i>LineTerminator</i> here]</a> <i>Identifier</i> <code><b>;</b></code></p>
 
 	<p class="tiny-btm">
@@ -15230,7 +15230,7 @@ IEEE 754 round-to-nearest mode.
 	<p class="keep">
 	<i>WithStatement </i><b>:</b></p>
 	<p class="def1-btm">
-	<code><b>with</b></code><i></i><code><b>(</b></code><i>Expression </i><code><b>)</b></code><i>Statement</i></p>
+	<code><b>with</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement</i></p>
 	<p>
 	The
 	<code><b>with </b></code>statement
@@ -15242,7 +15242,7 @@ IEEE 754 round-to-nearest mode.
 	<b>Semantics</b></p>
 	<p>
 	The
-	production <i>WithStatement </i><b>:</b><i></i><code><b>with</b></code><i></i><code><b>(</b></code><i>Expression </i><code><b>)</b></code><i>Statement</i> is evaluated as follows:</p>
+	production <i>WithStatement </i><b>:</b> <code><b>with</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement</i> is evaluated as follows:</p>
 	<ol>
 		<li><p>
 		Let
@@ -15255,11 +15255,11 @@ IEEE 754 round-to-nearest mode.
 		<li><p>
 		Let
 		<i>oldEnv</i> be the running execution context’s
-		LexicalEnvironment.</p>
+	 <a href="#x10.2">LexicalEnvironment</a>.</p>
 		</li>
 		<li><p>
 		Let
-		<i>newEnv</i> be the result of calling NewObjectEnvironment passing
+		<i>newEnv</i> be the result of calling <a href="#x10.2.2.3">NewObjectEnvironment</a> passing
 		<i>obj</i> and <i>oldEnv</i> as the arguments</p>
 		</li>
 		<li><p>
@@ -15268,7 +15268,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Set
-		the running execution context’s LexicalEnvironment to <i>newEnv</i>.</p>
+		the running execution context’s <a href="#x10.2">LexicalEnvironment</a> to <i>newEnv</i>.</p>
 		</li>
 		<li><p>
 		Let
@@ -15290,7 +15290,7 @@ IEEE 754 round-to-nearest mode.
 	</p><p><b class="note">NOTE</b> No matter how
 	control leaves the embedded <i>Statement</i>,
 	whether normally or by some form of <a href="#x8.9">abrupt completion</a> or exception,
-	the LexicalEnvironment is always restored to its former state.</p>
+	the <a href="#x10.2">LexicalEnvironment</a> is always restored to its former state.</p>
 	<h4 id="x12.10.1">12.10.1 Strict Mode Restrictions <a href="#x12.10.1">#</a> <a href="#x12.10.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	Strict
@@ -15303,11 +15303,11 @@ IEEE 754 round-to-nearest mode.
 	<p class="keep">
 	<i>SwitchStatement </i><b>:</b></p>
 	<p class="def1-btm">
-	<code><b>switch</b></code><i></i><code><b>(</b></code><i>Expression </i><code><b>)</b></code><i>CaseBlock</i></p>
+	<code><b>switch</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>CaseBlock</i></p>
 	<p class="keep">
 	<i>CaseBlock </i><b>:</b></p>
 	<p class="def1-btm">
-	<code><b>{</b></code><i>CaseClauses</i><sub>opt</sub><i></i><code><b>}</b></code><i><br></i><code><b>{</b></code><i>CaseClauses</i><sub>opt</sub><i>DefaultClause CaseClauses</i><sub>opt</sub><i></i><code><b>}</b></code></p>
+	<code><b>{</b></code> <i>CaseClauses</i><sub>opt</sub> <code><b>}</b></code> <i><br></i><code><b>{</b></code> <i>CaseClauses</i><sub>opt</sub><i>DefaultClause CaseClauses</i><sub>opt</sub> <code><b>}</b></code></p>
 	<p class="keep">
 	<i>CaseClauses </i><b>:</b></p>
 	<p class="def1-btm">
@@ -15316,16 +15316,16 @@ IEEE 754 round-to-nearest mode.
 	<p class="keep">
 	<i>CaseClause </i><b>:</b></p>
 	<p class="def1-btm">
-	<code><b>case</b></code><i>Expression </i><code><b>:</b></code><i>StatementList</i><sub>opt</sub></p>
+	<code><b>case</b></code> <i>Expression </i><code><b>:</b></code> <i>StatementList</i><sub>opt</sub></p>
 	<p class="keep">
 	<i>DefaultClause </i><b>:</b></p>
 	<p class="def1-btm">
-	<code><b>default</b></code><i></i><code><b>:</b></code><i>StatementList</i><sub>opt</sub></p>
+	<code><b>default</b></code> <code><b>:</b></code> <i>StatementList</i><sub>opt</sub></p>
 	<p class="tiny-btm">
 	<b>Semantics</b></p>
 	<p>
 	The
-	production <i>SwitchStatement </i><b>:</b><i></i><code><b>switch</b></code><i></i><code><b>(</b></code><i>Expression </i><code><b>)</b></code><i>CaseBlock</i> is evaluated as follows:</p>
+	production <i>SwitchStatement </i><b>:</b> <code><b>switch</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>CaseBlock</i> is evaluated as follows:</p>
 	<ol>
 		<li><p>
 		Let
@@ -15708,7 +15708,7 @@ IEEE 754 round-to-nearest mode.
 	<p>
 	The
 	production <i>CaseClause</i>
-	<b>:</b> <code><b>case</b></code><i>Expression </i><code><b>:</b></code><i>StatementList</i><sub>opt</sub> is evaluated as follows:</p>
+	<b>:</b> <code><b>case</b></code> <i>Expression </i><code><b>:</b></code> <i>StatementList</i><sub>opt</sub> is evaluated as follows:</p>
 	<ol>
 		<li><p>
 		Let
@@ -15731,7 +15731,7 @@ IEEE 754 round-to-nearest mode.
 	<p class="keep">
 	<i>LabelledStatement </i><b>:</b></p>
 	<p class="def1-btm">
-	<i>Identifier </i><code><b>:</b></code><i>Statement</i></p>
+	<i>Identifier </i><code><b>:</b></code> <i>Statement</i></p>
 	<p class="tiny-btm">
 	<b>Semantics</b></p>
 	<p>
@@ -15753,7 +15753,7 @@ IEEE 754 round-to-nearest mode.
 	that is nested, directly or indirectly, within a labelled statement.</p>
 	<p>
 	The
-	production <i>Identifier </i><code><b>:</b></code><i>Statement </i>is evaluated by adding <i>Identifier</i>
+	production <i>Identifier </i><code><b>:</b></code> <i>Statement </i>is evaluated by adding <i>Identifier</i>
 	to the label set of <i>Statement</i>
 	and then evaluating <i>Statement</i>.
 	If the <i>LabelledStatement</i>
@@ -15781,7 +15781,7 @@ IEEE 754 round-to-nearest mode.
 	<i>ThrowStatement<b>
 	</b></i><b>:</b></p>
 	<p class="def1-btm">
-	<code><b>throw</b></code><i><b>
+	<code><b>throw</b></code> <i><b>
 	</b></i><a href="#restricted-production">[no <i>LineTerminator</i> here]</a> <i>Expression </i><code><b>;</b></code></p>
 	<p class="tiny-btm">
 	<b>Semantics</b></p>
@@ -15808,13 +15808,13 @@ IEEE 754 round-to-nearest mode.
 	<p class="keep">
 	<i>TryStatement </i><b>:</b></p>
 	<p class="def1-btm">
-	<code><b>try</b></code><i>Block Catch<sub><br></sub></i><code><b>try</b></code><i>Block Finally<sub><br></sub></i><code><b>try</b></code><i>Block Catch Finally</i></p>
+	<code><b>try</b></code> <i>Block Catch<sub><br></sub></i><code><b>try</b></code> <i>Block Finally<sub><br></sub></i><code><b>try</b></code> <i>Block Catch Finally</i></p>
 	<p class="keep">
 	<i>Catch </i><b>:</b></p>
 	<p class="def1-btm">
-	<code><b>catch</b></code><i></i><code><b>(
-	</b></code><i>Identifier</i><code>
-	</code><code><b>)</b></code><i>Block</i></p>
+	<code><b>catch</b></code> <code><b>(
+	</b></code> <i>Identifier</i><code>
+	</code><code><b>)</b></code> <i>Block</i></p>
 	<p class="keep">
 	<i>Finally </i><b>:</b></p>
 	<p class="def1-btm">
@@ -15922,7 +15922,7 @@ IEEE 754 round-to-nearest mode.
 	The
 	production <i>Catch</i> <b>:</b>
 	<code><b>catch</b></code> <code><b>(
-	</b></code><i>Identifier</i><code>
+	</b></code> <i>Identifier</i><code>
 	</code><code><b>)</b></code> <i>Block</i>
 	is evaluated as follows:</p>
 	<ol>
@@ -15933,7 +15933,7 @@ IEEE 754 round-to-nearest mode.
 		<li><p>
 		Let
 		<i>oldEnv</i> be the running execution context’s
-		LexicalEnvironment.</p>
+	 <a href="#x10.2">LexicalEnvironment</a>.</p>
 		</li>
 		<li><p>
 		Let
@@ -15954,7 +15954,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Set
-		the running execution context’s LexicalEnvironment to <i>catchEnv</i>.</p>
+		the running execution context’s <a href="#x10.2">LexicalEnvironment</a> to <i>catchEnv</i>.</p>
 		</li>
 		<li><p>
 		Let
@@ -15962,7 +15962,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Set
-		the running execution context’s LexicalEnvironment to <i>oldEnv</i>.</p>
+		the running execution context’s <a href="#x10.2">LexicalEnvironment</a> to <i>oldEnv</i>.</p>
 		</li>
 		<li><p>
 		Return
@@ -15970,7 +15970,7 @@ IEEE 754 round-to-nearest mode.
 	</li></ol>
 	<p><b class="note">NOTE</b> No
 	matter how control leaves the <i>Block</i>
-	the LexicalEnvironment is always restored to its former state.</p>
+	the <a href="#x10.2">LexicalEnvironment</a> is always restored to its former state.</p>
 	<p>
 	The
 	production <i>Finally</i>
@@ -16043,15 +16043,15 @@ IEEE 754 round-to-nearest mode.
 	<p class="keep">
 	<i>FunctionDeclaration </i><b>:</b></p>
 	<p class="def1-btm">
-	<code><b>function</b></code><i>Identifier </i><code><b>(</b></code><i>FormalParameterList</i><sub>opt</sub><i></i><code><b>)</b></code><i></i><code><b>{</b></code><i>FunctionBody </i><code><b>}</b></code></p>
+	<code><b>function</b></code> <i>Identifier </i><code><b>(</b></code> <i>FormalParameterList</i><sub>opt</sub> <code><b>)</b></code> <code><b>{</b></code> <i>FunctionBody </i><code><b>}</b></code></p>
 	<p class="keep">
 	<i>FunctionExpression </i><b>:</b></p>
 	<p class="def1-btm">
-	<code><b>function</b></code><i>Identifier</i><sub>opt</sub><i></i><code><b>(</b></code><i>FormalParameterList</i><sub>opt</sub><i></i><code><b>)</b></code><i></i><code><b>{</b></code><i>FunctionBody </i><code><b>}</b></code></p>
+	<code><b>function</b></code> <i>Identifier</i><sub>opt</sub> <code><b>(</b></code> <i>FormalParameterList</i><sub>opt</sub> <code><b>)</b></code> <code><b>{</b></code> <i>FunctionBody </i><code><b>}</b></code></p>
 	<p class="keep">
 	<i>FormalParameterList </i><b>:</b></p>
 	<p class="def1-btm">
-	<i>Identifier<br>FormalParameterList </i><code><b>,</b></code><i>Identifier</i></p>
+	<i>Identifier<br>FormalParameterList </i><code><b>,</b></code> <i>Identifier</i></p>
 	<p class="keep">
 	<i>FunctionBody </i><b>:</b></p>
 	<p class="def1-btm">
@@ -16061,7 +16061,7 @@ IEEE 754 round-to-nearest mode.
 	<p>
 	The
 	production<br>    <i>FunctionDeclaration </i><b>:</b><i> </i><code><b>function</b></code>
-	<i>Identifier </i><code><b>(</b></code><i>FormalParameterList</i><sub>opt</sub><i></i><code><b>)</b></code> <code><b>{</b></code>
+	<i>Identifier </i><code><b>(</b></code> <i>FormalParameterList</i><sub>opt</sub> <code><b>)</b></code> <code><b>{</b></code>
 	<i>FunctionBody</i> <code><b>}</b></code><br>is
 	instantiated as follows during Declaration Binding instantiation
 	(<a href="#x10.5">10.5</a>):</p>
@@ -16082,7 +16082,7 @@ IEEE 754 round-to-nearest mode.
 	<p>
 	The
 	production<br>    <i>FunctionExpression </i><b>:</b><i> </i><code><b>function</b></code>
-	<code><b>(</b></code><i>FormalParameterList</i><sub>opt</sub><i></i><code><b>)</b></code> <code><b>{</b></code>
+	<code><b>(</b></code> <i>FormalParameterList</i><sub>opt</sub> <code><b>)</b></code> <code><b>{</b></code>
 	<i>FunctionBody</i> <code><b>}</b></code>
 	<br>is evaluated as follows:</p>
 	<ol>
@@ -16091,7 +16091,7 @@ IEEE 754 round-to-nearest mode.
 		the result of creating a new Function object as specified in 13.2
 		with parameters specified by <i>FormalParameterList</i><sub>opt</sub>
 		and body specified by <i>FunctionBody</i>.
-		Pass in the LexicalEnvironment of the running execution context as
+		Pass in the <a href="#x10.2">LexicalEnvironment</a> of the running execution context as
 		the <i>Scope</i>.
 		Pass in <b>true</b>
 		as the <i>Strict</i>
@@ -16162,7 +16162,7 @@ IEEE 754 round-to-nearest mode.
 	the <i>FunctionExpression</i>.</p>
 	<p>
 	The
-	production <i>FunctionBody </i><b>:</b><i>SourceElements</i><sub>opt</sub><i></i> is evaluated as follows:</p>
+	production <i>FunctionBody </i><b>:</b><i>SourceElements</i><sub>opt</sub>  is evaluated as follows:</p>
 	<ol>
 		<li><p>
 		The
@@ -16311,7 +16311,7 @@ IEEE 754 round-to-nearest mode.
 		be the result of creating a new object as would be constructed by
 		the expression <code><b>new
 		Object()</b></code>where <code><b>Object</b></code>
-		is the standard built-in constructor with that name.</p>
+		is <a href="#x15.2">the standard built-in constructor with that name</a>.</p>
 		</li>
 		<li><p>
 		Call
@@ -16448,12 +16448,12 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		If
-		<a href="#Type">Type</a>(<i>proto</i>)<i></i>is Object, set the
+		<a href="#Type">Type</a>(<i>proto</i>) is Object, set the
 		[[Prototype]] internal property of <i>obj </i>to <i>proto</i>.</p>
 		</li>
 		<li><p>
 		If
-		<a href="#Type">Type</a>(<i>proto</i>)<i></i>is not Object, set
+		<a href="#Type">Type</a>(<i>proto</i>) is not Object, set
 		the [[Prototype]] internal property of <i>obj </i>to the standard
 		built-in Object prototype object as described in <a href="#x15.2.4">15.2.4</a>.</p>
 		</li>
@@ -16737,14 +16737,14 @@ IEEE 754 round-to-nearest mode.
 	new parameters to existing functions.</p>
 	<p>
 	Every
-	built-in function and every built-in constructor has the Function
-	prototype object, which is the initial value of the expression
+	built-in function and every built-in constructor has the
+ <a href="#x15.3.4">Function prototype object</a>, which is the initial value of the expression
 	<code><b><a href="#x15.3.3.1">Function.prototype</a></b></code>
 	(<a href="#x15.3.4">15.3.4</a>), as the value of its [[Prototype]] internal property.</p>
 	<p>
 	Unless
-	otherwise specified every built-in prototype object has the Object
-	prototype object, which is the initial value of the expression
+	otherwise specified every built-in prototype object has the
+ <a href="#x15.3.4">Object prototype object</a>, which is the initial value of the expression
 	<code><b><a href="#x15.2.3.1">Object.prototype</a></b></code>
 	(<a href="#x15.2.4">15.2.4</a>), as the value of its [[Prototype]] internal property,
 	except the Object prototype object itself.</p>
@@ -17164,12 +17164,12 @@ If <i>inputString</i> does not contain any such characters, let
 	the italicised names represent components and the “<code><b>:</b></code>”,
 	“<code><b>/</b></code>”, “<code><b>;</b></code>”
 	and “<code><b>?</b></code>” are
-	reserved characters used as separators. The <code><b>encodeURI</b></code>
-	and <code><b>decodeURI</b></code>
+	reserved characters used as separators. The <code><b><a href="#x15.1.3.3">encodeURI</a></b></code>
+	and <code><b><a href="#x15.1.3.1">decodeURI</a></b></code>
 	functions are intended to work with complete URIs; they assume that
 	any reserved characters in the URI are intended to have special
-	meaning and so are not encoded. The  <code><b>encodeURIComponent</b></code><b>
-	</b>and <code><b>decodeURIComponent</b></code><b>
+	meaning and so are not encoded. The  <code><b><a href="#x15.1.3.4">encodeURIComponent</a></b></code><b>
+	</b>and <code><b><a href="#x15.1.3.2">decodeURIComponent</a></b></code><b>
 	</b>functions<b> </b>are intended to work with the individual
 	component parts of a URI; they assume that any reserved characters
 	represent text and so must be encoded so that they are not
@@ -17192,7 +17192,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<p class="def1-btm">
 	<i>uriReserved<br>uriUnescaped<br>uriEscaped</i></p>
 	<p class="keep">
-	<i>uriReserved </i><b>:::</b><i></i><b>one
+	<i>uriReserved </i><b>:::</b> <b>one
 	of</b></p>
 	<p class="def1-btm">
 	<code><b>;
@@ -17204,9 +17204,9 @@ If <i>inputString</i> does not contain any such characters, let
 	<p class="keep">
 	<i>uriEscaped </i><b>:::</b></p>
 	<p class="def1-btm">
-	<code><b>%</b></code><i>HexDigit HexDigit</i></p>
+	<code><b>%</b></code> <i>HexDigit HexDigit</i></p>
 	<p class="keep">
-	<i>uriAlpha </i><b>:::</b><i></i><b>one
+	<i>uriAlpha </i><b>:::</b> <b>one
 	of</b></p>
 	<p class="def1-btm">
 	<code><b>a
@@ -17214,7 +17214,7 @@ If <i>inputString</i> does not contain any such characters, let
 	 y  z<br>A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q  R  S  T 
 	U  V  W  X  Y  Z</b></code></p>
 	<p class="keep">
-	<i>uriMark </i><b>:::</b><i></i><b>one
+	<i>uriMark </i><b>:::</b> <b>one
 	of</b></p>
 	<p class="def1-btm">
 	<code><b>-
@@ -17876,9 +17876,9 @@ If <i>inputString</i> does not contain any such characters, let
 	The
 	<code><b>decodeURI</b></code> function
 	computes a new version of a URI in which each escape sequence and
-	UTF-8 encoding of the sort that might be introduced by the <code><b>encodeURI</b></code>
+	UTF-8 encoding of the sort that might be introduced by the <code><b><a href="#x15.1.3.1">encodeURI</a></b></code>
 	function is replaced with the character that it represents. Escape
-	sequences that could not have been introduced by <code><b>encodeURI</b></code>
+	sequences that could not have been introduced by <code><b><a href="#x15.1.3.1">encodeURI</a></b></code>
 	are not replaced.</p>
 	<p>
 	When
@@ -17909,7 +17909,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<code><b>decodeURIComponent</b></code>
 	function computes a new version of a URI in which each escape
 	sequence and UTF-8 encoding of the sort that might be introduced by
-	the <code><b>encodeURIComponent</b></code>
+	the <code><b><a href="#x15.1.3.4">encodeURIComponent</a></b></code>
 	function is replaced with the character that it represents.</p>
 	<p>
 	When
@@ -18295,8 +18295,8 @@ If <i>inputString</i> does not contain any such characters, let
 		If
 		the argument <i>Properties</i> is present and not <b>undefined</b>,
 		add own properties to <i>obj </i>as if by calling the standard
-		built-in function <code><b>Object.defineProperties
-		</b></code>with arguments <i>obj </i>and <i>Properties</i>.</p>
+		built-in function <code><b><a href="#x15.2.3.7">Object.defineProperties</a></b></code>
+with arguments <i>obj </i>and <i>Properties</i>.</p>
 		</li>
 		<li><p>
 		Return
@@ -19615,7 +19615,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<p>
 	An
 	object, <i>O</i>,  is
-	said to be <i>sparse</i> if the following algorithm returns <b>true</b>:</p>
+	said to be <dfn id="sparse"><i>sparse</i></dfn> if the following algorithm returns <b>true</b>:</p>
 	<ol>
 		<li><p class="sm-btm">
 		Let
@@ -19844,7 +19844,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<h5 id="x15.4.4.3">15.4.4.3 Array.prototype.toLocaleString ( ) <a href="#x15.4.4.3">#</a> <a href="#x15.4.4.3-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	The
-	elements of the array are converted to Strings using their
+	<a href="#array-element">elements of the array</a> are converted to Strings using their
 	<code><b>toLocaleString</b></code>
 	methods, and these Strings are then concatenated, separated by
 	occurrences of a separator String that has been derived in an
@@ -20132,7 +20132,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<h5 id="x15.4.4.5">15.4.4.5 Array.prototype.join (separator) <a href="#x15.4.4.5">#</a> <a href="#x15.4.4.5-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	The
-	elements of the array are converted to Strings, and these Strings
+	<a href="#array-element">elements of the array</a> are converted to Strings, and these Strings
 	are then concatenated, separated by occurrences of the <i>separator</i>.
 	If no separator is provided, a single comma is used as the
 	separator.</p>
@@ -20232,7 +20232,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<h5 id="x15.4.4.6">15.4.4.6 Array.prototype.pop ( ) <a href="#x15.4.4.6">#</a> <a href="#x15.4.4.6-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	The
-	last element of the array is removed from the array and returned.</p>
+	last <a href="#array-element">element of the array</a> is removed from the array and returned.</p>
 	<ol>
 		<li><p>
 		Let
@@ -20372,7 +20372,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<h5 id="x15.4.4.8">15.4.4.8 Array.prototype.reverse ( ) <a href="#x15.4.4.8">#</a> <a href="#x15.4.4.8-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	The
-	elements of the array are rearranged so as to reverse their order.
+	<a href="#array-element">elements of the array</a> are rearranged so as to reverse their order.
 	The object is returned as the result of the call.</p>
 	<ol>
 		<li><p>
@@ -20508,7 +20508,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<h5 id="x15.4.4.9">15.4.4.9 Array.prototype.shift ( ) <a href="#x15.4.4.9">#</a> <a href="#x15.4.4.9-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	The
-	first element of the array is removed from the array and returned.</p>
+	first <a href="#array-element">element of the array</a> is removed from the array and returned.</p>
 	<ol>
 		<li><p>
 		Let
@@ -20621,7 +20621,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<code><b>slice</b></code> method takes
 	two arguments, <i>start</i>
 	and <i>end</i>, and
-	returns an array containing the elements of the array from element
+	returns an array containing the <a href="#array-element">elements of the array</a> from element
 	<i>start</i> up to, but
 	not including, element <i>end</i>
 	(or through the end of the array if <i>end</i>
@@ -20733,7 +20733,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<h5 id="x15.4.4.11">15.4.4.11 Array.prototype.sort (comparefn) <a href="#x15.4.4.11">#</a> <a href="#x15.4.4.11-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	The
-	elements of this array are sorted. The sort is not necessarily
+	<a href="#array-element">elements of this array</a> are sorted. The sort is not necessarily
 	stable (that is, elements that compare equal do not necessarily
 	remain in their original order). If <i>comparefn</i>
 	is not <b>undefined</b>, it should be a function that accepts two
@@ -20758,7 +20758,7 @@ If <i>inputString</i> does not contain any such characters, let
 	If
 	<i>comparefn</i> is not
 	<b>undefined</b> and is not a consistent comparison function for the
-	elements of this array (see below), the behaviour of <code><b>sort</b></code>
+	<a href="#array-element">elements of this array</a> (see below), the behaviour of <code><b>sort</b></code>
 	is implementation-defined.</p>
 	<p>
 	Let
@@ -20772,7 +20772,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ul>
 		<li><p>
 		<i>obj</i>
-		is sparse (<a href="#x15.4">15.4</a>)</p>
+		is <a href="#sparse">sparse</a> (<a href="#x15.4">15.4</a>)</p>
 		</li>
 		<li><p>
 		0 <span class="symbol">≤</span>
@@ -20787,7 +20787,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<p>
 	The
 	behaviour of <code><b>sort</b></code>
-	is also implementation defined if <i>obj </i>is sparse and any of the following conditions are true:</p>
+	is also implementation defined if <i>obj </i>is <a href="#sparse">sparse</a> and any of the following conditions are true:</p>
 	<ul>
 		<li><p>
 		The
@@ -20820,7 +20820,7 @@ If <i>inputString</i> does not contain any such characters, let
 		less than <i>len </i>and where the arguments for calls to
 		SortCompare are results of previous calls to the [[Get]] internal
 		method. The throw argument to the [[Put]] and [[Delete]] internal
-		methods will be the value <b>true</b>. If <i>obj</i> is not sparse
+		methods will be the value <b>true</b>. If <i>obj</i> is not <a href="#sparse">sparse</a>
 		then [[Delete]] must not be called.</p>
 		</li>
 		<li><p>
@@ -21051,7 +21051,7 @@ If <i>inputString</i> does not contain any such characters, let
 	(optionally) <i>item1</i>,
 	<i>item2</i>, etc., the
 	<i>deleteCount</i>
-	elements of the array starting at array index <i>start</i>
+	<a href="#array-element">elements of the array</a> starting at array index <i>start</i>
 	are replaced by the arguments <i>item1</i>,
 	<i>item2</i>, etc. An
 	Array object containing the deleted elements (if any) is returned.
@@ -21452,7 +21452,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<p>
 	<code><b>indexOf</b></code>
 	compares <i>searchElement</i>
-	to the elements of the array, in ascending order, using the internal
+	to the <a href="#array-element">elements of the array</a>, in ascending order, using the internal
 	Strict Equality Comparison Algorithm (<a href="#x11.9.6">11.9.6</a>), and if found at one
 	or more positions, returns the index of the first such position;
 	otherwise, -1 is returned.</p>
@@ -21573,7 +21573,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<p>
 	<code><b>lastIndexOf</b></code>
 	compares <i>searchElement</i>
-	to the elements of the array in descending order using the internal
+	to the <a href="#array-element">elements of the array</a> in descending order using the internal
 	Strict Equality Comparison Algorithm (<a href="#x11.9.6">11.9.6</a>), and if found at one
 	or more positions, returns the index of the last such position;
 	otherwise, -1 is returned.</p>
@@ -21683,14 +21683,14 @@ If <i>inputString</i> does not contain any such characters, let
 	returns a value that is coercible to the Boolean value <b>true</b>
 	or <b>false</b>. <code><b>every</b></code>
 	calls <i>callbackfn</i>
-	once for each element present in the array, in ascending order,
+	once for <a href="#array-element">each element present in the array</a>, in ascending order,
 	until it finds one where <i>callbackfn</i>
 	returns <b>false</b>. If such an element is found, <code><b>every</b></code>
 	immediately returns <b>false</b>. Otherwise, if <i>callbackfn</i>
 	returned <b>true</b> for all elements, <code><b>every</b></code>
 	will return <b>true</b>. <i>callbackfn</i>
-	is called only for elements of the array which actually exist; it is
-	not called for missing elements of the array.</p>
+	is called only for <a href="#array-element">elements of the array</a> which actually exist; it is
+	not called for missing <a href="#array-element">elements of the array</a>.</p>
 	<p>
 	If a
 	<i>thisArg</i> parameter
@@ -21713,7 +21713,7 @@ If <i>inputString</i> does not contain any such characters, let
 	is set before the first call to <i>callbackfn</i>.
 	Elements which are appended to the array after the call to <code><b>every</b></code>
 	begins will not be visited by <i>callbackfn</i>.
-	If existing elements of the array are changed, their value as passed
+	If existing <a href="#array-element">elements of the array</a> are changed, their value as passed
 	to <i>callbackfn</i> will
 	be the value at the time <code><b>every</b></code>
 	visits them; elements that are deleted after the call to <code><b>every</b></code>
@@ -21814,13 +21814,13 @@ If <i>inputString</i> does not contain any such characters, let
 	returns a value that is coercible to the Boolean value <b>true</b>
 	or <b>false</b>. <code><b>some</b></code>
 	calls <i>callbackfn</i>
-	once for each element present in the array, in ascending order,
+	once for <a href="#array-element">each element present in the array,</a> in ascending order,
 	until it finds one where <i>callbackfn</i>
 	returns <b>true</b>. If such an element is found, <code><b>some</b></code>
 	immediately returns <b>true</b>. Otherwise, <code><b>some</b></code>
 	returns <b>false</b>. <i>callbackfn</i>
-	is called only for elements of the array which actually exist; it is
-	not called for missing elements of the array.</p>
+	is called only for <a href="#array-element">elements of the array</a> which actually exist; it is
+	not called for missing <a href="#array-element">elements of the array</a>.</p>
 	<p>
 	If a
 	<i>thisArg</i> parameter
@@ -21841,7 +21841,7 @@ If <i>inputString</i> does not contain any such characters, let
 	is set before the first call to <i>callbackfn</i>.
 	Elements that are appended to the array after the call to <code><b>some</b></code>
 	begins will not be visited by <i>callbackfn</i>.
-	If existing elements of the array are changed, their value as passed
+	If existing <a href="#array-element">elements of the array</a> are changed, their value as passed
 	to <i>callbackfn</i> will
 	be the value at the time that <code><b>some</b></code>
 	visits them; elements that are deleted after the call to <code><b>some</b></code>
@@ -21941,10 +21941,10 @@ If <i>inputString</i> does not contain any such characters, let
 	<i>callbackfn </i>should be a function that accepts three arguments.
 	<code><b>forEach</b></code> calls
 	<i>callbackfn</i> once
-	for each element present in the array, in ascending order.
+	for <a href="#array-element">each element present in the array,</a> in ascending order.
 	<i>callbackfn</i> is
-	called only for elements of the array which actually exist; it is
-	not called for missing elements of the array.</p>
+	called only for <a href="#array-element">elements of the array</a> which actually exist; it is
+	not called for missing <a href="#array-element">elements of the array</a>.</p>
 	<p>
 	If a
 	<i>thisArg</i> parameter
@@ -21968,7 +21968,7 @@ If <i>inputString</i> does not contain any such characters, let
 	is set before the first call to <i>callbackfn</i>.
 	Elements which are appended to the array after the call to <code><b>forEach</b></code>
 	begins will not be visited by <i>callbackfn</i>.
-	If existing elements of the array are changed, their value as passed
+	If existing <a href="#array-element">elements of the array</a> are changed, their value as passed
 	to callback will be the value at the time <code><b>forEach</b></code>
 	visits them; elements that are deleted after the call to <code><b>forEach</b></code>
 	begins and before being visited are not visited.</p>
@@ -22059,10 +22059,10 @@ If <i>inputString</i> does not contain any such characters, let
 	<p>
 	<i>callbackfn </i>should be a function that accepts three arguments. <code><b>map</b></code>
 	calls <i>callbackfn</i>
-	once for each element in the array, in ascending order, and
+	once for <a href="#array-element">each element in the array</a>, in ascending order, and
 	constructs a new Array from the results. <i>callbackfn</i>
-	is called only for elements of the array which actually exist; it is
-	not called for missing elements of the array.</p>
+	is called only for <a href="#array-element">elements of the array</a> which actually exist; it is
+	not called for missing <a href="#array-element">elements of the array</a>.</p>
 	<p>
 	If a
 	<i>thisArg</i> parameter
@@ -22083,7 +22083,7 @@ If <i>inputString</i> does not contain any such characters, let
 	is set before the first call to <i>callbackfn</i>.
 	Elements which are appended to the array after the call to <code><b>map</b></code>
 	begins will not be visited by <i>callbackfn</i>.
-	If existing elements of the array are changed, their value as passed
+	If existing <a href="#array-element">elements of the array</a> are changed, their value as passed
 	to <i>callbackfn</i> will
 	be the value at the time <code><b>map</b></code>
 	visits them; elements that are deleted after the call to <code><b>map</b></code>
@@ -22121,7 +22121,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<li><p>
 		Let
 		<i>A</i> be a new array created as if by the expression <code><b>new
-		Array(</b></code><i>len</i><code><b>)</b></code>
+		Array(</b></code> <i>len</i><code><b>)</b></code>
 		where <code><b>Array</b></code> is
 		the standard built-in constructor with that name and <i>len</i> is
 		the value of <i>len</i>.</p>
@@ -22194,11 +22194,11 @@ If <i>inputString</i> does not contain any such characters, let
 	returns a value that is coercible to the Boolean value <b>true</b>
 	or <b>false</b>. <code><b>filter</b></code>
 	calls <i>callbackfn</i>
-	once for each element in the array, in ascending order, and
+	once for <a href="#array-element">each element in the array</a>, in ascending order, and
 	constructs a new array of all the values for which <i>callbackfn</i>
 	returns <b>true</b>. <i>callbackfn</i>
-	is called only for elements of the array which actually exist; it is
-	not called for missing elements of the array.</p>
+	is called only for <a href="#array-element">elements of the array</a> which actually exist; it is
+	not called for missing <a href="#array-element">elements of the array</a>.</p>
 	<p>
 	If a
 	<i>thisArg</i> parameter
@@ -22219,7 +22219,7 @@ If <i>inputString</i> does not contain any such characters, let
 	is set before the first call to <i>callbackfn</i>.
 	Elements which are appended to the array after the call to <code><b>filter</b></code>
 	begins will not be visited by <i>callbackfn</i>.
-	If existing elements of the array are changed their value as passed
+	If existing <a href="#array-element">elements of the array</a> are changed their value as passed
 	to <i>callbackfn</i> will
 	be the value at the time <code><b>filter</b></code>
 	visits them; elements that are deleted after the call to <code><b>filter</b></code>
@@ -22338,8 +22338,8 @@ If <i>inputString</i> does not contain any such characters, let
 	<h5 id="x15.4.4.21">15.4.4.21 Array.prototype.reduce ( callbackfn [ , initialValue ] ) <a href="#x15.4.4.21">#</a> <a href="#x15.4.4.21-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	<i>callbackfn </i>should be a function that takes four arguments. <code><b>reduce</b></code>
-	calls the callback, as a function, once for each element present in
-	the array, in ascending order.</p>
+	calls the callback, as a function, once for <a href="#array-element">each element present in
+	the array</a>, in ascending order.</p>
 	<p>
 	<i>callbackfn </i>is called with four arguments: the <i>previousValue</i>
 	(or value from the previous call to <i>callbackfn</i>),
@@ -22363,7 +22363,7 @@ If <i>inputString</i> does not contain any such characters, let
 	is set before the first call to <i>callbackfn</i>.
 	Elements that are appended to the array after the call to <code><b>reduce</b></code>
 	begins will not be visited by <i>callbackfn</i>.
-	If existing elements of the array are changed, their value as passed
+	If existing <a href="#array-element">elements of the array</a> are changed, their value as passed
 	to <i>callbackfn </i>will
 	be the value at the time <code><b>reduce</b></code>
 	visits them; elements that are deleted after the call to <code><b>reduce</b></code>
@@ -22508,8 +22508,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<p>
 	<i>callbackfn </i>should be a function that takes four arguments.
 	<code><b>reduceRight </b></code>calls
-	the callback, as a function, once for each element present in the
-	array, in descending order.</p>
+	the callback, as a function, once for <a href="#array-element">each element present in the array</a>, in descending order.</p>
 	<p>
 	<i>callbackfn </i>is called with four arguments: the previousValue (or
 	value from the previous call to <i>callbackfn</i>),
@@ -22537,7 +22536,7 @@ If <i>inputString</i> does not contain any such characters, let
 	Elements that are appended to the array after the call to
 	<code><b>reduceRight</b></code> begins
 	will not be visited by <i>callbackfn</i>.
-	If existing elements of the array are changed by <i>callbackfn</i>,
+	If existing <a href="#array-element">elements of the array</a> are changed by <i>callbackfn</i>,
 	their value as passed to <i>callbackfn </i>will be the value at the time <code><b>reduceRight
 	</b></code>visits them; elements that are deleted after the call to
 	<code><b>reduceRight</b></code> begins and
@@ -23056,8 +23055,8 @@ If <i>inputString</i> does not contain any such characters, let
 	<p>
 	If
 	<i>pos</i> is a value of
-	Number type that is an integer, then the result of <code><b>x.charAt(</b></code><i>pos</i><code><b>)</b></code>
-	is equal to the result of <code><b>x.substring(</b></code><i>pos</i><code><b>,</b></code>
+	Number type that is an integer, then the result of <code><b>x.charAt(</b></code> <i>pos</i><code><b>)</b></code>
+	is equal to the result of <code><b>x.substring(</b></code> <i>pos</i><code><b>,</b></code>
 	<i>pos</i><code><b>+1)</b></code>.</p>
 	<p>
 	When
@@ -23446,7 +23445,7 @@ If <i>inputString</i> does not contain any such characters, let
 		Else,
 		let <i>rx</i> be a new RegExp object created as if by the
 		expression <code><b>new
-		RegExp(</b></code><i>regexp</i><code><b>)</b></code>
+		RegExp(</b></code> <i>regexp</i><code><b>)</b></code>
 		where <code><b>RegExp</b></code> is
 		the standard built-in constructor with that name.</p>
 		</li>
@@ -23717,7 +23716,7 @@ If <i>inputString</i> does not contain any such characters, let
 				<i>n</i><sup>th</sup>
 				capture, where <i>n</i>
 				is a single digit in the range 1
-				to 9 and <code><b>$</b></code><i>n</i>
+				to 9 and <code><b>$</b></code> <i>n</i>
 				is not followed by a decimal digit. If <i>n</i><span class="symbol">≤</span><i>m</i>
 				and the <i>n</i>th
 				capture is <b>undefined</b>, use the empty String instead. If
@@ -23775,7 +23774,7 @@ If <i>inputString</i> does not contain any such characters, let
 		Else,
 		let <i>rx</i> be a new RegExp object created as if by the
 		expression <code><b>new
-		RegExp(</b></code><i>regexp</i><code><b>)</b></code>
+		RegExp(</b></code> <i>regexp</i><code><b>)</b></code>
 		where <code><b>RegExp</b></code> is
 		the standard built-in constructor with that name.</p>
 		</li>
@@ -27166,7 +27165,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p>However,
 	the expression</p>
 	<p class="code-example">
-	<code><b>Date.parse(</b></code><i>x</i><code><b>.toLocaleString())</b></code></p>
+	<code><b>Date.parse(</b></code> <i>x</i><code><b>.toLocaleString())</b></code></p>
 	<p>
 	is
 	not required to produce the same Number value as the preceding three
@@ -28311,7 +28310,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<i>Disjunction </i><b>::</b></p>
 	<p class="def1-btm">
 	<i>Alternative<br>
-	Alternative </i><code><b>|</b></code><i>Disjunction</i></p>
+	Alternative </i><code><b>|</b></code> <i>Disjunction</i></p>
 	<p class="keep">
 	<i>Alternative </i><b>::</b></p>
 	<p class="def1-btm">
@@ -28325,14 +28324,14 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="keep">
 	<i>Assertion </i><b>::</b></p>
 	<p class="def1-btm">
-	<code><b>^</b></code><i><br></i><code><b>$</b></code><i><br></i><code><b>\
-	b</b></code><i><br></i><code><b>\
-	B<br>(</b></code><i><b>
-	</b></i><code><b>?</b></code><i><b>
-	</b></i><code><b>=</b></code><i><b>
-	</b>Disjunction </i><code><b>)</b></code><i><br></i><code><b>(</b></code><i><b>
-	</b></i><code><b>?</b></code><i><b>
-	</b></i><code><b>!</b></code><i><b>
+	<code><b>^</b></code> <i><br></i><code><b>$</b></code> <i><br></i><code><b>\
+	b</b></code> <i><br></i><code><b>\
+	B<br>(</b></code> <i><b>
+	</b></i><code><b>?</b></code> <i><b>
+	</b></i><code><b>=</b></code> <i><b>
+	</b>Disjunction </i><code><b>)</b></code> <i><br></i><code><b>(</b></code> <i><b>
+	</b></i><code><b>?</b></code> <i><b>
+	</b></i><code><b>!</b></code> <i><b>
 	</b>Disjunction </i><code><b>)</b></code></p>
 	<p class="keep">
 	<i>Quantifier </i><b>::</b></p>
@@ -28342,18 +28341,18 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="keep">
 	<i>QuantifierPrefix </i><b>::</b></p>
 	<p class="def1-btm">
-	<code><b>*<br>+</b></code><i><br></i><code><b>?</b></code><i><br></i><code><b>{</b></code><i>DecimalDigits </i><code><b>}</b></code><i><br></i><code><b>{</b></code><i>DecimalDigits<b>
-	</b></i><code><b>,</b></code><i><b>
-	</b></i><code><b>}</b></code><i><br></i><code><b>{</b></code><i>DecimalDigits<b>
-	</b></i><code><b>,</b></code><i>DecimalDigits </i><code><b>}</b></code></p>
+	<code><b>*<br>+</b></code> <i><br></i><code><b>?</b></code> <i><br></i><code><b>{</b></code> <i>DecimalDigits </i><code><b>}</b></code> <i><br></i><code><b>{</b></code> <i>DecimalDigits<b>
+	</b></i><code><b>,</b></code> <i><b>
+	</b></i><code><b>}</b></code> <i><br></i><code><b>{</b></code> <i>DecimalDigits<b>
+	</b></i><code><b>,</b></code> <i>DecimalDigits </i><code><b>}</b></code></p>
 	<p class="keep">
 	<i>Atom </i><b>::</b></p>
 	<p class="def1-btm">
 	<i>PatternCharacter<br></i><code>.</code><i><br></i><code><b>\
-	</b></code><i>AtomEscape<br>CharacterClass</i><code><b><br>(</b></code><i><b>
-	</b>Disjunction </i><code><b>)</b></code><i><br></i><code><b>(</b></code><i><b>
-	</b></i><code><b>?</b></code><i><b>
-	</b></i><code><b>:</b></code><i><b>
+	</b></code> <i>AtomEscape<br>CharacterClass</i><code><b><br>(</b></code> <i><b>
+	</b>Disjunction </i><code><b>)</b></code> <i><br></i><code><b>(</b></code> <i><b>
+	</b></i><code><b>?</b></code> <i><b>
+	</b></i><code><b>:</b></code> <i><b>
 	</b>Disjunction </i><code><b>)</b></code></p>
 	<p class="keep">
 	<i>PatternCharacter </i><b>::</b><i>SourceCharacter </i><b>but
@@ -28370,7 +28369,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<i>CharacterEscape </i><b>::</b></p>
 	<p class="def1-btm">
 	<i>ControlEscape<br></i><code><b>c
-	</b></code><i>ControlLetter<br>HexEscapeSequence<br>UnicodeEscapeSequence<br>IdentityEscape</i></p>
+	</b></code> <i>ControlLetter<br>HexEscapeSequence<br>UnicodeEscapeSequence<br>IdentityEscape</i></p>
 	<p class="keep">
 	<i>ControlEscape </i><b>::</b><i><b>
 	 </b></i><b>one
@@ -28396,8 +28395,8 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="keep">
 	<i>DecimalEscape </i><b>::</b></p>
 	<p class="def1-btm">
-	<i>DecimalIntegerLiteral </i>[lookahead
-	<span class="symbol">∉</span>
+	<i>DecimalIntegerLiteral </i>[<a href="#lookahead-not-in">lookahead
+	<span class="symbol">∉</span></a>
 	DecimalDigit]</p>
 	<p class="keep">
 	<i>CharacterClassEscape </i><b>::</b><i><b>
@@ -28410,12 +28409,12 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<i>CharacterClass </i><b>::</b></p>
 	<p class="def1-btm">
 	<code><b>[
-	</b></code>[lookahead
-	<span class="symbol">∉</span>
+	</b></code>[<a href="#lookahead-not-in">lookahead
+	<span class="symbol">∉</span></a>
 	{<code><b>^</b></code>}]<code><b>
-	</b></code><i>ClassRanges</i><code><b>
-	]</b></code><i><br></i><code><b>[
-	^ </b></code><i>ClassRanges</i><code><b>
+	</b></code> <i>ClassRanges</i><code><b>
+	]</b></code> <i><br></i><code><b>[
+	^</b></code> <i>ClassRanges</i><code><b>
 	]</b></code></p>
 	<p class="keep">
 	<i>ClassRanges </i><b>::</b></p>
@@ -28426,28 +28425,28 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="def1-btm">
 	<i>ClassAtom<br>ClassAtom
 	NonemptyClassRangesNoDash<br>ClassAtom</i><code><b>
-	- </b></code><i>ClassAtom ClassRanges</i></p>
+	-</b></code> <i>ClassAtom ClassRanges</i></p>
 	<p class="keep">
 	<i>NonemptyClassRangesNoDash </i><b>::</b></p>
 	<p class="def1-btm">
 	<i>ClassAtom<br>ClassAtomNoDash
 	NonemptyClassRangesNoDash<br>ClassAtomNoDash</i><code><b>
-	- </b></code><i>ClassAtom ClassRanges</i></p>
+	-</b></code> <i>ClassAtom ClassRanges</i></p>
 	<p class="keep">
 	<i>ClassAtom </i><b>::</b></p>
 	<p class="def1-btm">
-	<code><b>-</b></code><i><br>ClassAtomNoDash</i></p>
+	<code><b>-</b></code> <i><br>ClassAtomNoDash</i></p>
 	<p class="keep">
 	<i>ClassAtomNoDash </i><b>::</b></p>
 	<p class="def1-btm">
 	<i>SourceCharacter </i><b>but
 	not</b><i> </i><b>one
-	of</b><i> </i><code><b>\</b></code><i></i><b>or</b><i></i><code><b>]</b></code><i></i><b>or</b><i></i><code><b>-</b></code><i><br></i><code>\
+	of</b><i> </i><code><b>\</b></code> <b>or</b> <code><b>]</b></code> <b>or</b> <code><b>-</b></code> <i><br></i><code>\
 	</code><i>ClassEscape</i></p>
 	<p class="keep">
 	<i>ClassEscape </i><b>::</b></p>
 	<p class="def1-btm">
-	<i>DecimalEscape<br></i><code><b>b</b></code><i><br>CharacterEscape</i><code><b><br></b></code><i>CharacterClassEscape</i></p>
+	<i>DecimalEscape<br></i><code><b>b</b></code> <i><br>CharacterEscape</i><code><b><br></b></code> <i>CharacterClassEscape</i></p>
 	<h4 id="x15.10.2">15.10.2 Pattern Semantics <a href="#x15.10.2">#</a> <a href="#x15.10.2-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	A
@@ -29221,7 +29220,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p>
 	The
 	production <i>Assertion</i>
-	<b>:: </b><code><b>( ? = </b></code><i>Disjunction</i><code><b>
+	<b>:: </b><code><b>( ? =</b></code> <i>Disjunction</i><code><b>
 	)</b></code> evaluates as follows:</p>
 	<ol>
 		<li><p>
@@ -29274,7 +29273,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p>
 	The
 	production <i>Assertion </i><b>::
-	</b><code><b>( ? ! </b></code><i>Disjunction</i><code><b>
+	</b><code><b>( ? !</b></code> <i>Disjunction</i><code><b>
 	)</b></code> evaluates as follows:</p>
 	<ol>
 		<li><p>
@@ -29636,7 +29635,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p>
 	The
 	production <i>QuantifierPrefix</i>
-	<b>:: </b><code><b>{ </b></code><i>DecimalDigits</i><code><b>
+	<b>:: </b><code><b>{</b></code> <i>DecimalDigits</i><code><b>
 	}</b></code> evaluates as follows:</p>
 	<ol>
 		<li><p>
@@ -29650,7 +29649,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p>
 	The
 	production <i>QuantifierPrefix</i>
-	<b>:: </b><code><b>{ </b></code><i>DecimalDigits</i><code><b>
+	<b>:: </b><code><b>{</b></code> <i>DecimalDigits</i><code><b>
 	, }</b></code> evaluates as follows:</p>
 	<ol>
 		<li><p>
@@ -29664,8 +29663,8 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p>
 	The
 	production <i>QuantifierPrefix</i>
-	<b>:: </b><code><b>{ </b></code><i>DecimalDigits</i><code><b>
-	, </b></code><i>DecimalDigits</i><code><b>
+	<b>:: </b><code><b>{</b></code> <i>DecimalDigits</i><code><b>
+	,</b></code> <i>DecimalDigits</i><code><b>
 	}</b></code> evaluates as follows:</p>
 	<ol>
 		<li><p>
@@ -29718,7 +29717,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p>
 	The
 	production <i>Atom</i> <b>::
-	</b><code><b>\ </b></code><i>AtomEscape</i>
+	</b><code><b>\</b></code> <i>AtomEscape</i>
 	evaluates by evaluating <i>AtomEscape</i>
 	to obtain a Matcher and returning that Matcher.</p>
 	<p>
@@ -29740,7 +29739,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p>
 	The
 	production <i>Atom</i> <b>::
-	</b><code><b>( </b></code><i>Disjunction</i><code><b>
+	</b><code><b>(</b></code> <i>Disjunction</i><code><b>
 	)</b></code> evaluates as follows:</p>
 	<ol>
 		<li><p>
@@ -29815,7 +29814,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p>
 	The
 	production <i>Atom</i> <b>::
-	</b><code><b>( ? : </b></code><i>Disjunction</i><code><b>
+	</b><code><b>( ? :</b></code> <i>Disjunction</i><code><b>
 	)</b></code> evaluates by evaluating <i>Disjunction</i>
 	to obtain a Matcher and returning that Matcher.</p>
 	<p>
@@ -29915,7 +29914,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		<i>cu</i>.</p>
 	</li></ol>
 	<p class="sp"><b class="note">NOTE 1</b> Parentheses of the form <code><b>(
-	</b></code><i>Disjunction</i><code><b>
+	</b></code> <i>Disjunction</i><code><b>
 	)</b></code> serve both to group the components of the <i>Disjunction</i>
 	pattern together and to save the result of the match. The result can
 	be used either in a backreference (<code><b>\</b></code>
@@ -29923,9 +29922,9 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	String, or returned as part of an array from the regular expression
 	matching internal procedure. To inhibit the capturing behaviour of
 	parentheses, use the form <code><b>(?:
-	</b></code><i>Disjunction</i><code><b>
+	</b></code> <i>Disjunction</i><code><b>
 	)</b></code> instead.</p>
-	<p class="sp"><b class="note">NOTE 2</b> The form <code><b>(?= </b></code><i>Disjunction</i><code><b>
+	<p class="sp"><b class="note">NOTE 2</b> The form <code><b>(?=</b></code> <i>Disjunction</i><code><b>
 	)</b></code> specifies a zero-width positive lookahead. In order for
 	it to succeed, the pattern inside <i>Disjunction</i>
 	must match at the current position, but the current position is not
@@ -29961,7 +29960,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="code-example">
 	<code><b>["aaaba",
 	"a"]</b></code></p>
-	<p><b class="note">NOTE 3</b> The form <code><b>(?! </b></code><i>Disjunction</i><code><b>
+	<p><b class="note">NOTE 3</b> The form <code><b>(?!</b></code> <i>Disjunction</i><code><b>
 	)</b></code> specifies a zero-width negative lookahead. In order for
 	it to succeed, the pattern inside <i>Disjunction</i>
 	must fail to match at the current position. The current position is
@@ -30282,7 +30281,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p>
 	The
 	production <i>CharacterEscape</i>
-	<b>:: </b><code><b>c </b></code><i>ControlLetter</i>
+	<b>:: </b><code><b>c</b></code> <i>ControlLetter</i>
 	evaluates as follows:</p>
 	<ol>
 		<li><p>
@@ -30323,7 +30322,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	The
 	production <i>DecimalEscape</i>
 	<b>:: </b><i>DecimalIntegerLiteral</i>
-	[lookahead <span class="symbol">∉</span>
+	[<a href="#lookahead-not-in">lookahead <span class="symbol">∉</span></a>
 	<i>DecimalDigit</i>]
 	evaluates as follows.</p>
 	<ol>
@@ -30729,17 +30728,17 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p>
 	The
 	production <i>CharacterClass</i>
-	<b>:: </b><code><b>[ </b></code>[lookahead
-	<span class="symbol">∉</span>
+	<b>:: </b><code><b>[ </b></code>[<a href="#lookahead-not-in">lookahead
+	<span class="symbol">∉</span></a>
 	{<b>^</b>}]<code><b>
-	</b></code><i>ClassRanges</i><code><b>
+	</b></code> <i>ClassRanges</i><code><b>
 	]</b></code> evaluates by evaluating <i>ClassRanges</i>
 	to obtain a CharSet and returning that CharSet and the Boolean
 	<b>false</b>.</p>
 	<p>
 	The
 	production <i>CharacterClass</i>
-	 <b>:: </b><code><b>[ ^ </b></code><i>ClassRanges</i><code><b>
+	 <b>:: </b><code><b>[ ^</b></code> <i>ClassRanges</i><code><b>
 	]</b></code> evaluates by evaluating <i>ClassRanges</i>
 	to obtain a CharSet and returning that CharSet and the Boolean <b>true</b>.</p>
 	<h5 id="x15.10.2.14">15.10.2.14 ClassRanges <a href="#x15.10.2.14">#</a> <a href="#x15.10.2.14-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
@@ -30872,7 +30871,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	The
 	production <i>NonemptyClassRangesNoDash</i>
 	<b>:: </b><i>ClassAtomNoDash</i><code><b>
-	- </b></code><i>ClassAtom</i>
+	-</b></code> <i>ClassAtom</i>
 	<i>ClassRanges</i>
 	evaluates as follows:</p>
 	<ol>
@@ -30949,7 +30948,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p>
 	The
 	production <i>ClassAtomNoDash</i>
-	<b>:: </b><code><b>\ </b></code><i>ClassEscape</i>
+	<b>:: </b><code><b>\</b></code> <i>ClassEscape</i>
 	evaluates by evaluating <i>ClassEscape</i>
 	to obtain a CharSet and returning that CharSet.</p>
 	<h5 id="x15.10.2.19">15.10.2.19 ClassEscape <a href="#x15.10.2.19">#</a> <a href="#x15.10.2.19-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
@@ -31017,8 +31016,8 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<b>undefined</b>, then return <i>R</i>
 	unchanged. Otherwise call the standard built-in <code><b>RegExp</b></code>
 	constructor (<a href="#x15.10.4.1">15.10.4.1</a>) as if by the expression <code><b>new
-	RegExp(</b></code><i>pattern</i><code><b>,
-	</b></code><i>flags</i><code><b>)</b></code>
+	RegExp(</b></code> <i>pattern</i><code><b>,
+	</b></code> <i>flags</i><code><b>)</b></code>
 	and return the object constructed by that constructor.</p>
 	<h4 id="x15.10.4">15.10.4 The RegExp Constructor <a href="#x15.10.4">#</a> <a href="#x15.10.4-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
@@ -31896,21 +31895,21 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="keep">
 	<i>JSONString </i><b>::</b></p>
 	<p class="def1">
-	<code><b>"</b></code><i>JSONStringCharacters</i><sub>opt</sub><i></i><code><b>"</b></code></p>
+	<code><b>"</b></code> <i>JSONStringCharacters</i><sub>opt</sub> <code><b>"</b></code></p>
 	<p class="keep">
 	<i>JSONStringCharacters </i><b>::</b></p>
 	<p class="def1">
 	<i>JSONStringCharacter
-	JSONStringCharacters</i><sub>opt</sub><i></i>
+	JSONStringCharacters</i><sub>opt</sub> 
 	</p>
 	<p>
 	<i>JSONStringCharacter </i><b>::</b></p>
 	<p class="def1">
 	<i>SourceCharacter </i><b>but
-	not</b><i> double-quote </i><code><b>"</b></code><i></i><b>or</b><i>backslash </i><code><b>\
+	not</b><i> double-quote </i><code><b>"</b></code> <b>or</b><i>backslash </i><code><b>\
 	</b></code><b>or</b><i>U+0000 thru U+001F</i></p>
 	<p class="def1">
-	<code><b>\</b></code><i>JSONEscapeSequence</i></p>
+	<code><b>\</b></code> <i>JSONEscapeSequence</i></p>
 	<p class="keep">
 	<i>JSONEscapeSequence </i><b>::</b></p>
 	<p class="def1">
@@ -31919,7 +31918,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<i>UnicodeEscapeSequence </i>
 	</p>
 	<p class="keep">
-	<i>JSONEscapeCharacter </i><b>::</b><i></i><b>one
+	<i>JSONEscapeCharacter </i><b>::</b> <b>one
 	of</b></p>
 	<p class="def1">
 	<code><b>"
@@ -31931,7 +31930,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="keep">
 	<i>JSONFraction </i><b>::</b></p>
 	<p class="def1">
-	<code><b>.</b></code><i>DecimalDigits</i></p>
+	<code><b>.</b></code> <i>DecimalDigits</i></p>
 	<p class="keep">
 	<i>JSONNullLiteral </i><b>::</b></p>
 	<p class="def1">
@@ -31963,29 +31962,29 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<i>JSONObject </i><b>:</b></p>
 	<p class="def1">
 	<code><b>{
-	}</b></code><i><br></i><code><b>{</b></code><i>JSONMemberList </i><code><b>}</b></code></p>
+	}</b></code> <i><br></i><code><b>{</b></code> <i>JSONMemberList </i><code><b>}</b></code></p>
 	<p class="keep">
 	<i>JSONMember </i><b>:</b></p>
 	<p class="def1">
-	<i>JSONString </i><code><b>:</b></code><i>JSONValue</i></p>
+	<i>JSONString </i><code><b>:</b></code> <i>JSONValue</i></p>
 	<p class="keep">
 	<i>JSONMemberList </i><b>:</b></p>
 	<p class="def1">
 	<i>JSONMember
-	<br>JSONMemberList </i><code><b>,</b></code><i><b>
+	<br>JSONMemberList </i><code><b>,</b></code> <i><b>
 	</b>JSONMember </i>
 	</p>
 	<p class="keep">
 	<i>JSONArray </i><b>:</b></p>
 	<p class="def1">
 	<code><b>[
-	]</b></code><i><br></i><code><b>[</b></code><i>JSONElementList</i><code><b>
+	]</b></code> <i><br></i><code><b>[</b></code> <i>JSONElementList</i><code><b>
 	]</b></code></p>
 	<p class="keep">
 	<i>JSONElementList </i><b>:</b></p>
 	<p class="def1">
 	<i>JSONValue<br>JSONElementList</i><code><b>
-	,</b></code><i> JSONValue</i></p>
+	,</b></code> <i> JSONValue</i></p>
 	<h4 id="x15.12.2">15.12.2 parse ( text [ , reviver ] ) <a href="#x15.12.2">#</a> <a href="#x15.12.2-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	The
@@ -32977,7 +32976,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Attempts
-		to define an <i>ObjectLiteral</i><i></i>that has multiple <b>get </b>property assignments with
+		to define an <i>ObjectLiteral</i> that has multiple <b>get </b>property assignments with
 		the same name or multiple <b>set </b>property assignments with the
 		same name.</p>
 		</li>
@@ -33094,8 +33093,8 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<i>LineTerminatorSequence </i><b>::</b><i class="see">See <a href="#x7.3">7.3</a></i></p>
 	<p class="def1-btm">
 	&lt;LF&gt;<br>&lt;CR&gt;
-	[lookahead
-	<span class="symbol">∉</span>
+	[<a href="#lookahead-not-in">lookahead
+	<span class="symbol">∉</span></a>
 	&lt;LF&gt;
 	]<br>&lt;LS&gt;<br>&lt;PS&gt;<br>&lt;CR&gt;
 	&lt;LF&gt;</p>
@@ -33106,17 +33105,17 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="keep">
 	<i>MultiLineComment </i><b>::</b><i class="see">See <a href="#x7.4">7.4</a></i></p>
 	<p class="def1-btm">
-	<code><b>/*</b></code><i>MultiLineCommentChars</i><sub>opt</sub><i></i><code><b>*/</b></code></p>
+	<code><b>/*</b></code> <i>MultiLineCommentChars</i><sub>opt</sub> <code><b>*/</b></code></p>
 	<p class="keep">
 	<i>MultiLineCommentChars </i><b>::</b><i class="see">See <a href="#x7.4">7.4</a></i></p>
 	<p class="def1-btm">
 	<i>MultiLineNotAsteriskChar
-	MultiLineCommentChars</i><sub>opt</sub><i><br></i><code><b>*</b></code><i>PostAsteriskCommentChars</i><sub>opt</sub></p>
+	MultiLineCommentChars</i><sub>opt</sub><i><br></i><code><b>*</b></code> <i>PostAsteriskCommentChars</i><sub>opt</sub></p>
 	<p class="keep">
 	<i>PostAsteriskCommentChars </i><b>::</b><i class="see">See <a href="#x7.4">7.4</a></i></p>
 	<p class="def1-btm">
 	<i>MultiLineNotForwardSlashOrAsteriskChar
-	MultiLineCommentChars</i><sub>opt</sub><i><br></i><code><b>*</b></code><i>PostAsteriskCommentChars</i><sub>opt</sub></p>
+	MultiLineCommentChars</i><sub>opt</sub><i><br></i><code><b>*</b></code> <i>PostAsteriskCommentChars</i><sub>opt</sub></p>
 	<p class="keep">
 	<i>MultiLineNotAsteriskChar </i><b>::</b><i class="see">See <a href="#x7.4">7.4</a></i></p>
 	<p class="def1-btm">
@@ -33126,12 +33125,12 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<i>MultiLineNotForwardSlashOrAsteriskChar </i><b>::</b><i class="see">See <a href="#x7.4">7.4</a></i></p>
 	<p class="def1-btm">
 	<i>SourceCharacter </i><b>but
-	not</b><i> forward-slash </i><code><b>/</b></code><i><b>
+	not</b><i> forward-slash </i><code><b>/</b></code> <i><b>
 	</b></i><b>or</b><i>asterisk </i><code><b>*</b></code></p>
 	<p class="keep">
 	<i>SingleLineComment </i><b>::</b><i class="see">See <a href="#x7.4">7.4</a></i></p>
 	<p class="def1-btm">
-	<code><b>//</b></code><i>SingleLineCommentChars</i><sub>opt</sub></p>
+	<code><b>//</b></code> <i>SingleLineCommentChars</i><sub>opt</sub></p>
 	<p class="keep">
 	<i>SingleLineCommentChars </i><b>::</b><i class="see">See <a href="#x7.4">7.4</a></i></p>
 	<p class="def1-btm">
@@ -33161,7 +33160,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="keep">
 	<i>IdentifierStart </i><b>::</b><i class="see">See <a href="#x7.6">7.6</a></i></p>
 	<p class="def1-btm">
-	<i>UnicodeLetter<br></i><code><b>$<br>_</b></code><i><br></i><code><b>\</b></code><i>UnicodeEscapeSequence</i></p>
+	<i>UnicodeLetter<br></i><code><b>$<br>_</b></code> <i><br></i><code><b>\</b></code> <i>UnicodeEscapeSequence</i></p>
 	<p class="keep">
 	<i>IdentifierPart </i><b>::</b><i class="see">See <a href="#x7.6">7.6</a></i></p>
 	<p class="def1-btm">
@@ -33194,7 +33193,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="def1-btm">
 	<i>Keyword<br>FutureReservedWord<br>NullLiteral<br>BooleanLiteral</i></p>
 	<p class="keep">
-	<i>Keyword </i><b>::</b><i></i><b>one
+	<i>Keyword </i><b>::</b> <b>one
 	of</b><i class="see">See <a href="#x7.6.1.1">7.6.1.1</a></i></p>
 	<dl>
 		<dl>
@@ -33445,7 +33444,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</dd></dl>
 	</dl>
 	<p class="keep">
-	<i>Punctuator </i><b>::</b><i></i><b>one
+	<i>Punctuator </i><b>::</b> <b>one
 	of</b><i class="see">See <a href="#x7.7">7.7</a></i></p>
 	<dl>
 		<dd>
@@ -33714,13 +33713,13 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="keep">
 	<i>DecimalLiteral </i><b>::</b><i class="see">See <a href="#x7.8.3">7.8.3</a></i></p>
 	<p class="def1-btm">
-	<i>DecimalIntegerLiteral </i><code><b>.</b></code><i>DecimalDigits</i><sub>opt</sub><i><sub>
-	</sub>ExponentPart</i><sub>opt</sub><i><br></i><code><b>.</b></code><i>DecimalDigits ExponentPart</i><sub>opt</sub><i><br>DecimalIntegerLiteral
+	<i>DecimalIntegerLiteral </i><code><b>.</b></code> <i>DecimalDigits</i><sub>opt</sub><i><sub>
+	</sub>ExponentPart</i><sub>opt</sub><i><br></i><code><b>.</b></code> <i>DecimalDigits ExponentPart</i><sub>opt</sub><i><br>DecimalIntegerLiteral
 	ExponentPart</i><sub>opt</sub></p>
 	<p class="keep">
 	<i>DecimalIntegerLiteral </i><b>::</b><i class="see">See <a href="#x7.8.3">7.8.3</a></i></p>
 	<p class="def1-btm">
-	<code><b>0</b></code><i><br>NonZeroDigit
+	<code><b>0</b></code> <i><br>NonZeroDigit
 	DecimalDigits</i><sub>opt</sub></p>
 	<p class="keep">
 	<i>DecimalDigits </i><b>::</b><i class="see">See <a href="#x7.8.3">7.8.3</a></i></p>
@@ -33754,11 +33753,11 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="keep">
 	<i>SignedInteger </i><b>::</b><i class="see">See <a href="#x7.8.3">7.8.3</a></i></p>
 	<p class="def1-btm">
-	<i>DecimalDigits<br></i><code><b>+</b></code><i>DecimalDigits<br></i><code><b>-</b></code><i>DecimalDigits</i></p>
+	<i>DecimalDigits<br></i><code><b>+</b></code> <i>DecimalDigits<br></i><code><b>-</b></code> <i>DecimalDigits</i></p>
 	<p class="keep">
 	<i>HexIntegerLiteral </i><b>::</b><i class="see">See <a href="#x7.8.3">7.8.3</a></i></p>
 	<p class="def1-btm">
-	<code><b>0x</b></code><i>HexDigit<br></i><code><b>0X</b></code><i>HexDigit<br>HexIntegerLiteral HexDigit</i></p>
+	<code><b>0x</b></code> <i>HexDigit<br></i><code><b>0X</b></code> <i>HexDigit<br>HexIntegerLiteral HexDigit</i></p>
 	<p class="keep">
 	<i>HexDigit </i><b>::</b><i><b>
 	</b></i><b>one
@@ -33786,35 +33785,35 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<i>DoubleStringCharacter </i><b>::</b><i class="see">See <a href="#x7.8.4">7.8.4</a></i></p>
 	<p class="def1-btm">
 	<i>SourceCharacter </i><b>but
-	not</b><i> double-quote </i><code><b>"</b></code><i><b>
+	not</b><i> double-quote </i><code><b>"</b></code> <i><b>
 	</b></i><b>or</b><i><b>
-	</b>backslash </i><code><b>\</b></code><i></i><b>or</b><i><b>
+	</b>backslash </i><code><b>\</b></code> <b>or</b><i><b>
 	</b>LineTerminator<br></i><code><b>\
-	</b></code><i>EscapeSequence<br>LineContinuation</i></p>
+	</b></code> <i>EscapeSequence<br>LineContinuation</i></p>
 	<p class="keep">
 	<i>SingleStringCharacter </i><b>::</b><i class="see">See <a href="#x7.8.4">7.8.4</a></i></p>
 	<p class="def1-btm">
 	<i>SourceCharacter </i><b>but
-	not</b><i> single-quote </i><code><b>'</b></code><i><b>
-	</b></i><b>or</b><i>backslash </i><code><b>\</b></code><i></i><b>or</b><i><b>
+	not</b><i> single-quote </i><code><b>'</b></code> <i><b>
+	</b></i><b>or</b><i>backslash </i><code><b>\</b></code> <b>or</b><i><b>
 	</b>LineTerminator<br></i><code><b>\
-	</b></code><i>EscapeSequence<br>LineContinuation</i></p>
+	</b></code> <i>EscapeSequence<br>LineContinuation</i></p>
 	<p class="keep">
 	<i>LineContinuation </i><b>::</b><i class="see">See <a href="#x7.8.4">7.8.4</a></i></p>
 	<p class="def1-btm">
 	<code><b>\
-	</b></code><i>LineTerminatorSequence</i></p>
+	</b></code> <i>LineTerminatorSequence</i></p>
 	<p class="keep">
 	<i>EscapeSequence </i><b>::</b><i class="see">See <a href="#x7.8.4">7.8.4</a></i></p>
 	<p class="def1-btm">
-	<i>CharacterEscapeSequence<br></i><code><b>0</b></code><i></i>[lookahead
-	<span class="symbol">∉</span><i>DecimalDigit</i>]<i><br>HexEscapeSequence<br>UnicodeEscapeSequence</i></p>
+	<i>CharacterEscapeSequence<br></i><code><b>0</b></code> [<a href="#lookahead-not-in">lookahead
+	<span class="symbol">∉</span></a><i>DecimalDigit</i>]<i><br>HexEscapeSequence<br>UnicodeEscapeSequence</i></p>
 	<p class="keep">
 	<i>CharacterEscapeSequence </i><b>::</b><i class="see">See <a href="#x7.8.4">7.8.4</a></i></p>
 	<p class="def1-btm">
 	<i>SingleEscapeCharacter<br>NonEscapeCharacter</i></p>
 	<p class="keep">
-	<i>SingleEscapeCharacter </i><b>::</b><i></i><b>one
+	<i>SingleEscapeCharacter </i><b>::</b> <b>one
 	of</b><i class="see">See <a href="#x7.8.4">7.8.4</a></i></p>
 	<p class="def1-btm">
 	<code><b>'
@@ -33834,15 +33833,15 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<i>HexEscapeSequence </i><b>::</b><i class="see">See <a href="#x7.8.4">7.8.4</a></i></p>
 	<p class="def1-btm">
 	<code><b>x
-	</b></code><i>HexDigit HexDigit</i></p>
+	</b></code> <i>HexDigit HexDigit</i></p>
 	<p class="keep">
 	<i>UnicodeEscapeSequence </i><b>::</b><i class="see">See <a href="#x7.8.4">7.8.4</a></i></p>
 	<p class="def1-btm">
-	<code><b>u</b></code><i>HexDigit HexDigit HexDigit HexDigit</i></p>
+	<code><b>u</b></code> <i>HexDigit HexDigit HexDigit HexDigit</i></p>
 	<p class="keep">
 	<i>RegularExpressionLiteral </i><b>::</b><i class="see">See <a href="#x7.8.5">7.8.5</a></i></p>
 	<p class="def1-btm">
-	<code><b>/</b></code><i>RegularExpressionBody<b> </b></i><code><b>/</b></code><i><b>
+	<code><b>/</b></code> <i>RegularExpressionBody<b> </b></i><code><b>/</b></code> <i><b>
 	</b>RegularExpressionFlags</i></p>
 	<p class="keep">
 	<i>RegularExpressionBody </i><b>::</b><i class="see">See <a href="#x7.8.5">7.8.5</a></i></p>
@@ -33858,25 +33857,25 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<i>RegularExpressionFirstChar </i><b>::</b><i class="see">See <a href="#x7.8.5">7.8.5</a></i></p>
 	<p class="def1-btm">
 	<i>RegularExpressionNonTerminator </i><b>but
-	not</b><i> </i><code><b>*</b></code><i><b>
+	not</b><i> </i><code><b>*</b></code> <i><b>
 	</b></i><b>or</b><i><b>
-	</b></i><code><b>\</b></code><i></i><b>or</b><i><b>
+	</b></i><code><b>\</b></code> <b>or</b><i><b>
 	</b></i><code><b>/
 	</b></code><b>or</b><code><b>
-	[</b></code><i><br>RegularExpressionBackslashSequence<br>RegularExpressionClass</i></p>
+	[</b></code> <i><br>RegularExpressionBackslashSequence<br>RegularExpressionClass</i></p>
 	<p class="keep">
 	<i>RegularExpressionChar </i><b>::</b><i class="see">See <a href="#x7.8.5">7.8.5</a></i></p>
 	<p class="def1-btm">
 	<i>RegularExpressionNonTerminator </i><b>but
-	not</b><i><b> </b></i><code><b>\</b></code><i><b>
+	not</b><i><b> </b></i><code><b>\</b></code> <i><b>
 	</b></i><b>or</b><i><b>
 	</b></i><code><b>/
 	</b></code><b>or</b><code><b>
-	[</b></code><i><br>RegularExpressionBackslashSequence<br>RegularExpressionClass</i></p>
+	[</b></code> <i><br>RegularExpressionBackslashSequence<br>RegularExpressionClass</i></p>
 	<p class="keep">
 	<i>RegularExpressionBackslashSequence </i><b>::</b><i class="see">See <a href="#x7.8.5">7.8.5</a></i></p>
 	<p class="def1-btm">
-	<code><b>\</b></code><i>RegularExpressionNonTerminator</i></p>
+	<code><b>\</b></code> <i>RegularExpressionNonTerminator</i></p>
 	<p class="keep">
 	<i>RegularExpressionNonTerminator </i><b>::</b><i class="see">See <a href="#x7.8.5">7.8.5</a></i></p>
 	<p class="def1-btm">
@@ -33887,23 +33886,23 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<i>RegularExpressionClass </i><b>::</b><i class="see">See <a href="#x7.8.5">7.8.5</a></i></p>
 	<p class="def1-btm">
 	<code><b>[
-	</b></code><i>RegularExpressionClassChars</i><code><b>
+	</b></code> <i>RegularExpressionClassChars</i><code><b>
 	]</b></code></p>
 	<p class="keep">
 	<i>RegularExpressionClassChars</i><code><b>
 	</b></code><b>::</b><i class="see">See <a href="#x7.8.5">7.8.5</a></i></p>
 	<p class="def1-btm">
 	<i>[empty]<br>RegularExpressionClassChars</i><code><b>
-	</b></code><i>RegularExpressionClassChar</i></p>
+	</b></code> <i>RegularExpressionClassChar</i></p>
 	<p class="keep">
 	<i>RegularExpressionClassChar</i><code><b>
 	</b></code><b>::</b><i class="see">See <a href="#x7.8.5">7.8.5</a></i></p>
 	<p class="def1-btm">
 	<i>RegularExpressionNonTerminator<b>
 	</b></i><b>but
-	not</b><i><b> </b></i><code><b>]</b></code><i><b>
+	not</b><i><b> </b></i><code><b>]</b></code> <i><b>
 	</b></i><b>or</b><i><b>
-	</b></i><code><b>\</b></code><i><b><br></b>RegularExpressionBackslashSequence</i></p>
+	</b></i><code><b>\</b></code> <i><b><br></b>RegularExpressionBackslashSequence</i></p>
 	<p class="keep">
 	<i>RegularExpressionFlags </i><b>::</b><i class="see">See <a href="#x7.8.5">7.8.5</a></i></p>
 	<p class="def1-btm">
@@ -33931,13 +33930,13 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<i>StrDecimalLiteral </i><b>:::</b><i class="see">See <a href="#x9.3.1">9.3.1</a></i></p>
 	<p class="def1-btm">
 	<i>StrUnsignedDecimalLiteral<br></i><code><b>+
-	</b></code><i>StrUnsignedDecimalLiteral<br></i><code><b>-
-	</b></code><i>StrUnsignedDecimalLiteral</i></p>
+	</b></code> <i>StrUnsignedDecimalLiteral<br></i><code><b>-
+	</b></code> <i>StrUnsignedDecimalLiteral</i></p>
 	<p class="keep">
 	<i>StrUnsignedDecimalLiteral </i><b>:::</b><i class="see">See <a href="#x9.3.1">9.3.1</a></i></p>
 	<p class="def1-btm">
-	<code><b>Infinity</b></code><i><br>DecimalDigits </i><code><b>.</b></code><i>DecimalDigits</i><sub>opt</sub><i><sub>
-	</sub>ExponentPart</i><sub>opt</sub><i><br></i><code><b>.</b></code><i>DecimalDigits ExponentPart</i><sub>opt</sub><i><br>DecimalDigits
+	<code><b>Infinity</b></code> <i><br>DecimalDigits </i><code><b>.</b></code> <i>DecimalDigits</i><sub>opt</sub><i><sub>
+	</sub>ExponentPart</i><sub>opt</sub><i><br></i><code><b>.</b></code> <i>DecimalDigits ExponentPart</i><sub>opt</sub><i><br>DecimalDigits
 	ExponentPart</i><sub>opt</sub></p>
 	<p class="keep">
 	<i>DecimalDigits </i><b>:::</b><i class="see">See <a href="#x9.3.1">9.3.1</a></i></p>
@@ -33945,7 +33944,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<i>DecimalDigit<br>DecimalDigits
 	DecimalDigit</i></p>
 	<p class="keep">
-	<i>DecimalDigit </i><b>:::</b><i></i><b>one
+	<i>DecimalDigit </i><b>:::</b> <b>one
 	of</b><i class="see">See <a href="#x9.3.1">9.3.1</a></i></p>
 	<p class="def1-btm">
 	<code><b>0
@@ -33966,12 +33965,12 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<i>SignedInteger </i><b>:::</b><i class="see">See <a href="#x9.3.1">9.3.1</a></i></p>
 	<p class="def1-btm">
 	<i>DecimalDigits<br></i><code><b>+
-	</b></code><i>DecimalDigits<br></i><code><b>-
-	</b></code><i>DecimalDigits</i></p>
+	</b></code> <i>DecimalDigits<br></i><code><b>-
+	</b></code> <i>DecimalDigits</i></p>
 	<p class="keep">
 	<i>HexIntegerLiteral </i><b>:::</b><i class="see">See <a href="#x9.3.1">9.3.1</a></i></p>
 	<p class="def1-btm">
-	<code><b>0x</b></code><i>HexDigit<br></i><code><b>0X</b></code><i>HexDigit<br>HexIntegerLiteral HexDigit</i></p>
+	<code><b>0x</b></code> <i>HexDigit<br></i><code><b>0X</b></code> <i>HexDigit<br>HexIntegerLiteral HexDigit</i></p>
 	<p class="keep">
 	<i>HexDigit </i><b>:::</b><i><b>
 	</b></i><b>one
@@ -33983,16 +33982,16 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="keep">
 	<i>PrimaryExpression </i><b>:</b><i class="see">See <a href="#x11.1">11.1</a></i></p>
 	<p class="def1-btm">
-	<code><b>this</b></code><i><br>Identifier<br>Literal<br>ArrayLiteral<br>ObjectLiteral<br></i><code><b>(</b></code><i>Expression </i><code><b>)</b></code></p>
+	<code><b>this</b></code> <i><br>Identifier<br>Literal<br>ArrayLiteral<br>ObjectLiteral<br></i><code><b>(</b></code> <i>Expression </i><code><b>)</b></code></p>
 	<p class="keep">
 	<i>ArrayLiteral </i><b>:</b><i class="see">See <a href="#x11.1.4">11.1.4</a></i></p>
 	<p class="def1-btm">
 	<code><b>[
-	</b></code><i>Elision</i><sub>opt</sub><code>
+	</b></code> <i>Elision</i><sub>opt</sub><code>
 	</code><code><b>]<br>[
-	</b></code><i>ElementList</i><code>
+	</b></code> <i>ElementList</i><code>
 	</code><code><b>]<br>[
-	</b></code><i>ElementList <b>,</b>
+	</b></code> <i>ElementList <b>,</b>
 	Elision</i><sub>opt</sub><code>
 	</code><code><b>]</b></code></p>
 	<p class="keep">
@@ -34012,10 +34011,10 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<i>ObjectLiteral </i><b>:</b><i class="see">See <a href="#x11.1.5">11.1.5</a></i></p>
 	<p class="def1-btm">
 	<code><b>{
-	}</b></code><i><br></i><code><b>{
-	</b></code><i>PropertyNameAndValueList</i><code>
+	}</b></code> <i><br></i><code><b>{
+	</b></code> <i>PropertyNameAndValueList</i><code>
 	</code><code><b>}<br>{
-	</b></code><i>PropertyNameAndValueList</i><code>
+	</b></code> <i>PropertyNameAndValueList</i><code>
 	, </code><code><b>}</b></code></p>
 	<p class="keep">
 	<i>PropertyNameAndValueList </i><b>:</b><i class="see">See <a href="#x11.1.5">11.1.5</a></i></p>
@@ -34026,13 +34025,13 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<i>PropertyAssignment </i><b>:</b><i class="see">See <a href="#x11.1.5">11.1.5</a></i></p>
 	<p class="def1-btm">
 	<i>PropertyName<span class="cgt">
-	</span></i><code><b>:</b></code><i><span class="cgt">
+	</span></i><code><b>:</b></code> <i><span class="cgt">
 	</span>AssignmentExpression<br></i><code><b>get
-	</b></code><i>PropertyName</i><code><b>()
-	{ </b></code><i>FunctionBody </i><code><b>}<br>set
-	</b></code><i>PropertyName</i><code><b>(
-	</b></code><i>PropertySetParameterList</i><code><b>
-	) { </b></code><i>FunctionBody </i><code><b>}</b></code></p>
+	</b></code> <i>PropertyName</i><code><b>()
+	{</b></code> <i>FunctionBody </i><code><b>}<br>set
+	</b></code> <i>PropertyName</i><code><b>(
+	</b></code> <i>PropertySetParameterList</i><code><b>
+	) {</b></code> <i>FunctionBody </i><code><b>}</b></code></p>
 	<p class="keep">
 	<i>PropertyName </i><b>:</b><i class="see">See <a href="#x11.1.5">11.1.5</a></i></p>
 	<p class="def1-btm">
@@ -34044,26 +34043,26 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="keep">
 	<i>MemberExpression </i><b>:</b><i class="see">See <a href="#x11.2">11.2</a></i></p>
 	<p class="def1-btm">
-	<i>PrimaryExpression<br>FunctionExpression<br>MemberExpression </i><code><b>[</b></code><i>Expression </i><code><b>]<br></b></code><i>MemberExpression </i><code><b>.</b></code><i>IdentifierName<br></i><code><b>new</b></code><i>MemberExpression</i><code><b>
-	</b></code><i>Arguments</i></p>
+	<i>PrimaryExpression<br>FunctionExpression<br>MemberExpression </i><code><b>[</b></code> <i>Expression </i><code><b>]<br></b></code> <i>MemberExpression </i><code><b>.</b></code> <i>IdentifierName<br></i><code><b>new</b></code> <i>MemberExpression</i><code><b>
+	</b></code> <i>Arguments</i></p>
 	<p class="keep">
 	<i>NewExpression </i><b>:</b><i class="see">See <a href="#x11.2">11.2</a></i></p>
 	<p class="def1-btm">
-	<i>MemberExpression</i><code><b><br>new</b></code><i>NewExpression</i></p>
+	<i>MemberExpression</i><code><b><br>new</b></code> <i>NewExpression</i></p>
 	<p class="keep">
 	<i>CallExpression </i><b>:</b><i class="see">See <a href="#x11.2">11.2</a></i></p>
 	<p class="def1-btm">
 	<i>MemberExpression</i><code><b>
-	</b></code><i>Arguments</i><code><b><br></b></code><i>CallExpression</i><code><b>
-	</b></code><i>Arguments</i><code><b><br></b></code><i>CallExpression </i><code><b>[</b></code><i>Expression </i><code><b>]<br></b></code><i>CallExpression </i><code><b>.</b></code><i>IdentifierName</i></p>
+	</b></code> <i>Arguments</i><code><b><br></b></code> <i>CallExpression</i><code><b>
+	</b></code> <i>Arguments</i><code><b><br></b></code> <i>CallExpression </i><code><b>[</b></code> <i>Expression </i><code><b>]<br></b></code> <i>CallExpression </i><code><b>.</b></code> <i>IdentifierName</i></p>
 	<p class="keep">
 	<i>Arguments </i><b>:</b><i class="see">See <a href="#x11.2">11.2</a></i></p>
 	<p class="def1-btm">
-	<code><b>(</b></code><i></i><code><b>)<br>(</b></code><i>ArgumentList  </i><code><b>)</b></code></p>
+	<code><b>(</b></code> <code><b>)<br>(</b></code> <i>ArgumentList  </i><code><b>)</b></code></p>
 	<p class="keep">
 	<i>ArgumentList </i><b>:</b><i class="see">See <a href="#x11.2">11.2</a></i></p>
 	<p class="def1-btm">
-	<i>AssignmentExpression<br>ArgumentList </i><code><b>,</b></code><i>AssignmentExpression</i></p>
+	<i>AssignmentExpression<br>ArgumentList </i><code><b>,</b></code> <i>AssignmentExpression</i></p>
 	<p class="keep">
 	<i>LeftHandSideExpression </i><b>:</b><i class="see">See <a href="#x11.2">11.2</a></i></p>
 	<p class="def1-btm">
@@ -34073,94 +34072,94 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="def1-btm">
 	<i>LeftHandSideExpression<br>LeftHandSideExpression</i><code><b>
 	</b></code>[no<i>LineTerminator </i>here]<code><b>
-	++</b></code><i><br>LeftHandSideExpression</i><code><b>
+	++</b></code> <i><br>LeftHandSideExpression</i><code><b>
 	</b></code>[no<i>LineTerminator </i>here]<code><b>
 	--</b></code></p>
 	<p class="keep">
 	<i>UnaryExpression </i><b>:</b><i class="see">See <a href="#x11.4">11.4</a></i></p>
 	<p class="def1-btm">
 	<i>PostfixExpression</i><code><b><br>delete
-	</b></code><i>UnaryExpression<br></i><code><b>void
-	</b></code><i>UnaryExpression<br></i><code><b>typeof
-	</b></code><i>UnaryExpression</i><code><b><br>++</b></code><i>UnaryExpression<br></i><code><b>--</b></code><i>UnaryExpression<br></i><code><b>+</b></code><i>UnaryExpression<br></i><code><b>-</b></code><i>UnaryExpression<br></i><code><b>~</b></code><i>UnaryExpression<br></i><code><b>!</b></code><i>UnaryExpression</i></p>
+	</b></code> <i>UnaryExpression<br></i><code><b>void
+	</b></code> <i>UnaryExpression<br></i><code><b>typeof
+	</b></code> <i>UnaryExpression</i><code><b><br>++</b></code> <i>UnaryExpression<br></i><code><b>--</b></code> <i>UnaryExpression<br></i><code><b>+</b></code> <i>UnaryExpression<br></i><code><b>-</b></code> <i>UnaryExpression<br></i><code><b>~</b></code> <i>UnaryExpression<br></i><code><b>!</b></code> <i>UnaryExpression</i></p>
 	<p class="keep">
 	<i>MultiplicativeExpression </i><b>:</b><i class="see">See <a href="#x11.5">11.5</a></i></p>
 	<p class="def1-btm">
-	<i>UnaryExpression<br>MultiplicativeExpression </i><code><b>*</b></code><i>UnaryExpression<br>MultiplicativeExpression </i><code><b>/</b></code><i>UnaryExpression<br>MultiplicativeExpression </i><code><b>%</b></code><i>UnaryExpression</i></p>
+	<i>UnaryExpression<br>MultiplicativeExpression </i><code><b>*</b></code> <i>UnaryExpression<br>MultiplicativeExpression </i><code><b>/</b></code> <i>UnaryExpression<br>MultiplicativeExpression </i><code><b>%</b></code> <i>UnaryExpression</i></p>
 	<p class="keep">
 	<i>AdditiveExpression </i><b>:</b><i class="see">See <a href="#x11.6">11.6</a></i></p>
 	<p class="def1-btm">
-	<i>MultiplicativeExpression<br>AdditiveExpression </i><code><b>+</b></code><i>MultiplicativeExpression<br>AdditiveExpression </i><code><b>-</b></code><i>MultiplicativeExpression</i></p>
+	<i>MultiplicativeExpression<br>AdditiveExpression </i><code><b>+</b></code> <i>MultiplicativeExpression<br>AdditiveExpression </i><code><b>-</b></code> <i>MultiplicativeExpression</i></p>
 	<p class="keep">
 	<i>ShiftExpression </i><b>:</b><i class="see">See <a href="#x11.7">11.7</a></i></p>
 	<p class="def1-btm">
-	<i>AdditiveExpression<br>ShiftExpression </i><code><b>&lt;&lt;</b></code><i>AdditiveExpression<br>ShiftExpression </i><code><b>&gt;&gt;</b></code><i>AdditiveExpression<br>ShiftExpression </i><code><b>&gt;&gt;&gt;</b></code><i>AdditiveExpression</i></p>
+	<i>AdditiveExpression<br>ShiftExpression </i><code><b>&lt;&lt;</b></code> <i>AdditiveExpression<br>ShiftExpression </i><code><b>&gt;&gt;</b></code> <i>AdditiveExpression<br>ShiftExpression </i><code><b>&gt;&gt;&gt;</b></code> <i>AdditiveExpression</i></p>
 	<p class="keep">
 	<i>RelationalExpression </i><b>:</b><i class="see">See <a href="#x11.8">11.8</a></i></p>
 	<p class="def1-btm">
-	<i>ShiftExpression<br>RelationalExpression </i><code><b>&lt;</b></code><i>ShiftExpression<br>RelationalExpression </i><code><b>&gt;</b></code><i>ShiftExpression<br>RelationalExpression </i><code><b>&lt;=</b></code><i>ShiftExpression<br>RelationalExpression </i><code><b>&gt;=</b></code><i>ShiftExpression<br>RelationalExpression </i><code><b>instanceof</b></code><i>ShiftExpression<br>RelationalExpression </i><code><b>in</b></code><i>ShiftExpression</i></p>
+	<i>ShiftExpression<br>RelationalExpression </i><code><b>&lt;</b></code> <i>ShiftExpression<br>RelationalExpression </i><code><b>&gt;</b></code> <i>ShiftExpression<br>RelationalExpression </i><code><b>&lt;=</b></code> <i>ShiftExpression<br>RelationalExpression </i><code><b>&gt;=</b></code> <i>ShiftExpression<br>RelationalExpression </i><code><b>instanceof</b></code> <i>ShiftExpression<br>RelationalExpression </i><code><b>in</b></code> <i>ShiftExpression</i></p>
 	<p class="keep">
 	<i>RelationalExpressionNoIn </i><b>:</b><i class="see">See <a href="#x11.8">11.8</a></i></p>
 	<p class="def1-btm">
-	<i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>&lt;</b></code><i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>&gt;</b></code><i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>&lt;=</b></code><i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>&gt;=</b></code><i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>instanceof</b></code><i>ShiftExpression</i></p>
+	<i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>&lt;</b></code> <i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>&gt;</b></code> <i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>&lt;=</b></code> <i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>&gt;=</b></code> <i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>instanceof</b></code> <i>ShiftExpression</i></p>
 	<p class="keep">
 	<i>EqualityExpression </i><b>:</b><i class="see">See <a href="#x11.9">11.9</a></i></p>
 	<p class="def1-btm">
-	<i>RelationalExpression<br>EqualityExpression </i><code><b>==</b></code><i>RelationalExpression<br>EqualityExpression </i><code><b>!=</b></code><i>RelationalExpression<br>EqualityExpression </i><code><b>===</b></code><i>RelationalExpression<br>EqualityExpression </i><code><b>!==</b></code><i>RelationalExpression</i></p>
+	<i>RelationalExpression<br>EqualityExpression </i><code><b>==</b></code> <i>RelationalExpression<br>EqualityExpression </i><code><b>!=</b></code> <i>RelationalExpression<br>EqualityExpression </i><code><b>===</b></code> <i>RelationalExpression<br>EqualityExpression </i><code><b>!==</b></code> <i>RelationalExpression</i></p>
 	<p class="keep">
 	<i>EqualityExpressionNoIn </i><b>:</b><i class="see">See <a href="#x11.9">11.9</a></i></p>
 	<p class="def1-btm">
-	<i>RelationalExpressionNoIn<br>EqualityExpressionNoIn </i><code><b>==</b></code><i>RelationalExpressionNoIn<br>EqualityExpressionNoIn </i><code><b>!=</b></code><i>RelationalExpressionNoIn<br>EqualityExpressionNoIn </i><code><b>===</b></code><i>RelationalExpressionNoIn<br>EqualityExpressionNoIn </i><code><b>!==</b></code><i>RelationalExpressionNoIn</i></p>
+	<i>RelationalExpressionNoIn<br>EqualityExpressionNoIn </i><code><b>==</b></code> <i>RelationalExpressionNoIn<br>EqualityExpressionNoIn </i><code><b>!=</b></code> <i>RelationalExpressionNoIn<br>EqualityExpressionNoIn </i><code><b>===</b></code> <i>RelationalExpressionNoIn<br>EqualityExpressionNoIn </i><code><b>!==</b></code> <i>RelationalExpressionNoIn</i></p>
 	<p class="keep">
 	<i>BitwiseANDExpression </i><b>:</b><i class="see">See <a href="#x11.10">11.10</a></i></p>
 	<p class="def1-btm">
-	<i>EqualityExpression<br>BitwiseANDExpression </i><code><b>&amp;</b></code><i>EqualityExpression</i></p>
+	<i>EqualityExpression<br>BitwiseANDExpression </i><code><b>&amp;</b></code> <i>EqualityExpression</i></p>
 	<p class="keep">
 	<i>BitwiseANDExpressionNoIn </i><b>:</b><i class="see">See <a href="#x11.10">11.10</a></i></p>
 	<p class="def1-btm">
-	<i>EqualityExpressionNoIn<br>BitwiseANDExpressionNoIn </i><code><b>&amp;</b></code><i>EqualityExpressionNoIn</i></p>
+	<i>EqualityExpressionNoIn<br>BitwiseANDExpressionNoIn </i><code><b>&amp;</b></code> <i>EqualityExpressionNoIn</i></p>
 	<p class="keep">
 	<i>BitwiseXORExpression </i><b>:</b><i class="see">See <a href="#x11.10">11.10</a></i></p>
 	<p class="def1-btm">
-	<i>BitwiseANDExpression<br>BitwiseXORExpression </i><code><b>^</b></code><i>BitwiseANDExpression</i></p>
+	<i>BitwiseANDExpression<br>BitwiseXORExpression </i><code><b>^</b></code> <i>BitwiseANDExpression</i></p>
 	<p class="keep">
 	<i>BitwiseXORExpressionNoIn </i><b>:</b><i class="see">See <a href="#x11.10">11.10</a></i></p>
 	<p class="def1-btm">
-	<i>BitwiseANDExpressionNoIn<br>BitwiseXORExpressionNoIn </i><code><b>^</b></code><i>BitwiseANDExpressionNoIn</i></p>
+	<i>BitwiseANDExpressionNoIn<br>BitwiseXORExpressionNoIn </i><code><b>^</b></code> <i>BitwiseANDExpressionNoIn</i></p>
 	<p class="keep">
 	<i>BitwiseORExpression </i><b>:</b><i class="see">See <a href="#x11.10">11.10</a></i></p>
 	<p class="def1-btm">
-	<i>BitwiseXORExpression<br>BitwiseORExpression </i><code><b>|</b></code><i>BitwiseXORExpression</i></p>
+	<i>BitwiseXORExpression<br>BitwiseORExpression </i><code><b>|</b></code> <i>BitwiseXORExpression</i></p>
 	<p class="keep">
 	<i>BitwiseORExpressionNoIn </i><b>:</b><i class="see">See <a href="#x11.10">11.10</a></i></p>
 	<p class="def1-btm">
-	<i>BitwiseXORExpressionNoIn<br>BitwiseORExpressionNoIn </i><code><b>|</b></code><i>BitwiseXORExpressionNoIn</i></p>
+	<i>BitwiseXORExpressionNoIn<br>BitwiseORExpressionNoIn </i><code><b>|</b></code> <i>BitwiseXORExpressionNoIn</i></p>
 	<p class="keep">
 	<i>LogicalANDExpression </i><b>:</b><i class="see">See <a href="#x11.11">11.11</a></i></p>
 	<p class="def1-btm">
-	<i>BitwiseORExpression<br>LogicalANDExpression </i><code><b>&amp;&amp;</b></code><i>BitwiseORExpression</i></p>
+	<i>BitwiseORExpression<br>LogicalANDExpression </i><code><b>&amp;&amp;</b></code> <i>BitwiseORExpression</i></p>
 	<p class="keep">
 	<i>LogicalANDExpressionNoIn </i><b>:</b><i class="see">See <a href="#x11.11">11.11</a></i></p>
 	<p class="def1-btm">
-	<i>BitwiseORExpressionNoIn<br>LogicalANDExpressionNoIn </i><code><b>&amp;&amp;</b></code><i>BitwiseORExpressionNoIn</i></p>
+	<i>BitwiseORExpressionNoIn<br>LogicalANDExpressionNoIn </i><code><b>&amp;&amp;</b></code> <i>BitwiseORExpressionNoIn</i></p>
 	<p class="keep">
 	<i>LogicalORExpression </i><b>:</b><i class="see">See <a href="#x11.11">11.11</a></i></p>
 	<p class="def1-btm">
-	<i>LogicalANDExpression<br>LogicalORExpression </i><code><b>||</b></code><i>LogicalANDExpression</i></p>
+	<i>LogicalANDExpression<br>LogicalORExpression </i><code><b>||</b></code> <i>LogicalANDExpression</i></p>
 	<p class="keep">
 	<i>LogicalORExpressionNoIn </i><b>:</b><i class="see">See <a href="#x11.11">11.11</a></i></p>
 	<p class="def1-btm">
-	<i>LogicalANDExpressionNoIn<br>LogicalORExpressionNoIn </i><code><b>||</b></code><i>LogicalANDExpressionNoIn</i></p>
+	<i>LogicalANDExpressionNoIn<br>LogicalORExpressionNoIn </i><code><b>||</b></code> <i>LogicalANDExpressionNoIn</i></p>
 	<p class="keep">
 	<i>ConditionalExpression </i><b>:</b><i class="see">See <a href="#x11.12">11.12</a></i></p>
 	<p class="def1-btm">
 	<i>LogicalORExpression<br>LogicalORExpression</i><code><b>
-	?</b></code><i>AssignmentExpression </i><code><b>:</b></code><i>AssignmentExpression</i></p>
+	?</b></code> <i>AssignmentExpression </i><code><b>:</b></code> <i>AssignmentExpression</i></p>
 	<p class="keep">
 	<i>ConditionalExpressionNoIn </i><b>:</b><i class="see">See <a href="#x11.12">11.12</a></i></p>
 	<p class="def1-btm">
 	<i>LogicalORExpressionNoIn<br>LogicalORExpressionNoIn</i><code><b>
-	?</b></code><i>AssignmentExpressionNoIn </i><code><b>:</b></code><i>AssignmentExpressionNoIn</i></p>
+	?</b></code> <i>AssignmentExpressionNoIn </i><code><b>:</b></code> <i>AssignmentExpressionNoIn</i></p>
 	<p class="keep">
 	<i>AssignmentExpression </i><b>:</b><i class="see">See <a href="#x11.13">11.13</a></i></p>
 	<p class="def1-btm">
@@ -34245,11 +34244,11 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="keep">
 	<i>Expression </i><b>:</b><i class="see">See <a href="#x11.14">11.14</a></i></p>
 	<p class="def1-btm">
-	<i>AssignmentExpression<br>Expression </i><code><b>,</b></code><i>AssignmentExpression</i></p>
+	<i>AssignmentExpression<br>Expression </i><code><b>,</b></code> <i>AssignmentExpression</i></p>
 	<p class="keep">
 	<i>ExpressionNoIn </i><b>:</b><i class="see">See <a href="#x11.14">11.14</a></i></p>
 	<p class="def1-btm">
-	<i>AssignmentExpressionNoIn<br>ExpressionNoIn </i><code><b>,</b></code><i>AssignmentExpressionNoIn</i></p>
+	<i>AssignmentExpressionNoIn<br>ExpressionNoIn </i><code><b>,</b></code> <i>AssignmentExpressionNoIn</i></p>
 	<h3 id="A.4">A.4 Statements <a href="#A.4">#</a> <a href="#A.4-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
 	<p class="keep">
 	<i>Statement </i><b>:</b><i class="see">See <a href="#x12">clause 12</a></i></p>
@@ -34258,7 +34257,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="keep">
 	<i>Block </i><b>:</b><i class="see">See <a href="#x12.1">12.1</a></i></p>
 	<p class="def1-btm">
-	<code><b>{</b></code><i>StatementList</i><sub>opt</sub><i></i><code><b>}</b></code></p>
+	<code><b>{</b></code> <i>StatementList</i><sub>opt</sub> <code><b>}</b></code></p>
 	<p class="keep">
 	<i>StatementList </i><b>:</b><i class="see">See <a href="#x12.1">12.1</a></i></p>
 	<p class="def1-btm">
@@ -34267,15 +34266,15 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="keep">
 	<i>VariableStatement </i><b>:</b><i class="see">See <a href="#x12.2">12.2</a></i></p>
 	<p class="def1-btm">
-	<code><b>var</b></code><i>VariableDeclarationList </i><code><b>;</b></code></p>
+	<code><b>var</b></code> <i>VariableDeclarationList </i><code><b>;</b></code></p>
 	<p class="keep">
 	<i>VariableDeclarationList </i><b>:</b><i class="see">See <a href="#x12.2">12.2</a></i></p>
 	<p class="def1-btm">
-	<i>VariableDeclaration<br>VariableDeclarationList </i><code><b>,</b></code><i>VariableDeclaration</i></p>
+	<i>VariableDeclaration<br>VariableDeclarationList </i><code><b>,</b></code> <i>VariableDeclaration</i></p>
 	<p class="keep">
 	<i>VariableDeclarationListNoIn </i><b>:</b><i class="see">See <a href="#x12.2">12.2</a></i></p>
 	<p class="def1-btm">
-	<i>VariableDeclarationNoIn<br>VariableDeclarationListNoIn </i><code><b>,</b></code><i>VariableDeclarationNoIn</i></p>
+	<i>VariableDeclarationNoIn<br>VariableDeclarationListNoIn </i><code><b>,</b></code> <i>VariableDeclarationNoIn</i></p>
 	<p class="keep">
 	<i>VariableDeclaration </i><b>:</b><i class="see">See <a href="#x12.2">12.2</a></i></p>
 	<p class="def1-btm">
@@ -34289,11 +34288,11 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="keep">
 	<i>Initialiser </i><b>:</b><i class="see">See <a href="#x12.2">12.2</a></i></p>
 	<p class="def1-btm">
-	<code><b>=</b></code><i>AssignmentExpression</i></p>
+	<code><b>=</b></code> <i>AssignmentExpression</i></p>
 	<p class="keep">
 	<i>InitialiserNoIn </i><b>:</b><i class="see">See <a href="#x12.2">12.2</a></i></p>
 	<p class="def1-btm">
-	<code><b>=</b></code><i>AssignmentExpressionNoIn</i></p>
+	<code><b>=</b></code> <i>AssignmentExpressionNoIn</i></p>
 	<p class="keep">
 	<i>EmptyStatement </i><b>:</b><i class="see">See <a href="#x12.3">12.3</a></i></p>
 	<p class="def1-btm">
@@ -34301,47 +34300,47 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="keep">
 	<i>ExpressionStatement </i><b>:</b><i class="see">See <a href="#x12.4">12.4</a></i></p>
 	<p class="def1-btm">
-	[lookahead
-	<span class="symbol">∉</span>
+	[<a href="#lookahead-not-in">lookahead
+	<span class="symbol">∉</span></a>
 	{<code><b>{</b></code>,<code><b>
 	function</b></code>}]<i>Expression </i><code><b>;</b></code></p>
 	<p class="keep">
 	<i>IfStatement </i><b>:</b><i class="see">See <a href="#x12.5">12.5</a></i></p>
 	<p class="def1-btm">
-	<code><b>if</b></code><i></i><code><b>(</b></code><i>Expression </i><code><b>)</b></code><i>Statement  </i><code><b>else</b></code><i>Statement<br></i><code><b>if</b></code><i></i><code><b>(</b></code><i>Expression </i><code><b>)</b></code><i>Statement</i></p>
+	<code><b>if</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement  </i><code><b>else</b></code> <i>Statement<br></i><code><b>if</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement</i></p>
 	<p class="keep">
 	<i>IterationStatement </i><b>:</b><i class="see">See <a href="#x12.6">12.6</a></i></p>
 	<p class="def1-btm">
 	<code><b>do
-	</b></code><i>Statement</i><code><b>
-	while</b></code><i> </i><code><b>(</b></code><i>Expression </i><code><b>);</b></code><i><br></i><code><b>while</b></code><i></i><code><b>(</b></code><i>Expression </i><code><b>)</b></code><i>Statement<br></i><code><b>for</b></code><i></i><code><b>(</b></code><i>ExpressionNoIn</i><sub>opt</sub><code><b>;</b></code><i>Expression</i><sub>opt</sub><i></i><code><b>;</b></code><i>Expression</i><sub>opt</sub><i></i><code><b>)</b></code><i>Statement<br></i><code><b>for</b></code><i></i><code><b>(</b></code><i></i><code><b>var</b></code><i>VariableDeclarationListNoIn</i><code><b>;</b></code><i>Expression</i><sub>opt</sub><i></i><code><b>;</b></code><i>Expression</i><sub>opt</sub><i></i><code><b>)</b></code><i>Statement<br></i><code><b>for</b></code><i></i><code><b>(</b></code><i>LeftHandSideExpression </i><code><b>in</b></code><i>Expression </i><code><b>)</b></code><i>Statement<br></i><code><b>for</b></code><i></i><code><b>(</b></code><i></i><code><b>var</b></code><i>VariableDeclarationNoIn </i><code><b>in</b></code><i>Expression </i><code><b>)</b></code><i>Statement</i></p>
+	</b></code> <i>Statement</i><code><b>
+	while</b></code> <i> </i><code><b>(</b></code> <i>Expression </i><code><b>);</b></code> <i><br></i><code><b>while</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement<br></i><code><b>for</b></code> <code><b>(</b></code> <i>ExpressionNoIn</i><sub>opt</sub><code><b>;</b></code> <i>Expression</i><sub>opt</sub> <code><b>;</b></code> <i>Expression</i><sub>opt</sub> <code><b>)</b></code> <i>Statement<br></i><code><b>for</b></code> <code><b>(</b></code> <code><b>var</b></code> <i>VariableDeclarationListNoIn</i><code><b>;</b></code> <i>Expression</i><sub>opt</sub> <code><b>;</b></code> <i>Expression</i><sub>opt</sub> <code><b>)</b></code> <i>Statement<br></i><code><b>for</b></code> <code><b>(</b></code> <i>LeftHandSideExpression </i><code><b>in</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement<br></i><code><b>for</b></code> <code><b>(</b></code> <code><b>var</b></code> <i>VariableDeclarationNoIn </i><code><b>in</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement</i></p>
 	<p class="keep">
 	<i>ContinueStatement </i><b>:</b><i class="see">See <a href="#x12.7">12.7</a></i></p>
 	<p class="def1-btm">
-	<code><b>continue</b></code><i><b>
-	</b></i>[no<i>LineTerminator </i>here]<i>Identifier</i><sub>opt</sub><i></i><code><b>;</b></code></p>
+	<code><b>continue</b></code> <i><b>
+	</b></i>[no<i>LineTerminator </i>here]<i>Identifier</i><sub>opt</sub> <code><b>;</b></code></p>
 	<p class="keep">
 	<i>BreakStatement </i><b>:</b><i class="see">See <a href="#x12.8">12.8</a></i></p>
 	<p class="def1-btm">
 	<code><b>break
-	</b></code>[no<i>LineTerminator </i>here]<i>Identifier</i><sub>opt</sub><i></i><code><b>;</b></code></p>
+	</b></code>[no<i>LineTerminator </i>here]<i>Identifier</i><sub>opt</sub> <code><b>;</b></code></p>
 	<p class="keep">
 	<i>ReturnStatement </i><b>:</b><i class="see">See <a href="#x12.9">12.9</a></i></p>
 	<p class="def1-btm">
 	<code><b>return
-	</b></code>[no<i>LineTerminator </i>here]<i>Expression</i><sub>opt</sub><i></i><code><b>;</b></code></p>
+	</b></code>[no<i>LineTerminator </i>here]<i>Expression</i><sub>opt</sub> <code><b>;</b></code></p>
 	<p class="keep">
 	<i>WithStatement </i><b>:</b><i class="see">See <a href="#x12.10">12.10</a></i></p>
 	<p class="def1-btm">
-	<code><b>with</b></code><i></i><code><b>(</b></code><i>Expression </i><code><b>)</b></code><i>Statement</i></p>
+	<code><b>with</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement</i></p>
 	<p class="keep">
 	<i>SwitchStatement </i><b>:</b><i class="see">See <a href="#x12.11">12.11</a></i></p>
 	<p class="def1-btm">
-	<code><b>switch</b></code><i></i><code><b>(</b></code><i>Expression </i><code><b>)</b></code><i>CaseBlock</i></p>
+	<code><b>switch</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>CaseBlock</i></p>
 	<p class="keep">
 	<i>CaseBlock </i><b>:</b><i class="see">See <a href="#x12.11">12.11</a></i></p>
 	<p class="def1-btm">
-	<code><b>{</b></code><i>CaseClauses</i><sub>opt</sub><i></i><code><b>}</b></code><i><br></i><code><b>{</b></code><i>CaseClauses</i><sub>opt</sub><i>DefaultClause CaseClauses</i><sub>opt</sub><i></i><code><b>}</b></code></p>
+	<code><b>{</b></code> <i>CaseClauses</i><sub>opt</sub> <code><b>}</b></code> <i><br></i><code><b>{</b></code> <i>CaseClauses</i><sub>opt</sub><i>DefaultClause CaseClauses</i><sub>opt</sub> <code><b>}</b></code></p>
 	<p class="keep">
 	<i>CaseClauses </i><b>:</b><i class="see">See <a href="#x12.11">12.11</a></i></p>
 	<p class="def1-btm">
@@ -34350,15 +34349,15 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="keep">
 	<i>CaseClause </i><b>:</b><i class="see">See <a href="#x12.11">12.11</a></i></p>
 	<p class="def1-btm">
-	<code><b>case</b></code><i>Expression </i><code><b>:</b></code><i>StatementList</i><sub>opt</sub></p>
+	<code><b>case</b></code> <i>Expression </i><code><b>:</b></code> <i>StatementList</i><sub>opt</sub></p>
 	<p class="keep">
 	<i>DefaultClause </i><b>:</b><i class="see">See <a href="#x12.11">12.11</a></i></p>
 	<p class="def1-btm">
-	<code><b>default</b></code><i></i><code><b>:</b></code><i>StatementList</i><sub>opt</sub></p>
+	<code><b>default</b></code> <code><b>:</b></code> <i>StatementList</i><sub>opt</sub></p>
 	<p class="keep">
 	<i>LabelledStatement </i><b>:</b><i class="see">See <a href="#x12.12">12.12</a></i></p>
 	<p class="def1-btm">
-	<i>Identifier </i><code><b>:</b></code><i>Statement</i></p>
+	<i>Identifier </i><code><b>:</b></code> <i>Statement</i></p>
 	<p class="keep">
 	<i>ThrowStatement </i><b>:</b><i class="see">See <a href="#x12.13">12.13</a></i></p>
 	<p class="def1-btm">
@@ -34368,33 +34367,33 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="keep">
 	<i>TryStatement </i><b>:</b><i class="see">See <a href="#x12.14">12.14</a></i></p>
 	<p class="def1-btm">
-	<code><b>try</b></code><i>Block Catch<sub><br></sub></i><code><b>try</b></code><i>Block Finally<sub><br></sub></i><code><b>try</b></code><i>Block Catch Finally</i></p>
+	<code><b>try</b></code> <i>Block Catch<sub><br></sub></i><code><b>try</b></code> <i>Block Finally<sub><br></sub></i><code><b>try</b></code> <i>Block Catch Finally</i></p>
 	<p class="keep">
 	<i>Catch </i><b>:</b><i class="see">See <a href="#x12.14">12.14</a></i></p>
 	<p class="def1-btm">
-	<code><b>catch</b></code><i></i><code><b>(
-	</b></code><i>Identifier </i><code><b>)</b></code><i>Block</i></p>
+	<code><b>catch</b></code> <code><b>(
+	</b></code> <i>Identifier </i><code><b>)</b></code> <i>Block</i></p>
 	<p class="keep">
 	<i>Finally </i><b>:</b><i class="see">See <a href="#x12.14">12.14</a></i></p>
 	<p class="def1-btm">
-	<code><b>finally</b></code><i>Block</i></p>
+	<code><b>finally</b></code> <i>Block</i></p>
 	<p class="keep">
 	<i>DebuggerStatement </i><b>:</b><i class="see">See <a href="#x12.15">12.15</a></i></p>
 	<p class="def1-btm">
-	<code><b>debugger</b></code><i></i><code><b>;</b></code></p>
+	<code><b>debugger</b></code> <code><b>;</b></code></p>
 	<h3 id="A.5">A.5 Functions and Programs <a href="#A.5">#</a> <a href="#A.5-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
 	<p class="keep">
 	<i>FunctionDeclaration </i><b>:</b><i class="see">See <a href="#x13">clause 13</a></i></p>
 	<p class="def1-btm">
-	<code><b>function</b></code><i>Identifier </i><code><b>(</b></code><i>FormalParameterList</i><sub>opt</sub><i></i><code><b>)</b></code><i></i><code><b>{</b></code><i>FunctionBody </i><code><b>}</b></code></p>
+	<code><b>function</b></code> <i>Identifier </i><code><b>(</b></code> <i>FormalParameterList</i><sub>opt</sub> <code><b>)</b></code> <code><b>{</b></code> <i>FunctionBody </i><code><b>}</b></code></p>
 	<p class="keep">
 	<i>FunctionExpression </i><b>:</b><i class="see">See <a href="#x13">clause 13</a></i></p>
 	<p class="def1-btm">
-	<code><b>function</b></code><i>Identifier</i><sub>opt</sub><i></i><code><b>(</b></code><i>FormalParameterList</i><sub>opt</sub><i></i><code><b>)</b></code><i></i><code><b>{</b></code><i>FunctionBody </i><code><b>}</b></code></p>
+	<code><b>function</b></code> <i>Identifier</i><sub>opt</sub> <code><b>(</b></code> <i>FormalParameterList</i><sub>opt</sub> <code><b>)</b></code> <code><b>{</b></code> <i>FunctionBody </i><code><b>}</b></code></p>
 	<p class="keep">
 	<i>FormalParameterList </i><b>:</b><i class="see">See <a href="#x13">clause 13</a></i></p>
 	<p class="def1-btm">
-	<i>Identifier<br>FormalParameterList </i><code><b>,</b></code><i>Identifier</i></p>
+	<i>Identifier<br>FormalParameterList </i><code><b>,</b></code> <i>Identifier</i></p>
 	<p class="keep">
 	<i>FunctionBody </i><b>:</b><i class="see">See <a href="#x13">clause 13</a></i></p>
 	<p class="def1-btm">
@@ -34440,7 +34439,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="keep">
 	<i>uriEscaped </i><b>:::</b><i class="see">See <a href="#x15.1.3">15.1.3</a></i></p>
 	<p class="def1-btm">
-	<code><b>%</b></code><i>HexDigit HexDigit</i></p>
+	<code><b>%</b></code> <i>HexDigit HexDigit</i></p>
 	<p class="keep">
 	<i>uriAlpha </i><b>:::</b>
 	<b>one
@@ -34466,7 +34465,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<i>Disjunction </i><b>::</b><i class="see">See <a href="#x15.10.1">15.10.1</a></i></p>
 	<p class="def1-btm">
 	<i>Alternative<br>
-	Alternative </i><code><b>|</b></code><i>Disjunction</i></p>
+	Alternative </i><code><b>|</b></code> <i>Disjunction</i></p>
 	<p class="keep">
 	<i>Alternative </i><b>::</b><i class="see">See <a href="#x15.10.1">15.10.1</a></i></p>
 	<p class="def1-btm">
@@ -34480,14 +34479,14 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="keep">
 	<i>Assertion </i><b>::</b><i class="see">See <a href="#x15.10.1">15.10.1</a></i></p>
 	<p class="def1-btm">
-	<code><b>^</b></code><i><br></i><code><b>$</b></code><i><br></i><code><b>\
-	b</b></code><i><br></i><code><b>\
-	B</b></code><i><br></i><code><b>(</b></code><i><b>
-	</b></i><code><b>?</b></code><i><b>
-	</b></i><code><b>=</b></code><i><b>
-	</b>Disjunction </i><code><b>)</b></code><i><br></i><code><b>(</b></code><i><b>
-	</b></i><code><b>?</b></code><i><b>
-	</b></i><code><b>!</b></code><i><b>
+	<code><b>^</b></code> <i><br></i><code><b>$</b></code> <i><br></i><code><b>\
+	b</b></code> <i><br></i><code><b>\
+	B</b></code> <i><br></i><code><b>(</b></code> <i><b>
+	</b></i><code><b>?</b></code> <i><b>
+	</b></i><code><b>=</b></code> <i><b>
+	</b>Disjunction </i><code><b>)</b></code> <i><br></i><code><b>(</b></code> <i><b>
+	</b></i><code><b>?</b></code> <i><b>
+	</b></i><code><b>!</b></code> <i><b>
 	</b>Disjunction </i><code><b>)</b></code></p>
 	<p class="keep">
 	<i>Quantifier </i><b>::</b><i class="see">See <a href="#x15.10.1">15.10.1</a></i></p>
@@ -34497,21 +34496,21 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="keep">
 	<i>QuantifierPrefix </i><b>::</b><i class="see">See <a href="#x15.10.1">15.10.1</a></i></p>
 	<p class="def1-btm">
-	<code><b>*<br>+</b></code><i><br></i><code><b>?</b></code><i><br></i><code><b>{</b></code><i>DecimalDigits </i><code><b>}</b></code><i><br></i><code><b>{</b></code><i>DecimalDigits<b>
-	</b></i><code><b>,</b></code><i><b>
-	</b></i><code><b>}</b></code><i><br></i><code><b>{</b></code><i>DecimalDigits<b>
-	</b></i><code><b>,</b></code><i>DecimalDigits </i><code><b>}</b></code></p>
+	<code><b>*<br>+</b></code> <i><br></i><code><b>?</b></code> <i><br></i><code><b>{</b></code> <i>DecimalDigits </i><code><b>}</b></code> <i><br></i><code><b>{</b></code> <i>DecimalDigits<b>
+	</b></i><code><b>,</b></code> <i><b>
+	</b></i><code><b>}</b></code> <i><br></i><code><b>{</b></code> <i>DecimalDigits<b>
+	</b></i><code><b>,</b></code> <i>DecimalDigits </i><code><b>}</b></code></p>
 	<p class="keep">
 	<i>Atom </i><b>::</b><i class="see">See <a href="#x15.10.1">15.10.1</a></i></p>
 	<p class="def1-btm">
 	<i>PatternCharacter<br></i><code>.</code><i><br></i><code><b>\
-	</b></code><i>AtomEscape<br>CharacterClass</i><code><b><br>(</b></code><i><b>
-	</b>Disjunction </i><code><b>)</b></code><i><br></i><code><b>(</b></code><b>
+	</b></code> <i>AtomEscape<br>CharacterClass</i><code><b><br>(</b></code> <i><b>
+	</b>Disjunction </i><code><b>)</b></code> <i><br></i><code><b>(</b></code><b>
 	</b><code><b>?</b></code><b>
-	</b><code><b>:</b></code><i><b>
+	</b><code><b>:</b></code> <i><b>
 	</b>Disjunction </i><code><b>)</b></code></p>
 	<p class="keep">
-	PatternCharacter<i></i>::<i></i>SourceCharacter<i></i><b>but
+	PatternCharacter :: SourceCharacter <b>but
 	not</b><i><b> </b></i><b>any
 	of:</b><i class="see">See <a href="#x15.10.1">15.10.1</a></i></p>
 	<p class="def1-btm">
@@ -34524,15 +34523,15 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="keep">
 	<i>CharacterEscape </i><b>::</b><i class="see">See <a href="#x15.10.1">15.10.1</a></i></p>
 	<p class="def1-btm">
-	<i>ControlEscape<br></i><code><b>c</b></code><i>ControlLetter<br>HexEscapeSequence<br>UnicodeEscapeSequence<br>IdentityEscape</i></p>
+	<i>ControlEscape<br></i><code><b>c</b></code> <i>ControlLetter<br>HexEscapeSequence<br>UnicodeEscapeSequence<br>IdentityEscape</i></p>
 	<p class="keep">
-	<i>ControlEscape </i><b>::</b><i></i><b>one
+	<i>ControlEscape </i><b>::</b> <b>one
 	of</b><i class="see">See <a href="#x15.10.1">15.10.1</a></i></p>
 	<p class="def1-btm">
 	<code><b>f
 	 n  r  t  v</b></code></p>
 	<p class="keep">
-	<i>ControlLetter </i><b>::</b><i></i><b>one
+	<i>ControlLetter </i><b>::</b> <b>one
 	of</b><i class="see">See <a href="#x15.10.1">15.10.1</a></i></p>
 	<p class="def1-btm">
 	<code><b>a
@@ -34548,8 +34547,8 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="keep">
 	<i>DecimalEscape </i><b>::</b><i class="see">See <a href="#x15.10.1">15.10.1</a></i></p>
 	<p class="def1-btm">
-	<i>DecimalIntegerLiteral </i>[lookahead
-	<span class="symbol">∉</span>
+	<i>DecimalIntegerLiteral </i>[<a href="#lookahead-not-in">lookahead
+	<span class="symbol">∉</span></a>
 	<i>DecimalDigit</i>]</p>
 	<p class="def1-btm">
 	</p>
@@ -34564,12 +34563,12 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<i>CharacterClass </i><b>::</b><i class="see">See <a href="#x15.10.1">15.10.1</a></i></p>
 	<p class="def1-btm">
 	<code><b>[
-	</b></code>[lookahead
-	<span class="symbol">∉</span>
+	</b></code>[<a href="#lookahead-not-in">lookahead
+	<span class="symbol">∉</span></a>
 	{<code><b>^</b></code>}]<code><b>
-	</b></code><i>ClassRanges</i><code><b>
-	]</b></code><i><br></i><code><b>[
-	^ </b></code><i>ClassRanges</i><code><b>
+	</b></code> <i>ClassRanges</i><code><b>
+	]</b></code> <i><br></i><code><b>[
+	^</b></code> <i>ClassRanges</i><code><b>
 	]</b></code></p>
 	<p class="keep">
 	<i>ClassRanges </i><b>::</b><i class="see">See <a href="#x15.10.1">15.10.1</a></i></p>
@@ -34580,55 +34579,55 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="def1-btm">
 	<i>ClassAtom<br>ClassAtom
 	NonemptyClassRangesNoDash<br>ClassAtom</i><code><b>
-	– </b></code><i>ClassAtom ClassRanges</i></p>
+	–</b></code> <i>ClassAtom ClassRanges</i></p>
 	<p class="keep">
 	<i>NonemptyClassRangesNoDash </i><b>::</b><i class="see">See <a href="#x15.10.1">15.10.1</a></i></p>
 	<p class="def1-btm">
 	<i>ClassAtom<br>ClassAtomNoDash
 	NonemptyClassRangesNoDash<br>ClassAtomNoDash</i><code><b>
-	– </b></code><i>ClassAtom ClassRanges</i></p>
+	–</b></code> <i>ClassAtom ClassRanges</i></p>
 	<p class="keep">
 	<i>ClassAtom </i><b>::</b><i class="see">See <a href="#x15.10.1">15.10.1</a></i></p>
 	<p class="def1-btm">
-	<code><b>-</b></code><i><br>ClassAtomNoDash</i></p>
+	<code><b>-</b></code> <i><br>ClassAtomNoDash</i></p>
 	<p class="keep">
 	<i>ClassAtomNoDash </i><b>::</b><i class="see">See <a href="#x15.10.1">15.10.1</a></i></p>
 	<p class="def1-btm">
 	<i>SourceCharacter </i><b>but
 	not</b><i> </i><b>one
-	of</b><i> </i><code><b>\</b></code><i></i><b>or</b><i></i><code><b>]</b></code><b>
-	or</b><i> </i><code><b>-</b></code><i><br></i><code>\
+	of</b><i> </i><code><b>\</b></code> <b>or</b> <code><b>]</b></code><b>
+	or</b><i> </i><code><b>-</b></code> <i><br></i><code>\
 	</code><i>ClassEscape</i></p>
 	<p class="keep">
 	<i>ClassEscape </i><b>::</b><i class="see">See <a href="#x15.10.1">15.10.1</a></i></p>
 	<p class="def1-btm">
-	<i>DecimalEscape<br></i><code><b>b</b></code><i><br>CharacterEscape</i><code><b><br></b></code><i>CharacterClassEscape</i></p>
+	<i>DecimalEscape<br></i><code><b>b</b></code> <i><br>CharacterEscape</i><code><b><br></b></code> <i>CharacterClassEscape</i></p>
 	<h3 id="A.8">A.8 JSON <a href="#A.8">#</a> <a href="#A.8-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
 	<h4 id="A.8.1">A.8.1 JSON Lexical Grammar <a href="#A.8.1">#</a> <a href="#A.8.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p class="keep">
-	JSONWhiteSpace<i></i><b>::</b><i class="see">See <a href="#x15.12.1.1">15.12.1.1</a></i></p>
+	JSONWhiteSpace <b>::</b><i class="see">See <a href="#x15.12.1.1">15.12.1.1</a></i></p>
 	<p class="def1">
 	<i>&lt;TAB&gt;<br>&lt;CR&gt;<br>&lt;LF&gt;<br>&lt;SP&gt;</i></p>
 	<p class="keep">
 	<i>JSONString </i><b>::</b><i class="see">See <a href="#x15.12.1.1">15.12.1.1</a></i></p>
 	<p class="def1">
 	<code><b>"
-	</b></code><i>JSONStringCharacters</i><sub>opt</sub><i></i><code><b>"</b></code></p>
+	</b></code> <i>JSONStringCharacters</i><sub>opt</sub> <code><b>"</b></code></p>
 	<p class="keep">
 	<i>JSONStringCharacters </i><b>::</b><i class="see">See <a href="#x15.12.1.1">15.12.1.1</a></i></p>
 	<p class="def1">
 	<i>JSONStringCharacter
-	JSONStringCharacters</i><sub>opt</sub><i></i>
+	JSONStringCharacters</i><sub>opt</sub> 
 	</p>
 	<p class="keep">
 	<i>JSONStringCharacter </i><b>::</b><i class="see">See <a href="#x15.12.1.1">15.12.1.1</a></i></p>
 	<p class="def1">
 	<i>SourceCharacter </i><b>but
-	not</b><i> double-quote </i><code><b>"</b></code><i></i> <b>or</b> <i>backslash </i><code><b>\
+	not</b><i> double-quote </i><code><b>"</b></code>  <b>or</b> <i>backslash </i><code><b>\
 	</b></code> <b>or</b> <i>U+0000 <b>thru</b>
 	U+001F</i></p>
 	<p class="def1">
-	<code><b>\</b></code><i>JSONEscapeSequence</i></p>
+	<code><b>\</b></code> <i>JSONEscapeSequence</i></p>
 	<p class="keep">
 	<i>JSONEscapeSequence </i><b>::</b><i class="see">See <a href="#x15.12.1.1">15.12.1.1</a></i></p>
 	<p class="def1">
@@ -34650,7 +34649,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="keep">
 	<i>JSONFraction </i><b>::</b><i class="see">See <a href="#x15.12.1.1">15.12.1.1</a></i></p>
 	<p class="def1">
-	<code><b>.</b></code><i>DecimalDigits</i></p>
+	<code><b>.</b></code> <i>DecimalDigits</i></p>
 	<p class="keep">
 	<i>JSONNullLiteral </i><b>::</b><i class="see">See <a href="#x15.12.1.1">15.12.1.1</a></i></p>
 	<p class="def1">
@@ -34673,29 +34672,29 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<i>JSONObject </i><b>:</b><i class="see">See <a href="#x15.12.1.2">15.12.1.2</a></i></p>
 	<p class="def1">
 	<code><b>{
-	}</b></code><i><br></i><code><b>{</b></code><i>JSONMemberList </i><code><b>}</b></code></p>
+	}</b></code> <i><br></i><code><b>{</b></code> <i>JSONMemberList </i><code><b>}</b></code></p>
 	<p class="keep">
 	<i>JSONMember </i><b>:</b><i class="see">See <a href="#x15.12.1.2">15.12.1.2</a></i></p>
 	<p class="def1">
-	<i>JSONString </i><code><b>:</b></code><i>JSONValue</i></p>
+	<i>JSONString </i><code><b>:</b></code> <i>JSONValue</i></p>
 	<p class="keep">
 	<i>JSONMemberList </i><b>:</b><i class="see">See <a href="#x15.12.1.2">15.12.1.2</a></i></p>
 	<p class="def1">
 	<i>JSONMember
-	<br>JSONMemberList </i><code><b>,</b></code><i><b>
+	<br>JSONMemberList </i><code><b>,</b></code> <i><b>
 	</b>JSONMember </i>
 	</p>
 	<p class="keep">
 	<i>JSONArray </i><b>:</b><i class="see">See <a href="#x15.12.1.2">15.12.1.2</a></i></p>
 	<p class="def1">
 	<code><b>[
-	]</b></code><i><br></i><code><b>[</b></code><i>JSONElementList</i><code><b>
+	]</b></code> <i><br></i><code><b>[</b></code> <i>JSONElementList</i><code><b>
 	]</b></code></p>
 	<p class="keep">
 	<i>JSONElementList </i><b>:</b><i class="see">See <a href="#x15.12.1.2">15.12.1.2</a></i></p>
 	<p class="def1">
 	<i>JSONValue<br>JSONElementList</i><code><b>
-	,</b></code><i> JSONValue</i></p>
+	,</b></code> <i> JSONValue</i></p>
 	<h2 id="B">Annex B (informative) Compatibility <a href="#B">#</a> <a href="#B-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h2>
 	<h3 id="B.1">B.1 Additional Syntax <a href="#B.1">#</a> <a href="#B.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
 	<p>
@@ -34720,18 +34719,18 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="keep">
 	<i>OctalIntegerLiteral </i><b>::</b></p>
 	<p class="def1-btm">
-	<code><b>0</b></code><i>OctalDigit<br>OctalIntegerLiteral OctalDigit</i></p>
+	<code><b>0</b></code> <i>OctalDigit<br>OctalIntegerLiteral OctalDigit</i></p>
 	<p class="keep">
-	<i>OctalDigit </i><b>::</b><i></i><b>one
+	<i>OctalDigit </i><b>::</b> <b>one
 	of</b></p>
 	<p class="def1-btm">
-	<code><b>0</b></code><i><b>
-	 </b></i><code><b>1</b></code><i><b>
-	 </b></i><code><b>2</b></code><i><b>
+	<code><b>0</b></code> <i><b>
+	 </b></i><code><b>1</b></code> <i><b>
+	 </b></i><code><b>2</b></code> <i><b>
 	 </b></i><code><b>3
-	</b></code><i><b> </b></i><code><b>4
-	</b></code><i><b> </b></i><code><b>5</b></code><i><b>
-	 </b></i><code><b>6</b></code><i><b>
+	</b></code> <i><b> </b></i><code><b>4
+	</b></code> <i><b> </b></i><code><b>5</b></code> <i><b>
+	 </b></i><code><b>6</b></code> <i><b>
 	 </b></i><code><b>7</b></code></p>
 	<p>
 	Semantics</p>
@@ -34820,14 +34819,14 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="keep">
 	<i>OctalEscapeSequence </i><b>::</b></p>
 	<p class="def1-btm">
-	<i>OctalDigit </i>[lookahead
-	<span class="symbol">∉</span>
+	<i>OctalDigit </i>[<a href="#lookahead-not-in">lookahead
+	<span class="symbol">∉</span></a>
 	<i>DecimalDigit</i>]<i><br>ZeroToThree
-	OctalDigit </i>[lookahead
-	<span class="symbol">∉</span><i>DecimalDigit</i>]<i><br>FourToSeven
+	OctalDigit </i>[<a href="#lookahead-not-in">lookahead
+	<span class="symbol">∉</span></a><i>DecimalDigit</i>]<i><br>FourToSeven
 	OctalDigit<br>ZeroToThree OctalDigit OctalDigit</i></p>
 	<p class="keep">
-	<i>ZeroToThree </i><b>::</b><i></i><b>one
+	<i>ZeroToThree </i><b>::</b> <b>one
 	of</b></p>
 	<p class="def1-btm">
 	<code><b>0
@@ -34852,8 +34851,8 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 			The
 			CV of <i>OctalEscapeSequence</i>
 			<b>::</b>
-			<i>OctalDigit</i> [lookahead
-			<span class="symbol">∉</span>
+			<i>OctalDigit</i> [<a href="#lookahead-not-in">lookahead
+			<span class="symbol">∉</span></a>
 			<i>DecimalDigit</i>]
 			is the character whose code unit value is the MV of the
 			<i>OctalDigit</i>.</p>
@@ -34863,8 +34862,8 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 			CV of <i>OctalEscapeSequence</i>
 			<b>::</b>
 			<i>ZeroToThree</i>
-			<i>OctalDigit</i> [lookahead
-			<span class="symbol">∉</span>
+			<i>OctalDigit</i> [<a href="#lookahead-not-in">lookahead
+			<span class="symbol">∉</span></a>
 			<i>DecimalDigit</i>]
 			is the character whose code unit value is (8 times the MV of the
 			<i>ZeroToThree</i>) plus the
@@ -34956,10 +34955,10 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p>
 	For
 	those characters being replaced whose code unit value is <code><b>0xFF
-	</b></code>or less, a two-digit escape sequence of the form <code><b>%</b></code><i>xx</i>
+	</b></code>or less, a two-digit escape sequence of the form <code><b>%</b></code> <i>xx</i>
 	is used. For those characters being replaced whose code unit value
 	is greater than <code><b>0xFF</b></code>,
-	a four-digit escape sequence of the form <code><b>%u</b></code><i>xxxx</i>
+	a four-digit escape sequence of the form <code><b>%u</b></code> <i>xxxx</i>
 	is used</p>
 	<p>
 	When
@@ -35004,7 +35003,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>S</i> be a String containing six characters <code><b>“%u</b></code><i>wxyz</i><code><b>”</b></code>
+		<i>S</i> be a String containing six characters <code><b>“%u</b></code> <i>wxyz</i><code><b>”</b></code>
 		where <i>wxyz</i> are four hexadecimal digits encoding the value of
 		Result(6).</p>
 		</li>
@@ -35014,7 +35013,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>S</i> be a String containing three characters <code><b>“%</b></code><i>xy</i><code><b>”</b></code>
+		<i>S</i> be a String containing three characters <code><b>“%</b></code> <i>xy</i><code><b>”</b></code>
 		where <i>xy</i> are two hexadecimal digits encoding the value of
 		Result(6).</p>
 		</li>
