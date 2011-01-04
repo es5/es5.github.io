@@ -4924,7 +4924,7 @@ and
 <a href="#propertiy-identifier">Property Identifier</a>,
 <a href="#x10.2">Lexical Environment</a>,
 and
-<a href="#x10.2">Environment Record</a>.
+<a href="#x10.2.1">Environment Record</a>.
 	Specification type values are specification artefacts that do not
 	necessarily correspond to any specific entity within an ECMAScript
 	implementation. Specification type values may be used to describe
@@ -6505,8 +6505,7 @@ and
 	<h4 id="x8.10.1">8.10.1 IsAccessorDescriptor ( Desc ) <a href="#x8.10.1">#</a> <a href="#x8.10.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	When
-	the abstract operation IsAccessorDescriptor is called with property
-	descriptor <i>Desc</i>,
+	the abstract operation IsAccessorDescriptor is called with <a href="#x8.10">property descriptor</a> <i>Desc</i>,
 	the following steps are taken:</p>
 	<ol>
 		<li><p>
@@ -6528,8 +6527,7 @@ and
 	<h4 id="x8.10.2">8.10.2 IsDataDescriptor ( Desc ) <a href="#x8.10.2">#</a> <a href="#x8.10.2-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	When
-	the abstract operation IsDataDescriptor is called with property
-	descriptor <i>Desc</i>,
+	the abstract operation IsDataDescriptor is called with <a href="#x8.10">property descriptor</a> <i>Desc</i>,
 	the following steps are taken:</p>
 	<ol>
 		<li><p>
@@ -6551,8 +6549,7 @@ and
 	<h4 id="x8.10.3">8.10.3 IsGenericDescriptor ( Desc ) <a href="#x8.10.3">#</a> <a href="#x8.10.3-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	When
-	the abstract operation IsGenericDescriptor is called with property
-	descriptor <i>Desc</i>,
+	the abstract operation IsGenericDescriptor is called with <a href="#x8.10">property descriptor</a> <i>Desc</i>,
 	the following steps are taken:</p>
 	<ol>
 		<li><p>
@@ -6576,7 +6573,7 @@ and
 	<p>
 	When
 	the abstract operation FromPropertyDescriptor is called with
-	property descriptor <i>Desc</i>,
+ <a href="#x8.10">property descriptor</a> <i>Desc</i>,
 	the following steps are taken:</p>
 	<p>
 	The
@@ -6608,7 +6605,7 @@ and
 			<span class="tr">Call
 			the [[DefineOwnProperty]] internal method of <i>obj</i>
 			with arguments "<code><b>value</b></code>",
-			Property Descriptor {[[Value]]: <i>Desc</i>.[[Value]],
+		 <a href="#x8.10">Property Descriptor</a> {[[Value]]: <i>Desc</i>.[[Value]],
 			[[Writable]]: <b>true</b>,
 			[[Enumerable]]: <b>true</b>,
 			[[Configurable]]: <b>true</b>},
@@ -6620,7 +6617,7 @@ and
 			<span class="tr">Call
 			the [[DefineOwnProperty]] internal method of <i>obj</i>
 			with arguments "<code><b>writable</b></code>",
-			Property Descriptor {[[Value]]: <i>Desc</i>.[[Writable]],
+		 <a href="#x8.10">Property Descriptor</a> {[[Value]]: <i>Desc</i>.[[Writable]],
 			[[Writable]]: <b>true</b>,
 			[[Enumerable]]: <b>true</b>,
 			[[Configurable]]: <b>true</b>},
@@ -6639,7 +6636,7 @@ and
 			<span class="tr">Call
 			the [[DefineOwnProperty]] internal method of <i>obj</i>
 			with arguments "<code><b>get"</b></code>,
-			Property Descriptor {[[Value]]: <i>Desc</i>.[[Get]],
+		 <a href="#x8.10">Property Descriptor</a> {[[Value]]: <i>Desc</i>.[[Get]],
 			[[Writable]]: <b>true</b>,
 			[[Enumerable]]: <b>true</b>,
 			[[Configurable]]: <b>true</b>},
@@ -6649,7 +6646,7 @@ and
 			<span class="tr">Call
 			the [[DefineOwnProperty]] internal method of <i>obj</i>
 			with arguments "<code><b>set</b></code>",
-			Property Descriptor {[[Value]]: <i>Desc</i>.[[Set]],
+		 <a href="#x8.10">Property Descriptor</a> {[[Value]]: <i>Desc</i>.[[Set]],
 			[[Writable]]: <b>true</b>,
 			[[Enumerable]]: <b>true</b>,
 			[[Configurable]]: <b>true</b>},
@@ -6662,7 +6659,7 @@ and
 		<span class="tr">Call
 		the [[DefineOwnProperty]] internal method of <i>obj</i>
 		with arguments "<code><b>enumerable</b></code>",
-		Property Descriptor {[[Value]]: <i>Desc</i>.[[Enumerable]],
+	 <a href="#x8.10">Property Descriptor</a> {[[Value]]: <i>Desc</i>.[[Enumerable]],
 		[[Writable]]: <b>true</b>,
 		[[Enumerable]]: <b>true</b>,
 		[[Configurable]]: <b>true</b>},
@@ -6674,7 +6671,7 @@ and
 		<span class="tr">Call
 		the [[DefineOwnProperty]] internal method of <i>obj</i>
 		with arguments "<code><b>configurable</b></code>",
-		Property Descriptor {[[Value]]: <i>Desc</i>.[[Configurable]],
+	 <a href="#x8.10">Property Descriptor</a> {[[Value]]: <i>Desc</i>.[[Configurable]],
 		[[Writable]]: <b>true</b>,
 		[[Enumerable]]: <b>true</b>,
 		[[Configurable]]: <b>true</b>},
@@ -6825,7 +6822,7 @@ and
 	<h3 id="x8.11">8.11 The Lexical Environment and Environment Record Specification Types <a href="#x8.11">#</a> <a href="#x8.11-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
 	<p>
 	The
-	Lexical Environment and Environment Record types are used to explain
+ <a href="#x10.2">Lexical Environment</a> and <a href="#x10.2.1">Environment Record</a> types are used to explain
 	the behaviour of name resolution in nested functions and blocks.
 	These types and the operations upon them are defined in <a href="#x10">Clause 10</a>.</p>
 	<h3 id="x8.12">8.12 Algorithms for Object Internal Methods <a href="#x8.12">#</a> <a href="#x8.12-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
@@ -7086,7 +7083,7 @@ and
 		<ol>
 			<li><p>
 			Let
-			<i>valueDesc</i> be the Property Descriptor {[[Value]]: <i>V</i>}.</p>
+			<i>valueDesc</i> be the <a href="#x8.10">Property Descriptor</a> {[[Value]]: <i>V</i>}.</p>
 			</li>
 			<li><p>
 			Call
@@ -7125,7 +7122,7 @@ and
 		<ol>
 			<li><p>
 			Let
-			<i>newDesc</i> be the Property Descriptor<br>{[[Value]]: <i>V</i>,
+			<i>newDesc</i> be the <a href="#x8.10">Property Descriptor</a><br>{[[Value]]: <i>V</i>,
 			[[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b>,
 			[[Configurable]]: <b>true</b>}.</p>
 			</li>
@@ -7314,7 +7311,7 @@ and
 	the following algorithm, the term <dfn id="reject-DefineOwnProperty">“Reject”</dfn> means “If <i>Throw</i>
 	is <b>true</b>, then throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception, otherwise
 	return <b>false</b>”. The algorithm contains steps that test
-	various fields of the Property Descriptor <i>Desc</i>
+	various fields of the <a href="#x8.10">Property Descriptor</a> <i>Desc</i>
 	for specific values. The fields that are tested in this manner need
 	not actually exist in <i>Desc</i>.
 	 If a field is absent then its value is considered to be <b>false</b>.</p>
@@ -7322,7 +7319,7 @@ and
 	When
 	the [[DefineOwnProperty]] internal method of <i>O</i>
 	is called with property name <i>P</i>,
-	property descriptor <i>Desc</i>,
+ <a href="#x8.10">property descriptor</a> <i>Desc</i>,
 	and Boolean flag <i>Throw</i>,
 	the following steps are taken:</p>
 	<ol>
@@ -8659,9 +8656,13 @@ and
 	Correctly Rounded Binary-Decimal and Decimal-Binary Conversions.
 	Numerical Analysis, Manuscript 90-10. AT&amp;T Bell Laboratories
 	(Murray Hill, New Jersey). November 30, 1990. Available
-	as<br>http://cm.bell-labs.com/cm/cs/doc/90/4-10.ps.g<b>z</b>.
+	as
+<br><a href="http://cm.bell-labs.com/cm/cs/doc/90/4-10.ps.gz">http://cm.bell-labs.com/cm/cs/doc/90/4-10.ps.gz</a>.
 	Associated code available
-	as<br>http://cm.bell-labs.com/netlib/fp/dtoa.c.gz&nbsp;and&nbsp;as<br>http://cm.bell-labs.com/netlib/fp/g_fmt.c.gz
+	as
+<br><a href="http://cm.bell-labs.com/netlib/fp/dtoa.c.gz">http://cm.bell-labs.com/netlib/fp/dtoa.c.gz</a>
+ and as
+<br><a href="http://cm.bell-labs.com/netlib/fp/g_fmt.c.gz">http://cm.bell-labs.com/netlib/fp/g_fmt.c.gz</a>
 	and may also be found at the various <code><b>netlib</b></code>
 	mirror sites.</p>
 	<h3 id="x9.9">9.9 ToObject <a href="#x9.9">#</a> <a href="#x9.9-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
@@ -8998,26 +8999,18 @@ and
 	There
 	are three types of ECMAScript executable code:</p>
 	<ul>
-		<li><p>
-		<i>Global
-		code</i> is source text that
+		<li><p><dfn id="global-code"><i>Global code</i></dfn> is source text that
 		is treated as an ECMAScript <i>Program</i>.
 		The global code of a particular <i>Program</i>
 		does not include any source text that is parsed as part of a
 		<i>FunctionBody</i>.</p>
 		</li>
-		<li><p>
-		<i>Eval
-		code</i> is the source text
-		supplied to the built-in <code><b>eval</b></code>
-		function. More precisely, if the parameter to the built-in <code><b>eval</b></code>
-		function is a String, it is treated as an ECMAScript <i>Program</i>.
+		<li><p><dfn id="eval-code"><i>Eval code</i></dfn> is the source text
+		supplied to the built-in <code><b><a href="#x15.1.2.1">eval</a></b></code> function. More precisely, if the parameter to the built-in <code><b><a href="#x15.1.2.1">eval</a></b></code> function is a String, it is treated as an ECMAScript <i>Program</i>.
 		The eval code for a particular invocation of <code><b>eval</b></code>
-		is the global code portion of that <i>Program</i>.</p>
+		is the <a href="#global-code">global code</a> portion of that <i>Program</i>.</p>
 		</li>
-		<li><p>
-		<i>Function
-		code</i> is source text that
+		<li><p><dfn id="function-code"><i>Function code</i></dfn> is source text that
 		is parsed as part of a <i>FunctionBody</i>.
 		The <i>function code</i>
 		of a particular <i>FunctionBody</i>
@@ -9049,21 +9042,18 @@ and
 	interpreted as <a href="#x10.1.1" class="term-ref">strict mode code</a> in the following situations:</p>
 	<ul>
 		<li><p>
-		Global
-		code is strict global code if it begins with a Directive Prologue
+	 <a href="#global-code">Global code</a> is strict global code if it begins with a Directive Prologue
 		that contains a Use Strict Directive (see <a href="#x14.1">14.1</a>).</p>
 		</li>
 		<li><p>
-		Eval
-		code is strict eval code if it begins with a Directive Prologue
+	 <a href="#eval-code">Eval code</a> is strict eval code if it begins with a Directive Prologue
 		that contains a Use Strict Directive or if the call to eval is a
-		direct call (see <a href="#x15.1.2.1.1">15.1.2.1.1</a>) to the eval function that is contained
+		direct call (see <a href="#x15.1.2.1.1">15.1.2.1.1</a>) to the <a href="#x15.1.2.1">eval function</a> that is contained
 		in <a href="#x10.1.1" class="term-ref">strict mode code</a>. 
 		</p>
 		</li>
 		<li><p>
-		Function
-		code that is part of a <i>FunctionDeclaration</i>,
+	 <a href="#function-code">Function code</a> that is part of a <i>FunctionDeclaration</i>,
 		<i>FunctionExpression</i>,
 		or accessor <i>PropertyAssignment</i>
 		is strict function code if its <i>FunctionDeclaration</i>,
@@ -9073,8 +9063,7 @@ and
 		with a Directive Prologue that contains a Use Strict Directive.</p>
 		</li>
 		<li><p>
-		Function
-		code that is supplied as the last argument to the built-in Function
+	 <a href="#function-code">Function code</a> that is supplied as the last argument to the built-in Function
 		constructor is strict function code if the last argument is a
 		String that when processed as a <i>FunctionBody</i>
 		begins with a Directive Prologue that contains a Use Strict
@@ -9087,7 +9076,7 @@ and
 	the association of <i>Identifiers</i>
 	to specific variables and functions based upon the lexical nesting
 	structure of ECMAScript code. A Lexical Environment consists of an
-	Environment Record and a possibly null reference to an <i>outer</i>
+	<a href="#x10.2.1">Environment Record</a> and a possibly null reference to an <i>outer</i>
 	Lexical Environment. Usually a Lexical Environment is associated
 	with some specific syntactic structure of ECMAScript code such as a
 	<i>FunctionDeclaration</i>,
@@ -9098,11 +9087,11 @@ and
 	evaluated.</p>
 	<p>
 	An
-	<i>Environment Record</i> records the identifier bindings that are
+	<a href="#x10.2.1"><i>Environment Record</i></a> records the identifier bindings that are
 	created within the scope of its associated Lexical Environment.</p>
 	<p>
 	The
-	outer environment reference is used to model the logical nesting of
+	<dfn id="outer-environment-reference">outer environment reference</dfn> is used to model the logical nesting of
 	Lexical Environment values. The outer reference of a (inner) Lexical
 	Environment is a reference to the Lexical Environment that logically
 	surrounds the inner Lexical Environment. An outer Lexical
@@ -9125,13 +9114,13 @@ and
 	There
 	are two kinds of Environment Record values used in this
 	specification: <i>declarative environment records</i> and <i>object
-	environment records</i>.  Declarative environment records are used
+	environment records</i>.  <dfn id="declarative-environment-record">Declarative environment records</dfn> are used
 	to define the effect of ECMAScript language syntactic elements such
 	as <i>FunctionDeclarations</i>,
 	<i>VariableDeclarations</i>,
 	and <i>Catch</i> clauses
 	that directly associate <b>identifier</b> bindings with ECMAScript
-	language values. Object environment records are used to define the
+	language values. <dfn id="object-environment-record">Object environment records</dfn> are used to define the
 	effect of ECMAScript elements such as <i>Program</i>
 	and <i>WithStatement</i>
 	that associate <b>identifier</b> bindings with the properties of
@@ -9141,7 +9130,8 @@ and
 	specification purposes Environment Record values can be thought of
 	as existing in a simple object-oriented hierarchy where Environment
 	Record is an abstract class with two concrete subclasses,
-	declarative environment record and object environment record. The
+	declarative environment record
+ and object environment record. The
 	abstract class includes the abstract specification methods defined
 	in Table 17. These abstract methods have distinct concrete
 	algorithms for each of the concrete subclasses. 
@@ -9270,7 +9260,7 @@ and
 	In
 	addition to the mutable bindings supported by all Environment
 	Records, declarative environment records also provide for immutable
-	bindings.  An immutable binding is one where the association between
+	bindings.  An <dfn id="immutable-binding">immutable binding</dfn> is one where the association between
 	an identifier and a value may not be modified once it has been
 	established. Creation and initialization of immutable binding are
 	distinct steps so it is possible for such bindings to exist in
@@ -9295,24 +9285,23 @@ and
 			<tr valign="TOP">
 				<td width="219">
 					<p>
-					CreateImmutableBinding(N)</p>
+					<a href="#x10.2.1.1.7">CreateImmutableBinding</a>(N)</p>
 				</td>
 				<td width="445">
 					<p>
 					Create
-					a new but uninitialized immutable binding in an environment
+					a new but uninitialized <a href="#immutable-binding">immutable binding</a> in an environment
 					record. The String value <i>N</i>
 					is the text of the bound name.</p>
 				</td>
 			</tr>
 			<tr valign="TOP">
 				<td width="219">
-					<p>InitializeImmutableBinding(N,V)</p>
+					<p><a href="#x10.2.1.1.8">InitializeImmutableBinding</a>(N,V)</p>
 				</td>
 				<td width="445">
 					<p>Set
-					the value of an already existing but uninitialized immutable
-					binding in an environment record. The String value <i>N</i>
+					the value of an already existing but uninitialized <a href="#immutable-binding">immutable binding</a> in an environment record. The String value <i>N</i>
 					is the text of the bound name. <i>V</i>
 					is the value for the binding and is a value of any ECMAScript
 					<a href="#language-type">language type</a>. 
@@ -9385,7 +9374,7 @@ and
 	argument <i>N</i> to the
 	value of argument <i>V</i>.
 	A binding for <i>N</i>
-	must already exist. If the binding is an immutable binding, a
+	must already exist. If the binding is an <a href="#immutable-binding">immutable binding</a>, a
 	<b>TypeError</b> is
 	thrown
 	if <i>S</i> is <b>true</b>. 
@@ -9408,7 +9397,7 @@ and
 		</li>
 		<li><p>
 		Else
-		this must be an attempt to change the value of an immutable binding
+		this must be an attempt to change the value of an <a href="#immutable-binding">immutable binding</a>
 		so
 		if <i>S</i> is <b>true</b>
 		throw a
@@ -9423,7 +9412,7 @@ and
 	environment records simply returns the value of its bound identifier
 	whose name is the value of the argument <i>N</i>.
 	The binding must already exist. If <i>S</i>
-	is <b>true</b> and the binding is an uninitialized immutable binding
+	is <b>true</b> and the binding is an uninitialized <a href="#immutable-binding">immutable binding</a>
 	throw a <b><a href="#x15.11.6.3" class="term-ref">ReferenceError</a></b> exception.</p>
 	<ol>
 		<li><p>
@@ -9438,7 +9427,7 @@ and
 		<li><p>
 		If
 		the binding for <i>N</i> in <i>envRec</i> is an uninitialized
-		immutable binding, then</p>
+		<a href="#immutable-binding">immutable binding</a>, then</p>
 		<ol>
 			<li><p>
 			If
@@ -9494,7 +9483,7 @@ and
 	<p>
 	The
 	concrete Environment Record method CreateImmutableBinding for
-	declarative environment records creates a new immutable binding for
+	declarative environment records creates a new <a href="#immutable-binding">immutable binding</a> for
 	the name <i>N</i> that is
 	initialized to the value <b>undefined</b>.  A binding must not
 	already exist in this environment record for <i>N</i>.</p>
@@ -9510,7 +9499,7 @@ and
 		</li>
 		<li><p>
 		Create
-		an immutable binding in <i>envRec</i> for <i>N</i> and record that
+		an <a href="#immutable-binding">immutable binding</a> in <i>envRec</i> for <i>N</i> and record that
 		it is uninitialized.</p>
 	</li></ol>
 	<h6 id="x10.2.1.1.8">10.2.1.1.8 InitializeImmutableBinding (N,V) <a href="#x10.2.1.1.8">#</a> <a href="#x10.2.1.1.8-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h6>
@@ -9521,7 +9510,7 @@ and
 	the current binding of the identifier whose name is the value of the
 	argument <i>N</i> to the
 	value of argument <i>V</i>.
-	An uninitialized immutable binding for <i>N</i>
+	An uninitialized <a href="#immutable-binding">immutable binding</a> for <i>N</i>
 	must already exist. 
 	</p>
 	<ol>
@@ -9532,7 +9521,7 @@ and
 		</li>
 		<li><p>
 		Assert:
-		<i>envRec</i> must have an uninitialized immutable binding for N.</p>
+		<i>envRec</i> must have an uninitialized <a href="#immutable-binding">immutable binding</a> for N.</p>
 		</li>
 		<li><p>
 		Set
@@ -9540,7 +9529,7 @@ and
 		</li>
 		<li><p>
 		Record
-		that the immutable binding for <i>N</i> in <i>envRec</i> has been
+		that the <a href="#immutable-binding">immutable binding</a> for <i>N</i> in <i>envRec</i> has been
 		initialized.</p>
 	</li></ol>
 	<h5 id="x10.2.1.2">10.2.1.2 Object Environment Records <a href="#x10.2.1.2">#</a> <a href="#x10.2.1.2-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
@@ -9578,7 +9567,7 @@ and
 	<p>
 	The
 	concrete Environment Record method HasBinding for object environment
-	records determines if its associated binding object has a property
+	records determines if its associated <a href="#x10.2.1.2">binding object</a> has a property
 	whose name is the value of the argument <i>N</i>:</p>
 	<ol>
 		<li><p>
@@ -9588,7 +9577,7 @@ and
 		</li>
 		<li><p>
 		Let
-		<i>bindings </i>be the binding object for <i>envRec</i>.</p>
+		<i>bindings </i>be the <a href="#x10.2.1.2">binding object</a> for <i>envRec</i>.</p>
 		</li>
 		<li><p>
 		Return
@@ -9600,9 +9589,9 @@ and
 	The
 	concrete Environment Record method CreateMutableBinding for object
 	environment records creates in an environment record’s associated
-	binding object a property whose name is the String value and
+	<a href="#x10.2.1.2">binding object</a> a property whose name is the String value and
 	initializes it to the value <b>undefined</b>. A property named <i>N</i>
-	must not already exist in the binding object. If Boolean argument <i>D</i>
+	must not already exist in the <a href="#x10.2.1.2">binding object</a>. If Boolean argument <i>D</i>
 	is provided and has the value <b>true</b> the new property’s
 	[[Configurable]] attribute is set to <b>true</b>, otherwise it is
 	set to <b>false</b>.</p>
@@ -9614,7 +9603,7 @@ and
 		</li>
 		<li><p>
 		Let
-		<i>bindings</i> be the binding object for <i>envRec</i>.</p>
+		<i>bindings</i> be the <a href="#x10.2.1.2">binding object</a> for <i>envRec</i>.</p>
 		</li>
 		<li><p>
 		Assert:
@@ -9630,7 +9619,7 @@ and
 		<li><p>
 		Call
 		the [[DefineOwnProperty]] internal method of <i>bindings</i>,
-		passing <i>N</i>, Property Descriptor {[[Value]]:<b>undefined</b>,
+		passing <i>N</i>, <a href="#x8.10">Property Descriptor</a> {[[Value]]:<b>undefined</b>,
 		[[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b> ,
 		[[Configurable]]: <i>configValue</i>}, and
 		<b>true</b>
@@ -9643,7 +9632,7 @@ and
 	The
 	concrete Environment Record method SetMutableBinding for object
 	environment records attempts to set the value of the environment
-	record’s associated binding object’s property whose name is the
+	record’s associated <a href="#x10.2.1.2">binding object</a>’s property whose name is the
 	value of the argument <i>N</i>
 	to the value of argument <i>V</i>.
 	A property named <i>N</i>
@@ -9658,7 +9647,7 @@ and
 		</li>
 		<li><p>
 		Let
-		<i>bindings</i> be the binding object for <i>envRec</i>.</p>
+		<i>bindings</i> be the <a href="#x10.2.1.2">binding object</a> for <i>envRec</i>.</p>
 		</li>
 		<li><p>
 		Call
@@ -9669,8 +9658,7 @@ and
 	<p>
 	The
 	concrete Environment Record method GetBindingValue for object
-	environment records returns the value of its associated binding
-	object’s property whose name is the String value of the argument
+	environment records returns the value of its associated <a href="#x10.2.1.2">binding object</a>’s property whose name is the String value of the argument
 	identifier <i>N</i>. The
 	property should already exist but if it does not the result depends
 	upon the value of the <i>S</i>
@@ -9683,7 +9671,7 @@ and
 		</li>
 		<li><p>
 		Let
-		<i>bindings</i> be the binding object for <i>envRec</i>.</p>
+		<i>bindings</i> be the <a href="#x10.2.1.2">binding object</a> for <i>envRec</i>.</p>
 		</li>
 		<li><p>
 		Let
@@ -9720,7 +9708,7 @@ and
 		</li>
 		<li><p>
 		Let
-		<i>bindings </i>be the binding object for <i>envRec</i>.</p>
+		<i>bindings </i>be the <a href="#x10.2.1.2">binding object</a> for <i>envRec</i>.</p>
 		</li>
 		<li><p>
 		Return
@@ -9742,7 +9730,7 @@ and
 		<li><p>
 		If
 		the <i>provideThis</i> flag of <i>envRec</i> is <b>true</b>, return
-		the binding object for <i>envRec</i>.</p>
+		the <a href="#x10.2.1.2">binding object</a> for <i>envRec</i>.</p>
 		</li>
 		<li><p>
 		Otherwise,
@@ -9799,8 +9787,7 @@ and
 		<ol>
 			<li><p>
 			Let
-			<i>outer </i>be the value of <i>lex’s</i> outer environment
-			reference.</p>
+			<i>outer </i>be the value of <i>lex’s</i> <a href="#outer-environment-reference">outer environment reference</a>.</p>
 			</li>
 			<li><p>
 			Return
@@ -9820,7 +9807,7 @@ and
 		</li>
 		<li><p>
 		Let
-		<i>envRec</i> be a new declarative environment record containing no
+		<i>envRec</i> be a new <a href="#declarative-environment-record">declarative environment record</a> containing no
 		bindings.</p>
 		</li>
 		<li><p>
@@ -9848,8 +9835,8 @@ and
 		</li>
 		<li><p>
 		Let
-		<i>envRec</i> be a new object environment record containing <i>O</i>
-		as the binding object.</p>
+		<i>envRec</i> be a new <a href="#object-environment-record">object environment record</a> containing <i>O</i>
+		as the <a href="#x10.2.1.2">binding object</a>.</p>
 		</li>
 		<li><p>
 		Set
@@ -9868,9 +9855,9 @@ and
 	The
 	<i>global environment</i> is a unique <a href="#x10.2">Lexical Environment</a> which is
 	created before any ECMAScript code is executed. The global
-	environment’s Environment Record is an object environment record
-	whose binding object is the <a href="#x15.1" class="term-ref">global object</a> (<a href="#x15.1">15.1</a>). The global
-	environment’s outer environment reference is <b>null</b>.</p>
+	environment’s <a href="#x10.2.1">Environment Record</a> is an <a href="#object-environment-record">object environment record</a>
+	whose <a href="#x10.2.1.2">binding object</a> is the <a href="#x15.1" class="term-ref">global object</a> (<a href="#x15.1">15.1</a>). The global
+	environment’s <a href="#outer-environment-reference">outer environment reference</a> is <b>null</b>.</p>
 	<p>
 	As
 	ECMAScript code is executed, additional properties may be added to
@@ -9996,7 +9983,7 @@ and
 		</li>
 		<li><p>
 		Return
-		the result of calling GetIdentifierReference function passing <i>env</i>,
+		the result of calling <a href="#x10.2.2.1">GetIdentifierReference</a> function passing <i>env</i>,
 		<i>Identifier</i>, and <i>strict</i> as arguments.</p>
 	</li></ol>
 	<p>
@@ -10007,7 +9994,7 @@ and
 	<h3 id="x10.4">10.4 Establishing an Execution Context <a href="#x10.4">#</a> <a href="#x10.4-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
 	<p>
 	Evaluation
-	of global code or code using the eval function (<a href="#x15.1.2.1">15.1.2.1</a>)
+	of <a href="#global-code">global code</a> or code using the eval function (<a href="#x15.1.2.1">15.1.2.1</a>)
 	establishes and enters a new execution context. Every invocation of
 	an ECMAScript code function (<a href="#x13.2.1">13.2.1</a>) also establishes and enters a
 	new execution context, even if a function is calling itself
@@ -10024,17 +10011,17 @@ and
 	<p>
 	The
 	following steps are performed when control enters the execution
-	context for global code:</p>
+	context for <a href="#global-code">global code</a>:</p>
 	<ol>
 		<li><p>
 		Initialize
-		the execution context using the global code as described in
+		the execution context using the <a href="#global-code">global code</a> as described in
 		<a href="#x10.4.1.1">10.4.1.1</a>.</p>
 		</li>
 		<li><p>
 		Perform
 		Declaration Binding Instantiation as described in <a href="#x10.5">10.5</a> using the
-		global code.</p>
+	 <a href="#global-code">global code</a>.</p>
 	</li></ol>
 	<h5 id="x10.4.1.1">10.4.1.1 Initial Global Execution Context <a href="#x10.4.1.1">#</a> <a href="#x10.4.1.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
@@ -10044,11 +10031,11 @@ and
 	<ol>
 		<li><p>
 		Set
-		the VariableEnvironment to the Global Environment.</p>
+		the VariableEnvironment to the <a href="#x10.2.3">Global Environment</a>.</p>
 		</li>
 		<li><p>
 		Set
-		the LexicalEnvironment to the Global Environment.</p>
+		the LexicalEnvironment to the <a href="#x10.2.3">Global Environment</a>.</p>
 		</li>
 		<li><p>
 		Set
@@ -10058,17 +10045,17 @@ and
 	<p>
 	The
 	following steps are performed when control enters the execution
-	context for eval code:</p>
+	context for <a href="#eval-code">eval code</a>:</p>
 	<ol>
 		<li><p>
 		If
-		there is no calling context or if the eval code is not being
+		there is no calling context or if the <a href="#eval-code">eval code</a> is not being
 		evaluated by a direct call (<a href="#x15.1.2.1.1">15.1.2.1.1</a>) to the eval function then,</p>
 		<ol>
 			<li><p>
 			Initialize
 			the execution context as if it was a global execution context
-			using the eval code as <i>C</i> as described in <a href="#x10.4.1.1">10.4.1.1</a>.</p>
+			using the <a href="#eval-code">eval code</a> as <i>C</i> as described in <a href="#x10.4.1.1">10.4.1.1</a>.</p>
 		</li></ol>
 		</li>
 		<li><p>
@@ -10092,12 +10079,12 @@ and
 		</li>
 		<li><p>
 		If
-		the eval code is strict code, then</p>
+		the <a href="#eval-code">eval code</a> is <a href="#x10.1.1">strict code</a>, then</p>
 		<ol>
 			<li><p>
 			Let
 			<i>strictVarEnv</i> be the result of calling
-			NewDeclarativeEnvironment  passing the LexicalEnvironment as the
+			<a href="#x10.2.2.2">NewDeclarativeEnvironment</a>  passing the LexicalEnvironment as the
 			argument.</p>
 			</li>
 			<li><p>
@@ -10112,27 +10099,26 @@ and
 		<li><p>
 		Perform
 		Declaration Binding Instantiation as described in <a href="#x10.5">10.5</a> using the
-		eval code.</p>
+	 <a href="#eval-code">eval code</a>.</p>
 	</li></ol>
 	<h5 id="x10.4.2.1">10.4.2.1 Strict Mode Restrictions <a href="#x10.4.2.1">#</a> <a href="#x10.4.2.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	The
-	eval code cannot instantiate variable or function bindings in the
+ <a href="#eval-code">eval code</a> cannot <a href="#x10.5">instantiate variable or function bindings</a> in the
 	variable environment of the calling context that invoked the eval if
-	either the code of the calling context or the eval code is strict
-	code. Instead such bindings are instantiated in a new
-	VariableEnvironment that is only accessible to the eval code.</p>
+	either the code of the calling context or the <a href="#eval-code">eval code</a> is <a href="#x10.1.1">strict code</a>. Instead such bindings are instantiated in a new
+	VariableEnvironment that is only accessible to the <a href="#eval-code">eval code</a>.</p>
 	<h4 id="x10.4.3">10.4.3 Entering Function Code <a href="#x10.4.3">#</a> <a href="#x10.4.3-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	The
 	following steps are performed when control enters the execution
-	context for function code contained in function object <i>F</i>,
+	context for <a href="#function-code">function code</a> contained in function object <i>F</i>,
 	a caller provided <i>thisArg</i>,
 	and a caller provided <i>argumentsList</i>:</p>
 	<ol>
 		<li><p>
 		If
-		the function code is strict code, set the ThisBinding to <i>thisArg</i>.</p>
+		the <a href="#function-code">function code</a> is <a href="#x10.1.1">strict code</a>, set the ThisBinding to <i>thisArg</i>.</p>
 		</li>
 		<li><p>
 		Else
@@ -10150,7 +10136,7 @@ and
 		</li>
 		<li><p>
 		Let
-		<i>localEnv</i> be the result of calling NewDeclarativeEnvironment 
+		<i>localEnv</i> be the result of calling <a href="#x10.2.2.2">NewDeclarativeEnvironment</a> 
 		passing the value of the [[Scope]] internal property of <i>F</i> as
 		the argument.</p>
 		</li>
@@ -10169,7 +10155,7 @@ and
 		</li>
 		<li><p>
 		Perform
-		Declaration Binding Instantiation using the function code <i>code</i>
+		Declaration Binding Instantiation using the <a href="#function-code">function code</a> <i>code</i>
 		and <i>argumentList</i> as described in <a href="#x10.5">10.5</a>.</p>
 	</li></ol>
 	<h3 id="x10.5">10.5 Declaration Binding Instantiation <a href="#x10.5">#</a> <a href="#x10.5-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
@@ -10178,15 +10164,15 @@ and
 	execution context has an associated VariableEnvironment. Variables
 	and functions declared in ECMAScript code evaluated in an execution
 	context are added as bindings in that VariableEnvironment’s
-	Environment Record. For function code, parameters are also added as
-	bindings to that Environment Record.</p>
+ <a href="#x10.2.1">Environment Record</a>. For <a href="#function-code">function code</a>, parameters are also added as
+	bindings to that <a href="#x10.2.1">Environment Record</a>.</p>
 	<p>
 	Which
-	Environment Record is used to bind a declaration and its kind
+ <a href="#x10.2.1">Environment Record</a> is used to bind a declaration and its kind
 	depends upon the type of ECMAScript code executed by the execution
 	context, but the remainder of the behaviour is generic. On entering
 	an execution context, bindings are created in the
-	VariableEnvironment as follows using the caller provided <i>code </i>and, if it is function code, argument <a href="#x8.8">List</a> <i>args</i>:</p>
+	VariableEnvironment as follows using the caller provided <i>code </i>and, if it is <a href="#function-code">function code</a>, argument <a href="#x8.8">List</a> <i>args</i>:</p>
 	<ol>
 		<li value="1"><p>
 		Let
@@ -10195,7 +10181,7 @@ and
 		</li>
 		<li><p>
 		If
-		<i>code</i> is eval code, then let <i>configurableBindings</i> be
+		<i>code</i> is <a href="#eval-code">eval code</a>, then let <i>configurableBindings</i> be
 		<b>true</b> else let <i>configurableBindings</i> be <b>false</b>.</p>
 		</li>
 		<li><p>
@@ -10205,7 +10191,7 @@ and
 		</li>
 		<li><p>
 		If
-		<i>code </i>is function code, then</p>
+		<i>code </i>is <a href="#function-code">function code</a>, then</p>
 		<ol>
 			<li><p>
 			Let
@@ -10295,7 +10281,7 @@ and
 					<LI><p>Call
 					the [[DefineOwnProperty]] internal method of <I>go</I>,
 					passing <I>fn</I>,
-					Property Descriptor {[[Value]]:<I>
+				 <a href="#x8.10">Property Descriptor</a> {[[Value]]:<I>
 					</I><B>undefined</B>,
 					[[Writable]]: <B>true</B>,
 					[[Enumerable]]: <B>true</B>
@@ -10330,7 +10316,7 @@ and
 		</li>
 		<li><p>
 		If
-		<i>code</i> is function code and <i>argumentsAlreadyDeclared </i>is
+		<i>code</i> is <a href="#function-code">function code</a> and <i>argumentsAlreadyDeclared </i>is
 		<b>false</b>, then</p>
 		<ol>
 			<li><p>
@@ -10346,13 +10332,13 @@ and
 			<ol>
 				<li><p>
 				Call
-				<i>env</i>’s CreateImmutableBinding concrete method passing the
+				<i>env</i>’s <a href="#x10.2.1.1.7">CreateImmutableBinding</a> concrete method passing the
 				String "<code><b>arguments</b></code>"
 				as the argument.</p>
 				</li>
 				<li><p>
 				Call
-				<i>env</i>’s InitializeImmutableBinding concrete method passing
+				<i>env</i>’s <a href="#x10.2.1.1.8">InitializeImmutableBinding</a> concrete method passing
 				"<code><b>arguments</b></code>"
 				and <i>argsObj </i>as arguments.</p>
 			</li></ol>
@@ -10407,7 +10393,7 @@ and
 	<h3 id="x10.6">10.6 Arguments Object <a href="#x10.6">#</a> <a href="#x10.6-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
 	<p>
 	When
-	control enters an execution context for function code, an arguments
+	control enters an execution context for <a href="#function-code">function code</a>, an arguments
 	object is created unless (as specified in <a href="#x10.5">10.5</a>) the identifier
 	<code><b>arguments</b></code> occurs
 	as an <i>Identifier</i>
@@ -10415,7 +10401,7 @@ and
 	or occurs as the <i>Identifier</i>
 	of a <i>VariableDeclaration</i>
 	or <i>FunctionDeclaration</i>
-	contained in the function code.</p>
+	contained in the <a href="#function-code">function code</a>.</p>
 	<p>
 	The
 	arguments object is created by calling the abstract operation
@@ -10423,9 +10409,9 @@ and
 	the function object whose code is to be evaluated<i>,
 	names</i> a <a href="#x8.8">List</a> containing the function’s formal parameter
 	names<i>, args </i>the
-	actual arguments passed to the [[Call]] internal method, <i>env </i>the variable environment for the function code, and
+	actual arguments passed to the [[Call]] internal method, <i>env </i>the variable environment for the <a href="#function-code">function code</a>, and
 	<i>strict</i> a Boolean
-	that indicates whether or not the function code is strict code. When
+	that indicates whether or not the <a href="#function-code">function code</a> is <a href="#x10.1.1">strict code</a>. When
 	CreateArgumentsObject is called the following steps are performed:</p>
 	<ol>
 		<li><p>
@@ -10457,7 +10443,7 @@ and
 		Call
 		the [[DefineOwnProperty]] internal method on <i>obj</i> passing
 		<b>"</b><code><b>length</b></code><b>"</b>,
-		the Property Descriptor {[[Value]]: <i>len</i>, [[Writable]]: <b>true</b>,
+		the <a href="#x8.10">Property Descriptor</a> {[[Value]]: <i>len</i>, [[Writable]]: <b>true</b>,
 		[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>true</b>}, and
 		<b>false</b> as arguments.</p>
 		</li>
@@ -10489,7 +10475,7 @@ and
 			<li><p>
 			Call
 			the [[DefineOwnProperty]] internal method on <i>obj</i> passing
-			<a href="#x9.8">ToString</a>(<i>indx</i>), the property descriptor {[[Value]]: <i>val</i>,
+			<a href="#x9.8">ToString</a>(<i>indx</i>), the <a href="#x8.10">property descriptor</a> {[[Value]]: <i>val</i>,
 			[[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b>,
 			[[Configurable]]: <b>true</b>}, and <b>false</b> as arguments.</p>
 			</li>
@@ -10525,7 +10511,7 @@ and
 					<li><p>
 					Call
 					the [[DefineOwnProperty]] internal method of <i>map</i> passing
-					<a href="#x9.8">ToString</a>(<i>indx</i>), the Property Descriptor {[[Set]]: <i>p</i>,
+					<a href="#x9.8">ToString</a>(<i>indx</i>), the <a href="#x8.10">Property Descriptor</a> {[[Set]]: <i>p</i>,
 					[[Get]]: <i>g,</i> [[Configurable]]: <b>true</b>}, and <b>false</b>
 					as arguments.</p>
 				</li></ol>
@@ -10559,7 +10545,7 @@ and
 			Call
 			the [[DefineOwnProperty]] internal method on <i>obj</i> passing
 			"<code><b>callee</b></code>",
-			the property descriptor {[[Value]]: <i>func</i>, [[Writable]]:
+			the <a href="#x8.10">property descriptor</a> {[[Value]]: <i>func</i>, [[Writable]]:
 			<b>true</b>, [[Enumerable]]: <b>false</b>, [[Configurable]]:
 			<b>true</b>}, and <b>false</b> as arguments.</p>
 		</li></ol>
@@ -10734,7 +10720,7 @@ and
 	[[DefineOwnProperty]] internal method of an arguments object  for a
 	non-strict mode function with formal parameters when called with a
 	property name <i>P</i>,
-	Property Descriptor <i>Desc</i>,
+ <a href="#x8.10">Property Descriptor</a> <i>Desc</i>,
 	and Boolean flag <i>Throw</i>
 	performs the following steps:</p>
 	<ol>
@@ -10912,17 +10898,16 @@ and
 	An
 	array initialiser is an expression describing the initialisation of
 	an Array object, written in a form of a literal. It is a list of
-	zero or more expressions, each of which represents an array element,
+	zero or more expressions, each of which represents an <a href="#array-element">array element</a>,
 	enclosed in square brackets. The elements need not be literals; they
 	are evaluated each time the array initialiser is evaluated.</p>
 	<p>
-	Array
-	elements may be elided at the beginning, middle or end of the
+ <a href="#array-element">Array element</a>s may be elided at the beginning, middle or end of the
 	element list. Whenever a comma in the element list is not preceded
 	by an <i>AssignmentExpression</i>
 	(i.e., a comma at the beginning or after another comma), the missing
-	array element contributes to the length of the Array and increases
-	the index of subsequent elements. Elided array elements are not
+ <a href="#array-element">array element</a> contributes to the length of the Array and increases
+	the index of subsequent elements. Elided <a href="#array-element">array element</a>s are not
 	defined. If an element is elided at the end of an array, that
 	element does not contribute to the length of the Array.</p>
 	<p class="tiny-btm">
@@ -11046,12 +11031,12 @@ and
 		</li>
 		<li><p>
 		Let
-		<i>initValue </i>be GetValue(<i>initResult</i>).</p>
+		<i>initValue </i>be <a href="#x8.7.1">GetValue</a>(<i>initResult</i>).</p>
 		</li>
 		<li><p>
 		Call
 		the [[DefineOwnProperty]] internal method of <i>array </i>with
-		arguments <a href="#x9.8">ToString</a>(<i>firstIndex)</i>, the Property Descriptor {
+		arguments <a href="#x9.8">ToString</a>(<i>firstIndex)</i>, the <a href="#x8.10">Property Descriptor</a> {
 		[[Value]]: <i>initValue</i>, [[Writable]]: <b>true</b>,
 		[[Enumerable]]: <b>true</b>, [[Configurable]]: <b>true</b>}, and
 		<b>false</b>.</p>
@@ -11083,7 +11068,7 @@ and
 		</li>
 		<li><p>
 		Let
-		<i>initValue </i>be GetValue(<i>initResult</i>).</p>
+		<i>initValue </i>be <a href="#x8.7.1">GetValue</a>(<i>initResult</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -11094,7 +11079,7 @@ and
 		Call
 		the [[DefineOwnProperty]] internal method of <i>array </i>with
 		arguments <a href="#x9.8">ToString</a>(<a href="#x9.6">ToUint32</a>((<i>pad</i>+<i>len</i>)) and the
-		Property Descriptor { [[Value]]: <i>initValue</i>, [[Writable]]:
+	 <a href="#x8.10">Property Descriptor</a> { [[Value]]: <i>initValue</i>, [[Writable]]:
 		<b>true</b>, [[Enumerable]]: <b>true</b>, [[Configurable]]: <b>true</b>},
 		and <b>false</b>.</p>
 		</li>
@@ -11259,7 +11244,7 @@ and
 		<ol>
 			<li><p>
 			This
-			production is contained in strict code and
+			production is contained in <a href="#x10.1.1">strict code</a> and
 			<a href="#x8.10.2">IsDataDescriptor</a>(<i>previous</i>) is <b>true</b> and
 			<a href="#x8.10.2">IsDataDescriptor</a>(<i>propId</i>.descriptor) is <b>true</b>.</p>
 			</li>
@@ -11313,11 +11298,11 @@ and
 		</li>
 		<li><p>
 		Let
-		<i>propValue </i>be GetValue(<i>exprValue</i>).</p>
+		<i>propValue </i>be <a href="#x8.7.1">GetValue</a>(<i>exprValue</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>desc </i>be the Property Descriptor{[[Value]]: <i>propValue</i>,
+		<i>desc </i>be the <a href="#x8.10">Property Descriptor</a>{[[Value]]: <i>propValue</i>,
 		[[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b>,
 		[[Configurable]]: <b>true</b>}</p>
 		</li>
@@ -11345,12 +11330,11 @@ and
 		by <i>FunctionBody</i>. Pass in the LexicalEnvironment of the
 		running execution context as the <i>Scope</i>. Pass in <b>true</b>
 		as the <i>Strict</i> flag if the <i>PropertyAssignment</i>
-		is contained in strict code or if its <i>FunctionBody</i> is strict
-		code.</p>
+		is contained in <a href="#x10.1.1">strict code</a> or if its <i>FunctionBody</i> is <a href="#x10.1.1">strict code</a>.</p>
 		</li>
 		<li><p>
 		Let
-		<i>desc</i> be the Property Descriptor{[[Get]]: <i>closure</i>,
+		<i>desc</i> be the <a href="#x8.10">Property Descriptor</a>{[[Get]]: <i>closure</i>,
 		[[Enumerable]]: <b>true</b>, [[Configurable]]: <b>true</b>}</p>
 		</li>
 		<li><p>
@@ -11380,12 +11364,11 @@ and
 		Pass in the LexicalEnvironment of the running execution context as
 		the <i>Scope</i>. Pass in <b>true</b> as the <i>Strict</i> flag if
 		the <i>PropertyAssignment</i>
-		is contained in strict code or if its <i>FunctionBody</i> is strict
-		code.</p>
+		is contained in <a href="#x10.1.1">strict code</a> or if its <i>FunctionBody</i> is <a href="#x10.1.1">strict code</a>.</p>
 		</li>
 		<li><p>
 		Let
-		<i>desc</i> be the Property Descriptor{[[Set]]: <i>closure</i>,
+		<i>desc</i> be the <a href="#x8.10">Property Descriptor</a>{[[Set]]: <i>closure</i>,
 		[[Enumerable]]: <b>true</b>, [[Configurable]]: <b>true</b>}</p>
 		</li>
 		<li><p>
@@ -11401,9 +11384,9 @@ and
 	in a <i>PropertySetParameterList</i><code><b>
 	</b></code>of a
 	<i>PropertyAssignment</i>
-	that is contained in strict code
+	that is contained in <a href="#x10.1.1">strict code</a>
 	or if its <i>FunctionBody</i>
-	is strict code.</p>
+	is <a href="#x10.1.1">strict code</a>.</p>
 	<p>
 	The
 	production  <i>PropertyName</i>
@@ -11455,7 +11438,7 @@ and
 	</li></ol>
 	<p class="sp">
 	</p><p><b class="note">NOTE</b> This
-	algorithm does not apply GetValue to the result of evaluating
+	algorithm does not apply <a href="#x8.7.1">GetValue</a> to the result of evaluating
 	Expression. The principal motivation for this is so that operators
 	such as <code><b>delete</b></code> and
 	<code><b>typeof</b></code> may be
@@ -11540,7 +11523,7 @@ and
 		</li>
 		<li><p>
 		Let
-		<i>baseValue</i> be GetValue(<i>baseReference</i>).</p>
+		<i>baseValue</i> be <a href="#x8.7.1">GetValue</a>(<i>baseReference</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -11549,7 +11532,7 @@ and
 		</li>
 		<li><p>
 		Let
-		<i>propertyNameValue</i> be GetValue(<i>propertyNameReference</i>).</p>
+		<i>propertyNameValue</i> be <a href="#x8.7.1">GetValue</a>(<i>propertyNameReference</i>).</p>
 		</li>
 		<li><p>
 		Call
@@ -11588,7 +11571,7 @@ and
 		</li>
 		<li><p>
 		Let
-		<i>constructor</i> be GetValue(<i>ref</i>).</p>
+		<i>constructor</i> be <a href="#x8.7.1">GetValue</a>(<i>ref</i>).</p>
 		</li>
 		<li><p>
 		If
@@ -11620,7 +11603,7 @@ and
 		</li>
 		<li><p>
 		Let
-		<i>constructor</i> be GetValue(<i>ref</i>).</p>
+		<i>constructor</i> be <a href="#x8.7.1">GetValue</a>(<i>ref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -11657,7 +11640,7 @@ and
 		</li>
 		<li><p>
 		Let
-		<i>func</i> be GetValue(<i>ref</i>).</p>
+		<i>func</i> be <a href="#x8.7.1">GetValue</a>(<i>ref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -11689,7 +11672,7 @@ and
 			</li>
 			<li><p>
 			Else,
-			the base of <i>ref</i> is an Environment Record</p>
+			the base of <i>ref</i> is an <a href="#x10.2.1">Environment Record</a></p>
 			<ol>
 				<li><p>
 				Let
@@ -11728,7 +11711,7 @@ and
 	return a value of type <a href="#x8.7">Reference</a> is implementation-dependent. If a
 	value of type <a href="#x8.7">Reference</a> is returned, it must be a non-strict
 	Property <a href="#x8.7">Reference</a>.</p>
-	<h4 id="x11.2.4">11.2.4 Argument <a href="#x8.8">List</a>s <a href="#x11.2.4">#</a> <a href="#x11.2.4-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
+	<h4 id="x11.2.4">11.2.4 Argument Lists <a href="#x11.2.4">#</a> <a href="#x11.2.4-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	The
 	evaluation of an argument list produces a <a href="#x8.8">List</a> of values (see <a href="#x8.8">8.8</a>).</p>
@@ -11764,7 +11747,7 @@ and
 		</li>
 		<li><p>
 		Let
-		<i>arg</i> be GetValue(<i>ref</i>).</p>
+		<i>arg</i> be <a href="#x8.7.1">GetValue</a>(<i>ref</i>).</p>
 		</li>
 		<li><p>
 		Return
@@ -11786,7 +11769,7 @@ and
 		</li>
 		<li><p>
 		Let
-		<i>arg</i> be GetValue(<i>ref</i>).</p>
+		<i>arg</i> be <a href="#x8.7.1">GetValue</a>(<i>ref</i>).</p>
 		</li>
 		<li><p>
 		Return
@@ -11844,7 +11827,7 @@ and
 		</li>
 		<li><p>
 		<a href="#Type">Type</a>(<a href="#GetBase">GetBase</a>(<i>lhs</i>))
-		is Enviroment Record</p>
+		is <a href="#x10.2.1">Environment Record</a></p>
 		</li>
 		<li><p>
 		<a href="#GetReferencedName">GetReferencedName</a>(<i>lhs</i>)
@@ -11855,7 +11838,7 @@ and
 	<ol start="3">
 		<li><p>
 		Let
-		<i>oldValue</i> be <a href="#x9.3">ToNumber</a>(GetValue(<i>lhs</i>)).</p>
+		<i>oldValue</i> be <a href="#x9.3">ToNumber</a>(<a href="#x8.7.1">GetValue</a>(<i>lhs</i>)).</p>
 		</li>
 		<li><p>
 		Let
@@ -11865,7 +11848,7 @@ and
 		</li>
 		<li><p>
 		Call
-		PutValue(<i>lhs</i>, <i>newValue</i>).</p>
+		<a href="#x8.7.2">PutValue</a>(<i>lhs</i>, <i>newValue</i>).</p>
 		</li>
 		<li><p>
 		Return
@@ -11899,7 +11882,7 @@ and
 		</li>
 		<li><p>
 		<a href="#Type">Type</a>(<a href="#GetBase">GetBase</a>(<i>lhs</i>))
-		is Enviroment Record</p>
+		is <a href="#x10.2.1">Environment Record</a></p>
 		</li>
 		<li><p>
 		<a href="#GetReferencedName">GetReferencedName</a>(<i>lhs</i>)
@@ -11910,7 +11893,7 @@ and
 	<ol start="3">
 		<li><p>
 		Let
-		<i>oldValue</i> be <a href="#x9.3">ToNumber</a>(GetValue(<i>lhs</i>)).</p>
+		<i>oldValue</i> be <a href="#x9.3">ToNumber</a>(<a href="#x8.7.1">GetValue</a>(<i>lhs</i>)).</p>
 		</li>
 		<li><p>
 		Let
@@ -11920,7 +11903,7 @@ and
 		</li>
 		<li><p>
 		Call
-		PutValue(<i>lhs</i>, <i>newValue</i>).</p>
+		<a href="#x8.7.2">PutValue</a>(<i>lhs</i>, <i>newValue</i>).</p>
 		</li>
 		<li><p>
 		Return
@@ -11977,7 +11960,7 @@ and
 		</li>
 		<li><p>
 		Else,
-		<i>ref</i> is a <a href="#x8.10">Reference</a> to an Environment Record binding, so</p>
+		<i>ref</i> is a <a href="#x8.10">Reference</a> to an <a href="#x10.2.1">Environment Record</a> binding, so</p>
 		<ol>
 			<li><p>
 			If
@@ -12018,13 +12001,13 @@ and
 		</li>
 		<li><p>
 		Call
-		GetValue(<i>expr</i>).</p>
+		<a href="#x8.7.1">GetValue</a>(<i>expr</i>).</p>
 		</li>
 		<li><p>
 		Return
 		<b>undefined</b>.</p>
 	</li></ol>
-	<p><b class="note">NOTE</b> GetValue
+	<p><b class="note">NOTE</b> <a href="#x8.7.1">GetValue</a>
 	must be called even though its value is not used because it may have
 	observable side-effects.</p>
 	<h4 id="x11.4.3">11.4.3 The typeof Operator <a href="#x11.4.3">#</a> <a href="#x11.4.3-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
@@ -12049,7 +12032,7 @@ and
 			</li>
 			<li><p>
 			Let
-			<i>val </i>be GetValue(<i>val</i>).</p>
+			<i>val </i>be <a href="#x8.7.1">GetValue</a>(<i>val</i>).</p>
 		</li></ol>
 		</li>
 		<li><p>
@@ -12184,7 +12167,7 @@ and
 		</li>
 		<li><p>
 		<a href="#Type">Type</a>(<a href="#GetBase">GetBase</a>(<i>expr</i>))
-		is Enviroment Record</p>
+		is <a href="#x10.2.1">Environment Record</a></p>
 		</li>
 		<li><p>
 		<a href="#GetReferencedName">GetReferencedName</a>(<i>expr</i>)
@@ -12195,7 +12178,7 @@ and
 	<ol start="3">
 		<li><p>
 		Let
-		<i>oldValue</i> be <a href="#x9.3">ToNumber</a>(GetValue(<i>expr</i>)).</p>
+		<i>oldValue</i> be <a href="#x9.3">ToNumber</a>(<a href="#x8.7.1">GetValue</a>(<i>expr</i>)).</p>
 		</li>
 		<li><p>
 		Let
@@ -12205,7 +12188,7 @@ and
 		</li>
 		<li><p>
 		Call
-		PutValue(<i>expr</i>, <i>newValue</i>).</p>
+		<a href="#x8.7.2">PutValue</a>(<i>expr</i>, <i>newValue</i>).</p>
 		</li>
 		<li><p>
 		Return
@@ -12237,7 +12220,7 @@ and
 		</li>
 		<li><p>
 		<a href="#Type">Type</a>(<a href="#GetBase">GetBase</a>(<i>expr</i>))
-		is Enviroment Record</p>
+		is <a href="#x10.2.1">Environment Record</a></p>
 		</li>
 		<li><p>
 		<a href="#GetReferencedName">GetReferencedName</a>(<i>expr</i>)
@@ -12248,7 +12231,7 @@ and
 	<ol start="3">
 		<li><p>
 		Let
-		<i>oldValue</i> be <a href="#x9.3">ToNumber</a>(GetValue(<i>expr</i>)).</p>
+		<i>oldValue</i> be <a href="#x9.3">ToNumber</a>(<a href="#x8.7.1">GetValue</a>(<i>expr</i>)).</p>
 		</li>
 		<li><p>
 		Let
@@ -12258,7 +12241,7 @@ and
 		</li>
 		<li><p>
 		Call
-		PutValue(<i>expr</i>, <i>newValue</i>).</p>
+		<a href="#x8.7.2">PutValue</a>(<i>expr</i>, <i>newValue</i>).</p>
 		</li>
 		<li><p>
 		Return
@@ -12280,7 +12263,7 @@ and
 		</li>
 		<li><p>
 		Return
-		<a href="#x9.3">ToNumber</a>(GetValue(<i>expr</i>)).</p>
+		<a href="#x9.3">ToNumber</a>(<a href="#x8.7.1">GetValue</a>(<i>expr</i>)).</p>
 	</li></ol>
 	<h4 id="x11.4.7">11.4.7 Unary - Operator <a href="#x11.4.7">#</a> <a href="#x11.4.7-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
@@ -12302,7 +12285,7 @@ and
 		</li>
 		<li><p>
 		Let
-		<i>oldValue</i> be <a href="#x9.3">ToNumber</a>(GetValue(<i>expr</i>)).</p>
+		<i>oldValue</i> be <a href="#x9.3">ToNumber</a>(<a href="#x8.7.1">GetValue</a>(<i>expr</i>)).</p>
 		</li>
 		<li><p>
 		If
@@ -12326,7 +12309,7 @@ and
 		</li>
 		<li><p>
 		Let
-		<i>oldValue</i> be <a href="#x9.5">ToInt32</a>(GetValue(<i>expr</i>)).</p>
+		<i>oldValue</i> be <a href="#x9.5">ToInt32</a>(<a href="#x8.7.1">GetValue</a>(<i>expr</i>)).</p>
 		</li>
 		<li><p>
 		Return
@@ -12346,7 +12329,7 @@ and
 		</li>
 		<li><p>
 		Let
-		<i>oldValue</i> be <a href="#x9.2">ToBoolean</a>(GetValue(<i>expr</i>)).</p>
+		<i>oldValue</i> be <a href="#x9.2">ToBoolean</a>(<a href="#x8.7.1">GetValue</a>(<i>expr</i>)).</p>
 		</li>
 		<li><p>
 		If
@@ -12377,7 +12360,7 @@ and
 		</li>
 		<li><p>
 		Let
-		<i>leftValue</i> be GetValue(<i>left</i>).</p>
+		<i>leftValue</i> be <a href="#x8.7.1">GetValue</a>(<i>left</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -12385,7 +12368,7 @@ and
 		</li>
 		<li><p>
 		Let
-		<i>rightValue</i> be GetValue(<i>right</i>).</p>
+		<i>rightValue</i> be <a href="#x8.7.1">GetValue</a>(<i>right</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -12595,7 +12578,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>lval</i> be GetValue(<i>lref</i>).</p>
+		<i>lval</i> be <a href="#x8.7.1">GetValue</a>(<i>lref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -12603,7 +12586,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>rval</i> be GetValue(<i>rref</i>).</p>
+		<i>rval</i> be <a href="#x8.7.1">GetValue</a>(<i>rref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -12652,7 +12635,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>lval</i> be GetValue(<i>lref</i>).</p>
+		<i>lval</i> be <a href="#x8.7.1">GetValue</a>(<i>lref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -12660,7 +12643,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>rval</i> be GetValue(<i>rref</i>).</p>
+		<i>rval</i> be <a href="#x8.7.1">GetValue</a>(<i>rref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -12770,7 +12753,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>lval</i> be GetValue(<i>lref</i>).</p>
+		<i>lval</i> be <a href="#x8.7.1">GetValue</a>(<i>lref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -12778,7 +12761,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>rval</i> be GetValue(<i>rref</i>).</p>
+		<i>rval</i> be <a href="#x8.7.1">GetValue</a>(<i>rref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -12818,7 +12801,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>lval</i> be GetValue(<i>lref</i>).</p>
+		<i>lval</i> be <a href="#x8.7.1">GetValue</a>(<i>lref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -12826,7 +12809,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>rval</i> be GetValue(<i>rref</i>).</p>
+		<i>rval</i> be <a href="#x8.7.1">GetValue</a>(<i>rref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -12867,7 +12850,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>lval</i> be GetValue(<i>lref</i>).</p>
+		<i>lval</i> be <a href="#x8.7.1">GetValue</a>(<i>lref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -12875,7 +12858,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>rval</i> be GetValue(<i>rref</i>).</p>
+		<i>rval</i> be <a href="#x8.7.1">GetValue</a>(<i>rref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -12942,7 +12925,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>lval</i> be GetValue(<i>lref</i>).</p>
+		<i>lval</i> be <a href="#x8.7.1">GetValue</a>(<i>lref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -12950,7 +12933,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>rval</i> be GetValue(<i>rref</i>).</p>
+		<i>rval</i> be <a href="#x8.7.1">GetValue</a>(<i>rref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -12976,7 +12959,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>lval</i> be GetValue(<i>lref</i>).</p>
+		<i>lval</i> be <a href="#x8.7.1">GetValue</a>(<i>lref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -12984,7 +12967,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>rval</i> be GetValue(<i>rref</i>).</p>
+		<i>rval</i> be <a href="#x8.7.1">GetValue</a>(<i>rref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -13011,7 +12994,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>lval</i> be GetValue(<i>lref</i>).</p>
+		<i>lval</i> be <a href="#x8.7.1">GetValue</a>(<i>lref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -13019,7 +13002,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>rval</i> be GetValue(<i>rref</i>).</p>
+		<i>rval</i> be <a href="#x8.7.1">GetValue</a>(<i>rref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -13046,7 +13029,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>lval</i> be GetValue(<i>lref</i>).</p>
+		<i>lval</i> be <a href="#x8.7.1">GetValue</a>(<i>lref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -13054,7 +13037,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>rval</i> be GetValue(<i>rref</i>).</p>
+		<i>rval</i> be <a href="#x8.7.1">GetValue</a>(<i>rref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -13251,7 +13234,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>lval</i> be GetValue(<i>lref</i>).</p>
+		<i>lval</i> be <a href="#x8.7.1">GetValue</a>(<i>lref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -13259,7 +13242,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>rval</i> be GetValue(<i>rref</i>).</p>
+		<i>rval</i> be <a href="#x8.7.1">GetValue</a>(<i>rref</i>).</p>
 		</li>
 		<li><p>
 		If
@@ -13290,7 +13273,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>lval</i> be GetValue(<i>lref</i>).</p>
+		<i>lval</i> be <a href="#x8.7.1">GetValue</a>(<i>lref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -13298,7 +13281,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>rval</i> be GetValue(<i>rref</i>).</p>
+		<i>rval</i> be <a href="#x8.7.1">GetValue</a>(<i>rref</i>).</p>
 		</li>
 		<li><p>
 		If
@@ -13352,7 +13335,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>lval</i> be GetValue(<i>lref</i>).</p>
+		<i>lval</i> be <a href="#x8.7.1">GetValue</a>(<i>lref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -13360,7 +13343,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>rval</i> be GetValue(<i>rref</i>).</p>
+		<i>rval</i> be <a href="#x8.7.1">GetValue</a>(<i>rref</i>).</p>
 		</li>
 		<li><p>
 		Return
@@ -13381,7 +13364,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>lval</i> be GetValue(<i>lref</i>).</p>
+		<i>lval</i> be <a href="#x8.7.1">GetValue</a>(<i>lref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -13389,7 +13372,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>rval</i> be GetValue(<i>rref</i>).</p>
+		<i>rval</i> be <a href="#x8.7.1">GetValue</a>(<i>rref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -13589,7 +13572,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>lval</i> be GetValue(<i>lref</i>).</p>
+		<i>lval</i> be <a href="#x8.7.1">GetValue</a>(<i>lref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -13597,7 +13580,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>rval</i> be GetValue(<i>rref</i>).</p>
+		<i>rval</i> be <a href="#x8.7.1">GetValue</a>(<i>rref</i>).</p>
 		</li>
 		<li><p>
 		Return
@@ -13618,7 +13601,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>lval</i> be GetValue(<i>lref</i>).</p>
+		<i>lval</i> be <a href="#x8.7.1">GetValue</a>(<i>lref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -13626,7 +13609,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>rval</i> be GetValue(<i>rref</i>).</p>
+		<i>rval</i> be <a href="#x8.7.1">GetValue</a>(<i>rref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -13750,7 +13733,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>lval</i> be GetValue(<i>lref</i>).</p>
+		<i>lval</i> be <a href="#x8.7.1">GetValue</a>(<i>lref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -13758,7 +13741,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>rval</i> be GetValue(<i>rref</i>).</p>
+		<i>rval</i> be <a href="#x8.7.1">GetValue</a>(<i>rref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -13808,7 +13791,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>lval</i> be GetValue(<i>lref</i>).</p>
+		<i>lval</i> be <a href="#x8.7.1">GetValue</a>(<i>lref</i>).</p>
 		</li>
 		<li><p>
 		If
@@ -13820,7 +13803,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Return
-		GetValue(<i>rref</i>).</p>
+		<a href="#x8.7.1">GetValue</a>(<i>rref</i>).</p>
 	</li></ol>
 	<p>
 	The
@@ -13836,7 +13819,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>lval</i> be GetValue(<i>lref</i>).</p>
+		<i>lval</i> be <a href="#x8.7.1">GetValue</a>(<i>lref</i>).</p>
 		</li>
 		<li><p>
 		If
@@ -13848,7 +13831,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Return
-		GetValue(<i>rref</i>).</p>
+		<a href="#x8.7.1">GetValue</a>(<i>rref</i>).</p>
 	</li></ol>
 	<p>
 	The
@@ -13901,7 +13884,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		If
-		<a href="#x9.2">ToBoolean</a>(GetValue(<i>lref</i>)) is <b>true</b>, then</p>
+		<a href="#x9.2">ToBoolean</a>(<a href="#x8.7.1">GetValue</a>(<i>lref</i>)) is <b>true</b>, then</p>
 		<ol>
 	<li><p>
 			Let
@@ -13910,7 +13893,7 @@ IEEE 754 round-to-nearest mode.
 			</li>
 			<li><p>
 			Return
-			GetValue(<i>trueRef</i>).</p>
+			<a href="#x8.7.1">GetValue</a>(<i>trueRef</i>).</p>
 		</li></ol>
 	</li>
 	<li><p>
@@ -13923,7 +13906,7 @@ IEEE 754 round-to-nearest mode.
 	</li>
 	<li><p>
 			Return
-			GetValue(<i>falseRef</i>).</p>
+			<a href="#x8.7.1">GetValue</a>(<i>falseRef</i>).</p>
 		</li></ol>
 	</li></ol>
 	<p>
@@ -14061,7 +14044,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>rval</i> be GetValue(<i>rref</i>).</p>
+		<i>rval</i> be <a href="#x8.7.1">GetValue</a>(<i>rref</i>).</p>
 		</li>
 		<li><p>
 		Throw
@@ -14078,7 +14061,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		 <a href="#Type">Type</a>(<a href="#GetBase">GetBase</a>(<i>lref</i>))
-		is Enviroment Record</p>
+		is <a href="#x10.2.1">Environment Record</a></p>
 		</li>
 		<li><p>
 		 <a href="#GetReferencedName">GetReferencedName</a>(<i>lref</i>)
@@ -14088,7 +14071,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Call
-		PutValue(<i>lref</i>, <i>rval</i>).</p>
+		<a href="#x8.7.2">PutValue</a>(<i>lref</i>, <i>rval</i>).</p>
 		</li>
 		<li><p>
 		Return
@@ -14096,7 +14079,7 @@ IEEE 754 round-to-nearest mode.
 	</li></ol>
 	<p><b class="note">NOTE</b> When
 	an assignment occurs within <a href="#x10.1.1" class="term-ref">strict mode code</a>, its <i>LeftHandSide</i>
-	must not evaluate to an unresolvable reference. If it does a
+	must not evaluate to an <a href="#IsUnresolvableReference">unresolvable reference</a>. If it does a
 	<b><a href="#x15.11.6.3" class="term-ref">ReferenceError</a></b> exception is thrown upon assignment. The
 	<i>LeftHandSide</i> also
 	may not be a reference to a data property with the attribute value
@@ -14119,7 +14102,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>lval</i> be GetValue(<i>lref</i>).</p>
+		<i>lval</i> be <a href="#x8.7.1">GetValue</a>(<i>lref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -14127,7 +14110,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>rval</i> be GetValue(<i>rref</i>).</p>
+		<i>rval</i> be <a href="#x8.7.1">GetValue</a>(<i>rref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -14149,7 +14132,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		 <a href="#Type">Type</a>(<a href="#GetBase">GetBase</a>(<i>lref</i>))
-		is Enviroment Record</p>
+		is <a href="#x10.2.1">Environment Record</a></p>
 		</li>
 		<li><p>
 		 <a href="#GetReferencedName">GetReferencedName</a>(lref)
@@ -14160,7 +14143,7 @@ IEEE 754 round-to-nearest mode.
 	<ol start="7">
 		<li><p>
 		Call
-		PutValue(<i>lref</i>, <i>r</i>).</p>
+		<a href="#x8.7.2">PutValue</a>(<i>lref</i>, <i>r</i>).</p>
 		</li>
 		<li><p>
 		Return
@@ -14195,7 +14178,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Call
-		GetValue(<i>lref</i>).</p>
+		<a href="#x8.7.1">GetValue</a>(<i>lref</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -14203,7 +14186,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Return
-		GetValue(<i>rref</i>).</p>
+		<a href="#x8.7.1">GetValue</a>(<i>rref</i>).</p>
 	</li></ol>
 	<p>
 	The
@@ -14215,7 +14198,7 @@ IEEE 754 round-to-nearest mode.
 	and <i>AssignmentExpression</i>,
 	respectively.</p>
 	<p class="sp">
-	</p><p><b class="note">NOTE</b> GetValue must
+	</p><p><b class="note">NOTE</b> <a href="#x8.7.1">GetValue</a> must
 	be called even though its value is not used because it may have
 	observable side-effects.</p>
 	<h2 id="x12">12 Statements <a href="#x12">#</a> <a href="#x12-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h2>
@@ -14450,11 +14433,11 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>value </i>be GetValue(<i>rhs</i>).</p>
+		<i>value </i>be <a href="#x8.7.1">GetValue</a>(<i>rhs</i>).</p>
 		</li>
 		<li><p>
 		Call
-		PutValue(<i>lhs</i>, <i>value</i>).</p>
+		<a href="#x8.7.2">PutValue</a>(<i>lhs</i>, <i>value</i>).</p>
 		</li>
 		<li><p>
 		Return
@@ -14469,7 +14452,7 @@ IEEE 754 round-to-nearest mode.
 	<i>VariableDeclaration</i>
 	is nested within a with statement and the Identifier in the
 	<i>VariableDeclaration</i>
-	is the same as a property name of the binding object of the with
+	is the same as a property name of the <a href="#x10.2.1.2">binding object</a> of the with
 	statement’s object <a href="#x10.2">environment record</a>, then step 4 will assign
 	value to the property instead of to the VariableEnvironment binding
 	of the <i>Identifier</i>.</p>
@@ -14504,7 +14487,7 @@ IEEE 754 round-to-nearest mode.
 	It is
 	a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> if a <i>VariableDeclaration</i>
 	or <i>VariableDeclarationNoIn</i>
-	occurs within strict code and its <i>Identifier</i>
+	occurs within <a href="#x10.1.1">strict code</a> and its <i>Identifier</i>
 	is either <code><b>"eval"</b></code><b>
 	or </b><code><b>"arguments"</b></code>.</p>
 	<h3 id="x12.3">12.3 Empty Statement <a href="#x12.3">#</a> <a href="#x12.3-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
@@ -14559,7 +14542,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Return
-		(normal, GetValue(<i>exprRef</i>),
+		(normal, <a href="#x8.7.1">GetValue</a>(<i>exprRef</i>),
 		empty).</p>
 	</li></ol>
 	<h3 id="x12.5">12.5 The if Statement <a href="#x12.5">#</a> <a href="#x12.5-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
@@ -14587,7 +14570,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		If
-		<a href="#x9.2">ToBoolean</a>(GetValue(<i>exprRef</i>)) is <b>true</b>, then</p>
+		<a href="#x9.2">ToBoolean</a>(<a href="#x8.7.1">GetValue</a>(<i>exprRef</i>)) is <b>true</b>, then</p>
 		<ol>
 			<li><p>
 			Return
@@ -14612,7 +14595,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		If
-		<a href="#x9.2">ToBoolean</a>(GetValue(<i>exprRef</i>)) is <b>false</b>, return
+		<a href="#x9.2">ToBoolean</a>(<a href="#x8.7.1">GetValue</a>(<i>exprRef</i>)) is <b>false</b>, return
 		(normal, empty,
 		empty).</p>
 		</li>
@@ -14678,7 +14661,7 @@ IEEE 754 round-to-nearest mode.
 			</li>
 			<li><p>
 			If
-			<a href="#x9.2">ToBoolean</a>(GetValue(<i>exprRef</i>)) is <b>false</b>, set <i>iterating</i>
+			<a href="#x9.2">ToBoolean</a>(<a href="#x8.7.1">GetValue</a>(<i>exprRef</i>)) is <b>false</b>, set <i>iterating</i>
 			to <b>false</b>.</p>
 		</li></ol>
 		</li>
@@ -14704,7 +14687,7 @@ IEEE 754 round-to-nearest mode.
 			</li>
 			<li><p>
 			If
-			<a href="#x9.2">ToBoolean</a>(GetValue(<i>exprRef</i>)) is <b>false</b>, return
+			<a href="#x9.2">ToBoolean</a>(<a href="#x8.7.1">GetValue</a>(<i>exprRef</i>)) is <b>false</b>, return
 			(normal, <i>V</i>, empty).</p>
 			</li>
 			<li><p>
@@ -14758,7 +14741,7 @@ IEEE 754 round-to-nearest mode.
 			</li>
 			<li><p>
 			Call
-			GetValue(<i>exprRef</i>). (This value is not used.)</p>
+			<a href="#x8.7.1">GetValue</a>(<i>exprRef</i>). (This value is not used.)</p>
 		</li></ol>
 		</li>
 		<li><p>
@@ -14779,7 +14762,7 @@ IEEE 754 round-to-nearest mode.
 				</li>
 				<li><p>
 				If
-				GetValue(<i>testExprRef</i>) is <b>false</b>, return (normal,
+				<a href="#x8.7.1">GetValue</a>(<i>testExprRef</i>) is <b>false</b>, return (normal,
 				<i>V</i>, empty).</p>
 			</li></ol>
 			</li>
@@ -14819,7 +14802,7 @@ IEEE 754 round-to-nearest mode.
 				</li>
 				<li><p>
 				Call
-				GetValue(<i>incExprRef</i>). (This value is not used.)</p>
+				<a href="#x8.7.1">GetValue</a>(<i>incExprRef</i>). (This value is not used.)</p>
 			</li></ol>
 		</li></ol>
 	</li></ol>
@@ -14855,7 +14838,7 @@ IEEE 754 round-to-nearest mode.
 				</li>
 				<li><p>
 				If
-				GetValue(<i>testExprRef</i>) is <b>false</b>, then return
+				<a href="#x8.7.1">GetValue</a>(<i>testExprRef</i>) is <b>false</b>, then return
 				(normal, V, empty).</p>
 			</li></ol>
 			</li>
@@ -14895,7 +14878,7 @@ IEEE 754 round-to-nearest mode.
 				</li>
 				<li><p>
 				Call
-				GetValue(<i>incExprRef</i>). (This value is not used.)</p>
+				<a href="#x8.7.1">GetValue</a>(<i>incExprRef</i>). (This value is not used.)</p>
 			</li></ol>
 		</li></ol>
 	</li></ol>
@@ -14915,7 +14898,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>experValue</i> be GetValue(<i>exprRef</i>).</p>
+		<i>experValue</i> be <a href="#x8.7.1">GetValue</a>(<i>exprRef</i>).</p>
 		</li>
 		<li><p>
 		If
@@ -14948,7 +14931,7 @@ IEEE 754 round-to-nearest mode.
 			</li>
 			<li><p>
 			Call
-			PutValue(<i>lhsRef</i>, <i>P</i>).</p>
+			<a href="#x8.7.2">PutValue</a>(<i>lhsRef</i>, <i>P</i>).</p>
 			</li>
 			<li><p>
 			Let
@@ -14996,7 +14979,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>experValue</i> be GetValue(<i>exprRef</i>).</p>
+		<i>experValue</i> be <a href="#x8.7.1">GetValue</a>(<i>exprRef</i>).</p>
 		</li>
 		<li><p>
 		If
@@ -15030,7 +15013,7 @@ IEEE 754 round-to-nearest mode.
 			</li>
 			<li><p>
 			Call
-			PutValue(<i>varRef</i>, <i>P</i>).</p>
+			<a href="#x8.7.2">PutValue</a>(<i>varRef</i>, <i>P</i>).</p>
 			</li>
 			<li><p>
 			Let
@@ -15238,7 +15221,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Return
-		(return, GetValue(<i>exprRef</i>),
+		(return, <a href="#x8.7.1">GetValue</a>(<i>exprRef</i>),
 		empty).</p>
 	</li></ol>
 	<h3 id="x12.10">12.10 The with Statement <a href="#x12.10">#</a> <a href="#x12.10-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
@@ -15267,7 +15250,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>obj</i> be <a href="#x9.9">ToObject</a>(GetValue(<i>val</i>)).</p>
+		<i>obj</i> be <a href="#x9.9">ToObject</a>(<a href="#x8.7.1">GetValue</a>(<i>val</i>)).</p>
 		</li>
 		<li><p>
 		Let
@@ -15351,7 +15334,7 @@ IEEE 754 round-to-nearest mode.
 		<li><p>
 		Let
 		<i>R</i> be the result of evaluating <i>CaseBlock</i>, passing it
-		GetValue(<i>exprRef</i>) as a parameter.</p>
+		<a href="#x8.7.1">GetValue</a>(<i>exprRef</i>) as a parameter.</p>
 		</li>
 		<li><p>
 		If
@@ -15733,7 +15716,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Return
-		GetValue(<i>exprRef</i>).</p>
+		<a href="#x8.7.1">GetValue</a>(<i>exprRef</i>).</p>
 	</li></ol>
 	<p><b class="note">NOTE</b> Evaluating
 	<i>CaseClause</i> does
@@ -15816,7 +15799,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Return
-		(throw, GetValue(<i>exprRef</i>),
+		(throw, <a href="#x8.7.1">GetValue</a>(<i>exprRef</i>),
 		empty).</p>
 	</li></ol>
 	<h3 id="x12.14">12.14 The try Statement <a href="#x12.14">#</a> <a href="#x12.14-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
@@ -15954,7 +15937,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>catchEnv</i> be the result of calling NewDeclarativeEnvironment
+		<i>catchEnv</i> be the result of calling <a href="#x10.2.2.2">NewDeclarativeEnvironment</a>
 		passing <i>oldEnv</i> as the argument. 
 		</p>
 		</li>
@@ -16003,7 +15986,7 @@ IEEE 754 round-to-nearest mode.
 	It is
 	an <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> if a <i>TryStatement</i>
 	with a <i>Catch</i>
-	occurs within strict code and the <i>Identifier</i>
+	occurs within <a href="#x10.1.1">strict code</a> and the <i>Identifier</i>
 	of the <i>Catch</i>
 	production is either <code><b>"eval"</b></code><b>
 	or </b><code><b>"arguments"</b></code>.</p>
@@ -16093,8 +16076,8 @@ IEEE 754 round-to-nearest mode.
 		Pass in <b>true</b>
 		as the <i>Strict</i>
 		flag if the <i>FunctionDeclaration</i>
-		is contained in strict code or if its <i>FunctionBody</i>
-		is strict code.</p>
+		is contained in <a href="#x10.1.1">strict code</a> or if its <i>FunctionBody</i>
+		is <a href="#x10.1.1">strict code</a>.</p>
 	</li></ol>
 	<p>
 	The
@@ -16113,8 +16096,8 @@ IEEE 754 round-to-nearest mode.
 		Pass in <b>true</b>
 		as the <i>Strict</i>
 		flag if the <i>FunctionExpression</i>
-		is contained in strict code or if its <i>FunctionBody</i>
-		is strict code.</p>
+		is contained in <a href="#x10.1.1">strict code</a> or if its <i>FunctionBody</i>
+		is <a href="#x10.1.1">strict code</a>.</p>
 	</li></ol>
 	<p>
 	The
@@ -16129,7 +16112,7 @@ IEEE 754 round-to-nearest mode.
 		<li><p>
 		Let
 		<i>funcEnv </i>be
-		the result of calling NewDeclarativeEnvironment passing the running
+		the result of calling <a href="#x10.2.2.2">NewDeclarativeEnvironment</a> passing the running
 		execution context’s <a href="#x10.2">Lexical Environment</a> as the argument</p>
 		</li>
 		<li><p>
@@ -16139,7 +16122,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Call
-		the CreateImmutableBinding(N) concrete method of <i>envRec </i>passing the String
+		the <a href="#x10.2.1.1.7">CreateImmutableBinding</a>(N) concrete method of <i>envRec </i>passing the String
 		value of <i>Identifier</i>
 		as the argument.</p>
 		</li>
@@ -16154,12 +16137,12 @@ IEEE 754 round-to-nearest mode.
 		Pass in <b>true</b>
 		as the <i>Strict</i>
 		flag if the <i>FunctionExpression</i>
-		is contained in strict code or if its <i>FunctionBody</i>
-		is strict code.</p>
+		is contained in <a href="#x10.1.1">strict code</a> or if its <i>FunctionBody</i>
+		is <a href="#x10.1.1">strict code</a>.</p>
 		</li>
 		<li><p>
 		Call
-		the InitializeImmutableBinding(<i>N,V</i>)
+		the <a href="#x10.2.1.1.8">InitializeImmutableBinding</a>(<i>N,V</i>)
 		concrete method of <i>envRec </i>passing the String
 		value of <i>Identifier </i>and <i>closure </i>as the arguments.</p>
 		</li>
@@ -16314,7 +16297,7 @@ IEEE 754 round-to-nearest mode.
 		Call
 		the [[DefineOwnProperty]] internal method of <i>F</i>
 		with arguments <code><b>"</b></code><code><b>length</b></code><code><b>"</b></code>,
-		Property Descriptor {[[Value]]: <i>len</i>,
+	 <a href="#x8.10">Property Descriptor</a> {[[Value]]: <i>len</i>,
 		[[Writable]]: <b>false</b>,
 		[[Enumerable]]: <b>false</b>,
 		[[Configurable]]: <b>false</b>},
@@ -16334,7 +16317,7 @@ IEEE 754 round-to-nearest mode.
 		Call
 		the [[DefineOwnProperty]] internal method of <i>proto</i>
 		with arguments <code><b>"</b></code><code><b>constructor</b></code><code><b>"</b></code>,
-		Property Descriptor {[[Value]]: <i>F</i>,
+	 <a href="#x8.10">Property Descriptor</a> {[[Value]]: <i>F</i>,
 		{ [[Writable]]: <b>true</b>,
 		[[Enumerable]]: <b>false</b>,
 		[[Configurable]]: <b>true</b>},
@@ -16344,7 +16327,7 @@ IEEE 754 round-to-nearest mode.
 		Call
 		the [[DefineOwnProperty]] internal method of <i>F</i>
 		with arguments <code><b>"</b></code><code><b>prototype</b></code><code><b>"</b></code>,
-		Property Descriptor {[[Value]]: <i>proto</i>,
+	 <a href="#x8.10">Property Descriptor</a> {[[Value]]: <i>proto</i>,
 		{ [[Writable]]: <b>true</b>,
 		[[Enumerable]]: <b>false</b>,
 		[[Configurable]]: <b>false</b>},
@@ -16400,7 +16383,7 @@ IEEE 754 round-to-nearest mode.
 		<li><p>
 		Let
 		<i>funcCtx </i>be the result of establishing a new execution
-		context for function code using the value of <i>F</i>'s
+		context for <a href="#function-code">function code</a> using the value of <i>F</i>'s
 		[[FormalParameters]] internal property, the passed arguments <a href="#x8.8">List</a>
 		<i>args</i>, and the <b>this</b> value as described in <a href="#x10.4.3">10.4.3</a>.</p>
 		</li>
@@ -16528,7 +16511,7 @@ IEEE 754 round-to-nearest mode.
 		<li><p>
 		Set
 		the [[Scope]] internal property of <i>F</i>
-		to the Global Environment.</p>
+		to the <a href="#x10.2.3">Global Environment</a>.</p>
 		</li>
 		<li><p>
 		Set
@@ -16544,7 +16527,7 @@ IEEE 754 round-to-nearest mode.
 		Call
 		the [[DefineOwnProperty]] internal method of <i>F</i>
 		with arguments <code><b>"</b></code><code><b>length</b></code><code><b>"</b></code>,
-		Property Descriptor {[[Value]]: <i>0</i>,
+	 <a href="#x8.10">Property Descriptor</a> {[[Value]]: <i>0</i>,
 		[[Writable]]: <b>false</b>,
 		[[Enumerable]]: <b>false</b>,
 		[[Configurable]]: <b>false</b>},
@@ -16600,7 +16583,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>progCxt</i> be a new execution context for global code as
+		<i>progCxt</i> be a new execution context for <a href="#global-code">global code</a> as
 		described in <a href="#x10.4.1">10.4.1</a>. 
 		</p>
 		</li>
@@ -16865,7 +16848,7 @@ IEEE 754 round-to-nearest mode.
 	<h5 id="x15.1.2.1">15.1.2.1 eval (x) <a href="#x15.1.2.1">#</a> <a href="#x15.1.2.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	When
-	the <code><b>eval</b></code> function
+	the <code><b><a href="#x15.1.2.1">eval</a></b></code> function
 	is called with one argument <i>x</i>,
 	the following steps are taken:</p>
 	<ol>
@@ -16885,7 +16868,7 @@ IEEE 754 round-to-nearest mode.
 		Let
 		<i>evalCtx </i>be
 		the result of establishing a new execution context (<a href="#x10.4.2">10.4.2</a>) for the
-		eval code <i>prog</i>.</p>
+	 <a href="#eval-code">eval code</a> <i>prog</i>.</p>
 		</li>
 		<li><p>
 		Let
@@ -16932,7 +16915,7 @@ IEEE 754 round-to-nearest mode.
 	is <code>"</code><code><b>eval</b></code><code>"</code>.</p>
 	<p>
 	The
-	result of calling the abstract operation GetValue with that
+	result of calling the abstract operation <a href="#x8.7.1">GetValue</a> with that
 	<a href="#x8.7">Reference</a> as the argument is the standard built-in function defined
 	in <a href="#x15.1.2.1">15.1.2.1</a>.</p>
 	<h5 id="x15.1.2.2">15.1.2.2 parseInt (string , radix) <a href="#x15.1.2.2">#</a> <a href="#x15.1.2.2-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
@@ -19023,7 +19006,7 @@ If <i>inputString</i> does not contain any such characters, let
 		Return
 		a new Function object created as specified in <a href="#x13.2">13.2</a> passing <i>P</i>
 		as the <i>FormalParameterList</i> and <i>body</i> as the
-		<i>FunctionBody</i>. Pass in the Global Environment as the <i>Scope</i>
+		<i>FunctionBody</i>. Pass in the <a href="#x10.2.3">Global Environment</a> as the <i>Scope</i>
 		parameter and <i>strict</i> as the <i>Strict</i> flag.</p>
 	</li></ol>
 	<p>
@@ -19495,7 +19478,7 @@ If <i>inputString</i> does not contain any such characters, let
 	“arguments” that throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception. An
 	ECMAScript implementation must not associate any implementation
 	specific behaviour  with accesses of these properties from strict
-	mode function code. 
+	mode <a href="#function-code">function code</a>. 
 	</p>
 	<h5 id="x15.3.5.1">15.3.5.1 length <a href="#x15.3.5.1">#</a> <a href="#x15.3.5.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
@@ -19614,7 +19597,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<a href="#x9.6">ToUint32</a>(<i>P</i>)
 	is not equal to 2<sup>32</sup><span class="symbol">−</span>1.
 	A property whose property name is an array index is also called an
-	<i>element</i>. Every Array object has a <code><b>length</b></code>
+	<dfn id="array-element"><i>element</i></dfn>. Every Array object has a <code><b>length</b></code>
 	property whose value is always a nonnegative integer less than 2<sup>32</sup>.
 	The value of the <code><b>length</b></code>
 	property is numerically greater than the name of every property
@@ -20022,8 +20005,8 @@ If <i>inputString</i> does not contain any such characters, let
 	the <code><b>concat</b></code> method
 	is called with zero or more arguments <i>item1</i>,
 	<i>item2</i>, etc., it
-	returns an array containing the array elements of the object
-	followed by the array elements of each argument in order.</p>
+	returns an array containing the <a href="#array-element">array element</a>s of the object
+	followed by the <a href="#array-element">array element</a>s of each argument in order.</p>
 	<p>
 	The
 	following steps are taken:</p>
@@ -20098,7 +20081,7 @@ If <i>inputString</i> does not contain any such characters, let
 						<li><p>
 						Call
 						the [[DefineOwnProperty]] internal method of <i>A</i> with
-						arguments <a href="#x9.8">ToString</a>(<i>n</i>), Property Descriptor {[[Value]]:
+						arguments <a href="#x9.8">ToString</a>(<i>n</i>), <a href="#x8.10">Property Descriptor</a> {[[Value]]:
 						<i>subElement</i>, [[Writable]]: <b>true</b>, [[Enumerable]]:
 						<b>true</b>, [[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
 					</li></ol>
@@ -20120,7 +20103,7 @@ If <i>inputString</i> does not contain any such characters, let
 				<li><p>
 				Call
 				the [[DefineOwnProperty]] internal method of <i>A</i> with
-				arguments <a href="#x9.8">ToString</a>(<i>n</i>), Property Descriptor {[[Value]]: <i>E</i>,
+				arguments <a href="#x9.8">ToString</a>(<i>n</i>), <a href="#x8.10">Property Descriptor</a> {[[Value]]: <i>E</i>,
 				[[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b>,
 				[[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
 				</li>
@@ -20717,7 +20700,7 @@ If <i>inputString</i> does not contain any such characters, let
 				<li><p>
 				Call
 				the [[DefineOwnProperty]] internal method of <i>A</i> with
-				arguments <a href="#x9.8">ToString</a>(<i>n</i>), Property Descriptor {[[Value]]:
+				arguments <a href="#x9.8">ToString</a>(<i>n</i>), <a href="#x8.10">Property Descriptor</a> {[[Value]]:
 				<i>kValue</i>, [[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b>,
 				[[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
 			</li></ol>
@@ -21137,7 +21120,7 @@ If <i>inputString</i> does not contain any such characters, let
 				<li><p>
 				Call
 				the [[DefineOwnProperty]] internal method of <i>A</i> with
-				arguments <a href="#x9.8">ToString</a>(<i>k</i>), Property Descriptor {[[Value]]:
+				arguments <a href="#x9.8">ToString</a>(<i>k</i>), <a href="#x8.10">Property Descriptor</a> {[[Value]]:
 				<i>fromValue</i>, [[Writable]]: <b>true</b>, [[Enumerable]]:
 				<b>true</b>, [[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
 			</li></ol>
@@ -22179,7 +22162,7 @@ If <i>inputString</i> does not contain any such characters, let
 				<li><p>
 				Call
 				the [[DefineOwnProperty]] internal method of <i>A</i> with
-				arguments <i>Pk</i>, Property Descriptor {[[Value]]: <i>mappedValue</i>,
+				arguments <i>Pk</i>, <a href="#x8.10">Property Descriptor</a> {[[Value]]: <i>mappedValue</i>,
 				[[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b>,
 				[[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
 			</li></ol>
@@ -22321,7 +22304,7 @@ If <i>inputString</i> does not contain any such characters, let
 					<li><p>
 					Call
 					the [[DefineOwnProperty]] internal method of <i>A</i> with
-					arguments <a href="#x9.8">ToString</a>(<i>to</i>), Property Descriptor {[[Value]]:
+					arguments <a href="#x9.8">ToString</a>(<i>to</i>), <a href="#x8.10">Property Descriptor</a> {[[Value]]:
 					<i>kValue</i>, [[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b>,
 					[[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
 					</li>
@@ -22721,7 +22704,7 @@ If <i>inputString</i> does not contain any such characters, let
 	When
 	the [[DefineOwnProperty]] internal method of <i>A</i>
 	is called with property <i>P</i>,
-	Property Descriptor <i>Desc</i>,
+ <a href="#x8.10">Property Descriptor</a> <i>Desc</i>,
 	and Boolean flag <i>Throw</i>,
 	the following steps are taken:</p>
 	<ol>
@@ -22867,7 +22850,7 @@ If <i>inputString</i> does not contain any such characters, let
 				Call
 				the default [[DefineOwnProperty]] internal method (<a href="#x8.12.9">8.12.9</a>) on <i>A</i>
 				passing <b>"</b><code><b>length</b></code><b>"</b>,
-				Property Descriptor{[[Writable]]: <b>false</b>}, and <b>false</b>
+			 <a href="#x8.10">Property Descriptor</a>{[[Writable]]: <b>false</b>}, and <b>false</b>
 				as arguments. This call will always return <b>true</b>.</p>
 			</li></ol>
 			</li>
@@ -23567,7 +23550,7 @@ If <i>inputString</i> does not contain any such characters, let
 					<li><p>
 					Call
 					the [[DefineOwnProperty]] internal method of <i>A</i> with
-					arguments <a href="#x9.8">ToString</a>(<i>n</i>), the Property Descriptor
+					arguments <a href="#x9.8">ToString</a>(<i>n</i>), the <a href="#x8.10">Property Descriptor</a>
 					{[[Value]]: <i>matchStr</i>, [[Writable]]: <b>true</b>,
 					[[Enumerable]]: <b>true</b>, [[configurable]]: <b>true</b>}, and
 					<b>false</b>.</p>
@@ -23999,7 +23982,7 @@ If <i>inputString</i> does not contain any such characters, let
 			Call
 			the [[DefineOwnProperty]] internal method of <i>A</i> with
 			arguments <code>"</code><code><b>0</b></code><code>"</code>,
-			Property Descriptor {[[Value]]: <i>S</i>, [[Writable]]: <b>true</b>,
+		 <a href="#x8.10">Property Descriptor</a> {[[Value]]: <i>S</i>, [[Writable]]: <b>true</b>,
 			[[Enumerable]]: <b>true</b>, [[Configurable]]: <b>true</b>}, and
 			<b>false</b>.</p>
 			</li>
@@ -24025,7 +24008,7 @@ If <i>inputString</i> does not contain any such characters, let
 			Call
 			the [[DefineOwnProperty]] internal method of <i>A</i> with
 			arguments <code>"</code><code><b>0</b></code><code>"</code>,
-			Property Descriptor {[[Value]]: <i>S</i>, [[Writable]]: <b>true</b>,
+		 <a href="#x8.10">Property Descriptor</a> {[[Value]]: <i>S</i>, [[Writable]]: <b>true</b>,
 			[[Enumerable]]: <b>true</b>, [[Configurable]]: <b>true</b>}, and
 			<b>false</b>.</p>
 			</li>
@@ -24079,7 +24062,7 @@ If <i>inputString</i> does not contain any such characters, let
 					<li><p>
 					Call
 					the [[DefineOwnProperty]] internal method of <i>A</i> with
-					arguments <a href="#x9.8">ToString</a>(<i>lengthA</i>), Property Descriptor
+					arguments <a href="#x9.8">ToString</a>(<i>lengthA</i>), <a href="#x8.10">Property Descriptor</a>
 					{[[Value]]: <i>T</i>, [[Writable]]: <b>true</b>, [[Enumerable]]:
 					<b>true</b>, [[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
 					</li>
@@ -24110,7 +24093,7 @@ If <i>inputString</i> does not contain any such characters, let
 						<li><p>
 						Call
 						the [[DefineOwnProperty]] internal method of <i>A</i> with
-						arguments <a href="#x9.8">ToString</a>(<i>lengthA</i>), Property Descriptor
+						arguments <a href="#x9.8">ToString</a>(<i>lengthA</i>), <a href="#x8.10">Property Descriptor</a>
 						{[[Value]]: <i>cap</i>[<i>i</i>], [[Writable]]: <b>true</b>,
 						[[Enumerable]]: <b>true</b>, [[Configurable]]: <b>true</b>},
 						and <b>false</b>.</p>
@@ -24144,7 +24127,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<li><p>
 		Call
 		the [[DefineOwnProperty]] internal method of <i>A</i> with
-		arguments <a href="#x9.8">ToString</a>(<i>lengthA</i>), Property Descriptor {[[Value]]:
+		arguments <a href="#x9.8">ToString</a>(<i>lengthA</i>), <a href="#x8.10">Property Descriptor</a> {[[Value]]:
 		<i>T</i>, [[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b>,
 		[[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
 		</li>
@@ -24506,7 +24489,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Return
-		a Property Descriptor { [[Value]]: <i>resultStr</i>,
+		a <a href="#x8.10">Property Descriptor</a> { [[Value]]: <i>resultStr</i>,
 		[[Enumerable]]: <b>true</b>, [[Writable]]: <b>false</b>,
 		[[Configurable]]: <b>false </b>}</p>
 	</li></ol>
@@ -31373,7 +31356,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		Call
 		the [[DefineOwnProperty]] internal method of <i>A</i> with
 		arguments "<code><b>index</b></code><code><b>"</b></code>,
-		Property Descriptor {[[Value]]: <i>matchIndex</i>, [[Writable]:
+	 <a href="#x8.10">Property Descriptor</a> {[[Value]]: <i>matchIndex</i>, [[Writable]:
 		<b>true</b>, [[Enumerable]]: <b>true</b>, [[Configurable]]: <b>true</b>},
 		and <b>true</b>.</p>
 		</li>
@@ -31381,7 +31364,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		Call
 		the [[DefineOwnProperty]] internal method of <i>A</i> with
 		arguments "<code><b>input</b></code><code><b>"</b></code>,
-		Property Descriptor {[[Value]]: <i>S</i>, [[Writable]: <b>true</b>,
+	 <a href="#x8.10">Property Descriptor</a> {[[Value]]: <i>S</i>, [[Writable]: <b>true</b>,
 		[[Enumerable]]: <b>true</b>, [[Configurable]]: <b>true</b>}, and
 		<b>true</b>.</p>
 		</li>
@@ -31389,7 +31372,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		Call
 		the [[DefineOwnProperty]] internal method of <i>A</i> with
 		arguments "<code><b>length</b></code><code><b>"</b></code>,
-		Property Descriptor {[[Value]]: <i>n</i> + 1}, and <b>true</b>.</p>
+	 <a href="#x8.10">Property Descriptor</a> {[[Value]]: <i>n</i> + 1}, and <b>true</b>.</p>
 		</li>
 		<li><p>
 		Let
@@ -31401,7 +31384,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		Call
 		the [[DefineOwnProperty]] internal method of <i>A</i> with
 		arguments "<code><b>0</b></code><code><b>"</b></code>,
-		Property Descriptor {[[Value]]: <i>matchedSubstr</i>, [[Writable]:
+	 <a href="#x8.10">Property Descriptor</a> {[[Value]]: <i>matchedSubstr</i>, [[Writable]:
 		<b>true</b>, [[Enumerable]]: <b>true</b>, [[Configurable]]: <b>true</b>},
 		and <b>true</b>.</p>
 		</li>
@@ -31418,7 +31401,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 			<li><p>
 			Call
 			the [[DefineOwnProperty]] internal method of <i>A</i> with
-			arguments <a href="#x9.8">ToString</a>(<i>i</i>), Property Descriptor {[[Value]]:
+			arguments <a href="#x9.8">ToString</a>(<i>i</i>), <a href="#x8.10">Property Descriptor</a> {[[Value]]:
 			<i>captureI</i>, [[Writable]: <b>true</b>, [[Enumerable]]: <b>true</b>,
 			[[Configurable]]: <b>true</b>}, and <b>true</b>.</p>
 		</li></ol>
@@ -32137,7 +32120,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 						<li><p>
 						Call
 						the [[DefineOwnProperty]] internal method of <i>val</i> with
-						arguments <a href="#x9.8">ToString</a>(<i>I</i>), the Property Descriptor
+						arguments <a href="#x9.8">ToString</a>(<i>I</i>), the <a href="#x8.10">Property Descriptor</a>
 						{[[Value]]: <i>newElement</i>, [[Writable]]: true,
 						[[Enumerable]]: true, [[Configurable]]: true}, and <b>false</b>.</p>
 					</li></ol>
@@ -32188,7 +32171,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 						<li><p>
 						Call
 						the [[DefineOwnProperty]] internal method of <i>val</i> with
-						arguments <i>P</i>, the Property Descriptor {[[Value]]:
+						arguments <i>P</i>, the <a href="#x8.10">Property Descriptor</a> {[[Value]]:
 						<i>newElement</i>, [[Writable]]: <b>true</b>, [[Enumerable]]:
 						<b>true</b>, [[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
 					</li></ol>
@@ -32375,7 +32358,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		<li><p>
 		Call
 		the [[DefineOwnProperty]]  internal method of <i>wrapper</i> with
-		arguments the empty String, the Property Descriptor {[[Value]]:
+		arguments the empty String, the <a href="#x8.10">Property Descriptor</a> {[[Value]]:
 		<i>value</i>, [[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b>,
 		[[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
 		</li>
@@ -33034,7 +33017,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Attempts
-		to call PutValue on any value for which an early determination can
+		to call <a href="#x8.7.2">PutValue</a> on any value for which an early determination can
 		be made that the value is not a <a href="#x8.7">Reference</a> (for example, executing
 		the assignment statement <code>3=4</code>).</p>
 	</li></ul>
@@ -35342,7 +35325,7 @@ within strict mode code.  (<a href="#x7.6.12">7.6.12</a>).</li>
 		</li>
 		<li><p>
 		Assignment
-		to an undeclared identifier or otherwise unresolvable reference
+		to an undeclared identifier or otherwise <a href="#IsUnresolvableReference">unresolvable reference</a>
 		does not create a property in the <a href="#x15.1" class="term-ref">global object</a>. When a simple
 		assignment occurs within <a href="#x10.1.1" class="term-ref">strict mode code</a>, its <i>LeftHandSide </i>must not evaluate to an
 		unresolvable Reference. If it does a <b><a href="#x15.11.6.3" class="term-ref">ReferenceError</a></b>
@@ -35406,16 +35389,16 @@ within strict mode code.  (<a href="#x7.6.12">7.6.12</a>).</li>
 		in a <i>PropertySetParameterList</i><code><b>
 		</b></code>of a
 		<i>PropertyAssignment</i>
-		that is contained in strict code or
+		that is contained in <a href="#x10.1.1">strict code</a> or
 		if its <i>FunctionBody</i> is
-		strict code (<a href="#x11.1.5">11.1.5</a>).</p>
+		<a href="#x10.1.1">strict code</a> (<a href="#x11.1.5">11.1.5</a>).</p>
 		</li>
 		<li><p>
 		Strict
-		mode eval code cannot instantiate variables or functions in the
+		mode <a href="#eval-code">eval code</a> cannot <a href="#x10.5">instantiate variables or functions</a> in the
 		variable environment of the caller to eval. Instead, a new variable
 		environment is created and that environment is used for declaration
-		binding instantiation for the eval code (<a href="#x10.4.2">10.4.2</a>).</p>
+		binding instantiation for the <a href="#eval-code">eval code</a> (<a href="#x10.4.2">10.4.2</a>).</p>
 		</li>
 		<li><p>
 		If
@@ -35455,7 +35438,7 @@ is thrown if the property to
 		is a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 		if a <i>VariableDeclaration</i>
 		or <i>VariableDeclarationNoIn</i>
-		occurs within strict code and its  <i>Identifier</i>
+		occurs within <a href="#x10.1.1">strict code</a> and its  <i>Identifier</i>
 		is <code><b>eval</b></code><b>
 		</b>or<b>
 		</b><code><b>arguments</b></code>
@@ -35472,7 +35455,7 @@ is thrown if the property to
 		It
 		is a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> if a <i>TryStatement</i>
 		with a  <i>Catch</i>
-		occurs within strict code and the <i>Identifier</i>
+		occurs within <a href="#x10.1.1">strict code</a> and the <i>Identifier</i>
 		of the <i>Catch</i>
 		production is <code><b>eval</b></code>
 		or<b> </b><code><b>arguments</b></code>
@@ -35584,14 +35567,13 @@ is thrown if the property to
 	Object.prototype are visible as identifiers within that scope.  In
 	practice most implementations of Edition 3 have not implemented this
 	semantics.  Edition 5 changes the specified semantics by using a
-	Declarative Environment Record to bind the name of the function.</p>
+	Declarative <a href="#x10.2.1">Environment Record</a> to bind the name of the function.</p>
 	<p>
 	<a href="#x14">14</a>:.
 	In Edition 3, the algorithm for the production <i>SourceElements </i><b>:</b> <i>SourceElements
 	SourceElement </i>did not correctly propagate statement
 	result values in the same manner as <i>Block</i>.
-	This could result in the <code><b>eval</b></code>
-	function producing an incorrect result when evaluating a <i>Program</i>
+	This could result in the <code><b><a href="#x15.1.2.1">eval</a></b></code> function producing an incorrect result when evaluating a <i>Program</i>
 	text. In practice most implementations of Edition 3 have implemented
 	the correct propagation rather than what was specified in Edition 3.</p>
 	<p>
@@ -35641,11 +35623,10 @@ is thrown if the property to
 	have been interpreted as the final character of the literal.</p>
 	<p>
 	<a href="#x10.4.2">10.4.2</a>:
-	In Edition 5, indirect calls to the <code><b>eval</b></code>
-	function use the global environment as both the variable environment
-	and <a href="#x10.2">lexical environment</a> for the eval code.  In Edition 3, the
+	In Edition 5, indirect calls to the <code><b><a href="#x15.1.2.1">eval</a></b></code> function use the global environment as both the variable environment
+	and <a href="#x10.2">lexical environment</a> for the <a href="#eval-code">eval code</a>.  In Edition 3, the
 	variable and <a href="#x10.2">lexical environment</a>s of the caller of an indirect <code><b>eval</b></code>
-	was used as the environments for the eval code.</p>
+	was used as the environments for the <a href="#eval-code">eval code</a>.</p>
 	<p>
 	<a href="#x15.4.4">15.4.4</a>:
 	In Edition 5 all methods of <code><b><a href="#x15.4.3.1">Array.prototype</a></b></code>
