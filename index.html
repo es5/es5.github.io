@@ -8,24 +8,32 @@
 <body>
 <div id="prolog">
 <h2 id="top">Annotated ECMAScript 5.1</h2>
-  <p>The present document provides an annotated HTML view of the
-  standard
-  <cite><a href="http://www.ecmascript.org/">ECMA 262</a>, Edition 5.1</cite>,
-  which is also known as
-  <cite><a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">ECMAScript Language Specification</a>, 5th edition</cite>,
-  and which is the same spec that in practice defines what is
-  also commonly referred to as <i>JavaScript</i>.</p>
+<div id="disclaimer">
+<p><b class="note">NOTE</b> <b class="other">This is <i>not</i> the normative ECMAScript Language specification.</b></p>
+<p>The normative ECMAScript specification (<cite><a
+href="http://www.ecmascript.org/">ECMA 262</a></cite>) is a PDF file maintained by
+ECMA TC39 and is available at the following location:</p>
 
-<p><b class="note">NOTE</b> The present document is <b>not</b> a
-  normative version of the ECMAScript spec. The normative ECMAScript spec
-  is maintained by ECMA TC39 and is
-  <a href="#copyright">copyrighted</a>. However, the
-  <a href="#license">license</a> under which the spec is made available
-  permits the development of derivative works based the spec.
+<pre>  <a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm"
+>http://www.ecma-international.org/publications/standards/Ecma-262.htm</a></pre>
+</div>
+
+<p>This document provides a non-normative annotated HTML view of Edition 5.1 of the
+  ECMAScript Specification (which is the same spec that in practice defines what is
+  also commonly referred to as <i>JavaScript</i>), and incorporates all
+  changes included in the January 2011 “Prepublication Draft” of Edition
+  5.1 (which in turn includes all changes from the earlier July 2010
+  errata document for Edition 5).</p>
+
+<p>The ECMAScript specification is
+ <a href="#copyright">copyrighted</a>
+ and made available under a 
+  <a href="#license">license</a>
+  which permits the development of derivative works based the spec.
   Though the present document does include
   the <b>full text</b> of the spec, it is meant in
   fact to simply be a derivative work
-  based on the spec. It is provided as the means for making
+  based on the spec, and is provided as the means for making
   annotations to the spec easy available online in HTML—at
   point-of-use—for the explicit purposes of “explaining the spec
   and assisting in its implementation” that are provided for in
@@ -59,13 +67,19 @@
   “Editorial Items with no Technical Significance” section were
   not.</dd>
 
-<dt><b>①</b> Additional changes in the 5.1 edition</dt>
-<dd>These provide details about changes included in Annex F of the 5.1
-  edition of the spec but that were not already in the
+<dt><b>①</b> Additional changes in the edition 5.1</dt>
+<dd>These provide details about changes included in Annex F of edition 5.1
+  of the spec but that were not already in the
   <a href="http://wiki.ecmascript.org/doku.php?id=es3.1:es3.1_proposal_working_draft"
     >31 July 2010 erratum document</a>.</dd>
 </dl>
 
+ <p><b class="note">NOTE</b> All of these changes in the <b>Ⓔ</b> and
+ <b>①</b> annotations have already been incorporated into the main body of
+ this document, but the annotations for them are also made available
+ separately here as a means for implementors to more easily identify all
+ changes that have been made since the final version of edition 5 of the
+ spec was published (on 3 December 2009).</p>
 </div>
 <h1 id="doc-title">ECMAScript Language Specification</h1>
 <div id="toc">
@@ -35669,7 +35683,7 @@ within strict mode code.  (<a href="#x7.6.12">7.6.12</a>).</li>
 <code><b>Object.getPrototypeOf</b></code>,
 <code><b>Object.getOwnPropertyDescriptor</b></code>,
 <code><b>Object.getOwnPropertyNames</b></code>,
-<code><b>Object.create</b></code><b>,
+<code><b>Object.create</b></code>,
 <code><b>Object.defineProperty</b></code>,
 	<code><b>Object.defineProperties</b></code>,
 	<code><b>Object.seal</b></code>,
@@ -35692,7 +35706,8 @@ within strict mode code.  (<a href="#x7.6.12">7.6.12</a>).</li>
 	<code><b>String.prototype.trim</b></code>,
 	<code><b>Date.now</b></code>,
 	<code><b>Date.prototype.toISOString</b></code>,
-	<code><b>Date.prototype.toJSON</b></code>.</p>
+	<code><b>Date.prototype.toJSON</b></code>.
+</p>
 	<p>
 	<a href="#x15">15</a>:
 	Implementations are now required to ignore extra arguments to
@@ -35822,6 +35837,19 @@ within strict mode code.  (<a href="#x7.6.12">7.6.12</a>).</li>
 		Inc. (1998), Unicode Technical Report #15: Unicode Normalization
 		Forms</p>
 		</li>
+<li><p class="biblio"><i>ISO 8601:2004(E) Data elements and interchange
+formats – Information interchange -- Representation of dates and times</i></p></li>
+<li><p class="biblio">RFC 1738 “Uniform Resource Locators (URL)”, available at
+&lt;<a href="http://tools.ietf.org/html/rfc1738">http://tools.ietf.org/html/rfc1738</a>></p></li>
+<li><p class="biblio">RFC 2396 “Uniform Resource Identifiers (URI): Generic Syntax”,
+available at
+&lt;<a href="http://tools.ietf.org/html/rfc2396">http://tools.ietf.org/html/rfc2396</a>></p></li>
+<li><p class="biblio">RFC 3629 “UTF-8, a transformation format of ISO 10646”, available at
+&lt;<a href="http://tools.ietf.org/html/rfc3629">http://tools.ietf.org/html/rfc3629</a>></p></li>
+<li><p class="biblio">RFC 4627 “The application/json Media Type for JavaScript Object
+Notation (JSON)“ , available at
+&lt;<a href="http://tools.ietf.org/html/rfc4627">http://tools.ietf.org/html/rfc4627</a>></p></li>
+
 	</ol>
 <div id="mascot-treehouse">
 	<img id="mascot" align="left" src="js-mascot.svg" alt="">

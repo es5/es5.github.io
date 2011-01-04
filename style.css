@@ -6,6 +6,10 @@ a:visited
   border-bottom: 2px dotted gray;
 }
 
+a:hover {
+  background-color: yellow;
+}
+
 dfn {
   font-style: normal;
 }
@@ -14,6 +18,7 @@ body {
   margin-left: 200px;
   margin-right: 10%;
   font-family: sans-serif;
+  line-height: 150%;
 }
 h1, h2, h3, h4, h5, h6 {
   color: green;
@@ -121,6 +126,10 @@ b a {
   color: green !important;
 }
 
+b.other {
+  color: inherit
+}
+
 #doc-title {
   background-color: green;
   color: white;
@@ -179,6 +188,13 @@ b a {
   margin-bottom: 8px;
   border: 1px solid #000000;
   padding: 4px;
+}
+#disclaimer {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #000000;
+  padding: 4px;
+  padding-left: 20px;
 }
 b {
   font-weight: bold;
@@ -498,6 +514,12 @@ p.ed + p.keep {
 }
 #anno-type {
   padding: 4px;
+}
+
+.erra:hover,
+.rev1:hover,
+.anno:hover {
+  background-color: yellow;
 }
 
 #x7\.1 .erra,
