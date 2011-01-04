@@ -4884,20 +4884,33 @@ the empty character sequence.</P></LI>
 	within this specification manipulate values each of which has an
 	associated type. The possible value types are exactly those defined
 	in this clause. Types are further subclassified into ECMAScript
-	language types and specification types.</p>
+	<a href="#language-type">language types</a> and <a href="#specification-type">specification types</a>.</p>
 	<p>
 	An
-	ECMAScript language type corresponds to values that are directly
+	ECMAScript <dfn id="language-type">language type</dfn> corresponds to values that are directly
 	manipulated by an ECMAScript programmer using the ECMAScript
-	language. The ECMAScript language types are Undefined, Null,
-	Boolean, String, Number, and Object.</p>
+	language. The ECMAScript language types are
+<a href="#x8.1">Undefined</a>,
+<a href="#x8.2">Null</a>,
+<a href="#x8.3">Boolean</a>,
+<a href="#x8.4">String</a>,
+<a href="#x8.5">Number</a>,
+and
+<a href="#x8.6">Object</a>.</p>
 	<p>
 	A
-	specification type corresponds to meta-values that are used within
+	<dfn id="specification-type">specification type</dfn> corresponds to meta-values that are used within
 	algorithms to describe the semantics of ECMAScript language
-	constructs and ECMAScript language types. The specification types
-	are Reference, List, Completion, Property Descriptor, Property
-	Identifier, Lexical Environment, and Environment Record.
+	constructs and ECMAScript <a href="#language-type">language types</a>. The specification types
+	are
+<a href="#x8.7">Reference</a>,
+<a href="#x8.8">List</a>,
+<a href="#x8.9">Completion</a>,
+<a href="#x8.10">Property Descriptor</a>,
+<a href="#propertiy-identifier">Property Identifier</a>,
+<a href="#x10.2">Lexical Environment</a>,
+and
+<a href="#x10.2">Environment Record</a>.
 	Specification type values are specification artefacts that do not
 	necessarily correspond to any specific entity within an ECMAScript
 	implementation. Specification type values may be used to describe
@@ -5178,7 +5191,8 @@ the empty character sequence.</P></LI>
 				<td width="134">
 					<p>
 					Any
-					ECMAScript language type</p>
+					ECMAScript <a
+					href="#language-type">language type</a></p>
 				</td>
 				<td width="408">
 					<p>
@@ -5474,7 +5488,7 @@ the empty character sequence.</P></LI>
 	types of values associated with internal properties. The type names
 	refer to the types defined in <a href="#x8">Clause 8</a> augmented by the following
 	additional names. “<i>any</i>” means the value may be any
-	ECMAScript language type. “<i>primitive</i>” means Undefined,
+	ECMAScript <a href="#language-type">language type</a>. “<i>primitive</i>” means Undefined,
 	Null, Boolean, String, or Number. “<i>SpecOp</i>” means the
 	internal property is an internal method, an implementation provided
 	procedure defined by an abstract operation specification. “SpecOp”
@@ -5579,12 +5593,13 @@ the empty character sequence.</P></LI>
 					SpecOp
 					(<i>propertyName</i>) <i><b>→</b></i></p>
 					<p class="keep">
-					Undefined<i>or </i>Property Descriptor</p>
+					Undefined<i>or</i>
+ <a href="#x8.10">Property Descriptor</a></p>
 				</td>
 				<td width="338">
 					<p class="keep">
 					Returns
-					the Property Descriptor of the named own property of this
+					the <a href="#x8.10">Property Descriptor</a> of the named own property of this
 					object, or <b>undefined </b>if absent.</p>
 				</td>
 			</tr>
@@ -5598,12 +5613,13 @@ the empty character sequence.</P></LI>
 					SpecOp
 					(<i>propertyName</i>) <i><b>→</b></i></p>
 					<p class="keep">
-					Undefined<i>or </i>Property Descriptor</p>
+					Undefined<i>or </i>
+ <a href="#x8.10">Property Descriptor</a></p>
 				</td>
 				<td width="338">
 					<p class="keep">
 					Returns
-					the fully populated Property Descriptor of the named property of
+					the fully populated <a href="#x8.10">Property Descriptor</a> of the named property of
 					this object, or <b>undefined </b>if absent.</p>
 				</td>
 			</tr>
@@ -5710,7 +5726,7 @@ the empty character sequence.</P></LI>
 					<p class="keep">
 					Creates
 					or alters the named own property to have the state described by
-					a Property Descriptor. The flag controls failure handling.</p>
+					a <a href="#x8.10">Property Descriptor</a>. The flag controls failure handling.</p>
 				</td>
 			</tr>
 		</tbody></table>
@@ -5894,7 +5910,7 @@ the empty character sequence.</P></LI>
 				<td width="143">
 					<p class="keep">
 					SpecOp(a
-					List of <i>any</i>) <i><b>→</b></i>
+				 <a href="#x8.8">List</a> of <i>any</i>) <i><b>→</b></i>
 					Object</p>
 				</td>
 				<td width="418">
@@ -5914,8 +5930,8 @@ the empty character sequence.</P></LI>
 				<td width="143">
 					<p class="keep">
 					SpecOp(<i>any</i>,
-					a List of <i>any</i>) <i><b>→</b></i>
-					<i>any </i>or Reference</p>
+					a <a href="#x8.8">List</a> of <i>any</i>) <i><b>→</b></i>
+					<i>any </i>or <a href="#x8.7">Reference</a></p>
 				</td>
 				<td width="418">
 					<p class="keep">
@@ -5925,7 +5941,7 @@ the empty character sequence.</P></LI>
 					list containing the arguments passed to the function call
 					expression. Objects that implement this internal method are
 					<i>callable</i>. Only callable objects that are host objects may
-					return Reference values.</p>
+					return <a href="#x8.7">Reference</a> values.</p>
 				</td>
 			</tr>
 			<tr valign="TOP">
@@ -5955,13 +5971,12 @@ the empty character sequence.</P></LI>
 				</td>
 				<td width="143">
 					<p class="keep">
-					Lexical
-					Environment</p>
+				 <a href="#x10.2">Lexical Environment</a></p>
 				</td>
 				<td width="418">
 					<p class="keep">
 					A
-					lexical environment that defines the environment in which a
+				 <a href="#x10.2">lexical environment</a> that defines the environment in which a
 					Function object is executed. Of the standard built-in ECMAScript
 					objects, only Function objects implement [[Scope]].</p>
 				</td>
@@ -5973,13 +5988,13 @@ the empty character sequence.</P></LI>
 				</td>
 				<td width="143">
 					<p class="keep">
-					List
+				 <a href="#x8.8">List</a>
 					of Strings</p>
 				</td>
 				<td width="418">
 					<p class="keep">
 					A
-					possibly empty List containing the identifier Strings of a
+					possibly empty <a href="#x8.8">List</a> containing the identifier Strings of a
 					Function’s <i>FormalParameterList</i>.
 					Of the standard built-in ECMAScript objects, only Function
 					objects implement [[FormalParameterList]].</p>
@@ -6045,7 +6060,7 @@ the empty character sequence.</P></LI>
 				</td>
 				<td width="143">
 					<p>
-					List
+				 <a href="#x8.8">List</a>
 					of <i>any</i></p>
 				</td>
 				<td width="418">
@@ -6160,7 +6175,7 @@ the empty character sequence.</P></LI>
 	<ol>
 		<li><p>
 		If
-		Type(<i>V</i>) is not Reference, return <i>V</i>.</p>
+		Type(<i>V</i>) is not <a href-"#x8.7">Reference</a>, return <i>V</i>.</p>
 		</li>
 		<li><p>
 		Let
@@ -6189,7 +6204,7 @@ the empty character sequence.</P></LI>
 		</li>
 		<li><p>
 		Else,
-		<i>base</i> must be an environment record.</p>
+		<i>base</i> must be an <a href="#x10.2">environment record</a>.</p>
 		<ol>
 			<li><p>
 			Return
@@ -6248,7 +6263,8 @@ the empty character sequence.</P></LI>
 	<ol>
 		<li><p>
 		If
-		Type(<i>V</i>) is not Reference, throw a <b><a href="#x15.11.6.3" class="term-ref">ReferenceError</a></b>
+		Type(<i>V</i>) is not <a href="#x8.7">Reference</a>,
+ throw a <b><a href="#x15.11.6.3" class="term-ref">ReferenceError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -6295,8 +6311,7 @@ the empty character sequence.</P></LI>
 		</li>
 		<li><p>
 		Else
-		<i>base </i>must be a reference whose base is an environment
-		record. So,</p>
+		<i>base </i>must be a reference whose base is an <a href="#x10.2">environment record</a>. So,</p>
 		<ol>
 			<li><p>
 			Call
@@ -6360,8 +6375,8 @@ the empty character sequence.</P></LI>
 		Let
 		<i>desc</i> be the result of calling the [[GetProperty]] internal
 		method of <i>O</i> with argument <i>P</i>. This may be either an
-		own or inherited accessor property descriptor or an inherited data
-		property descriptor.</p>
+		own or inherited <a href="#accessor-property-descriptor">accessor property descriptor</a>
+ or an inherited <a href="#data-property-descriptor">data property descriptor</a>.</p>
 		</li>
 		<li><p>
 		If
@@ -6438,9 +6453,9 @@ the empty character sequence.</P></LI>
 	Property
 	Descriptor values may be further classified as data property
 	descriptors and accessor property descriptors based upon the
-	existence or use of certain fields. A data property descriptor is
+	existence or use of certain fields. A <dfn id="data-property-descriptor">data property descriptor</dfn> is
 	one that includes any fields named either [[Value]] or [[Writable]].
-	An accessor property descriptor is one that includes any fields
+	An <dfn id="accessor-property-descriptor">accessor property descriptor</dfn> is one that includes any fields
 	named either [[Get]] or [[Set]]. Any property descriptor may have
 	fields named [[Enumerable]] and [[Configurable]]. A Property
 	Descriptor value may not be both a data property descriptor and an
@@ -6467,7 +6482,7 @@ the empty character sequence.</P></LI>
 	of D named [[Value]]”.</p>
 	<p>
 	The
-	Property Identifier type is used to associate a property name with a
+	<dfn id="property-identifier">Property Identifier</dfn> type is used to associate a property name with a
 	Property Descriptor.  Values of the Property Identifier type are
 	pairs of the form (name, descriptor), where name is a String and
 	descriptor is a Property Descriptor value. 
@@ -6554,7 +6569,7 @@ the empty character sequence.</P></LI>
 	the following steps are taken:</p>
 	<p>
 	The
-	following algorithm assumes that <i>Desc </i>is a fully populated Property Descriptor, such as that
+	following algorithm assumes that <i>Desc </i>is a fully populated <a href="#x8.10">Property Descriptor</a>, such as that
 	returned from [[GetOwnProperty]] (see <a href="#x8.12.1">8.12.1</a>).</p>
 	<ol>
 		<li><p>
@@ -6673,7 +6688,7 @@ the empty character sequence.</P></LI>
 		</li>
 		<li><p>
 		Let
-		<i>desc</i> be the result of creating a new Property Descriptor
+		<i>desc</i> be the result of creating a new <a href-"#x8.10">Property Descriptor</a>
 		that initially has no fields.</p>
 		</li>
 		<li><p>
@@ -6824,7 +6839,7 @@ the empty character sequence.</P></LI>
 		</li>
 		<li><p>
 		Let
-		<i>D </i>be a newly created Property Descriptor with no fields.</p>
+		<i>D </i>be a newly created <a href="#x8.10">Property Descriptor</a> with no fields.</p>
 		</li>
 		<li><p>
 		Let
@@ -7075,8 +7090,8 @@ the empty character sequence.</P></LI>
 		Let
 		<i>desc </i>be the result of calling the [[GetProperty]] internal
 		method of <i>O </i>with argument <i>P</i>. This may be either an
-		own or inherited accessor property descriptor or an inherited data
-		property descriptor.</p>
+		own or inherited <a href="#accessor-property-descriptor">accessor property descriptor</a>
+ or an inherited <a href="#data-property-descriptor">data property descriptor</a>.</p>
 		</li>
 		<li><p>
 		If
@@ -7336,7 +7351,8 @@ the empty character sequence.</P></LI>
 			</li>
 			<li><p>
 			Else,
-			<i>Desc</i> must be an accessor Property Descriptor so,</p>
+			<i>Desc</i> must be an
+ <a href="#accessor-property-descriptor">accessor Property Descriptor</a> so,</p>
 			<ol>
 				<li><p>
 				Create
@@ -7505,8 +7521,8 @@ the empty character sequence.</P></LI>
 	operations are not a part of the language; they are defined here to
 	aid the specification of the semantics of the language. The
 	conversion abstract operations are polymorphic; that is, they can
-	accept a value of any ECMAScript language type, but not of
-	specification types.</p>
+	accept a value of any ECMAScript <a href="#language-type">language type</a>, but not of
+	<a href="#specification-type">specification types</a>.</p>
 	<h3 id="x9.1">9.1 ToPrimitive <a href="#x9.1">#</a> <a href="#x9.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
 	<p>
 	The
@@ -9056,7 +9072,7 @@ the empty character sequence.</P></LI>
 	<h3 id="x10.2">10.2 Lexical Environments <a href="#x10.2">#</a> <a href="#x10.2-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
 	<p>
 	A
-	<i>Lexical Environment</i> is a specification type used to define
+	<i>Lexical Environment</i> is a <a href="#specification-type">specification type</a> used to define
 	the association of <i>Identifiers</i>
 	to specific variables and functions based upon the lexical nesting
 	structure of ECMAScript code. A Lexical Environment consists of an
@@ -9178,7 +9194,7 @@ the empty character sequence.</P></LI>
 					environment record. The String value <i>N</i>
 					is the text of the bound name. <i>V</i>
 					is the value for the binding and may be a value of any
-					ECMAScript language type. <i>S</i>
+					ECMAScript <a href="#language-type">language type</a>. <i>S</i>
 					is a Boolean flag.  If <i>S</i>
 					is <b>true</b> and
 					the binding cannot be set throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception. <i>S</i>
@@ -9288,7 +9304,7 @@ the empty character sequence.</P></LI>
 					binding in an environment record. The String value <i>N</i>
 					is the text of the bound name. <i>V</i>
 					is the value for the binding and is a value of any ECMAScript
-					language type. 
+					<a href="#language-type">language type</a>. 
 					</p>
 				</td>
 			</tr>
@@ -9729,8 +9745,7 @@ the empty character sequence.</P></LI>
 	<h5 id="x10.2.2.1">10.2.2.1 GetIdentifierReference (lex, name, strict) <a href="#x10.2.2.1">#</a> <a href="#x10.2.2.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	The
-	abstract operation GetIdentifierReference is called with a Lexical
-	Environment <i>lex</i>,
+	abstract operation GetIdentifierReference is called with a <a href="#x10.2">Lexical Environment</a> <i>lex</i>,
 	an identifier String <i>name</i>,
 	and a Boolean flag <i>strict. </i>The value of <i>lex </i>may be <b>null</b>. When called, the following steps are
 	performed:</p>
@@ -9741,7 +9756,7 @@ the empty character sequence.</P></LI>
 		<ol>
 			<li><p>
 			Return
-			a value of type Reference whose base value is <b>undefined</b>,
+			a value of type <a href="#x8.7">Reference</a> whose base value is <b>undefined</b>,
 			whose referenced name is <i>name</i>, and whose strict mode flag
 			is <i>strict</i>.</p>
 		</li></ol>
@@ -9763,7 +9778,7 @@ the empty character sequence.</P></LI>
 		<ol>
 			<li><p>
 			Return
-			a value of type Reference whose base value is <i>envRec</i>, whose
+			a value of type <a href="#x8.7">Reference</a> whose base value is <i>envRec</i>, whose
 			referenced name is <i>name</i>, and whose strict mode flag is
 			<i>strict.</i></p>
 		</li></ol>
@@ -9786,11 +9801,11 @@ the empty character sequence.</P></LI>
 	<p>
 	When
 	the abstract operation NewDeclarativeEnvironment is called with
-	either a Lexical Environment or <b>null</b> as argument <i>E </i>the following steps are performed:</p>
+	either a <a href="#x10.2">Lexical Environment</a> or <b>null</b> as argument <i>E </i>the following steps are performed:</p>
 	<ol>
 		<li><p>
 		Let
-		<i>env</i> be a new Lexical Environment.</p>
+		<i>env</i> be a new <a href="#x10.2">Lexical Environment</a>.</p>
 		</li>
 		<li><p>
 		Let
@@ -9813,13 +9828,12 @@ the empty character sequence.</P></LI>
 	<p>
 	When
 	the abstract operation NewObjectEnvironmentis called with an Object
-	<i>O</i> and a Lexical
-	Environment <i>E </i>(or
+	<i>O</i> and a <a href="#x10.2">Lexical Environment</a> <i>E </i>(or
 	<b>null)</b> as arguments, the following steps are performed:</p>
 	<ol>
 		<li><p>
 		Let
-		<i>env</i> be a new Lexical Environment.</p>
+		<i>env</i> be a new <a href="#x10.2">Lexical Environment</a>.</p>
 		</li>
 		<li><p>
 		Let
@@ -9841,7 +9855,7 @@ the empty character sequence.</P></LI>
 	<h4 id="x10.2.3">10.2.3 The Global Environment <a href="#x10.2.3">#</a> <a href="#x10.2.3-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	The
-	<i>global environment</i> is a unique Lexical Environment which is
+	<i>global environment</i> is a unique <a href="#x10.2">Lexical Environment</a> which is
 	created before any ECMAScript code is executed. The global
 	environment’s Environment Record is an object environment record
 	whose binding object is the <a href="#x15.1" class="term-ref">global object</a> (<a href="#x15.1">15.1</a>). The global
@@ -9892,7 +9906,7 @@ the empty character sequence.</P></LI>
 				<td width="495">
 					<p>
 					Identifies
-					the Lexical Environment used to resolve identifier references
+					the <a href="#x10.2">Lexical Environment</a> used to resolve identifier references
 					made by code within this execution context.</p>
 				</td>
 			</tr>
@@ -9904,7 +9918,7 @@ the empty character sequence.</P></LI>
 				<td width="495">
 					<p>
 					Identifies
-					the Lexical Environment whose environment record holds bindings
+					the <a href="#x10.2">Lexical Environment</a> whose environment record holds bindings
 					created by <i>VariableStatements</i>
 					and <i>FunctionDeclarations</i>
 					within this execution context.</p>
@@ -9926,7 +9940,7 @@ the empty character sequence.</P></LI>
 	<p>
 	The
 	LexicalEnvironment and VariableEnvironment components of an
-	execution context are always Lexical Environments. When an execution
+	execution context are always <a href="#x10.2">Lexical Environment</a>s. When an execution
 	context is created its LexicalEnvironment and VariableEnvironment
 	components initially have the same value.  The value of the
 	VariableEnvironment component never changes while the value of the
@@ -9977,7 +9991,7 @@ the empty character sequence.</P></LI>
 	<p>
 	The
 	result of evaluating an identifier is always a value of type
-	Reference with its referenced name component equal to the <i>Identifier</i>
+	<a href="#x8.7">Reference</a> with its referenced name component equal to the <i>Identifier</i>
 	String.</p>
 	<h3 id="x10.4">10.4 Establishing an Execution Context <a href="#x10.4">#</a> <a href="#x10.4-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
 	<p>
@@ -10161,11 +10175,11 @@ the empty character sequence.</P></LI>
 	depends upon the type of ECMAScript code executed by the execution
 	context, but the remainder of the behaviour is generic. On entering
 	an execution context, bindings are created in the
-	VariableEnvironment as follows using the caller provided <i>code </i>and, if it is function code, argument List <i>args</i>:</p>
+	VariableEnvironment as follows using the caller provided <i>code </i>and, if it is function code, argument <a href="#x8.8">List</a> <i>args</i>:</p>
 	<ol>
 		<li value="1"><p>
 		Let
-		<i>env</i> be the environment record component of the running
+		<i>env</i> be the <a href="#x10.2">environment record</a> component of the running
 		execution context’s VariableEnvironment.</p>
 		</li>
 		<li><p>
@@ -10252,7 +10266,7 @@ the empty character sequence.</P></LI>
 			<I>configurableBindings</I> as the arguments.</P>
 			<LI><p>Else
 			if <I>env</I>
-			is the environment record component of the global environment then</P>
+			is the <a href="#x10.2">environment record</a> component of the global environment then</P>
 			<ol>
 				<LI><p>Let
 				<I>go</I>
@@ -10396,7 +10410,7 @@ the empty character sequence.</P></LI>
 	arguments object is created by calling the abstract operation
 	CreateArgumentsObject with arguments <i>func</i>
 	the function object whose code is to be evaluated<i>,
-	names</i> a List containing the function’s formal parameter
+	names</i> a <a href="#x8.8">List</a> containing the function’s formal parameter
 	names<i>, args </i>the
 	actual arguments passed to the [[Call]] internal method, <i>env </i>the variable environment for the function code, and
 	<i>strict</i> a Boolean
@@ -10445,7 +10459,7 @@ the empty character sequence.</P></LI>
 		</li>
 		<li><p>
 		Let
-		<i>mappedNames</i> be an empty List.</p>
+		<i>mappedNames</i> be an empty <a href="#x8.8">List</a>.</p>
 		</li>
 		<li><p>
 		Let
@@ -10571,7 +10585,7 @@ the empty character sequence.</P></LI>
 	<p>
 	The
 	abstract operation <i>MakeArgGetter</i> called with String <i>name</i>
-	and environment record <i>env</i>
+	and <a href="#x10.2">environment record</a> <i>env</i>
 	creates a function object that when executed returns the value bound
 	for <i>name</i> in <i>env</i>.
 	 It performs the following steps:</p>
@@ -10590,7 +10604,7 @@ the empty character sequence.</P></LI>
 	<p>
 	The
 	abstract operation <i>MakeArgSetter</i> called with String <i>name</i>
-	and environment record <i>env</i>
+	and <a href="#x10.2">environment record</a> <i>env</i>
 	creates a function object that when executed sets the value bound
 	for <i>name</i> in <i>env</i>.
 	 It performs the following steps:</p>
@@ -10610,7 +10624,7 @@ the empty character sequence.</P></LI>
 		<li><p>
 		Return
 		the result of creating a function object as described in <a href="#x13.2">13.2</a> using
-		a List containing the single String <i>param </i>as
+		a <a href="#x8.8">List</a> containing the single String <i>param </i>as
 		<i>FormalParameterList</i>, <i>body</i> for <i>FunctionBody</i>,
 		<i>env</i> as <i>Scope</i>, and <b>true</b> for <i>Strict</i>.</p>
 	</li></ol>
@@ -10876,7 +10890,7 @@ the empty character sequence.</P></LI>
 	<i>Identifier</i> is
 	evaluated by performing Identifier Resolution as specified in
 	<a href="#x10.3.1">10.3.1</a>. The result of evaluating an <i>Identifier</i>
-	is always a value of type Reference.</p>
+	is always a value of type <a href="#x8.7">Reference</a>.</p>
 	<h4 id="x11.1.3">11.1.3 Literal Reference <a href="#x11.1.3">#</a> <a href="#x11.1.3-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	A
@@ -11298,7 +11312,7 @@ the empty character sequence.</P></LI>
 		</li>
 		<li><p>
 		Return
-		Property Identifier (<i>propName</i>, <i>desc</i>).</p>
+	 <a href="#property-identifier">Property Identifier</a> (<i>propName</i>, <i>desc</i>).</p>
 	</li></ol>
 	<p>
 	The
@@ -11330,7 +11344,7 @@ the empty character sequence.</P></LI>
 		</li>
 		<li><p>
 		Return
-		Property Identifier (<i>propName</i>, <i>desc</i>).</p>
+	 <a href="#property-identifier">Property Identifier</a> (<i>propName</i>, <i>desc</i>).</p>
 	</li></ol>
 	<p>
 	The
@@ -11365,7 +11379,7 @@ the empty character sequence.</P></LI>
 		</li>
 		<li><p>
 		Return
-		Property Identifier (<i>propName</i>, <i>desc</i>).</p>
+	 <a href="#property-identifier">Property Identifier</a> (<i>propName</i>, <i>desc</i>).</p>
 	</li></ol>
 	<p>
 	It is
@@ -11542,7 +11556,7 @@ the empty character sequence.</P></LI>
 		</li>
 		<li><p>
 		Return
-		a value of type Reference whose base value is <i>baseValue</i> and
+		a value of type <a href="#x8.7">Reference</a> whose base value is <i>baseValue</i> and
 		whose referenced name is <i>propertyNameString</i>, and whose
 		strict mode flag is <i>strict</i>.</p>
 	</li></ol>
@@ -11651,7 +11665,7 @@ the empty character sequence.</P></LI>
 		</li>
 		<li><p>
 		If
-		Type(<i>ref</i>) is Reference, then</p>
+		Type(<i>ref</i>) is <a href="#x8.7">Reference</a>, then</p>
 		<ol>
 			<li><p>
 			If
@@ -11675,7 +11689,7 @@ the empty character sequence.</P></LI>
 		</li>
 		<li><p>
 		Else,
-		Type(<i>ref</i>) is not Reference.</p>
+		Type(<i>ref</i>) is not <a href="#x8.7">Reference</a>.</p>
 		<ol>
 			<li><p>
 			Let
@@ -11698,15 +11712,15 @@ the empty character sequence.</P></LI>
 	evaluated in step 1.</p>
 	<p class="sp">
 	</p><p><b class="note">NOTE</b> The returned
-	result will never be of type Reference if <i>func</i>
+	result will never be of type <a href="#x8.7">Reference</a> if <i>func</i>
 	is a native ECMAScript object. Whether calling a host object can
-	return a value of type Reference is implementation-dependent. If a
-	value of type Reference is returned, it must be a non-strict
-	Property Reference.</p>
-	<h4 id="x11.2.4">11.2.4 Argument Lists <a href="#x11.2.4">#</a> <a href="#x11.2.4-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
+	return a value of type <a href="#x8.7">Reference</a> is implementation-dependent. If a
+	value of type <a href="#x8.7">Reference</a> is returned, it must be a non-strict
+	Property <a href="#x8.7">Reference</a>.</p>
+	<h4 id="x11.2.4">11.2.4 Argument <a href="#x8.8">List</a>s <a href="#x11.2.4">#</a> <a href="#x11.2.4-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	The
-	evaluation of an argument list produces a List of values (see <a href="#x8.8">8.8</a>).</p>
+	evaluation of an argument list produces a <a href="#x8.8">List</a> of values (see <a href="#x8.8">8.8</a>).</p>
 	<p>
 	The
 	production <i>Arguments </i><b>:</b>
@@ -11715,7 +11729,7 @@ the empty character sequence.</P></LI>
 	<ol>
 		<li><p>
 		Return
-		an empty List.</p>
+		an empty <a href="#x8.8">List</a>.</p>
 	</li></ol>
 	<p>
 	The
@@ -11743,7 +11757,7 @@ the empty character sequence.</P></LI>
 		</li>
 		<li><p>
 		Return
-		a List whose sole item is <i>arg</i>.</p>
+		a <a href="#x8.8">List</a> whose sole item is <i>arg</i>.</p>
 	</li></ol>
 	<p>
 	The
@@ -11765,7 +11779,7 @@ the empty character sequence.</P></LI>
 		</li>
 		<li><p>
 		Return
-		a List whose length is one greater than the length of <i>precedingArgs</i>
+		a <a href="#x8.8">List</a> whose length is one greater than the length of <i>precedingArgs</i>
 		and whose items are the items of <i>precedingArgs</i>, in order,
 		followed at the end by <i>arg</i> which is the last item of the new
 		list.</p>
@@ -11811,7 +11825,7 @@ the empty character sequence.</P></LI>
 	<ul>
 		<li><p>
 		Type(<i>lhs</i>)
-		is Reference is <b>true</b></p>
+		is <a href="#x8.7">Reference</a> is <b>true</b></p>
 		</li>
 		<li><p>
 		IsStrictReference(<i>lhs</i>)
@@ -11866,7 +11880,7 @@ the empty character sequence.</P></LI>
 	<ul>
 		<li><p>
 		Type(<i>lhs</i>)
-		is Reference is <b>true</b></p>
+		is <a href="#x8.7">Reference</a> is <b>true</b></p>
 		</li>
 		<li><p>
 		IsStrictReference(<i>lhs</i>)
@@ -11923,7 +11937,7 @@ the empty character sequence.</P></LI>
 		</li>
 		<li><p>
 		If
-		Type(<i>ref</i>) is not Reference, return <b>true</b>.</p>
+		Type(<i>ref</i>) is not <a href="#x8.7">Reference</a>, return <b>true</b>.</p>
 		</li>
 		<li><p>
 		If
@@ -11952,7 +11966,7 @@ the empty character sequence.</P></LI>
 		</li>
 		<li><p>
 		Else,
-		<i>ref</i> is a Reference to an Environment Record binding, so</p>
+		<i>ref</i> is a <a href="#x8.10">Reference</a> to an Environment Record binding, so</p>
 		<ol>
 			<li><p>
 			If
@@ -12015,7 +12029,7 @@ the empty character sequence.</P></LI>
 		</li>
 		<li><p>
 		If
-		Type(<i>val</i>) is Reference, then</p>
+		Type(<i>val</i>) is <a href="#x8.10">Reference</a>, then</p>
 		<ol>
 			<li><p>
 			If
@@ -12151,7 +12165,7 @@ the empty character sequence.</P></LI>
 	<ul>
 		<li><p>
 		Type(<i>expr</i>)
-		is Reference is <b>true</b></p>
+		is <a href="#x8.7">Reference</a> is <b>true</b></p>
 		</li>
 		<li><p>
 		IsStrictReference(<i>expr</i>)
@@ -12204,7 +12218,7 @@ the empty character sequence.</P></LI>
 	<ul>
 		<li><p>
 		Type(<i>expr</i>)
-		is Reference is <b>true</b></p>
+		is <a href="#x8.7">Reference</a> is <b>true</b></p>
 		</li>
 		<li><p>
 		IsStrictReference(<i>expr</i>)
@@ -14045,7 +14059,7 @@ IEEE 754 round-to-nearest mode.
 	<ul>
 		<li><p>
 		 Type(<i>lref</i>)
-		is Reference is <b>true</b></p>
+		is <a href="#x8.7">Reference</a> is <b>true</b></p>
 		</li>
 		<li><p>
 		 IsStrictReference(<i>lref</i>)
@@ -14116,7 +14130,7 @@ IEEE 754 round-to-nearest mode.
 	<ul>
 		<li><p>
 		 Type(<i>lref</i>)
-		is Reference is <b>true</b></p>
+		is <a href="#x8.7">Reference</a> is <b>true</b></p>
 		</li>
 		<li><p>
 		 IsStrictReference(<i>lref</i>)
@@ -14445,7 +14459,7 @@ IEEE 754 round-to-nearest mode.
 	is nested within a with statement and the Identifier in the
 	<i>VariableDeclaration</i>
 	is the same as a property name of the binding object of the with
-	statement’s object environment record, then step 4 will assign
+	statement’s object <a href="#x10.2">environment record</a>, then step 4 will assign
 	value to the property instead of to the VariableEnvironment binding
 	of the <i>Identifier</i>.</p>
 	<p>
@@ -15226,10 +15240,10 @@ IEEE 754 round-to-nearest mode.
 	<p>
 	The
 	<code><b>with </b></code>statement
-	adds an object environment record for a computed object to the
-	lexical environment of the current execution context. It then
-	executes a statement using this augmented lexical environment.
-	Finally, it restores the original lexical environment.</p>
+	adds an object <a href="#x10.2">environment record</a> for a computed object to the
+ <a href="#x10.2">lexical environment</a> of the current execution context. It then
+	executes a statement using this augmented <a href="#x10.2">lexical environment</a>.
+	Finally, it restores the original <a href="#x10.2">lexical environment</a>.</p>
 	<p class="tiny-btm">
 	<b>Semantics</b></p>
 	<p>
@@ -15272,7 +15286,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Set
-		the running execution context’s Lexical Environment to <i>oldEnv</i>.</p>
+		the running execution context’s <a href="#x10.2">Lexical Environment</a> to <i>oldEnv</i>.</p>
 		</li>
 		<li><p>
 		Return
@@ -16012,7 +16026,7 @@ IEEE 754 round-to-nearest mode.
 			</li>
 			<li><p>
 			Let
-			<i>result</i> be an implementation defined Completion value. 
+			<i>result</i> be an implementation defined <a href="#x8.9">Completion</a> value. 
 			</p>
 		</li></ol>
 		</li>
@@ -16105,7 +16119,7 @@ IEEE 754 round-to-nearest mode.
 		Let
 		<i>funcEnv </i>be
 		the result of calling NewDeclarativeEnvironment passing the running
-		execution context’s Lexical Environment as the argument</p>
+		execution context’s <a href="#x10.2">Lexical Environment</a> as the argument</p>
 		</li>
 		<li><p>
 		Let
@@ -16209,7 +16223,7 @@ IEEE 754 round-to-nearest mode.
 	Given
 	an optional parameter list specified by <i>FormalParameterList</i>,
 	a body specified by <i>FunctionBody</i>,
-	a Lexical Environment specified by <i>Scope</i>,
+	a <a href="#x10.2">Lexical Environment</a> specified by <i>Scope</i>,
 	and a Boolean flag <i>Strict</i>,
 	a Function object is constructed as follows:</p>
 	<ol>
@@ -16262,7 +16276,7 @@ IEEE 754 round-to-nearest mode.
 		<li><p>
 		Let
 		<i>names </i>be
-		a List containing, in left to right textual order, the Strings
+		a <a href="#x8.8">List</a> containing, in left to right textual order, the Strings
 		corresponding to the identifiers of <i>FormalParameterList</i>.</p>
 		</li>
 		<li><p>
@@ -16376,7 +16390,7 @@ IEEE 754 round-to-nearest mode.
 		Let
 		<i>funcCtx </i>be the result of establishing a new execution
 		context for function code using the value of <i>F</i>'s
-		[[FormalParameters]] internal property, the passed arguments List
+		[[FormalParameters]] internal property, the passed arguments <a href="#x8.8">List</a>
 		<i>args</i>, and the <b>this</b> value as described in <a href="#x10.4.3">10.4.3</a>.</p>
 		</li>
 		<li><p>
@@ -16507,7 +16521,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Set
-		the [[FormalParameters]] internal property of <i>F </i>to an empty List.</p>
+		the [[FormalParameters]] internal property of <i>F </i>to an empty <a href="#x8.8">List</a>.</p>
 		</li>
 		<li><p>
 		Set
@@ -16682,7 +16696,7 @@ IEEE 754 round-to-nearest mode.
 	There
 	are certain built-in objects available whenever an ECMAScript
 	program begins execution. One, the <a href="#x15.1" class="term-ref">global object</a>, is part of the
-	lexical environment of the executing program. Others are accessible
+ <a href="#x10.2">lexical environment</a> of the executing program. Others are accessible
 	as initial properties of the <a href="#x15.1" class="term-ref">global object</a>.</p>
 	<p>
 	Unless
@@ -16901,14 +16915,14 @@ IEEE 754 round-to-nearest mode.
 	that meets the following two conditions:</p>
 	<p>
 	The
-	Reference that is the result of evaluating the <i>MemberExpression</i>
+	<a href="#x8.7">Reference</a> that is the result of evaluating the <i>MemberExpression</i>
 	in the <i>CallExpression</i>
-	has an environment record as its base value and its reference name
+	has an <a href="#x10.2">environment record</a> as its base value and its reference name
 	is <code>"</code><code><b>eval</b></code><code>"</code>.</p>
 	<p>
 	The
 	result of calling the abstract operation GetValue with that
-	Reference as the argument is the standard built-in function defined
+	<a href="#x8.7">Reference</a> as the argument is the standard built-in function defined
 	in <a href="#x15.1.2.1">15.1.2.1</a>.</p>
 	<h5 id="x15.1.2.2">15.1.2.2 parseInt (string , radix) <a href="#x15.1.2.2">#</a> <a href="#x15.1.2.2-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
@@ -18347,7 +18361,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>descriptors</i> be an empty internal List.</p>
+		<i>descriptors</i> be an empty internal <a href="#x8.8">List</a>.</p>
 		</li>
 		<li><p>
 		For
@@ -18379,7 +18393,7 @@ If <i>inputString</i> does not contain any such characters, let
 			<I>desc</I> be the result of calling ToPropertyDescriptor with
 			<I>descObj</I> as the argument.</P>
 			<LI><p>Append
-			the pair (a two element List) consisting of
+			the pair (a two element <a href="#x8.8">List</a>) consisting of
 			<I>P</I> and
 			<I>desc</I> to the end of <I>descriptors</I>.</P>
 		</OL>
@@ -19134,7 +19148,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>argList</i>  be an empty List.</p>
+		<i>argList</i>  be an empty <a href="#x8.8">List</a>.</p>
 		</li>
 		<li><p>
 		Let
@@ -19196,7 +19210,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>argList</i> be an empty List.</p>
+		<i>argList</i> be an empty <a href="#x8.8">List</a>.</p>
 		</li>
 		<li><p>
 		If
@@ -20020,7 +20034,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>items</i> be an internal List whose first element is <i>O</i>
+		<i>items</i> be an internal <a href="#x8.8">List</a> whose first element is <i>O</i>
 		and whose subsequent elements are, in left to right order, the
 		arguments that were passed to this function invocation.</p>
 		</li>
@@ -20317,7 +20331,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>items</i> be an internal List whose elements are, in left to
+		<i>items</i> be an internal <a href="#x8.8">List</a> whose elements are, in left to
 		right order, the arguments that were passed to this function
 		invocation.</p>
 		</li>
@@ -21124,7 +21138,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>items</i> be an internal List whose elements are, in left to
+		<i>items</i> be an internal <a href="#x8.8">List</a> whose elements are, in left to
 		right order, the portion of the actual argument list starting with
 		<i>item1</i>. The list will be empty if no such items are present.</p>
 		</li>
@@ -21396,7 +21410,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>items</i> be an internal List whose elements are, in left to
+		<i>items</i> be an internal <a href="#x8.8">List</a> whose elements are, in left to
 		right order, the arguments that were passed to this function
 		invocation.</p>
 		</li>
@@ -22685,7 +22699,7 @@ If <i>inputString</i> does not contain any such characters, let
 	Assume
 	<i>A </i>is an Array
 	object, <i>Desc</i> is a
-	Property Descriptor, and <i>Throw </i>is a Boolean flag.</p>
+	<a href="#x8.10">Property Descriptor</a>, and <i>Throw </i>is a Boolean flag.</p>
 	<p>
 	In
 	the following algorithm, the term “Reject”
@@ -32128,7 +32142,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 			<ol>
 				<li><p>
 				Let
-				<i>keys</i> be an internal List of String values consisting of
+				<i>keys</i> be an internal <a href="#x8.8">List</a> of String values consisting of
 				the names of all the own properties of <i>val</i> whose
 				[[Enumerable]] attribute is <b>true</b>. The ordering of the
 				Strings should be the same as that used by the
@@ -32209,7 +32223,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>stack</i> be an empty List.</p>
+		<i>stack</i> be an empty <a href="#x8.8">List</a>.</p>
 		</li>
 		<li><p>
 		Let
@@ -32239,7 +32253,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 			<ol>
 				<li><p>
 				Let
-				<i>PropertyList </i> be an empty internal List</p>
+				<i>PropertyList </i> be an empty internal <a href="#x8.8">List</a></p>
 				</li>
 				<li><p>
 				For
@@ -32632,7 +32646,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		<ol>
 			<li><p>
 			Let
-			<i>K</i> be an internal List of Strings consisting of the names of
+			<i>K</i> be an internal <a href="#x8.8">List</a> of Strings consisting of the names of
 			all the own properties of <i>value</i> whose [[Enumerable]]
 			attribute is <b>true</b>. The ordering of the Strings should be
 			the same as that used by the <b><a href="#x15.2.3.14">Object.keys</a></b> standard built-in
@@ -32641,7 +32655,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>partial</i> be an empty List.</p>
+		<i>partial</i> be an empty <a href="#x8.8">List</a>.</p>
 		</li>
 		<li><p>
 		For
@@ -32786,7 +32800,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>partial</i> be an empty List.</p>
+		<i>partial</i> be an empty <a href="#x8.8">List</a>.</p>
 		</li>
 		<li><p>
 		Let
@@ -33010,7 +33024,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		<li><p>
 		Attempts
 		to call PutValue on any value for which an early determination can
-		be made that the value is not a Reference (for example, executing
+		be made that the value is not a <a href="#x8.7">Reference</a> (for example, executing
 		the assignment statement <code>3=4</code>).</p>
 	</li></ul>
 	<p>
@@ -35619,8 +35633,8 @@ within strict mode code.  (<a href="#x7.6.12">7.6.12</a>).</li>
 	<a href="#x10.4.2">10.4.2</a>:
 	In Edition 5, indirect calls to the <code><b>eval</b></code>
 	function use the global environment as both the variable environment
-	and lexical environment for the eval code.  In Edition 3, the
-	variable and lexical environments of the caller of an indirect <code><b>eval</b></code>
+	and <a href="#x10.2">lexical environment</a> for the eval code.  In Edition 3, the
+	variable and <a href="#x10.2">lexical environment</a>s of the caller of an indirect <code><b>eval</b></code>
 	was used as the environments for the eval code.</p>
 	<p>
 	<a href="#x15.4.4">15.4.4</a>:
