@@ -10,6 +10,10 @@ a:hover {
   background-color: yellow;
 }
 
+i {
+  font-family: serif;
+}
+
 dfn {
   font-style: normal;
 }

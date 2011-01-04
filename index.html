@@ -4933,7 +4933,7 @@ and
 	ECMAScript language variables.</p>
 	<p>
 	Within
-	this specification, the notation “Type(<i>x</i>)”
+	this specification, the notation <dfn id="Type">“Type(<i>x</i>)”</dfn>
 	is used as shorthand for “the
 	type of <i>x</i>”
 	where “type” refers
@@ -5132,7 +5132,7 @@ and
 	through 2<sup>32</sup><span class="symbol">−</span>1,
 	inclusive. These operators accept any value of the Number type but
 	first convert each such value to one of 2<sup>32</sup>
-	integer values. See the descriptions of the ToInt32 and ToUint32
+	integer values. See the descriptions of the <a href="#x9.5">ToInt32</a> and <a href="#x9.6">ToUint32</a>
 	operators in <a href="#x9.5">9.5</a> and <a href="#x9.6">9.6</a>, respectively.</p>
 	<h3 id="x8.6">8.6 The Object Type <a href="#x8.6">#</a> <a href="#x8.6-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
 	<p>
@@ -5633,7 +5633,7 @@ and
 				<td width="338">
 					<p class="keep">
 					Returns
-					the fully populated <a href="#x8.10">Property Descriptor</a> of the named property of
+					the <a href="#fully-populated">fully populated</a> <a href="#x8.10">Property Descriptor</a> of the named property of
 					this object, or <b>undefined </b>if absent.</p>
 				</td>
 			</tr>
@@ -5842,7 +5842,7 @@ and
 		<li><p>
 		If a
 		property is described as a data property and its [[Writable]] and
-		[[Configurable]] are both <b>false</b>, then the SameValue
+		[[Configurable]] are both <b>false</b>, then the <a href="#x9.12">SameValue</a>
 		(according to <a href="#x9.12">9.12</a>) must be returned for the [[Value]] attribute of
 		the property on all calls to [[GetOwnProperty]].</p>
 		</li>
@@ -6044,8 +6044,8 @@ and
 					<p class="keep">
 					The
 					target function of a function object created using the standard
-					built-in Function.prototype.bind method. Only ECMAScript objects
-					created using Function.prototype.bind have a [[TargetFunction]]
+					built-in <a href="#x15.3.4.5">Function.prototype.bind</a> method. Only ECMAScript objects
+					created using <a href="#x15.3.4.5">Function.prototype.bind</a> have a [[TargetFunction]]
 					internal property.</p>
 				</td>
 			</tr>
@@ -6062,8 +6062,8 @@ and
 					<p class="keep">
 					The
 					pre-bound this value of a function Object created using the
-					standard built-in Function.prototype.bind method. Only
-					ECMAScript objects created using Function.prototype.bind have a
+					standard built-in <a href="#x15.3.4.5">Function.prototype.bind</a> method. Only
+					ECMAScript objects created using <a href="#x15.3.4.5">Function.prototype.bind</a> have a
 					[[BoundThis]] internal property.</p>
 				</td>
 			</tr>
@@ -6081,8 +6081,8 @@ and
 					<p>
 					The
 					pre-bound argument values of a function Object created using the
-					standard built-in Function.prototype.bind method. Only
-					ECMAScript objects created using Function.prototype.bind have a
+					standard built-in <a href="#x15.3.4.5">Function.prototype.bind</a> method. Only
+					ECMAScript objects created using <a href="#x15.3.4.5">Function.prototype.bind</a> have a
 					[[BoundArguments]] internal property.</p>
 				</td>
 			</tr>
@@ -6157,27 +6157,24 @@ and
 	following abstract operations are used in this specification to
 	access the components of references:</p>
 	<ul>
-		<li><p>GetBase(V).
+		<li><p><dfn id="GetBase">GetBase(V)</dfn>.
 		Returns the base value component of the reference V.</p>
 		</li>
-		<li><p>GetReferencedName(V).
+		<li><p><dfn id="GetReferencedName">GetReferencedName(V)</dfn>.
 		Returns the referenced name component of the reference V.</p>
 		</li>
-		<li><p>IsStrictReference(V).
+		<li><p><dfn id="IsStrictReference">IsStrictReference(V)</dfn>.
 		Returns the strict reference component of the reference V.</p>
 		</li>
-		<li><p>HasPrimitiveBase(V).
+		<li><p><dfn id="HasPrimitiveBase">HasPrimitiveBase(V)</dfn>.
 		Returns <b>true </b>if the base value is a Boolean, String, or
 		Number.</p>
 		</li>
-		<li><p>IsPropertyReference(V).
+		<li><p><dfn id="IsPropertyReference">IsPropertyReference</dfn>(V).
 		Returns <b>true</b> if either the base value is an object or
-		HasPrimitiveBase(V) is <b>true</b>; otherwise returns <b>false</b>.
-		
-		</p>
+		<a href="#HasPrimitiveBase">HasPrimitiveBase</a>(V) is <b>true</b>; otherwise returns <b>false</b>.</p>
 		</li>
-		<li><p>
-		IsUnresolvableReference(V).
+		<li><p><dfn id="IsUnresolvableReference">IsUnresolvableReference</dfn>(V).
 		Returns <b>true</b> if the base value is <b>undefined</b> and <b>false</b>
 		otherwise.</p>
 	</li></ul>
@@ -6189,30 +6186,30 @@ and
 	<ol>
 		<li><p>
 		If
-		Type(<i>V</i>) is not <a href-"#x8.7">Reference</a>, return <i>V</i>.</p>
+		<a href="#Type">Type</a>(<i>V</i>) is not <a href-"#x8.7">Reference</a>, return <i>V</i>.</p>
 		</li>
 		<li><p>
 		Let
-		<i>base </i>be the result of calling GetBase(<i>V</i>).</p>
+		<i>base </i>be the result of calling <a href="#GetBase">GetBase</a>(<i>V</i>).</p>
 		</li>
 		<li><p>
 		If
-		IsUnresolvableReference(<i>V</i>), throw a <b><a href="#x15.11.6.3" class="term-ref">ReferenceError</a></b>
+		<a href="#IsUnresolvableReference">IsUnresolvableReference</a>(<i>V</i>), throw a <b><a href="#x15.11.6.3" class="term-ref">ReferenceError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
 		If
-		IsPropertyReference(<i>V</i>), then</p>
+		<a href="#IsPropertyReference">IsPropertyReference</a>(<i>V</i>), then</p>
 		<ol>
 			<li><p>
 			If
-			HasPrimitiveBase(<i>V</i>) is <b>false</b>, then let <i>get</i> be
+			<a href="#HasPrimitiveBase">HasPrimitiveBase</a>(<i>V</i>) is <b>false</b>, then let <i>get</i> be
 			the [[Get]] internal method of <i>base</i>, otherwise let <i>get</i>
 			be the special [[Get]] internal method defined below.</p>
 			</li>
 			<li><p>
 			Return
-			the result of calling the <i>get</i> internal method using <i>base </i>as its <b>this </b>value, and passing GetReferencedName(<i>V</i>)
+			the result of calling the <i>get</i> internal method using <i>base </i>as its <b>this </b>value, and passing <a href="#GetReferencedName">GetReferencedName</a>(<i>V</i>)
 			for the argument.</p>
 		</li></ol>
 		</li>
@@ -6223,21 +6220,21 @@ and
 			<li><p>
 			Return
 			the result of calling the GetBindingValue (see <a href="#x10.2.1">10.2.1</a>)  concrete
-			method of <i>base</i> passing GetReferencedName(<i>V</i>) and
-			IsStrictReference(<i>V</i>) as arguments.</p>
+			method of <i>base</i> passing <a href="#GetReferencedName">GetReferencedName</a>(<i>V</i>) and
+			<a href="#IsStrictReference">IsStrictReference</a>(<i>V</i>) as arguments.</p>
 		</li></ol>
 	</li></ol>
 	<p>
 	The
 	following [[Get]] internal method is used by GetValue when <i>V</i>
-	is a property reference with a primitive base value. It is called
+	is a <a href="#IsPropertyReference">property reference</a> with a primitive base value. It is called
 	using <i>base</i> as its
 	<b>this</b> value and with property <i>P</i>
 	as its argument. The following steps are taken:</p>
 	<ol>
 		<li><p>
 		Let
-		<i>O</i> be ToObject(<i>base</i>).</p>
+		<i>O</i> be <a href="#x9.9">ToObject</a>(<i>base</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -6250,12 +6247,12 @@ and
 		</li>
 		<li><p>
 		If
-		IsDataDescriptor(<i>desc</i>) is <b>true</b>, return
+		<a href="#x8.10.2">IsDataDescriptor</a>(<i>desc</i>) is <b>true</b>, return
 		<i>desc</i>.[[Value]].</p>
 		</li>
 		<li><p>
 		Otherwise,
-		IsAccessorDescriptor(<i>desc</i>) must be <b>true</b> so, let
+		<a href="#x8.10.1">IsAccessorDescriptor</a>(<i>desc</i>) must be <b>true</b> so, let
 		<i>getter</i> be <i>desc</i>.[[Get]].</p>
 		</li>
 		<li><p>
@@ -6277,21 +6274,21 @@ and
 	<ol>
 		<li><p>
 		If
-		Type(<i>V</i>) is not <a href="#x8.7">Reference</a>,
+		<a href="#Type">Type</a>(<i>V</i>) is not <a href="#x8.7">Reference</a>,
  throw a <b><a href="#x15.11.6.3" class="term-ref">ReferenceError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
 		Let
-		<i>base</i> be the result of calling GetBase(<i>V</i>).</p>
+		<i>base</i> be the result of calling <a href="#GetBase">GetBase</a>(<i>V</i>).</p>
 		</li>
 		<li><p>
 		If
-		IsUnresolvableReference(<i>V</i>), then</p>
+		<a href="#IsUnresolvableReference">IsUnresolvableReference</a>(<i>V</i>), then</p>
 		<ol>
 			<li><p>
 			If
-			IsStrictReference(<i>V</i>) is <b>true</b>, then</p>
+			<a href="#IsStrictReference">IsStrictReference</a>(<i>V</i>) is <b>true</b>, then</p>
 			<ol>
 				<li><p>
 				Throw
@@ -6301,25 +6298,25 @@ and
 			<li><p>
 			Call
 			the [[Put]] internal method of the <a href="#x15.1" class="term-ref">global object</a>, passing
-			GetReferencedName(<i>V</i>) for the property name, <i>W</i> for
+			<a href="#GetReferencedName">GetReferencedName</a>(<i>V</i>) for the property name, <i>W</i> for
 			the value, and <b>false</b> for the <i>Throw</i> flag.</p>
 		</li></ol>
 		</li>
 		<li><p>
 		Else
-		if IsPropertyReference(<i>V</i>), then</p>
+		if <a href="#IsPropertyReference">IsPropertyReference</a>(<i>V</i>), then</p>
 		<ol>
 			<li><p>
 			If
-			HasPrimitiveBase(<i>V</i>) is <b>false</b>, then let <i>put</i> be
+			<a href="#HasPrimitiveBase">HasPrimitiveBase</a>(<i>V</i>) is <b>false</b>, then let <i>put</i> be
 			the [[Put]] internal method of <i>base</i>, otherwise let <i>put</i>
 			be the special [[Put]] internal method defined below.</p>
 			</li>
 			<li><p>
 			Call
 			the <i>put </i>internal method using <i>base </i>as its <b>this
-			</b>value, and passing GetReferencedName(<i>V</i>) for the
-			property name, <i>W </i>for the value, and IsStrictReference(<i>V</i>)
+			</b>value, and passing <a href="#GetReferencedName">GetReferencedName</a>(<i>V</i>) for the
+			property name, <i>W </i>for the value, and <a href="#IsStrictReference">IsStrictReference</a>(<i>V</i>)
 			for the <i>Throw </i>flag.</p>
 		</li></ol>
 		</li>
@@ -6330,8 +6327,8 @@ and
 			<li><p>
 			Call
 			the SetMutableBinding (<a href="#x10.2.1">10.2.1</a>) concrete method of <i>base</i>,
-			passing GetReferencedName(<i>V</i>), <i>W</i>, and
-			IsStrictReference(<i>V</i>) as arguments.</p>
+			passing <a href="#GetReferencedName">GetReferencedName</a>(<i>V</i>), <i>W</i>, and
+			<a href="#IsStrictReference">IsStrictReference</a>(<i>V</i>) as arguments.</p>
 		</li></ol>
 		</li>
 		<li><p>
@@ -6340,7 +6337,7 @@ and
 	<p>
 	The
 	following [[Put]] internal method is used by PutValue when <i>V</i>
-	is a property reference with a primitive base value. It is called
+	is a <a href="#IsPropertyReference">property reference</a> with a primitive base value. It is called
 	using <i>base</i> as its
 	<b>this</b> value and with property <i>P</i>,
 	value <i>W</i>, and
@@ -6349,7 +6346,7 @@ and
 	<ol>
 		<li><p>
 		Let
-		<i>O</i> be ToObject(<i>base</i>).</p>
+		<i>O</i> be <a href="#x9.9">ToObject</a>(<i>base</i>).</p>
 		</li>
 		<li><p>
 		If
@@ -6373,7 +6370,7 @@ and
 		</li>
 		<li><p>
 		If
-		IsDataDescriptor(<i>ownDesc</i>) is <b>true</b>, then</p>
+		<a href="#x8.10.2">IsDataDescriptor</a>(<i>ownDesc</i>) is <b>true</b>, then</p>
 		<ol>
 			<li><p>
 			If
@@ -6394,7 +6391,7 @@ and
 		</li>
 		<li><p>
 		If
-		IsAccessorDescriptor(<i>desc</i>) is <b>true</b>, then</p>
+		<a href="#x8.10.1">IsAccessorDescriptor</a>(<i>desc</i>) is <b>true</b>, then</p>
 		<ol>
 			<li><p>
 			Let
@@ -6475,8 +6472,8 @@ and
 	Descriptor value may not be both a data property descriptor and an
 	accessor property descriptor; however, it may be neither. A generic
 	property descriptor is a Property Descriptor value that is neither a
-	data property descriptor nor an accessor property descriptor. A
-	fully populated property descriptor is one that is either an
+	data property descriptor nor an accessor property descriptor.
+ A <dfn id="fully-populated">fully populated</dfn> property descriptor is one that is either an
 	accessor property descriptor or a data property descriptor and that
 	has all of the fields that correspond to the property attributes
 	defined in either <a href="#x8.6.1">8.6.1</a> Table 5 or Table 6.</p>
@@ -6566,8 +6563,8 @@ and
 		</li>
 		<li><p>
 		<span class="tr">If
-		IsAccessorDescriptor(<i>Desc</i>)
-		and IsDataDescriptor(<i>Desc</i>)
+		<a href="#x8.10.1">IsAccessorDescriptor</a>(<i>Desc</i>)
+		and <a href="#x8.10.2">IsDataDescriptor</a>(<i>Desc</i>)
 		are both <b>false</b>,
 		then return <b>true</b>.</span></p>
 		</li>
@@ -6583,7 +6580,7 @@ and
 	the following steps are taken:</p>
 	<p>
 	The
-	following algorithm assumes that <i>Desc </i>is a fully populated <a href="#x8.10">Property Descriptor</a>, such as that
+	following algorithm assumes that <i>Desc </i>is a <a href="#fully-populated">fully populated</a> <a href="#x8.10">Property Descriptor</a>, such as that
 	returned from [[GetOwnProperty]] (see <a href="#x8.12.1">8.12.1</a>).</p>
 	<ol>
 		<li><p>
@@ -6602,7 +6599,7 @@ and
 		</li>
 		<li><p>
 		<span class="tr">If
-		IsDataDescriptor(<i>Desc</i>)
+		<a href="#x8.10.2">IsDataDescriptor</a>(<i>Desc</i>)
 		is <b>true</b>,
 		then </span>
 		</p>
@@ -6634,7 +6631,7 @@ and
 		</li>
 		<li><p>
 		<span class="tr">Else,
-		IsAccessorDescriptor(<i>Desc</i>)
+		<a href="#x8.10.1">IsAccessorDescriptor</a>(<i>Desc</i>)
 		must be <b>true</b>,
 		so</span></p>
 		<ol>
@@ -6698,7 +6695,7 @@ and
 	<ol>
 		<li><p>
 		If
-		Type(<i>Obj</i>) is not Object throw a <b>TypeError </b>exception.</p>
+		<a href="#Type">Type</a>(<i>Obj</i>) is not Object throw a <b>TypeError </b>exception.</p>
 		</li>
 		<li><p>
 		Let
@@ -6718,7 +6715,7 @@ and
 			</li>
 			<li><p>
 			Set
-			the [[Enumerable]] field of <i>desc</i> to ToBoolean(<i>enum</i>).</p>
+			the [[Enumerable]] field of <i>desc</i> to <a href="#x9.2">ToBoolean</a>(<i>enum</i>).</p>
 		</li></ol>
 		</li>
 		<li><p>
@@ -6734,7 +6731,7 @@ and
 			</li>
 			<li><p>
 			Set
-			the [[Configurable]] field of <i>desc</i> to ToBoolean(<i>conf</i>).</p>
+			the [[Configurable]] field of <i>desc</i> to <a href="#x9.2">ToBoolean</a>(<i>conf</i>).</p>
 		</li></ol>
 		</li>
 		<li><p>
@@ -6766,7 +6763,7 @@ and
 			</li>
 			<li><p>
 			Set
-			the [[Writable]] field of <i>desc</i> to ToBoolean(<i>writable</i>).</p>
+			the [[Writable]] field of <i>desc</i> to <a href="#x9.2">ToBoolean</a>(<i>writable</i>).</p>
 		</li></ol>
 		</li>
 		<li><p>
@@ -6782,7 +6779,7 @@ and
 			</li>
 			<li><p>
 			If
-			IsCallable(<i>getter</i>) is <b>false </b>and <i>getter</i> is not
+			<a href="#x9.11">IsCallable</a>(<i>getter</i>) is <b>false </b>and <i>getter</i> is not
 			<b>undefined</b>, then throw a <b>TypeError </b>exception.</p>
 			</li>
 			<li><p>
@@ -6803,7 +6800,7 @@ and
 			</li>
 			<li><p>
 			If
-			IsCallable(<i>setter</i>) is <b>false </b>and <i>setter</i> is not
+			<a href="#x9.11">IsCallable</a>(<i>setter</i>) is <b>false </b>and <i>setter</i> is not
 			<b>undefined</b>, then throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 			</li>
 			<li><p>
@@ -6954,12 +6951,12 @@ and
 		</li>
 		<li><p>
 		If
-		IsDataDescriptor(<i>desc</i>) is <b>true</b>, return
+		<a href="#x8.10.2">IsDataDescriptor</a>(<i>desc</i>) is <b>true</b>, return
 		<i>desc</i>.[[Value]].</p>
 		</li>
 		<li><p>
 		Otherwise,
-		IsAccessorDescriptor(<i>desc</i>) must be true so, let <i>getter</i>
+		<a href="#x8.10.1">IsAccessorDescriptor</a>(<i>desc</i>) must be true so, let <i>getter</i>
 		be <i>desc</i>.[[Get]].</p>
 		</li>
 		<li><p>
@@ -6988,7 +6985,7 @@ and
 		<ol>
 			<li><p>
 			If
-			IsAccessorDescriptor(<i>desc</i>) is <b>true</b>, then</p>
+			<a href="#x8.10.1">IsAccessorDescriptor</a>(<i>desc</i>) is <b>true</b>, then</p>
 			<ol>
 				<li><p>
 				If
@@ -7026,7 +7023,7 @@ and
 		</li>
 		<li><p>
 		If
-		IsAccessorDescriptor(<i>inherited</i>) is <b>true</b>, then</p>
+		<a href="#x8.10.1">IsAccessorDescriptor</a>(<i>inherited</i>) is <b>true</b>, then</p>
 		<ol>
 			<li><p>
 			If
@@ -7085,7 +7082,7 @@ and
 		</li>
 		<li><p>
 		If
-		IsDataDescriptor(<i>ownDesc</i>) is <b>true</b>, then</p>
+		<a href="#x8.10.2">IsDataDescriptor</a>(<i>ownDesc</i>) is <b>true</b>, then</p>
 		<ol>
 			<li><p>
 			Let
@@ -7109,7 +7106,7 @@ and
 		</li>
 		<li><p>
 		If
-		IsAccessorDescriptor(<i>desc</i>) is <b>true</b>, then</p>
+		<a href="#x8.10.1">IsAccessorDescriptor</a>(<i>desc</i>) is <b>true</b>, then</p>
 		<ol>
 			<li><p>
 			Let
@@ -7211,7 +7208,7 @@ and
 		</li>
 		<li><p>
 		If
-		IsCallable(<i>toString)</i> is <b>true </b>then,</p>
+		<a href="#x9.11">IsCallable</a>(<i>toString)</i> is <b>true </b>then,</p>
 		<ol>
 			<li><p>
 			Let
@@ -7231,7 +7228,7 @@ and
 		</li>
 		<li><p>
 		If
-		IsCallable(<i>valueOf)</i> is <b>true</b> then, 
+		<a href="#x9.11">IsCallable</a>(<i>valueOf)</i> is <b>true</b> then, 
 		</p>
 		<ol>
 			<li><p>
@@ -7261,7 +7258,7 @@ and
 		</li>
 		<li><p>
 		If
-		IsCallable(<i>valueOf)</i> is <b>true</b> then,</p>
+		<a href="#x9.11">IsCallable</a>(<i>valueOf)</i> is <b>true</b> then,</p>
 		<ol>
 			<li><p>
 			Let
@@ -7281,7 +7278,7 @@ and
 		</li>
 		<li><p>
 		If
-		IsCallable(<i>toString)</i> is <b>true</b> then,</p>
+		<a href="#x9.11">IsCallable</a>(<i>toString)</i> is <b>true</b> then,</p>
 		<ol>
 			<li><p>
 			Let
@@ -7314,7 +7311,7 @@ and
 	<h4 id="x8.12.9">8.12.9 [[DefineOwnProperty]] (P, Desc, Throw) <a href="#x8.12.9">#</a> <a href="#x8.12.9-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	In
-	the following algorithm, the term “Reject” means “If <i>Throw</i>
+	the following algorithm, the term <dfn id="reject-DefineOwnProperty">“Reject”</dfn> means “If <i>Throw</i>
 	is <b>true</b>, then throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception, otherwise
 	return <b>false</b>”. The algorithm contains steps that test
 	various fields of the Property Descriptor <i>Desc</i>
@@ -7342,7 +7339,7 @@ and
 		<li><p>
 		If
 		<i>current </i>is <b>undefined</b> and <i>extensible</i> is <b>false</b>,
-		then Reject.</p>
+		then <a href="#reject-DefineOwnProperty">Reject</a>.</p>
 		</li>
 		<li><p>
 		If
@@ -7351,7 +7348,7 @@ and
 		<ol>
 			<li><p>
 			If
-			 IsGenericDescriptor(<i>Desc</i>) or IsDataDescriptor(<i>Desc</i>)
+			 <a href="#x8.10.3">IsGenericDescriptor</a>(<i>Desc</i>) or <a href="#x8.10.2">IsDataDescriptor</a>(<i>Desc</i>)
 			is <b>true</b>, then</p>
 			<ol>
 				<li><p>
@@ -7391,18 +7388,18 @@ and
 		<b>true</b>, if every field in <i>Desc </i>also occurs in <i>current</i>
 		and the value of every field in <i>Desc </i>is the same value as
 		the corresponding field in <i>current </i>when compared using the
-		SameValue algorithm (<a href="#x9.12">9.12</a>).</p>
+		<a href="#x9.12">SameValue</a> algorithm (<a href="#x9.12">9.12</a>).</p>
 		</li>
 		<li><p>
 		If
 		the [[Configurable]] field of <i>current</i> is <b>false</b> then</p>
 		<ol>
 			<li><p>
-			Reject,
+			<a href="#reject-DefineOwnProperty">Reject</a>,
 			if the [[Configurable]] field of <i>Desc</i> is <b>true</b>.</p>
 			</li>
 			<li><p>
-			Reject,
+			<a href="#reject-DefineOwnProperty">Reject</a>,
 			if the [[Enumerable]] field of <i>Desc</i> is present and the
 			[[Enumerable]] fields of <i>current</i> and <i>Desc</i> are the
 			Boolean negation of each other.</p>
@@ -7410,22 +7407,22 @@ and
 		</li>
 		<li><p>
 		If
-		IsGenericDescriptor(<i>Desc</i>) is <b>true</b>, then no further
+		<a href="#x8.10.3">IsGenericDescriptor</a>(<i>Desc</i>) is <b>true</b>, then no further
 		validation is required.</p>
 		</li>
 		<li><p>
 		Else,
-		if IsDataDescriptor(<i>current</i>) and IsDataDescriptor(<i>Desc</i>)
+		if <a href="#x8.10.2">IsDataDescriptor</a>(<i>current</i>) and <a href="#x8.10.2">IsDataDescriptor</a>(<i>Desc</i>)
 		have different results, then</p>
 		<ol>
 			<li><p>
-			Reject,
+			<a href="#reject-DefineOwnProperty">Reject</a>,
 			if the [[Configurable]] field of <i>current</i> is <b>false</b>. 
 			</p>
 			</li>
 			<li><p>
 			If
-			IsDataDescriptor(<i>current</i>) is <b>true</b>, then</p>
+			<a href="#x8.10.2">IsDataDescriptor</a>(<i>current</i>) is <b>true</b>, then</p>
 			<ol>
 				<li><p>
 				Convert
@@ -7451,7 +7448,7 @@ and
 		</li>
 		<li><p>
 		Else,
-		if IsDataDescriptor(<i>current</i>) and IsDataDescriptor(<i>Desc</i>)
+		if <a href="#x8.10.2">IsDataDescriptor</a>(<i>current</i>) and <a href="#x8.10.2">IsDataDescriptor</a>(<i>Desc</i>)
 		are both <b>true</b>, then</p>
 		<ol>
 			<li><p>
@@ -7459,7 +7456,7 @@ and
 			the [[Configurable]] field of <i>current</i> is <b>false</b>, then</p>
 			<ol>
 				<li><p>
-				Reject,
+				<a href="#reject-DefineOwnProperty">Reject</a>,
 				if the [[Writable]] field of <i>current</i> is <b>false</b> and
 				the [[Writable]] field of <i>Desc</i> is <b>true</b>.</p>
 				</li>
@@ -7468,9 +7465,9 @@ and
 				the [[Writable]] field of <i>current</i> is <b>false</b>, then</p>
 				<ol>
 					<li><p>
-					Reject,
+					<a href="#reject-DefineOwnProperty">Reject</a>,
 					if the [[Value]] field of <i>Desc</i> is present and
-					SameValue(<i>Desc</i>.[[Value]], <i>current</i>.[[Value]]) is
+					<a href="#x9.12">SameValue</a>(<i>Desc</i>.[[Value]], <i>current</i>.[[Value]]) is
 					<b>false</b>. 
 					</p>
 				</li></ol>
@@ -7484,7 +7481,7 @@ and
 		</li>
 		<li><p>
 		Else,
-		IsAccessorDescriptor(<i>current</i>) and IsAccessorDescriptor(<i>Desc</i>)
+		<a href="#x8.10.1">IsAccessorDescriptor</a>(<i>current</i>) and <a href="#x8.10.1">IsAccessorDescriptor</a>(<i>Desc</i>)
 		are both <b>true</b> so,</p>
 		<ol>
 			<li><p>
@@ -7492,14 +7489,14 @@ and
 			the [[Configurable]] field of <i>current</i> is <b>false</b>, then</p>
 			<ol>
 				<li><p>
-				Reject,
+				<a href="#reject-DefineOwnProperty">Reject</a>,
 				if the [[Set]] field of <i>Desc</i> is present and
-				SameValue(<i>Desc</i>.[[Set]], <i>current</i>.[[Set]]) is <b>false</b>.</p>
+				<a href="#x9.12">SameValue</a>(<i>Desc</i>.[[Set]], <i>current</i>.[[Set]]) is <b>false</b>.</p>
 				</li>
 				<li><p>
-				Reject,
+				<a href="#reject-DefineOwnProperty">Reject</a>,
 				if the [[Get]] field of <i>Desc</i> is present and
-				SameValue(<i>Desc</i>.[[Get]], <i>current</i>.[[Get]]) is <b>false</b>.</p>
+				<a href="#x9.12">SameValue</a>(<i>Desc</i>.[[Get]], <i>current</i>.[[Get]]) is <b>false</b>.</p>
 			</li></ol>
 		</li></ol>
 		</li>
@@ -7816,7 +7813,7 @@ and
 						<li><p class="keep">
 						Let
 						<i>primValue</i>
-						be ToPrimitive(<i>input
+						be <a href="#x9.1">ToPrimitive</a>(<i>input
 						argument</i>, hint
 						Number).</p>
 						</li>
@@ -8252,7 +8249,7 @@ and
 	<ol>
 		<li><p>
 		Let
-		<i>number</i> be the result of calling ToNumber on the input
+		<i>number</i> be the result of calling <a href="#x9.3">ToNumber</a> on the input
 		argument.</p>
 		</li>
 		<li><p>
@@ -8279,7 +8276,7 @@ and
 	<ol>
 		<li><p>
 		Let
-		<i>number</i> be the result of calling ToNumber on the input
+		<i>number</i> be the result of calling <a href="#x9.3">ToNumber</a> on the input
 		argument.</p>
 		</li>
 		<li><p>
@@ -8315,7 +8312,7 @@ and
 		produced, the second application leaves that value unchanged.</p>
 		</li>
 		<li><p>
-		ToInt32(ToUint32(<i>x</i>))
+		ToInt32(<a href="#x9.6">ToUint32</a>(<i>x</i>))
 		is equal to ToInt32(<i>x</i>)
 		for all values of <i>x</i>.
 		(It is to preserve this latter property that +<span class="symbol"><b>∞</b></span>
@@ -8336,7 +8333,7 @@ and
 	<ol>
 		<li><p>
 		Let
-		<i>number</i> be the result of calling ToNumber on the input
+		<i>number</i> be the result of calling <a href="#x9.3">ToNumber</a> on the input
 		argument.</p>
 		</li>
 		<li><p>
@@ -8366,7 +8363,7 @@ and
 	<ul>
 		<li><p>
 		Step 5 is the
-		only difference between ToUint32 and ToInt32.</p>
+		only difference between ToUint32 and <a href="#x9.5">ToInt32</a>.</p>
 		</li>
 		<li><p>
 		The ToUint32
@@ -8374,7 +8371,7 @@ and
 		produced, the second application leaves that value unchanged.</p>
 		</li>
 		<li><p>
-		ToUint32(ToInt32(<i>x</i>))
+		ToUint32(<a href="#x9.5">ToInt32</a>(<i>x</i>))
 		is equal to ToUint32(<i>x</i>)
 		for all values of <i>x</i>.
 		(It is to preserve this latter property that <b>+</b><span class="symbol"><b>∞</b></span>
@@ -8395,7 +8392,7 @@ and
 	<ol>
 		<li><p>
 		Let
-		<i>number</i> be the result of calling ToNumber on the input
+		<i>number</i> be the result of calling <a href="#x9.3">ToNumber</a> on the input
 		argument.</p>
 		</li>
 		<li><p>
@@ -8427,7 +8424,7 @@ and
 		The substitution
 		of 2<sup>16</sup>
 		for 2<sup>32</sup>
-		in step 4 is the only difference between ToUint32 and ToUint16.</p>
+		in step 4 is the only difference between <a href="#x9.6">ToUint32</a> and ToUint16.</p>
 		</li>
 		<li><p>
 		ToUint16 maps <span class="symbol"><b>−</b></span><b>0</b>
@@ -8515,7 +8512,7 @@ and
 					<p>
 					1.
 					Let <i>primValue</i>
-					be ToPrimitive(input argument, hint String).</p>
+					be <a href="#x9.1">ToPrimitive</a>(input argument, hint String).</p>
 					<p>
 					2.
 					Return ToString(<i>primValue</i>).</p>
@@ -8617,7 +8614,7 @@ and
 		<li><p>
 		If x is any
 		Number value other than <span class="symbol"><b>−</b></span><b>0</b>,
-		then ToNumber(ToString(x)) is exactly the same Number value as x.</p>
+		then <a href="#x9.3">ToNumber</a>(<a href="#x9.8">ToString</a>(x)) is exactly the same Number value as x.</p>
 		</li>
 		<li><p>
 		The least
@@ -8765,7 +8762,7 @@ and
 	The
 	abstract operation CheckObjectCoercible throws an error if its
 	argument is a value that cannot be converted to an Object using
-	ToObject. It is defined by Table 15:</p>
+	<a href="#x9.9">ToObject</a>. It is defined by Table 15:</p>
 	<center>
 		<table width="690" border="1" bordercolor="#000000" cellpadding="8" cellspacing="0" rules="ROWS">
 	<caption>Table&nbsp;15 — CheckObjectCoercible Results</caption>
@@ -8944,19 +8941,19 @@ and
 	<ol>
 		<li><p>
 		If
-		Type(<i>x</i>) is different from Type(<i>y</i>), return <b>false</b>.</p>
+		<a href="#Type">Type</a>(<i>x</i>) is different from <a href="#Type">Type</a>(<i>y</i>), return <b>false</b>.</p>
 		</li>
 		<li><p>
 		If
-		Type(<i>x</i>) is Undefined, return <b>true</b>.</p>
+		<a href="#Type">Type</a>(<i>x</i>) is Undefined, return <b>true</b>.</p>
 		</li>
 		<li><p>
 		If
-		Type(<i>x</i>) is Null, return <b>true</b>.</p>
+		<a href="#Type">Type</a>(<i>x</i>) is Null, return <b>true</b>.</p>
 		</li>
 		<li><p>
 		If
-		Type(<i>x</i>) is Number, then.</p>
+		<a href="#Type">Type</a>(<i>x</i>) is Number, then.</p>
 		<ol>
 			<li><p>
 			If
@@ -8981,13 +8978,13 @@ and
 		</li>
 		<li><p>
 		If
-		Type(<i>x</i>) is String, then return <b>true </b>if <i>x</i> and <i>y</i>
+		<a href="#Type">Type</a>(<i>x</i>) is String, then return <b>true </b>if <i>x</i> and <i>y</i>
 		are exactly the same sequence of characters (same length and same
 		characters in corresponding positions); otherwise, return <b>false</b>.</p>
 		</li>
 		<li><p>
 		If
-		Type(<i>x</i>) is Boolean, return <b>true </b>if <i>x</i> and <i>y</i>
+		<a href="#Type">Type</a>(<i>x</i>) is Boolean, return <b>true </b>if <i>x</i> and <i>y</i>
 		are both <b>true</b> or both <b>false</b>; otherwise, return <b>false</b>.</p>
 		</li>
 		<li><p>
@@ -10144,8 +10141,8 @@ and
 		</li>
 		<li><p>
 		Else
-		if Type(<i>thisArg</i>) is not Object, set the ThisBinding to
-		ToObject(<i>thisArg</i>).</p>
+		if <a href="#Type">Type</a>(<i>thisArg</i>) is not Object, set the ThisBinding to
+		<a href="#x9.9">ToObject</a>(<i>thisArg</i>).</p>
 		</li>
 		<li><p>
 		Else
@@ -10492,7 +10489,7 @@ and
 			<li><p>
 			Call
 			the [[DefineOwnProperty]] internal method on <i>obj</i> passing
-			ToString(<i>indx</i>), the property descriptor {[[Value]]: <i>val</i>,
+			<a href="#x9.8">ToString</a>(<i>indx</i>), the property descriptor {[[Value]]: <i>val</i>,
 			[[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b>,
 			[[Configurable]]: <b>true</b>}, and <b>false</b> as arguments.</p>
 			</li>
@@ -10528,7 +10525,7 @@ and
 					<li><p>
 					Call
 					the [[DefineOwnProperty]] internal method of <i>map</i> passing
-					ToString(<i>indx</i>), the Property Descriptor {[[Set]]: <i>p</i>,
+					<a href="#x9.8">ToString</a>(<i>indx</i>), the Property Descriptor {[[Set]]: <i>p</i>,
 					[[Get]]: <i>g,</i> [[Configurable]]: <b>true</b>}, and <b>false</b>
 					as arguments.</p>
 				</li></ol>
@@ -10774,7 +10771,7 @@ and
 		<ol>
 			<li><p>
 			If
-			IsAccessorDescriptor(<i>Desc</i>) is <b>true</b>, then</p>
+			<a href="#x8.10.1">IsAccessorDescriptor</a>(<i>Desc</i>) is <b>true</b>, then</p>
 			<ol>
 				<li><p>
 				Call
@@ -11018,7 +11015,7 @@ and
 		Call
 		the [[Put]] internal method of <i>array </i>with arguments
 		<code>"</code><code><b>length</b></code><code>"</code>,
-		ToUint32(<i>pad</i>+<i>len</i>), and <b>false</b>.</p>
+		<a href="#x9.6">ToUint32</a>(<i>pad</i>+<i>len</i>), and <b>false</b>.</p>
 		</li>
 		<li><p>
 		Return
@@ -11054,7 +11051,7 @@ and
 		<li><p>
 		Call
 		the [[DefineOwnProperty]] internal method of <i>array </i>with
-		arguments ToString(<i>firstIndex)</i>, the Property Descriptor {
+		arguments <a href="#x9.8">ToString</a>(<i>firstIndex)</i>, the Property Descriptor {
 		[[Value]]: <i>initValue</i>, [[Writable]]: <b>true</b>,
 		[[Enumerable]]: <b>true</b>, [[Configurable]]: <b>true</b>}, and
 		<b>false</b>.</p>
@@ -11096,7 +11093,7 @@ and
 		<li><p>
 		Call
 		the [[DefineOwnProperty]] internal method of <i>array </i>with
-		arguments ToString(ToUint32((<i>pad</i>+<i>len</i>)) and the
+		arguments <a href="#x9.8">ToString</a>(<a href="#x9.6">ToUint32</a>((<i>pad</i>+<i>len</i>)) and the
 		Property Descriptor { [[Value]]: <i>initValue</i>, [[Writable]]:
 		<b>true</b>, [[Enumerable]]: <b>true</b>, [[Configurable]]: <b>true</b>},
 		and <b>false</b>.</p>
@@ -11263,22 +11260,22 @@ and
 			<li><p>
 			This
 			production is contained in strict code and
-			IsDataDescriptor(<i>previous</i>) is <b>true</b> and
-			IsDataDescriptor(<i>propId</i>.descriptor) is <b>true</b>.</p>
+			<a href="#x8.10.2">IsDataDescriptor</a>(<i>previous</i>) is <b>true</b> and
+			<a href="#x8.10.2">IsDataDescriptor</a>(<i>propId</i>.descriptor) is <b>true</b>.</p>
 			</li>
 			<li><p>
-			IsDataDescriptor(<i>previous</i>)
-			is <b>true</b> and IsAccessorDescriptor(<i>propId</i>.descriptor)
+			<a href="#x8.10.2">IsDataDescriptor</a>(<i>previous</i>)
+			is <b>true</b> and <a href="#x8.10.1">IsAccessorDescriptor</a>(<i>propId</i>.descriptor)
 			is <b>true.</b></p>
 			</li>
 			<li><p>
-			IsAccessorDescriptor(<i>previous</i>)
-			is <b>true</b> and IsDataDescriptor(<i>propId</i>.descriptor) is
+			<a href="#x8.10.1">IsAccessorDescriptor</a>(<i>previous</i>)
+			is <b>true</b> and <a href="#x8.10.2">IsDataDescriptor</a>(<i>propId</i>.descriptor) is
 			<b>true</b>.</p>
 			</li>
 			<li><p>
-			IsAccessorDescriptor(<i>previous</i>)
-			is <b>true </b>and IsAccessorDescriptor(<i>propId</i>.descriptor)
+			<a href="#x8.10.1">IsAccessorDescriptor</a>(<i>previous</i>)
+			is <b>true </b>and <a href="#x8.10.1">IsAccessorDescriptor</a>(<i>propId</i>.descriptor)
 			is <b>true </b>and<b> </b>either both <i>previous</i> and
 			<i>propId</i>.descriptor have [[Get]] fields or both <i>previous</i>
 			and <i>propId</i>.descriptor have [[Set]] fields</p>
@@ -11441,7 +11438,7 @@ and
 		</li>
 		<li><p>
 		Return
-		ToString(<i>nbr</i>).</p>
+		<a href="#x9.8">ToString</a>(<i>nbr</i>).</p>
 	</li></ol>
 	<h4 id="x11.1.6">11.1.6 The Grouping Operator <a href="#x11.1.6">#</a> <a href="#x11.1.6-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
@@ -11556,11 +11553,11 @@ and
 		</li>
 		<li><p>
 		Call
-		CheckObjectCoercible(<i>baseValue</i>).</p>
+		<a href="#x9.10">CheckObjectCoercible</a>(<i>baseValue</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>propertyNameString</i> be ToString(<i>propertyNameValue</i>).</p>
+		<i>propertyNameString</i> be <a href="#x9.8">ToString</a>(<i>propertyNameValue</i>).</p>
 		</li>
 		<li><p>
 		If
@@ -11595,7 +11592,7 @@ and
 		</li>
 		<li><p>
 		If
-		Type(<i>constructor</i>) is not Object, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
+		<a href="#Type">Type</a>(<i>constructor</i>) is not Object, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -11632,7 +11629,7 @@ and
 		</li>
 		<li><p>
 		If
-		Type(<i>constructor</i>) is not Object, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
+		<a href="#Type">Type</a>(<i>constructor</i>) is not Object, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -11669,25 +11666,25 @@ and
 		</li>
 		<li><p>
 		If
-		Type(<i>func</i>) is not Object, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
+		<a href="#Type">Type</a>(<i>func</i>) is not Object, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
 		If
-		IsCallable(<i>func</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
+		<a href="#x9.11">IsCallable</a>(<i>func</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
 		If
-		Type(<i>ref</i>) is <a href="#x8.7">Reference</a>, then</p>
+		<a href="#Type">Type</a>(<i>ref</i>) is <a href="#x8.7">Reference</a>, then</p>
 		<ol>
 			<li><p>
 			If
-			IsPropertyReference(<i>ref</i>) is <b>true</b>, then</p>
+			<a href="#IsPropertyReference">IsPropertyReference</a>(<i>ref</i>) is <b>true</b>, then</p>
 			<ol>
 				<li><p>
 				Let
-				<i>thisValue</i> be GetBase(<i>ref</i>).</p>
+				<i>thisValue</i> be <a href="#GetBase">GetBase</a>(<i>ref</i>).</p>
 			</li></ol>
 			</li>
 			<li><p>
@@ -11697,13 +11694,13 @@ and
 				<li><p>
 				Let
 				<i>thisValue</i> be the result of calling the ImplicitThisValue
-				concrete method of GetBase(ref).</p>
+				concrete method of <a href="#GetBase">GetBase</a>(ref).</p>
 			</li></ol>
 		</li></ol>
 		</li>
 		<li><p>
 		Else,
-		Type(<i>ref</i>) is not <a href="#x8.7">Reference</a>.</p>
+		<a href="#Type">Type</a>(<i>ref</i>) is not <a href="#x8.7">Reference</a>.</p>
 		<ol>
 			<li><p>
 			Let
@@ -11838,19 +11835,19 @@ and
 		true:</p>
 	<ul>
 		<li><p>
-		Type(<i>lhs</i>)
+		<a href="#Type">Type</a>(<i>lhs</i>)
 		is <a href="#x8.7">Reference</a> is <b>true</b></p>
 		</li>
 		<li><p>
-		IsStrictReference(<i>lhs</i>)
+		<a href="#IsStrictReference">IsStrictReference</a>(<i>lhs</i>)
 		is <b>true</b></p>
 		</li>
 		<li><p>
-		Type(GetBase(<i>lhs</i>))
+		<a href="#Type">Type</a>(<a href="#GetBase">GetBase</a>(<i>lhs</i>))
 		is Enviroment Record</p>
 		</li>
 		<li><p>
-		GetReferencedName(<i>lhs</i>)
+		<a href="#GetReferencedName">GetReferencedName</a>(<i>lhs</i>)
 		is either <code><b>"eval"</b></code>
 		or<code><b> "arguments"</b></code></p>
 	</li></ul>
@@ -11858,7 +11855,7 @@ and
 	<ol start="3">
 		<li><p>
 		Let
-		<i>oldValue</i> be ToNumber(GetValue(<i>lhs</i>)).</p>
+		<i>oldValue</i> be <a href="#x9.3">ToNumber</a>(GetValue(<i>lhs</i>)).</p>
 		</li>
 		<li><p>
 		Let
@@ -11893,19 +11890,19 @@ and
 		true:</p>
 	<ul>
 		<li><p>
-		Type(<i>lhs</i>)
+		<a href="#Type">Type</a>(<i>lhs</i>)
 		is <a href="#x8.7">Reference</a> is <b>true</b></p>
 		</li>
 		<li><p>
-		IsStrictReference(<i>lhs</i>)
+		<a href="#IsStrictReference">IsStrictReference</a>(<i>lhs</i>)
 		is <b>true</b></p>
 		</li>
 		<li><p>
-		Type(GetBase(<i>lhs</i>))
+		<a href="#Type">Type</a>(<a href="#GetBase">GetBase</a>(<i>lhs</i>))
 		is Enviroment Record</p>
 		</li>
 		<li><p>
-		GetReferencedName(<i>lhs</i>)
+		<a href="#GetReferencedName">GetReferencedName</a>(<i>lhs</i>)
 		is either <code><b>"eval"</b></code>
 		or<code><b> "arguments"</b></code></p>
 	</li></ul>
@@ -11913,7 +11910,7 @@ and
 	<ol start="3">
 		<li><p>
 		Let
-		<i>oldValue</i> be ToNumber(GetValue(<i>lhs</i>)).</p>
+		<i>oldValue</i> be <a href="#x9.3">ToNumber</a>(GetValue(<i>lhs</i>)).</p>
 		</li>
 		<li><p>
 		Let
@@ -11951,15 +11948,15 @@ and
 		</li>
 		<li><p>
 		If
-		Type(<i>ref</i>) is not <a href="#x8.7">Reference</a>, return <b>true</b>.</p>
+		<a href="#Type">Type</a>(<i>ref</i>) is not <a href="#x8.7">Reference</a>, return <b>true</b>.</p>
 		</li>
 		<li><p>
 		If
-		IsUnresolvableReference(<i>ref</i>) then,</p>
+		<a href="#IsUnresolvableReference">IsUnresolvableReference</a>(<i>ref</i>) then,</p>
 		<ol>
 			<li><p>
 			If
-			IsStrictReference(<i>ref</i>) is <b>true</b>, throw a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+			<a href="#IsStrictReference">IsStrictReference</a>(<i>ref</i>) is <b>true</b>, throw a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 			exception.</p>
 			</li>
 			<li><p>
@@ -11969,13 +11966,13 @@ and
 		</li>
 		<li><p>
 		If
-		IsPropertyReference(<i>ref</i>) is <b>true</b>, then</p>
+		<a href="#IsPropertyReference">IsPropertyReference</a>(<i>ref</i>) is <b>true</b>, then</p>
 		<ol>
 			<li><p>
 			Return
 			the result of calling the [[Delete]] internal method on
-			ToObject(GetBase(<i>ref)</i>) providing GetReferencedName(<i>ref</i>)
-			and IsStrictReference(<i>ref</i>) as the arguments.</p>
+			<a href="#x9.9">ToObject</a>(<a href="#GetBase">GetBase</a>(<i>ref)</i>) providing <a href="#GetReferencedName">GetReferencedName</a>(<i>ref</i>)
+			and <a href="#IsStrictReference">IsStrictReference</a>(<i>ref</i>) as the arguments.</p>
 		</li></ol>
 		</li>
 		<li><p>
@@ -11984,17 +11981,17 @@ and
 		<ol>
 			<li><p>
 			If
-			IsStrictReference(<i>ref</i>) is <b>true</b>, throw a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+			<a href="#IsStrictReference">IsStrictReference</a>(<i>ref</i>) is <b>true</b>, throw a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 			exception.</p>
 			</li>
 			<li><p>
 			Let
-			<i>bindings</i> be GetBase(<i>ref</i>).</p>
+			<i>bindings</i> be <a href="#GetBase">GetBase</a>(<i>ref</i>).</p>
 			</li>
 			<li><p>
 			Return
 			the result of calling the DeleteBinding concrete method of
-			<i>bindings</i>, providing GetReferencedName(<i>ref</i>) as the
+			<i>bindings</i>, providing <a href="#GetReferencedName">GetReferencedName</a>(<i>ref</i>) as the
 			argument.</p>
 		</li></ol>
 	</li></ol>
@@ -12043,11 +12040,11 @@ and
 		</li>
 		<li><p>
 		If
-		Type(<i>val</i>) is <a href="#x8.10">Reference</a>, then</p>
+		<a href="#Type">Type</a>(<i>val</i>) is <a href="#x8.10">Reference</a>, then</p>
 		<ol>
 			<li><p>
 			If
-			IsUnresolvableReference(<i>val</i>) is <b>true</b>, return
+			<a href="#IsUnresolvableReference">IsUnresolvableReference</a>(<i>val</i>) is <b>true</b>, return
 			<code><b>"undefined"</b></code>.</p>
 			</li>
 			<li><p>
@@ -12057,7 +12054,7 @@ and
 		</li>
 		<li><p>
 		Return
-		a String determined by Type(<i>val</i>) according to Table 20.</p>
+		a String determined by <a href="#Type">Type</a>(<i>val</i>) according to Table 20.</p>
 	</li></ol>
 	<center>
 		<table width="479" border="1" bordercolor="#000000" cellpadding="8" cellspacing="0" rules="ROWS">
@@ -12178,19 +12175,19 @@ and
 		true:</p>
 	<ul>
 		<li><p>
-		Type(<i>expr</i>)
+		<a href="#Type">Type</a>(<i>expr</i>)
 		is <a href="#x8.7">Reference</a> is <b>true</b></p>
 		</li>
 		<li><p>
-		IsStrictReference(<i>expr</i>)
+		<a href="#IsStrictReference">IsStrictReference</a>(<i>expr</i>)
 		is <b>true</b></p>
 		</li>
 		<li><p>
-		Type(GetBase(<i>expr</i>))
+		<a href="#Type">Type</a>(<a href="#GetBase">GetBase</a>(<i>expr</i>))
 		is Enviroment Record</p>
 		</li>
 		<li><p>
-		GetReferencedName(<i>expr</i>)
+		<a href="#GetReferencedName">GetReferencedName</a>(<i>expr</i>)
 		is either <code><b>"eval"</b></code>
 		or<code><b> "arguments"</b></code></p>
 	</li></ul>
@@ -12198,7 +12195,7 @@ and
 	<ol start="3">
 		<li><p>
 		Let
-		<i>oldValue</i> be ToNumber(GetValue(<i>expr</i>)).</p>
+		<i>oldValue</i> be <a href="#x9.3">ToNumber</a>(GetValue(<i>expr</i>)).</p>
 		</li>
 		<li><p>
 		Let
@@ -12231,19 +12228,19 @@ and
 		true:</p>
 	<ul>
 		<li><p>
-		Type(<i>expr</i>)
+		<a href="#Type">Type</a>(<i>expr</i>)
 		is <a href="#x8.7">Reference</a> is <b>true</b></p>
 		</li>
 		<li><p>
-		IsStrictReference(<i>expr</i>)
+		<a href="#IsStrictReference">IsStrictReference</a>(<i>expr</i>)
 		is <b>true</b></p>
 		</li>
 		<li><p>
-		Type(GetBase(<i>expr</i>))
+		<a href="#Type">Type</a>(<a href="#GetBase">GetBase</a>(<i>expr</i>))
 		is Enviroment Record</p>
 		</li>
 		<li><p>
-		GetReferencedName(<i>expr</i>)
+		<a href="#GetReferencedName">GetReferencedName</a>(<i>expr</i>)
 		is either <code><b>"eval"</b></code>
 		or<code><b> "arguments"</b></code></p>
 	</li></ul>
@@ -12251,7 +12248,7 @@ and
 	<ol start="3">
 		<li><p>
 		Let
-		<i>oldValue</i> be ToNumber(GetValue(<i>expr</i>)).</p>
+		<i>oldValue</i> be <a href="#x9.3">ToNumber</a>(GetValue(<i>expr</i>)).</p>
 		</li>
 		<li><p>
 		Let
@@ -12283,7 +12280,7 @@ and
 		</li>
 		<li><p>
 		Return
-		ToNumber(GetValue(<i>expr</i>)).</p>
+		<a href="#x9.3">ToNumber</a>(GetValue(<i>expr</i>)).</p>
 	</li></ol>
 	<h4 id="x11.4.7">11.4.7 Unary - Operator <a href="#x11.4.7">#</a> <a href="#x11.4.7-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
@@ -12305,7 +12302,7 @@ and
 		</li>
 		<li><p>
 		Let
-		<i>oldValue</i> be ToNumber(GetValue(<i>expr</i>)).</p>
+		<i>oldValue</i> be <a href="#x9.3">ToNumber</a>(GetValue(<i>expr</i>)).</p>
 		</li>
 		<li><p>
 		If
@@ -12329,7 +12326,7 @@ and
 		</li>
 		<li><p>
 		Let
-		<i>oldValue</i> be ToInt32(GetValue(<i>expr</i>)).</p>
+		<i>oldValue</i> be <a href="#x9.5">ToInt32</a>(GetValue(<i>expr</i>)).</p>
 		</li>
 		<li><p>
 		Return
@@ -12349,7 +12346,7 @@ and
 		</li>
 		<li><p>
 		Let
-		<i>oldValue</i> be ToBoolean(GetValue(<i>expr</i>)).</p>
+		<i>oldValue</i> be <a href="#x9.2">ToBoolean</a>(GetValue(<i>expr</i>)).</p>
 		</li>
 		<li><p>
 		If
@@ -12392,11 +12389,11 @@ and
 		</li>
 		<li><p>
 		Let
-		<i>leftNum</i> be ToNumber(<i>leftValue</i>).</p>
+		<i>leftNum</i> be <a href="#x9.3">ToNumber</a>(<i>leftValue</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>rightNum</i> be ToNumber(<i>rightValue</i>).</p>
+		<i>rightNum</i> be <a href="#x9.3">ToNumber</a>(<i>rightValue</i>).</p>
 		</li>
 		<li><p>
 		Return
@@ -12610,29 +12607,29 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>lprim</i> be ToPrimitive(<i>lval</i>).</p>
+		<i>lprim</i> be <a href="#x9.1">ToPrimitive</a>(<i>lval</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>rprim</i> be ToPrimitive(<i>rval</i>).</p>
+		<i>rprim</i> be <a href="#x9.1">ToPrimitive</a>(<i>rval</i>).</p>
 		</li>
 		<li><p>
 		If
-		Type(<i>lprim</i>) is String or Type(<i>rprim</i>) is String, then 
+		<a href="#Type">Type</a>(<i>lprim</i>) is String or <a href="#Type">Type</a>(<i>rprim</i>) is String, then 
 		</p>
 		<ol>
 			<li><p>
 			Return
-			the String that is the result of concatenating ToString(<i>lprim</i>)
-			followed by ToString(<i>rprim</i>)</p>
+			the String that is the result of concatenating <a href="#x9.8">ToString</a>(<i>lprim</i>)
+			followed by <a href="#x9.8">ToString</a>(<i>rprim</i>)</p>
 		</li></ol>
 		</li>
 		<li><p>
 		Return
-		the result of applying the addition operation to ToNumber(<i>lprim</i>)
-		and ToNumber(<i>rprim</i>). See the Note below <a href="#x11.6.3">11.6.3</a>.</p>
+		the result of applying the addition operation to <a href="#x9.3">ToNumber</a>(<i>lprim</i>)
+		and <a href="#x9.3">ToNumber</a>(<i>rprim</i>). See the Note below <a href="#x11.6.3">11.6.3</a>.</p>
 	</li></ol>
-	<p class="sp"><b class="note">NOTE 1</b> No hint is provided in the calls to ToPrimitive in steps 5 and 6.
+	<p class="sp"><b class="note">NOTE 1</b> No hint is provided in the calls to <a href="#x9.1">ToPrimitive</a> in steps 5 and 6.
 	All native ECMAScript objects except Date objects handle the absence
 	of a hint as if the hint Number were given; Date objects handle the
 	absence of a hint as if the hint String were given. Host objects may
@@ -12667,11 +12664,11 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>lnum</i> be ToNumber(<i>lval</i>).</p>
+		<i>lnum</i> be <a href="#x9.3">ToNumber</a>(<i>lval</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>rnum</i> be ToNumber(<i>rval</i>).</p>
+		<i>rnum</i> be <a href="#x9.3">ToNumber</a>(<i>rval</i>).</p>
 		</li>
 		<li><p>
 		Return
@@ -12785,11 +12782,11 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>lnum</i> be ToInt32(<i>lval</i>).</p>
+		<i>lnum</i> be <a href="#x9.5">ToInt32</a>(<i>lval</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>rnum</i> be ToUint32(<i>rval</i>).</p>
+		<i>rnum</i> be <a href="#x9.6">ToUint32</a>(<i>rval</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -12833,11 +12830,11 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>lnum</i> be ToInt32(<i>lval</i>).</p>
+		<i>lnum</i> be <a href="#x9.5">ToInt32</a>(<i>lval</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>rnum</i> be ToUint32(<i>rval</i>).</p>
+		<i>rnum</i> be <a href="#x9.6">ToUint32</a>(<i>rval</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -12882,11 +12879,11 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>lnum</i> be ToUint32(<i>lval</i>).</p>
+		<i>lnum</i> be <a href="#x9.6">ToUint32</a>(<i>lval</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>rnum</i> be ToUint32(<i>rval</i>).</p>
+		<i>rnum</i> be <a href="#x9.6">ToUint32</a>(<i>rval</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -13097,12 +13094,12 @@ IEEE 754 round-to-nearest mode.
 		<ol>
 			<li><p>
 			Let
-			<i>px </i>be the result of calling ToPrimitive(<i>x</i>, hint
+			<i>px </i>be the result of calling <a href="#x9.1">ToPrimitive</a>(<i>x</i>, hint
 			Number).</p>
 			</li>
 			<li><p>
 			Let
-			<i>py </i>be the result of calling ToPrimitive(<i>y</i>, hint
+			<i>py </i>be the result of calling <a href="#x9.1">ToPrimitive</a>(<i>y</i>, hint
 			Number).</p>
 		</li></ol>
 		</li>
@@ -13113,29 +13110,29 @@ IEEE 754 round-to-nearest mode.
 		<ol>
 			<li><p>
 			Let
-			<i>py </i>be the result of calling ToPrimitive(<i>y</i>, hint
+			<i>py </i>be the result of calling <a href="#x9.1">ToPrimitive</a>(<i>y</i>, hint
 			Number).</p>
 			</li>
 			<li><p>
 			Let
-			<i>px </i>be the result of calling ToPrimitive(<i>x</i>, hint
+			<i>px </i>be the result of calling <a href="#x9.1">ToPrimitive</a>(<i>x</i>, hint
 			Number).</p>
 		</li></ol>
 		</li>
 		<li><p>
 		If
-		it is not the case that both Type(<i>px</i>) is String and Type(<i>py</i>)
+		it is not the case that both <a href="#Type">Type</a>(<i>px</i>) is String and <a href="#Type">Type</a>(<i>py</i>)
 		is String, then 
 		</p>
 		<ol>
 			<li><p>
 			Let
-			<i>nx </i>be the result of calling ToNumber(<i>px</i>). Because <i>px </i>and <i>py </i>are <a href="#primitive_value" class="term-ref">primitive value</a>s evaluation order is not
+			<i>nx </i>be the result of calling <a href="#x9.3">ToNumber</a>(<i>px</i>). Because <i>px </i>and <i>py </i>are <a href="#primitive_value" class="term-ref">primitive value</a>s evaluation order is not
 			important.</p>
 			</li>
 			<li><p>
 			Let
-			<i>ny</i> be the result of calling ToNumber(<i>py</i>).</p>
+			<i>ny</i> be the result of calling <a href="#x9.3">ToNumber</a>(<i>py</i>).</p>
 			</li>
 			<li><p>
 			If
@@ -13266,7 +13263,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		If
-		Type(<i>rval</i>) is not Object, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
+		<a href="#Type">Type</a>(<i>rval</i>) is not Object, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -13305,13 +13302,13 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		If
-		Type(<i>rval</i>) is not Object, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
+		<a href="#Type">Type</a>(<i>rval</i>) is not Object, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
 		Return
 		the result of calling the [[HasProperty]] internal method of <i>rval</i>
-		with argument ToString(<i>lval</i>).</p>
+		with argument <a href="#x9.8">ToString</a>(<i>lval</i>).</p>
 	</li></ol>
 	<h3 id="x11.9">11.9 Equality Operators <a href="#x11.9">#</a> <a href="#x11.9-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
 	<p class="tiny-btm">
@@ -13414,19 +13411,19 @@ IEEE 754 round-to-nearest mode.
 	<ol>
 		<li><p>
 		If
-		Type(<i>x</i>) is the same as Type(<i>y</i>), then</p>
+		<a href="#Type">Type</a>(<i>x</i>) is the same as <a href="#Type">Type</a>(<i>y</i>), then</p>
 		<ol>
 			<li><p>
 				If
-			Type(<i>x</i>) is Undefined, return <b>true</b>.</p>
+			<a href="#Type">Type</a>(<i>x</i>) is Undefined, return <b>true</b>.</p>
 			</li>
 			<li><p>
 			If
-			Type(<i>x</i>) is Null, return <b>true</b>.</p>
+			<a href="#Type">Type</a>(<i>x</i>) is Null, return <b>true</b>.</p>
 			</li>
 			<li><p>
 				If
-			Type(<i>x</i>) is Number, then</p>
+			<a href="#Type">Type</a>(<i>x</i>) is Number, then</p>
 			<ol>
 				<li><p>
 				If
@@ -13457,14 +13454,14 @@ IEEE 754 round-to-nearest mode.
 			</li>
 			<li><p>
 			If
-			Type(<i>x</i>) is String, then return <b>true</b> if <i>x</i> and
+			<a href="#Type">Type</a>(<i>x</i>) is String, then return <b>true</b> if <i>x</i> and
 			<i>y</i> are exactly the same sequence of characters (same length
 			and same characters in corresponding positions). Otherwise, return
 			<b>false</b>.</p>
 			</li>
 			<li><p>
 			If
-			Type(<i>x</i>) is Boolean, return <b>true</b> if <i>x</i> and <i>y </i>are both <b>true</b> or both <b>false</b>. Otherwise, return
+			<a href="#Type">Type</a>(<i>x</i>) is Boolean, return <b>true</b> if <i>x</i> and <i>y </i>are both <b>true</b> or both <b>false</b>. Otherwise, return
 			<b>false</b>.</p>
 			</li>
 			<li><p>
@@ -13485,34 +13482,34 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		If
-		Type(<i>x</i>) is Number and Type(<i>y</i>) is String,<br>return
-		the result of the comparison<i> x</i> == ToNumber(<i>y</i>).</p>
+		<a href="#Type">Type</a>(<i>x</i>) is Number and <a href="#Type">Type</a>(<i>y</i>) is String,<br>return
+		the result of the comparison<i> x</i> == <a href="#x9.3">ToNumber</a>(<i>y</i>).</p>
 		</li>
 		<li><p>
 		If
-		Type(<i>x</i>) is String and Type(<i>y</i>) is Number,<br>return
-		the result of the comparison ToNumber(<i>x</i>) == <i>y</i>.</p>
+		<a href="#Type">Type</a>(<i>x</i>) is String and <a href="#Type">Type</a>(<i>y</i>) is Number,<br>return
+		the result of the comparison <a href="#x9.3">ToNumber</a>(<i>x</i>) == <i>y</i>.</p>
 		</li>
 		<li><p>
 		If
-		Type(<i>x</i>) is Boolean, return the result of the comparison
-		ToNumber(<i>x</i>) == <i>y</i>.</p>
+		<a href="#Type">Type</a>(<i>x</i>) is Boolean, return the result of the comparison
+		<a href="#x9.3">ToNumber</a>(<i>x</i>) == <i>y</i>.</p>
 		</li>
 		<li><p>
 		If
-		Type(<i>y</i>) is Boolean, return the result of the comparison<i> x</i>
-		== ToNumber(<i>y</i>).</p>
+		<a href="#Type">Type</a>(<i>y</i>) is Boolean, return the result of the comparison<i> x</i>
+		== <a href="#x9.3">ToNumber</a>(<i>y</i>).</p>
 		</li>
 		<li><p>
 		If
-		Type(<i>x</i>) is either String or Number and Type(<i>y</i>) is
+		<a href="#Type">Type</a>(<i>x</i>) is either String or Number and <a href="#Type">Type</a>(<i>y</i>) is
 		Object,<br>return the result of the comparison <i>x</i> ==
-		ToPrimitive(<i>y</i>).</p>
+		<a href="#x9.1">ToPrimitive</a>(<i>y</i>).</p>
 		</li>
 		<li><p>
 		If
-		Type(<i>x</i>) is Object and Type(<i>y</i>) is either String or
-		Number,<br>return the result of the comparison ToPrimitive(<i>x</i>)
+		<a href="#Type">Type</a>(<i>x</i>) is Object and <a href="#Type">Type</a>(<i>y</i>) is either String or
+		Number,<br>return the result of the comparison <a href="#x9.1">ToPrimitive</a>(<i>x</i>)
 		== <i>y</i>.</p>
 		</li>
 		<li><p>
@@ -13652,19 +13649,19 @@ IEEE 754 round-to-nearest mode.
 	<ol>
 		<li><p>
 		If
-		Type(<i>x</i>) is different from Type(<i>y</i>), return <b>false</b>.</p>
+		<a href="#Type">Type</a>(<i>x</i>) is different from <a href="#Type">Type</a>(<i>y</i>), return <b>false</b>.</p>
 		</li>
 		<li><p>
 		If
-		Type(<i>x</i>) is Undefined, return <b>true</b>.</p>
+		<a href="#Type">Type</a>(<i>x</i>) is Undefined, return <b>true</b>.</p>
 		</li>
 		<li><p>
 		If
-		Type(<i>x</i>) is Null, return <b>true</b>.</p>
+		<a href="#Type">Type</a>(<i>x</i>) is Null, return <b>true</b>.</p>
 		</li>
 		<li><p>
 		If
-		Type(<i>x</i>) is Number, then</p>
+		<a href="#Type">Type</a>(<i>x</i>) is Number, then</p>
 		<ol>
 			<li><p>
 			If
@@ -13695,13 +13692,13 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		If
-		Type(<i>x</i>) is String, then return <b>true</b> if <i>x</i> and <i>y</i>
+		<a href="#Type">Type</a>(<i>x</i>) is String, then return <b>true</b> if <i>x</i> and <i>y</i>
 		are exactly the same sequence of characters (same length and same
 		characters in corresponding positions); otherwise, return <b>false</b>.</p>
 		</li>
 		<li><p>
 		If
-		Type(<i>x</i>) is Boolean, return <b>true</b> if <i>x</i> and <i>y</i>
+		<a href="#Type">Type</a>(<i>x</i>) is Boolean, return <b>true</b> if <i>x</i> and <i>y</i>
 		are both <b>true</b> or both <b>false</b>; otherwise, return <b>false</b>.</p>
 		</li>
 		<li><p>
@@ -13710,7 +13707,7 @@ IEEE 754 round-to-nearest mode.
 		Otherwise, return <b>false</b>.</p>
 	</li></ol>
 	<p><b class="note">NOTE</b> This
-	algorithm differs from the SameValue Algorithm (<a href="#x9.12">9.12</a>) in its
+	algorithm differs from the <a href="#x9.12">SameValue</a> Algorithm (<a href="#x9.12">9.12</a>) in its
 	treatment of signed zeroes and NaNs.</p>
 	<h3 id="x11.10">11.10 Binary Bitwise Operators <a href="#x11.10">#</a> <a href="#x11.10-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
 	<p class="tiny-btm">
@@ -13765,11 +13762,11 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>lnum</i> be ToInt32(<i>lval</i>).</p>
+		<i>lnum</i> be <a href="#x9.5">ToInt32</a>(<i>lval</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>rnum</i> be ToInt32(<i>rval</i>).</p>
+		<i>rnum</i> be <a href="#x9.5">ToInt32</a>(<i>rval</i>).</p>
 		</li>
 		<li><p>
 		Return
@@ -13815,7 +13812,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		If
-		ToBoolean(<i>lval</i>) is <b>false</b>, return <i>lval</i>.</p>
+		<a href="#x9.2">ToBoolean</a>(<i>lval</i>) is <b>false</b>, return <i>lval</i>.</p>
 		</li>
 		<li><p>
 		Let
@@ -13843,7 +13840,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		If
-		ToBoolean(<i>lval</i>) is <b>true</b>, return <i>lval</i>.</p>
+		<a href="#x9.2">ToBoolean</a>(<i>lval</i>) is <b>true</b>, return <i>lval</i>.</p>
 		</li>
 		<li><p>
 		Let
@@ -13904,7 +13901,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		If
-		ToBoolean(GetValue(<i>lref</i>)) is <b>true</b>, then</p>
+		<a href="#x9.2">ToBoolean</a>(GetValue(<i>lref</i>)) is <b>true</b>, then</p>
 		<ol>
 	<li><p>
 			Let
@@ -14072,19 +14069,19 @@ IEEE 754 round-to-nearest mode.
 		true:</p>
 	<ul>
 		<li><p>
-		 Type(<i>lref</i>)
+		 <a href="#Type">Type</a>(<i>lref</i>)
 		is <a href="#x8.7">Reference</a> is <b>true</b></p>
 		</li>
 		<li><p>
-		 IsStrictReference(<i>lref</i>)
+		 <a href="#IsStrictReference">IsStrictReference</a>(<i>lref</i>)
 		is <b>true</b></p>
 		</li>
 		<li><p>
-		 Type(GetBase(<i>lref</i>))
+		 <a href="#Type">Type</a>(<a href="#GetBase">GetBase</a>(<i>lref</i>))
 		is Enviroment Record</p>
 		</li>
 		<li><p>
-		 GetReferencedName(<i>lref</i>)
+		 <a href="#GetReferencedName">GetReferencedName</a>(<i>lref</i>)
 		is either <code><b>"eval"</b></code>
 		or<code><b> "arguments"</b></code></p>
 	</li></ul>
@@ -14143,19 +14140,19 @@ IEEE 754 round-to-nearest mode.
 		true:</p>
 	<ul>
 		<li><p>
-		 Type(<i>lref</i>)
+		 <a href="#Type">Type</a>(<i>lref</i>)
 		is <a href="#x8.7">Reference</a> is <b>true</b></p>
 		</li>
 		<li><p>
-		 IsStrictReference(<i>lref</i>)
+		 <a href="#IsStrictReference">IsStrictReference</a>(<i>lref</i>)
 		is <b>true</b></p>
 		</li>
 		<li><p>
-		 Type(GetBase(<i>lref</i>))
+		 <a href="#Type">Type</a>(<a href="#GetBase">GetBase</a>(<i>lref</i>))
 		is Enviroment Record</p>
 		</li>
 		<li><p>
-		 GetReferencedName(lref)
+		 <a href="#GetReferencedName">GetReferencedName</a>(lref)
 		is either <code><b>"eval"</b></code>
 		or<code><b> "arguments"</b></code></p>
 	</li></ul>
@@ -14322,7 +14319,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		If
-		<i>sl</i> is an abrupt completion, return <i>sl</i>.</p>
+		<i>sl</i> is an <a href="#x8.9">abrupt completion</a>, return <i>sl</i>.</p>
 		</li>
 		<li><p>
 		Let
@@ -14590,7 +14587,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		If
-		ToBoolean(GetValue(<i>exprRef</i>)) is <b>true</b>, then</p>
+		<a href="#x9.2">ToBoolean</a>(GetValue(<i>exprRef</i>)) is <b>true</b>, then</p>
 		<ol>
 			<li><p>
 			Return
@@ -14615,7 +14612,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		If
-		ToBoolean(GetValue(<i>exprRef</i>)) is <b>false</b>, return
+		<a href="#x9.2">ToBoolean</a>(GetValue(<i>exprRef</i>)) is <b>false</b>, return
 		(normal, empty,
 		empty).</p>
 		</li>
@@ -14672,7 +14669,7 @@ IEEE 754 round-to-nearest mode.
 				</li>
 				<li><p>
 				If
-				<i>stmt</i> is an abrupt completion, return <i>stmt</i>.</p>
+				<i>stmt</i> is an <a href="#x8.9">abrupt completion</a>, return <i>stmt</i>.</p>
 			</li></ol>
 			</li>
 			<li><p>
@@ -14681,7 +14678,7 @@ IEEE 754 round-to-nearest mode.
 			</li>
 			<li><p>
 			If
-			ToBoolean(GetValue(<i>exprRef</i>)) is <b>false</b>, set <i>iterating</i>
+			<a href="#x9.2">ToBoolean</a>(GetValue(<i>exprRef</i>)) is <b>false</b>, set <i>iterating</i>
 			to <b>false</b>.</p>
 		</li></ol>
 		</li>
@@ -14707,7 +14704,7 @@ IEEE 754 round-to-nearest mode.
 			</li>
 			<li><p>
 			If
-			ToBoolean(GetValue(<i>exprRef</i>)) is <b>false</b>, return
+			<a href="#x9.2">ToBoolean</a>(GetValue(<i>exprRef</i>)) is <b>false</b>, return
 			(normal, <i>V</i>, empty).</p>
 			</li>
 			<li><p>
@@ -14736,7 +14733,7 @@ IEEE 754 round-to-nearest mode.
 				</li>
 				<li><p>
 				If
-				<i>stmt</i> is an abrupt completion, return <i>stmt</i>.</p>
+				<i>stmt</i> is an <a href="#x8.9">abrupt completion</a>, return <i>stmt</i>.</p>
 			</li></ol>
 		</li></ol>
 	</li></ol>
@@ -14808,7 +14805,7 @@ IEEE 754 round-to-nearest mode.
 			<ol>
 				<li><p>
 				If
-				<i>stmt</i> is an abrupt completion, return <i>stmt</i>.</p>
+				<i>stmt</i> is an <a href="#x8.9">abrupt completion</a>, return <i>stmt</i>.</p>
 			</li></ol>
 			</li>
 			<li><p>
@@ -14884,7 +14881,7 @@ IEEE 754 round-to-nearest mode.
 			<ol>
 				<li><p>
 				If
-				<i>stmt</i> is an abrupt completion, return <i>stmt</i>.</p>
+				<i>stmt</i> is an <a href="#x8.9">abrupt completion</a>, return <i>stmt</i>.</p>
 			</li></ol>
 			</li>
 			<li><p>
@@ -14928,7 +14925,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>obj</i> be ToObject(<i>experValue</i>).</p>
+		<i>obj</i> be <a href="#x9.9">ToObject</a>(<i>experValue</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -14975,7 +14972,7 @@ IEEE 754 round-to-nearest mode.
 			<ol>
 				<li><p>
 				If
-				<i>stmt</i> is an abrupt completion, return <i>stmt</i>.</p>
+				<i>stmt</i> is an <a href="#x8.9">abrupt completion</a>, return <i>stmt</i>.</p>
 			</li></ol>
 		</li></ol>
 	</li></ol>
@@ -15009,7 +15006,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>obj</i> be ToObject(<i>experValue</i>).</p>
+		<i>obj</i> be <a href="#x9.9">ToObject</a>(<i>experValue</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -15057,7 +15054,7 @@ IEEE 754 round-to-nearest mode.
 			<ol>
 				<li><p>
 				If
-				<i>stmt</i> is an abrupt completion, return <i>stmt</i>.</p>
+				<i>stmt</i> is an <a href="#x8.9">abrupt completion</a>, return <i>stmt</i>.</p>
 			</li></ol>
 		</li></ol>
 	</li></ol>
@@ -15270,7 +15267,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>obj</i> be ToObject(GetValue(<i>val</i>)).</p>
+		<i>obj</i> be <a href="#x9.9">ToObject</a>(GetValue(<i>val</i>)).</p>
 		</li>
 		<li><p>
 		Let
@@ -15309,7 +15306,7 @@ IEEE 754 round-to-nearest mode.
 	<p class="sp">
 	</p><p><b class="note">NOTE</b> No matter how
 	control leaves the embedded <i>Statement</i>,
-	whether normally or by some form of abrupt completion or exception,
+	whether normally or by some form of <a href="#x8.9">abrupt completion</a> or exception,
 	the LexicalEnvironment is always restored to its former state.</p>
 	<h4 id="x12.10.1">12.10.1 Strict Mode Restrictions <a href="#x12.10.1">#</a> <a href="#x12.10.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
@@ -15437,7 +15434,7 @@ IEEE 754 round-to-nearest mode.
 					</li>
 					<li><p>
 					If<i>R</i>
-					is an abrupt completion, then return<i>R</i>.</p>
+					is an <a href="#x8.9">abrupt completion</a>, then return<i>R</i>.</p>
 					</li>
 					<li><p>
 					Let<i>V</i>
@@ -15478,7 +15475,7 @@ IEEE 754 round-to-nearest mode.
 				</li>
 				<li><p>
 				If<i>R</i>
-				is an abrupt completion, then return <i>(R</i>.type,<i>V</i>,<i>R</i>.target).</p>
+				is an <a href="#x8.9">abrupt completion</a>, then return <i>(R</i>.type,<i>V</i>,<i>R</i>.target).</p>
 			</li></ol>
 		</li></ol>
 	</li></ol>
@@ -15567,7 +15564,7 @@ IEEE 754 round-to-nearest mode.
 					</li>
 					<li><p class="sm-btm">
 					<i>R</i>
-					is an abrupt completion, then return <i>(R</i>.type,<i>V</i>,<i>R</i>.target).</p>
+					is an <a href="#x8.9">abrupt completion</a>, then return <i>(R</i>.type,<i>V</i>,<i>R</i>.target).</p>
 				</li></ol>
 			</li></ol>
 		</li></ol>
@@ -15645,7 +15642,7 @@ IEEE 754 round-to-nearest mode.
 						</li>
 						<li><p class="sm-btm">
 						<i>R</i>
-						is an abrupt completion, then return <i>(R</i>.type,<i>V</i>,<i>R</i>.target).</p>
+						is an <a href="#x8.9">abrupt completion</a>, then return <i>(R</i>.type,<i>V</i>,<i>R</i>.target).</p>
 					</li></ol>
 				</ol>
 			</ol>
@@ -15677,7 +15674,7 @@ IEEE 754 round-to-nearest mode.
 			<li><p class="sm-btm">
 			If
 			<i>R</i>
-			is an abrupt completion, then return (<i>R</i>.type,
+			is an <a href="#x8.9">abrupt completion</a>, then return (<i>R</i>.type,
 			<i>V</i>,
 			<i>R</i>.target).</p>
 		</li></ol>
@@ -15719,7 +15716,7 @@ IEEE 754 round-to-nearest mode.
 				<li><p class="sm-btm">
 				If
 				<i>R</i>
-				is an abrupt completion, then return (<i>R</i>.type,
+				is an <a href="#x8.9">abrupt completion</a>, then return (<i>R</i>.type,
 				<i>V</i>,
 				<i>R</i>.target).</p>
 			</li></ol>
@@ -16468,12 +16465,12 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		If
-		Type(<i>proto</i>)<i></i>is Object, set the
+		<a href="#Type">Type</a>(<i>proto</i>)<i></i>is Object, set the
 		[[Prototype]] internal property of <i>obj </i>to <i>proto</i>.</p>
 		</li>
 		<li><p>
 		If
-		Type(<i>proto</i>)<i></i>is not Object, set
+		<a href="#Type">Type</a>(<i>proto</i>)<i></i>is not Object, set
 		the [[Prototype]] internal property of <i>obj </i>to the standard
 		built-in Object prototype object as described in <a href="#x15.2.4">15.2.4</a>.</p>
 		</li>
@@ -16488,7 +16485,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		If
-		Type(<i>result</i>)
+		<a href="#Type">Type</a>(<i>result</i>)
 		is Object then return <i>result</i>.</p>
 		</li>
 		<li><p>
@@ -16636,7 +16633,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		If
-		<i>headResult</i> is an abrupt completion, return <i>headResult</i></p>
+		<i>headResult</i> is an <a href="#x8.9">abrupt completion</a>, return <i>headResult</i></p>
 		</li>
 		<li><p>
 		Let
@@ -16874,7 +16871,7 @@ IEEE 754 round-to-nearest mode.
 	<ol>
 		<li><p>
 		If
-		Type(<i>x</i>)
+		<a href="#Type">Type</a>(<i>x</i>)
 		is not String, return <i>x</i>.</p>
 		</li>
 		<li><p>
@@ -16961,7 +16958,7 @@ IEEE 754 round-to-nearest mode.
 	<ol>
 		<li><p>
 		Let
-		<i>inputString</i> be ToString(<i>string</i>).</p>
+		<i>inputString</i> be <a href="#x9.8">ToString</a>(<i>string</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -16991,7 +16988,7 @@ empty string.</p>
 		</li>
 		<li><p>
 		Let
-		<i>R</i> = ToInt32(<i>radix</i>).</p>
+		<i>R</i> = <a href="#x9.5">ToInt32</a>(<i>radix</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -17085,7 +17082,7 @@ empty string.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>inputString</i> be ToString(<i>string</i>).</p>
+		<i>inputString</i> be <a href="#x9.8">ToString</a>(<i>string</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -17125,7 +17122,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		If
-		ToNumber(<i>number</i>) is <b>NaN</b>, return <b>true</b>.</p>
+		<a href="#x9.3">ToNumber</a>(<i>number</i>) is <b>NaN</b>, return <b>true</b>.</p>
 		</li>
 		<li><p>
 		Otherwise,
@@ -17145,7 +17142,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		If
-		ToNumber(<i>number</i>) is <b>NaN</b>, <b>+</b><span class="symbol"><b>∞</b></span>,
+		<a href="#x9.3">ToNumber</a>(<i>number</i>) is <b>NaN</b>, <b>+</b><span class="symbol"><b>∞</b></span>,
 		or <span class="symbol"><b>−∞</b></span>, return <b>false</b>.</p>
 		</li>
 		<li><p>
@@ -17908,7 +17905,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>uriString</i> be ToString(<i>encodedURI</i>).</p>
+		<i>uriString</i> be <a href="#x9.8">ToString</a>(<i>encodedURI</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -17939,7 +17936,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>componentString</i> be ToString(<i>encodedURIComponent</i>).</p>
+		<i>componentString</i> be <a href="#x9.8">ToString</a>(<i>encodedURIComponent</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -17965,7 +17962,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>uriString</i> be ToString(<i>uri</i>).</p>
+		<i>uriString</i> be <a href="#x9.8">ToString</a>(<i>uri</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -17996,7 +17993,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>componentString</i> be ToString(<i>uriComponent</i>).</p>
+		<i>componentString</i> be <a href="#x9.8">ToString</a>(<i>uriComponent</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -18101,7 +18098,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Return
-		ToObject(<i>value</i>).</p>
+		<a href="#x9.9">ToObject</a>(<i>value</i>).</p>
 	</li></ol>
 	<h4 id="x15.2.2">15.2.2 The Object Constructor <a href="#x15.2.2">#</a> <a href="#x15.2.2-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
@@ -18122,7 +18119,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<ol>
 			<li><p>
 			If
-			Type(<i>value</i>)  is Object, then</p>
+			<a href="#Type">Type</a>(<i>value</i>)  is Object, then</p>
 			<ol>
 				<li><p>
 				If
@@ -18138,15 +18135,15 @@ If <i>inputString</i> does not contain any such characters, let
 			</li>
 			<li><p>
 			If
-			Type(<i>value</i>) is String, return ToObject(<i>value</i>).</p>
+			<a href="#Type">Type</a>(<i>value</i>) is String, return <a href="#x9.9">ToObject</a>(<i>value</i>).</p>
 			</li>
 			<li><p>
 			If
-			Type(<i>value</i>) is Boolean, return ToObject(<i>value</i>).</p>
+			<a href="#Type">Type</a>(<i>value</i>) is Boolean, return <a href="#x9.9">ToObject</a>(<i>value</i>).</p>
 			</li>
 			<li><p>
 			If
-			Type(<i>value</i>) is Number, return ToObject(<i>value</i>).</p>
+			<a href="#Type">Type</a>(<i>value</i>) is Number, return <a href="#x9.9">ToObject</a>(<i>value</i>).</p>
 		</li></ol>
 		</li>
 		<li><p>
@@ -18208,7 +18205,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		If
-		Type(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
+		<a href="#Type">Type</a>(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
 		</li>
 		<li><p>
 		Return
@@ -18222,11 +18219,11 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		If
-		Type(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
+		<a href="#Type">Type</a>(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
 		</li>
 		<li><p>
 		Let
-		<i>name </i>be ToString(<i>P</i>).</p>
+		<i>name </i>be <a href="#x9.8">ToString</a>(<i>P</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -18235,10 +18232,10 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Return
-		the result of calling FromPropertyDescriptor(<i>desc</i>) (<a href="#x8.10.4">8.10.4</a>).
-		
+		the result of calling <a href="#x8.10.4">FromPropertyDescriptor</a>(<i>desc</i>) (<a href="#x8.10.4">8.10.4</a>).
 		</p>
-	</li></ol>
+	</li>
+</ol>
 	<h5 id="x15.2.3.4">15.2.3.4 Object.getOwnPropertyNames ( O ) <a href="#x15.2.3.4">#</a> <a href="#x15.2.3.4-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	When
@@ -18247,7 +18244,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		If
-		Type(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
+		<a href="#Type">Type</a>(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
 		</li>
 		<li><p>
 		Let
@@ -18271,7 +18268,7 @@ If <i>inputString</i> does not contain any such characters, let
 			<li><p>
 			Call
 			the [[DefineOwnProperty]] internal method of <i>array</i> with
-			arguments ToString(<i>n</i>), the PropertyDescriptor {[[Value]]:
+			arguments <a href="#x9.8">ToString</a>(<i>n</i>), the PropertyDescriptor {[[Value]]:
 			<i>name</i>, [[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b>,
 			[[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
 			</li>
@@ -18298,7 +18295,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		If
-		Type(<i>O</i>) is not Object or Null throw a <b>TypeError
+		<a href="#Type">Type</a>(<i>O</i>) is not Object or Null throw a <b>TypeError
 		</b>exception.</p>
 		</li>
 		<li><p>
@@ -18332,15 +18329,15 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		If
-		Type(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
+		<a href="#Type">Type</a>(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
 		</li>
 		<li><p>
 		Let
-		<i>name </i>be ToString(<i>P</i>).</p>
+		<i>name </i>be <a href="#x9.8">ToString</a>(<i>P</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>desc </i>be the result of calling ToPropertyDescriptor with
+		<i>desc </i>be the result of calling <a href="#x8.10.5">ToPropertyDescriptor</a> with
 		<i>Attributes</i> as the argument.</p>
 		</li>
 		<li><p>
@@ -18362,11 +18359,11 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		If
-		Type(<i>O</i>) is not Object throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
+		<a href="#Type">Type</a>(<i>O</i>) is not Object throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 		</li>
 		<li><p>
 		Let
-		<i>props</i> be ToObject(<i>Properties</i>).</p>
+		<i>props</i> be <a href="#x9.9">ToObject</a>(<i>Properties</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -18388,7 +18385,7 @@ If <i>inputString</i> does not contain any such characters, let
 			</li>
 			<li><p>
 			Let
-			<i>desc</i> be the result of calling ToPropertyDescriptor with
+			<i>desc</i> be the result of calling <a href="#x8.10.5">ToPropertyDescriptor</a> with
 			<i>descObj</i> as the argument.</p>
 			</li>
 			<li><p>
@@ -18404,7 +18401,7 @@ If <i>inputString</i> does not contain any such characters, let
 			<I>descObj</I> be the result of calling the [[Get]] internal
 			method of <I>props</I> with <I>P</I> as the argument.</P>
 			<LI><p>Let
-			<I>desc</I> be the result of calling ToPropertyDescriptor with
+			<I>desc</I> be the result of calling <a href="#x8.10.5">ToPropertyDescriptor</a> with
 			<I>descObj</I> as the argument.</P>
 			<LI><p>Append
 			the pair (a two element <a href="#x8.8">List</a>) consisting of
@@ -18439,7 +18436,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		If
-		Type(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
+		<a href="#Type">Type</a>(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
 		</li>
 		<li><p>
 		For
@@ -18476,7 +18473,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		If
-		Type(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
+		<a href="#Type">Type</a>(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
 		</li>
 		<li><p>
 		For
@@ -18489,7 +18486,7 @@ If <i>inputString</i> does not contain any such characters, let
 			</li>
 			<li><p>
 			If
-			IsDataDescriptor(<i>desc</i>) is <b>true</b>, then</p>
+			<a href="#x8.10.2">IsDataDescriptor</a>(<i>desc</i>) is <b>true</b>, then</p>
 			<ol>
 				<li><p>
 				If
@@ -18524,7 +18521,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		If
-		Type(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
+		<a href="#Type">Type</a>(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
 		</li>
 		<li><p>
 		Set
@@ -18542,7 +18539,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		If
-		Type(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
+		<a href="#Type">Type</a>(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
 		</li>
 		<li><p>
 		For
@@ -18575,7 +18572,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		If
-		Type(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
+		<a href="#Type">Type</a>(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
 		</li>
 		<li><p>
 		For
@@ -18588,7 +18585,7 @@ If <i>inputString</i> does not contain any such characters, let
 			</li>
 			<li><p>
 			If
-			IsDataDescriptor(<i>desc</i>) is <b>true</b> then</p>
+			<a href="#x8.10.2">IsDataDescriptor</a>(<i>desc</i>) is <b>true</b> then</p>
 			<ol>
 				<li><p>
 				If
@@ -18617,7 +18614,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		If
-		Type(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
+		<a href="#Type">Type</a>(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
 		</li>
 		<li><p>
 		Return
@@ -18631,7 +18628,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		If
-		the Type(<i>O</i>) is not Object, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
+		the <a href="#Type">Type</a>(<i>O</i>) is not Object, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -18658,7 +18655,7 @@ If <i>inputString</i> does not contain any such characters, let
 			<li><p>
 			Call
 			the [[DefineOwnProperty]] internal method of <i>array</i> with
-			arguments ToString(<i>index</i>), the PropertyDescriptor
+			arguments <a href="#x9.8">ToString</a>(<i>index</i>), the PropertyDescriptor
 			{[[Value]]: <i>P</i>, [[Writable]]: <b>true</b>, [[Enumerable]]:
 			<b>true</b>, [[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
 			</li>
@@ -18705,7 +18702,7 @@ If <i>inputString</i> does not contain any such characters, let
 	value is <B>null</B>,
 	return "<B>[object Null]</B>".</p></li>
 	<li><p>Let
-	<I>O </I>be the result of calling ToObject passing the <B>this </B>value
+	<I>O </I>be the result of calling <a href="#x9.9">ToObject</a> passing the <B>this </B>value
 	as the argument.</p></li>
 	<li><p>Let
 	<I>class</I> be the value of the [[Class]] internal property of <I>O</I>.</p></li>
@@ -18723,7 +18720,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>O </i>be the result of calling ToObject passing the <b>this
+		<i>O </i>be the result of calling <a href="#x9.9">ToObject</a> passing the <b>this
 		</b>value as the argument.</p>
 		</li>
 		<li><p>
@@ -18734,7 +18731,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		If
-		IsCallable(<i>toString</i>) is <b>false</b>, throw a <b>TypeError
+		<a href="#x9.11">IsCallable</a>(<i>toString</i>) is <b>false</b>, throw a <b>TypeError
 		</b>exception.</p>
 		</li>
 		<li><p>
@@ -18760,7 +18757,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>O </i>be the result of calling ToObject passing the <b>this
+		<i>O </i>be the result of calling <a href="#x9.9">ToObject</a> passing the <b>this
 		</b>value as the argument.</p>
 		</li>
 		<li><p>
@@ -18788,11 +18785,11 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>P</i> be ToString(<i>V</i>).</p>
+		<i>P</i> be <a href="#x9.8">ToString</a>(<i>V</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>O</i> be the result of calling ToObject passing the <b>this
+		<i>O</i> be the result of calling <a href="#x9.9">ToObject</a> passing the <b>this
 		</b>value as the argument.</p>
 		</li>
 		<li><p>
@@ -18827,7 +18824,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>O</i> be the result of calling ToObject passing the <b>this
+		<i>O</i> be the result of calling <a href="#x9.9">ToObject</a> passing the <b>this
 		</b>value as the argument.</p>
 		</li>
 		<li><p>
@@ -18859,11 +18856,11 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>P</i> be ToString(<i>V</i>).</p>
+		<i>P</i> be <a href="#x9.8">ToString</a>(<i>V</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>O</i> be the result of calling ToObject passing the <b>this
+		<i>O</i> be the result of calling <a href="#x9.9">ToObject</a> passing the <b>this
 		</b>value as the argument.</p>
 		</li>
 		<li><p>
@@ -18968,7 +18965,7 @@ If <i>inputString</i> does not contain any such characters, let
 			</li>
 			<li><p>
 			Let
-			<i>P</i> be ToString(<i>firstArg</i>).</p>
+			<i>P</i> be <a href="#x9.8">ToString</a>(<i>firstArg</i>).</p>
 			</li>
 			<li><p>
 			Let
@@ -18986,7 +18983,7 @@ If <i>inputString</i> does not contain any such characters, let
 				Let
 				<i>P</i> be the result of concatenating the previous value of <i>P</i>,
 				the String <code><b>","</b></code>
-				(a comma), and ToString(<i>nextArg</i>).</p>
+				(a comma), and <a href="#x9.8">ToString</a>(<i>nextArg</i>).</p>
 				</li>
 				<li><p>
 				Increase
@@ -19000,7 +18997,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>body</i> be ToString(<i>body</i>).</p>
+		<i>body</i> be <a href="#x9.8">ToString</a>(<i>body</i>).</p>
 		</li>
 		<li><p>
 		If
@@ -19132,7 +19129,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		If
-		IsCallable(<i>func</i>) is <b>false</b>, then throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
+		<a href="#x9.11">IsCallable</a>(<i>func</i>) is <b>false</b>, then throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -19148,7 +19145,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		If
-		Type(<i>argArray</i>) is not Object, then throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
+		<a href="#Type">Type</a>(<i>argArray</i>) is not Object, then throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -19158,7 +19155,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>n</i> be ToUint32(<i>len</i>).</p>
+		<i>n</i> be <a href="#x9.6">ToUint32</a>(<i>len</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -19174,7 +19171,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<ol>
 			<li><p>
 			Let
-			<i>indexName</i> be ToString(<i>index</i>).</p>
+			<i>indexName</i> be <a href="#x9.8">ToString</a>(<i>index</i>).</p>
 			</li>
 			<li><p>
 			Let
@@ -19204,7 +19201,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<p><b class="note">NOTE</b> The
 	thisArg value is passed without modification as the <b>this</b>
 	value. This is a change from Edition 3, where a <b>undefined</b> or
-	<b>null</b> thisArg is replaced with the <a href="#x15.1" class="term-ref">global object</a> and ToObject
+	<b>null</b> thisArg is replaced with the <a href="#x15.1" class="term-ref">global object</a> and <a href="#x9.9">ToObject</a>
 	is applied to all other values and that result is passed as the <b>this</b>
 	value.</p>
 	<h5 id="x15.3.4.4">15.3.4.4 Function.prototype.call (thisArg [ , arg1 [ , arg2, … ] ] ) <a href="#x15.3.4.4">#</a> <a href="#x15.3.4.4-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
@@ -19219,7 +19216,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		 If
-		IsCallable(<i>func</i>) is <b>false</b>, then throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
+		<a href="#x9.11">IsCallable</a>(<i>func</i>) is <b>false</b>, then throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -19246,7 +19243,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<p><b class="note">NOTE</b> The
 	thisArg value is passed without modification as the <b>this</b>
 	value. This is a change from Edition 3, where a <b>undefined</b> or
-	<b>null</b> thisArg is replaced with the <a href="#x15.1" class="term-ref">global object</a> and ToObject
+	<b>null</b> thisArg is replaced with the <a href="#x15.1" class="term-ref">global object</a> and <a href="#x9.9">ToObject</a>
 	is applied to all other values and that result is passed as the <b>this</b>
 	value.</p>
 	<h5 id="x15.3.4.5">15.3.4.5 Function.prototype.bind (thisArg [, arg1 [, arg2, …]]) <a href="#x15.3.4.5">#</a> <a href="#x15.3.4.5-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
@@ -19263,7 +19260,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		If
-		IsCallable(<i>Target</i>) is <b>false</b>, throw a <b>TypeError
+		<a href="#x9.11">IsCallable</a>(<i>Target</i>) is <b>false</b>, throw a <b>TypeError
 		</b>exception.</p>
 		</li>
 		<li><p>
@@ -19550,7 +19547,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		If
-		Type(<i>O</i>) is not Object, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
+		<a href="#Type">Type</a>(<i>O</i>) is not Object, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 		</li>
 		<li><p>
 		Repeat</p>
@@ -19612,9 +19609,9 @@ If <i>inputString</i> does not contain any such characters, let
 	objects give special treatment to a certain class of property names.
 	A property name <i>P</i>
 	(in the form of a String value) is an <i>array index</i> if and only
-	if ToString(ToUint32(<i>P</i>))
+	if <a href="#x9.8">ToString</a>(<a href="#x9.6">ToUint32</a>(<i>P</i>))
 	is equal to <i>P</i> and
-	ToUint32(<i>P</i>)
+	<a href="#x9.6">ToUint32</a>(<i>P</i>)
 	is not equal to 2<sup>32</sup><span class="symbol">−</span>1.
 	A property whose property name is an array index is also called an
 	<i>element</i>. Every Array object has a <code><b>length</b></code>
@@ -19646,14 +19643,14 @@ If <i>inputString</i> does not contain any such characters, let
 		<li><p class="sm-btm">
 		For
 		each integer <i>i</i>
-		in the range 0≤<i>i</i>&lt;ToUint32(<i>len</i>)</p>
+		in the range 0≤<i>i</i>&lt;<a href="#x9.6">ToUint32</a>(<i>len</i>)</p>
 		<ol>
 			<li><p class="sm-btm">
 			Let
 			<i>elem</i>
 			be the result of calling the [[GetOwnProperty]] internal method of
 			<i>O</i>
-			with argument ToString(<i>i</i>).</p>
+			with argument <a href="#x9.8">ToString</a>(<i>i</i>).</p>
 			</li>
 			<li><p class="sm-btm">
 			If
@@ -19741,12 +19738,12 @@ If <i>inputString</i> does not contain any such characters, let
 	<p>
 	If
 	the argument <i>len</i>
-	is a Number and ToUint32(<i>len</i>)
+	is a Number and <a href="#x9.6">ToUint32</a>(<i>len</i>)
 	is equal to <i>len</i>,
 	then the <code><b>length</b></code>
-	property of the newly constructed object is set to ToUint32(<i>len</i>).
+	property of the newly constructed object is set to <a href="#x9.6">ToUint32</a>(<i>len</i>).
 	If the argument <i>len</i>
-	is a Number and ToUint32(<i>len</i>)
+	is a Number and <a href="#x9.6">ToUint32</a>(<i>len</i>)
 	is not equal to <i>len</i>,
 	a <b><a href="#x15.11.6.2" class="term-ref">RangeError</a></b> exception is thrown.</p>
 	<p>
@@ -19787,7 +19784,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		If
-		Type(<i>arg</i>) is not Object, return <b>false</b>.</p>
+		<a href="#Type">Type</a>(<i>arg</i>) is not Object, return <b>false</b>.</p>
 		</li>
 		<li><p>
 		If
@@ -19835,7 +19832,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>array</i> be the result of calling ToObject on the <b>this</b>
+		<i>array</i> be the result of calling <a href="#x9.9">ToObject</a> on the <b>this</b>
 		value.</p>
 		</li>
 		<li><p>
@@ -19845,7 +19842,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		If
-		IsCallable(<i>func</i>) is <b>false</b>, then let <i>func</i> be
+		<a href="#x9.11">IsCallable</a>(<i>func</i>) is <b>false</b>, then let <i>func</i> be
 		the standard built-in method <a href="#x15.2.4.2">Object.prototype.toString</a> (<a href="#x15.2.4.2">15.2.4.2</a>).</p>
 		</li>
 		<li><p>
@@ -19878,7 +19875,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>O </i>be the result of calling ToObject passing the <b>this
+		<i>O </i>be the result of calling <a href="#x9.9">ToObject</a> passing the <b>this
 		</b>value as the argument.</p>
 		</li>
 		<li><p>
@@ -19888,7 +19885,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>len</i> be ToUint32(<i>arrayLen</i>).</p>
+		<i>len</i> be <a href="#x9.6">ToUint32</a>(<i>arrayLen</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -19921,7 +19918,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<ol>
 			<li><p>
 			Let
-			<i>elementObj</i> be ToObject(<i>firstElement</i>).</p>
+			<i>elementObj</i> be <a href="#x9.9">ToObject</a>(<i>firstElement</i>).</p>
 			</li>
 			<li><p>
 			Let
@@ -19930,7 +19927,7 @@ If <i>inputString</i> does not contain any such characters, let
 			</li>
 			<li><p>
 			If
-			IsCallable(<i>func</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
+			<a href="#x9.11">IsCallable</a>(<i>func</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 			exception.</p>
 			</li>
 			<li><p>
@@ -19957,7 +19954,7 @@ If <i>inputString</i> does not contain any such characters, let
 			<li><p>
 			Let
 			<i>nextElement</i> be the result of calling the [[Get]] internal
-			method of <i>array</i> with argument ToString(<i>k</i>).</p>
+			method of <i>array</i> with argument <a href="#x9.8">ToString</a>(<i>k</i>).</p>
 			</li>
 			<li><p>
 			If
@@ -19975,7 +19972,7 @@ If <i>inputString</i> does not contain any such characters, let
 			<ol>
 				<li><p>
 				Let
-				<i>elementObj</i> be ToObject(<i>nextElement</i>).</p>
+				<i>elementObj</i> be <a href="#x9.9">ToObject</a>(<i>nextElement</i>).</p>
 				</li>
 				<li><p>
 				Let
@@ -19984,7 +19981,7 @@ If <i>inputString</i> does not contain any such characters, let
 				</li>
 				<li><p>
 				If
-				IsCallable(<i>func</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
+				<a href="#x9.11">IsCallable</a>(<i>func</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 				exception.</p>
 				</li>
 				<li><p>
@@ -20033,7 +20030,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>O </i>be the result of calling ToObject passing the <b>this
+		<i>O </i>be the result of calling <a href="#x9.9">ToObject</a> passing the <b>this
 		</b>value as the argument.</p>
 		</li>
 		<li><p>
@@ -20082,7 +20079,7 @@ If <i>inputString</i> does not contain any such characters, let
 				<ol>
 					<li><p>
 					Let
-					<i>P</i> be ToString(<i>k</i>).</p>
+					<i>P</i> be <a href="#x9.8">ToString</a>(<i>k</i>).</p>
 					</li>
 					<li><p>
 					Let
@@ -20101,7 +20098,7 @@ If <i>inputString</i> does not contain any such characters, let
 						<li><p>
 						Call
 						the [[DefineOwnProperty]] internal method of <i>A</i> with
-						arguments ToString(<i>n</i>), Property Descriptor {[[Value]]:
+						arguments <a href="#x9.8">ToString</a>(<i>n</i>), Property Descriptor {[[Value]]:
 						<i>subElement</i>, [[Writable]]: <b>true</b>, [[Enumerable]]:
 						<b>true</b>, [[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
 					</li></ol>
@@ -20123,7 +20120,7 @@ If <i>inputString</i> does not contain any such characters, let
 				<li><p>
 				Call
 				the [[DefineOwnProperty]] internal method of <i>A</i> with
-				arguments ToString(<i>n</i>), Property Descriptor {[[Value]]: <i>E</i>,
+				arguments <a href="#x9.8">ToString</a>(<i>n</i>), Property Descriptor {[[Value]]: <i>E</i>,
 				[[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b>,
 				[[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
 				</li>
@@ -20164,7 +20161,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>O </i>be the result of calling ToObject passing the <b>this
+		<i>O </i>be the result of calling <a href="#x9.9">ToObject</a> passing the <b>this
 		</b>value as the argument.</p>
 		</li>
 		<li><p>
@@ -20174,7 +20171,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>len</i> be ToUint32(<i>lenVal</i>).</p>
+		<i>len</i> be <a href="#x9.6">ToUint32</a>(<i>lenVal</i>).</p>
 		</li>
 		<li><p>
 		If
@@ -20183,7 +20180,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>sep</i> be ToString(<i>separator</i>).</p>
+		<i>sep</i> be <a href="#x9.8">ToString</a>(<i>separator</i>).</p>
 		</li>
 		<li><p>
 		If
@@ -20197,7 +20194,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<li><p>
 		If
 		<i>element0</i> is <b>undefined</b> or <b>null</b>, let <i>R</i> be
-		the empty String; otherwise, Let <i>R</i> be ToString(<i>element0</i>).</p>
+		the empty String; otherwise, Let <i>R</i> be <a href="#x9.8">ToString</a>(<i>element0</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -20215,13 +20212,13 @@ If <i>inputString</i> does not contain any such characters, let
 			<li><p>
 			Let
 			<i>element</i> be the result of calling the [[Get]] internal
-			method of <i>O</i> with argument ToString(<i>k</i>).</p>
+			method of <i>O</i> with argument <a href="#x9.8">ToString</a>(<i>k</i>).</p>
 			</li>
 			<li><p>
 			If
 			<i>element</i> is <b>undefined</b> or <b>null</b>, Let <i>next</i>
 			be the empty String; otherwise, let <i>next</i> be
-			ToString(<i>element</i>).</p>
+			<a href="#x9.8">ToString</a>(<i>element</i>).</p>
 			</li>
 			<li><p>
 			Let
@@ -20256,7 +20253,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>O </i>be the result of calling ToObject passing the <b>this
+		<i>O </i>be the result of calling <a href="#x9.9">ToObject</a> passing the <b>this
 		</b>value as the argument.</p>
 		</li>
 		<li><p>
@@ -20266,7 +20263,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>len</i> be ToUint32(<i>lenVal</i>).</p>
+		<i>len</i> be <a href="#x9.6">ToUint32</a>(<i>lenVal</i>).</p>
 		</li>
 		<li><p>
 		If
@@ -20289,7 +20286,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<ol>
 			<li><p>
 			Let
-			<i>indx</i> be ToString(<i>len</i>–1).</p>
+			<i>indx</i> be <a href="#x9.8">ToString</a>(<i>len</i>–1).</p>
 			</li>
 			<li><p>
 			Let
@@ -20331,7 +20328,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>O </i>be the result of calling ToObject passing the <b>this
+		<i>O </i>be the result of calling <a href="#x9.9">ToObject</a> passing the <b>this
 		</b>value as the argument.</p>
 		</li>
 		<li><p>
@@ -20341,7 +20338,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>n</i> be ToUint32(<i>lenVal</i>).</p>
+		<i>n</i> be <a href="#x9.6">ToUint32</a>(<i>lenVal</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -20361,7 +20358,7 @@ If <i>inputString</i> does not contain any such characters, let
 			<li><p>
 			Call
 			the [[Put]] internal method of <i>O</i> with arguments
-			ToString(<i>n</i>), <i>E</i>, and <b>true</b>.</p>
+			<a href="#x9.8">ToString</a>(<i>n</i>), <i>E</i>, and <b>true</b>.</p>
 			</li>
 			<li><p>
 			Increase
@@ -20397,7 +20394,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>O </i>be the result of calling ToObject passing the <b>this
+		<i>O </i>be the result of calling <a href="#x9.9">ToObject</a> passing the <b>this
 		</b>value as the argument.</p>
 		</li>
 		<li><p>
@@ -20407,7 +20404,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>len</i> be ToUint32(<i>lenVal</i>).</p>
+		<i>len</i> be <a href="#x9.6">ToUint32</a>(<i>lenVal</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -20426,11 +20423,11 @@ If <i>inputString</i> does not contain any such characters, let
 			</li>
 			<li><p>
 			Let
-			<i>upperP</i> be ToString(<i>upper</i>).</p>
+			<i>upperP</i> be <a href="#x9.8">ToString</a>(<i>upper</i>).</p>
 			</li>
 			<li><p>
 			Let
-			<i>lowerP</i> be ToString(<i>lower</i>).</p>
+			<i>lowerP</i> be <a href="#x9.8">ToString</a>(<i>lower</i>).</p>
 			</li>
 			<li><p>
 			Let
@@ -20532,7 +20529,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>O </i>be the result of calling ToObject passing the <b>this
+		<i>O </i>be the result of calling <a href="#x9.9">ToObject</a> passing the <b>this
 		</b>value as the argument.</p>
 		</li>
 		<li><p>
@@ -20542,7 +20539,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>len</i> be ToUint32(<i>lenVal</i>).</p>
+		<i>len</i> be <a href="#x9.6">ToUint32</a>(<i>lenVal</i>).</p>
 		</li>
 		<li><p>
 		If
@@ -20573,11 +20570,11 @@ If <i>inputString</i> does not contain any such characters, let
 		<ol>
 			<li><p>
 			Let
-			<i>from</i> be ToString(<i>k</i>).</p>
+			<i>from</i> be <a href="#x9.8">ToString</a>(<i>k</i>).</p>
 			</li>
 			<li><p>
 			Let
-			<i>to</i> be ToString(<i>k</i>–1).</p>
+			<i>to</i> be <a href="#x9.8">ToString</a>(<i>k</i>–1).</p>
 			</li>
 			<li><p>
 			Let
@@ -20617,7 +20614,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<li><p>
 		Call
 		the [[Delete]] internal method of <i>O</i> with arguments
-		ToString(<i>len</i>–1) and <b>true</b>.</p>
+		<a href="#x9.8">ToString</a>(<i>len</i>–1) and <b>true</b>.</p>
 		</li>
 		<li><p>
 		Call
@@ -20655,7 +20652,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>O </i>be the result of calling ToObject passing the <b>this
+		<i>O </i>be the result of calling <a href="#x9.9">ToObject</a> passing the <b>this
 		</b>value as the argument.</p>
 		</li>
 		<li><p>
@@ -20671,11 +20668,11 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>len</i> be ToUint32(<i>lenVal</i>).</p>
+		<i>len</i> be <a href="#x9.6">ToUint32</a>(<i>lenVal</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>relativeStart</i> be ToInteger(<i>start</i>).</p>
+		<i>relativeStart</i> be <a href="#x9.4">ToInteger</a>(<i>start</i>).</p>
 		</li>
 		<li><p>
 		If
@@ -20684,7 +20681,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<li><p>
 		If
 		<i>end</i> is <b>undefined</b>, let <i>relativeEnd</i> be <i>len</i>;
-		else let <i>relativeEnd</i> be ToInteger(<i>end</i>).</p>
+		else let <i>relativeEnd</i> be <a href="#x9.4">ToInteger</a>(<i>end</i>).</p>
 		</li>
 		<li><p>
 		If
@@ -20701,7 +20698,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<ol>
 			<li><p>
 			Let
-			<i>Pk</i> be ToString(<i>k</i>).</p>
+			<i>Pk</i> be <a href="#x9.8">ToString</a>(<i>k</i>).</p>
 			</li>
 			<li><p>
 			Let
@@ -20720,7 +20717,7 @@ If <i>inputString</i> does not contain any such characters, let
 				<li><p>
 				Call
 				the [[DefineOwnProperty]] internal method of <i>A</i> with
-				arguments ToString(<i>n</i>), Property Descriptor {[[Value]]:
+				arguments <a href="#x9.8">ToString</a>(<i>n</i>), Property Descriptor {[[Value]]:
 				<i>kValue</i>, [[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b>,
 				[[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
 			</li></ol>
@@ -20767,7 +20764,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<p>
 	Let
 	<i>obj </i>be the result
-	of calling ToObject passing the <b>this </b>value as the argument.</p>
+	of calling <a href="#x9.9">ToObject</a> passing the <b>this </b>value as the argument.</p>
 	<p>
 	Let
 	<i>len</i> be the result
@@ -20801,7 +20798,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<li><p>
 		The
 		result of calling the [[HasProperty]] internal method of <i>proto</i>
-		with argument ToString(<i>j</i>)
+		with argument <a href="#x9.8">ToString</a>(<i>j</i>)
 		is <b>true</b>.</p>
 	</li></ul>
 	<p>
@@ -20905,7 +20902,7 @@ If <i>inputString</i> does not contain any such characters, let
 		always returns the same value <i>v</i>
 		when given a specific pair of values <i>a</i>
 		and <i>b</i>
-		as its two arguments. Furthermore, Type(<i>v</i>)
+		as its two arguments. Furthermore, <a href="#Type">Type</a>(<i>v</i>)
 		is Number, and <i>v</i>
 		is not NaN. Note that this implies that exactly one of <i>a</i>&nbsp;&lt;<sub>CF</sub>&nbsp;<i>b</i>,
 		<i>a</i>&nbsp;=<sub>CF</sub>&nbsp;<i>b</i>,
@@ -20964,11 +20961,11 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>jString</i> be ToString(<i>j</i>).</p>
+		<i>jString</i> be <a href="#x9.8">ToString</a>(<i>j</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>kString</i> be ToString(<i>k</i>).</p>
+		<i>kString</i> be <a href="#x9.8">ToString</a>(<i>k</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -21021,7 +21018,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<ol>
 			<li><p>
 			If
-			IsCallable(<i>comparefn</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
+			<a href="#x9.11">IsCallable</a>(<i>comparefn</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 			exception.</p>
 			</li>
 			<li><p>
@@ -21033,11 +21030,11 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>xString</i> be ToString(<i>x</i>).</p>
+		<i>xString</i> be <a href="#x9.8">ToString</a>(<i>x</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>yString</i> be ToString(<i>y</i>).</p>
+		<i>yString</i> be <a href="#x9.8">ToString</a>(<i>y</i>).</p>
 		</li>
 		<li><p>
 		If
@@ -21079,7 +21076,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>O </i>be the result of calling ToObject passing the <b>this
+		<i>O </i>be the result of calling <a href="#x9.9">ToObject</a> passing the <b>this
 		</b>value as the argument.</p>
 		</li>
 		<li><p>
@@ -21095,11 +21092,11 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>len</i> be ToUint32(<i>lenVal</i>).</p>
+		<i>len</i> be <a href="#x9.6">ToUint32</a>(<i>lenVal</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>relativeStart</i> be ToInteger(<i>start</i>).</p>
+		<i>relativeStart</i> be <a href="#x9.4">ToInteger</a>(<i>start</i>).</p>
 		</li>
 		<li><p>
 		If
@@ -21109,7 +21106,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>actualDeleteCount</i> be min(max(ToInteger(<i>deleteCount</i>),0),<i>len</i> –<i> actualStart</i>).</p>
+		<i>actualDeleteCount</i> be min(max(<a href="#x9.4">ToInteger</a>(<i>deleteCount</i>),0),<i>len</i> –<i> actualStart</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -21121,7 +21118,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<ol>
 			<li><p>
 			Let
-			<i>from</i> be ToString(<i>actualStart</i>+<i>k</i>).</p>
+			<i>from</i> be <a href="#x9.8">ToString</a>(<i>actualStart</i>+<i>k</i>).</p>
 			</li>
 			<li><p>
 			Let
@@ -21140,7 +21137,7 @@ If <i>inputString</i> does not contain any such characters, let
 				<li><p>
 				Call
 				the [[DefineOwnProperty]] internal method of <i>A</i> with
-				arguments ToString(<i>k</i>), Property Descriptor {[[Value]]:
+				arguments <a href="#x9.8">ToString</a>(<i>k</i>), Property Descriptor {[[Value]]:
 				<i>fromValue</i>, [[Writable]]: <b>true</b>, [[Enumerable]]:
 				<b>true</b>, [[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
 			</li></ol>
@@ -21174,11 +21171,11 @@ If <i>inputString</i> does not contain any such characters, let
 			<ol>
 				<li><p>
 				Let
-				<i>from</i> be ToString(<i>k</i>+<i>actualDeleteCount</i>).</p>
+				<i>from</i> be <a href="#x9.8">ToString</a>(<i>k</i>+<i>actualDeleteCount</i>).</p>
 				</li>
 				<li><p>
 				Let
-				<i>to</i> be ToString(<i>k</i>+<i>itemCount</i>).</p>
+				<i>to</i> be <a href="#x9.8">ToString</a>(<i>k</i>+<i>itemCount</i>).</p>
 				</li>
 				<li><p>
 				Let
@@ -21227,7 +21224,7 @@ If <i>inputString</i> does not contain any such characters, let
 				<li><p>
 				Call
 				the [[Delete]] internal method of <i>O</i> with arguments
-				ToString(<i>k</i>–1) and <b>true</b>.</p>
+				<a href="#x9.8">ToString</a>(<i>k</i>–1) and <b>true</b>.</p>
 				</li>
 				<li><p>
 				Decrease
@@ -21249,12 +21246,12 @@ If <i>inputString</i> does not contain any such characters, let
 			<ol>
 				<li><p>
 				Let
-				<i>from</i> be ToString(<i>k </i>+<i> actualDeleteCount</i> –
+				<i>from</i> be <a href="#x9.8">ToString</a>(<i>k </i>+<i> actualDeleteCount</i> –
 				1).</p>
 				</li>
 				<li><p>
 				Let
-				<i>to</i> be ToString(<i>k </i>+<i> itemCount</i> – 1)</p>
+				<i>to</i> be <a href="#x9.8">ToString</a>(<i>k </i>+<i> itemCount</i> – 1)</p>
 				</li>
 				<li><p>
 				Let
@@ -21308,7 +21305,7 @@ If <i>inputString</i> does not contain any such characters, let
 			<li><p>
 			Call
 			the [[Put]] internal method of <i>O</i> with arguments
-			ToString(<i>k</i>), <i>E</i>, and <b>true</b>.</p>
+			<a href="#x9.8">ToString</a>(<i>k</i>), <i>E</i>, and <b>true</b>.</p>
 			</li>
 			<li><p>
 			Increase
@@ -21350,7 +21347,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>O </i>be the result of calling ToObject passing the <b>this
+		<i>O </i>be the result of calling <a href="#x9.9">ToObject</a> passing the <b>this
 		</b>value as the argument.</p>
 		</li>
 		<li><p>
@@ -21360,7 +21357,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>len</i> be ToUint32(<i>lenVal</i>).</p>
+		<i>len</i> be <a href="#x9.6">ToUint32</a>(<i>lenVal</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -21377,11 +21374,11 @@ If <i>inputString</i> does not contain any such characters, let
 		<ol>
 			<li><p>
 			Let
-			<i>from</i> be ToString(<i>k</i>–1).</p>
+			<i>from</i> be <a href="#x9.8">ToString</a>(<i>k</i>–1).</p>
 			</li>
 			<li><p>
 			Let
-			<i>to</i> be ToString(<i>k</i>+<i>argCount</i> –1).</p>
+			<i>to</i> be <a href="#x9.8">ToString</a>(<i>k</i>+<i>argCount</i> –1).</p>
 			</li>
 			<li><p>
 			Let
@@ -21440,7 +21437,7 @@ If <i>inputString</i> does not contain any such characters, let
 			<li><p>
 			Call
 			the [[Put]] internal method of <i>O</i> with arguments
-			ToString(<i>j</i>), <i>E</i>, and <b>true</b>.</p>
+			<a href="#x9.8">ToString</a>(<i>j</i>), <i>E</i>, and <b>true</b>.</p>
 			</li>
 			<li><p>
 			Increase
@@ -21492,7 +21489,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>O </i>be the result of calling ToObject passing the <b>this
+		<i>O </i>be the result of calling <a href="#x9.9">ToObject</a> passing the <b>this
 		</b>value as the argument.</p>
 		</li>
 		<li><p>
@@ -21502,7 +21499,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>len</i> be ToUint32(<i>lenValue</i>).</p>
+		<i>len</i> be <a href="#x9.6">ToUint32</a>(<i>lenValue</i>).</p>
 		</li>
 		<li><p>
 		If
@@ -21511,7 +21508,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<li><p>
 		If
 		argument <i>fromIndex</i> was passed let <i>n</i> be
-		ToInteger(<i>fromIndex</i>); else let <i>n</i> be 0.</p>
+		<a href="#x9.4">ToInteger</a>(<i>fromIndex</i>); else let <i>n</i> be 0.</p>
 		</li>
 		<li><p>
 		If
@@ -21547,7 +21544,7 @@ If <i>inputString</i> does not contain any such characters, let
 			<li><p>
 			Let
 			<i>kPresent</i> be the result of calling the [[HasProperty]]
-			internal method of <i>O</i> with argument ToString(<i>k</i>).</p>
+			internal method of <i>O</i> with argument <a href="#x9.8">ToString</a>(<i>k</i>).</p>
 			</li>
 			<li><p>
 			If
@@ -21556,7 +21553,7 @@ If <i>inputString</i> does not contain any such characters, let
 				<li><p>
 				Let
 				<i>elementK</i> be the result of calling the [[Get]] internal
-				method of <i>O </i>with the argument ToString(<i>k</i>).</p>
+				method of <i>O </i>with the argument <a href="#x9.8">ToString</a>(<i>k</i>).</p>
 				</li>
 				<li><p>
 				Let
@@ -21613,7 +21610,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>O</i> be the result of calling ToObject passing the <b>this
+		<i>O</i> be the result of calling <a href="#x9.9">ToObject</a> passing the <b>this
 		</b>value as the argument.</p>
 		</li>
 		<li><p>
@@ -21623,7 +21620,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>len</i> be ToUint32(<i>lenValue</i>).</p>
+		<i>len</i> be <a href="#x9.6">ToUint32</a>(<i>lenValue</i>).</p>
 		</li>
 		<li><p>
 		If
@@ -21632,7 +21629,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<li><p>
 		If
 		argument <i>fromIndex</i> was passed let <i>n</i> be
-		ToInteger(<i>fromIndex</i>); else let <i>n</i> be <i>len</i>.</p>
+		<a href="#x9.4">ToInteger</a>(<i>fromIndex</i>); else let <i>n</i> be <i>len</i>.</p>
 		</li>
 		<li><p>
 		If
@@ -21655,7 +21652,7 @@ If <i>inputString</i> does not contain any such characters, let
 			<li><p>
 			Let
 			<i>kPresent</i> be the result of calling the [[HasProperty]]
-			internal method of <i>O</i> with argument ToString(<i>k</i>).</p>
+			internal method of <i>O</i> with argument <a href="#x9.8">ToString</a>(<i>k</i>).</p>
 			</li>
 			<li><p>
 			If
@@ -21664,7 +21661,7 @@ If <i>inputString</i> does not contain any such characters, let
 				<li><p>
 				Let
 				<i>elementK</i> be the result of calling the [[Get]] internal
-				method of <i>O </i>with the argument ToString(<i>k</i>).</p>
+				method of <i>O </i>with the argument <a href="#x9.8">ToString</a>(<i>k</i>).</p>
 				</li>
 				<li><p>
 				Let
@@ -21747,7 +21744,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>O</i> be the result of calling ToObject passing the <b>this
+		<i>O</i> be the result of calling <a href="#x9.9">ToObject</a> passing the <b>this
 		</b>value as the argument.</p>
 		</li>
 		<li><p>
@@ -21757,11 +21754,11 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>len</i> be ToUint32(<i>lenValue</i>).</p>
+		<i>len</i> be <a href="#x9.6">ToUint32</a>(<i>lenValue</i>).</p>
 		</li>
 		<li><p>
 		If
-		IsCallable(<i>callbackfn</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
+		<a href="#x9.11">IsCallable</a>(<i>callbackfn</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -21779,7 +21776,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<ol>
 			<li><p>
 			Let
-			<i>Pk</i> be ToString(<i>k</i>).</p>
+			<i>Pk</i> be <a href="#x9.8">ToString</a>(<i>k</i>).</p>
 			</li>
 			<li><p>
 			Let
@@ -21804,7 +21801,7 @@ If <i>inputString</i> does not contain any such characters, let
 				</li>
 				<li><p>
 				If
-				ToBoolean(<i>testResult)</i> is <b>false</b>, return <b>false</b>.</p>
+				<a href="#x9.2">ToBoolean</a>(<i>testResult)</i> is <b>false</b>, return <b>false</b>.</p>
 			</li></ol>
 			</li>
 			<li><p>
@@ -21875,7 +21872,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>O</i> be the result of calling ToObject passing the <b>this
+		<i>O</i> be the result of calling <a href="#x9.9">ToObject</a> passing the <b>this
 		</b>value as the argument.</p>
 		</li>
 		<li><p>
@@ -21885,11 +21882,11 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>len</i> be ToUint32(<i>lenValue</i>).</p>
+		<i>len</i> be <a href="#x9.6">ToUint32</a>(<i>lenValue</i>).</p>
 		</li>
 		<li><p>
 		If
-		IsCallable(<i>callbackfn</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
+		<a href="#x9.11">IsCallable</a>(<i>callbackfn</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -21907,7 +21904,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<ol>
 			<li><p>
 			Let
-			<i>Pk</i> be ToString(<i>k</i>).</p>
+			<i>Pk</i> be <a href="#x9.8">ToString</a>(<i>k</i>).</p>
 			</li>
 			<li><p>
 			Let
@@ -21932,7 +21929,7 @@ If <i>inputString</i> does not contain any such characters, let
 				</li>
 				<li><p>
 				If
-				ToBoolean(<i>testResult)</i> is <b>true</b>, return <b>true</b>.</p>
+				<a href="#x9.2">ToBoolean</a>(<i>testResult)</i> is <b>true</b>, return <b>true</b>.</p>
 			</li></ol>
 			</li>
 			<li><p>
@@ -21999,7 +21996,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>O</i> be the result of calling ToObject passing the <b>this
+		<i>O</i> be the result of calling <a href="#x9.9">ToObject</a> passing the <b>this
 		</b>value as the argument.</p>
 		</li>
 		<li><p>
@@ -22009,11 +22006,11 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>len</i> be ToUint32(<i>lenValue</i>).</p>
+		<i>len</i> be <a href="#x9.6">ToUint32</a>(<i>lenValue</i>).</p>
 		</li>
 		<li><p>
 		If
-		IsCallable(<i>callbackfn</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
+		<a href="#x9.11">IsCallable</a>(<i>callbackfn</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -22031,7 +22028,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<ol>
 			<li><p>
 			Let
-			<i>Pk</i> be ToString(<i>k</i>).</p>
+			<i>Pk</i> be <a href="#x9.8">ToString</a>(<i>k</i>).</p>
 			</li>
 			<li><p>
 			Let
@@ -22116,7 +22113,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>O</i> be the result of calling ToObject passing the <b>this
+		<i>O</i> be the result of calling <a href="#x9.9">ToObject</a> passing the <b>this
 		</b>value as the argument.</p>
 		</li>
 		<li><p>
@@ -22126,11 +22123,11 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>len</i> be ToUint32(<i>lenValue</i>).</p>
+		<i>len</i> be <a href="#x9.6">ToUint32</a>(<i>lenValue</i>).</p>
 		</li>
 		<li><p>
 		If
-		IsCallable(<i>callbackfn</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
+		<a href="#x9.11">IsCallable</a>(<i>callbackfn</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -22156,7 +22153,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<ol>
 			<li><p>
 			Let
-			<i>Pk</i> be ToString(<i>k</i>).</p>
+			<i>Pk</i> be <a href="#x9.8">ToString</a>(<i>k</i>).</p>
 			</li>
 			<li><p>
 			Let
@@ -22252,7 +22249,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>O</i> be the result of calling ToObject passing the <b>this
+		<i>O</i> be the result of calling <a href="#x9.9">ToObject</a> passing the <b>this
 		</b>value as the argument.</p>
 		</li>
 		<li><p>
@@ -22262,11 +22259,11 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>len</i> be ToUint32(<i>lenValue</i>).</p>
+		<i>len</i> be <a href="#x9.6">ToUint32</a>(<i>lenValue</i>).</p>
 		</li>
 		<li><p>
 		If
-		IsCallable(<i>callbackfn</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
+		<a href="#x9.11">IsCallable</a>(<i>callbackfn</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -22294,7 +22291,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<ol>
 			<li><p>
 			Let
-			<i>Pk</i> be ToString(<i>k</i>).</p>
+			<i>Pk</i> be <a href="#x9.8">ToString</a>(<i>k</i>).</p>
 			</li>
 			<li><p>
 			Let
@@ -22319,12 +22316,12 @@ If <i>inputString</i> does not contain any such characters, let
 				</li>
 				<li><p>
 				If
-				ToBoolean(<i>selected</i>) is <b>true</b>, then</p>
+				<a href="#x9.2">ToBoolean</a>(<i>selected</i>) is <b>true</b>, then</p>
 				<ol>
 					<li><p>
 					Call
 					the [[DefineOwnProperty]] internal method of <i>A</i> with
-					arguments ToString(<i>to</i>), Property Descriptor {[[Value]]:
+					arguments <a href="#x9.8">ToString</a>(<i>to</i>), Property Descriptor {[[Value]]:
 					<i>kValue</i>, [[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b>,
 					[[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
 					</li>
@@ -22396,7 +22393,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>O</i> be the result of calling ToObject passing the <b>this
+		<i>O</i> be the result of calling <a href="#x9.9">ToObject</a> passing the <b>this
 		</b>value as the argument.</p>
 		</li>
 		<li><p>
@@ -22406,11 +22403,11 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>len</i> be ToUint32(<i>lenValue</i>  ).</p>
+		<i>len</i> be <a href="#x9.6">ToUint32</a>(<i>lenValue</i>  ).</p>
 		</li>
 		<li><p>
 		If
-		IsCallable(<i>callbackfn</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
+		<a href="#x9.11">IsCallable</a>(<i>callbackfn</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -22445,7 +22442,7 @@ If <i>inputString</i> does not contain any such characters, let
 			<ol>
 				<li><p>
 				Let
-				<i>Pk</i> be ToString(<i>k</i>).</p>
+				<i>Pk</i> be <a href="#x9.8">ToString</a>(<i>k</i>).</p>
 				</li>
 				<li><p>
 				Let
@@ -22479,7 +22476,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<ol>
 			<li><p>
 			Let
-			<i>Pk</i> be ToString(<i>k</i>).</p>
+			<i>Pk</i> be <a href="#x9.8">ToString</a>(<i>k</i>).</p>
 			</li>
 			<li><p>
 			Let
@@ -22570,7 +22567,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>O</i> be the result of calling ToObject passing the <b>this
+		<i>O</i> be the result of calling <a href="#x9.9">ToObject</a> passing the <b>this
 		</b>value as the argument.</p>
 		</li>
 		<li><p>
@@ -22580,11 +22577,11 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>len</i> be ToUint32(<i>lenValue</i>  ).</p>
+		<i>len</i> be <a href="#x9.6">ToUint32</a>(<i>lenValue</i>  ).</p>
 		</li>
 		<li><p>
 		If
-		IsCallable(<i>callbackfn</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
+		<a href="#x9.11">IsCallable</a>(<i>callbackfn</i>) is <b>false</b>, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -22619,7 +22616,7 @@ If <i>inputString</i> does not contain any such characters, let
 			<ol>
 				<li><p>
 				Let
-				<i>Pk</i> be ToString(<i>k</i>).</p>
+				<i>Pk</i> be <a href="#x9.8">ToString</a>(<i>k</i>).</p>
 				</li>
 				<li><p>
 				Let
@@ -22653,7 +22650,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<ol>
 			<li><p>
 			Let
-			<i>Pk</i> be ToString(<i>k</i>).</p>
+			<i>Pk</i> be <a href="#x9.8">ToString</a>(<i>k</i>).</p>
 			</li>
 			<li><p>
 			Let
@@ -22716,7 +22713,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<a href="#x8.10">Property Descriptor</a>, and <i>Throw </i>is a Boolean flag.</p>
 	<p>
 	In
-	the following algorithm, the term “Reject”
+	the following algorithm, the term <dfn id="reject-DefineOwnProperty-2">“Reject”</dfn>
 	means “If <i>Throw </i>is <b>true</b>,
 	then throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 	exception, otherwise return <b>false</b>.”</p>
@@ -22762,11 +22759,11 @@ If <i>inputString</i> does not contain any such characters, let
 			</li>
 			<li><p>
 			Let
-			<i>newLen</i> be ToUint32(<i>Desc</i>.[[Value]]).</p>
+			<i>newLen</i> be <a href="#x9.6">ToUint32</a>(<i>Desc</i>.[[Value]]).</p>
 			</li>
 			<li><p>
 			If
-			<i>newLen</i> is not equal to ToNumber(<i> Desc</i>.[[Value]]),
+			<i>newLen</i> is not equal to <a href="#x9.3">ToNumber</a>(<i> Desc</i>.[[Value]]),
 			throw a <b><a href="#x15.11.6.2" class="term-ref">RangeError</a></b> exception.</p>
 			</li>
 			<li><p>
@@ -22785,7 +22782,7 @@ If <i>inputString</i> does not contain any such characters, let
 			</li></ol>
 			</li>
 			<li><p>
-			Reject
+			<a href="#reject-DefineOwnProperty-2">Reject</a>
 			if <i>oldLenDesc</i>.[[Writable]] is <b>false</b>.</p>
 			</li>
 			<li><p>
@@ -22833,7 +22830,7 @@ If <i>inputString</i> does not contain any such characters, let
 				Let
 				<i>deleteSucceeded</i>
 				be the result of calling the [[Delete]]
-				internal method of <i>A</i> passing ToString(<i>oldLen</i>) and
+				internal method of <i>A</i> passing <a href="#x9.8">ToString</a>(<i>oldLen</i>) and
 				<b>false</b> as arguments.</p>
 				</li>
 				<li><p>
@@ -22858,7 +22855,7 @@ If <i>inputString</i> does not contain any such characters, let
 					</p>
 					</li>
 					<li><p>
-					Reject.</p>
+					<a href="#reject-DefineOwnProperty-2">Reject</a>.</p>
 				</li></ol>
 			</li></ol>
 			</li>
@@ -22885,10 +22882,10 @@ If <i>inputString</i> does not contain any such characters, let
 		<ol>
 			<li><p>
 			Let
-			<i>index</i> be ToUint32(<i>P</i>).</p>
+			<i>index</i> be <a href="#x9.6">ToUint32</a>(<i>P</i>).</p>
 			</li>
 			<li><p>
-			Reject
+			<a href="#reject-DefineOwnProperty-2">Reject</a>
 			if <i>index</i> ≥ <i>oldLen</i> and <i>oldLenDesc</i>.[[Writable]]
 			is <b>false</b>.</p>
 			</li>
@@ -22899,7 +22896,7 @@ If <i>inputString</i> does not contain any such characters, let
 			<i>P</i>, <i>Desc</i>, and <b>false</b> as arguments.</p>
 			</li>
 			<li><p>
-			Reject
+			<a href="#reject-DefineOwnProperty-2">Reject</a>
 			if <i>succeeded</i> is <b>false</b>.</p>
 			</li>
 			<li><p>
@@ -22960,7 +22957,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<h5 id="x15.5.1.1">15.5.1.1 String ( [ value ] ) <a href="#x15.5.1.1">#</a> <a href="#x15.5.1.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	Returns
-	a String value (not a String object) computed by ToString(<i>value</i>).
+	a String value (not a String object) computed by <a href="#x9.8">ToString</a>(<i>value</i>).
 	If <i>value</i> is not
 	supplied, the empty String <code><b>""</b></code>
 	is returned.</p>
@@ -22990,7 +22987,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<p>
 	The
 	[[PrimitiveValue]] internal
-	property of the newly constructed object is set to ToString(<i>value</i>),
+	property of the newly constructed object is set to <a href="#x9.8">ToString</a>(<i>value</i>),
 	or to the empty String if <i>value</i>
 	is not supplied.</p>
 	<h4 id="x15.5.3">15.5.3 Properties of the String Constructor <a href="#x15.5.3">#</a> <a href="#x15.5.3-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
@@ -23020,7 +23017,7 @@ If <i>inputString</i> does not contain any such characters, let
 	arguments. Each argument specifies one character of the resulting
 	String, with the first argument specifying the first character, and
 	so on, from left to right. An argument is converted to a character
-	by applying the operation ToUint16 (<a href="#x9.7">9.7</a>) and regarding the resulting
+	by applying the operation <a href="#x9.7">ToUint16</a> (<a href="#x9.7">9.7</a>) and regarding the resulting
 	16-bit integer as the code unit value of a character. If no
 	arguments are supplied, the result is the empty String.</p>
 	<p>
@@ -23087,16 +23084,16 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Call
-		CheckObjectCoercible passing the <b>this</b> value as its argument.</p>
+		<a href="#x9.10">CheckObjectCoercible</a> passing the <b>this</b> value as its argument.</p>
 		</li>
 		<li><p>
 		Let
-		<i>S</i> be the result of calling ToString, giving it the <b>this</b>
+		<i>S</i> be the result of calling <a href="#x9.8">ToString</a>, giving it the <b>this</b>
 		value as its argument.</p>
 		</li>
 		<li><p>
 		Let
-		<i>position</i> be ToInteger(<i>pos</i>).</p>
+		<i>position</i> be <a href="#x9.4">ToInteger</a>(<i>pos</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -23134,16 +23131,16 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Call
-		CheckObjectCoercible passing the <b>this</b> value as its argument.</p>
+		<a href="#x9.10">CheckObjectCoercible</a> passing the <b>this</b> value as its argument.</p>
 		</li>
 		<li><p>
 		Let
-		<i>S</i> be the result of calling ToString, giving it the <b>this</b>
+		<i>S</i> be the result of calling <a href="#x9.8">ToString</a>, giving it the <b>this</b>
 		value as its argument.</p>
 		</li>
 		<li><p>
 		Let
-		<i>position</i> be ToInteger(<i>pos</i>).</p>
+		<i>position</i> be <a href="#x9.4">ToInteger</a>(<i>pos</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -23180,11 +23177,11 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Call
-		CheckObjectCoercible passing the <b>this</b> value as its argument.</p>
+		<a href="#x9.10">CheckObjectCoercible</a> passing the <b>this</b> value as its argument.</p>
 		</li>
 		<li><p>
 		Let
-		<i>S</i> be the result of calling ToString, giving it the <b>this</b>
+		<i>S</i> be the result of calling <a href="#x9.8">ToString</a>, giving it the <b>this</b>
 		value as its argument.</p>
 		</li>
 		<li><p>
@@ -23209,7 +23206,7 @@ If <i>inputString</i> does not contain any such characters, let
 			Let
 			<i>R</i> be the String value consisting of the characters in the
 			previous value of <i>R</i> followed by the characters of
-			ToString(<i>next</i>).</p>
+			<a href="#x9.8">ToString</a>(<i>next</i>).</p>
 		</li></ol>
 		</li>
 		<li><p>
@@ -23245,20 +23242,20 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Call
-		CheckObjectCoercible passing the <b>this</b> value as its argument.</p>
+		<a href="#x9.10">CheckObjectCoercible</a> passing the <b>this</b> value as its argument.</p>
 		</li>
 		<li><p>
 		Let
-		<i>S</i> be the result of calling ToString, giving it the <b>this</b>
+		<i>S</i> be the result of calling <a href="#x9.8">ToString</a>, giving it the <b>this</b>
 		value as its argument.</p>
 		</li>
 		<li><p>
 		Let
-		<i>searchStr</i> be ToString(<i>searchString</i>).</p>
+		<i>searchStr</i> be <a href="#x9.8">ToString</a>(<i>searchString</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>pos</i> be ToInteger(<i>position</i>). (If <i>position</i> is
+		<i>pos</i> be <a href="#x9.4">ToInteger</a>(<i>position</i>). (If <i>position</i> is
 		<b>undefined</b>, this step produces the value <code><b>0</b></code>).</p>
 		</li>
 		<li><p>
@@ -23311,26 +23308,26 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Call
-		CheckObjectCoercible passing the <b>this</b> value as its argument.</p>
+		<a href="#x9.10">CheckObjectCoercible</a> passing the <b>this</b> value as its argument.</p>
 		</li>
 		<li><p>
 		Let
-		<i>S</i> be the result of calling ToString, giving it the <b>this</b>
+		<i>S</i> be the result of calling <a href="#x9.8">ToString</a>, giving it the <b>this</b>
 		value as its argument.</p>
 		</li>
 		<li><p>
 		Let
-		<i>searchStr</i> be ToString(<i>searchString</i>).</p>
+		<i>searchStr</i> be <a href="#x9.8">ToString</a>(<i>searchString</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>numPos</i> be ToNumber(<i>position</i>). (If <i>position</i> is
+		<i>numPos</i> be <a href="#x9.3">ToNumber</a>(<i>position</i>). (If <i>position</i> is
 		<b>undefined</b>, this step produces the value <b>NaN</b>).</p>
 		</li>
 		<li><p>
 		If
 		<i>numPos</i> is <b>NaN</b>, let <i>pos</i> be <b>+</b><span class="symbol"><b>∞</b></span>;
-		otherwise, let <i>pos</i> be ToInteger(<i>numPos</i>).</p>
+		otherwise, let <i>pos</i> be <a href="#x9.4">ToInteger</a>(<i>numPos</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -23389,16 +23386,16 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Call
-		CheckObjectCoercible passing the <b>this</b> value as its argument.</p>
+		<a href="#x9.10">CheckObjectCoercible</a> passing the <b>this</b> value as its argument.</p>
 		</li>
 		<li><p>
 		Let
-		<i>S</i> be the result of calling ToString, giving it the <b>this</b>
+		<i>S</i> be the result of calling <a href="#x9.8">ToString</a>, giving it the <b>this</b>
 		value as its argument.</p>
 		</li>
 		<li><p>
 		Let
-		<i>That</i> be ToString(<i>that</i>).</p>
+		<i>That</i> be <a href="#x9.8">ToString</a>(<i>that</i>).</p>
 	</li></ol>
 	<p>
 	The
@@ -23449,16 +23446,16 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li value="1"><p>
 		Call
-		CheckObjectCoercible passing the <b>this</b> value as its argument.</p>
+		<a href="#x9.10">CheckObjectCoercible</a> passing the <b>this</b> value as its argument.</p>
 		</li>
 		<li><p>
 		Let
-		<i>S</i> be the result of calling ToString, giving it the <b>this</b>
+		<i>S</i> be the result of calling <a href="#x9.8">ToString</a>, giving it the <b>this</b>
 		value as its argument.</p>
 		</li>
 		<li><p>
 		If
-		Type(<i>regexp</i>) is Object and the value of the [[Class]]
+		<a href="#Type">Type</a>(<i>regexp</i>) is Object and the value of the [[Class]]
 		internal property of <i>regexp</i> is <code><b>"RegExp"</b></code>,
 		then let <i>rx</i> be <i>regexp</i>;</p>
 		</li>
@@ -23570,7 +23567,7 @@ If <i>inputString</i> does not contain any such characters, let
 					<li><p>
 					Call
 					the [[DefineOwnProperty]] internal method of <i>A</i> with
-					arguments ToString(<i>n</i>), the Property Descriptor
+					arguments <a href="#x9.8">ToString</a>(<i>n</i>), the Property Descriptor
 					{[[Value]]: <i>matchStr</i>, [[Writable]]: <b>true</b>,
 					[[Enumerable]]: <b>true</b>, [[configurable]]: <b>true</b>}, and
 					<b>false</b>.</p>
@@ -23602,11 +23599,11 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Call
-		CheckObjectCoercible passing the <b>this</b> value as its argument.</p>
+		<a href="#x9.10">CheckObjectCoercible</a> passing the <b>this</b> value as its argument.</p>
 		</li>
 		<li><p>
 		Let
-		<i>string</i> be the result of calling ToString, giving it the <b>this</b>
+		<i>string</i> be the result of calling <a href="#x9.8">ToString</a>, giving it the <b>this</b>
 		value as its argument.</p>
 	</li></ol>
 	<p>
@@ -23630,7 +23627,7 @@ If <i>inputString</i> does not contain any such characters, let
 	If
 	<i>searchValue</i> is not
 	a regular expression, let <i>searchString</i>
-	be ToString(<i>searchValue</i>)
+	be <a href="#x9.8">ToString</a>(<i>searchValue</i>)
 	and search <i>string</i>
 	for the first occurrence of <i>searchString</i>.
 	Let <i>m</i> be 0.</p>
@@ -23778,16 +23775,16 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Call
-		CheckObjectCoercible passing the <b>this</b> value as its argument.</p>
+		<a href="#x9.10">CheckObjectCoercible</a> passing the <b>this</b> value as its argument.</p>
 		</li>
 		<li><p>
 		Let
-		<i>string</i> be the result of calling ToString, giving it the <b>this</b>
+		<i>string</i> be the result of calling <a href="#x9.8">ToString</a>, giving it the <b>this</b>
 		value as its argument.</p>
 		</li>
 		<li><p>
 		If
-		Type(<i>regexp</i>) is Object and the value of the [[Class]]
+		<a href="#Type">Type</a>(<i>regexp</i>) is Object and the value of the [[Class]]
 		internal property of <i>regexp</i> is <code><b>"RegExp"</b></code>,
 		then let <i>rx</i> be <i>regexp</i>;</p>
 		</li>
@@ -23839,11 +23836,11 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Call
-		CheckObjectCoercible passing the <b>this</b> value as its argument.</p>
+		<a href="#x9.10">CheckObjectCoercible</a> passing the <b>this</b> value as its argument.</p>
 		</li>
 		<li><p>
 		Let
-		<i>S</i> be the result of calling ToString, giving it the <b>this</b>
+		<i>S</i> be the result of calling <a href="#x9.8">ToString</a>, giving it the <b>this</b>
 		value as its argument.</p>
 		</li>
 		<li><p>
@@ -23852,12 +23849,12 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>intStart</i> be ToInteger(<i>start</i>).</p>
+		<i>intStart</i> be <a href="#x9.4">ToInteger</a>(<i>start</i>).</p>
 		</li>
 		<li><p>
 		If
 		<i>end</i> is <b>undefined</b>, let <i>intEnd</i> be <i>len</i>;
-		else let <i>intEnd</i> be ToInteger(<i>end</i>).</p>
+		else let <i>intEnd</i> be <a href="#x9.4">ToInteger</a>(<i>end</i>).</p>
 		</li>
 		<li><p>
 		If
@@ -23954,11 +23951,11 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Call
-		CheckObjectCoercible passing the <b>this</b> value as its argument.</p>
+		<a href="#x9.10">CheckObjectCoercible</a> passing the <b>this</b> value as its argument.</p>
 		</li>
 		<li><p>
 		Let
-		<i>S</i> be the result of calling ToString, giving it the <b>this</b>
+		<i>S</i> be the result of calling <a href="#x9.8">ToString</a>, giving it the <b>this</b>
 		value as its argument.</p>
 		</li>
 		<li><p>
@@ -23974,7 +23971,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<li><p>
 		If
 		<i>limit</i> is <b>undefined</b>, let <i>lim</i> = 2<sup>32</sup>–1;
-		else let <i>lim</i> = ToUint32(<i>limit</i>).</p>
+		else let <i>lim</i> = <a href="#x9.6">ToUint32</a>(<i>limit</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -23988,7 +23985,7 @@ If <i>inputString</i> does not contain any such characters, let
 		If
 		<i>separator</i> is a RegExp object (its [[Class]] is <code><b>"RegExp"</b></code>),
 		let <i>R</i> = <i>separator</i>; otherwise let <i>R</i> =
-		ToString(<i>separator</i>).</p>
+		<a href="#x9.8">ToString</a>(<i>separator</i>).</p>
 		</li>
 		<li><p>
 		If
@@ -24082,7 +24079,7 @@ If <i>inputString</i> does not contain any such characters, let
 					<li><p>
 					Call
 					the [[DefineOwnProperty]] internal method of <i>A</i> with
-					arguments ToString(<i>lengthA</i>), Property Descriptor
+					arguments <a href="#x9.8">ToString</a>(<i>lengthA</i>), Property Descriptor
 					{[[Value]]: <i>T</i>, [[Writable]]: <b>true</b>, [[Enumerable]]:
 					<b>true</b>, [[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
 					</li>
@@ -24113,7 +24110,7 @@ If <i>inputString</i> does not contain any such characters, let
 						<li><p>
 						Call
 						the [[DefineOwnProperty]] internal method of <i>A</i> with
-						arguments ToString(<i>lengthA</i>), Property Descriptor
+						arguments <a href="#x9.8">ToString</a>(<i>lengthA</i>), Property Descriptor
 						{[[Value]]: <i>cap</i>[<i>i</i>], [[Writable]]: <b>true</b>,
 						[[Enumerable]]: <b>true</b>, [[Configurable]]: <b>true</b>},
 						and <b>false</b>.</p>
@@ -24147,7 +24144,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<li><p>
 		Call
 		the [[DefineOwnProperty]] internal method of <i>A</i> with
-		arguments ToString(<i>lengthA</i>), Property Descriptor {[[Value]]:
+		arguments <a href="#x9.8">ToString</a>(<i>lengthA</i>), Property Descriptor {[[Value]]:
 		<i>T</i>, [[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b>,
 		[[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
 		</li>
@@ -24176,7 +24173,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li></ol>
 		</li>
 		<li><p>
-		Type(<i>R</i>)
+		<a href="#Type">Type</a>(<i>R</i>)
 		must be String. Let <i>r</i> be the number of characters in <i>R</i>.</p>
 		</li>
 		<li><p>
@@ -24242,11 +24239,11 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Call
-		CheckObjectCoercible passing the <b>this</b> value as its argument.</p>
+		<a href="#x9.10">CheckObjectCoercible</a> passing the <b>this</b> value as its argument.</p>
 		</li>
 		<li><p>
 		Let
-		<i>S</i> be the result of calling ToString, giving it the <b>this</b>
+		<i>S</i> be the result of calling <a href="#x9.8">ToString</a>, giving it the <b>this</b>
 		value as its argument.</p>
 		</li>
 		<li><p>
@@ -24255,12 +24252,12 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>intStart</i> be ToInteger(<i>start</i>).</p>
+		<i>intStart</i> be <a href="#x9.4">ToInteger</a>(<i>start</i>).</p>
 		</li>
 		<li><p>
 		If
 		<i>end</i> is <b>undefined</b>, let <i>intEnd</i> be <i>len</i>;
-		else let <i>intEnd</i> be ToInteger(<i>end</i>).</p>
+		else let <i>intEnd</i> be <a href="#x9.4">ToInteger</a>(<i>end</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -24302,11 +24299,11 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Call
-		CheckObjectCoercible passing the <b>this</b> value as its argument.</p>
+		<a href="#x9.10">CheckObjectCoercible</a> passing the <b>this</b> value as its argument.</p>
 		</li>
 		<li><p>
 		Let
-		<i>S</i> be the result of calling ToString, giving it the <b>this</b>
+		<i>S</i> be the result of calling <a href="#x9.8">ToString</a>, giving it the <b>this</b>
 		value as its argument.</p>
 		</li>
 		<li><p>
@@ -24396,11 +24393,11 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Call
-		CheckObjectCoercible passing the <b>this</b> value as its argument.</p>
+		<a href="#x9.10">CheckObjectCoercible</a> passing the <b>this</b> value as its argument.</p>
 		</li>
 		<li><p>
 		Let
-		<i>S</i> be the result of calling ToString, giving it the <b>this</b>
+		<i>S</i> be the result of calling <a href="#x9.8">ToString</a>, giving it the <b>this</b>
 		value as its argument.</p>
 		</li>
 		<li><p>
@@ -24475,7 +24472,7 @@ If <i>inputString</i> does not contain any such characters, let
 
 		<li><p>
 		If
-		ToString(<a href="#abs">abs</a>(ToInteger(<i>P</i>)))
+		<a href="#x9.8">ToString</a>(<a href="#abs">abs</a>(<a href="#x9.4">ToInteger</a>(<i>P</i>)))
 		is not
 		the same value as <i>P</i>,
 		return <b>undefined</b>.</p>
@@ -24490,7 +24487,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<li><p>
 		Let
 		<i>index</i> be
-		ToInteger(<i>P</i>).</p> </li>
+		<a href="#x9.4">ToInteger</a>(<i>P</i>).</p> </li>
 
 		<li><p>
 		Let
@@ -24523,7 +24520,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<h5 id="x15.6.1.1">15.6.1.1 Boolean (value) <a href="#x15.6.1.1">#</a> <a href="#x15.6.1.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	Returns
-	a Boolean value (not a Boolean object) computed by ToBoolean(<i>value</i>).</p>
+	a Boolean value (not a Boolean object) computed by <a href="#x9.2">ToBoolean</a>(<i>value</i>).</p>
 	<h4 id="x15.6.2">15.6.2 The Boolean Constructor <a href="#x15.6.2">#</a> <a href="#x15.6.2-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	When
@@ -24545,7 +24542,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<p>
 	The
 	[[PrimitiveValue]] internal property of the newly constructed
-	Boolean object is set to ToBoolean(<i>value</i>).</p>
+	Boolean object is set to <a href="#x9.2">ToBoolean</a>(<i>value</i>).</p>
 	<p>
 	The
 	[[Extensible]] internal property of the newly constructed object is
@@ -24597,11 +24594,11 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		If
-		Type(<i>B</i>) is Boolean, then let <i>b</i> be <i>B</i>.</p>
+		<a href="#Type">Type</a>(<i>B</i>) is Boolean, then let <i>b</i> be <i>B</i>.</p>
 		</li>
 		<li><p>
 		Else
-		if Type(<i>B</i>) is Object and the value of the [[Class]] internal
+		if <a href="#Type">Type</a>(<i>B</i>) is Object and the value of the [[Class]] internal
 		property of <i>B</i> is <code><b>"Boolean"</b></code>,
 		then let <i>b</i> be the value of the [[PrimitiveValue]] internal
 		property of <i>B</i>.</p>
@@ -24626,11 +24623,11 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		If
-		Type(<i>B</i>) is Boolean, then let <i>b</i> be <i>B</i>.</p>
+		<a href="#Type">Type</a>(<i>B</i>) is Boolean, then let <i>b</i> be <i>B</i>.</p>
 		</li>
 		<li><p>
 		Else
-		if Type(<i>B</i>) is Object and the value of the [[Class]] internal
+		if <a href="#Type">Type</a>(<i>B</i>) is Object and the value of the [[Class]] internal
 		property of <i>B</i> is <code><b>"Boolean"</b></code>,
 		then let <i>b</i> be the value of the [[PrimitiveValue]] internal
 		property of <i>B</i>.</p>
@@ -24663,7 +24660,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<h5 id="x15.7.1.1">15.7.1.1 Number ( [ value ] ) <a href="#x15.7.1.1">#</a> <a href="#x15.7.1.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	Returns
-	a Number value (not a Number object) computed by ToNumber(<i>value</i>)
+	a Number value (not a Number object) computed by <a href="#x9.3">ToNumber</a>(<i>value</i>)
 	if <i>value</i> was
 	supplied, else returns <b>+0</b>.</p>
 	<h4 id="x15.7.2">15.7.2 The Number Constructor <a href="#x15.7.2">#</a> <a href="#x15.7.2-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
@@ -24687,7 +24684,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<p>
 	The
 	[[PrimitiveValue]] internal property of the newly constructed object
-	is set to ToNumber(<i>value</i>)
+	is set to <a href="#x9.3">ToNumber</a>(<i>value</i>)
 	if <i>value</i> was
 	supplied, else to +0.</p>
 	<p>
@@ -24779,7 +24776,7 @@ If <i>inputString</i> does not contain any such characters, let
 	the following descriptions of functions that are properties of the
 	Number prototype object, the phrase “this Number object” refers
 	to either the object that is the <b>this</b> value for the
-	invocation of the function or, if Type(<b>this</b> value) is Number,
+	invocation of the function or, if <a href="#Type">Type</a>(<b>this</b> value) is Number,
 	 an object that is created as if by the expression <code><b>new
 	Number(</b></code><b>this</b> value<code><b>)</b></code>
 	where <code><b>Number</b></code> is
@@ -24805,15 +24802,15 @@ If <i>inputString</i> does not contain any such characters, let
 	to 36. If <i>radix</i>
 	not present or is <b>undefined</b> the Number 10
 	is used as the value of <i>radix</i>.
-	If ToInteger(<i>radix</i>)
+	If <a href="#x9.4">ToInteger</a>(<i>radix</i>)
 	is the Number 10 then
-	this Number value is given as an argument to the ToString abstract
+	this Number value is given as an argument to the <a href="#x9.8">ToString</a> abstract
 	operation; the resulting String value is returned.</p>
 	<p>
 	If
-	ToInteger(<i>radix</i>)
+	<a href="#x9.4">ToInteger</a>(<i>radix</i>)
 	is not an integer between 2 and 36 inclusive throw a RangeError
-	exception. If ToInteger(<i>radix</i>)
+	exception. If <a href="#x9.4">ToInteger</a>(<i>radix</i>)
 	is an integer from 2 to 36, but not 10, the result is a String
 	representation of this Number value using the specified radix.
 	Letters <code><b>a</b></code>-<code><b>z</b></code>
@@ -24858,7 +24855,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<ol>
 		<li><p>
 		Let
-		<i>f</i> be ToInteger(<i>fractionDigits</i>). (If <i>fractionDigits</i>
+		<i>f</i> be <a href="#x9.4">ToInteger</a>(<i>fractionDigits</i>). (If <i>fractionDigits</i>
 		is <b>undefined</b>, this step produces the value <code><b>0</b></code>).</p>
 		</li>
 		<li><p>
@@ -24898,7 +24895,7 @@ If <i>inputString</i> does not contain any such characters, let
 		<ol>
 			<li><p>
 			Let
-			<i>m</i> = ToString(<i>x</i>).</p>
+			<i>m</i> = <a href="#x9.8">ToString</a>(<i>x</i>).</p>
 		</li></ol>
 		</li>
 		<li><p>
@@ -24996,7 +24993,7 @@ If <i>inputString</i> does not contain any such characters, let
 	point and <i>fractionDigits</i>
 	digits after the significand's decimal point. If <i>fractionDigits</i>
 	is <b>undefined</b>, include as many significand digits as necessary
-	to uniquely specify the Number (just like in ToString except that in
+	to uniquely specify the Number (just like in <a href="#x9.8">ToString</a> except that in
 	this case the Number is always output in exponential notation).
 	Specifically, perform the following steps:</p>
 	<ol>
@@ -25006,7 +25003,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>f</i> be ToInteger(<i>fractionDigits</i>).</p>
+		<i>f</i> be <a href="#x9.4">ToInteger</a>(<i>fractionDigits</i>).</p>
 		</li>
 		<li><p>
 		If
@@ -25222,7 +25219,7 @@ If <i>inputString</i> does not contain any such characters, let
 	digits after the significand's decimal point or in decimal fixed
 	notation with <i>precision</i>
 	significant digits. If <i>precision</i>
-	is <b>undefined</b>, call ToString (<a href="#x9.8.1">9.8.1</a>) instead. Specifically,
+	is <b>undefined</b>, call <a href="#x9.8">ToString</a> (<a href="#x9.8.1">9.8.1</a>) instead. Specifically,
 	perform the following steps:</p>
 	<ol>
 		<li><p>
@@ -25231,11 +25228,11 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		If
-		<i>precision</i> is <b>undefined</b>, return ToString(<i>x</i>).</p>
+		<i>precision</i> is <b>undefined</b>, return <a href="#x9.8">ToString</a>(<i>x</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>p</i> be ToInteger(<i>precision</i>).</p>
+		<i>p</i> be <a href="#x9.4">ToInteger</a>(<i>precision</i>).</p>
 		</li>
 		<li><p>
 		If
@@ -25542,7 +25539,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<h4 id="x15.8.2">15.8.2 Function Properties of the Math Object <a href="#x15.8.2">#</a> <a href="#x15.8.2-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	Each
-	of the following <code><b><a href="#x15.8" class="term-ref">Math</a></b></code> object functions applies the ToNumber abstract operator to each of
+	of the following <code><b><a href="#x15.8" class="term-ref">Math</a></b></code> object functions applies the <a href="#x9.3">ToNumber</a> abstract operator to each of
 	its arguments (in left-to-right order if there is more than one) and
 	then performs a computation on the resulting Number value(s).</p>
 	<p>
@@ -26076,7 +26073,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<h5 id="x15.8.2.11">15.8.2.11 max ( [ value1 [ , value2 [ , … ] ] ] ) <a href="#x15.8.2.11">#</a> <a href="#x15.8.2.11-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	Given
-	zero or more arguments, calls ToNumber on each of the arguments and
+	zero or more arguments, calls <a href="#x9.3">ToNumber</a> on each of the arguments and
 	returns the largest of the resulting values.</p>
 	<ul>
 		<li><p>
@@ -26100,7 +26097,7 @@ If <i>inputString</i> does not contain any such characters, let
 	<h5 id="x15.8.2.12">15.8.2.12 min ( [ value1 [ , value2 [ , … ] ] ] ) <a href="#x15.8.2.12">#</a> <a href="#x15.8.2.12-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	Given
-	zero or more arguments, calls ToNumber on each of the arguments and
+	zero or more arguments, calls <a href="#x9.3">ToNumber</a> on each of the arguments and
 	returns the smallest of the resulting values.</p>
 	<ul>
 		<li><p>
@@ -26778,19 +26775,19 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>h</i> be ToInteger(<i>hour</i>).</p>
+		<i>h</i> be <a href="#x9.4">ToInteger</a>(<i>hour</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>m</i> be ToInteger(<i>min</i>).</p>
+		<i>m</i> be <a href="#x9.4">ToInteger</a>(<i>min</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>s</i> be ToInteger(<i>sec</i>).</p>
+		<i>s</i> be <a href="#x9.4">ToInteger</a>(<i>sec</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>milli</i> be ToInteger(<i>ms</i>).</p>
+		<i>milli</i> be <a href="#x9.4">ToInteger</a>(<i>ms</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -26821,15 +26818,15 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Let
-		<i>y</i> be ToInteger(<i>year</i>).</p>
+		<i>y</i> be <a href="#x9.4">ToInteger</a>(<i>year</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>m</i> be ToInteger(<i>month</i>).</p>
+		<i>m</i> be <a href="#x9.4">ToInteger</a>(<i>month</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>dt</i> be ToInteger(<i>date</i>).</p>
+		<i>dt</i> be <a href="#x9.4">ToInteger</a>(<i>date</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -26884,8 +26881,8 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Return
-		an implementation-dependent choice of either ToInteger(<i>time</i>)
-		or ToInteger(<i>time</i>) + (<b>+0</b>). (Adding a positive zero
+		an implementation-dependent choice of either <a href="#x9.4">ToInteger</a>(<i>time</i>)
+		or <a href="#x9.4">ToInteger</a>(<i>time</i>) + (<b>+0</b>). (Adding a positive zero
 		converts <span class="symbol"><b>−</b></span><b>0</b> to
 		<b>+0</b>.)</p>
 	</li></ol>
@@ -27025,40 +27022,40 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>y</i> be ToNumber(<i>year</i>).</p>
+		<i>y</i> be <a href="#x9.3">ToNumber</a>(<i>year</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>m</i> be ToNumber(<i>month</i>).</p>
+		<i>m</i> be <a href="#x9.3">ToNumber</a>(<i>month</i>).</p>
 		</li>
 		<li><p>
 		If
-		<i>date</i> is supplied then let <i>dt</i> be ToNumber(<i>date</i>);
+		<i>date</i> is supplied then let <i>dt</i> be <a href="#x9.3">ToNumber</a>(<i>date</i>);
 		else let <i>dt</i> be <b>1</b>.</p>
 		</li>
 		<li><p>
 		If
-		<i>hours</i> is supplied then let <i>h</i> be ToNumber(<i>hours</i>);
+		<i>hours</i> is supplied then let <i>h</i> be <a href="#x9.3">ToNumber</a>(<i>hours</i>);
 		else let <i>h</i> be <b>0</b>.</p>
 		</li>
 		<li><p>
 		If
 		<i>minutes</i> is supplied then let <i>min</i> be
-		ToNumber(<i>minutes</i>); else let <i>min</i> be <b>0</b>.</p>
+		<a href="#x9.3">ToNumber</a>(<i>minutes</i>); else let <i>min</i> be <b>0</b>.</p>
 		</li>
 		<li><p>
 		If
-		<i>seconds</i> is supplied then let <i>s</i> be ToNumber(<i>seconds</i>);
+		<i>seconds</i> is supplied then let <i>s</i> be <a href="#x9.3">ToNumber</a>(<i>seconds</i>);
 		else let <i>s</i> be <b>0</b>.</p>
 		</li>
 		<li><p>
 		If
-		<i>ms</i> is supplied then let <i>milli</i> be ToNumber(<i>ms</i>);
+		<i>ms</i> is supplied then let <i>milli</i> be <a href="#x9.3">ToNumber</a>(<i>ms</i>);
 		else let <i>milli</i> be <b>0</b>.</p>
 		</li>
 		<li><p>
-		If&nbsp;<i>y</i>&nbsp;is&nbsp;not&nbsp;<b>NaN</b>&nbsp;and&nbsp;0&nbsp;<span class="symbol">≤</span>&nbsp;ToInteger(<i>y</i>)&nbsp;<span class="symbol">≤</span>&nbsp;99,&nbsp;then
-		let <i>yr</i> be&nbsp;1900+ToInteger(<i>y</i>); otherwise, let <i>yr</i>
+		If&nbsp;<i>y</i>&nbsp;is&nbsp;not&nbsp;<b>NaN</b>&nbsp;and&nbsp;0&nbsp;<span class="symbol">≤</span>&nbsp;<a href="#x9.4">ToInteger</a>(<i>y</i>)&nbsp;<span class="symbol">≤</span>&nbsp;99,&nbsp;then
+		let <i>yr</i> be&nbsp;1900+<a href="#x9.4">ToInteger</a>(<i>y</i>); otherwise, let <i>yr</i>
 		be <i>y</i>.</p>
 		</li>
 		<li><p>
@@ -27093,11 +27090,11 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>v</i> be ToPrimitive(<i>value</i>).</p>
+		<i>v</i> be <a href="#x9.1">ToPrimitive</a>(<i>value</i>).</p>
 		</li>
 		<li><p>
 		If
-		Type(<i>v</i>) is String, then 
+		<a href="#Type">Type</a>(<i>v</i>) is String, then 
 		</p>
 		<ol>
 			<li><p>
@@ -27108,7 +27105,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Else,
-		let <i>V</i> be ToNumber(<i>v</i>).</p>
+		let <i>V</i> be <a href="#x9.3">ToNumber</a>(<i>v</i>).</p>
 		</li>
 		<li><p>
 		Set
@@ -27157,7 +27154,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p>
 	The
 	<code><b>parse</b></code> function
-	applies the ToString operator to its argument and interprets the
+	applies the <a href="#x9.8">ToString</a> operator to its argument and interprets the
 	resulting String as a date and time; it returns a Number, the UTC
 	time value corresponding to the date and time. The String may be
 	interpreted as a local time, a UTC time, or a time in some other
@@ -27211,40 +27208,40 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>y</i> be ToNumber(<i>year</i>).</p>
+		<i>y</i> be <a href="#x9.3">ToNumber</a>(<i>year</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>m</i> be ToNumber(<i>month</i>).</p>
+		<i>m</i> be <a href="#x9.3">ToNumber</a>(<i>month</i>).</p>
 		</li>
 		<li><p>
 		If
-		<i>date</i> is supplied then let <i>dt</i> be ToNumber(<i>date</i>);
+		<i>date</i> is supplied then let <i>dt</i> be <a href="#x9.3">ToNumber</a>(<i>date</i>);
 		else let <i>dt</i> be <b>1</b>.</p>
 		</li>
 		<li><p>
 		If
-		<i>hours</i> is supplied then let <i>h</i> be ToNumber(<i>hours</i>);
+		<i>hours</i> is supplied then let <i>h</i> be <a href="#x9.3">ToNumber</a>(<i>hours</i>);
 		else let <i>h</i> be <b>0</b>.</p>
 		</li>
 		<li><p>
 		If
 		<i>minutes</i> is supplied then let <i>min</i> be
-		ToNumber(<i>minutes</i>); else let <i>min</i> be <b>0</b>.</p>
+		<a href="#x9.3">ToNumber</a>(<i>minutes</i>); else let <i>min</i> be <b>0</b>.</p>
 		</li>
 		<li><p>
 		If
-		<i>seconds</i> is supplied then let <i>s</i> be ToNumber(<i>seconds</i>);
+		<i>seconds</i> is supplied then let <i>s</i> be <a href="#x9.3">ToNumber</a>(<i>seconds</i>);
 		else let <i>s</i> be <b>0</b>.</p>
 		</li>
 		<li><p>
 		If
-		<i>ms</i> is supplied then let <i>milli</i> be ToNumber(<i>ms</i>);
+		<i>ms</i> is supplied then let <i>milli</i> be <a href="#x9.3">ToNumber</a>(<i>ms</i>);
 		else let <i>milli</i> be <b>0</b>.</p>
 		</li>
 		<li><p>
-		If&nbsp;<i>y</i>&nbsp;is&nbsp;not&nbsp;<b>NaN</b>&nbsp;and&nbsp;0&nbsp;<span class="symbol">≤</span>&nbsp;ToInteger(<i>y</i>)&nbsp;<span class="symbol">≤</span>&nbsp;99,&nbsp;then
-		let <i>yr</i> be&nbsp;1900+ToInteger(<i>y</i>); otherwise, let <i>yr</i>
+		If&nbsp;<i>y</i>&nbsp;is&nbsp;not&nbsp;<b>NaN</b>&nbsp;and&nbsp;0&nbsp;<span class="symbol">≤</span>&nbsp;<a href="#x9.4">ToInteger</a>(<i>y</i>)&nbsp;<span class="symbol">≤</span>&nbsp;99,&nbsp;then
+		let <i>yr</i> be&nbsp;1900+<a href="#x9.4">ToInteger</a>(<i>y</i>); otherwise, let <i>yr</i>
 		be <i>y</i>.</p>
 		</li>
 		<li><p>
@@ -27616,7 +27613,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>v</i> be TimeClip(ToNumber(<i>time</i>)).</p>
+		<i>v</i> be TimeClip(<a href="#x9.3">ToNumber</a>(<i>time</i>)).</p>
 		</li>
 		<li><p>
 		Set
@@ -27635,7 +27632,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		<li><p>
 		Let
 		<i>time</i> be MakeTime(HourFromTime(<i>t</i>), MinFromTime(<i>t</i>),
-		SecFromTime(<i>t</i>), ToNumber(<i>ms</i>)).</p>
+		SecFromTime(<i>t</i>), <a href="#x9.3">ToNumber</a>(<i>ms</i>)).</p>
 		</li>
 		<li><p>
 		Let
@@ -27658,7 +27655,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		<li><p>
 		Let
 		<i>time</i> be MakeTime(HourFromTime(<i>t</i>), MinFromTime(<i>t</i>),
-		SecFromTime(<i>t</i>), ToNumber(<i>ms</i>)).</p>
+		SecFromTime(<i>t</i>), <a href="#x9.3">ToNumber</a>(<i>ms</i>)).</p>
 		</li>
 		<li><p>
 		Let
@@ -27684,12 +27681,12 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>s</i> be ToNumber(<i>sec</i>).</p>
+		<i>s</i> be <a href="#x9.3">ToNumber</a>(<i>sec</i>).</p>
 		</li>
 		<li><p>
 		If
 		<i>ms</i> is not specified, then let <i>milli</i> be msFromTime(<i>t</i>);
-		otherwise, let <i>milli</i> be ToNumber(<i>ms</i>).</p>
+		otherwise, let <i>milli</i> be <a href="#x9.3">ToNumber</a>(<i>ms</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -27725,12 +27722,12 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>s</i> be ToNumber(<i>sec</i>).</p>
+		<i>s</i> be <a href="#x9.3">ToNumber</a>(<i>sec</i>).</p>
 		</li>
 		<li><p>
 		If
 		<i>ms</i> is not specified, then let <i>milli</i> be msFromTime(<i>t</i>);
-		otherwise, let <i>milli</i> be ToNumber(<i>ms</i>).</p>
+		otherwise, let <i>milli</i> be <a href="#x9.3">ToNumber</a>(<i>ms</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -27771,17 +27768,17 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>m</i> be ToNumber(<i>min</i>).</p>
+		<i>m</i> be <a href="#x9.3">ToNumber</a>(<i>min</i>).</p>
 		</li>
 		<li><p>
 		If
 		<i>sec</i> is not specified, then let <i>s</i> be SecFromTime(<i>t</i>);
-		otherwise, let <i>s</i> be ToNumber(<i>sec</i>).</p>
+		otherwise, let <i>s</i> be <a href="#x9.3">ToNumber</a>(<i>sec</i>).</p>
 		</li>
 		<li><p>
 		If
 		<i>ms</i> is not specified, then let <i>milli</i> be msFromTime(<i>t</i>);
-		otherwise, let <i>milli</i> be ToNumber(<i>ms</i>).</p>
+		otherwise, let <i>milli</i> be <a href="#x9.3">ToNumber</a>(<i>ms</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -27822,17 +27819,17 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>m</i> be ToNumber(<i>min</i>).</p>
+		<i>m</i> be <a href="#x9.3">ToNumber</a>(<i>min</i>).</p>
 		</li>
 		<li><p>
 		If
 		<i>sec</i> is not specified, then let <i>s</i> be SecFromTime(<i>t</i>);
-		otherwise, let <i>s</i> be ToNumber(<i>sec</i>).</p>
+		otherwise, let <i>s</i> be <a href="#x9.3">ToNumber</a>(<i>sec</i>).</p>
 		</li>
 		<li><p>
 		If
 		<i>ms</i> is not specified, then let <i>milli</i> be msFromTime(<i>t</i>);
-		otherwise, let <i>milli</i> be ToNumber(<i>ms</i>).</p>
+		otherwise, let <i>milli</i> be <a href="#x9.3">ToNumber</a>(<i>ms</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -27878,22 +27875,22 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>h</i> be ToNumber(<i>hour</i>).</p>
+		<i>h</i> be <a href="#x9.3">ToNumber</a>(<i>hour</i>).</p>
 		</li>
 		<li><p>
 		If
 		<i>min</i> is not specified, then let <i>m</i> be MinFromTime(<i>t</i>);
-		otherwise, let <i>m</i> be ToNumber(<i>min</i>).</p>
+		otherwise, let <i>m</i> be <a href="#x9.3">ToNumber</a>(<i>min</i>).</p>
 		</li>
 		<li><p>
 		If
 		If <i>sec</i> is not specified, then let <i>s</i> be
-		SecFromTime(<i>t</i>); otherwise, let <i>s</i> be ToNumber(<i>sec</i>).</p>
+		SecFromTime(<i>t</i>); otherwise, let <i>s</i> be <a href="#x9.3">ToNumber</a>(<i>sec</i>).</p>
 		</li>
 		<li><p>
 		If
 		<i>ms</i> is not specified, then let <i>milli</i> be msFromTime(<i>t</i>);
-		otherwise, let <i>milli</i> be ToNumber(<i>ms</i>).</p>
+		otherwise, let <i>milli</i> be <a href="#x9.3">ToNumber</a>(<i>ms</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -27939,22 +27936,22 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>h</i> be ToNumber(<i>hour</i>).</p>
+		<i>h</i> be <a href="#x9.3">ToNumber</a>(<i>hour</i>).</p>
 		</li>
 		<li><p>
 		If
 		<i>min</i> is not specified, then let <i>m</i> be MinFromTime(<i>t</i>);
-		otherwise, let <i>m</i> be ToNumber(<i>min</i>).</p>
+		otherwise, let <i>m</i> be <a href="#x9.3">ToNumber</a>(<i>min</i>).</p>
 		</li>
 		<li><p>
 		If
 		<i>sec</i> is not specified, then let <i>s</i> be SecFromTime(<i>t</i>);
-		otherwise, let <i>s</i> be ToNumber(<i>sec</i>).</p>
+		otherwise, let <i>s</i> be <a href="#x9.3">ToNumber</a>(<i>sec</i>).</p>
 		</li>
 		<li><p>
 		If
 		<i>ms</i> is not specified, then let <i>milli</i> be msFromTime(<i>t</i>);
-		otherwise, let <i>milli</i> be ToNumber(<i>ms</i>).</p>
+		otherwise, let <i>milli</i> be <a href="#x9.3">ToNumber</a>(<i>ms</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -27986,7 +27983,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>dt</i> be ToNumber(<i>date</i>).</p>
+		<i>dt</i> be <a href="#x9.3">ToNumber</a>(<i>date</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -28013,7 +28010,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>dt</i> be ToNumber(<i>date</i>).</p>
+		<i>dt</i> be <a href="#x9.3">ToNumber</a>(<i>date</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -28045,12 +28042,12 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>m</i> be ToNumber(<i>month</i>).</p>
+		<i>m</i> be <a href="#x9.3">ToNumber</a>(<i>month</i>).</p>
 		</li>
 		<li><p>
 		If
 		<i>date</i> is not specified, then let <i>dt</i> be
-		DateFromTime(<i>t</i>); otherwise, let <i>dt</i> be ToNumber(<i>date</i>).</p>
+		DateFromTime(<i>t</i>); otherwise, let <i>dt</i> be <a href="#x9.3">ToNumber</a>(<i>date</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -28087,12 +28084,12 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>m</i> be ToNumber(<i>month</i>).</p>
+		<i>m</i> be <a href="#x9.3">ToNumber</a>(<i>month</i>).</p>
 		</li>
 		<li><p>
 		If
 		<i>date</i> is not specified, then let <i>dt</i> be
-		DateFromTime(<i>t</i>); otherwise, let <i>dt</i> be ToNumber(<i>date</i>).</p>
+		DateFromTime(<i>t</i>); otherwise, let <i>dt</i> be <a href="#x9.3">ToNumber</a>(<i>date</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -28135,18 +28132,18 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>y</i> be ToNumber(<i>year</i>).</p>
+		<i>y</i> be <a href="#x9.3">ToNumber</a>(<i>year</i>).</p>
 		</li>
 		<li><p>
 		If
 		<i>month</i> is not specified, then let <i>m</i> be
 		MonthFromTime(<i>t</i>); otherwise, let <i>m</i> be
-		ToNumber(<i>month</i>).</p>
+		<a href="#x9.3">ToNumber</a>(<i>month</i>).</p>
 		</li>
 		<li><p>
 		If
 		<i>date</i> is not specified, then let <i>dt</i> be
-		DateFromTime(<i>t</i>); otherwise, let <i>dt</i> be ToNumber(<i>date</i>).</p>
+		DateFromTime(<i>t</i>); otherwise, let <i>dt</i> be <a href="#x9.3">ToNumber</a>(<i>date</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -28189,18 +28186,18 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>y</i> be ToNumber(<i>year</i>).</p>
+		<i>y</i> be <a href="#x9.3">ToNumber</a>(<i>year</i>).</p>
 		</li>
 		<li><p>
 		If
 		<i>month</i> is not specified, then let <i>m</i> be
 		MonthFromTime(<i>t</i>); otherwise, let <i>m</i> be
-		ToNumber(<i>month</i>).</p>
+		<a href="#x9.3">ToNumber</a>(<i>month</i>).</p>
 		</li>
 		<li><p>
 		If
 		<i>date</i> is not specified, then let <i>dt</i> be
-		DateFromTime(<i>t</i>); otherwise, let <i>dt</i> be ToNumber(<i>date</i>).</p>
+		DateFromTime(<i>t</i>); otherwise, let <i>dt</i> be <a href="#x9.3">ToNumber</a>(<i>date</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -28261,12 +28258,12 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>O</i> be the result of calling ToObject, giving it the <b>this</b>
+		<i>O</i> be the result of calling <a href="#x9.9">ToObject</a>, giving it the <b>this</b>
 		value as its argument.</p>
 		</li>
 		<li><p>
 		Let
-		<i>tv</i> be ToPrimitive(<i>O</i>, hint Number).</p>
+		<i>tv</i> be <a href="#x9.1">ToPrimitive</a>(<i>O</i>, hint Number).</p>
 		</li>
 		<li><p>
 		If
@@ -28279,7 +28276,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		If
-		IsCallable(<i>toISO</i>) is <b>false</b>, throw a <b>TypeError
+		<a href="#x9.11">IsCallable</a>(<i>toISO</i>) is <b>false</b>, throw a <b>TypeError
 		</b>exception.</p>
 		</li>
 		<li><p>
@@ -31066,10 +31063,10 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<b>undefined</b>, then throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.
 	Otherwise, let <i>P</i>
 	be the empty String if <i>pattern</i>
-	is <b>undefined</b> and ToString(<i>pattern</i>)
+	is <b>undefined</b> and <a href="#x9.8">ToString</a>(<i>pattern</i>)
 	otherwise, and let <i>F</i>
 	be the empty String if <i>flags</i>
-	is <b>undefined</b> and ToString(<i>flags</i>)
+	is <b>undefined</b> and <a href="#x9.8">ToString</a>(<i>flags</i>)
 	otherwise.</p>
 	<p>
 	If
@@ -31253,7 +31250,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	did not match.</p>
 	<p>
 	The
-	String ToString(<i>string</i>)
+	String <a href="#x9.8">ToString</a>(<i>string</i>)
 	is searched for an occurrence of the regular expression pattern as
 	follows:</p>
 	<ol>
@@ -31263,7 +31260,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>S</i> be the value of ToString(<i>string</i>).</p>
+		<i>S</i> be the value of <a href="#x9.8">ToString</a>(<i>string</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -31276,7 +31273,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>i</i> be the value of ToInteger(<i>lastIndex</i>).</p>
+		<i>i</i> be the value of <a href="#x9.4">ToInteger</a>(<i>lastIndex</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -31421,7 +31418,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 			<li><p>
 			Call
 			the [[DefineOwnProperty]] internal method of <i>A</i> with
-			arguments ToString(<i>i</i>), Property Descriptor {[[Value]]:
+			arguments <a href="#x9.8">ToString</a>(<i>i</i>), Property Descriptor {[[Value]]:
 			<i>captureI</i>, [[Writable]: <b>true</b>, [[Enumerable]]: <b>true</b>,
 			[[Configurable]]: <b>true</b>}, and <b>true</b>.</p>
 		</li></ol>
@@ -31560,7 +31557,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	the argument <i>message</i>
 	is not <b>undefined</b>, the <code><b>message</b></code>
 	own property of the newly constructed object is set to
-	ToString(<i>message</i>).</p>
+	<a href="#x9.8">ToString</a>(<i>message</i>).</p>
 	<h4 id="x15.11.2">15.11.2 The Error Constructor <a href="#x15.11.2">#</a> <a href="#x15.11.2-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	When
@@ -31588,7 +31585,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	the argument <i>message</i>
 	is not <b>undefined</b>, the <code><b>message</b></code>
 	own property of the newly constructed object is set to
-	ToString(<i>message</i>).</p>
+	<a href="#x9.8">ToString</a>(<i>message</i>).</p>
 	<h4 id="x15.11.3">15.11.3 Properties of the Error Constructor <a href="#x15.11.3">#</a> <a href="#x15.11.3-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	The
@@ -31644,7 +31641,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		If
-		Type(<i>O</i>) is not Object, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
+		<a href="#Type">Type</a>(<i>O</i>) is not Object, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 		</li>
 		<li><p>
 		Let
@@ -31654,7 +31651,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		<li><p>
 		If
 		<i>name</i> is <b>undefined</b>, then let <i>name</i> be <code>"</code><code><b>Error</b></code><code>"</code>;
-		else let <i>name</i> be ToString(<i>name</i>).</p>
+		else let <i>name</i> be <a href="#x9.8">ToString</a>(<i>name</i>).</p>
 		</li>
 		<li><p>
 		Let
@@ -31665,7 +31662,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		<i>msg</i> is undefined, then let
 		<i>msg</i>
 		be
-		the empty String; else let <i>msg</i> be ToString(<i>msg</i>).</p></li>
+		the empty String; else let <i>msg</i> be <a href="#x9.8">ToString</a>(<i>msg</i>).</p></li>
 		<li><p>If name and <i>msg</i> are both the empty String, return <code>"Error"</code>.</p></li>
 		<li><p>If <i>name</i> is the empty String, return <i>msg</i>.</p></li>
 		<li><p>If <i>msg</i> is the empty String, return <i>name</i>.</p></li>
@@ -31762,7 +31759,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	the argument <i>message</i>
 	is not <b>undefined</b>, the <code><b>message</b></code>
 	own property of the newly constructed object is set to
-	ToString(<i>message</i>).</p>
+	<a href="#x9.8">ToString</a>(<i>message</i>).</p>
 	<h5 id="x15.11.7.3">15.11.7.3 The NativeError Constructors <a href="#x15.11.7.3">#</a> <a href="#x15.11.7.3-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	When
@@ -31783,7 +31780,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	the argument <i>message</i>
 	is not <b>undefined</b>, the <code><b>message
 	</b></code>property of the newly constructed object is set to
-	ToString(<i>message</i>).</p>
+	<a href="#x9.8">ToString</a>(<i>message</i>).</p>
 	<h5 id="x15.11.7.5">15.11.7.5 Properties of the NativeError Constructors <a href="#x15.11.7.5">#</a> <a href="#x15.11.7.5-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	The
@@ -32033,7 +32030,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>JText</i> be ToString(<i>text</i>).</p>
+		<i>JText</i> be <a href="#x9.8">ToString</a>(<i>text</i>).</p>
 		</li>
 		<li><p>
 		Parse
@@ -32053,7 +32050,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		If
-		IsCallable(<i>reviver</i>) is <b>true</b>, then</p>
+		<a href="#x9.11">IsCallable</a>(<i>reviver</i>) is <b>true</b>, then</p>
 		<ol>
 			<li><p>
 			Let
@@ -32121,7 +32118,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 					<li><p>
 					Let
 					<i>newElement</i> be the result of calling the abstract
-					operation Walk, passing <i>val</i> and ToString(<i>I</i>).</p>
+					operation Walk, passing <i>val</i> and <a href="#x9.8">ToString</a>(<i>I</i>).</p>
 					</li>
 					<li><p>
 					If
@@ -32129,7 +32126,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 					<ol>
 						<li><p>
 						Call
-						the [[Delete]] internal method of <i>val</i> with ToString(<i>I</i>)
+						the [[Delete]] internal method of <i>val</i> with <a href="#x9.8">ToString</a>(<i>I</i>)
 						and <b>false</b> as arguments. 
 						</p>
 					</li></ol>
@@ -32140,7 +32137,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 						<li><p>
 						Call
 						the [[DefineOwnProperty]] internal method of <i>val</i> with
-						arguments ToString(<i>I</i>), the Property Descriptor
+						arguments <a href="#x9.8">ToString</a>(<i>I</i>), the Property Descriptor
 						{[[Value]]: <i>newElement</i>, [[Writable]]: true,
 						[[Enumerable]]: true, [[Configurable]]: true}, and <b>false</b>.</p>
 					</li></ol>
@@ -32249,11 +32246,11 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		If
-		Type(<i>replacer</i>) is Object, then</p>
+		<a href="#Type">Type</a>(<i>replacer</i>) is Object, then</p>
 		<ol>
 			<li><p>
 			If
-			IsCallable(<i>replacer</i>) is <b>true</b>, then</p>
+			<a href="#x9.11">IsCallable</a>(<i>replacer</i>) is <b>true</b>, then</p>
 			<ol>
 				<li><p>
 				Let
@@ -32281,21 +32278,21 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 					</li>
 					<li><p>
 					If
-					Type(<i>v</i>) is String then let <i>item</i> be <i>v.</i></p>
+					<a href="#Type">Type</a>(<i>v</i>) is String then let <i>item</i> be <i>v.</i></p>
 					</li>
 					<li><p>
 					Else
-					if Type(<i>v</i>) is Number then let <i>item</i> be ToString(<i>v</i>).</p>
+					if <a href="#Type">Type</a>(<i>v</i>) is Number then let <i>item</i> be <a href="#x9.8">ToString</a>(<i>v</i>).</p>
 					</li>
 					<li><p>
 					Else
-					if Type(<i>v</i>) is Object then,</p>
+					if <a href="#Type">Type</a>(<i>v</i>) is Object then,</p>
 					<ol>
 						<li><p>
 						If
 						the [[Class]] internal property of <i>v</i> is <code><b>"String"</b></code>
 						or <code><b>"Number"
-						</b></code>then let <i>item</i> be ToString(<i>v</i>).</p>
+						</b></code>then let <i>item</i> be <a href="#x9.8">ToString</a>(<i>v</i>).</p>
 					</li></ol>
 					</li>
 					<li><p>
@@ -32313,7 +32310,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		If
-		Type(<i>space</i>) is Object then,</p>
+		<a href="#Type">Type</a>(<i>space</i>) is Object then,</p>
 		<ol>
 			<li><p>
 			If
@@ -32322,7 +32319,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 			<ol>
 				<li><p>
 				Let
-				<i>space</i> be ToNumber(<i>space</i>).</p>
+				<i>space</i> be <a href="#x9.3">ToNumber</a>(<i>space</i>).</p>
 			</li></ol>
 			</li>
 			<li><p>
@@ -32332,17 +32329,17 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 			<ol>
 				<li><p>
 				Let
-				<i>space</i> be ToString(<i>space</i>).</p>
+				<i>space</i> be <a href="#x9.8">ToString</a>(<i>space</i>).</p>
 			</li></ol>
 		</li></ol>
 		</li>
 		<li><p>
 		If
-		Type(<i>space</i>) is Number</p>
+		<a href="#Type">Type</a>(<i>space</i>) is Number</p>
 		<ol>
 			<li><p>
 			Let
-			<i>space</i> be min(10, ToInteger(<i>space</i>)).</p>
+			<i>space</i> be min(10, <a href="#x9.4">ToInteger</a>(<i>space</i>)).</p>
 			</li>
 			<li><p>
 			Set
@@ -32352,7 +32349,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Else
-		if Type(<i>space)</i> is String</p>
+		if <a href="#Type">Type</a>(<i>space)</i> is String</p>
 		<ol>
 			<li><p>
 			If
@@ -32401,7 +32398,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		If
-		Type(<i>value</i>) is Object, then</p>
+		<a href="#Type">Type</a>(<i>value</i>) is Object, then</p>
 		<ol>
 			<li><p>
 			Let
@@ -32410,7 +32407,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 			</li>
 			<li><p>
 			If
-			IsCallable(<i>toJSON</i>) is <b>true</b></p>
+			<a href="#x9.11">IsCallable</a>(<i>toJSON</i>) is <b>true</b></p>
 			<ol>
 				<li><p>
 				Let
@@ -32434,7 +32431,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		If
-		Type(<i>value</i>) is Object then,</p>
+		<a href="#Type">Type</a>(<i>value</i>) is Object then,</p>
 		<ol>
 			<li><p>
 			If
@@ -32443,7 +32440,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 			<ol>
 				<li><p>
 				Let
-				<i>value</i> be ToNumber(<i>value</i>).</p>
+				<i>value</i> be <a href="#x9.3">ToNumber</a>(<i>value</i>).</p>
 			</li></ol>
 			</li>
 			<li><p>
@@ -32453,7 +32450,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 			<ol>
 				<li><p>
 				Let
-				<i>value</i> be ToString(<i>value</i>).</p>
+				<i>value</i> be <a href="#x9.8">ToString</a>(<i>value</i>).</p>
 			</li></ol>
 			</li>
 			<li><p>
@@ -32482,16 +32479,16 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		If
-		Type(<i>value</i>) is String, then return the result of calling the
+		<a href="#Type">Type</a>(<i>value</i>) is String, then return the result of calling the
 		abstract operation <i>Quote</i> with argument <i>value</i>.</p>
 		</li>
 		<li><p>
 		If
-		Type(<i>value</i>) is Number</p>
+		<a href="#Type">Type</a>(<i>value</i>) is Number</p>
 		<ol>
 			<li><p>
 			If
-			<i>value </i>is finite then return ToString(<i>value</i>).</p>
+			<i>value </i>is finite then return <a href="#x9.8">ToString</a>(<i>value</i>).</p>
 			</li>
 			<li><p>
 			Else,
@@ -32500,7 +32497,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		If
-		Type(<i>value</i>) is Object, and IsCallable(<i>value</i>) is <b>false</b></p>
+		<a href="#Type">Type</a>(<i>value</i>) is Object, and <a href="#x9.11">IsCallable</a>(<i>value</i>) is <b>false</b></p>
 		<ol>
 			<li><p>
 			If
@@ -32832,7 +32829,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 			<li><p>
 			Let
 			<i>strP</i> be the result of calling the abstract operation <i>Str</i>
-			with arguments ToString(<i>index</i>) and <i>value</i>. 
+			with arguments <a href="#x9.8">ToString</a>(<i>index</i>) and <i>value</i>. 
 			</p>
 			</li>
 			<li><p>
@@ -32958,7 +32955,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	(newline), <code><b>\r</b></code>
 	(carriage return), <code><b>\t</b></code>
 	(tab).</p>
-	<p class="sp"><b class="note">NOTE 4</b> Finite numbers are stringified as if by calling ToString<b>(</b><i>number</i><b>)</b>.
+	<p class="sp"><b class="note">NOTE 4</b> Finite numbers are stringified as if by calling <a href="#x9.8">ToString</a><b>(</b><i>number</i><b>)</b>.
 	<b>NaN</b> and Infinity regardless of sign are represented as the
 	String <code><b>null</b></code>.</p>
 	<p class="sp"><b class="note">NOTE 5</b> Values that do not have a JSON representation (such as <b>undefined</b>
@@ -34989,7 +34986,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Call
-		ToString(<i>string</i>).</p>
+		<a href="#x9.8">ToString</a>(<i>string</i>).</p>
 		</li>
 		<li><p>
 		Compute
@@ -35082,7 +35079,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Call
-		ToString(<i>string</i>).</p>
+		<a href="#x9.8">ToString</a>(<i>string</i>).</p>
 		</li>
 		<li><p>
 		Compute
@@ -35189,16 +35186,16 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Call
-		ToString, giving it the <b>this</b> value as its argument.</p>
+		<a href="#x9.8">ToString</a>, giving it the <b>this</b> value as its argument.</p>
 		</li>
 		<li><p>
 		Call
-		ToInteger(<i>start</i>).</p>
+		<a href="#x9.4">ToInteger</a>(<i>start</i>).</p>
 		</li>
 		<li><p>
 		If
 		<i>length</i> is <b>undefined</b>, use <b>+</b><span class="symbol"><b>∞</b></span>;
-		otherwise call ToInteger(<i>length</i>).</p>
+		otherwise call <a href="#x9.4">ToInteger</a>(<i>length</i>).</p>
 		</li>
 		<li><p>
 		Compute
@@ -35273,7 +35270,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Call
-		ToNumber(<i>year</i>).</p>
+		<a href="#x9.3">ToNumber</a>(<i>year</i>).</p>
 		</li>
 		<li><p>
 		If
@@ -35283,8 +35280,8 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		<li><p>
 		If
 		Result(2) is not <b>NaN</b> and 0 <span class="symbol">≤</span>
-		ToInteger(Result(2)) <span class="symbol">≤</span> 99 then
-		Result(4) is ToInteger(Result(2)) +&nbsp;1900. Otherwise, Result(4)
+		<a href="#x9.4">ToInteger</a>(Result(2)) <span class="symbol">≤</span> 99 then
+		Result(4) is <a href="#x9.4">ToInteger</a>(Result(2)) +&nbsp;1900. Otherwise, Result(4)
 		is Result(2).</p>
 		</li>
 		<li><p>
@@ -35376,8 +35373,7 @@ within strict mode code.  (<a href="#x7.6.12">7.6.12</a>).</li>
 		objects for strict mode functions define non-configurable accessor
 		properties named "<code><b>caller</b></code>"
 		and "<code><b>callee</b></code>"
-		which throw a <b>TypeError
-		</b>exception on access
+		which throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception on access
 		(<a href="#x10.6">10.6</a>).</p>
 		</li>
 		<li><p>
@@ -35440,8 +35436,8 @@ within strict mode code.  (<a href="#x7.6.12">7.6.12</a>).</li>
 		<li><p>
 		When
 		a <code><b>delete</b></code>
-		operator occurs within <a href="#x10.1.1" class="term-ref">strict mode code</a>, a <b>SyntaxError
-		</b>is thrown if its
+		operator occurs within <a href="#x10.1.1" class="term-ref">strict mode code</a>,
+    a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> is thrown if its
 		<i>UnaryExpression</i> is a
 		direct reference to a variable, function argument, or function
 		name(<a href="#x11.4.1">11.4.1</a>).</p>
@@ -35449,8 +35445,8 @@ within strict mode code.  (<a href="#x7.6.12">7.6.12</a>).</li>
 		<li><p>
 		When
 		a <code><b>delete</b></code>
-		operator occurs within <a href="#x10.1.1" class="term-ref">strict mode code</a>, a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b><code>
-		</code>is thrown if the property to
+		operator occurs within <a href="#x10.1.1" class="term-ref">strict mode code</a>, a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
+is thrown if the property to
 		be deleted has the attribute { [[Configurable]]:<b>false</b>
 		} (<a href="#x11.4.1">11.4.1</a>).</p>
 		</li>
@@ -35498,8 +35494,8 @@ within strict mode code.  (<a href="#x7.6.12">7.6.12</a>).</li>
 		a <i>FunctionDeclaration</i>,
 		<i>FunctionExpression</i>, or
 		<code><b>Function</b></code>
-		constructor is a <b>SyntaxError
-		</b>(<a href="#x13.1">13.1</a>, <a href="#x15.3.2">15.3.2</a>).</p>
+		constructor is a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+ (<a href="#x13.1">13.1</a>, <a href="#x15.3.2">15.3.2</a>).</p>
 		</li>
 
 		<li><p>
@@ -35746,7 +35742,7 @@ within strict mode code.  (<a href="#x7.6.12">7.6.12</a>).</li>
 	or <code><b><a href="#x15.3.4.4">Function.prototype.call</a></b></code>
 	causes the <a href="#x15.1" class="term-ref">global object</a> to be passed to the indirectly invoked
 	target function as the <b>this</b> value. If the first argument is a
-	<a href="#primitive_value" class="term-ref">primitive value</a> the result of calling ToObject on the <a href="#primitive_value" class="term-ref">primitive value</a> is passed as the <b>this</b> value. In Edition 5, these
+	<a href="#primitive_value" class="term-ref">primitive value</a> the result of calling <a href="#x9.9">ToObject</a> on the <a href="#primitive_value" class="term-ref">primitive value</a> is passed as the <b>this</b> value. In Edition 5, these
 	transformations are not performed and the actual first argument
 	value is passed as the <b>this</b> value. This difference will
 	normally be unobservable to existing ECMAScript Edition 3 code
