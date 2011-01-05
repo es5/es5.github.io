@@ -199,6 +199,7 @@ b.other {
   border: 1px solid #000000;
   padding: 4px;
   padding-left: 20px;
+  padding-right: 20px;
 }
 b {
   font-weight: bold;
