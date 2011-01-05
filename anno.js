@@ -168,4 +168,4 @@ document.addEventListener("keyup", function (e) {
     annoPanel = null;
   }
 }, true);
-window.addEventListener('load', annotateToc, false);
+annotateToc();

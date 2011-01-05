@@ -169,7 +169,13 @@ b.other {
 #toc,
 #toc-full {
   margin-top: 36px;
-  line-height: 80%
+}
+#toc li,
+#toc-full li {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow:hidden;
+  line-height: 18px;
 }
 /* note that ES5 source does not use monospace for symbols */
 .symbol {
