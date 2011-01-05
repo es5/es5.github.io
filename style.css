@@ -4,6 +4,10 @@
   padding-left: 8px;
 }
 
+p.url {
+  margin-left: 40px;
+}
+
 a,
 a:visited
 {
@@ -200,12 +204,11 @@ b.other {
   padding: 4px;
 }
 #disclaimer {
-  margin-top: 8px;
-  margin-bottom: 8px;
-  border: 1px solid #000000;
+  background-color: lightgoldenrodyellow;
   padding: 4px;
   padding-left: 20px;
   padding-right: 20px;
+  border-radius: 6px;
 }
 b {
   font-weight: bold;
@@ -488,22 +491,27 @@ ol li {
   margin-top: 4px;
   margin-bottom: 4px;
 }
-.closeBox {
+
+#closeBox {
   cursor: pointer;
   padding: 4px;
   float: right;
 }
-.newWin{
+
+#newWin {
   text-decoration: none;
   float: right;
   padding: 4px;
   font-weight: bold;
+  border: none;
 }
-.newWin:hover,
-.closeBox:hover,
+
+#newWin:hover,
+#closeBox:hover,
 #anno-section-id:hover {
   background-color: #ccc;
 }
+
 table#date-format {
   padding-left: 40px;
   margin-bottom: 18px;
@@ -522,6 +530,7 @@ p.ed + p.keep {
 }
 #anno-section-id {
   padding: 4px;
+  border: none;
 }
 #anno-type {
   padding: 4px;

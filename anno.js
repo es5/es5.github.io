@@ -31,7 +31,7 @@ function xhrAnnoShow(node, panelDiv, annoType) {
         sectionNum = annoHref.substring(annoHref.indexOf('#') + 1);
         annoUrl = node.className + "/" + sectionNum + ".html";
         newWin = document.createElement('a');
-        newWin.className = "newWin";
+        newWin.id = "newWin";
         newWin.setAttribute("href", annoUrl);
         newWin.setAttribute("title", "Open in new window/tab");
         newWin.setAttribute("target", "_blank");
@@ -99,7 +99,7 @@ function annoShow(event) {
     } 
     panel.appendChild(permalinkP);
     closeBox = document.createElement('span');
-    closeBox.className = "closeBox";
+    closeBox.id = "closeBox";
     closeBox.textContent = "\u00d7";
     permalinkP.appendChild(closeBox);
     panelDiv = document.createElement('div');
