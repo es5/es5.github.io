@@ -1,3 +1,9 @@
+#timestamp {
+  color: #bbb;
+  font-weight: normal;
+  padding-left: 8px;
+}
+
 a,
 a:visited
 {
