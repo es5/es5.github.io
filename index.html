@@ -5502,7 +5502,7 @@ and
 	refer to the types defined in <a href="#x8">Clause 8</a> augmented by the following
 	additional names. “<i>any</i>” means the value may be any
 	ECMAScript <a href="#language-type">language type</a>. “<i>primitive</i>” means Undefined,
-	Null, Boolean, String, or Number. “<i>SpecOp</i>” means the
+	Null, Boolean, String, or Number. <dfn id="SpecOp">“<i>SpecOp</i>”</dfn> means the
 	internal property is an internal method, an implementation provided
 	procedure defined by an abstract operation specification. “SpecOp”
 	is followed by a list of descriptive parameter names. If a parameter
@@ -5587,7 +5587,7 @@ and
 				</td>
 				<td width="194">
 					<p class="keep">
-					SpecOp(<i>propertyName</i>)
+					<a href="#SpecOp">SpecOp</a>(<i>propertyName</i>)
 					<i><b>→</b></i> any</p>
 				</td>
 				<td width="338">
@@ -5603,7 +5603,7 @@ and
 				</td>
 				<td width="194">
 					<p class="keep">
-					SpecOp
+					<a href="#SpecOp">SpecOp</a>
 					(<i>propertyName</i>) <i><b>→</b></i></p>
 					<p class="keep">
 					Undefined<i>or</i>
@@ -5623,7 +5623,7 @@ and
 				</td>
 				<td width="194">
 					<p class="keep">
-					SpecOp
+					<a href="#SpecOp">SpecOp</a>
 					(<i>propertyName</i>) <i><b>→</b></i></p>
 					<p class="keep">
 					Undefined<i>or </i>
@@ -5643,7 +5643,7 @@ and
 				</td>
 				<td width="194">
 					<p class="keep">
-					SpecOp
+					<a href="#SpecOp">SpecOp</a>
 					(<i>propertyName</i>, <i>any, Boolean</i>)</p>
 				</td>
 				<td width="338">
@@ -5660,7 +5660,7 @@ and
 				</td>
 				<td width="194">
 					<p class="keep">
-					SpecOp
+					<a href="#SpecOp">SpecOp</a>
 					(<i>propertyName</i>) <i><b>→</b></i>
 					Boolean</p>
 				</td>
@@ -5678,7 +5678,7 @@ and
 				</td>
 				<td width="194">
 					<p class="keep">
-					SpecOp
+					<a href="#SpecOp">SpecOp</a>
 					(<i>propertyName</i>) <i><b>→</b></i>
 					<i>Boolean</i></p>
 				</td>
@@ -5696,7 +5696,7 @@ and
 				</td>
 				<td width="194">
 					<p class="keep">
-					SpecOp
+					<a href="#SpecOp">SpecOp</a>
 					(<i>propertyName, Boolean</i>) <i><b>→</b></i>
 					Boolean</p>
 				</td>
@@ -5714,7 +5714,7 @@ and
 				</td>
 				<td width="194">
 					<p class="keep">
-					SpecOp
+					<a href="#SpecOp">SpecOp</a>
 					(<i>Hint</i>) <i><b>→</b></i>
 					<i>primitive</i></p>
 				</td>
@@ -5731,7 +5731,7 @@ and
 				</td>
 				<td width="194">
 					<p class="keep">
-					SpecOp
+					<a href="#SpecOp">SpecOp</a>
 					(<i>propertyName, PropertyDescriptor, Boolean</i>)<i><b>
 					→</b></i> Boolean</p>
 				</td>
@@ -5922,7 +5922,7 @@ and
 				</td>
 				<td width="143">
 					<p class="keep">
-					SpecOp(a
+					<a href="#SpecOp">SpecOp</a>(a
 				 <a href="#x8.8">List</a> of <i>any</i>) <i><b>→</b></i>
 					Object</p>
 				</td>
@@ -5930,7 +5930,7 @@ and
 					<p class="keep">
 					Creates
 					an object. Invoked via the <code><b>new</b></code>
-					operator. The arguments to the SpecOp are the arguments passed
+					operator. The arguments to the <a href="#SpecOp">SpecOp</a> are the arguments passed
 					to the <b>new</b> operator. Objects that implement this internal
 					method are called <i>constructors</i>.</p>
 				</td>
@@ -5942,7 +5942,7 @@ and
 				</td>
 				<td width="143">
 					<p class="keep">
-					SpecOp(<i>any</i>,
+					<a href="#SpecOp">SpecOp</a>(<i>any</i>,
 					a <a href="#x8.8">List</a> of <i>any</i>) <i><b>→</b></i>
 					<i>any </i>or <a href="#x8.7">Reference</a></p>
 				</td>
@@ -5950,7 +5950,7 @@ and
 					<p class="keep">
 					Executes
 					code associated with the object. Invoked via a function call
-					expression. The arguments to the SpecOp are a this object and a
+					expression. The arguments to the <a href="#SpecOp">SpecOp</a> are a this object and a
 					list containing the arguments passed to the function call
 					expression. Objects that implement this internal method are
 					<i>callable</i>. Only callable objects that are host objects may
@@ -5964,7 +5964,7 @@ and
 				</td>
 				<td width="143">
 					<p class="keep">
-					SpecOp(<i>any</i>)
+					<a href="#SpecOp">SpecOp</a>(<i>any</i>)
 					<i><b>→</b></i>
 					Boolean</p>
 				</td>
@@ -6092,7 +6092,7 @@ and
 				</td>
 				<td width="143">
 					<p class="keep">
-					SpecOp(<i>String</i>,
+					<a href="#SpecOp">SpecOp</a>(<i>String</i>,
 					<i>index</i>) <i><b>→</b></i>
 					<i><a href="#MatchResult">MatchResult</a></i></p>
 				</td>
