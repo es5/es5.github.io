@@ -2394,7 +2394,7 @@ an object is a member of the remaining built-in type
 	symbol is used in other syntactic grammar contexts.</p>
 	<p><b class="note">NOTE</b> There
 	are no syntactic grammar contexts where both a leading division or
-	division-assignment, and a leading <i>RegularExpressionLiteral</i>
+	division-assignment, and a leading <i><a href="#x7.8.5">RegularExpressionLiteral</a></i>
 	are permitted. This is not affected by semicolon insertion (see
 	<a href="#x7.9">7.9</a>); in examples such as the following:</p>
 	<p class="code-example">
@@ -2560,8 +2560,8 @@ an object is a member of the remaining built-in type
 	separate tokens (indivisible lexical units) from each other, but are
 	otherwise insignificant. White space characters may occur between
 	any two tokens and at the start or end of input. White space
-	characters may also occur within a <i>StringLiteral</i>
-	or a <i>RegularExpressionLiteral</i>
+	characters may also occur within a <i><a href="#x7.8.4">StringLiteral</a></i>
+	or a <i><a href="#x7.8.5">RegularExpressionLiteral</a></i>
 	(where they are considered significant characters forming part of
 	the literal value) or within a <i>Comment</i>,
 	but cannot appear within any other kind of token.</p>
@@ -2569,7 +2569,7 @@ an object is a member of the remaining built-in type
 	The
 	ECMAScript white space characters are listed in Table 2.</p>
 	<center>
-		<table width="528" border="1" bordercolor="#000000" cellpadding="22" cellspacing="0" rules="GROUPS">
+		<table id="WhiteSpace" width="528" border="1" bordercolor="#000000" cellpadding="22" cellspacing="0" rules="GROUPS">
 	<caption>Table&nbsp;2 — Whitespace Characters</caption>
 			<colgroup><col width="141">
 			<col width="143">
@@ -2717,8 +2717,8 @@ an object is a member of the remaining built-in type
 	between any two tokens, but there are a few places where they are
 	forbidden by the syntactic grammar. Line terminators also affect the
 	process of automatic semicolon insertion (<a href="#x7.9">7.9</a>). A line terminator
-	cannot occur within any token except a <i>StringLiteral</i>.
-	Line terminators may only occur within a <i>StringLiteral</i>
+	cannot occur within any token except a <i><a href="#x7.8.4">StringLiteral</a></i>.
+	Line terminators may only occur within a <i><a href="#x7.8.4">StringLiteral</a></i>
 	token as part of a <i>LineContinuation</i>.
 	
 	</p>
@@ -2737,7 +2737,7 @@ an object is a member of the remaining built-in type
 	The
 	ECMAScript line terminator characters are listed in Table 3.</p>
 	<center>
-		<table width="566" border="1" bordercolor="#000000" cellpadding="22" cellspacing="0" rules="NONE">
+		<table id="LineTerminator" width="566" border="1" bordercolor="#000000" cellpadding="22" cellspacing="0" rules="NONE">
 	<caption>Table&nbsp;3 — Line Terminator Characters</caption>
 			<colgroup><col width="133">
 			<col width="152">
@@ -2926,7 +2926,7 @@ an object is a member of the remaining built-in type
 	<p class="sp">
 	</p><p><b class="note">NOTE</b> The
 	<i>DivPunctuator</i> and
-	<i>RegularExpressionLiteral</i>
+	<i><a href="#x7.8.5">RegularExpressionLiteral</a></i>
 	productions define tokens, but are not included in the <i>Token</i>
 	production.</p>
 	<h3 id="x7.6">7.6 Identifier Names and Identifiers <a href="#x7.6">#</a> <a href="#x7.6-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
@@ -6095,12 +6095,12 @@ and
 					<p class="keep">
 					SpecOp(<i>String</i>,
 					<i>index</i>) <i><b>→</b></i>
-					<i>MatchResult</i></p>
+					<i><a href="#MatchResult">MatchResult</a></i></p>
 				</td>
 				<td width="418">
 					<p class="keep">
 					Tests
-					for a regular expression match and returns a MatchResult value
+					for a regular expression match and returns a <a href="#MatchResult">MatchResult</a> value
 					(see <a href="#x15.10.2.1">15.10.2.1</a>). Of the standard built-in ECMAScript objects,
 					only RegExp objects implement [[Match]].</p>
 				</td>
@@ -22522,7 +22522,8 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	<i>initialValue </i>was
 	provided, then previousValue will be equal to the last value in the
 	array and currentValue will be equal to the second-to-last value. It
-	is a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> if the array contains no elements and
+	is a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> if the array contains no
+ <a href="#array-element">elements</a> and
 	<i>initialValue</i> is
 	not provided.</p>
 	<p>
@@ -22531,8 +22532,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	but the object may be mutated by the calls to <i>callbackfn</i>.</p>
 	<p>
 	The
-	range of elements processed by <code><b>reduceRight
-	</b></code>is set before the first call to <i>callbackfn</i>.
+	range of elements processed by <code><b>reduceRight</b></code> is set before the first call to <i>callbackfn</i>.
 	Elements that are appended to the array after the call to
 	<code><b>reduceRight</b></code> begins
 	will not be visited by <i>callbackfn</i>.
@@ -22778,7 +22778,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 				<li><p>
 				Need
 				to defer setting the [[Writable]] attribute to <b>false</b> in
-				case any elements cannot be deleted.</p>
+				case any <a href="#array-element">elements</a> cannot be deleted.</p>
 				</li>
 				<li><p>
 				Let
@@ -23621,7 +23621,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	3 arguments. Argument 1 is the substring that matched. If
 	<i>searchValue</i> is a
 	regular expression, the next <i>m</i>
-	arguments are all of the captures in the MatchResult (see
+	arguments are all of the <a href="#captures">captures</a> in the <a href="#MatchResult">MatchResult</a> (see
 	<a href="#x15.10.2.1">15.10.2.1</a>). Argument <i>m</i>
 	+ 2 is the offset within <i>string</i>
 	where the match occurred, and argument <i>m</i>
@@ -23900,7 +23900,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	the <b>this</b> object is (or converts to) the empty String, the
 	result depends on whether <i>separator</i>
 	can match the empty String. If it can, the result array contains no
-	elements. Otherwise, the result array contains one element, which is
+	<a href="#array-element">elements</a>. Otherwise, the result array contains one element, which is
 	the empty String.</p>
 	<p>If
 	<i>separator</i> is a
@@ -23925,7 +23925,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	which is the <b>this</b> value (converted to a String). If <i>limit</i>
 	is not <b>undefined</b>, then the output array is truncated so that
 	it contains no more than <i>limit</i>
-	elements.</p>
+	<a href="#array-element">elements</a>.</p>
 	<p>
 	When
 	the <code><b>split</b></code> method
@@ -23996,8 +23996,8 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 		<ol>
 			<li><p>
 			Call
-			<i>SplitMatch</i>(<i>S</i>, 0, <i>R</i>) and let <i>z</i> be its
-			MatchResult result.</p>
+			<i><a href="#SplitMatch">SplitMatch</a></i>(<i>S</i>, 0, <i>R</i>) and let <i>z</i> be its
+			<a href="#MatchResult">MatchResult</a> result.</p>
 			</li>
 			<li><p>
 			If
@@ -24027,8 +24027,8 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 
 			<li><p>
 			Call
-			<i>SplitMatch</i>(<i>S</i>, <i>q</i>, <i>R</i>) and let <i>z</i>
-			be its MatchResult result.</p>
+			<i><a href="#SplitMatch">SplitMatch</a></i>(<i>S</i>, <i>q</i>, <i>R</i>) and let <i>z</i>
+			be its <a href="#MatchResult">MatchResult</a> result.</p>
 			</li>
 
 			<li><p>
@@ -24041,8 +24041,8 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 			<ol>
 				<li><p>
 				<i>z</i>
-				must be a State. Let <i>e</i> be <i>z</i>'s <i>endIndex</i> and
-				let <i>cap</i> be <i>z</i>'s <i>captures</i> array.</p>
+				must be a State. Let <i>e</i> be <i>z</i>'s <i><a href="#endIndex">endIndex</a></i> and
+				let <i>cap</i> be <i>z</i>'s <i><a href="#captures">captures</a></i> array.</p>
 				</li>
 				<li><p>
 				If
@@ -24136,11 +24136,11 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	</li></ol>
 	<p>
 	The
-	abstract operation <i>SplitMatch</i>
+	abstract operation <dfn id="SplitMatch"><i>SplitMatch</i></dfn>
 	takes three parameters, a String <i>S</i>,
 	an integer <i>q</i>, and
 	a String or RegExp <i>R</i>,
-	and performs the following in order to return a MatchResult (see
+	and performs the following in order to return a <a href="#MatchResult">MatchResult</a> (see
 	<a href="#x15.10.2.1">15.10.2.1</a>):</p>
 	<ol>
 		<li><p>
@@ -24151,7 +24151,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 			<li><p>
 			Call
 			the [[Match]] internal method of <i>R</i> giving it the arguments
-			<i>S</i> and <i>q</i>, and return the MatchResult result.</p>
+			<i>S</i> and <i>q</i>, and return the <a href="#MatchResult">MatchResult</a> result.</p>
 		</li></ol>
 		</li>
 		<li><p>
@@ -24164,7 +24164,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 		</li>
 		<li><p>
 		If
-		<i>q</i>+<i>r</i> &gt; <i>s</i> then return the MatchResult
+		<i>q</i>+<i>r</i> &gt; <i>s</i> then return the <a href="#MatchResult">MatchResult</a>
 		<b>failure</b>.</p>
 		</li>
 		<li><p>
@@ -24176,11 +24176,11 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 		</li>
 		<li><p>
 		Let
-		<i>cap</i> be an empty array of captures (see <a href="#x15.10.2.1">15.10.2.1</a>).</p>
+		<i>cap</i> be an empty array of <a href="#captures">captures</a> (see <a href="#x15.10.2.1">15.10.2.1</a>).</p>
 		</li>
 		<li><p>
 		Return
-		the State (<i>q</i>+<i>r</i>, <i>cap</i>). (see <a href="#x15.10.2.1">15.10.2.1</a>)</p>
+		the <a href="#State">State</a> (<i>q</i>+<i>r</i>, <i>cap</i>). (see <a href="#x15.10.2.1">15.10.2.1</a>)</p>
 	</li></ol>
 	<p>
 	The
@@ -24386,7 +24386,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 		Let
 		<i>T</i> be a String value that is a copy of <i>S</i> with both
 		leading and trailing white space removed. The definition of white
-		space is the union of <i>WhiteSpace </i>and <i>LineTerminator</i>.</p>
+		space is the union of <i><a href="#WhiteSpace">WhiteSpace</a></i> and <i><a href="#LineTerminator">LineTerminator</a></i>.</p>
 		</li>
 		<li><p>
 		Return
@@ -24763,7 +24763,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	Number(</b></code><b>this</b> value<code><b>)</b></code>
 	where <code><b>Number</b></code> is
 	the standard built-in constructor with that name.  Also, the phrase
-	“this Number value” refers to either the Number value
+	<dfn id="this-Number-value">“this Number value”</dfn> refers to either the Number value
 	represented by this Number object, that is, the value of the
 	[[PrimitiveValue]] internal property of this Number object or the
 	<b>this</b> value if its type is Number.  A <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
@@ -24786,7 +24786,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	is used as the value of <i>radix</i>.
 	If <a href="#x9.4">ToInteger</a>(<i>radix</i>)
 	is the Number 10 then
-	this Number value is given as an argument to the <a href="#x9.8">ToString</a> abstract
+	 <a href="#this-number-value">this Number value</a> is given as an argument to the <a href="#x9.8">ToString</a> abstract
 	operation; the resulting String value is returned.</p>
 	<p>
 	If
@@ -24794,7 +24794,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	is not an integer between 2 and 36 inclusive throw a RangeError
 	exception. If <a href="#x9.4">ToInteger</a>(<i>radix</i>)
 	is an integer from 2 to 36, but not 10, the result is a String
-	representation of this Number value using the specified radix.
+	representation of  <a href="#this-number-value">this Number value</a> using the specified radix.
 	Letters <code><b>a</b></code>-<code><b>z</b></code>
 	are used for digits with values 10 through 35. The precise algorithm
 	is implementation-dependent if the radix is not 10, however the
@@ -24808,7 +24808,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	<h5 id="x15.7.4.3">15.7.4.3 Number.prototype.toLocaleString() <a href="#x15.7.4.3">#</a> <a href="#x15.7.4.3-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	Produces
-	a String value that represents this Number value formatted according
+	a String value that represents  <a href="#this-number-value">this Number value</a> formatted according
 	to the conventions of the host environment’s current locale. This
 	function is implementation-dependent, and it is permissible, but not
 	encouraged, for it to return the same thing as <code><b>toString</b></code>.</p>
@@ -24819,7 +24819,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	<h5 id="x15.7.4.4">15.7.4.4 Number.prototype.valueOf ( ) <a href="#x15.7.4.4">#</a> <a href="#x15.7.4.4-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	Returns
-	this Number value.</p>
+	 <a href="#this-number-value">this Number value</a>.</p>
 	<p>
 	The
 	<code><b>valueOf</b></code> function
@@ -24829,7 +24829,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	<h5 id="x15.7.4.5">15.7.4.5 Number.prototype.toFixed (fractionDigits) <a href="#x15.7.4.5">#</a> <a href="#x15.7.4.5-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	Return
-	a String containing this Number value represented in decimal
+	a String containing  <a href="#this-number-value">this Number value</a> represented in decimal
 	fixed-point notation with <i>fractionDigits</i>
 	digits after the decimal point. If <i>fractionDigits</i>
 	is <b>undefined</b>, 0 is assumed. Specifically, perform the
@@ -24847,7 +24847,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 		</li>
 		<li><p>
 		Let
-		<i>x</i> be this Number value.</p>
+		<i>x</i> be  <a href="#this-number-value">this Number value</a>.</p>
 		</li>
 		<li><p>
 		If
@@ -24970,7 +24970,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	<h5 id="x15.7.4.6">15.7.4.6 Number.prototype.toExponential (fractionDigits) <a href="#x15.7.4.6">#</a> <a href="#x15.7.4.6-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	Return
-	a String containing this Number value represented in decmal
+	a String containing  <a href="#this-number-value">this Number value</a> represented in decmal
 	exponential notation with one digit before the significand's decimal
 	point and <i>fractionDigits</i>
 	digits after the significand's decimal point. If <i>fractionDigits</i>
@@ -24981,7 +24981,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>x</i> be this Number value.</p>
+		<i>x</i> be  <a href="#this-number-value">this Number value</a>.</p>
 		</li>
 		<li><p>
 		Let
@@ -25195,7 +25195,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	<h5 id="x15.7.4.7">15.7.4.7 Number.prototype.toPrecision (precision) <a href="#x15.7.4.7">#</a> <a href="#x15.7.4.7-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	Return
-	a String containing this Number value represented either in decimal
+	a String containing  <a href="#this-number-value">this Number value</a> represented either in decimal
 	exponential notation with one digit before the significand's decimal
 	point and <i>precision</i>–1
 	digits after the significand's decimal point or in decimal fixed
@@ -25206,7 +25206,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>x</i> be this Number value.</p>
+		<i>x</i> be  <a href="#this-number-value">this Number value</a>.</p>
 		</li>
 		<li><p>
 		If
@@ -25552,7 +25552,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	implementations use the approximation algorithms for IEEE 754
 	arithmetic contained in <code><b>fdlibm</b></code>,
 	the freely distributable mathematical library from Sun Microsystems
-	(http://www.netlib.org/fdlibm<code>)</code>.
+	(<a href="http://www.netlib.org/fdlibm">http://www.netlib.org/fdlibm</a>).
 	
 	</p>
 	<h5 id="x15.8.2.1">15.8.2.1 abs (x) <a href="#x15.8.2.1">#</a> <a href="#x15.8.2.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
@@ -26471,7 +26471,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	A
 	given time value <i>t</i> belongs to day number</p>
 	<p class="code-example">
-	Day(<i>t</i>)
+	<a href="#15.9.1.2">Day</a>(<i>t</i>)
 	= <a href="#floor">floor</a>(<i>t</i> / msPerDay)</p>
 	<p class="sm-btm">
 	where
@@ -26505,7 +26505,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	All
 	non-leap years have 365
 	days with the usual number of days per month and leap years have an
-	extra day in February. The day number of the first day of year <i>y</i>
+	extra day in February. The <dfn id="DayFromYear">day number of the first day of year <i>y</i></dfn>
 	is given by:</p>
 	<p class="code-example">
 	DayFromYear(<i>y</i>)	=
@@ -26515,25 +26515,25 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	<a href="#floor">floor</a>((<i>y</i><span class="symbol">−</span>1601)/400)</p>
 	<p class="sm-btm">
 	The
-	time value of the start of a year is:</p>
+	<dfn id="TimeFromYear">time value of the start of a year</dfn> is:</p>
 	<p class="code-example">
 	TimeFromYear(<i>y</i>)	=
-	msPerDay <span class="symbol">×</span> DayFromYear(<i>y</i>)</p>
+	msPerDay <span class="symbol">×</span> <a href="#DayFromYear">DayFromYear</a>(<i>y</i>)</p>
 	<p class="sm-btm">
-	A
-	time value determines a year by:</p>
+	<dfn id="YearFromTime">A
+	time value determines a year by</dfn>:</p>
 	<p class="code-example">
 	YearFromTime(<i>t</i>)	=
 	 the largest integer <i>y</i> (closest to positive infinity) such
-	that TimeFromYear(<i>y</i>) <span class="symbol">≤</span> <i>t</i></p>
+	that <a href="#TimeFromYear">TimeFromYear</a>(<i>y</i>) <span class="symbol">≤</span> <i>t</i></p>
 	<p class="sm-btm">
 	The
-	leap-year function is 1 for a time within a leap year and otherwise
+	<dfn id="InLeapYear">leap-year</dfn> function is 1 for a time within a leap year and otherwise
 	is zero:</p>
 	<p class="code-example">
-	InLeapYear(<i>t</i>)	=
-	0  if DaysInYear(YearFromTime(<i>t</i>)) = 365<br>= 1  if
-	DaysInYear(YearFromTime<i>(t</i>)) = 366</p>
+	<a href="#InLeapYear">InLeapYear</a>(<i>t</i>)	=
+	0  if DaysInYear(<a href="#YearFromTime">YearFromTime</a>(<i>t</i>)) = 365<br>= 1  if
+	DaysInYear(<a href="#YearFromTime">YearFromTime</a><i>(t</i>)) = 366</p>
 	<h5 id="x15.9.1.4">15.9.1.4 Month Number <a href="#x15.9.1.4">#</a> <a href="#x15.9.1.4-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p class="sm-btm">
 	Months
@@ -26545,31 +26545,31 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 		MonthFromTime(<i>t</i>)	=
 	0	if	0	<span class="symbol">≤</span> DayWithinYear(<i>t</i>)
 	&lt; 31<br>			= 1	if	31	<span class="symbol">≤</span>
-	DayWithinYear (<i>t</i>) &lt; 59+InLeapYear(<i>t</i>)<br>			=
-	2	if	59+InLeapYear(<i>t</i>) 	<span class="symbol">≤</span>
-	DayWithinYear (<i>t</i>) &lt; 90+InLeapYear(<i>t</i>)<br>			=
-	3	if	90+InLeapYear(<i>t</i>) 	<span class="symbol">≤</span>
-	DayWithinYear (<i>t</i>) &lt; 120+InLeapYear(<i>t</i>)<br>			=
-	4	if	120+InLeapYear(<i>t</i>) 	<span class="symbol">≤</span>
-	DayWithinYear (<i>t</i>) &lt; 151+InLeapYear(<i>t</i>)<br>			=
-	5	if	151+InLeapYear(<i>t</i>) 	<span class="symbol">≤</span>
-	DayWithinYear (<i>t</i>) &lt; 181+InLeapYear(<i>t</i>)<br>			=
-	6	if	181+InLeapYear(<i>t</i>) 	<span class="symbol">≤</span>
-	DayWithinYear (<i>t</i>) &lt; 212+InLeapYear(<i>t</i>)<br>			=
-	7	if	212+InLeapYear(<i>t</i>) 	<span class="symbol">≤</span>
-	DayWithinYear (<i>t</i>) &lt; 243+InLeapYear(<i>t</i>)<br>			=
-	8	if	243+InLeapYear(<i>t</i>) 	<span class="symbol">≤</span>
-	DayWithinYear (<i>t</i>) &lt; 273+InLeapYear(<i>t</i>)<br>			=
-	9	if	273+InLeapYear(<i>t</i>) 	<span class="symbol">≤</span>
-	DayWithinYear (<i>t</i>) &lt; 304+InLeapYear(<i>t</i>)<br>			=
-	10	if	304+InLeapYear(<i>t</i>) 	<span class="symbol">≤</span>
-	DayWithinYear (<i>t</i>) &lt; 334+InLeapYear(<i>t</i>)<br>			=
-	11	if	334+InLeapYear(<i>t</i>) 	<span class="symbol">≤</span>
-	DayWithinYear (<i>t</i>) &lt; 365+InLeapYear(<i>t</i>)</p>
+	DayWithinYear (<i>t</i>) &lt; 59+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>)<br>			=
+	2	if	59+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>) 	<span class="symbol">≤</span>
+	DayWithinYear (<i>t</i>) &lt; 90+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>)<br>			=
+	3	if	90+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>) 	<span class="symbol">≤</span>
+	DayWithinYear (<i>t</i>) &lt; 120+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>)<br>			=
+	4	if	120+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>) 	<span class="symbol">≤</span>
+	DayWithinYear (<i>t</i>) &lt; 151+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>)<br>			=
+	5	if	151+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>) 	<span class="symbol">≤</span>
+	DayWithinYear (<i>t</i>) &lt; 181+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>)<br>			=
+	6	if	181+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>) 	<span class="symbol">≤</span>
+	DayWithinYear (<i>t</i>) &lt; 212+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>)<br>			=
+	7	if	212+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>) 	<span class="symbol">≤</span>
+	DayWithinYear (<i>t</i>) &lt; 243+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>)<br>			=
+	8	if	243+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>) 	<span class="symbol">≤</span>
+	DayWithinYear (<i>t</i>) &lt; 273+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>)<br>			=
+	9	if	273+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>) 	<span class="symbol">≤</span>
+	DayWithinYear (<i>t</i>) &lt; 304+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>)<br>			=
+	10	if	304+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>) 	<span class="symbol">≤</span>
+	DayWithinYear (<i>t</i>) &lt; 334+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>)<br>			=
+	11	if	334+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>) 	<span class="symbol">≤</span>
+	DayWithinYear (<i>t</i>) &lt; 365+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>)</p>
 	<p>where</p>
 	<p class="date-definition">
-	DayWithinYear(<i>t</i>)	=
-	Day(<i>t</i>)<span class="symbol">−</span>DayFromYear(YearFromTime(<i>t)</i>)</p>
+	<dfn id="DayWithinYear">DayWithinYear(<i>t</i>)</dfn>	=
+	<a href="#15.9.1.2">Day</a>(<i>t</i>)<span class="symbol">−</span><a href="#DayFromYear">DayFromYear</a>(<a href="#YearFromTime">YearFromTime</a>(<i>t)</i>)</p>
 	<p>
 	A
 	month value of 0
@@ -26583,7 +26583,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	specifies September; 9
 	specifies October; 10
 	specifies November; and 11
-	specifies December. Note that MonthFromTime(0)
+	specifies December. Note that <a href="#15.9.1.4">MonthFromTime</a>(0)
 	= 0, corresponding to Thursday, 01 January, 1970.</p>
 	<h5 id="x15.9.1.5">15.9.1.5 Date Number <a href="#x15.9.1.5">#</a> <a href="#x15.9.1.5-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
@@ -26594,27 +26594,27 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	month number is defined by:</p>
 	<p class="date-definition">
 	DateFromTime(<i>t</i>)	=
-	DayWithinYear(<i>t</i>)+1	if MonthFromTime(<i>t</i>)=0<br>	=
-	DayWithinYear(<i>t</i>)<span class="symbol">−</span>30	if
-	MonthFromTime(<i>t</i>)=1<br>	= DayWithinYear(<i>t</i>)<span class="symbol">−</span>58<span class="symbol">−</span>InLeapYear(<i>t</i>)	if
-	MonthFromTime(<i>t</i>)=2<br>	= DayWithinYear(<i>t</i>)<span class="symbol">−</span>89<span class="symbol">−</span>InLeapYear(<i>t</i>)	if
-	MonthFromTime(<i>t</i>)=3<br>	=
-	DayWithinYear(<i>t</i>)<span class="symbol">−</span>119<span class="symbol">−</span>InLeapYear(<i>t</i>)	if
-	MonthFromTime(<i>t</i>)=4<br>	=
-	DayWithinYear(<i>t</i>)<span class="symbol">−</span>150<span class="symbol">−</span>InLeapYear(<i>t</i>)	if
-	MonthFromTime(<i>t</i>)=5<br>	=
-	DayWithinYear(<i>t</i>)<span class="symbol">−</span>180<span class="symbol">−</span>InLeapYear(<i>t</i>)	if
-	MonthFromTime(<i>t</i>)=6<br>	=
-	DayWithinYear(<i>t</i>)<span class="symbol">−</span>211<span class="symbol">−</span>InLeapYear(<i>t</i>)	if
-	MonthFromTime(<i>t</i>)=7<br>	=
-	DayWithinYear(<i>t</i>)<span class="symbol">−</span>242<span class="symbol">−</span>InLeapYear(<i>t</i>)	if
-	MonthFromTime(<i>t</i>)=8<br>	=
-	DayWithinYear(<i>t</i>)<span class="symbol">−</span>272<span class="symbol">−</span>InLeapYear(<i>t</i>)	if
-	MonthFromTime(<i>t</i>)=9<br>	=
-	DayWithinYear(<i>t</i>)<span class="symbol">−</span>303<span class="symbol">−</span>InLeapYear(<i>t</i>)	if
-	MonthFromTime(<i>t</i>)=10<br>	=
-	DayWithinYear(<i>t</i>)<span class="symbol">−</span>333<span class="symbol">−</span>InLeapYear(<i>t</i>)	if
-	MonthFromTime(<i>t</i>)=11</p>
+	<a href="#DayWithinYear">DayWithinYear</a>(<i>t</i>)+1	if <a href="#15.9.1.4">MonthFromTime</a>(<i>t</i>)=0<br>	=
+	<a href="#DayWithinYear">DayWithinYear</a>(<i>t</i>)<span class="symbol">−</span>30	if
+	<a href="#15.9.1.4">MonthFromTime</a>(<i>t</i>)=1<br>	= <a href="#DayWithinYear">DayWithinYear</a>(<i>t</i>)<span class="symbol">−</span>58<span class="symbol">−</span><a href="#InLeapYear">InLeapYear</a>(<i>t</i>)	if
+	<a href="#15.9.1.4">MonthFromTime</a>(<i>t</i>)=2<br>	= <a href="#DayWithinYear">DayWithinYear</a>(<i>t</i>)<span class="symbol">−</span>89<span class="symbol">−</span><a href="#InLeapYear">InLeapYear</a>(<i>t</i>)	if
+	<a href="#15.9.1.4">MonthFromTime</a>(<i>t</i>)=3<br>	=
+	<a href="#DayWithinYear">DayWithinYear</a>(<i>t</i>)<span class="symbol">−</span>119<span class="symbol">−</span><a href="#InLeapYear">InLeapYear</a>(<i>t</i>)	if
+	<a href="#15.9.1.4">MonthFromTime</a>(<i>t</i>)=4<br>	=
+	<a href="#DayWithinYear">DayWithinYear</a>(<i>t</i>)<span class="symbol">−</span>150<span class="symbol">−</span><a href="#InLeapYear">InLeapYear</a>(<i>t</i>)	if
+	<a href="#15.9.1.4">MonthFromTime</a>(<i>t</i>)=5<br>	=
+	<a href="#DayWithinYear">DayWithinYear</a>(<i>t</i>)<span class="symbol">−</span>180<span class="symbol">−</span><a href="#InLeapYear">InLeapYear</a>(<i>t</i>)	if
+	<a href="#15.9.1.4">MonthFromTime</a>(<i>t</i>)=6<br>	=
+	<a href="#DayWithinYear">DayWithinYear</a>(<i>t</i>)<span class="symbol">−</span>211<span class="symbol">−</span><a href="#InLeapYear">InLeapYear</a>(<i>t</i>)	if
+	<a href="#15.9.1.4">MonthFromTime</a>(<i>t</i>)=7<br>	=
+	<a href="#DayWithinYear">DayWithinYear</a>(<i>t</i>)<span class="symbol">−</span>242<span class="symbol">−</span><a href="#InLeapYear">InLeapYear</a>(<i>t</i>)	if
+	<a href="#15.9.1.4">MonthFromTime</a>(<i>t</i>)=8<br>	=
+	<a href="#DayWithinYear">DayWithinYear</a>(<i>t</i>)<span class="symbol">−</span>272<span class="symbol">−</span><a href="#InLeapYear">InLeapYear</a>(<i>t</i>)	if
+	<a href="#15.9.1.4">MonthFromTime</a>(<i>t</i>)=9<br>	=
+	<a href="#DayWithinYear">DayWithinYear</a>(<i>t</i>)<span class="symbol">−</span>303<span class="symbol">−</span><a href="#InLeapYear">InLeapYear</a>(<i>t</i>)	if
+	<a href="#15.9.1.4">MonthFromTime</a>(<i>t</i>)=10<br>	=
+	<a href="#DayWithinYear">DayWithinYear</a>(<i>t</i>)<span class="symbol">−</span>333<span class="symbol">−</span><a href="#InLeapYear">InLeapYear</a>(<i>t</i>)	if
+	<a href="#15.9.1.4">MonthFromTime</a>(<i>t</i>)=11</p>
 	<h5 id="x15.9.1.6">15.9.1.6 Week Day <a href="#x15.9.1.6">#</a> <a href="#x15.9.1.6-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p class="sm-btm">
 	The
@@ -26622,7 +26622,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	is defined as</p>
 	<p class="code-example">
 	WeekDay(<i>t</i>)	
-	= (Day(<i>t</i>) + 4) <a href="#modulo">modulo</a> 7</p>
+	= (<a href="#15.9.1.2">Day</a>(<i>t</i>) + 4) <a href="#modulo">modulo</a> 7</p>
 	<p>
 	A
 	weekday value of 0
@@ -26632,7 +26632,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	specifies Wednesday; 4&nbsp;specifies
 	Thursday; 5 specifies
 	Friday; and 6 specifies
-	Saturday. Note that WeekDay(0) =
+	Saturday. Note that <a href="#15.9.1.6">WeekDay</a>(0) =
 	4, corresponding to Thursday, 01 January, 1970.</p>
 	<h5 id="x15.9.1.7">15.9.1.7 Local Time Zone Adjustment <a href="#x15.9.1.7">#</a> <a href="#x15.9.1.7-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
@@ -26655,18 +26655,18 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	the time since the beginning of the year</p>
 	<p class="code-example">
 	<i>t</i>
-	– TimeFromYear(YearFromTime(<i>t</i>))</p>
+	– <a href="#TimeFromYear">TimeFromYear</a>(<a href="#YearFromTime">YearFromTime</a>(<i>t</i>))</p>
 	<p class="sm-btm">
 	(2)
 	whether <i>t</i> is in a
 	leap year</p>
 	<p class="code-example">
-	InLeapYear(<i>t</i>)</p>
+	<a href="#InLeapYear">InLeapYear</a>(<i>t</i>)</p>
 	<p class="sm-btm">
 	(3)
 	the week day of the beginning of the year</p>
 	<p class="code-example">
-	WeekDay(TimeFromYear(YearFromTime(<i>t</i>))</p>
+	<a href="#15.9.1.6">WeekDay</a>(<a href="#TimeFromYear">TimeFromYear</a>(<a href="#YearFromTime">YearFromTime</a>(<i>t</i>))</p>
 	<p>
 	and
 	(4) the geographic location.</p>
@@ -26703,7 +26703,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	– LocalTZA)</p>
 	<p>
 	Note
-	that UTC(LocalTime(<i>t</i>))
+	that <a href="#15.9.1.9">UTC</a>(<a href="#15.9.1.9">LocalTime</a>(<i>t</i>))
 	is not necessarily always equal to <i>t</i>.</p>
 	<h5 id="x15.9.1.10">15.9.1.10 Hours, Minutes, Second, and Milliseconds <a href="#x15.9.1.10">#</a> <a href="#x15.9.1.10-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p class="sm-btm">
@@ -26733,14 +26733,14 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	SecondsPerMinute	=
 	60</p>
 	<p class="code-example">
-	msPerSecond	=
+	<dfn id="msPerSecond">msPerSecond</dfn>	=
 	1000</p>
 	<p class="code-example">
-	msPerMinute	=
+	<dfn id="msPerMinute">msPerMinute</dfn>	=
 	60000	= msPerSecond <span class="symbol">×</span>
 	SecondsPerMinute</p>
 	<p class="code-example">
-	msPerHour	=
+	<dfn id="msPerHour">msPerHour</dfn>	=
 	3600000	= msPerMinute <span class="symbol">×</span>
 	MinutesPerHour</p>
 	<h5 id="x15.9.1.11">15.9.1.11 MakeTime (hour, min, sec, ms) <a href="#x15.9.1.11">#</a> <a href="#x15.9.1.11-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
@@ -26774,10 +26774,10 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 		<li><p>
 		Let
 		<i>t</i> be <i>h</i> <code><b>*</b></code>
-		msPerHour <code><b>+</b></code> <i>m</i>
-		<code><b>*</b></code> msPerMinute <code><b>+</b></code>
+		<a href="#msPerHour">msPerHour</a> <code><b>+</b></code> <i>m</i>
+		<code><b>*</b></code> <a href="#msPerMinute">msPerMinute</a> <code><b>+</b></code>
 		<i>s</i> <code><b>*</b></code>
-		msPerSecond <code><b>+</b></code>
+		<a href="#msPerSecond">msPerSecond</a> <code><b>+</b></code>
 		<i>milli</i>, performing the arithmetic according to IEEE 754 rules
 		(that is, as if using the ECMAScript operators <code><b>*</b></code>
 		and <code><b>+</b></code>).</p>
@@ -26820,15 +26820,15 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 		</li>
 		<li><p>
 		Find
-		a value <i>t</i> such that YearFromTime(<i>t</i>) <code><b>==</b></code>
-		<i>ym</i> and MonthFromTime(<i>t</i>) <code><b>==</b></code>
-		<i>mn</i>) and DateFromTime(<i>t</i>) <code><b>==</b></code>
+		a value <i>t</i> such that <a href="#YearFromTime">YearFromTime</a>(<i>t</i>) <code><b>==</b></code>
+		<i>ym</i> and <a href="#15.9.1.4">MonthFromTime</a>(<i>t</i>) <code><b>==</b></code>
+		<i>mn</i>) and <a href="#15.9.1.5">DateFromTime</a>(<i>t</i>) <code><b>==</b></code>
 		1; but if this is not possible (because some argument is out of
 		range), return <b>NaN</b>.</p>
 		</li>
 		<li><p>
 		Return
-		Day(<i>t</i>) + <i>dt</i> <span class="symbol">−</span> 1.</p>
+		<a href="#15.9.1.2">Day</a>(<i>t</i>) + <i>dt</i> <span class="symbol">−</span> 1.</p>
 	</li></ol>
 	<h5 id="x15.9.1.13">15.9.1.13 MakeDate (day, time) <a href="#x15.9.1.13">#</a> <a href="#x15.9.1.13-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
@@ -27042,13 +27042,13 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>finalDate</i> be  MakeDate(MakeDay(<i>yr</i>, <i>m</i>, <i>dt</i>),
-		MakeTime(<i>h</i>, <i>min</i>, <i>s</i>, <i>milli</i>)).</p>
+		<i>finalDate</i> be  <a href="#15.9.1.13">MakeDate</a>(<a href="#15.9.1.12">MakeDay</a>(<i>yr</i>, <i>m</i>, <i>dt</i>),
+		<a href="#15.9.1.11">MakeTime</a>(<i>h</i>, <i>min</i>, <i>s</i>, <i>milli</i>)).</p>
 		</li>
 		<li><p>
 		Set
 		the [[PrimitiveValue]] internal property of the newly constructed
-		object to TimeClip(UTC(<i>finalDate</i>)).</p>
+		object to <a href="#15.9.1.14">TimeClip</a>(<a href="#15.9.1.9">UTC</a>(<i>finalDate</i>)).</p>
 	</li></ol>
 	<h5 id="x15.9.3.2">15.9.3.2 new Date (value) <a href="#x15.9.3.2">#</a> <a href="#x15.9.3.2-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
@@ -27092,7 +27092,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		<li><p>
 		Set
 		the [[PrimitiveValue]] internal property of the newly constructed
-		object to TimeClip(<i>V</i>) and return.</p>
+		object to <a href="#15.9.1.14">TimeClip</a>(<i>V</i>) and return.</p>
 	</li></ol>
 	<h5 id="x15.9.3.3">15.9.3.3 new Date ( ) <a href="#x15.9.3.3">#</a> <a href="#x15.9.3.3-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
@@ -27228,8 +27228,8 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Return
-		TimeClip(MakeDate(MakeDay(<i>yr</i>, <i>m</i>, <i>dt</i>),
-		MakeTime(<i>h</i>, <i>min</i>, <i>s</i>, <i>milli</i>))).</p>
+		<a href="#15.9.1.14">TimeClip</a>(<a href="#15.9.1.13">MakeDate</a>(<a href="#15.9.1.12">MakeDay</a>(<i>yr</i>, <i>m</i>, <i>dt</i>),
+		<a href="#15.9.1.11">MakeTime</a>(<i>h</i>, <i>min</i>, <i>s</i>, <i>milli</i>))).</p>
 	</li></ol>
 	<p>
 	The
@@ -27361,7 +27361,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Return
-		YearFromTime(LocalTime(<i>t</i>)).</p>
+		<a href="#YearFromTime">YearFromTime</a>(<a href="#15.9.1.9">LocalTime</a>(<i>t</i>)).</p>
 	</li></ol>
 	<h5 id="x15.9.5.11">15.9.5.11 Date.prototype.getUTCFullYear ( ) <a href="#x15.9.5.11">#</a> <a href="#x15.9.5.11-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<ol>
@@ -27375,7 +27375,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Return
-		YearFromTime(<i>t</i>).</p>
+		<a href="#YearFromTime">YearFromTime</a>(<i>t</i>).</p>
 	</li></ol>
 	<h5 id="x15.9.5.12">15.9.5.12 Date.prototype.getMonth ( ) <a href="#x15.9.5.12">#</a> <a href="#x15.9.5.12-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<ol>
@@ -27389,7 +27389,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Return
-		MonthFromTime(LocalTime(<i>t</i>)).</p>
+		<a href="#15.9.1.4">MonthFromTime</a>(<a href="#15.9.1.9">LocalTime</a>(<i>t</i>)).</p>
 	</li></ol>
 	<h5 id="x15.9.5.13">15.9.5.13 Date.prototype.getUTCMonth ( ) <a href="#x15.9.5.13">#</a> <a href="#x15.9.5.13-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<ol>
@@ -27403,7 +27403,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Return
-		MonthFromTime(<i>t</i>).</p>
+		<a href="#15.9.1.4">MonthFromTime</a>(<i>t</i>).</p>
 	</li></ol>
 	<h5 id="x15.9.5.14">15.9.5.14 Date.prototype.getDate ( ) <a href="#x15.9.5.14">#</a> <a href="#x15.9.5.14-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<ol>
@@ -27417,7 +27417,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Return
-		DateFromTime(LocalTime(<i>t</i>)).</p>
+		<a href="#15.9.1.5">DateFromTime</a>(<a href="#15.9.1.9">LocalTime</a>(<i>t</i>)).</p>
 	</li></ol>
 	<h5 id="x15.9.5.15">15.9.5.15 Date.prototype.getUTCDate ( ) <a href="#x15.9.5.15">#</a> <a href="#x15.9.5.15-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<ol>
@@ -27431,7 +27431,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Return
-		DateFromTime(<i>t</i>).</p>
+		<a href="#15.9.1.5">DateFromTime</a>(<i>t</i>).</p>
 	</li></ol>
 	<h5 id="x15.9.5.16">15.9.5.16 Date.prototype.getDay ( ) <a href="#x15.9.5.16">#</a> <a href="#x15.9.5.16-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<ol>
@@ -27445,7 +27445,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Return
-		WeekDay(LocalTime(<i>t</i>)).</p>
+		<a href="#15.9.1.6">WeekDay</a>(<a href="#15.9.1.9">LocalTime</a>(<i>t</i>)).</p>
 	</li></ol>
 	<h5 id="x15.9.5.17">15.9.5.17 Date.prototype.getUTCDay ( ) <a href="#x15.9.5.17">#</a> <a href="#x15.9.5.17-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<ol>
@@ -27459,7 +27459,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Return
-		WeekDay(<i>t</i>).</p>
+		<a href="#15.9.1.6">WeekDay</a>(<i>t</i>).</p>
 	</li></ol>
 	<h5 id="x15.9.5.18">15.9.5.18 Date.prototype.getHours ( ) <a href="#x15.9.5.18">#</a> <a href="#x15.9.5.18-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<ol>
@@ -27473,7 +27473,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Return
-		HourFromTime(LocalTime(<i>t</i>)).</p>
+		<a href="#15.9.1.10">HourFromTime</a>(<a href="#15.9.1.9">LocalTime</a>(<i>t</i>)).</p>
 	</li></ol>
 	<h5 id="x15.9.5.19">15.9.5.19 Date.prototype.getUTCHours ( ) <a href="#x15.9.5.19">#</a> <a href="#x15.9.5.19-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<ol>
@@ -27487,7 +27487,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Return
-		HourFromTime(<i>t</i>).</p>
+		<a href="#15.9.1.10">HourFromTime</a>(<i>t</i>).</p>
 	</li></ol>
 	<h5 id="x15.9.5.20">15.9.5.20 Date.prototype.getMinutes ( ) <a href="#x15.9.5.20">#</a> <a href="#x15.9.5.20-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<ol>
@@ -27501,7 +27501,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Return
-		MinFromTime(LocalTime(<i>t</i>)).</p>
+		<a href="#15.9.1.10">MinFromTime</a>(<a href="#15.9.1.9">LocalTime</a>(<i>t</i>)).</p>
 	</li></ol>
 	<h5 id="x15.9.5.21">15.9.5.21 Date.prototype.getUTCMinutes ( ) <a href="#x15.9.5.21">#</a> <a href="#x15.9.5.21-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<ol>
@@ -27515,7 +27515,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Return
-		MinFromTime(<i>t</i>).</p>
+		<a href="#15.9.1.10">MinFromTime</a>(<i>t</i>).</p>
 	</li></ol>
 	<h5 id="x15.9.5.22">15.9.5.22 Date.prototype.getSeconds ( ) <a href="#x15.9.5.22">#</a> <a href="#x15.9.5.22-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<ol>
@@ -27529,7 +27529,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Return
-		SecFromTime(LocalTime(<i>t</i>)).</p>
+		<a href="#15.9.1.10">SecFromTime</a>(<a href="#15.9.1.9">LocalTime</a>(<i>t</i>)).</p>
 	</li></ol>
 	<h5 id="x15.9.5.23">15.9.5.23 Date.prototype.getUTCSeconds ( ) <a href="#x15.9.5.23">#</a> <a href="#x15.9.5.23-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<ol>
@@ -27543,7 +27543,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Return
-		SecFromTime(<i>t</i>).</p>
+		<a href="#15.9.1.10">SecFromTime</a>(<i>t</i>).</p>
 	</li></ol>
 	<h5 id="x15.9.5.24">15.9.5.24 Date.prototype.getMilliseconds ( ) <a href="#x15.9.5.24">#</a> <a href="#x15.9.5.24-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<ol>
@@ -27557,7 +27557,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Return
-		msFromTime(LocalTime(<i>t</i>)).</p>
+		<a href="#15.9.1.10">msFromTime</a>(<a href="#15.9.1.9">LocalTime</a>(<i>t</i>)).</p>
 	</li></ol>
 	<h5 id="x15.9.5.25">15.9.5.25 Date.prototype.getUTCMilliseconds ( ) <a href="#x15.9.5.25">#</a> <a href="#x15.9.5.25-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<ol>
@@ -27571,7 +27571,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Return
-		msFromTime(<i>t</i>).</p>
+		<a href="#15.9.1.10">msFromTime</a>(<i>t</i>).</p>
 	</li></ol>
 	<h5 id="x15.9.5.26">15.9.5.26 Date.prototype.getTimezoneOffset ( ) <a href="#x15.9.5.26">#</a> <a href="#x15.9.5.26-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
@@ -27588,14 +27588,14 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Return
-		(<i>t</i> <span class="symbol">−</span> LocalTime(<i>t</i>))
-		/ msPerMinute.</p>
+		(<i>t</i> <span class="symbol">−</span> <a href="#15.9.1.9">LocalTime</a>(<i>t</i>))
+		/ <a href="#msPerMinute">msPerMinute</a>.</p>
 	</li></ol>
 	<h5 id="x15.9.5.27">15.9.5.27 Date.prototype.setTime (time) <a href="#x15.9.5.27">#</a> <a href="#x15.9.5.27-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<ol>
 		<li><p>
 		Let
-		<i>v</i> be TimeClip(<a href="#x9.3">ToNumber</a>(<i>time</i>)).</p>
+		<i>v</i> be <a href="#15.9.1.14">TimeClip</a>(<a href="#x9.3">ToNumber</a>(<i>time</i>)).</p>
 		</li>
 		<li><p>
 		Set
@@ -27609,16 +27609,16 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be the result of LocalTime(this time value).</p>
+		<i>t</i> be the result of <a href="#15.9.1.9">LocalTime</a>(this time value).</p>
 		</li>
 		<li><p>
 		Let
-		<i>time</i> be MakeTime(HourFromTime(<i>t</i>), MinFromTime(<i>t</i>),
-		SecFromTime(<i>t</i>), <a href="#x9.3">ToNumber</a>(<i>ms</i>)).</p>
+		<i>time</i> be <a href="#15.9.1.11">MakeTime</a>(<a href="#15.9.1.10">HourFromTime</a>(<i>t</i>), <a href="#15.9.1.10">MinFromTime</a>(<i>t</i>),
+		<a href="#15.9.1.10">SecFromTime</a>(<i>t</i>), <a href="#x9.3">ToNumber</a>(<i>ms</i>)).</p>
 		</li>
 		<li><p>
 		Let
-		<i>u</i> be TimeClip(UTC(MakeDate(Day(<i>t</i>), <i>time</i>))).</p>
+		<i>u</i> be <a href="#15.9.1.14">TimeClip</a>(<a href="#15.9.1.9">UTC</a>(<a href="#15.9.1.13">MakeDate</a>(<a href="#15.9.1.2">Day</a>(<i>t</i>), <i>time</i>))).</p>
 		</li>
 		<li><p>
 		Set
@@ -27636,12 +27636,12 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>time</i> be MakeTime(HourFromTime(<i>t</i>), MinFromTime(<i>t</i>),
-		SecFromTime(<i>t</i>), <a href="#x9.3">ToNumber</a>(<i>ms</i>)).</p>
+		<i>time</i> be <a href="#15.9.1.11">MakeTime</a>(<a href="#15.9.1.10">HourFromTime</a>(<i>t</i>), <a href="#15.9.1.10">MinFromTime</a>(<i>t</i>),
+		<a href="#15.9.1.10">SecFromTime</a>(<i>t</i>), <a href="#x9.3">ToNumber</a>(<i>ms</i>)).</p>
 		</li>
 		<li><p>
 		Let
-		<i>v</i> be TimeClip(MakeDate(Day(<i>t</i>), <i>time</i>)).</p>
+		<i>v</i> be <a href="#15.9.1.14">TimeClip</a>(<a href="#15.9.1.13">MakeDate</a>(<a href="#15.9.1.2">Day</a>(<i>t</i>), <i>time</i>)).</p>
 		</li>
 		<li><p>
 		Set
@@ -27659,7 +27659,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be the result of LocalTime(this time value).</p>
+		<i>t</i> be the result of <a href="#15.9.1.9">LocalTime</a>(this time value).</p>
 		</li>
 		<li><p>
 		Let
@@ -27667,17 +27667,17 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		If
-		<i>ms</i> is not specified, then let <i>milli</i> be msFromTime(<i>t</i>);
+		<i>ms</i> is not specified, then let <i>milli</i> be <a href="#15.9.1.10">msFromTime</a>(<i>t</i>);
 		otherwise, let <i>milli</i> be <a href="#x9.3">ToNumber</a>(<i>ms</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>date</i> be MakeDate(Day(<i>t</i>), MakeTime(HourFromTime(<i>t</i>),
-		MinFromTime(<i>t</i>), <i>s</i>, <i>milli</i>)).</p>
+		<i>date</i> be <a href="#15.9.1.13">MakeDate</a>(<a href="#15.9.1.2">Day</a>(<i>t</i>), <a href="#15.9.1.11">MakeTime</a>(<a href="#15.9.1.10">HourFromTime</a>(<i>t</i>),
+		<a href="#15.9.1.10">MinFromTime</a>(<i>t</i>), <i>s</i>, <i>milli</i>)).</p>
 		</li>
 		<li><p>
 		Let
-		<i>u</i> be TimeClip(UTC(<i>date</i>)).</p>
+		<i>u</i> be <a href="#15.9.1.14">TimeClip</a>(<a href="#15.9.1.9">UTC</a>(<i>date</i>)).</p>
 		</li>
 		<li><p>
 		Set
@@ -27708,17 +27708,17 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		If
-		<i>ms</i> is not specified, then let <i>milli</i> be msFromTime(<i>t</i>);
+		<i>ms</i> is not specified, then let <i>milli</i> be <a href="#15.9.1.10">msFromTime</a>(<i>t</i>);
 		otherwise, let <i>milli</i> be <a href="#x9.3">ToNumber</a>(<i>ms</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>date</i> be MakeDate(Day(<i>t</i>), MakeTime(HourFromTime(<i>t</i>),
-		MinFromTime(<i>t</i>), <i>s</i>, <i>milli</i>)).</p>
+		<i>date</i> be <a href="#15.9.1.13">MakeDate</a>(<a href="#15.9.1.2">Day</a>(<i>t</i>), <a href="#15.9.1.11">MakeTime</a>(<a href="#15.9.1.10">HourFromTime</a>(<i>t</i>),
+		<a href="#15.9.1.10">MinFromTime</a>(<i>t</i>), <i>s</i>, <i>milli</i>)).</p>
 		</li>
 		<li><p>
 		Let
-		<i>v</i> be TimeClip(<i>date</i>).</p>
+		<i>v</i> be <a href="#15.9.1.14">TimeClip</a>(<i>date</i>).</p>
 		</li>
 		<li><p>
 		Set
@@ -27746,7 +27746,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be the result of LocalTime(this time value).</p>
+		<i>t</i> be the result of <a href="#15.9.1.9">LocalTime</a>(this time value).</p>
 		</li>
 		<li><p>
 		Let
@@ -27754,22 +27754,22 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		If
-		<i>sec</i> is not specified, then let <i>s</i> be SecFromTime(<i>t</i>);
+		<i>sec</i> is not specified, then let <i>s</i> be <a href="#15.9.1.10">SecFromTime</a>(<i>t</i>);
 		otherwise, let <i>s</i> be <a href="#x9.3">ToNumber</a>(<i>sec</i>).</p>
 		</li>
 		<li><p>
 		If
-		<i>ms</i> is not specified, then let <i>milli</i> be msFromTime(<i>t</i>);
+		<i>ms</i> is not specified, then let <i>milli</i> be <a href="#15.9.1.10">msFromTime</a>(<i>t</i>);
 		otherwise, let <i>milli</i> be <a href="#x9.3">ToNumber</a>(<i>ms</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>date</i> be MakeDate(Day(<i>t</i>), MakeTime(HourFromTime(<i>t</i>),
+		<i>date</i> be <a href="#15.9.1.13">MakeDate</a>(<a href="#15.9.1.2">Day</a>(<i>t</i>), <a href="#15.9.1.11">MakeTime</a>(<a href="#15.9.1.10">HourFromTime</a>(<i>t</i>),
 		<i>m</i>, <i>s</i>, <i>milli</i>)).</p>
 		</li>
 		<li><p>
 		Let
-		<i>u</i> be TimeClip(UTC(<i>date</i>)).</p>
+		<i>u</i> be <a href="#15.9.1.14">TimeClip</a>(<a href="#15.9.1.9">UTC</a>(<i>date</i>)).</p>
 		</li>
 		<li><p>
 		Set
@@ -27805,22 +27805,22 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		If
-		<i>sec</i> is not specified, then let <i>s</i> be SecFromTime(<i>t</i>);
+		<i>sec</i> is not specified, then let <i>s</i> be <a href="#15.9.1.10">SecFromTime</a>(<i>t</i>);
 		otherwise, let <i>s</i> be <a href="#x9.3">ToNumber</a>(<i>sec</i>).</p>
 		</li>
 		<li><p>
 		If
-		<i>ms</i> is not specified, then let <i>milli</i> be msFromTime(<i>t</i>);
+		<i>ms</i> is not specified, then let <i>milli</i> be <a href="#15.9.1.10">msFromTime</a>(<i>t</i>);
 		otherwise, let <i>milli</i> be <a href="#x9.3">ToNumber</a>(<i>ms</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>date</i> be MakeDate(Day(<i>t</i>), MakeTime(HourFromTime(<i>t</i>),
+		<i>date</i> be <a href="#15.9.1.13">MakeDate</a>(<a href="#15.9.1.2">Day</a>(<i>t</i>), <a href="#15.9.1.11">MakeTime</a>(<a href="#15.9.1.10">HourFromTime</a>(<i>t</i>),
 		<i>m</i>, <i>s</i>, <i>milli</i>)).</p>
 		</li>
 		<li><p>
 		Let
-		<i>v</i> be TimeClip(<i>date</i>).</p>
+		<i>v</i> be <a href="#15.9.1.14">TimeClip</a>(<i>date</i>).</p>
 		</li>
 		<li><p>
 		Set
@@ -27853,7 +27853,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be the result of LocalTime(this time value).</p>
+		<i>t</i> be the result of <a href="#15.9.1.9">LocalTime</a>(this time value).</p>
 		</li>
 		<li><p>
 		Let
@@ -27861,27 +27861,27 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		If
-		<i>min</i> is not specified, then let <i>m</i> be MinFromTime(<i>t</i>);
+		<i>min</i> is not specified, then let <i>m</i> be <a href="#15.9.1.10">MinFromTime</a>(<i>t</i>);
 		otherwise, let <i>m</i> be <a href="#x9.3">ToNumber</a>(<i>min</i>).</p>
 		</li>
 		<li><p>
 		If
 		If <i>sec</i> is not specified, then let <i>s</i> be
-		SecFromTime(<i>t</i>); otherwise, let <i>s</i> be <a href="#x9.3">ToNumber</a>(<i>sec</i>).</p>
+		<a href="#15.9.1.10">SecFromTime</a>(<i>t</i>); otherwise, let <i>s</i> be <a href="#x9.3">ToNumber</a>(<i>sec</i>).</p>
 		</li>
 		<li><p>
 		If
-		<i>ms</i> is not specified, then let <i>milli</i> be msFromTime(<i>t</i>);
+		<i>ms</i> is not specified, then let <i>milli</i> be <a href="#15.9.1.10">msFromTime</a>(<i>t</i>);
 		otherwise, let <i>milli</i> be <a href="#x9.3">ToNumber</a>(<i>ms</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>date</i> be MakeDate(Day(<i>t</i>), MakeTime(<i>h</i>, <i>m</i>,
+		<i>date</i> be <a href="#15.9.1.13">MakeDate</a>(<a href="#15.9.1.2">Day</a>(<i>t</i>), <a href="#15.9.1.11">MakeTime</a>(<i>h</i>, <i>m</i>,
 		<i>s</i>, <i>milli</i>)).</p>
 		</li>
 		<li><p>
 		Let
-		<i>u</i> be TimeClip(UTC(<i>date</i>)).</p>
+		<i>u</i> be <a href="#15.9.1.14">TimeClip</a>(<a href="#15.9.1.9">UTC</a>(<i>date</i>)).</p>
 		</li>
 		<li><p>
 		Set
@@ -27922,27 +27922,27 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		If
-		<i>min</i> is not specified, then let <i>m</i> be MinFromTime(<i>t</i>);
+		<i>min</i> is not specified, then let <i>m</i> be <a href="#15.9.1.10">MinFromTime</a>(<i>t</i>);
 		otherwise, let <i>m</i> be <a href="#x9.3">ToNumber</a>(<i>min</i>).</p>
 		</li>
 		<li><p>
 		If
-		<i>sec</i> is not specified, then let <i>s</i> be SecFromTime(<i>t</i>);
+		<i>sec</i> is not specified, then let <i>s</i> be <a href="#15.9.1.10">SecFromTime</a>(<i>t</i>);
 		otherwise, let <i>s</i> be <a href="#x9.3">ToNumber</a>(<i>sec</i>).</p>
 		</li>
 		<li><p>
 		If
-		<i>ms</i> is not specified, then let <i>milli</i> be msFromTime(<i>t</i>);
+		<i>ms</i> is not specified, then let <i>milli</i> be <a href="#15.9.1.10">msFromTime</a>(<i>t</i>);
 		otherwise, let <i>milli</i> be <a href="#x9.3">ToNumber</a>(<i>ms</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>newDate</i> be MakeDate(Day(<i>t</i>), MakeTime(<i>h</i>, <i>m</i>,
+		<i>newDate</i> be <a href="#15.9.1.13">MakeDate</a>(<a href="#15.9.1.2">Day</a>(<i>t</i>), <a href="#15.9.1.11">MakeTime</a>(<i>h</i>, <i>m</i>,
 		<i>s</i>, <i>milli</i>)).</p>
 		</li>
 		<li><p>
 		Let
-		<i>v</i> be TimeClip(<i>newDate</i>).</p>
+		<i>v</i> be <a href="#15.9.1.14">TimeClip</a>(<i>newDate</i>).</p>
 		</li>
 		<li><p>
 		Set
@@ -27961,7 +27961,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be the result of LocalTime(this time value).</p>
+		<i>t</i> be the result of <a href="#15.9.1.9">LocalTime</a>(this time value).</p>
 		</li>
 		<li><p>
 		Let
@@ -27969,12 +27969,12 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>newDate</i> be MakeDate(MakeDay(YearFromTime(<i>t</i>),
-		MonthFromTime(<i>t</i>), <i>dt</i>), TimeWithinDay(<i>t</i>)).</p>
+		<i>newDate</i> be <a href="#15.9.1.13">MakeDate</a>(<a href="#15.9.1.12">MakeDay</a>(<a href="#YearFromTime">YearFromTime</a>(<i>t</i>),
+		<a href="#15.9.1.4">MonthFromTime</a>(<i>t</i>), <i>dt</i>), <a href="#15.9.1.2">TimeWithinDay</a>(<i>t</i>)).</p>
 		</li>
 		<li><p>
 		Let
-		<i>u</i> be TimeClip(UTC(<i>newDate</i>)).</p>
+		<i>u</i> be <a href="#15.9.1.14">TimeClip</a>(<a href="#15.9.1.9">UTC</a>(<i>newDate</i>)).</p>
 		</li>
 		<li><p>
 		Set
@@ -27996,12 +27996,12 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>newDate</i> be MakeDate(MakeDay(YearFromTime(<i>t</i>),
-		MonthFromTime(<i>t</i>), <i>dt</i>), TimeWithinDay(<i>t</i>)).</p>
+		<i>newDate</i> be <a href="#15.9.1.13">MakeDate</a>(<a href="#15.9.1.12">MakeDay</a>(<a href="#YearFromTime">YearFromTime</a>(<i>t</i>),
+		<a href="#15.9.1.4">MonthFromTime</a>(<i>t</i>), <i>dt</i>), <a href="#15.9.1.2">TimeWithinDay</a>(<i>t</i>)).</p>
 		</li>
 		<li><p>
 		Let
-		<i>v</i> be TimeClip(<i>newDate</i>).</p>
+		<i>v</i> be <a href="#15.9.1.14">TimeClip</a>(<i>newDate</i>).</p>
 		</li>
 		<li><p>
 		Set
@@ -28020,7 +28020,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be the result of LocalTime(this time value).</p>
+		<i>t</i> be the result of <a href="#15.9.1.9">LocalTime</a>(this time value).</p>
 		</li>
 		<li><p>
 		Let
@@ -28029,16 +28029,16 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		<li><p>
 		If
 		<i>date</i> is not specified, then let <i>dt</i> be
-		DateFromTime(<i>t</i>); otherwise, let <i>dt</i> be <a href="#x9.3">ToNumber</a>(<i>date</i>).</p>
+		<a href="#15.9.1.5">DateFromTime</a>(<i>t</i>); otherwise, let <i>dt</i> be <a href="#x9.3">ToNumber</a>(<i>date</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>newDate</i> be MakeDate(MakeDay(YearFromTime(<i>t</i>), <i>m</i>,
-		<i>dt</i>), TimeWithinDay(<i>t</i>)).</p>
+		<i>newDate</i> be <a href="#15.9.1.13">MakeDate</a>(<a href="#15.9.1.12">MakeDay</a>(<a href="#YearFromTime">YearFromTime</a>(<i>t</i>), <i>m</i>,
+		<i>dt</i>), <a href="#15.9.1.2">TimeWithinDay</a>(<i>t</i>)).</p>
 		</li>
 		<li><p>
 		Let
-		<i>u</i> be TimeClip(UTC(<i>newDate</i>)).</p>
+		<i>u</i> be <a href="#15.9.1.14">TimeClip</a>(<a href="#15.9.1.9">UTC</a>(<i>newDate</i>)).</p>
 		</li>
 		<li><p>
 		Set
@@ -28071,16 +28071,16 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		<li><p>
 		If
 		<i>date</i> is not specified, then let <i>dt</i> be
-		DateFromTime(<i>t</i>); otherwise, let <i>dt</i> be <a href="#x9.3">ToNumber</a>(<i>date</i>).</p>
+		<a href="#15.9.1.5">DateFromTime</a>(<i>t</i>); otherwise, let <i>dt</i> be <a href="#x9.3">ToNumber</a>(<i>date</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>newDate</i> be MakeDate(MakeDay(YearFromTime(<i>t</i>), <i>m</i>,
-		<i>dt</i>), TimeWithinDay(<i>t</i>)).</p>
+		<i>newDate</i> be <a href="#15.9.1.13">MakeDate</a>(<a href="#15.9.1.12">MakeDay</a>(<a href="#YearFromTime">YearFromTime</a>(<i>t</i>), <i>m</i>,
+		<i>dt</i>), <a href="#15.9.1.2">TimeWithinDay</a>(<i>t</i>)).</p>
 		</li>
 		<li><p>
 		Let
-		<i>v</i> be TimeClip(<i>newDate</i>).</p>
+		<i>v</i> be <a href="#15.9.1.14">TimeClip</a>(<i>newDate</i>).</p>
 		</li>
 		<li><p>
 		Set
@@ -28109,7 +28109,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be the result of LocalTime(this time value); but if this
+		<i>t</i> be the result of <a href="#15.9.1.9">LocalTime</a>(this time value); but if this
 		time value is <b>NaN</b>, let <i>t</i> be <b>+0</b>.</p>
 		</li>
 		<li><p>
@@ -28119,22 +28119,22 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		<li><p>
 		If
 		<i>month</i> is not specified, then let <i>m</i> be
-		MonthFromTime(<i>t</i>); otherwise, let <i>m</i> be
+		<a href="#15.9.1.4">MonthFromTime</a>(<i>t</i>); otherwise, let <i>m</i> be
 		<a href="#x9.3">ToNumber</a>(<i>month</i>).</p>
 		</li>
 		<li><p>
 		If
 		<i>date</i> is not specified, then let <i>dt</i> be
-		DateFromTime(<i>t</i>); otherwise, let <i>dt</i> be <a href="#x9.3">ToNumber</a>(<i>date</i>).</p>
+		<a href="#15.9.1.5">DateFromTime</a>(<i>t</i>); otherwise, let <i>dt</i> be <a href="#x9.3">ToNumber</a>(<i>date</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>newDate</i> be MakeDate(MakeDay(<i>y</i>, <i>m</i>, <i>dt</i>),
-		TimeWithinDay(<i>t</i>)).</p>
+		<i>newDate</i> be <a href="#15.9.1.13">MakeDate</a>(<a href="#15.9.1.12">MakeDay</a>(<i>y</i>, <i>m</i>, <i>dt</i>),
+		<a href="#15.9.1.2">TimeWithinDay</a>(<i>t</i>)).</p>
 		</li>
 		<li><p>
 		Let
-		<i>u</i> be TimeClip(UTC(<i>newDate</i>)).</p>
+		<i>u</i> be <a href="#15.9.1.14">TimeClip</a>(<a href="#15.9.1.9">UTC</a>(<i>newDate</i>)).</p>
 		</li>
 		<li><p>
 		Set
@@ -28173,22 +28173,22 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		<li><p>
 		If
 		<i>month</i> is not specified, then let <i>m</i> be
-		MonthFromTime(<i>t</i>); otherwise, let <i>m</i> be
+		<a href="#15.9.1.4">MonthFromTime</a>(<i>t</i>); otherwise, let <i>m</i> be
 		<a href="#x9.3">ToNumber</a>(<i>month</i>).</p>
 		</li>
 		<li><p>
 		If
 		<i>date</i> is not specified, then let <i>dt</i> be
-		DateFromTime(<i>t</i>); otherwise, let <i>dt</i> be <a href="#x9.3">ToNumber</a>(<i>date</i>).</p>
+		<a href="#15.9.1.5">DateFromTime</a>(<i>t</i>); otherwise, let <i>dt</i> be <a href="#x9.3">ToNumber</a>(<i>date</i>).</p>
 		</li>
 		<li><p>
 		Let
-		<i>newDate</i> be MakeDate(MakeDay(<i>y</i>, <i>m</i>, <i>dt</i>),
-		TimeWithinDay(<i>t</i>)).</p>
+		<i>newDate</i> be <a href="#15.9.1.13">MakeDate</a>(<a href="#15.9.1.12">MakeDay</a>(<i>y</i>, <i>m</i>, <i>dt</i>),
+		<a href="#15.9.1.2">TimeWithinDay</a>(<i>t</i>)).</p>
 		</li>
 		<li><p>
 		Let
-		<i>v</i> be TimeClip(<i>newDate</i>).</p>
+		<i>v</i> be <a href="#15.9.1.14">TimeClip</a>(<i>newDate</i>).</p>
 		</li>
 		<li><p>
 		Set
@@ -28461,7 +28461,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	descriptions below use the following variables:</p>
 	<ul>
 		<li><p>
-		<i>Input</i>
+		<dfn id="Input-RegExp"><i>Input</i></dfn>
 		is the String being matched by the regular expression pattern. The
 		notation <i>input</i>[<i>n</i>]
 		means the <i>n</i><sup><i>th</i></sup>
@@ -28471,12 +28471,12 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		(exclusive).</p>
 		</li>
 		<li><p>
-		<i>InputLength</i>
+		<dfn id="InputLength"><i>InputLength</i></dfn>
 		is the number of characters in the <i>Input</i>
 		String.</p>
 		</li>
 		<li><p>
-		<i>NcapturingParens</i>
+		<dfn id="NcapturingParens"><i>NcapturingParens</i></dfn>
 		is the total number of left capturing parentheses (i.e. the total
 		number of times the <i>Atom</i>
 		<b>::</b> <code><b>(</b></code><b>
@@ -28490,12 +28490,12 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		production.</p>
 		</li>
 		<li><p>
-		<i>IgnoreCase</i>
+		<dfn id="IgnoreCase"><i>IgnoreCase</i></dfn>
 		is the setting of the RegExp object's <code><b>ignoreCase</b></code>
 		property.</p>
 		</li>
 		<li><p>
-		<i>Multiline</i>
+		<dfn id="Multiline"><i>Multiline</i></dfn>
 		is the setting of the RegExp object’s <code><b>multiline</b></code>
 		property.</p>
 	</li></ul>
@@ -28505,17 +28505,17 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ul>
 		<li><p>
 		A
-		<i>CharSet</i> is a
+		<dfn id="CharSet"><i>CharSet</i></dfn> is a
 		mathematical set of characters.</p>
 		</li>
 		<li><p>
 		A
-		<i>State</i> is an
+		<dfn id="State"><i>State</i></dfn> is an
 		ordered pair (<i>endIndex</i>,
 		<i>captures</i>)
-		where <i>endIndex</i> is
-		an integer and <i>captures</i>
-		is an internal array of <i>NcapturingParens</i>
+		where <dfn id="endIndex"><i>endIndex</i></dfn> is
+		an integer and <dfn id="captures"><i>captures</i></dfn>
+		is an internal array of <i><a href="#NcapturingParens">NcapturingParens</a></i>
 		values. <i>States</i>
 		are used to represent partial match states in the regular
 		expression matching algorithms. The <i>endIndex</i>
@@ -28531,57 +28531,57 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		A
-		<i>MatchResult</i> is
-		either a <i>State</i> or
+		<dfn id="MatchResult"><i>MatchResult</i></dfn> is
+		either a <i><a href="#State">State</a></i> or
 		the special token <b>failure</b> that indicates that the match
 		failed.</p>
 		</li>
 		<li><p>
 		A
-		<i>Continuation</i>
+		<dfn id="Continuation"><i>Continuation</i></dfn>
 		procedure is an internal closure (i.e. an internal procedure with
-		some arguments already bound to values) that takes one <i>State</i>
-		argument and returns a <i>MatchResult</i>
+		some arguments already bound to values) that takes one <i><a href="#State">State</a></i>
+		argument and returns a <i><a href="#MatchResult">MatchResult</a></i>
 		result. If an internal closure references variables bound in the
 		function that creates the closure, the closure uses the values that
 		these variables had at the time the closure was created. The
-		<i>Continuation</i>
+		<i><a href="#Continuation">Continuation</a></i>
 		attempts to match the remaining portion (specified by the closure's
 		already-bound arguments) of the pattern against the input String,
-		starting at the intermediate state given by its <i>State</i>
-		argument. If the match succeeds, the <i>Continuation</i>
-		returns the final <i>State</i>
-		that it reached; if the match fails, the <i>Continuation</i>
+		starting at the intermediate state given by its <i><a href="#State">State</a></i>
+		argument. If the match succeeds, the <i><a href="#Continuation">Continuation</a></i>
+		returns the final <i><a href="#State">State</a></i>
+		that it reached; if the match fails, the <i><a href="#Continuation">Continuation</a></i>
 		returns <b>failure</b>.</p>
 		</li>
 		<li><p>
 		A
-		<i>Matcher</i> procedure
-		is an internal closure that takes two arguments -- a <i>State</i>
-		and a <i>Continuation</i>
-		-- and returns a <i>MatchResult</i>
+		<dfn id="Matcher"><i>Matcher</i></dfn> procedure
+		is an internal closure that takes two arguments -- a <i><a href="#State">State</a></i>
+		and a <i><a href="#Continuation">Continuation</a></i>
+		-- and returns a <i><a href="#MatchResult">MatchResult</a></i>
 		result. A <i>Matcher</i>
 		attempts to match a middle subpattern (specified by the closure's
 		already-bound arguments) of the pattern against the input String,
-		starting at the intermediate state given by its <i>State</i>
-		argument. The <i>Continuation</i>
+		starting at the intermediate state given by its <i><a href="#State">State</a></i>
+		argument. The <i><a href="#Continuation">Continuation</a></i>
 		argument should be a closure that matches the rest of the pattern.
-		After matching the subpattern of a pattern to obtain a new <i>State</i>,
-		the <i>Matcher</i> then
-		calls <i>Continuation</i>
-		on that new <i>State</i>
+		After matching the subpattern of a pattern to obtain a new <i><a href="#State">State</a></i>,
+		the <i><a href="#Matcher">Matcher</a></i> then
+		calls <i><a href="#Continuation">Continuation</a></i>
+		on that new <i><a href="#State">State</a></i>
 		to test if the rest of the pattern can match as well. If it can,
-		the matcher returns the <i>State</i>
-		returned by <i>Continuation</i>;
-		if not, the <i>Matcher</i>
+		the matcher returns the <i><a href="#State">State</a></i>
+		returned by <i><a href="#Continuation">Continuation</a></i>;
+		if not, the <i><a href="#Matcher">Matcher</a></i>
 		may try different choices at its choice points, repeatedly calling
-		<i>Continuation</i>
+		<i><a href="#Continuation">Continuation</a></i>
 		until it either succeeds or all possibilities have been exhausted.</p>
 		</li>
 		<li><p>
 		An
-		<i>AssertionTester</i>
-		procedure is an internal closure that takes a <i>State</i>
+		<dfn id="AssertionTester"><i>AssertionTester</i></dfn>
+		procedure is an internal closure that takes a <i><a href="#State">State</a></i>
 		argument and returns a Boolean result. The assertion tester tests a
 		specific condition (specified by the closure's already-bound
 		arguments) against the current place in the input String and
@@ -28590,7 +28590,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		An
-		<i>EscapeValue</i> is
+		<dfn id="EscapeValue"><i>EscapeValue</i></dfn> is
 		either a character or an integer. An <i>EscapeValue</i>
 		is used to denote the interpretation of a <i>DecimalEscape</i>
 		escape sequence: a character <i>ch</i>
@@ -28609,7 +28609,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Evaluate
-		<i>Disjunction</i> to obtain a Matcher <i>m</i>.</p>
+		<i>Disjunction</i> to obtain a <a href="#Matcher">Matcher</a> <i>m</i>.</p>
 		</li>
 		<li><p>
 		Return
@@ -28620,27 +28620,27 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 <ol class="indent1">
 		<li><p>
 		Let
-		<i>Input</i> be the given String <i>str</i>. This variable will be
+		<i><a href="#Input-RegExp">Input</a></i> be the given String <i>str</i>. This variable will be
 		used throughout the algorithms in <a href="#x15.10.2">15.10.2</a>.</p>
 		</li>
 		<li><p>
 		Let
-		<i>InputLength</i> be the length of <i>Input</i>. This variable
+		<i><a href="#InputLength">InputLength</a></i> be the length of <i><a href="#Input-RegExp">Input</a></i>. This variable
 		will be used throughout the algorithms in <a href="#x15.10.2">15.10.2</a>.</p>
 		</li>
 		<li><p>
 		Let
-		<i>c</i> be a Continuation that always returns its State argument
-		as a successful MatchResult.</p>
+		<i>c</i> be a <a href="#Continuation">Continuation</a> that always returns its <a href="#State">State</a> argument
+		as a successful <a href="#MatchResult">MatchResult</a>.</p>
 		</li>
 		<li><p>
 		Let
-		<i>cap</i> be an internal array of <i>NcapturingParens</i>
-		<b>undefined</b> values, indexed 1 through <i>NcapturingParens</i>.</p>
+		<i>cap</i> be an internal array of <i><a href="#NcapturingParens">NcapturingParens</a></i>
+		<b>undefined</b> values, indexed 1 through <i><a href="#NcapturingParens">NcapturingParens</a></i>.</p>
 		</li>
 		<li><p>
 		Let
-		<i>x</i> be the State (<i>index</i>, <i>cap</i>).</p>
+		<i>x</i> be the <a href="#State">State</a> (<i>index</i>, <i>cap</i>).</p>
 		</li>
 		<li><p>
 		Call
@@ -28666,8 +28666,8 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	production <i>Disjunction</i>
 	<b>:: </b><i>Alternative</i>
 	evaluates by evaluating <i>Alternative</i>
-	to obtain a <i>Matcher</i>
-	and returning that <i>Matcher</i>.</p>
+	to obtain a <i><a href="#Matcher">Matcher</a></i>
+	and returning that <i><a href="#Matcher">Matcher</a></i>.</p>
 	<p>
 	The
 	production <i>Disjunction</i>
@@ -28677,16 +28677,16 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Evaluate
-		<i>Alternative</i> to obtain a Matcher <i>m1</i>.</p>
+		<i>Alternative</i> to obtain a <a href="#Matcher">Matcher</a> <i>m1</i>.</p>
 		</li>
 		<li><p>
 		Evaluate
-		<i>Disjunction</i> to obtain a Matcher <i>m2</i>.</p>
+		<i>Disjunction</i> to obtain a <a href="#Matcher">Matcher</a> <i>m2</i>.</p>
 		</li>
 		<li><p>
 		Return
-		an internal Matcher closure that takes two arguments, a State <i>x</i>
-		and a Continuation <i>c</i>, and performs the following:</p>
+		an internal <a href="#Matcher">Matcher</a> closure that takes two arguments, a <a href="#State">State</a> <i>x</i>
+		and a <a href="#Continuation">Continuation</a> <i>c</i>, and performs the following:</p>
 		<ol>
 			<ol>
 				<ol>
@@ -28748,8 +28748,8 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	The
 	production <i>Alternative</i>
 	<b>:: </b>[empty]
-	evaluates by returning a Matcher that takes two arguments, a State <i>x</i>
-	and a Continuation <i>c</i>,
+	evaluates by returning a <a href="#Matcher">Matcher</a> that takes two arguments, a <a href="#State">State</a> <i>x</i>
+	and a <a href="#Continuation">Continuation</a> <i>c</i>,
 	and returns the result of calling <i>c</i>(<i>x</i>).</p>
 	<p>
 	The
@@ -28760,22 +28760,22 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Evaluate
-		<i>Alternative</i> to obtain a Matcher <i>m1</i>.</p>
+		<i>Alternative</i> to obtain a <a href="#Matcher">Matcher</a> <i>m1</i>.</p>
 		</li>
 		<li><p>
 		Evaluate
-		<i>Term</i> to obtain a Matcher <i>m2</i>.</p>
+		<i>Term</i> to obtain a <a href="#Matcher">Matcher</a> <i>m2</i>.</p>
 		</li>
 		<li><p>
 		Return
-		an internal Matcher closure that takes two arguments, a State <i>x</i>
-		and a Continuation <i>c</i>, and performs the following:</p>
+		an internal <a href="#Matcher">Matcher</a> closure that takes two arguments, a <a href="#State">State</a> <i>x</i>
+		and a <a href="#Continuation">Continuation</a> <i>c</i>, and performs the following:</p>
 		<ol>
 			<ol>
 				<ol>
 					<li><p>
 					Create
-					a Continuation <i>d</i> that takes a State argument <i>y</i> and
+					a <a href="#Continuation">Continuation</a> <i>d</i> that takes a <a href="#State">State</a> argument <i>y</i> and
 					returns the result of calling <i>m2</i>(<i>y</i>, <i>c</i>).</p>
 					</li>
 					<li><p>
@@ -28801,14 +28801,14 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	The
 	production <i>Term</i> <b>::
 	</b><i>Assertion</i>
-	evaluates by returning an internal Matcher closure that takes two
-	arguments, a State <i>x</i>
-	and a Continuation <i>c</i>,
+	evaluates by returning an internal <a href="#Matcher">Matcher</a> closure that takes two
+	arguments, a <a href="#State">State</a> <i>x</i>
+	and a <a href="#Continuation">Continuation</a> <i>c</i>,
 	and performs the following:</p>
 	<ol>
 		<li><p>
 		Evaluate
-		<i>Assertion</i> to obtain an AssertionTester <i>t</i>.</p>
+		<i>Assertion</i> to obtain an <a href="#AssertionTester">AssertionTester</a> <i>t</i>.</p>
 		</li>
 		<li><p>
 		Call
@@ -28827,7 +28827,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	production <i>Term</i> <b>::
 	</b><i>Atom</i> evaluates
 	by evaluating <i>Atom</i>
-	to obtain a Matcher and returning that Matcher.</p>
+	to obtain a <a href="#Matcher">Matcher</a> and returning that <a href="#Matcher">Matcher</a>.</p>
 	<p>
 	The
 	production <i>Term</i> <b>::
@@ -28837,7 +28837,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Evaluate
-		<i>Atom</i> to obtain a Matcher <i>m</i>.</p>
+		<i>Atom</i> to obtain a <a href="#Matcher">Matcher</a> <i>m</i>.</p>
 		</li>
 		<li><p>
 		Evaluate
@@ -28872,14 +28872,14 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Return
-		an internal Matcher closure that takes two arguments, a State <i>x</i>
-		and a Continuation <i>c</i>, and performs the following:</p>
+		an internal <a href="#Matcher">Matcher</a> closure that takes two arguments, a <a href="#State">State</a> <i>x</i>
+		and a <a href="#Continuation">Continuation</a> <i>c</i>, and performs the following:</p>
 		<ol>
 			<ol>
 				<ol>
 					<li><p>
 					Call
-					RepeatMatcher(<i>m</i>, <i>min</i>, <i>max</i>, <i>greedy</i>,
+					<a href="#RepeatMatcher">RepeatMatcher</a>(<i>m</i>, <i>min</i>, <i>max</i>, <i>greedy</i>,
 					<i>x</i>, <i>c</i>, <i>parenIndex</i>, <i>parenCount</i>) and
 					return its result.</p>
 				</li></ol>
@@ -28888,13 +28888,13 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	</li></ol>
 	<p>
 	The
-	abstract operation <i>RepeatMatcher</i> takes eight parameters, a
-	Matcher <i>m</i>, an
+	abstract operation <dfn id="RepeatMatcher"><i>RepeatMatcher</i></dfn> takes eight parameters, a
+	<a href="#Matcher">Matcher</a> <i>m</i>, an
 	integer <i>min</i>, an
 	integer (or <span class="symbol">∞</span>) <i>max</i>,
 	a Boolean <i>greedy</i>,
-	a State <i>x</i>, a
-	Continuation <i>c</i>, an
+	a <a href="#State">State</a> <i>x</i>, a
+	<a href="#Continuation">Continuation</a> <i>c</i>, an
 	integer <i>parenIndex</i>,
 	and an integer <i>parenCount</i>,
 	and performs the following:</p>
@@ -28906,15 +28906,14 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Create
-		an internal Continuation closure <i>d</i> that takes one State
-		argument <i>y</i> and performs the following:</p>
+		an internal <a href="#Continuation">Continuation</a> closure <i>d</i> that takes one <a href="#State">State</a> argument <i>y</i> and performs the following:</p>
 		<ol>
 			<ol>
 				<ol>
 					<li><p>
 					If
-					<i>min</i> is zero and <i>y</i>'s <i>endIndex</i> is equal to
-					<i>x</i>'s <i>endIndex</i>, then return <b>failure</b>.</p>
+					<i>min</i> is zero and <i>y</i>'s <i><a href="#endIndex">endIndex</a></i> is equal to
+					<i>x</i>'s <i><a href="#endIndex">endIndex</a></i>, then return <b>failure</b>.</p>
 					</li>
 					<li><p>
 					If
@@ -28929,7 +28928,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 					</li>
 					<li><p>
 					Call
-					RepeatMatcher(<i>m</i>, <i>min2</i>, <i>max2</i>, <i>greedy</i>,
+					<a href="#RepeatMatcher">RepeatMatcher</a>(<i>m</i>, <i>min2</i>, <i>max2</i>, <i>greedy</i>,
 					<i>y</i>, <i>c</i>, <i>parenIndex</i>, <i>parenCount</i>) and
 					return its result.</p>
 				</li></ol>
@@ -28938,7 +28937,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>cap</i> be a fresh copy of <i>x</i>'s <i>captures</i> internal
+		<i>cap</i> be a fresh copy of <i>x</i>'s <i><a href="#captures">captures</a></i> internal
 		array.</p>
 		</li>
 		<li><p>
@@ -28950,11 +28949,11 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>e</i> be <i>x</i>'s <i>endIndex</i>.</p>
+		<i>e</i> be <i>x</i>'s <i><a href="#endIndex">endIndex</a></i>.</p>
 		</li>
 		<li><p>
 		Let
-		<i>xr</i> be the State (<i>e</i>, <i>cap</i>).</p>
+		<i>xr</i> be the <a href="#State">State</a> (<i>e</i>, <i>cap</i>).</p>
 		</li>
 		<li><p>
 		If
@@ -29055,8 +29054,8 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p>
 	which
 	returns the gcd in unary notation <code><b>"aaaaa"</b></code>.</p>
-	<p><b class="note">NOTE 3</b> Step 4 of the RepeatMatcher clears <i>Atom's</i>
-	captures each time <i>Atom</i>
+	<p><b class="note">NOTE 3</b> Step 4 of the <a href="#RepeatMatcher">RepeatMatcher</a> clears <i>Atom's</i>
+	<a href="#captures">captures</a> each time <i>Atom</i>
 	is repeated. We can see its behaviour in the regular expression</p>
 	<p class="code-example">
 	<code><b>/(z)((a+)?(b+)?(c))*/.exec("zaacbbbcac")</b></code></p>
@@ -29075,7 +29074,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	each iteration of the outermost <code><b>*</b></code>
 	clears all captured Strings contained in the quantified <i>Atom</i>,
 	which in this case includes capture Strings numbered 2, 3, and 4.</p>
-	<p><b class="note">NOTE 4</b> Step 1 of the RepeatMatcher's <i>d</i>
+	<p><b class="note">NOTE 4</b> Step 1 of the <a href="#RepeatMatcher">RepeatMatcher</a>'s <i>d</i>
 	closure states that, once the minimum number of repetitions has been
 	satisfied, any more expansions of <i>Atom</i>
 	that match the empty String are not considered for further
@@ -29097,13 +29096,13 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	The
 	production <i>Assertion</i>
 	<b>:: </b><code><b>^</b></code>
-	evaluates by returning an internal AssertionTester closure that
-	takes a State argument <i>x</i>
+	evaluates by returning an internal <a href="#AssertionTester">AssertionTester</a> closure that
+	takes a <a href="#State">State</a> argument <i>x</i>
 	and performs the following:</p>
 	<ol>
 		<li><p>
 		Let
-		<i>e</i> be <i>x</i>'s <i>endIndex</i>.</p>
+		<i>e</i> be <i>x</i>'s <i><a href="#endIndex">endIndex</a></i>.</p>
 		</li>
 		<li><p>
 		If
@@ -29111,11 +29110,11 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		If
-		<i>Multiline</i> is <b>false</b>, return <b>false</b>.</p>
+		<i><a href="#Multiline">Multiline</a></i> is <b>false</b>, return <b>false</b>.</p>
 		</li>
 		<li><p>
 		If
-		the character <i>Input</i>[<i>e</i>–1] is one of <i>LineTerminator</i>,
+		the character <i><a href="#Input-RegExp">Input</a></i>[<i>e</i>–1] is one of <i><a href="#LineTerminator">LineTerminator</a></i>,
 		return <b>true</b>.</p>
 		</li>
 		<li><p>
@@ -29126,17 +29125,17 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	The
 	production <i>Assertion</i>
 	<b>:: </b><code><b>$</b></code>
-	evaluates by returning an internal AssertionTester closure that
-	takes a State argument <i>x</i>
+	evaluates by returning an internal <a href="#AssertionTester">AssertionTester</a> closure that
+	takes a <a href="#State">State</a> argument <i>x</i>
 	and performs the following:</p>
 	<ol>
 		<li><p>
 		Let
-		<i>e</i> be <i>x</i>'s <i>endIndex</i>.</p>
+		<i>e</i> be <i>x</i>'s <i><a href="#endIndex">endIndex</a></i>.</p>
 		</li>
 		<li><p>
 		If
-		<i>e</i> is equal to <i>InputLength</i>, return <b>true</b>.</p>
+		<i>e</i> is equal to <i><a href="#InputLength">InputLength</a></i>, return <b>true</b>.</p>
 		</li>
 		<li><p>
 		If
@@ -29144,7 +29143,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		If
-		the character <i>Input</i>[<i>e</i>] is one of <i>LineTerminator</i>,
+		the character <i><a href="#Input-RegExp">Input</a></i>[<i>e</i>] is one of <i><a href="#LineTerminator">LineTerminator</a></i>,
 		return <b>true</b>.</p>
 		</li>
 		<li><p>
@@ -29155,22 +29154,22 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	The
 	production <i>Assertion</i>
 	<b>:: </b><code><b>\ b</b></code>
-	evaluates by returning an internal AssertionTester closure that
-	takes a State argument <i>x</i>
+	evaluates by returning an internal <a href="#AssertionTester">AssertionTester</a> closure that
+	takes a <a href="#State">State</a> argument <i>x</i>
 	and performs the following:</p>
 	<ol>
 		<li><p>
 		Let
-		<i>e</i> be <i>x</i>'s <i>endIndex</i>.</p>
+		<i>e</i> be <i>x</i>'s <i><a href="#endIndex">endIndex</a></i>.</p>
 		</li>
 		<li><p>
 		Call
-		<i>IsWordChar</i>(<i>e</i>–1) and let <i>a</i> be the Boolean
+		<i><a href="#IsWordChar">IsWordChar</a></i>(<i>e</i>–1) and let <i>a</i> be the Boolean
 		result.</p>
 		</li>
 		<li><p>
 		Call
-		<i>IsWordChar</i>(<i>e</i>) and let <i>b</i> be the Boolean result.</p>
+		<i><a href="#IsWordChar">IsWordChar</a></i>(<i>e</i>) and let <i>b</i> be the Boolean result.</p>
 		</li>
 		<li><p>
 		If
@@ -29188,22 +29187,22 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	The
 	production <i>Assertion</i>
 	<b>:: </b><code><b>\ B</b></code>
-	evaluates by returning an internal AssertionTester closure that
-	takes a State argument <i>x</i>
+	evaluates by returning an internal <a href="#AssertionTester">AssertionTester</a> closure that
+	takes a <a href="#State">State</a> argument <i>x</i>
 	and performs the following:</p>
 	<ol>
 		<li><p>
 		Let
-		<i>e</i> be <i>x</i>'s <i>endIndex</i>.</p>
+		<i>e</i> be <i>x</i>'s <i><a href="#endIndex">endIndex</a></i>.</p>
 		</li>
 		<li><p>
 		Call
-		<i>IsWordChar</i>(<i>e</i>–1) and let <i>a</i> be the Boolean
+		<i><a href="#IsWordChar">IsWordChar</a></i>(<i>e</i>–1) and let <i>a</i> be the Boolean
 		result.</p>
 		</li>
 		<li><p>
 		Call
-		<i>IsWordChar</i>(<i>e</i>) and let b be the Boolean result.</p>
+		<i><a href="#IsWordChar">IsWordChar</a></i>(<i>e</i>) and let b be the Boolean result.</p>
 		</li>
 		<li><p>
 		If
@@ -29225,19 +29224,18 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Evaluate
-		<i>Disjunction</i> to obtain a Matcher <i>m</i>.</p>
+		<i>Disjunction</i> to obtain a <a href="#Matcher">Matcher</a> <i>m</i>.</p>
 		</li>
 		<li><p>
 		Return
-		an internal Matcher closure that takes two arguments, a State <i>x</i>
-		and a Continuation <i>c</i>, and performs the following steps:</p>
+		an internal <a href="#Matcher">Matcher</a> closure that takes two arguments, a <a href="#State">State</a> <i>x</i>
+		and a <a href="#Continuation">Continuation</a> <i>c</i>, and performs the following steps:</p>
 		<ol>
 			<ol>
 				<ol>
 					<li><p>
 					Let
-					<i>d</i> be a Continuation that always returns its State
-					argument as a successful MatchResult.</p>
+					<i>d</i> be a <a href="#Continuation">Continuation</a> that always returns its <a href="#State">State</a> argument as a successful <a href="#MatchResult">MatchResult</a>.</p>
 					</li>
 					<li><p>
 					Call
@@ -29253,15 +29251,15 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 					</li>
 					<li><p>
 					Let
-					<i>cap</i> be <i>y</i>'s <i>captures</i> internal array.</p>
+					<i>cap</i> be <i>y</i>'s <i><a href="#captures">captures</a></i> internal array.</p>
 					</li>
 					<li><p>
 					Let
-					<i>xe</i> be <i>x</i>'s <i>endIndex</i>.</p>
+					<i>xe</i> be <i>x</i>'s <i><a href="#endIndex">endIndex</a></i>.</p>
 					</li>
 					<li><p>
 					Let
-					<i>z</i> be the State (<i>xe</i>, <i>cap</i>).</p>
+					<i>z</i> be the <a href="#State">State</a> (<i>xe</i>, <i>cap</i>).</p>
 					</li>
 					<li><p>
 					Call
@@ -29278,19 +29276,18 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Evaluate
-		<i>Disjunction</i> to obtain a Matcher <i>m</i>.</p>
+		<i>Disjunction</i> to obtain a <a href="#Matcher">Matcher</a> <i>m</i>.</p>
 		</li>
 		<li><p>
 		Return
-		an internal Matcher closure that takes two arguments, a State <i>x</i>
-		and a Continuation <i>c</i>, and performs the following steps:</p>
+		an internal <a href="#Matcher">Matcher</a> closure that takes two arguments, a <a href="#State">State</a> <i>x</i>
+		and a <a href="#Continuation">Continuation</a> <i>c</i>, and performs the following steps:</p>
 		<ol>
 			<ol>
 				<ol>
 					<li><p>
 					Let
-					<i>d</i> be a Continuation that always returns its State
-					argument as a successful MatchResult.</p>
+					<i>d</i> be a <a href="#Continuation">Continuation</a> that always returns its <a href="#State">State</a> argument as a successful <a href="#MatchResult">MatchResult</a>.</p>
 					</li>
 					<li><p>
 					Call
@@ -29309,17 +29306,17 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	</li></ol>
 	<p>
 	The
-	abstract operation <i>IsWordChar</i>
+	abstract operation <dfn id="IsWordChar"><i>IsWordChar</i></dfn>
 	takes an integer parameter <i>e</i>
 	and performs the following:</p>
 	<ol>
 		<li><p>
 		If
-		<i>e</i> == –1 or <i>e</i> == <i>InputLength</i>, return <b>false</b>.</p>
+		<i>e</i> == –1 or <i>e</i> == <i><a href="#InputLength">InputLength</a></i>, return <b>false</b>.</p>
 		</li>
 		<li><p>
 		Let
-		<i>c</i> be the character <i>Input</i>[<i>e</i>].</p>
+		<i>c</i> be the character <i><a href="#Input-RegExp">Input</a></i>[<i>e</i>].</p>
 		</li>
 		<li><p>
 		If
@@ -29692,12 +29689,12 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>A</i> be a one-element CharSet containing the character <i>ch</i>.</p>
+		<i>A</i> be a one-element <a href="#CharSet">CharSet</a> containing the character <i>ch</i>.</p>
 		</li>
 		<li><p>
 		Call
-		<i>CharacterSetMatcher</i>(<i>A</i>, <b>false</b>) and return its
-		Matcher result.</p>
+		<i><a href="#CharacterSetMatcher">CharacterSetMatcher</a></i>(<i>A</i>, <b>false</b>) and return its
+		<a href="#Matcher">Matcher</a> result.</p>
 	</li></ol>
 	<p>
 	The
@@ -29707,19 +29704,19 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>A</i> be the set of all characters except <i>LineTerminator</i>.</p>
+		<i>A</i> be the set of all characters except <i><a href="#LineTerminator">LineTerminator</a></i>.</p>
 		</li>
 		<li><p>
 		Call
-		<i>CharacterSetMatcher</i>(<i>A</i>, <b>false</b>) and return its
-		Matcher result.</p>
+		<i><a href="#CharacterSetMatcher">CharacterSetMatcher</a></i>(<i>A</i>, <b>false</b>) and return its
+		<a href="#Matcher">Matcher</a> result.</p>
 	</li></ol>
 	<p>
 	The
 	production <i>Atom</i> <b>::
 	</b><code><b>\</b></code> <i>AtomEscape</i>
 	evaluates by evaluating <i>AtomEscape</i>
-	to obtain a Matcher and returning that Matcher.</p>
+	to obtain a <a href="#Matcher">Matcher</a> and returning that <a href="#Matcher">Matcher</a>.</p>
 	<p>
 	The
 	production <i>Atom</i> <b>::
@@ -29728,13 +29725,13 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Evaluate
-		<i>CharacterClass</i> to obtain a CharSet <i>A</i> and a Boolean
+		<i>CharacterClass</i> to obtain a <a href="#CharSet">CharSet</a> <i>A</i> and a Boolean
 		<i>invert</i>.</p>
 		</li>
 		<li><p>
 		Call
-		<i>CharacterSetMatcher</i>(<i>A</i>, <i>invert</i>) and return its
-		Matcher result.</p>
+		<i><a href="#CharacterSetMatcher">CharacterSetMatcher</a></i>(<i>A</i>, <i>invert</i>) and return its
+		<a href="#Matcher">Matcher</a> result.</p>
 	</li></ol>
 	<p>
 	The
@@ -29744,7 +29741,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Evaluate
-		<i>Disjunction</i> to obtain a Matcher <i>m</i>.</p>
+		<i>Disjunction</i> to obtain a <a href="#Matcher">Matcher</a> <i>m</i>.</p>
 		</li>
 		<li><p>
 		Let
@@ -29758,35 +29755,34 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Return
-		an internal Matcher closure that takes two arguments, a State <i>x</i>
-		and a Continuation <i>c</i>, and performs the following steps:</p>
+		an internal <a href="#Matcher">Matcher</a> closure that takes two arguments, a <a href="#State">State</a> <i>x</i>
+		and a <a href="#Continuation">Continuation</a> <i>c</i>, and performs the following steps:</p>
 		<ol>
 			<ol>
 				<ol>
 					<li><p>
 					Create
-					an internal Continuation closure <i>d</i> that takes one State
-					argument <i>y</i> and performs the following steps:</p>
+					an internal <a href="#Continuation">Continuation</a> closure <i>d</i> that takes one <a href="#State">State</a> argument <i>y</i> and performs the following steps:</p>
 					<ol>
 						<ol>
 							<ol>
 								<li><p>
 								Let
-								<i>cap</i> be a fresh copy of <i>y</i>'s <i>captures</i>
+								<i>cap</i> be a fresh copy of <i>y</i>'s <i><a href="#captures">captures</a></i>
 								internal array.</p>
 								</li>
 								<li><p>
 								Let
-								<i>xe</i> be <i>x</i>'s <i>endIndex</i>.</p>
+								<i>xe</i> be <i>x</i>'s <i><a href="#endIndex">endIndex</a></i>.</p>
 								</li>
 								<li><p>
 								Let
-								<i>ye</i> be <i>y</i>'s <i>endIndex</i>.</p>
+								<i>ye</i> be <i>y</i>'s <i><a href="#endIndex">endIndex</a></i>.</p>
 								</li>
 								<li><p>
 								Let
 								<i>s</i> be a fresh String whose characters are the
-								characters of <i>Input</i> at positions <i>xe</i> (inclusive)
+								characters of <i><a href="#Input-RegExp">Input</a></i> at positions <i>xe</i> (inclusive)
 								through <i>ye</i> (exclusive).</p>
 								</li>
 								<li><p>
@@ -29795,7 +29791,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 								</li>
 								<li><p>
 								Let
-								<i>z</i> be the State (<i>ye</i>, <i>cap</i>).</p>
+								<i>z</i> be the <a href="#State">State</a> (<i>ye</i>, <i>cap</i>).</p>
 								</li>
 								<li><p>
 								Call
@@ -29816,33 +29812,33 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	production <i>Atom</i> <b>::
 	</b><code><b>( ? :</b></code> <i>Disjunction</i><code><b>
 	)</b></code> evaluates by evaluating <i>Disjunction</i>
-	to obtain a Matcher and returning that Matcher.</p>
+	to obtain a <a href="#Matcher">Matcher</a> and returning that <a href="#Matcher">Matcher</a>.</p>
 	<p>
 	The
-	abstract operation <i>CharacterSetMatcher </i>takes two arguments, a CharSet <i>A</i>
+	abstract operation <dfn id="CharacterSetMatcher"><i>CharacterSetMatcher </i></dfn> takes two arguments, a <a href="#CharSet">CharSet</a> <i>A</i>
 	and a Boolean flag <i>invert</i>,
 	and performs the following:</p>
 	<ol>
 		<li value="1"><p>
 		Return
-		an internal Matcher closure that takes two arguments, a State <i>x</i>
-		and a Continuation <i>c</i>, and performs the following steps:</p>
+		an internal <a href="#Matcher">Matcher</a> closure that takes two arguments, a <a href="#State">State</a> <i>x</i>
+		and a <a href="#Continuation">Continuation</a> <i>c</i>, and performs the following steps:</p>
 		<ol class="decimal">
 					<li><p>
 					Let
-					<i>e</i> be <i>x</i>'s <i>endIndex</i>.</p>
+					<i>e</i> be <i>x</i>'s <i><a href="#endIndex">endIndex</a></i>.</p>
 					</li>
 					<li><p>
 					If
-					<i>e</i> == <i>InputLength</i>, return <b>failure</b>.</p>
+					<i>e</i> == <i><a href="#InputLength">InputLength</a></i>, return <b>failure</b>.</p>
 					</li>
 					<li><p>
 					Let
-					<i>ch</i> be the character <i>Input</i>[<i>e</i>].</p>
+					<i>ch</i> be the character <i><a href="#Input-RegExp">Input</a></i>[<i>e</i>].</p>
 					</li>
 					<li><p>
 					Let
-					<i>cc</i> be the result of <i>Canonicalize</i>(<i>ch</i>).</p>
+					<i>cc</i> be the result of <i><a href="#Canonicalize">Canonicalize</a></i>(<i>ch</i>).</p>
 					</li>
 					<li><p>
 					If
@@ -29851,7 +29847,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 						<li><p>
 						If
 						there does not exist a member <i>a</i> of set <i>A</i> such
-						that <i>Canonicalize</i>(<i>a</i>) == <i>cc</i>, return
+						that <i><a href="#Canonicalize">Canonicalize</a></i>(<i>a</i>) == <i>cc</i>, return
 						<b>failure</b>.</p>
 					</li></ol>
 					</li>
@@ -29862,16 +29858,16 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 						<li><p>
 						If
 						there exists a member <i>a</i> of set <i>A</i> such that
-						<i>Canonicalize</i>(<i>a</i>) == <i>cc</i>, return<b> failure.</b></p>
+						<i><a href="#Canonicalize">Canonicalize</a></i>(<i>a</i>) == <i>cc</i>, return<b> failure.</b></p>
 					</li></ol>
 					</li>
 					<li><p>
 					Let
-					<i>cap</i> be <i>x</i>'s <i>captures</i> internal array.</p>
+					<i>cap</i> be <i>x</i>'s <i><a href="#captures">captures</a></i> internal array.</p>
 					</li>
 					<li><p>
 					Let
-					<i>y</i> be the State (<i>e</i>+1, <i>cap</i>).</p>
+					<i>y</i> be the <a href="#State">State</a> (<i>e</i>+1, <i>cap</i>).</p>
 					</li>
 					<li><p>
 					Call
@@ -29882,12 +29878,12 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	
 	<p>
 	The
-	abstract operation <i>Canonicalize </i>takes a character parameter <i>ch</i>
+	abstract operation <dfn id="Canonicalize"><i>Canonicalize </i></dfn> takes a character parameter <i>ch</i>
 	and performs the following steps:</p>
 	<ol>
 		<li><p>
 		If
-		<i>IgnoreCase</i> is <b>false</b>, return <i>ch</i>.</p>
+		<i><a href="#IgnoreCase">IgnoreCase</a></i> is <b>false</b>, return <i>ch</i>.</p>
 		</li>
 		<li><p>
 		Let
@@ -29935,7 +29931,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	form (this unusual behaviour is inherited from Perl). This only
 	matters when the <i>Disjunction</i>
 	contains capturing parentheses and the sequel of the pattern
-	contains backreferences to those captures.</p>
+	contains backreferences to those <a href="#captures">captures</a>.</p>
 	<p>For
 	example,</p>
 	<p class="code-example">
@@ -30015,7 +30011,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Evaluate
-		<i>DecimalEscape</i> to obtain an EscapeValue <i>E</i>.</p>
+		<i>DecimalEscape</i> to obtain an <a href="#EscapeValue">EscapeValue</a> <i>E</i>.</p>
 		</li>
 		<li><p>
 		If
@@ -30027,12 +30023,12 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 			</li>
 			<li><p>
 			Let
-			<i>A</i> be a one-element CharSet containing the character <i>ch</i>.</p>
+			<i>A</i> be a one-element <a href="#CharSet">CharSet</a> containing the character <i>ch</i>.</p>
 			</li>
 			<li><p>
 			Call
-			<i>CharacterSetMatcher</i>(<i>A</i>, <b>false</b>) and return its
-			Matcher result.</p>
+			<i><a href="#CharacterSetMatcher">CharacterSetMatcher</a></i>(<i>A</i>, <b>false</b>) and return its
+			<a href="#Matcher">Matcher</a> result.</p>
 		</li></ol>
 		</li>
 		<li><p>
@@ -30041,19 +30037,19 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		If
-		<i>n</i>=0 or <i>n</i>&gt;<i>NCapturingParens</i> then throw a
+		<i>n</i>=0 or <i>n</i>&gt;<i><a href="#NcapturingParens">NCapturingParens</a></i> then throw a
 		<b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception.</p>
 		</li>
 		<li><p>
 		Return
-		an internal Matcher closure that takes two arguments, a State <i>x</i>
-		and a Continuation <i>c</i>, and performs the following:</p>
+		an internal <a href="#Matcher">Matcher</a> closure that takes two arguments, a <a href="#State">State</a> <i>x</i>
+		and a <a href="#Continuation">Continuation</a> <i>c</i>, and performs the following:</p>
 		<ol>
 			<ol>
 				<ol>
 					<li><p>
 					Let
-					<i>cap</i> be <i>x</i>'s <i>captures</i> internal array.</p>
+					<i>cap</i> be <i>x</i>'s <i><a href="#captures">captures</a></i> internal array.</p>
 					</li>
 					<li><p>
 					Let
@@ -30066,7 +30062,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 					</li>
 					<li><p>
 					Let
-					<i>e</i> be <i>x</i>'s <i>endIndex</i>.</p>
+					<i>e</i> be <i>x</i>'s <i><a href="#endIndex">endIndex</a></i>.</p>
 					</li>
 					<li><p>
 					Let
@@ -30078,18 +30074,18 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 					</li>
 					<li><p>
 					If
-					<i>f</i>&gt;<i>InputLength</i>, return <b>failure</b>.</p>
+					<i>f</i>&gt;<i><a href="#InputLength">InputLength</a></i>, return <b>failure</b>.</p>
 					</li>
 					<li><p>
 					If
 					there exists an integer <i>i</i> between 0 (inclusive) and <i>len</i>
-					(exclusive) such that <i>Canonicalize</i>(<i>s</i>[<i>i</i>]) is
-					not the same character as <i>Canonicalize</i>(<i>Input</i>
+					(exclusive) such that <i><a href="#Canonicalize">Canonicalize</a></i>(<i>s</i>[<i>i</i>]) is
+					not the same character as <i><a href="#Canonicalize">Canonicalize</a></i>(<i><a href="#Input-RegExp">Input</a></i>
 					[<i>e</i>+<i>i</i>]), then return <b>failure</b>.</p>
 					</li>
 					<li><p>
 					Let
-					<i>y</i> be the State (<i>f</i>, <i>cap</i>).</p>
+					<i>y</i> be the <a href="#State">State</a> (<i>f</i>, <i>cap</i>).</p>
 					</li>
 					<li><p>
 					Call
@@ -30110,12 +30106,12 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>A</i> be a one-element CharSet containing the character <i>ch</i>.</p>
+		<i>A</i> be a one-element <a href="#CharSet">CharSet</a> containing the character <i>ch</i>.</p>
 		</li>
 		<li><p>
 		Call
-		<i>CharacterSetMatcher</i>(<i>A</i>, <b>false</b>) and return its
-		Matcher result.</p>
+		<i><a href="#CharacterSetMatcher">CharacterSetMatcher</a></i>(<i>A</i>, <b>false</b>) and return its
+		<a href="#Matcher">Matcher</a> result.</p>
 	</li></ol>
 	<p>
 	The
@@ -30125,12 +30121,12 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Evaluate
-		<i>CharacterClassEscape</i> to obtain a CharSet <i>A</i>.</p>
+		<i>CharacterClassEscape</i> to obtain a <a href="#CharSet">CharSet</a> <i>A</i>.</p>
 		</li>
 		<li><p>
 		Call
-		<i>CharacterSetMatcher</i>(<i>A</i>, <b>false</b>) and return its
-		Matcher result.</p>
+		<i><a href="#CharacterSetMatcher">CharacterSetMatcher</a></i>(<i>A</i>, <b>false</b>) and return its
+		<a href="#Matcher">Matcher</a> result.</p>
 	</li></ol>
 	<p><b class="note">NOTE</b> An
 	escape sequence of the form <code><b>\</b></code>
@@ -30332,12 +30328,12 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		If
-		<i>i</i> is zero, return the EscapeValue consisting of a &lt;NUL&gt;
+		<i>i</i> is zero, return the <a href="#EscapeValue">EscapeValue</a> consisting of a &lt;NUL&gt;
 		character (Unicode value 0000).</p>
 		</li>
 		<li><p>
 		Return
-		the EscapeValue consisting of the integer <i>i</i>.</p>
+		the <a href="#EscapeValue">EscapeValue</a> consisting of the integer <i>i</i>.</p>
 	</li></ol>
 	<p>
 	The
@@ -30374,8 +30370,8 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	production <i>CharacterClassEscape</i>
 	<b>:: </b><code><b>s</b></code>
 	evaluates by returning the set of characters containing the
-	characters that are on the right-hand side of the <i>WhiteSpace</i>
-	(<a href="#x7.2">7.2</a>) or <i>LineTerminator</i>
+	characters that are on the right-hand side of the <i><a href="#WhiteSpace">WhiteSpace</a></i>
+	(<a href="#x7.2">7.2</a>) or <i><a href="#LineTerminator">LineTerminator</a></i>
 	(<a href="#x7.3">7.3</a>) productions.</p>
 	<p>
 	The
@@ -30733,33 +30729,33 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	{<b>^</b>}]<code><b>
 	</b></code> <i>ClassRanges</i><code><b>
 	]</b></code> evaluates by evaluating <i>ClassRanges</i>
-	to obtain a CharSet and returning that CharSet and the Boolean
+	to obtain a <a href="#CharSet">CharSet</a> and returning that <a href="#CharSet">CharSet</a> and the Boolean
 	<b>false</b>.</p>
 	<p>
 	The
 	production <i>CharacterClass</i>
 	 <b>:: </b><code><b>[ ^</b></code> <i>ClassRanges</i><code><b>
 	]</b></code> evaluates by evaluating <i>ClassRanges</i>
-	to obtain a CharSet and returning that CharSet and the Boolean <b>true</b>.</p>
+	to obtain a <a href="#CharSet">CharSet</a> and returning that <a href="#CharSet">CharSet</a> and the Boolean <b>true</b>.</p>
 	<h5 id="x15.10.2.14">15.10.2.14 ClassRanges <a href="#x15.10.2.14">#</a> <a href="#x15.10.2.14-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	The
 	production <i>ClassRanges</i><code><b>
 	</b></code><b>:: </b>[empty]
-	evaluates by returning the empty CharSet.</p>
+	evaluates by returning the empty <a href="#CharSet">CharSet</a>.</p>
 	<p>
 	The
 	production <i>ClassRanges</i><code><b>
 	</b></code><b>:: </b><i>NonemptyClassRanges</i>
 	evaluates by evaluating <i>NonemptyClassRanges</i>
-	to obtain a CharSet and returning that CharSet.</p>
+	to obtain a <a href="#CharSet">CharSet</a> and returning that <a href="#CharSet">CharSet</a>.</p>
 	<h5 id="x15.10.2.15">15.10.2.15 NonemptyClassRanges <a href="#x15.10.2.15">#</a> <a href="#x15.10.2.15-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	The
 	production <i>NonemptyClassRanges</i>
 	<b>:: </b><i>ClassAtom</i>
 	evaluates by evaluating <i>ClassAtom</i>
-	to obtain a CharSet and returning that CharSet.</p>
+	to obtain a <a href="#CharSet">CharSet</a> and returning that <a href="#CharSet">CharSet</a>.</p>
 	<p>
 	The
 	production NonemptyClassRanges <b>:: </b>ClassAtom
@@ -30767,15 +30763,15 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Evaluate
-		<i>ClassAtom</i> to obtain a CharSet <i>A</i>.</p>
+		<i>ClassAtom</i> to obtain a <a href="#CharSet">CharSet</a> <i>A</i>.</p>
 		</li>
 		<li><p>
 		Evaluate
-		<i>NonemptyClassRangesNoDash</i> to obtain a CharSet <i>B</i>.</p>
+		<i>NonemptyClassRangesNoDash</i> to obtain a <a href="#CharSet">CharSet</a> <i>B</i>.</p>
 		</li>
 		<li><p>
 		Return
-		the union of CharSets <i>A</i> and <i>B</i>.</p>
+		the union of <a href="#CharSet">CharSet</a>s <i>A</i> and <i>B</i>.</p>
 	</li></ol>
 	<p>
 	The
@@ -30784,29 +30780,29 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Evaluate
-		the first <i>ClassAtom</i> to obtain a CharSet <i>A</i>.</p>
+		the first <i>ClassAtom</i> to obtain a <a href="#CharSet">CharSet</a> <i>A</i>.</p>
 		</li>
 		<li><p>
 		Evaluate
-		the second <i>ClassAtom</i> to obtain a CharSet <i>B</i>.</p>
+		the second <i>ClassAtom</i> to obtain a <a href="#CharSet">CharSet</a> <i>B</i>.</p>
 		</li>
 		<li><p>
 		Evaluate
-		<i>ClassRanges</i> to obtain a CharSet <i>C</i>.</p>
+		<i>ClassRanges</i> to obtain a <a href="#CharSet">CharSet</a> <i>C</i>.</p>
 		</li>
 		<li><p>
 		Call
-		<i>CharacterRange</i>(<i>A</i>, <i>B</i>) and let <i>D</i> be the
-		resulting CharSet.</p>
+		<i><a href="#CharacterRange">CharacterRange</a></i>(<i>A</i>, <i>B</i>) and let <i>D</i> be the
+		resulting <a href="#CharSet">CharSet</a>.</p>
 		</li>
 		<li><p>
 		Return
-		the union of CharSets <i>D</i> and <i>C</i>.</p>
+		the union of <a href="#CharSet">CharSet</a>s <i>D</i> and <i>C</i>.</p>
 	</li></ol>
 	<p>
 	The
-	abstract operation <i>CharacterRange</i>
-	takes two CharSet parameters <i>A</i>
+	abstract operation <dfn id="CharacterRange"><i>CharacterRange</i></dfn>
+	takes two <a href="#CharSet">CharSet</a> parameters <i>A</i>
 	and <i>B</i> and performs
 	the following:</p>
 	<ol>
@@ -30818,11 +30814,11 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>a</i> be the one character in CharSet <i>A</i>.</p>
+		<i>a</i> be the one character in <a href="#CharSet">CharSet</a> <i>A</i>.</p>
 		</li>
 		<li><p>
 		Let
-		<i>b</i> be the one character in CharSet <i>B</i>.</p>
+		<i>b</i> be the one character in <a href="#CharSet">CharSet</a> <i>B</i>.</p>
 		</li>
 		<li><p>
 		Let
@@ -30847,7 +30843,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	production <i>NonemptyClassRangesNoDash</i>
 	<b>:: </b><i>ClassAtom</i>
 	evaluates by evaluating <i>ClassAtom</i>
-	to obtain a CharSet and returning that CharSet.</p>
+	to obtain a <a href="#CharSet">CharSet</a> and returning that <a href="#CharSet">CharSet</a>.</p>
 	<p>
 	The
 	production <i>NonemptyClassRangesNoDash</i>
@@ -30857,15 +30853,15 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Evaluate
-		<i>ClassAtomNoDash</i> to obtain a CharSet <i>A</i>.</p>
+		<i>ClassAtomNoDash</i> to obtain a <a href="#CharSet">CharSet</a> <i>A</i>.</p>
 		</li>
 		<li><p>
 		Evaluate
-		<i>NonemptyClassRangesNoDash</i> to obtain a CharSet <i>B</i>.</p>
+		<i>NonemptyClassRangesNoDash</i> to obtain a <a href="#CharSet">CharSet</a> <i>B</i>.</p>
 		</li>
 		<li><p>
 		Return
-		the union of CharSets <i>A</i> and <i>B</i>.</p>
+		the union of <a href="#CharSet">CharSet</a>s <i>A</i> and <i>B</i>.</p>
 	</li></ol>
 	<p>
 	The
@@ -30877,24 +30873,24 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Evaluate
-		<i>ClassAtomNoDash</i> to obtain a CharSet <i>A</i>.</p>
+		<i>ClassAtomNoDash</i> to obtain a <a href="#CharSet">CharSet</a> <i>A</i>.</p>
 		</li>
 		<li><p>
 		Evaluate
-		<i>ClassAtom</i> to obtain a CharSet <i>B</i>.</p>
+		<i>ClassAtom</i> to obtain a <a href="#CharSet">CharSet</a> <i>B</i>.</p>
 		</li>
 		<li><p>
 		Evaluate
-		<i>ClassRanges</i> to obtain a CharSet <i>C</i>.</p>
+		<i>ClassRanges</i> to obtain a <a href="#CharSet">CharSet</a> <i>C</i>.</p>
 		</li>
 		<li><p>
 		Call
-		<i>CharacterRange</i>(<i>A</i>, <i>B</i>) and let <i>D</i> be the
-		resulting CharSet.</p>
+		<i><a href="#CharacterRange">CharacterRange</a></i>(<i>A</i>, <i>B</i>) and let <i>D</i> be the
+		resulting <a href="#CharSet">CharSet</a>.</p>
 		</li>
 		<li><p>
 		Return
-		the union of CharSets <i>D</i> and <i>C</i>.</p>
+		the union of <a href="#CharSet">CharSet</a>s <i>D</i> and <i>C</i>.</p>
 	</li></ol>
 	<p class="sp"><b class="note">NOTE 1</b> <i>ClassRanges</i> can
 	expand into single <i>ClassAtoms</i>
@@ -30929,13 +30925,13 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	The
 	production <i>ClassAtom</i>
 	<b>:: </b><code><b>-</b></code>
-	evaluates by returning the CharSet containing the one character <code><b>-</b></code>.</p>
+	evaluates by returning the <a href="#CharSet">CharSet</a> containing the one character <code><b>-</b></code>.</p>
 	<p>
 	The
 	production <i>ClassAtom</i>
 	<b>:: </b><i>ClassAtomNoDash</i>
 	evaluates by evaluating <i>ClassAtomNoDash</i>
-	to obtain a CharSet and returning that CharSet.</p>
+	to obtain a <a href="#CharSet">CharSet</a> and returning that <a href="#CharSet">CharSet</a>.</p>
 	<h5 id="x15.10.2.18">15.10.2.18 ClassAtomNoDash <a href="#x15.10.2.18">#</a> <a href="#x15.10.2.18-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	The
@@ -30943,14 +30939,14 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<b>:: </b><i>SourceCharacter</i>
 	<b>but not one of </b><code><b>\</b></code><b>
 	or </b><code><b>]</b></code><b> or </b><code><b>-
-	</b></code>evaluates by returning a one-element CharSet containing
+	</b></code>evaluates by returning a one-element <a href="#CharSet">CharSet</a> containing
 	the character represented by <i>SourceCharacter</i>.</p>
 	<p>
 	The
 	production <i>ClassAtomNoDash</i>
 	<b>:: </b><code><b>\</b></code> <i>ClassEscape</i>
 	evaluates by evaluating <i>ClassEscape</i>
-	to obtain a CharSet and returning that CharSet.</p>
+	to obtain a <a href="#CharSet">CharSet</a> and returning that <a href="#CharSet">CharSet</a>.</p>
 	<h5 id="x15.10.2.19">15.10.2.19 ClassEscape <a href="#x15.10.2.19">#</a> <a href="#x15.10.2.19-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<p>
 	The
@@ -30960,7 +30956,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Evaluate
-		<i>DecimalEscape</i> to obtain an EscapeValue <i>E</i>.</p>
+		<i>DecimalEscape</i> to obtain an <a href="#EscapeValue">EscapeValue</a> <i>E</i>.</p>
 		</li>
 		<li><p>
 		If
@@ -30973,27 +30969,27 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Return
-		the one-element CharSet containing the character <i>ch</i>.</p>
+		the one-element <a href="#CharSet">CharSet</a> containing the character <i>ch</i>.</p>
 	</li></ol>
 	<p>
 	The
 	production <i>ClassEscape</i>
 	<b>:: </b><code><b>b</b></code>
-	evaluates by returning the CharSet containing the one character &lt;BS&gt;
+	evaluates by returning the <a href="#CharSet">CharSet</a> containing the one character &lt;BS&gt;
 	(Unicode value 0008).</p>
 	<p>
 	The
 	production <i>ClassEscape</i>
 	<b>:: </b><i>CharacterEscape</i>
 	evaluates by evaluating <i>CharacterEscape</i>
-	to obtain a character and returning a one-element CharSet containing
+	to obtain a character and returning a one-element <a href="#CharSet">CharSet</a> containing
 	that character.</p>
 	<p>
 	The
 	production <i>ClassEscape</i>
 	<b>:: </b><i>CharacterClassEscape</i>
 	evaluates by evaluating <i>CharacterClassEscape</i>
-	to obtain a CharSet and returning that CharSet.</p>
+	to obtain a <a href="#CharSet">CharSet</a> and returning that <a href="#CharSet">CharSet</a>.</p>
 	<p><b class="note">NOTE</b> A
 	<i>ClassAtom</i> can use
 	any of the escape sequences that are allowed in the rest of the
@@ -31102,7 +31098,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<code><b>"/"</b></code>,
 	and <i>F</i>
 	can be parsed (in an appropriate lexical context) as a
-	<i>RegularExpressionLiteral</i>
+	<i><a href="#x7.8.5">RegularExpressionLiteral</a></i>
 	that behaves identically to the constructed regular expression. For
 	example, if <i>P</i>
 	is <code><b>"/"</b></code>,
@@ -31113,7 +31109,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	because <code><b>///</b></code>
 	followed by <i>F</i>
 	would be parsed as a <i>SingleLineComment</i>
-	rather than a <i>RegularExpressionLiteral</i>.
+	rather than a <i><a href="#x7.8.5">RegularExpressionLiteral</a></i>.
 	If <i>P</i>
 	is the empty String, this specification can be met by letting <i>S</i>
 	be <code><b>"(?:)"</b></code>.
@@ -31163,13 +31159,13 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	[[Class]] internal property of the newly constructed object is set
 	to <code><b>"RegExp"</b></code>.</p>
 	<p><b class="note">NOTE</b> If
-	pattern is a <i>StringLiteral</i>,
+	pattern is a <i><a href="#x7.8.4">StringLiteral</a></i>,
 	the usual escape sequence substitutions are performed before the
 	String is processed by RegExp. If pattern must contain an escape
 	sequence to be recognised by RegExp, any
 	backslash <code><b>\</b></code>
-	characters must be escaped within the <i>StringLiteral</i>
-	to prevent them being removed when the contents of the <i>StringLiteral</i>
+	characters must be escaped within the <i><a href="#x7.8.4">StringLiteral</a></i>
+	to prevent them being removed when the contents of the <i><a href="#x7.8.4">StringLiteral</a></i>
 	are formed. 
 	</p>
 	<h4 id="x15.10.5">15.10.5 Properties of the RegExp Constructor <a href="#x15.10.5">#</a> <a href="#x15.10.5-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
@@ -31311,7 +31307,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 			<ol>
 				<li><p>
 				Let
-				<i>r</i> be the State result of the call to [[Match]].</p>
+				<i>r</i> be the <a href="#State">State</a> result of the call to [[Match]].</p>
 				</li>
 				<li><p>
 				Set
@@ -31322,7 +31318,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>e</i> be <i>r</i>'s <i>endIndex</i> value.</p>
+		<i>e</i> be <i>r</i>'s <i><a href="#endIndex">endIndex</a></i> value.</p>
 		</li>
 		<li><p>
 		If
@@ -31337,8 +31333,8 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Let
-		<i>n</i> be the length of <i>r</i>'s <i>captures</i> array. (This
-		is the same value as <a href="#x15.10.2.1">15.10.2.1</a>'s <i>NCapturingParens</i>.)</p>
+		<i>n</i> be the length of <i>r</i>'s <i><a href="#captures">captures</a></i> array. (This
+		is the same value as <a href="#x15.10.2.1">15.10.2.1</a>'s <i><a href="#NcapturingParens">NCapturingParens</a></i>.)</p>
 		</li>
 		<li><p>
 		Let
@@ -31395,7 +31391,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 			<li><p>
 			Let
 			<i>captureI</i> be <i>i</i><sup>th</sup> element of <i>r</i>'s
-			<i>captures</i> array.</p>
+			<i><a href="#captures">captures</a></i> array.</p>
 			</li>
 			<li><p>
 			Call
@@ -31440,7 +31436,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	property is <b>true</b><code><b>.</b></code></p>
 	<p><b class="note">NOTE</b> The
 	returned String has the form of a
-	<i>RegularExpressionLiteral</i>
+	<i><a href="#x7.8.5">RegularExpressionLiteral</a></i>
 	that evaluates to another RegExp object with the same
 	behaviour as this object. 
 	</p>
@@ -31995,7 +31991,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	arrays are realized as ECMAScript arrays. JSON strings, numbers,
 	booleans, and null are realized as ECMAScript Strings, Numbers,
 	Booleans, and <b>null</b>. JSON uses a more limited set of white
-	space characters than <i>WhiteSpace</i>
+	space characters than <i><a href="#WhiteSpace">WhiteSpace</a></i>
 	and allows Unicode code points U+2028 and U+2029 to directly appear
 	in <i>JSONString</i>
 	literals without using an escape sequence. The process of parsing is
@@ -32025,7 +32021,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		Let
 		<i>unfiltered</i> be the result of parsing and evaluating <i>JText</i>
 		as if it was the source text of an ECMAScript <i>program</i> but
-		using<i> JSONString </i>in place<i> </i>of<i> StringLiteral</i>.
+		using<i> JSONString </i>in place<i> </i>of<i> <a href="#x7.8.4">StringLiteral</a></i>.
 		Note that since <i>JText</i> conforms to the JSON grammar this
 		result will be either a <a href="#primitive_value" class="term-ref">primitive value</a> or an object that is
 		defined by either an <i>ArrayLiteral</i> or an <i>ObjectLiteral</i>.</p>
@@ -35232,7 +35228,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Return
-		YearFromTime(LocalTime(<i>t</i>)) <span class="symbol">−</span>
+		<a href="#YearFromTime">YearFromTime</a>(<a href="#15.9.1.9">LocalTime</a>(<i>t</i>)) <span class="symbol">−</span>
 		1900.</p>
 	</li></ol>
 	<h4 id="B.2.5">B.2.5 Date.prototype.setYear (year) <a href="#B.2.5">#</a> <a href="#B.2.5-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
@@ -35247,7 +35243,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be the result of LocalTime(this time value); but if this
+		<i>t</i> be the result of <a href="#15.9.1.9">LocalTime</a>(this time value); but if this
 		time value is <b>NaN</b>, let <i>t</i> be <b>+0</b>.</p>
 		</li>
 		<li><p>
@@ -35268,16 +35264,16 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Compute
-		MakeDay(Result(4), MonthFromTime(<i>t</i>), DateFromTime(<i>t</i>)).</p>
+		<a href="#15.9.1.12">MakeDay</a>(Result(4), <a href="#15.9.1.4">MonthFromTime</a>(<i>t</i>), <a href="#15.9.1.5">DateFromTime</a>(<i>t</i>)).</p>
 		</li>
 		<li><p>
 		Compute
-		UTC(MakeDate(Result(5), TimeWithinDay(<i>t</i>))).</p>
+		<a href="#15.9.1.9">UTC</a>(<a href="#15.9.1.13">MakeDate</a>(Result(5), <a href="#15.9.1.2">TimeWithinDay</a>(<i>t</i>))).</p>
 		</li>
 		<li><p>
 		Set
 		the [[PrimitiveValue]] internal property of the <b>this</b> value
-		to TimeClip(Result(6)).</p>
+		to <a href="#15.9.1.14">TimeClip</a>(Result(6)).</p>
 		</li>
 		<li><p>
 		Return
