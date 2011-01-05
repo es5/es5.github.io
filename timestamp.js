@@ -6,7 +6,7 @@ function addTimestamp() {
   document.body.appendChild(script);
   document.getElementById("timestamp").appendChild(link);
   window.jsonp = function (data) {
-    link.textContent = "Last\u00A0updated:\u00A0" + data.repository.pushed_at.substring(0, 10);
+    link.textContent = "Last\u00A0updated:\u00A0" + data.repository.pushed_at.substring(0, 10).replace(/\//g, "-");
   };
 }
 addTimestamp();

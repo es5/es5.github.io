@@ -11,9 +11,9 @@ p.url {
 a,
 a:visited
 {
-  color: inherit;
+  color: #B82E00;
+  /* color: #B8002E; */
   text-decoration: none;
-  border-bottom: 2px dotted gray;
 }
 
 a:hover {
