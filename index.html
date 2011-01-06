@@ -18,11 +18,11 @@ ECMA TC39 and is available at the following location:</p>
 >http://www.ecma-international.org/publications/standards/Ecma-262.htm</a></p>
 </div>
 
-<p>This document provides an <b>annotated, hyperlinked, HTML view</b>
+<p>This document is an <b>annotated, hyperlinked, HTML view</b>
   of Edition 5.1 of the ECMAScript Specification.
   It is provided as a means for making annotations to the spec available
-  online, in HTML and at “point of use”, for the explicit purposes of
-  “<b>explaining the spec and assisting in its implementation</b>” that are
+  online, in HTML and at “point of use”, <b>for the purposes of
+  explaining the spec and assisting in its implementation</b> that are
   allowed for in the spec <a href="#license">license</a>.</p>
 
 <p><b class="note">NOTE</b> Any reuse of the body text from this document
@@ -1823,7 +1823,7 @@ an object is a member of the remaining built-in type
 	<i>syntactic grammar</i> for ECMAScript is given in clauses 11, 12,
 	13 and 14. This grammar has ECMAScript tokens defined by the lexical
 	grammar as its terminal symbols (<a href="#x5.1.2">5.1.2</a>). It defines a set of
-	productions, starting from the goal symbol <i>Program</i>,
+	productions, starting from the goal symbol <i><a href="#x14">Program</a></i>,
 	that describe how sequences of tokens can form syntactically correct
 	ECMAScript programs.</p>
 	<p>
@@ -1834,7 +1834,7 @@ an object is a member of the remaining built-in type
 	then parsed by a single application of the syntactic grammar. The
 	program is syntactically in error if the tokens in the stream of
 	input elements cannot be parsed as a single instance of the goal
-	nonterminal <i>Program</i>,
+	nonterminal <i><a href="#x14">Program</a></i>,
 	with no tokens left over.</p>
 	<p>
 	Productions
@@ -4684,7 +4684,7 @@ the empty character sequence.</P></LI>
 				When,
 				as the program is parsed from left to right, the end of the input
 				stream of tokens is encountered and the parser is unable to parse
-				the input token stream as a single complete ECMAScript <i>Program</i>,
+				the input token stream as a single complete ECMAScript <i><a href="#x14">Program</a></i>,
 				then a semicolon is automatically inserted at the end of the
 				input stream.</p>
 				</li>
@@ -8993,41 +8993,41 @@ and
 	are three types of ECMAScript executable code:</p>
 	<ul>
 		<li><p><dfn id="global-code"><i>Global code</i></dfn> is source text that
-		is treated as an ECMAScript <i>Program</i>.
-		The global code of a particular <i>Program</i>
+		is treated as an ECMAScript <i><a href="#x14">Program</a></i>.
+		The global code of a particular <i><a href="#x14">Program</a></i>
 		does not include any source text that is parsed as part of a
-		<i>FunctionBody</i>.</p>
+		<i><a href="#x13">FunctionBody</a></i>.</p>
 		</li>
 		<li><p><dfn id="eval-code"><i>Eval code</i></dfn> is the source text
-		supplied to the built-in <code><b><a href="#x15.1.2.1">eval</a></b></code> function. More precisely, if the parameter to the built-in <code><b><a href="#x15.1.2.1">eval</a></b></code> function is a String, it is treated as an ECMAScript <i>Program</i>.
+		supplied to the built-in <code><b><a href="#x15.1.2.1">eval</a></b></code> function. More precisely, if the parameter to the built-in <code><b><a href="#x15.1.2.1">eval</a></b></code> function is a String, it is treated as an ECMAScript <i><a href="#x14">Program</a></i>.
 		The eval code for a particular invocation of <code><b>eval</b></code>
-		is the <a href="#global-code">global code</a> portion of that <i>Program</i>.</p>
+		is the <a href="#global-code">global code</a> portion of that <i><a href="#x14">Program</a></i>.</p>
 		</li>
 		<li><p><dfn id="function-code"><i>Function code</i></dfn> is source text that
-		is parsed as part of a <i>FunctionBody</i>.
+		is parsed as part of a <i><a href="#x13">FunctionBody</a></i>.
 		The <i>function code</i>
-		of a particular <i>FunctionBody</i>
+		of a particular <i><a href="#x13">FunctionBody</a></i>
 		does not include any source text that is parsed as part of a nested
-		<i>FunctionBody</i>. <i>Function
+		<i><a href="#x13">FunctionBody</a></i>. <i>Function
 		code</i> also denotes the
 		source text supplied when <a href="#x15.3.2" class="term-ref">using the built-in <code><b>Function</b></code> object as a constructor</a>. More precisely, the last parameter
 		provided to the <code><b>Function</b></code>
 		constructor is converted to a String and treated as the
-		<i>FunctionBody</i>. If more
+		<i><a href="#x13">FunctionBody</a></i>. If more
 		than one parameter is provided to the <code><b>Function</b></code>
 		constructor, all parameters except the last one are converted to
 		Strings and concatenated together, separated by commas. The
 		resulting String is interpreted as the <i>FormalParameterList</i>
-		for the <i>FunctionBody</i>
+		for the <i><a href="#x13">FunctionBody</a></i>
 		defined by the last parameter. The function code for a particular
 		instantiation of a <code><b>Function</b></code>
 		does not include any source text that is parsed as part of a nested
-		<i>FunctionBody</i>.</p>
+		<i><a href="#x13">FunctionBody</a></i>.</p>
 	</li></ul>
 	<h4 id="x10.1.1">10.1.1 Strict Mode Code <a href="#x10.1.1">#</a> <a href="#x10.1.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	An
-	ECMAScript <i>Program</i>
+	ECMAScript <i><a href="#x14">Program</a></i>
 	syntactic unit may be processed using either unrestricted or strict
 	mode syntax and semantics. When processed using strict mode the
 	three types of ECMAScript code are referred to as strict global
@@ -9046,11 +9046,11 @@ and
 		</p>
 		</li>
 		<li><p>
-	 <a href="#function-code">Function code</a> that is part of a <i>FunctionDeclaration</i>,
-		<i>FunctionExpression</i>,
+	 <a href="#function-code">Function code</a> that is part of a <i><a href="#x13">FunctionDeclaration</a></i>,
+		<i><a href="#x13">FunctionExpression</a></i>,
 		or accessor <i>PropertyAssignment</i>
-		is strict function code if its <i>FunctionDeclaration</i>,
-		<i>FunctionExpression</i>,
+		is strict function code if its <i><a href="#x13">FunctionDeclaration</a></i>,
+		<i><a href="#x13">FunctionExpression</a></i>,
 		or <i>PropertyAssignment</i>
 		is contained in <a href="#x10.1.1" class="term-ref">strict mode code</a> or if the function code begins
 		with a Directive Prologue that contains a Use Strict Directive.</p>
@@ -9058,7 +9058,7 @@ and
 		<li><p>
 	 <a href="#function-code">Function code</a> that is supplied as the last argument to the built-in Function
 		constructor is strict function code if the last argument is a
-		String that when processed as a <i>FunctionBody</i>
+		String that when processed as a <i><a href="#x13">FunctionBody</a></i>
 		begins with a Directive Prologue that contains a Use Strict
 		Directive.</p>
 	</li></ul>
@@ -9072,7 +9072,7 @@ and
 	<a href="#x10.2.1">Environment Record</a> and a possibly null reference to an <i>outer</i>
 	Lexical Environment. Usually a Lexical Environment is associated
 	with some specific syntactic structure of ECMAScript code such as a
-	<i>FunctionDeclaration</i>,
+	<i><a href="#x13">FunctionDeclaration</a></i>,
 	a <i>WithStatement</i>,
 	or a <i>Catch </i>clause
 	of a <i>TryStatement</i>
@@ -9091,7 +9091,7 @@ and
 	Environment may, of course, have its own outer Lexical Environment. 
 	A Lexical Environment may serve as the outer environment for
 	multiple inner Lexical Environments. For example, if a
-	<i>FunctionDeclaration</i>
+	<i><a href="#x13">FunctionDeclaration</a></i>
 	contains two nested <i>FunctionDeclarations</i>
 	then the Lexical Environments of each of the nested functions will
 	have as their outer Lexical Environment the Lexical Environment of
@@ -9114,7 +9114,7 @@ and
 	and <i>Catch</i> clauses
 	that directly associate <b>identifier</b> bindings with ECMAScript
 	language values. <dfn id="object-environment-record">Object environment records</dfn> are used to define the
-	effect of ECMAScript elements such as <i>Program</i>
+	effect of ECMAScript elements such as <i><a href="#x14">Program</a></i>
 	and <i>WithStatement</i>
 	that associate <b>identifier</b> bindings with the properties of
 	some object.</p>
@@ -10238,11 +10238,11 @@ and
 	<ol start="5">
 		<LI><p>
 		For each
-		<I>FunctionDeclaration</I> <I>f</I> in <I>code</I>, in source text
+		<I><a href="#x13">FunctionDeclaration</a></I> <I>f</I> in <I>code</I>, in source text
 		order do</P>
 		<ol>
 			<LI><p>Let
-			<I>fn</I> be the <I>Identifier</I> in <I>FunctionDeclaration</I>
+			<I>fn</I> be the <I>Identifier</I> in <I><a href="#x13">FunctionDeclaration</a></I>
 			<I>f.</I></P>
 			<LI><p>Let
 			<I>fo</I> be the result of instantiating <I>FunctionDeclaration f
@@ -10393,7 +10393,7 @@ and
 	in the function’s <i>FormalParameterList</i>
 	or occurs as the <i>Identifier</i>
 	of a <i>VariableDeclaration</i>
-	or <i>FunctionDeclaration</i>
+	or <i><a href="#x13">FunctionDeclaration</a></i>
 	contained in the <a href="#function-code">function code</a>.</p>
 	<p>
 	The
@@ -10588,7 +10588,7 @@ and
 		<li><p>
 		Return
 		the result of creating a function object as described in <a href="#x13.2">13.2</a> using
-		no <i>FormalParameterList</i>, <i>body</i> for <i>FunctionBody</i>,
+		no <i>FormalParameterList</i>, <i>body</i> for <i><a href="#x13">FunctionBody</a></i>,
 		<i>env</i> as <i>Scope</i>, and <b>true</b> for <i>Strict</i>.</p>
 	</li></ol>
 	<p>
@@ -10615,7 +10615,7 @@ and
 		Return
 		the result of creating a function object as described in <a href="#x13.2">13.2</a> using
 		a <a href="#x8.8">List</a> containing the single String <i>param </i>as
-		<i>FormalParameterList</i>, <i>body</i> for <i>FunctionBody</i>,
+		<i>FormalParameterList</i>, <i>body</i> for <i><a href="#x13">FunctionBody</a></i>,
 		<i>env</i> as <i>Scope</i>, and <b>true</b> for <i>Strict</i>.</p>
 	</li></ol>
 	<p>
@@ -11308,7 +11308,7 @@ and
 	production  <i>PropertyAssignment</i>
 	<b>:</b> <code><b>get</b></code>
 	<i>PropertyName</i> <code><b>(
-	) {</b></code> <i>FunctionBody</i><code>
+	) {</b></code> <i><a href="#x13">FunctionBody</a></i><code>
 	</code><code><b>}</b></code> is
 	evaluated as follows:</p>
 	<ol>
@@ -11320,10 +11320,10 @@ and
 		Let
 		<i>closure </i>be the result of creating a new Function object as
 		specified in <a href="#x13.2">13.2</a> with an empty parameter list and body specified
-		by <i>FunctionBody</i>. Pass in the <a href="#x10.2">LexicalEnvironment</a> of the
+		by <i><a href="#x13">FunctionBody</a></i>. Pass in the <a href="#x10.2">LexicalEnvironment</a> of the
 		running execution context as the <i>Scope</i>. Pass in <b>true</b>
 		as the <i>Strict</i> flag if the <i>PropertyAssignment</i>
-		is contained in <a href="#x10.1.1">strict code</a> or if its <i>FunctionBody</i> is <a href="#x10.1.1">strict code</a>.</p>
+		is contained in <a href="#x10.1.1">strict code</a> or if its <i><a href="#x13">FunctionBody</a></i> is <a href="#x10.1.1">strict code</a>.</p>
 		</li>
 		<li><p>
 		Let
@@ -11341,7 +11341,7 @@ and
 	<i>PropertyName</i> <code><b>(
 	</b></code> <i>PropertySetParameterList</i><code><b>
 	)</b></code><code> </code><code><b>{</b></code><code>
-	</code><i>FunctionBody</i>
+	</code><i><a href="#x13">FunctionBody</a></i>
 	<code><b>}</b></code> is evaluated as
 	follows:</p>
 	<ol>
@@ -11353,11 +11353,11 @@ and
 		Let
 		<i>closure</i> be the result of creating a new Function object as
 		specified in <a href="#x13.2">13.2</a> with parameters specified by
-		<i>PropertySetParameterList </i>and body specified by <i>FunctionBody</i>.
+		<i>PropertySetParameterList </i>and body specified by <i><a href="#x13">FunctionBody</a></i>.
 		Pass in the <a href="#x10.2">LexicalEnvironment</a> of the running execution context as
 		the <i>Scope</i>. Pass in <b>true</b> as the <i>Strict</i> flag if
 		the <i>PropertyAssignment</i>
-		is contained in <a href="#x10.1.1">strict code</a> or if its <i>FunctionBody</i> is <a href="#x10.1.1">strict code</a>.</p>
+		is contained in <a href="#x10.1.1">strict code</a> or if its <i><a href="#x13">FunctionBody</a></i> is <a href="#x10.1.1">strict code</a>.</p>
 		</li>
 		<li><p>
 		Let
@@ -11378,7 +11378,7 @@ and
 	</b></code>of a
 	<i>PropertyAssignment</i>
 	that is contained in <a href="#x10.1.1">strict code</a>
-	or if its <i>FunctionBody</i>
+	or if its <i><a href="#x13">FunctionBody</a></i>
 	is <a href="#x10.1.1">strict code</a>.</p>
 	<p>
 	The
@@ -14148,9 +14148,9 @@ IEEE 754 round-to-nearest mode.
 	<p class="tiny-btm">
 	<b>Syntax</b></p>
 	<p class="keep">
-	Expression <b>:</b></p>
+	<i>Expression</i> <b>:</b></p>
 	<p class="def1-btm">
-	AssignmentExpression<i><br>Expression </i><code><b>,</b></code> <i>AssignmentExpression</i></p>
+	<i>AssignmentExpression</i><i><br>Expression </i><code><b>,</b></code> <i>AssignmentExpression</i></p>
 	<p class="keep">
 	<i>ExpressionNoIn </i><b>:</b></p>
 	<p class="def1-btm">
@@ -15189,7 +15189,7 @@ IEEE 754 round-to-nearest mode.
 	An
 	ECMAScript program is considered syntactically incorrect if it
 	contains a <code><b>return</b></code>
-	statement that is not within a <i>FunctionBody</i>.
+	statement that is not within a <i><a href="#x13">FunctionBody</a></i>.
 	A <code><b>return</b></code> statement
 	causes a function to cease execution and return a value to the
 	caller. If <i>Expression</i>
@@ -15990,7 +15990,7 @@ IEEE 754 round-to-nearest mode.
 	<p class="keep">
 	<i>DebuggerStatement </i><b>:</b></p>
 	<p class="def1-btm">
-	<i>debugger </i><code><b>;</b></code></p>
+	<b>debugger </b><code><b>;</b></code></p>
 	<p class="tiny-btm">
 	<b>Semantics</b></p>
 	<p>
@@ -16049,14 +16049,14 @@ IEEE 754 round-to-nearest mode.
 	<p class="keep">
 	<i>FunctionBody </i><b>:</b></p>
 	<p class="def1-btm">
-	<i>SourceElements</i><sub>opt</sub></p>
+	<i><a href="#x14">SourceElements</a></i><sub>opt</sub></p>
 	<p class="tiny-btm">
 	<b>Semantics</b></p>
 	<p>
 	The
 	production<br>    <i>FunctionDeclaration </i><b>:</b><i> </i><code><b>function</b></code>
 	<i>Identifier </i><code><b>(</b></code> <i>FormalParameterList</i><sub>opt</sub> <code><b>)</b></code> <code><b>{</b></code>
-	<i>FunctionBody</i> <code><b>}</b></code><br>is
+	<i><a href="#x13">FunctionBody</a></i> <code><b>}</b></code><br>is
 	instantiated as follows during Declaration Binding instantiation
 	(<a href="#x10.5">10.5</a>):</p>
 	<ol>
@@ -16064,33 +16064,33 @@ IEEE 754 round-to-nearest mode.
 		Return
 		the result of creating a new Function object as specified in 13.2
 		with parameters specified by <i>FormalParameterList</i><sub>opt</sub>,
-		and body specified by <i>FunctionBody</i>.
+		and body specified by <i><a href="#x13">FunctionBody</a></i>.
 		Pass in the VariableEnvironment of the running execution context as
 		the <i>Scope</i>.
 		Pass in <b>true</b>
 		as the <i>Strict</i>
 		flag if the <i>FunctionDeclaration</i>
-		is contained in <a href="#x10.1.1">strict code</a> or if its <i>FunctionBody</i>
+		is contained in <a href="#x10.1.1">strict code</a> or if its <i><a href="#x13">FunctionBody</a></i>
 		is <a href="#x10.1.1">strict code</a>.</p>
 	</li></ol>
 	<p>
 	The
 	production<br>    <i>FunctionExpression </i><b>:</b><i> </i><code><b>function</b></code>
 	<code><b>(</b></code> <i>FormalParameterList</i><sub>opt</sub> <code><b>)</b></code> <code><b>{</b></code>
-	<i>FunctionBody</i> <code><b>}</b></code>
+	<i><a href="#x13">FunctionBody</a></i> <code><b>}</b></code>
 	<br>is evaluated as follows:</p>
 	<ol>
 		<li><p>
 		Return
 		the result of creating a new Function object as specified in 13.2
 		with parameters specified by <i>FormalParameterList</i><sub>opt</sub>
-		and body specified by <i>FunctionBody</i>.
+		and body specified by <i><a href="#x13">FunctionBody</a></i>.
 		Pass in the <a href="#x10.2">LexicalEnvironment</a> of the running execution context as
 		the <i>Scope</i>.
 		Pass in <b>true</b>
 		as the <i>Strict</i>
 		flag if the <i>FunctionExpression</i>
-		is contained in <a href="#x10.1.1">strict code</a> or if its <i>FunctionBody</i>
+		is contained in <a href="#x10.1.1">strict code</a> or if its <i><a href="#x13">FunctionBody</a></i>
 		is <a href="#x10.1.1">strict code</a>.</p>
 	</li></ol>
 	<p>
@@ -16100,7 +16100,7 @@ IEEE 754 round-to-nearest mode.
 	<i>Identifier</i> <code><b>(</b></code>
 	<i>FormalParameterList</i><sub>opt</sub>
 	<code><b>)</b></code> <code><b>{</b></code>
-	<i>FunctionBody</i> <code><b>}</b></code><br>is
+	<i><a href="#x13">FunctionBody</a></i> <code><b>}</b></code><br>is
 	evaluated as follows:</p>
 	<ol>
 		<li><p>
@@ -16125,13 +16125,13 @@ IEEE 754 round-to-nearest mode.
 		<i>closure </i>be
 		the result of creating a new Function object as specified in 13.2
 		with parameters specified by <i>FormalParameterList</i><sub>opt</sub>
-		and body specified by <i>FunctionBody</i>.
+		and body specified by <i><a href="#x13">FunctionBody</a></i>.
 		Pass in <i>funcEnv </i>as
 		the <i>Scope</i>.
 		Pass in <b>true</b>
 		as the <i>Strict</i>
 		flag if the <i>FunctionExpression</i>
-		is contained in <a href="#x10.1.1">strict code</a> or if its <i>FunctionBody</i>
+		is contained in <a href="#x10.1.1">strict code</a> or if its <i><a href="#x13">FunctionBody</a></i>
 		is <a href="#x10.1.1">strict code</a>.</p>
 		</li>
 		<li><p>
@@ -16147,7 +16147,7 @@ IEEE 754 round-to-nearest mode.
 	<p><b class="note">NOTE</b> The
 	Identifier in a <i>FunctionExpression</i>
 	can be referenced from inside the <i>FunctionExpression's</i>
-	<i>FunctionBody</i> to
+	<i><a href="#x13">FunctionBody</a></i> to
 	allow the function to call itself recursively. However, unlike in a
 	<i>FunctionDeclaration</i>,
 	the <i>Identifier</i> in
@@ -16210,7 +16210,7 @@ IEEE 754 round-to-nearest mode.
 	<p>
 	Given
 	an optional parameter list specified by <i>FormalParameterList</i>,
-	a body specified by <i>FunctionBody</i>,
+	a body specified by <i><a href="#x13">FunctionBody</a></i>,
 	a <a href="#x10.2">Lexical Environment</a> specified by <i>Scope</i>,
 	and a Boolean flag <i>Strict</i>,
 	a Function object is constructed as follows:</p>
@@ -16273,7 +16273,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Set
-		the [[Code]] internal property of <i>F </i>to <i>FunctionBody</i>.</p>
+		the [[Code]] internal property of <i>F </i>to <i><a href="#x13">FunctionBody</a></i>.</p>
 		</li>
 		<li><p>
 		Set
@@ -16383,10 +16383,10 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Let
-		<i>result </i>be the result of evaluating the <i>FunctionBody</i>
+		<i>result </i>be the result of evaluating the <i><a href="#x13">FunctionBody</a></i>
 		that is the value of<i> F</i>'s [[Code]] internal property. If <i>F</i>
 		does not have a [[Code]] internal property or if its value is an
-		empty <i>FunctionBody</i>, then <i>result</i> is (normal,
+		empty <i><a href="#x13">FunctionBody</a></i>, then <i>result</i> is (normal,
 		undefined, empty).</p>
 		</li>
 		<li><p>
@@ -16513,7 +16513,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Set
-		the [[Code]] internal property of <i>F </i>to be a <i>FunctionBody</i>
+		the [[Code]] internal property of <i>F </i>to be a <i><a href="#x13">FunctionBody</a></i>
 		that unconditionally throws a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception and performs no other action.</p>
 		</li>
@@ -16552,7 +16552,7 @@ IEEE 754 round-to-nearest mode.
 	<p class="keep">
 	<i>SourceElement </i><b>:</b></p>
 	<p class="def1-btm">
-	<i>Statement<br>FunctionDeclaration</i></p>
+	<i><a href="#x12">Statement</a><br><a href="#x13">FunctionDeclaration</a></i></p>
 	<p class="tiny-btm">
 	<b>Semantics</b></p>
 	<p>
@@ -16633,11 +16633,11 @@ IEEE 754 round-to-nearest mode.
 	<ol>
 		<li><p>
 		Return
-		the result of evaluating <i>Statement</i>.</p>
+		the result of evaluating <i><a href="#x12">Statement</a></i>.</p>
 	</li></ol>
 	<p>
 	The
-	production <i>SourceElement </i><b>:</b><i>FunctionDeclaration</i> is evaluated as follows:</p>
+	production <i>SourceElement </i><b>:</b><i><a href="#x13">FunctionDeclaration</a></i> is evaluated as follows:</p>
 	<ol>
 		<li><p>
 		Return
@@ -16648,8 +16648,8 @@ IEEE 754 round-to-nearest mode.
 	<p>
 	A
 	Directive Prologue is the longest sequence of <i>ExpressionStatement </i>productions occurring as the initial <i>SourceElement</i>
-	productions of a <i>Program</i>
-	or <i>FunctionBody</i>
+	productions of a <i><a href="#x14">Program</a></i>
+	or <i><a href="#x13">FunctionBody</a></i>
 	and where each <i>ExpressionStatement </i>in the sequence
 	consists entirely of a <i>StringLiteral</i>
 	token followed a semicolon.
@@ -16854,7 +16854,7 @@ IEEE 754 round-to-nearest mode.
 		<li><p>
 		Let
 		<i>prog </i>be
-		the ECMAScript code that is the result of parsing <i>x </i>as a <i>Program</i>.
+		the ECMAScript code that is the result of parsing <i>x </i>as a <i><a href="#x14">Program</a></i>.
 		If the parse fails, throw a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 		exception (but see also <a href="#x16">clause 16</a>).</p>
 		</li>
@@ -18983,7 +18983,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 		</li>
 		<li><p>
 		If
-		<i>body</i> is not parsable as <i>FunctionBody</i> then throw a
+		<i>body</i> is not parsable as <i><a href="#x13">FunctionBody</a></i> then throw a
 		<b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception.</p>
 		</li>
 		<li><p>
@@ -19000,7 +19000,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 		Return
 		a new Function object created as specified in <a href="#x13.2">13.2</a> passing <i>P</i>
 		as the <i>FormalParameterList</i> and <i>body</i> as the
-		<i>FunctionBody</i>. Pass in the <a href="#x10.2.3">Global Environment</a> as the <i>Scope</i>
+		<i><a href="#x13">FunctionBody</a></i>. Pass in the <a href="#x10.2.3">Global Environment</a> as the <i>Scope</i>
 		parameter and <i>strict</i> as the <i>Strict</i> flag.</p>
 	</li></ol>
 	<p>
@@ -19084,7 +19084,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	<p>
 	An
 	implementation-dependent representation of the function is returned.
-	This representation has the syntax of a <i>FunctionDeclaration</i>.
+	This representation has the syntax of a <i><a href="#x13">FunctionDeclaration</a></i>.
 	Note in particular that the use and placement of white space, line
 	terminators, and semicolons within the representation String is
 	implementation-dependent.</p>
@@ -32014,7 +32014,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		<li><p>
 		Let
 		<i>unfiltered</i> be the result of parsing and evaluating <i>JText</i>
-		as if it was the source text of an ECMAScript <i>program</i> but
+		as if it was the source text of an ECMAScript <i><a href="#x14">Program</a></i> but
 		using<i> JSONString </i>in place<i> </i>of<i> <a href="#x7.8.4">StringLiteral</a></i>.
 		Note that since <i>JText</i> conforms to the JSON grammar this
 		result will be either a <a href="#primitive_value" class="term-ref">primitive value</a> or an object that is
@@ -32948,10 +32948,10 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	implementation must report most errors at the time the relevant
 	ECMAScript language construct is evaluated. An <i>early error</i> is
 	an error that can be detected and reported prior to the evaluation
-	of any construct in the <i>Program</i>
+	of any construct in the <i><a href="#x14">Program</a></i>
 	containing the error.  An implementation must report early errors in
-	a <i>Program</i> prior to
-	the first evaluation of that <i>Program</i>.
+	a <i><a href="#x14">Program</a></i> prior to
+	the first evaluation of that <i><a href="#x14">Program</a></i>.
 	Early errors in <b>eval</b> code are reported at the time <code><b>eval</b></code>
 	is called but prior to evaluation of any construct within the <b>eval</b>
 	code. All errors that are not early errors are runtime errors.</p>
@@ -32995,8 +32995,8 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		The
 		occurrence of an <i>Identifier</i>
 		value appearing more than once within a <i>FormalParameterList</i>
-		of an individual strict mode <i>FunctionDeclaration</i>
-		or <i>FunctionExpression</i>.</p>
+		of an individual strict mode <i><a href="#x13">FunctionDeclaration</a></i>
+		or <i><a href="#x13">FunctionExpression</a></i>.</p>
 		</li>
 		<li><p>
 		Improper
@@ -35379,7 +35379,7 @@ within strict mode code.  (<a href="#x7.6.12">7.6.12</a>).</li>
 		</b></code>of a
 		<i>PropertyAssignment</i>
 		that is contained in <a href="#x10.1.1">strict code</a> or
-		if its <i>FunctionBody</i> is
+		if its <i><a href="#x13">FunctionBody</a></i> is
 		<a href="#x10.1.1">strict code</a> (<a href="#x11.1.5">11.1.5</a>).</p>
 		</li>
 		<li><p>
@@ -35562,7 +35562,7 @@ is thrown if the property to
 	In Edition 3, the algorithm for the production <i>SourceElements </i><b>:</b> <i>SourceElements
 	SourceElement </i>did not correctly propagate statement
 	result values in the same manner as <i>Block</i>.
-	This could result in the <code><b><a href="#x15.1.2.1">eval</a></b></code> function producing an incorrect result when evaluating a <i>Program</i>
+	This could result in the <code><b><a href="#x15.1.2.1">eval</a></b></code> function producing an incorrect result when evaluating a <i><a href="#x14">Program</a></i>
 	text. In practice most implementations of Edition 3 have implemented
 	the correct propagation rather than what was specified in Edition 3.</p>
 	<p>
