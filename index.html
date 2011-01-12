@@ -3673,7 +3673,7 @@ an object is a member of the remaining built-in type
 	<p>
 	A
 	numeric literal stands for a value of the Number type. This value is
-	determined in two steps: first, a mathematical value (MV) is derived
+	determined in two steps: first, a <dfn id="mv">mathematical value</dfn> (MV) is derived
 	from the literal; second, this mathematical value is rounded as
 	described below.</p>
 	<ul>
@@ -17084,7 +17084,7 @@ If <i>inputString</i> does not contain any such characters, let
 		</li>
 		<li><p>
 		Return
-		the Number value for the MV of <i>numberString</i>.</p>
+		the Number value for <a href="#mv">the MV of</a> <i>numberString</i>.</p>
 	</li></ol>
 	<p><b class="note">NOTE</b> <code><b>parseFloat</b></code>
 	may interpret only a leading portion of <i>string</i>
@@ -26686,15 +26686,15 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	from UTC to local time is defined by</p>
 	<p class="code-example">
 	LocalTime(<i>t</i>)
-	= <i>t</i> + LocalTZA + DaylightSavingTA(<i>t</i>)</p>
+	= <i>t</i> + <a href="#x15.9.1.7">LocalTZA</a> + DaylightSavingTA(<i>t</i>)</p>
 	<p class="sm-btm">
 	Conversion
 	from local time to UTC is defined by</p>
 	<p class="code-example">
 	UTC(<i>t</i>)
 	= <i>t</i> –
-	LocalTZA – DaylightSavingTA(<i>t</i>
-	– LocalTZA)</p>
+	<a href="#x15.9.1.7">LocalTZA</a> – DaylightSavingTA(<i>t</i>
+	– <a href="#x15.9.1.7">LocalTZA</a>)</p>
 	<p>
 	Note
 	that <a href="#15.9.1.9">UTC</a>(<a href="#15.9.1.9">LocalTime</a>(<i>t</i>))
@@ -27255,13 +27255,13 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p>
 	In
 	following descriptions of functions that are properties of the Date
-	prototype object, the phrase “this Date object” refers to the
+	prototype object, the phrase “<dfn id="this-date-object">this Date object</dfn>” refers to the
 	object that is the <b>this</b> value for the invocation of the
 	function. Unless explicitly noted otherwise, none of these functions
 	are generic; a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception is thrown if the <b>this</b>
 	value is not an object for which the value of the [[Class]] internal
 	property is <code><b>"Date"</b></code>.
-	Also, the phrase “this time value” refers to the Number value
+	Also, the phrase “<dfn id="this-time-value">this time value</dfn>” refers to the Number value
 	for the time represented by this Date object, that is, the value of
 	the [[PrimitiveValue]] internal property of this Date object.</p>
 	<h5 id="x15.9.5.1">15.9.5.1 Date.prototype.constructor <a href="#x15.9.5.1">#</a> <a href="#x15.9.5.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
@@ -27336,18 +27336,18 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p>
 	The
 	<code><b>valueOf</b></code> function
-	returns a Number, which is this time value.</p>
+	returns a Number, which is <a href="#this-time-value">this time value</a>.</p>
 	<h5 id="x15.9.5.9">15.9.5.9 Date.prototype.getTime ( ) <a href="#x15.9.5.9">#</a> <a href="#x15.9.5.9-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<ol>
 		<li><p>
 		Return
-		this time value.</p>
+		<a href="#this-time-value">this time value</a>.</p>
 	</li></ol>
 	<h5 id="x15.9.5.10">15.9.5.10 Date.prototype.getFullYear ( ) <a href="#x15.9.5.10">#</a> <a href="#x15.9.5.10-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h5>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be this time value.</p>
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
 		</li>
 		<li><p>
 		If
@@ -27361,7 +27361,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be this time value.</p>
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
 		</li>
 		<li><p>
 		If
@@ -27375,7 +27375,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be this time value.</p>
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
 		</li>
 		<li><p>
 		If
@@ -27389,7 +27389,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be this time value.</p>
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
 		</li>
 		<li><p>
 		If
@@ -27403,7 +27403,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be this time value.</p>
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
 		</li>
 		<li><p>
 		If
@@ -27417,7 +27417,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be this time value.</p>
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
 		</li>
 		<li><p>
 		If
@@ -27431,7 +27431,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be this time value.</p>
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
 		</li>
 		<li><p>
 		If
@@ -27445,7 +27445,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be this time value.</p>
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
 		</li>
 		<li><p>
 		If
@@ -27459,7 +27459,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be this time value.</p>
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
 		</li>
 		<li><p>
 		If
@@ -27473,7 +27473,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be this time value.</p>
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
 		</li>
 		<li><p>
 		If
@@ -27487,7 +27487,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be this time value.</p>
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
 		</li>
 		<li><p>
 		If
@@ -27501,7 +27501,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be this time value.</p>
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
 		</li>
 		<li><p>
 		If
@@ -27515,7 +27515,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be this time value.</p>
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
 		</li>
 		<li><p>
 		If
@@ -27529,7 +27529,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be this time value.</p>
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
 		</li>
 		<li><p>
 		If
@@ -27543,7 +27543,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be this time value.</p>
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
 		</li>
 		<li><p>
 		If
@@ -27557,7 +27557,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be this time value.</p>
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
 		</li>
 		<li><p>
 		If
@@ -27574,7 +27574,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be this time value.</p>
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
 		</li>
 		<li><p>
 		If
@@ -27593,7 +27593,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Set
-		the [[PrimitiveValue]] internal property of this Date object to <i>v</i>.</p>
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>v</i>.</p>
 		</li>
 		<li><p>
 		Return
@@ -27603,7 +27603,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be the result of <a href="#15.9.1.9">LocalTime</a>(this time value).</p>
+		<i>t</i> be the result of <a href="#15.9.1.9">LocalTime</a>(<a href="#this-time-value">this time value</a>).</p>
 		</li>
 		<li><p>
 		Let
@@ -27616,7 +27616,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Set
-		the [[PrimitiveValue]] internal property of this Date object to <i>u</i>.</p>
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>u</i>.</p>
 		</li>
 		<li><p>
 		Return
@@ -27626,7 +27626,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be this time value.</p>
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
 		</li>
 		<li><p>
 		Let
@@ -27639,7 +27639,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Set
-		the [[PrimitiveValue]] internal property of this Date object to <i>v</i>.</p>
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>v</i>.</p>
 		</li>
 		<li><p>
 		Return
@@ -27653,7 +27653,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be the result of <a href="#15.9.1.9">LocalTime</a>(this time value).</p>
+		<i>t</i> be the result of <a href="#15.9.1.9">LocalTime</a>(<a href="#this-time-value">this time value</a>).</p>
 		</li>
 		<li><p>
 		Let
@@ -27675,7 +27675,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Set
-		the [[PrimitiveValue]] internal property of this Date object to <i>u</i>.</p>
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>u</i>.</p>
 		</li>
 		<li><p>
 		Return
@@ -27694,7 +27694,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be this time value.</p>
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
 		</li>
 		<li><p>
 		Let
@@ -27716,7 +27716,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Set
-		the [[PrimitiveValue]] internal property of this Date object to <i>v</i>.</p>
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>v</i>.</p>
 		</li>
 		<li><p>
 		Return
@@ -27740,7 +27740,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be the result of <a href="#15.9.1.9">LocalTime</a>(this time value).</p>
+		<i>t</i> be the result of <a href="#15.9.1.9">LocalTime</a>(<a href="#this-time-value">this time value</a>).</p>
 		</li>
 		<li><p>
 		Let
@@ -27767,7 +27767,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Set
-		the [[PrimitiveValue]] internal property of this Date object to <i>u</i>.</p>
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>u</i>.</p>
 		</li>
 		<li><p>
 		Return
@@ -27791,7 +27791,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be this time value.</p>
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
 		</li>
 		<li><p>
 		Let
@@ -27818,7 +27818,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Set
-		the [[PrimitiveValue]] internal property of this Date object to <i>v</i>.</p>
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>v</i>.</p>
 		</li>
 		<li><p>
 		Return
@@ -27847,7 +27847,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be the result of <a href="#15.9.1.9">LocalTime</a>(this time value).</p>
+		<i>t</i> be the result of <a href="#15.9.1.9">LocalTime</a>(<a href="#this-time-value">this time value</a>).</p>
 		</li>
 		<li><p>
 		Let
@@ -27879,7 +27879,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Set
-		the [[PrimitiveValue]] internal property of this Date object to <i>u</i>.</p>
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>u</i>.</p>
 		</li>
 		<li><p>
 		Return
@@ -27908,7 +27908,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be this time value.</p>
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
 		</li>
 		<li><p>
 		Let
@@ -27940,7 +27940,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Set
-		the [[PrimitiveValue]] internal property of this Date object to <i>v</i>.</p>
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>v</i>.</p>
 		</li>
 		<li><p>
 		Return
@@ -27955,7 +27955,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be the result of <a href="#15.9.1.9">LocalTime</a>(this time value).</p>
+		<i>t</i> be the result of <a href="#15.9.1.9">LocalTime</a>(<a href="#this-time-value">this time value</a>).</p>
 		</li>
 		<li><p>
 		Let
@@ -27972,7 +27972,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Set
-		the [[PrimitiveValue]] internal property of this Date object to <i>u</i>.</p>
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>u</i>.</p>
 		</li>
 		<li><p>
 		Return
@@ -27982,7 +27982,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be this time value.</p>
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
 		</li>
 		<li><p>
 		Let
@@ -27999,7 +27999,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Set
-		the [[PrimitiveValue]] internal property of this Date object to <i>v</i>.</p>
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>v</i>.</p>
 		</li>
 		<li><p>
 		Return
@@ -28014,7 +28014,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be the result of <a href="#15.9.1.9">LocalTime</a>(this time value).</p>
+		<i>t</i> be the result of <a href="#15.9.1.9">LocalTime</a>(<a href="#this-time-value">this time value</a>).</p>
 		</li>
 		<li><p>
 		Let
@@ -28036,7 +28036,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Set
-		the [[PrimitiveValue]] internal property of this Date object to <i>u</i>.</p>
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>u</i>.</p>
 		</li>
 		<li><p>
 		Return
@@ -28056,7 +28056,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be this time value.</p>
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
 		</li>
 		<li><p>
 		Let
@@ -28078,7 +28078,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Set
-		the [[PrimitiveValue]] internal property of this Date object to <i>v</i>.</p>
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>v</i>.</p>
 		</li>
 		<li><p>
 		Return
@@ -28103,8 +28103,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be the result of <a href="#15.9.1.9">LocalTime</a>(this time value); but if this
-		time value is <b>NaN</b>, let <i>t</i> be <b>+0</b>.</p>
+		<i>t</i> be the result of <a href="#15.9.1.9">LocalTime</a>(<a href="#this-time-value">this time value</a>); but if <a href="#this-time-value">this time value</a> is <b>NaN</b>, let <i>t</i> be <b>+0</b>.</p>
 		</li>
 		<li><p>
 		Let
@@ -28132,7 +28131,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Set
-		the [[PrimitiveValue]] internal property of this Date object to <i>u</i>.</p>
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>u</i>.</p>
 		</li>
 		<li><p>
 		Return
@@ -28157,7 +28156,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be this time value; but if this time value is <b>NaN</b>,
+		<i>t</i> be <a href="#this-time-value">this time value</a>; but if <a href="#this-time-value">this time value</a> is <b>NaN</b>,
 		let <i>t</i> be <b>+0</b>.</p>
 		</li>
 		<li><p>
@@ -28186,7 +28185,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 		</li>
 		<li><p>
 		Set
-		the [[PrimitiveValue]] internal property of this Date object to <i>v</i>.</p>
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>v</i>.</p>
 		</li>
 		<li><p>
 		Return
@@ -28215,7 +28214,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p>
 	This
 	function returns a String value represent the instance in time
-	represented by this Date object. The format of the String is the
+	represented by <a href="#this-date-object">this Date object</a>. The format of the String is the
 	Date Time string format defined in <a href="#x15.9.1.15">15.9.1.15</a>. All fields are present
 	in the String. The time zone is always UTC, denoted by the suffix Z.
 	If the time value of this object is not a finite Number a <b><a href="#x15.11.6.2" class="term-ref">RangeError</a></b>
@@ -28278,7 +28277,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p>
 	The
 	[[PrimitiveValue]] internal property is time value represented by
-	this Date object.</p>
+	<a href="#this-date-object">this Date object</a>.</p>
 	<h3 id="x15.10">15.10 RegExp (Regular Expression) Objects <a href="#x15.10">#</a> <a href="#x15.10-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
 	<p>
 	A
@@ -29631,7 +29630,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>i</i> be the MV of <i>DecimalDigits</i> (see <a href="#x7.8.3">7.8.3</a>).</p>
+		<i>i</i> be <a href="#mv">the MV of</a> <i>DecimalDigits</i> (see <a href="#x7.8.3">7.8.3</a>).</p>
 		</li>
 		<li><p>
 		Return
@@ -29645,7 +29644,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>i</i> be the MV of <i>DecimalDigits</i>.</p>
+		<i>i</i> be <a href="#mv">the MV of</a> <i>DecimalDigits</i>.</p>
 		</li>
 		<li><p>
 		Return
@@ -29660,11 +29659,11 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>i</i> be the MV of the first <i>DecimalDigits</i>.</p>
+		<i>i</i> be <a href="#mv">the MV of</a> the first <i>DecimalDigits</i>.</p>
 		</li>
 		<li><p>
 		Let
-		<i>j</i> be the MV of the second <i>DecimalDigits</i>.</p>
+		<i>j</i> be <a href="#mv">the MV of</a> the second <i>DecimalDigits</i>.</p>
 		</li>
 		<li><p>
 		Return
@@ -30318,7 +30317,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>i</i> be the MV of <i>DecimalIntegerLiteral</i>.</p>
+		<i>i</i> be <a href="#mv">the MV of</a> <i>DecimalIntegerLiteral</i>.</p>
 		</li>
 		<li><p>
 		If
@@ -30331,7 +30330,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	</li></ol>
 	<p>
 	The
-	definition of “the MV of <i>DecimalIntegerLiteral</i>”
+	definition of “<a href="#mv">the MV of</a> <i>DecimalIntegerLiteral</i>”
 	is in <a href="#x7.8.3">7.8.3</a>.</p>
 	<p><b class="note">NOTE</b> If
 	<code><b>\</b></code> is followed by a
@@ -35214,7 +35213,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be this time value.</p>
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
 		</li>
 		<li><p>
 		If
@@ -35237,8 +35236,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<ol>
 		<li><p>
 		Let
-		<i>t</i> be the result of <a href="#15.9.1.9">LocalTime</a>(this time value); but if this
-		time value is <b>NaN</b>, let <i>t</i> be <b>+0</b>.</p>
+		<i>t</i> be the result of <a href="#15.9.1.9">LocalTime</a>(<a href="#this-time-value">this time value</a>); but if <a href="#this-time-value">this time value</a> is <b>NaN</b>, let <i>t</i> be <b>+0</b>.</p>
 		</li>
 		<li><p>
 		Call
