@@ -1,0 +1,85 @@
+<link rel="stylesheet" href="../style.css">
+<p>See the following message from Allen Wirfs-Brock about changes to this
+section which still need to be incorporated into the ES 5.1 draft.
+<p><a
+href="https://mail.mozilla.org/pipermail/es5-discuss/2011-January/003882.html">https://mail.mozilla.org/pipermail/es5-discuss/2011-January/003882.html</a></p>
+
+<p>Below is an excerpt from that message.</p>
+<pre>
+The fixes:
+
+Function declarations are handled by step 5 of 10.5.  The ES5.1 spec. is:
+
+5.     For each FunctionDeclaration f in code, in source text order do
+   a.      Let fn be the Identifier in FunctionDeclaration f.
+   b.      Let fo be the result of instantiating FunctionDeclaration f as described in Clause 13.
+   c.      Let funcAlreadyDeclared be the result of calling env’s
+             HasBinding concrete method passing fn as the argument.
+   d.      If funcAlreadyDeclared is false, call env’s CreateMutableBinding
+             concrete method passing fn and configurableBindings as the arguments.
+   e.      Else if env is the environment record component of the global environment then
+          i.         Let go be the global object.
+         ii.         Let existingProp be the resulting of calling the
+                       [[GetProperty]] internal method of go with argument fn.
+        iii.         If existingProp .[[Configurable]] is true, then
+               1.     Call the [[DefineOwnProperty]] internal method of go,
+                        passing fn, Property Descriptor {[[Value]]: undefined,
+                        [[Writable]]: true, [[Enumerable]]: true , [[Configurable]]:
+                        configurableBindings }, and true as arguments.
+        iv.         Else if IsAccessorDescriptor(existingProp) or
+                      existingProp does not have attribute values {[[Writable]]: true,
+                      [[Enumerable]]: true}, then
+                1.     Throw a TypeError exception.
+   f.        Call env’s SetMutableBinding concrete method passing fn, fo, and strict as the arguments.
+
+The correction for the ES5.1 spec. is:
+
+5.     For each FunctionDeclaration f in code, in source text order do
+   a.      Let fn be the Identifier in FunctionDeclaration f.
+   b.      Let fo be the result of instantiating FunctionDeclaration f as
+             described in Clause 13.
+   c.      Let funcAlreadyDeclared be the result of calling env’s
+             HasBinding concrete method passing fn as the argument.
+   d.      If funcAlreadyDeclared is false, call env’s CreateMutableBinding
+             concrete method passing fn and configurableBindings as the arguments.
+   e.      Else if env is the environment record component of the global environment then
+          i.         Let go be the global object.
+         ii.         Let existingProp be the resulting of calling the
+                       [[GetOwnProperty]] internal method of go with argument fn.
+        iii.         If existingProp is undefined or existingProp .[[Configurable]] is true, then
+               1.     Call the [[DefineOwnProperty]] internal method of go,
+                 passing fn, Property Descriptor {[[Value]]: undefined,
+                 [[Writable]]: true, [[Enumerable]]: true , [[Configurable]]:
+                 configurableBindings }, and true as arguments.
+        iv.         Else if IsAccessorDescriptor(existingProp) or
+                      existingProp does not have attribute values {[[Writable]]: true,
+                      [[Enumerable]]: true}, then
+                1.     Throw a TypeError exception.
+   f.        Call env’s SetMutableBinding concrete method passing fn, fo, and strict as the arguments.
+
+The changes are in lines e.ii and e.iii
+
+Larger changes are needed to handle var declaration in step 8 because
+special case processing for global declaration similar to what is is step 5
+needs to be added.  The corrected ES5.1 spec. adds step 8.d and its
+sub-steps:
+
+8.     For each VariableDeclaration and VariableDeclarationNoIn d in code, in source text order do
+   a.     Let dn be the Identifier in d.
+   b.     Let varAlreadyDeclared be the result of calling env’s HasBinding
+            concrete method passing dn as the argument.
+   c.      If varAlreadyDeclared is false, then
+          i.         Call env’s CreateMutableBinding concrete method
+                       passing dn and configurableBindings as the arguments.
+         ii.         Call env’s  SetMutableBinding  concrete method passing
+                       dn, undefined, and strict as the arguments.
+    d.    else if env is the environment record component of the global environment then
+          i.         Let go be the global object.
+         ii.         Let existingProp be the resulting of calling the
+                       [[GetOwnProperty]] internal method of go with argument fn.
+        iii.         If existingProp is undefined,    then
+               1.     Call the [[DefineOwnProperty]] internal method of go,
+                        passing dn,  Property Descriptor {[[Value]]: undefined,
+                        [[Writable]]: true, [[Enumerable]]: true , [[Configurable]]:
+                        configurableBindings }, and true as arguments.
+</pre>
