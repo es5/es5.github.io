@@ -168,4 +168,37 @@ document.addEventListener("keyup", function (e) {
     annoPanel = null;
   }
 }, true);
+function addMdcRefAnnos() {
+  var baseUrl = "https://developer.mozilla.org/en/JavaScript/Reference",
+  element,
+  hyperlink,
+  id,
+  mdcRefAnnos = {
+    "x15": "#Standard_global_objects_(by_category)",
+    "x15.2": "/Global_Objects/Object",
+    "x15.3": "/Global_Objects/Function",
+    "x15.4": "/Global_Objects/Function",
+    "x15.5": "/Global_Objects/String",
+    "x15.6": "/Global_Objects/Boolean",
+    "x15.7": "/Global_Objects/Number",
+    "x15.8": "/Global_Objects/Math",
+    "x15.9": "/Global_Objects/Date",
+    "x15.10": "/Global_Objects/RegExp",
+    "x15.11": "/Global_Objects/Error",
+    "x15.12": "/Global_Objects/JSON",
+  };
+  for (id in mdcRefAnnos) {
+    if (id !== null && id !== undefined) {
+      element = document.getElementById(id);
+      hyperlink = document.createElement("a");
+      hyperlink.href = baseUrl + mdcRefAnnos[id];
+      hyperlink.className = "mdcAnno";
+      hyperlink.target = "_blank";
+      hyperlink.title = "Open corresponding MDC JavaScript Ref section in new tab/window";
+      hyperlink.textContent = "\u24c2";
+      element.appendChild(hyperlink);
+    }
+  }
+}
 annotateToc();
+addMdcRefAnnos();

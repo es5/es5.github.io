@@ -20,6 +20,12 @@ a:hover {
   background-color: yellow;
 }
 
+a.mdcAnno,
+a.mdcAnno:visited
+{
+  color: green;
+}
+
 i {
   font-family: serif;
 }
