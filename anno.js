@@ -144,57 +144,64 @@ function addMdcRefAnnos() {
   var baseUrl = "https://developer.mozilla.org/en/JavaScript/Reference",
   element,
   hyperlink,
+  i,
   id,
+  space,
   mdcRefAnnos = {
-    "x10.6": "/Functions_and_function_scope/arguments",
-    "x11.1.1": "/Operators/Special/this",
-    "x11.2.2": "/Operators/Special/new",
-    "x11.3.1": "/Operators/Arithmetic_Operators",
-    "x11.3.2": "/Operators/Arithmetic_Operators",
-    "x11.4.1": "/Operators/Special/delete",
-    "x11.4.2": "/Operators/Special/void",
-    "x11.4.3": "/Operators/Special/typeof",
-    "x11.4.4": "/Operators/Arithmetic_Operators",
-    "x11.4.5": "/Operators/Arithmetic_Operators",
-    "x11.4.6": "/Operators/Arithmetic_Operators",
-    "x11.4.7": "/Operators/Arithmetic_Operators",
-    "x11.4.8": "/Operators/Bitwise_Operators",
-    "x11.4.9": "/Operators/Logical_Operators",
-    "x11.5": "/Operators/Arithmetic_Operators",
-    "x11.6": "/Operators/Arithmetic_Operators",
-    "x11.7": "/Operators/Bitwise_Operators#section_8",
-    "x11.8": "/Operators/Comparison_Operators",
-    "x11.8.6": "/Operators/Special/instanceof",
-    "x11.8.7": "/Operators/Special/in",
-    "x11.9": "/Operators/Comparison_Operators",
-    "x11.10": "/Operators/Bitwise_Operators",
-    "x11.11": "/Operators/Logical_Operators",
-    "x11.12": "/Operators/Special/Conditional_Operator",
-    "x11.13": "/Operators/Assignment_Operators",
-    "x11.14": "/Operators/Special/Comma_Operator",
-    "x15": "#Standard_global_objects_(by_category)",
-    "x15.2": "/Global_Objects/Object",
-    "x15.3": "/Global_Objects/Function",
-    "x15.4": "/Global_Objects/Function",
-    "x15.5": "/Global_Objects/String",
-    "x15.6": "/Global_Objects/Boolean",
-    "x15.7": "/Global_Objects/Number",
-    "x15.8": "/Global_Objects/Math",
-    "x15.9": "/Global_Objects/Date",
-    "x15.10": "/Global_Objects/RegExp",
-    "x15.11": "/Global_Objects/Error",
-    "x15.12": "/Global_Objects/JSON",
+    "x10.6": [ "/Functions_and_function_scope/arguments" ],
+    "x11.1.1": [ "/Operators/Special/this" ],
+    "x11.1.5": [ "/Operators/Special/get", "/Operators/Special/set" ],
+    "x11.2.2": [ "/Operators/Special/new" ],
+    "x11.3.1": [ "/Operators/Arithmetic_Operators" ],
+    "x11.3.2": [ "/Operators/Arithmetic_Operators" ],
+    "x11.4.1": [ "/Operators/Special/delete" ],
+    "x11.4.2": [ "/Operators/Special/void" ],
+    "x11.4.3": [ "/Operators/Special/typeof" ],
+    "x11.4.4": [ "/Operators/Arithmetic_Operators" ],
+    "x11.4.5": [ "/Operators/Arithmetic_Operators" ],
+    "x11.4.6": [ "/Operators/Arithmetic_Operators" ],
+    "x11.4.7": [ "/Operators/Arithmetic_Operators" ],
+    "x11.4.8": [ "/Operators/Bitwise_Operators" ],
+    "x11.4.9": [ "/Operators/Logical_Operators" ],
+    "x11.5": [ "/Operators/Arithmetic_Operators" ],
+    "x11.6": [ "/Operators/Arithmetic_Operators" ],
+    "x11.7": [ "/Operators/Bitwise_Operators#section_8" ],
+    "x11.8": [ "/Operators/Comparison_Operators" ],
+    "x11.8.6": [ "/Operators/Special/instanceof" ],
+    "x11.8.7": [ "/Operators/Special/in" ],
+    "x11.9": [ "/Operators/Comparison_Operators" ],
+    "x11.10": [ "/Operators/Bitwise_Operators" ],
+    "x11.11": [ "/Operators/Logical_Operators" ],
+    "x11.12": [ "/Operators/Special/Conditional_Operator" ],
+    "x11.13": [ "/Operators/Assignment_Operators" ],
+    "x11.14": [ "/Operators/Special/Comma_Operator" ],
+    "x15": [ "#Standard_global_objects_(by_category)" ],
+    "x15.2": [ "/Global_Objects/Object" ],
+    "x15.3": [ "/Global_Objects/Function" ],
+    "x15.4": [ "/Global_Objects/Function" ],
+    "x15.5": [ "/Global_Objects/String" ],
+    "x15.6": [ "/Global_Objects/Boolean" ],
+    "x15.7": [ "/Global_Objects/Number" ],
+    "x15.8": [ "/Global_Objects/Math" ],
+    "x15.9": [ "/Global_Objects/Date" ],
+    "x15.10": [ "/Global_Objects/RegExp" ],
+    "x15.11": [ "/Global_Objects/Error" ],
+    "x15.12": [ "/Global_Objects/JSON" ],
   };
   for (id in mdcRefAnnos) {
     if (id !== null && id !== undefined) {
       element = document.getElementById(id);
-      hyperlink = document.createElement("a");
-      hyperlink.href = baseUrl + mdcRefAnnos[id];
-      hyperlink.className = "mdcr";
-      hyperlink.target = "_blank";
-      hyperlink.title = "Open corresponding MDC JavaScript Ref section in new tab/window";
-      hyperlink.textContent = "\u24c2";
-      element.appendChild(hyperlink);
+      space = document.createTextNode(" ");
+      for (i = 0; i < mdcRefAnnos[id].length; i = i + 1) {
+        hyperlink = document.createElement("a");
+        hyperlink.href = baseUrl + mdcRefAnnos[id][i];
+        hyperlink.className = "mdcr";
+        hyperlink.target = "_blank";
+        hyperlink.title = "Open " + hyperlink.href + " in new tab/window";
+        hyperlink.textContent = "\u24c2";
+        element.appendChild(space);
+        element.appendChild(hyperlink);
+      }
     }
   }
 }
