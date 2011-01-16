@@ -20,8 +20,8 @@ a:hover {
   background-color: yellow;
 }
 
-a.mdcAnno,
-a.mdcAnno:visited
+a.mdcr,
+a.mdcr:visited
 {
   color: green;
 }
