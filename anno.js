@@ -413,8 +413,8 @@ function addMdcRefAnnos() {
     "x15.11.7.9": [ "/Global_Objects/Error/name" ],
     "x15.11.7.10": [ "/Global_Objects/Error/message" ],
     "x15.12": [ "/Global_Objects/JSON" ],
-    "x15.12.2.1.1": [ "/Global_Objects/JSON/parse" ],
-    "x15.12.2.1.2": [ "/Global_Objects/JSON/stringify" ]
+    "x15.12.2": [ "/Global_Objects/JSON/parse" ],
+    "x15.12.3": [ "/Global_Objects/JSON/stringify" ]
   };
   for (id in mdcRefAnnos) {
     if (id !== null && id !== undefined) {
