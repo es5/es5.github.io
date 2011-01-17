@@ -39,7 +39,7 @@ ECMA TC39 and is available at the following location:</p>
 
 <p>To view annotations for a particular section of the present
   document, follow the hyperlinks
-  marked <b>Ⓐ</b>, <b>Ⓔ</b>, <b>①</b>, and <b>Ⓜ</b> in the section headings. The
+  marked <b>Ⓐ</b>, <b>Ⓜ</b>, <b>Ⓔ</b>, and <b>①</b> and in the section headings. The
   different types of annotations provided by each of those are as follows:</p>
 
 <dl>
@@ -52,6 +52,11 @@ ECMA TC39 and is available at the following location:</p>
   by that license. If you’d like to contribute annotations, see
   the
   <a href="http://github.com/sideshowbarker/es5-spec#readme">instructions on the Annotated ES5 project page</a>.</dd>
+
+<dt><b>Ⓜ</b> MDC JavaScript Reference</dt>
+<dd>These do not mark annotations but are instead direct hyperlinks to
+  corresponding sections in the
+  <a href="https://developer.mozilla.org/en/JavaScript/Reference">MDC JavaScript Reference</a>.</dd>
 
 <dt><b>Ⓔ</b> Errata as of July 2010</dt>
 <dd>These provide errata copied from the “Items with Technical Significance”
@@ -67,11 +72,6 @@ ECMA TC39 and is available at the following location:</p>
 <dd>These provide details about changes included in Annex F of Edition 5.1
   of the spec but that were not already in the July 2010 erratum document.</dd>
 </dl>
-
-<dt><b>Ⓜ</b> MDC JavaScript Reference</dt>
-<dd>These do not mark annotations but are instead direct hyperlinks to
-  corresponding sections in the
-  <a href="https://developer.mozilla.org/en/JavaScript/Reference">MDC JavaScript Reference</a>.</dd>
 
 <h3 id="hyperlinks">About the hyperlinks</h3>
 <p>The initial version of this rendering of the spec was already published
@@ -1667,7 +1667,7 @@ an object is a member of the remaining built-in type
 	<a href="#primitive_value" class="term-ref">primitive value</a> corresponding to a double-precision 64-bit binary format IEEE
 	754 value.</p>
 	<p><b class="note">NOTE</b> A
-	Number value is a member of the Number<b> </b>type and is a direct
+	Number value is a member of the Number type and is a direct
 	representation of a number.</p>
 	<h4 id="x4.3.20">4.3.20<br><dfn id="Number_type">Number type</dfn> <a href="#x4.3.20">#</a> <a href="#x4.3.20-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
@@ -1911,7 +1911,7 @@ an object is a member of the remaining built-in type
 	<p class="def2">
 	<code><b>while</b></code> <i><b>
 	</b></i><code><b>(</b></code> <i><b>
-	</b>Expression<b> </b></i><code><b>)</b></code> <i><b>
+	</b>Expression </i><code><b>)</b></code> <i><b>
 	</b>Statement</i></p>
 	<p>
 	states
@@ -2921,7 +2921,7 @@ an object is a member of the remaining built-in type
 	<p class="def1-btm">
 	<i>SourceCharacter<b>
 	</b></i><b>but
-	not</b><i><b> </b>LineTerminator</i></p>
+	not</b><i> LineTerminator</i></p>
 	<h3 id="x7.5">7.5 Tokens <a href="#x7.5">#</a> <a href="#x7.5-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h3>
 	<p class="tiny-btm">
 	<b>Syntax</b></p>
@@ -3712,9 +3712,9 @@ an object is a member of the remaining built-in type
 				<li><p>
 				The
 				MV of <i>DecimalLiteral </i><b>::</b><b>
-				</b><i>DecimalIntegerLiteral </i><code><b>.</b></code> <i>DecimalDigits</i><i><b> </b></i>is
+				</b><i>DecimalIntegerLiteral </i><code><b>.</b></code> <i>DecimalDigits</i><i> </i>is
 				the MV of <i>DecimalIntegerLiteral</i> plus
-				(the MV of <i>DecimalDigits</i><i><b> </b></i>times
+				(the MV of <i>DecimalDigits</i><i> </i>times
 				10<sup>–</sup><sup><i>n</i></sup>),
 				where <i>n</i> is the
 				number of characters in <i>DecimalDigit</i>s.</p>
@@ -3733,7 +3733,7 @@ an object is a member of the remaining built-in type
 				MV of <i>DecimalLiteral </i><b>::</b><b>
 				</b><i>DecimalIntegerLiteral </i><code><b>.</b></code> <i>DecimalDigits ExponentPart </i>is
 				(the MV of <i>DecimalIntegerLiteral</i> plus
-				(the MV of <i>DecimalDigits</i><i><b> </b></i>times
+				(the MV of <i>DecimalDigits</i><i> </i>times
 				10<sup>–</sup><sup><i>n</i></sup>))
 				times 10<sup><i>e</i></sup>,
 				where <i>n</i> is the
@@ -3744,7 +3744,7 @@ an object is a member of the remaining built-in type
 				<li><p>
 				The
 				MV of <i>DecimalLiteral </i><b>::</b><code><b>.</b></code> <i>DecimalDigits</i> is the MV of
-				<i>DecimalDigits</i><i><b> </b></i>times
+				<i>DecimalDigits</i><i> </i>times
 				10<sup>–</sup><sup><i>n</i></sup>,
 				where <i>n</i> is the
 				number of characters in <i>DecimalDigit</i>s.</p>
@@ -3753,7 +3753,7 @@ an object is a member of the remaining built-in type
 				The
 				MV
 				of <i>DecimalLiteral </i><b>::</b><code><b>.</b></code> <i>DecimalDigits ExponentPart </i>is
-				the MV of <i>DecimalDigits</i><i><b> </b></i>times
+				the MV of <i>DecimalDigits</i><i> </i>times
 				10<sup><i>e</i></sup><sup>–</sup><sup><i>n</i></sup>,
 				where <i>n</i> is the
 				number of characters in <i>DecimalDigit</i>s and
@@ -3763,7 +3763,7 @@ an object is a member of the remaining built-in type
 				<li><p>
 				The
 				MV of <i>DecimalLiteral </i><b>::</b><b>
-				</b><i>DecimalIntegerLiteral</i><i><b> </b></i>is
+				</b><i>DecimalIntegerLiteral</i><i> </i>is
 				the MV of <i>DecimalIntegerLiteral</i>.</p>
 				</li>
 				<li><p>
@@ -3806,25 +3806,25 @@ an object is a member of the remaining built-in type
 				<li><p>
 				The
 				MV of <i>ExponentPart </i><b>::</b><b>
-				</b><i>ExponentIndicator SignedInteger</i><i><b> </b></i>is
+				</b><i>ExponentIndicator SignedInteger</i><i> </i>is
 				the MV of <i>SignedInteger</i>.</p>
 				</li>
 				<li><p>
 				The
 				MV of <i>SignedInteger </i><b>::</b><b>
-				</b><i>DecimalDigits</i><i><b> </b></i>is
+				</b><i>DecimalDigits</i><i> </i>is
 				the MV of <i>DecimalDigits</i>.</p>
 				</li>
 				<li><p>
 				The
 				MV of <i>SignedInteger </i><b>::</b><b>
-				</b><code><b>+</b></code> <i>DecimalDigits</i><i><b> </b></i>is
+				</b><code><b>+</b></code> <i>DecimalDigits</i><i> </i>is
 				the MV of <i>DecimalDigits</i>.</p>
 				</li>
 				<li><p>
 				The
 				MV of <i>SignedInteger </i><b>::</b><b>
-				</b><code><b>-</b></code> <i>DecimalDigits</i><i><b> </b></i>is
+				</b><code><b>-</b></code> <i>DecimalDigits</i><i> </i>is
 				the negative of the MV of <i>DecimalDigits</i>.</p>
 				</li>
 				<li><p>
@@ -4202,7 +4202,7 @@ an object is a member of the remaining built-in type
 				CV of <i>DoubleStringCharacter</i> <b>::</b>
 				<i>SourceCharacter</i> <b>but not</b>
 				<i>double-quote</i> <code><b>"</b></code><b>
-				</b><b>or</b><b> </b><i>backslash</i>
+				</b><b>or</b> <i>backslash</i>
 				<code><b>\</b></code> <b>or</b><b>
 				</b><i>LineTerminator</i> is the<i>SourceCharacter</i> character
 				itself.</p>
@@ -4223,7 +4223,7 @@ empty character sequence.</P></LI>
 				CV of <i>SingleStringCharacter</i> <b>::</b>
 				<i>SourceCharacter</i> <b>but not</b>
 				<i>single-quote</i> <code><b>'</b></code><b>
-				</b><b>or</b><b> </b><i>backslash</i>
+				</b><b>or</b> <i>backslash</i>
 				<code><b>\</b></code> <b>or</b><b>
 				</b><i>LineTerminator</i> is the<i>SourceCharacter</i> character
 				itself.</p>
@@ -4484,7 +4484,7 @@ the empty character sequence.</P></LI>
 				<li><p>
 				The
 				CV of <i>NonEscapeCharacter</i> <b>::</b>
-				<i>SourceCharacter</i><b> </b><b>but
+				<i>SourceCharacter</i> <b>but
 				not</b> <i>EscapeCharacter</i> <b>or</b><b>
 				</b><i>LineTerminator</i> is the
 				<i>SourceCharacter</i> character
@@ -4536,7 +4536,7 @@ the empty character sequence.</P></LI>
 	regular expression literals in a program evaluate to regular
 	expression objects that never compare as <code><b>===</b></code>
 	to each other even if the two literals' contents are identical. A
-	RegExp<b> </b>object may also be created at runtime by <code><b>new
+	RegExp object may also be created at runtime by <code><b>new
 	RegExp</b></code> (see <a href="#x15.10.4">15.10.4</a>) or calling the <code><b>RegExp</b></code>
 	constructor as a function (<a href="#x15.10.3">15.10.3</a>).</p>
 	<p>
@@ -4557,7 +4557,7 @@ the empty character sequence.</P></LI>
 	<p class="keep">
 	<i>RegularExpressionLiteral </i><b>::</b></p>
 	<p class="def1-btm">
-	<code><b>/</b></code> <i>RegularExpressionBody<b> </b></i><code><b>/</b></code> <i><b>
+	<code><b>/</b></code> <i>RegularExpressionBody </i><code><b>/</b></code> <i><b>
 	</b>RegularExpressionFlags</i></p>
 	<p class="keep">
 	<i>RegularExpressionBody<b>
@@ -4585,7 +4585,7 @@ the empty character sequence.</P></LI>
 	<p class="def1-btm">
 	<i>RegularExpressionNonTerminator<b>
 	</b></i><b>but
-	not</b><i><b> </b></i><code><b>\</b></code> <i><b>
+	not</b><i> </i><code><b>\</b></code> <i><b>
 	</b></i><b>or</b><i><b>
 	</b></i><code><b>/
 	</b></code><b>or</b><code><b>
@@ -4599,7 +4599,7 @@ the empty character sequence.</P></LI>
 	<p class="def1-btm">
 	<i>SourceCharacter<b>
 	</b></i><b>but
-	not</b><i><b> </b>LineTerminator</i></p>
+	not</b><i> LineTerminator</i></p>
 	<p class="keep">
 	<i>RegularExpressionClass </i><b>::</b></p>
 	<p class="def1-btm">
@@ -4618,7 +4618,7 @@ the empty character sequence.</P></LI>
 	<p class="def1-btm">
 	<i>RegularExpressionNonTerminator<b>
 	</b></i><b>but
-	not</b><i><b> </b></i><code><b>]</b></code> <i><b>
+	not</b><i> </i><code><b>]</b></code> <i><b>
 	</b></i><b>or</b><i><b>
 	</b></i><code><b>\</b></code> <i><b><br></b>RegularExpressionBackslashSequence</i></p>
 	<p class="keep">
@@ -8045,13 +8045,13 @@ and
 		<li><p>
 		The
 		MV of <i>StrUnsignedDecimalLiteral</i><b>:::</b><code><b>.</b></code> <i>DecimalDigits</i> is the MV of
-		<i>DecimalDigits</i><i><b> </b></i>times 10<sup><span class="symbol">−</span></sup><sup><i>n</i></sup>,
+		<i>DecimalDigits</i><i> </i>times 10<sup><span class="symbol">−</span></sup><sup><i>n</i></sup>,
 		where <i>n</i> is the number of characters in <i>DecimalDigit</i>s.</p>
 		</li>
 		<li><p>
 		The
 		MV of <i>StrUnsignedDecimalLiteral</i><b>:::</b><code><b>.</b></code> <i>DecimalDigits ExponentPart </i>is
-		the MV of <i>DecimalDigits</i><i><b> </b></i>times 10<sup><i>e</i></sup><sup><span class="symbol">−</span></sup><sup><i>n</i></sup>,
+		the MV of <i>DecimalDigits</i><i> </i>times 10<sup><i>e</i></sup><sup><span class="symbol">−</span></sup><sup><i>n</i></sup>,
 		where <i>n</i> is the number of characters in <i>DecimalDigit</i>s
 		and <i>e</i> is the MV of
 		<i>ExponentPart</i>.</p>
@@ -8082,7 +8082,7 @@ and
 		<li><p>
 		The
 		MV of <i>ExponentPart </i><b>::: </b><i>ExponentIndicator
-		SignedInteger</i><i><b> </b></i>is
+		SignedInteger</i><i> </i>is
 		the MV of <i>SignedInteger</i>.</p>
 		</li>
 		<li><p>
@@ -8092,12 +8092,12 @@ and
 		</li>
 		<li><p>
 		The
-		MV of <i>SignedInteger </i><b>::: </b><code><b>+</b></code> <i>DecimalDigits</i><i><b> </b></i>is
+		MV of <i>SignedInteger </i><b>::: </b><code><b>+</b></code> <i>DecimalDigits</i><i> </i>is
 		the MV of <i>DecimalDigits</i>.</p>
 		</li>
 		<li><p>
 		The
-		MV of <i>SignedInteger </i><b>::: </b><code><b>-</b></code> <i>DecimalDigits</i><i><b> </b></i>is the negative of the MV of
+		MV of <i>SignedInteger </i><b>::: </b><code><b>-</b></code> <i>DecimalDigits</i><i> </i>is the negative of the MV of
 		<i>DecimalDigits</i>.</p>
 		</li>
 		<li><p>
@@ -10346,7 +10346,7 @@ and
 				Call
 				<i>env</i>’s <a href="#x10.2.1.1.8">InitializeImmutableBinding</a> concrete method passing
 				"<code><b>arguments</b></code>"
-				and <i>argsObj </i>as arguments.</p>
+				and <i>argsObj </i> as arguments.</p>
 			</li></ol>
 			</li>
 			<li><p>
@@ -11155,8 +11155,8 @@ and
 	</b>PropertyName </i><code><b>(
 	)</b></code> <i> </i><code><b>{</b></code> <i>FunctionBody </i><code><b>}</b></code> <i><b><br></b></i><code><b>set</b></code> <i><b>
 	</b>PropertyName </i><code><b>(</b></code> <i><b>
-	</b>PropertySetParameterList<b> </b></i><code><b>)
-	{</b></code> <i><b> </b>FunctionBody </i><code><b>}</b></code></p>
+	</b>PropertySetParameterList </i><code><b>)
+	{</b></code> <i> FunctionBody </i><code><b>}</b></code></p>
 	<p class="keep">
 	<i>PropertyName </i><b>:</b></p>
 	<p class="def1-btm">
@@ -11267,7 +11267,7 @@ and
 			<li><p>
 			<a href="#x8.10.1">IsAccessorDescriptor</a>(<i>previous</i>)
 			is <b>true </b>and <a href="#x8.10.1">IsAccessorDescriptor</a>(<i>propId</i>.descriptor)
-			is <b>true </b>and<b> </b>either both <i>previous</i> and
+			is <b>true </b>and either both <i>previous</i> and
 			<i>propId</i>.descriptor have [[Get]] fields or both <i>previous</i>
 			and <i>propId</i>.descriptor have [[Set]] fields</p>
 		</li></ol>
@@ -15195,7 +15195,7 @@ IEEE 754 round-to-nearest mode.
 	<code><b>return</b></code> <code><b>;</b></code></p>
 	<p class="def1-btm">
 	<code><b>return
-	</b></code><a href="#restricted-production">[no <i>LineTerminator</i> here]</a><i><b> </b>Expression</i> <code><b>;</b></code></p>
+	</b></code><a href="#restricted-production">[no <i>LineTerminator</i> here]</a><i> Expression</i> <code><b>;</b></code></p>
 	<p class="tiny-btm">
 	<b>Semantics</b></p>
 	<p>
@@ -17177,7 +17177,7 @@ If <i>inputString</i> does not contain any such characters, let
 	any reserved characters in the URI are intended to have special
 	meaning and so are not encoded. The  <code><b><a href="#x15.1.3.4">encodeURIComponent</a></b></code><b>
 	</b>and <code><b><a href="#x15.1.3.2">decodeURIComponent</a></b></code><b>
-	</b>functions<b> </b>are intended to work with the individual
+	</b>functions are intended to work with the individual
 	component parts of a URI; they assume that any reserved characters
 	represent text and so must be encoded so that they are not
 	interpreted as reserved characters when the component is part of a
@@ -19321,7 +19321,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 			</li>
 			<li><p>
 			Set
-			the <b>length </b>own<b> </b>property of <i>F </i>to either 0 or
+			the <b>length </b>own property of <i>F </i>to either 0 or
 			<i>L</i>, whichever is larger. 
 			</p>
 		</li></ol>
@@ -20857,9 +20857,9 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 		and <i>k</i>, each less
 		than <i>len</i>, if
 		<a href="#SortCompare">SortCompare</a>(<i>j</i>,<i>k</i>)
-		&lt; 0<code><b> </b></code>(see
+		&lt; 0<code> </code>(see
 		<a href="#SortCompare">SortCompare</a> below), then <span class="symbol"><b>π</b></span>(<i>j</i>)
-		&lt;<b> </b><span class="symbol"><b>π</b></span>(<i>k</i>).</p>
+		&lt; <span class="symbol"><b>π</b></span>(<i>k</i>).</p>
 	</li></ul>
 	<p>
 	Here
@@ -21937,7 +21937,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	the <code><b>some</b></code> method is
 	<b>1</b>.</p>
 	<p><b class="note">NOTE</b> The
-	<code><b>some</b></code><b> </b>function
+	<code><b>some</b></code> function
 	is intentionally generic; it does not require that its <b>this</b>
 	value be an Array object. Therefore it can be transferred to other
 	kinds of objects for use as a method. Whether the <code><b>some</b></code><b>
@@ -22073,7 +22073,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	<p>
 	If a
 	<i>thisArg</i> parameter
-	is provided, it will be used as the <b>this </b>value<b> </b>for
+	is provided, it will be used as the <b>this </b>value for
 	each invocation of <i>callbackfn</i>.
 	If it is not provided, <b>undefined</b> is used instead.</p>
 	<p>
@@ -22189,7 +22189,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	the <code><b>map</b></code> method is
 	<b>1</b>.</p>
 	<p><b class="note">NOTE</b> The
-	<code><b>map</b></code><b> </b>function
+	<code><b>map</b></code> function
 	is intentionally generic; it does not require that its <b>this</b>
 	value be an Array object. Therefore it can be transferred to other
 	kinds of objects for use as a method. Whether the <code><b>map</b></code><b>
@@ -22336,7 +22336,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	the <code><b>filter</b></code> method
 	is <b>1</b>.</p>
 	<p><b class="note">NOTE</b> The
-	<code><b>filter</b></code><b> </b>function
+	<code><b>filter</b></code> function
 	is intentionally generic; it does not require that its <b>this</b>
 	value be an Array object. Therefore it can be transferred to other
 	kinds of objects for use as a method. Whether the <code><b>filter</b></code><b>
@@ -22505,7 +22505,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	the <code><b>reduce</b></code> method
 	is <b>1</b>.</p>
 	<p><b class="note">NOTE</b> The
-	<code><b>reduce</b></code><b> </b>function
+	<code><b>reduce</b></code> function
 	is intentionally generic; it does not require that its <b>this</b>
 	value be an Array object. Therefore it can be transferred to other
 	kinds of objects for use as a method. Whether the <code><b>reduce</b></code><b>
@@ -26341,7 +26341,7 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 	is the same as the value of <code><b>Math.floor(x+0.5)</b></code>,
 	except when <code><b>x</b></code> is
 	<span class="symbol">−</span>0<b>
-	</b>or<b> </b>is less than 0
+	</b>or is less than 0
 	but greater than or equal to -0.5;
 	for these cases <code><b>Math.round(x)</b></code>
 	returns <span class="symbol">−</span>0,
@@ -31515,7 +31515,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<h4 id="x15.11.1">15.11.1 The Error Constructor Called as a Function <a href="#x15.11.1">#</a> <a href="#x15.11.1-toc" class="bak">Ⓣ</a> <b class="erra">Ⓔ</b> <b class="rev1">①</b> <b class="anno">Ⓐ</b></h4>
 	<p>
 	When
-	<code><b>Error</b></code><b> </b>is
+	<code><b>Error</b></code> is
 	called as a function rather than as a constructor, it creates and
 	initialises a new Error object. Thus the function call <code><b>Error(</b></code><code>…</code><code><b>)</b></code>
 	is equivalent to the object creation expression <code><b>new
@@ -33843,7 +33843,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="keep">
 	<i>RegularExpressionLiteral </i><b>::</b><i class="see">See <a href="#x7.8.5">7.8.5</a></i></p>
 	<p class="def1-btm">
-	<code><b>/</b></code> <i>RegularExpressionBody<b> </b></i><code><b>/</b></code> <i><b>
+	<code><b>/</b></code> <i>RegularExpressionBody </i><code><b>/</b></code> <i><b>
 	</b>RegularExpressionFlags</i></p>
 	<p class="keep">
 	<i>RegularExpressionBody </i><b>::</b><i class="see">See <a href="#x7.8.5">7.8.5</a></i></p>
@@ -33869,7 +33869,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<i>RegularExpressionChar </i><b>::</b><i class="see">See <a href="#x7.8.5">7.8.5</a></i></p>
 	<p class="def1-btm">
 	<i>RegularExpressionNonTerminator </i><b>but
-	not</b><i><b> </b></i><code><b>\</b></code> <i><b>
+	not</b><i> </i><code><b>\</b></code> <i><b>
 	</b></i><b>or</b><i><b>
 	</b></i><code><b>/
 	</b></code><b>or</b><code><b>
@@ -33902,7 +33902,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	<p class="def1-btm">
 	<i>RegularExpressionNonTerminator<b>
 	</b></i><b>but
-	not</b><i><b> </b></i><code><b>]</b></code> <i><b>
+	not</b><i> </i><code><b>]</b></code> <i><b>
 	</b></i><b>or</b><i><b>
 	</b></i><code><b>\</b></code> <i><b><br></b>RegularExpressionBackslashSequence</i></p>
 	<p class="keep">
@@ -34513,7 +34513,7 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	</b>Disjunction </i><code><b>)</b></code></p>
 	<p class="keep">
 	PatternCharacter :: SourceCharacter <b>but
-	not</b><i><b> </b></i><b>any
+	not</b><i> </i><b>any
 	of:</b><i class="see">See <a href="#x15.10.1">15.10.1</a></i></p>
 	<p class="def1-btm">
 	<code><b>^
@@ -34730,8 +34730,8 @@ value of an absent time zone offset is “<code>Z</code>”.</p>
 	 </b></i><code><b>1</b></code> <i><b>
 	 </b></i><code><b>2</b></code> <i><b>
 	 </b></i><code><b>3
-	</b></code> <i><b> </b></i><code><b>4
-	</b></code> <i><b> </b></i><code><b>5</b></code> <i><b>
+	</b></code> <i> </i><code><b>4
+	</b></code> <i> </i><code><b>5</b></code> <i><b>
 	 </b></i><code><b>6</b></code> <i><b>
 	 </b></i><code><b>7</b></code></p>
 	<p>
@@ -35458,13 +35458,13 @@ is thrown if the property to
 		occurs within <a href="#x10.1.1">strict code</a> and the <i>Identifier</i>
 		of the <i>Catch</i>
 		production is <code><b>eval</b></code>
-		or<b> </b><code><b>arguments</b></code>
+		or <code><b>arguments</b></code>
 		(<a href="#x12.14.1">12.14.1</a>)</p>
 		</li>
 		<li><p>
 		It
 		is a <b><a href="#x15.11.6.4" class="term-ref">SyntaxError</a></b> if  the identifier <code><b>eval</b></code>
-		or<b> </b><code><b>arguments</b></code>
+		or <code><b>arguments</b></code>
 		appears within a <i>FormalParameterList</i>
 		of a strict mode <i>FunctionDeclaration</i>
 		or <i>FunctionExpression</i>
