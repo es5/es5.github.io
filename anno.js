@@ -138,7 +138,8 @@ function annotateToc() {
   addMarker("erra", "\u24ba");
   addMarker("rev1", "\u2460");
   addMarker("anno", "\u24b6");
-  addMarker("mdcr", "\u24c2");
+  addMarker("mdcr", "\u24c7");
+  addMarker("mdcg", "\u24bc");
 }
 function addMdcRefAnnos() {
   var baseUrl = "https://developer.mozilla.org/en/JavaScript/Reference",
@@ -147,7 +148,7 @@ function addMdcRefAnnos() {
   i,
   id,
   space,
-  mdcRefAnnos = {
+  annos = {
     "x7.4": [ "/Comments/comment" ],
     "x10.6": [ "/Functions_and_function_scope/arguments" ],
     "x11.1.1": [ "/Operators/Special/this" ],
@@ -416,17 +417,95 @@ function addMdcRefAnnos() {
     "x15.12.2": [ "/Global_Objects/JSON/parse" ],
     "x15.12.3": [ "/Global_Objects/JSON/stringify" ]
   };
-  for (id in mdcRefAnnos) {
+  for (id in annos) {
     if (id !== null && id !== undefined) {
       element = document.getElementById(id);
-      space = document.createTextNode(" ");
-      for (i = 0; i < mdcRefAnnos[id].length; i = i + 1) {
+      for (i = 0; i < annos[id].length; i = i + 1) {
+        space = document.createTextNode(" ");
         hyperlink = document.createElement("a");
-        hyperlink.href = baseUrl + mdcRefAnnos[id][i];
+        hyperlink.href = baseUrl + annos[id][i];
         hyperlink.className = "mdcr";
         hyperlink.target = "_blank";
         hyperlink.title = "Open " + hyperlink.href + " in new tab/window";
-        hyperlink.textContent = "\u24c2";
+        hyperlink.textContent = "\u24c7";
+        element.appendChild(space);
+        element.appendChild(hyperlink);
+      }
+    }
+  }
+}
+function addMdcGuideAnnos() {
+  var baseUrl = "https://developer.mozilla.org/en/JavaScript/Guide",
+  element,
+  hyperlink,
+  i,
+  id,
+  space,
+  annos = {
+    "x4.2": [ "/Working_with_Objects" ],
+    "x4.2.1": [ "/Details_of_the_Object_Model" ],
+    "x6": [ "/Values%2c_Variables%2c_and_Literals#Unicode" ],
+    "x7.4": [ "/Statements#Comments" ],
+    "x7.8.2": [ "/Values%2c_Variables%2c_and_Literals#Boolean_Literals" ],
+    "x7.8.3": [ "/Values%2c_Variables%2c_and_Literals#Integers", "Values%2c_Variables%2c_and_Literals#Floating-Point_Literals" ],
+    "x7.8.4": [ "/Values%2c_Variables%2c_and_Literals#String_Literals" ],
+    "x10.6": [ "Functions#Using_the_arguments_object" ],
+    "x11": [ "/Expressions_and_Operators" ],
+    "x11.1.1": [ "/Expressions_and_Operators#this" ],
+    "x11.1.4": [ "/Values%2c_Variables%2c_and_Literals#Array_Literals" ],
+    "x11.1.5": [ "/Working_with_Objects#Defining_Getters_and_Setters", "/Values%2c_Variables%2c_and_Literals#Object_Literals" ],
+    "x11.2.2": [ "/Expressions_and_Operators#new" ],
+    "x11.3.1": [ "/Expressions_and_Operators#Arithmetic_Operators" ],
+    "x11.3.2": [ "/Expressions_and_Operators#Arithmetic_Operators" ],
+    "x11.4.1": [ "/Expressions_and_Operators#delete" ],
+    "x11.4.2": [ "/Expressions_and_Operators#void" ],
+    "x11.4.3": [ "/Expressions_and_Operators#typeof" ],
+    "x11.4.4": [ "/Expressions_and_Operators#Arithmetic_Operators" ],
+    "x11.4.5": [ "/Expressions_and_Operators#Arithmetic_Operators" ],
+    "x11.4.6": [ "/Expressions_and_Operators#Arithmetic_Operators" ],
+    "x11.4.7": [ "/Expressions_and_Operators#Arithmetic_Operators" ],
+    "x11.4.8": [ "/Expressions_and_Operators#Bitwise_Operators" ],
+    "x11.4.9": [ "/Expressions_and_Operators#Logical_Operators" ],
+    "x11.5": [ "/Expressions_and_Operators#Arithmetic_Operators" ],
+    "x11.6": [ "/Expressions_and_Operators#Arithmetic_Operators" ],
+    "x11.6.1": [ "/Expressions_and_Operators#String_Operators" ],
+    "x11.7": [ "/Expressions_and_Operators#Bitwise_Shift_Operators" ],
+    "x11.8": [ "/Expressions_and_Operators#Comparison_Operators" ],
+    "x11.8.6": [ "/Expressions_and_Operators#instanceof" ],
+    "x11.8.7": [ "/Expressions_and_Operators#in" ],
+    "x11.9": [ "/Expressions_and_Operators#Comparison_Operators" ],
+    "x11.10": [ "/Expressions_and_Operators#Bitwise_Operators" ],
+    "x11.11": [ "/Expressions_and_Operators#Logical_Operators" ],
+    "x11.12": [ "/Expressions_and_Operators#conditional_operator" ],
+    "x11.13": [ "/Expressions_and_Operators#Assignment_Operators" ],
+    "x11.14": [ "/Expressions_and_Operators#comma_operator" ],
+    "x12": [ "/Statements" ],
+    "x12.1": [ "/Statements#Block_Statement" ],
+    "x12.2": [ "/Values%2c_Variables%2c_and_Literals#Variables" ],
+    "x12.5": [ "/Statements#if...else_Statement" ],
+    "x12.6.1": [ "/Statements#do...while_Statement" ],
+    "x12.6.2": [ "/Statements#while_Statement" ],
+    "x12.6.3": [ "/Statements#for_Statement" ],
+    "x12.6.4": [ "/Statements#for...in_Statement" ],
+    "x12.7": [ "/Statements#continue_Statement" ],
+    "x12.8": [ "/Statements#break_Statement" ],
+    "x12.10": [ "/Statements#with_Statement" ],
+    "x12.11": [ "/Statements#switch_Statement" ],
+    "x12.12": [ "/Statements#label_Statement" ],
+    "x12.13": [ "/Statements#throw_Statement" ],
+    "x12.14": [ "/Statements#try...catch_Statement" ],
+  };
+  for (id in annos) {
+    if (id !== null && id !== undefined) {
+      element = document.getElementById(id);
+      for (i = 0; i < annos[id].length; i = i + 1) {
+        space = document.createTextNode(" ");
+        hyperlink = document.createElement("a");
+        hyperlink.href = baseUrl + annos[id][i];
+        hyperlink.className = "mdcg";
+        hyperlink.target = "_blank";
+        hyperlink.title = "Open " + hyperlink.href + " in new tab/window";
+        hyperlink.textContent = "\u24bc";
         element.appendChild(space);
         element.appendChild(hyperlink);
       }
@@ -448,4 +527,5 @@ document.addEventListener("keyup", function (e) {
   }
 }, true);
 addMdcRefAnnos();
+addMdcGuideAnnos();
 annotateToc();

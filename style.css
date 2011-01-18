@@ -21,7 +21,9 @@ a:hover {
 }
 
 a.mdcr,
-a.mdcr:visited
+a.mdcg,
+a.mdcr:visited,
+a.mdcg:visited
 {
   color: green;
 }
