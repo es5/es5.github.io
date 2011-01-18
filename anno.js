@@ -494,6 +494,23 @@ function addMdcGuideAnnos() {
     "x12.12": [ "/Statements#label_Statement" ],
     "x12.13": [ "/Statements#throw_Statement" ],
     "x12.14": [ "/Statements#try...catch_Statement" ],
+    "x15.1.2.1": [ "/Functions#eval_Function" ],
+    "x15.1.2.2": [ "/Functions#parseInt_and_parseFloat_Functions" ],
+    "x15.1.2.3": [ "/Functions#parseInt_and_parseFloat_Functions" ],
+    "x15.1.2.4": [ "/Functions#isNaN_Function" ],
+    "x15.1.2.5": [ "/Functions#isFinite_Function" ],
+    "x15.5.1": [ "/Functions#Number_and_String_Functions" ],
+    "x15.7.1": [ "/Functions#Number_and_String_Functions" ],
+    "x15.3": [ "/Functions", "/Predefined_Core_Objects#Function_Object" ],
+    "x15.4": [ "/Predefined_Core_Objects#Array_Object" ],
+    "x15.5": [ "/Predefined_Core_Objects#String_Object" ],
+    "x15.6": [ "/Predefined_Core_Objects#Boolean_Object" ],
+    "x15.7": [ "/Predefined_Core_Objects#Number_Object" ],
+    "x15.8": [ "/Predefined_Core_Objects#Math_Object" ],
+    "x15.9": [ "/Predefined_Core_Objects#Date_Object" ],
+    "x15.10": [ "/Regular_Expressions", "/Predefined_Core_Objects#RegExp_Object" ],
+    "B.2.1": [ "/Functions#escape_and_unescape_Functions" ],
+    "B.2.2": [ "/Functions#escape_and_unescape_Functions" ],
   };
   for (id in annos) {
     if (id !== null && id !== undefined) {
