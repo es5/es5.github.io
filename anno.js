@@ -130,7 +130,6 @@ function annotateToc() {
         E = document.createElement("span");
         E.setAttribute("class", "toc-anno");
         E.textContent = symbol;
-        // E.textContent = "\u24ba";
         document.getElementById(nodeList[i].parentNode.id + "-toc").parentNode.firstChild.appendChild(E);
       }
     }
@@ -140,15 +139,47 @@ function annotateToc() {
   addMarker("anno", "\u24b6");
   addMarker("mdcr", "\u24c7");
   addMarker("mdcg", "\u24bc");
+  addMarker("dmas", "\u24b9");
 }
-function addMdcRefAnnos() {
-  var baseUrl = "https://developer.mozilla.org/en/JavaScript/Reference",
-  element,
-  hyperlink,
-  i,
-  id,
-  space,
-  annos = {
+function annotateHeadings(baseUrl, marker, className, annos) {
+  var element, hyperlink, i, id, space;
+  for (id in annos) {
+    if (id !== null && id !== undefined) {
+      element = document.getElementById(id);
+      for (i = 0; i < annos[id].length; i = i + 1) {
+        space = document.createTextNode(" ");
+        hyperlink = document.createElement("a");
+        hyperlink.href = baseUrl + annos[id][i];
+        hyperlink.className = className;
+        hyperlink.target = "_blank";
+        hyperlink.title = "Open " + hyperlink.href + " in new tab/window";
+        hyperlink.textContent = marker;
+        element.appendChild(space);
+        element.appendChild(hyperlink);
+      }
+    }
+  }
+}
+document.addEventListener('click', annoShow, false);
+// enable annotation pop-up to be dismissed by hitting esc key
+document.addEventListener("keyup", function (e) {
+  var key = 0;
+  if (!e) {
+    e = window.event;
+  }
+  key = e.keyCode ? e.keyCode : e.which;
+  if (key === 27 && annoPanel) {
+    document.getElementById("bubble").setAttribute("style", "display: none");
+    annotations.removeChild(annoPanel);
+    annoPanel = null;
+  }
+}, true);
+
+annotateHeadings(
+  "https://developer.mozilla.org/en/JavaScript/Reference",
+  "\u24c7",
+  "mdcr",
+  {
     "x7.4": [ "/Comments/comment" ],
     "x10.6": [ "/Functions_and_function_scope/arguments" ],
     "x11.1.1": [ "/Operators/Special/this" ],
@@ -416,32 +447,13 @@ function addMdcRefAnnos() {
     "x15.12": [ "/Global_Objects/JSON" ],
     "x15.12.2": [ "/Global_Objects/JSON/parse" ],
     "x15.12.3": [ "/Global_Objects/JSON/stringify" ]
-  };
-  for (id in annos) {
-    if (id !== null && id !== undefined) {
-      element = document.getElementById(id);
-      for (i = 0; i < annos[id].length; i = i + 1) {
-        space = document.createTextNode(" ");
-        hyperlink = document.createElement("a");
-        hyperlink.href = baseUrl + annos[id][i];
-        hyperlink.className = "mdcr";
-        hyperlink.target = "_blank";
-        hyperlink.title = "Open " + hyperlink.href + " in new tab/window";
-        hyperlink.textContent = "\u24c7";
-        element.appendChild(space);
-        element.appendChild(hyperlink);
-      }
-    }
   }
-}
-function addMdcGuideAnnos() {
-  var baseUrl = "https://developer.mozilla.org/en/JavaScript/Guide",
-  element,
-  hyperlink,
-  i,
-  id,
-  space,
-  annos = {
+);
+annotateHeadings(
+  "https://developer.mozilla.org/en/JavaScript/Guide",
+  "\u24bc",
+  "mdcg",
+  {
     "x4.2": [ "/Working_with_Objects" ],
     "x4.2.1": [ "/Details_of_the_Object_Model" ],
     "x6": [ "/Values%2c_Variables%2c_and_Literals#Unicode" ],
@@ -510,39 +522,30 @@ function addMdcGuideAnnos() {
     "x15.9": [ "/Predefined_Core_Objects#Date_Object" ],
     "x15.10": [ "/Regular_Expressions", "/Predefined_Core_Objects#RegExp_Object" ],
     "B.2.1": [ "/Functions#escape_and_unescape_Functions" ],
-    "B.2.2": [ "/Functions#escape_and_unescape_Functions" ],
-  };
-  for (id in annos) {
-    if (id !== null && id !== undefined) {
-      element = document.getElementById(id);
-      for (i = 0; i < annos[id].length; i = i + 1) {
-        space = document.createTextNode(" ");
-        hyperlink = document.createElement("a");
-        hyperlink.href = baseUrl + annos[id][i];
-        hyperlink.className = "mdcg";
-        hyperlink.target = "_blank";
-        hyperlink.title = "Open " + hyperlink.href + " in new tab/window";
-        hyperlink.textContent = "\u24bc";
-        element.appendChild(space);
-        element.appendChild(hyperlink);
-      }
-    }
+    "B.2.2": [ "/Functions#escape_and_unescape_Functions" ]
   }
-}
-document.addEventListener('click', annoShow, false);
-// enable annotation pop-up to be dismissed by hitting esc key
-document.addEventListener("keyup", function (e) {
-  var key = 0;
-  if (!e) {
-    e = window.event;
+);
+annotateHeadings(
+  "http://dmitrysoshnikov.com/ecmascript",
+  "\u24b9",
+  "dmas",
+  {
+    "x4.2":          [ "/javascript-the-core" ],
+    "x4.3":          [ "/es5-chapter-1-properties-and-property-descriptors" ],
+    "x8.6":          [ "/es5-chapter-1-properties-and-property-descriptors" ],
+    "x8.10":         [ "/es5-chapter-1-properties-and-property-descriptors" ],
+    "x8.12":         [ "/es5-chapter-1-properties-and-property-descriptors" ],
+    "x15.2.3":       [ "/es5-chapter-1-properties-and-property-descriptors" ],
+    "x4.2.2":        [ "/es5-chapter-2-strict-mode/" ],
+    "x10.1.1":       [ "/es5-chapter-2-strict-mode/" ],
+    "x14.1":         [ "/es5-chapter-2-strict-mode/" ],
+    "x15.1.2.1.1":   [ "/es5-chapter-2-strict-mode/" ],
+    "C":             [ "/es5-chapter-2-strict-mode/" ],
+    "x10.2":         [ "/es5-chapter-3-1-lexical-environments-common-theory" ],
+    "x13.2":         [ "/note-1-ecmascript-bound-functions" ],
+    "x15.3.4.5":     [ "/note-1-ecmascript-bound-functions" ],
+    "x11.4.3":       [ "/note-2-ecmascript-equality-operators/" ],
+    "x11.9":         [ "/note-2-ecmascript-equality-operators/" ]
   }
-  key = e.keyCode ? e.keyCode : e.which;
-  if (key === 27 && annoPanel) {
-    document.getElementById("bubble").setAttribute("style", "display: none");
-    annotations.removeChild(annoPanel);
-    annoPanel = null;
-  }
-}, true);
-addMdcRefAnnos();
-addMdcGuideAnnos();
+);
 annotateToc();
