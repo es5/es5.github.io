@@ -37,9 +37,9 @@ committed into the upstream source.
 
    [1]: https://github.com/signup/free
 
-   [2]: http://github.com/sideshowbarker/es5-spec#fork_box
+   [2]: http://github.com/es5/es5.github.com#fork_box
 
-   [3]: http://github.com/sideshowbarker/es5-spec/pulls
+   [3]: http://github.com/es5/es5.github.com/pulls
 
 ## Important
 
@@ -51,7 +51,7 @@ its implementation.
 
 ![][4]
 
-   [4]: http://sideshowbarker.github.com/es5-spec/js-mascot.svg
+   [4]: http://es5.github.com/js-mascot.svg
 
 Ex igne vita.
 
