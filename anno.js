@@ -120,32 +120,13 @@ function annoShow(event) {
   }
   return 0;
 }
-function annotateToc() {
-  var i,
-  addMarker = function (annoType, symbol) {
-    var E,
-      nodeList = document.getElementsByClassName(annoType);
-    for (i = 0; i < nodeList.length; i = i + 1) {
-      if (nodeList[i].offsetHeight !== 0) {
-        E = document.createElement("span");
-        E.setAttribute("class", "toc-anno");
-        E.textContent = symbol;
-        document.getElementById(nodeList[i].parentNode.id + "-toc").parentNode.firstChild.appendChild(E);
-      }
-    }
-  };
-  addMarker("erra", "\u24ba");
-  addMarker("rev1", "\u2460");
-  addMarker("anno", "\u24b6");
-  addMarker("mdcr", "\u24c7");
-  addMarker("mdcg", "\u24bc");
-  addMarker("dmas", "\u24b9");
-}
+
 function annotateHeadings(baseUrl, marker, className, annos) {
-  var element, hyperlink, i, id, space;
+  var element, hyperlink, i, id, space, tocAnno, tocSpace, tocElement;
   for (id in annos) {
     if (id !== null && id !== undefined) {
       element = document.getElementById(id);
+      tocElement = document.getElementById(id + "-toc");
       for (i = 0; i < annos[id].length; i = i + 1) {
         space = document.createTextNode(" ");
         hyperlink = document.createElement("a");
@@ -156,6 +137,12 @@ function annotateHeadings(baseUrl, marker, className, annos) {
         hyperlink.textContent = marker;
         element.appendChild(space);
         element.appendChild(hyperlink);
+        tocSpace = document.createTextNode(" ");
+        tocAnno = document.createElement("b");
+        tocAnno.className = className;
+        tocAnno.textContent = marker;
+        tocElement.appendChild(tocSpace);
+        tocElement.appendChild(tocAnno);
       }
     }
   }
@@ -548,4 +535,3 @@ annotateHeadings(
     "x11.9":         [ "/note-2-ecmascript-equality-operators/" ]
   }
 );
-annotateToc();
