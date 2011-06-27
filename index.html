@@ -18400,32 +18400,12 @@ with arguments <i>obj </i>and <i>Properties</i>.</p>
 		</li>
 
 		<LI><p>For
-		each element <I>P</I> of <I>names</I> in list order,</P>
+		each element <I>desc</I> of <I>descriptors</I> in list order,</P>
 		<OL>
-			<LI><p>Let
-			<I>descObj</I> be the result of calling the [[Get]] internal
-			method of <I>props</I> with <I>P</I> as the argument.</P>
-			<LI><p>Let
-			<I>desc</I> be the result of calling <a href="#x8.10.5">ToPropertyDescriptor</a> with
-			<I>descObj</I> as the argument.</P>
-			<LI><p>Append
-			the pair (a two element <a href="#x8.8">List</a>) consisting of
-			<I>P</I> and
-			<I>desc</I> to the end of <I>descriptors</I>.</P>
-		</OL>
-		<LI><p>For
-		 each element <I>pair</I>
-		from <I>descriptors</I> in list order,</P>
-		<OL>
-			<LI><p>Let
-			<I>P</I>
-			be the first element of <I>pair</I>.</P>
-			<LI><p>Let
-			<I>desc</I>
-			be the second element of <I>pair</I>.</P>
 			<LI><p>Call the [[DefineOwnProperty]] internal method of <I>O</I> with
-	arguments <I>P</I>, <I>desc</I>, and <B>true</B>.</P></li>
+			arguments <I>P</I>, <I>desc</I>, and <B>true</B>.</P></li>
 		</OL>
+		<LI><p>Return <i>O</i></p>
 </li>
 </ol>
 
