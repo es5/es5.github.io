@@ -124,7 +124,7 @@ function annoShow(event) {
 function annotateHeadings(baseUrl, marker, className, annos) {
   var element, hyperlink, i, id, space, tocAnno, tocSpace, tocElement;
   for (id in annos) {
-    if (id !== null) {
+    if (id != null) {
       element = document.getElementById(id);
       tocElement = document.getElementById(id + "-toc");
       for (i = 0; i < annos[id].length; i = i + 1) {
