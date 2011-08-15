@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html class="split chapter"><head><meta charset="utf-8"><title>14 Program # &#9417; &#9402; &#9312; &#9398; &#8212; Annotated ES5</title><link rel="stylesheet" href="style.css"><link rel="shortcut icon" href="favicon.ico"><link href="x13.html" title="13 Function Definition " rel="prev">
+  <link href="index.html#contents" title="TOC" rel="index">
+  <link href="x15.html" title="15 Standard Built-in ECMAScript Objects " rel="next">
+  </head><body><div class="head">
+<h2 id="top">Annotated ECMAScript 5.1 <span id="timestamp"></span></h2>
+<div id="mascot-treehouse">
+	<img id="mascot" align="left" src="js-mascot.svg" alt=""><img id="bubble" src="bubble.svg" alt=""></div>
+<p id="slogan">&#8223;Ex igne vita&#8221;</p>
+<div id="annotations"></div>
+<script src="timestamp.js"></script></div>
+<nav>
+   <a href="x13.html">&#8592; 13 Function Definition </a> &#8211;
+   <a href="index.html#contents">TOC</a> &#8211;
+   <a href="x15.html">15 Standard Built-in ECMAScript Objects  &#8594;</a>
+  <ol class="toc"><li><a href="x14.html#x14" id="x14-toc">14 Program</a>
+    <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x14.html#x14.1" id="x14.1-toc">14.1 Directive Prologues and the Use Strict Directive</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li></ol></nav>
+
+  <h2 id="x14">14 Program <a href="#x14">#</a> <a href="#x14-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h2>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>Program </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>SourceElements</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>SourceElements </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>SourceElement<br>SourceElements
+	SourceElement</i></p>
+	<p class="keep">
+	<i>SourceElement </i><b>:</b></p>
+	<p class="def1-btm">
+	<i><a href="x12.html#x12">Statement</a><br><a href="x13.html#x13">FunctionDeclaration</a></i></p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	The
+	production <i>Program </i><b>:</b><i>SourceElements</i><sub>opt</sub><code>
+	</code>is evaluated as follows:</p>
+	<ol><li><p>
+		The
+		code of this <i>Program</i> is <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a> if the Directive
+		Prologue (<a href="#x14.1">14.1</a>) of its <i>SourceElements</i> contains a Use Strict
+		Directive or if any of the conditions of <a href="x10.html#x10.1.1">10.1.1</a> apply. If the code
+		of this <i>Program</i> is <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a>, <i>SourceElements</i>
+		is evaluated in the following steps as <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a>.  Otherwise
+		<i>SourceElements</i> is evaluated in the following steps as
+		non-<a href="x10.html#x10.1.1" class="term-ref">strict mode code</a>.</p>
+		</li>
+		<li><p>
+		If
+		<i>SourceElements</i> is not present, return (normal,
+		empty, empty).</p>
+		</li>
+		<li><p>
+		Let
+		<i>progCxt</i> be a new execution context for <a href="x10.html#global-code">global code</a> as
+		described in <a href="x10.html#x10.4.1">10.4.1</a>. 
+		</p>
+		</li>
+		<li><p>
+		Let
+		<i>result </i>be the result of evaluating <i>SourceElements</i>.</p>
+		</li>
+		<li><p>
+		Exit
+		the execution context <i>progCxt</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>result</i>.</p>
+	</li></ol><p><b class="note">NOTE</b> The
+	processes for initiating the evaluation of a <i>Program</i>
+	and for dealing with the result of such an evaluation are defined by
+	an ECMAScript implementation and not by this specification.</p>
+	<p>
+	The
+	production <i>SourceElements</i>
+	<b>:</b> <i>SourceElements</i>
+	<i>SourceElement</i> is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>headResult</i> be the result of evaluating <i>SourceElements</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>headResult</i> is an <a href="x8.html#x8.9">abrupt completion</a>, return <i>headResult</i></p>
+		</li>
+		<li><p>
+		Let
+		<i>tailResult</i> be result of evaluating <i>SourceElement</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>tailResult</i>.value is empty,
+		let <i>V</i> = <i>headResult</i>.value, otherwise let <i>V</i> =
+		<i>tailResult</i>.value.</p>
+		</li>
+		<li><p>
+		Return
+		(tailResult.type, V, tailResult.target) 
+		</p>
+	</li></ol><p>
+	The
+	production <i>SourceElement </i><b>:</b><i>Statement </i>is evaluated as follows:</p>
+	<ol><li><p>
+		Return
+		the result of evaluating <i><a href="x12.html#x12">Statement</a></i>.</p>
+	</li></ol><p>
+	The
+	production <i>SourceElement </i><b>:</b><i><a href="x13.html#x13">FunctionDeclaration</a></i> is evaluated as follows:</p>
+	<ol><li><p>
+		Return
+		(normal, empty,
+		empty).</p>
+	</li></ol><h3 id="x14.1">14.1 Directive Prologues and the Use Strict Directive <a href="#x14.1">#</a> <a href="#x14.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	A
+	Directive Prologue is the longest sequence of <i>ExpressionStatement </i>productions occurring as the initial <i>SourceElement</i>
+	productions of a <i><a href="#x14">Program</a></i>
+	or <i><a href="x13.html#x13">FunctionBody</a></i>
+	and where each <i>ExpressionStatement </i>in the sequence
+	consists entirely of a <i>StringLiteral</i>
+	token followed a semicolon.
+	The semicolon may appear explicitly or may be inserted by
+<a href="x7.html#x7.9">automatic semicolon insertion</a>. A Directive Prologue may be an empty sequence.</p>
+	<p>
+	A Use
+	Strict Directive is an <i>ExpressionStatement</i>
+	in a Directive Prologue whose <i>StringLiteral</i>
+	is either the exact character sequences <code><b>"use</b></code><code>&#160;</code><code><b>strict"</b></code>
+	or<code><b> 'use</b></code><code>&#160;</code><code><b>strict'</b></code>.
+	A Use Strict Directive may not  contain an <i>EscapeSequence</i>
+	or <i>LineContinuation</i>.</p>
+	<p>
+	A
+	Directive Prologue may contain more than one Use Strict Directive.
+	However, an implementation may issue a warning if this occurs.</p>
+	<p><b class="note">NOTE</b> The
+	<i>ExpressionStatement</i>
+	productions of a Directive Prologue are evaluated normally during
+	evaluation of the containing <i>SourceElements</i>
+	production. Implementations may define implementation specific
+	meanings for <i>ExpressionStatement</i>
+	productions which are not a Use Strict Directive and which occur in
+	a Directive Prologue.  If an appropriate notification mechanism
+	exists, an implementation should issue a warning if it encounters in
+	a Directive Prologue an <i>ExpressionStatement</i>
+	that is not a Use Strict Directive or which does not have a meaning
+	defined by the implementation.</p>
+	</body><script src="anno.js"></script></html>

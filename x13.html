@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html class="split chapter"><head><meta charset="utf-8"><title>13 Function Definition # &#9417; &#9402; &#9312; &#9398; &#8212; Annotated ES5</title><link rel="stylesheet" href="style.css"><link rel="shortcut icon" href="favicon.ico"><link href="x12.html" title="12 Statements " rel="prev">
+  <link href="index.html#contents" title="TOC" rel="index">
+  <link href="x14.html" title="14 Program " rel="next">
+  </head><body><div class="head">
+<h2 id="top">Annotated ECMAScript 5.1 <span id="timestamp"></span></h2>
+<div id="mascot-treehouse">
+	<img id="mascot" align="left" src="js-mascot.svg" alt=""><img id="bubble" src="bubble.svg" alt=""></div>
+<p id="slogan">&#8223;Ex igne vita&#8221;</p>
+<div id="annotations"></div>
+<script src="timestamp.js"></script></div>
+<nav>
+   <a href="x12.html">&#8592; 12 Statements </a> &#8211;
+   <a href="index.html#contents">TOC</a> &#8211;
+   <a href="x14.html">14 Program  &#8594;</a>
+  <ol class="toc"><li><a href="x13.html#x13" id="x13-toc">13 Function Definition</a>
+    <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x13.html#x13.1" id="x13.1-toc">13.1 Strict Mode Restrictions</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x13.html#x13.2" id="x13.2-toc">13.2 Creating Function Objects</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x13.html#x13.2.1" id="x13.2.1-toc">13.2.1 [[Call]]</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x13.html#x13.2.2" id="x13.2.2-toc">13.2.2 [[Construct]]</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x13.html#x13.2.3" id="x13.2.3-toc">13.2.3 The Function Object</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li></ol></li></ol></nav>
+
+  <h2 id="x13">13 Function Definition <a href="#x13">#</a> <a href="#x13-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h2>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>FunctionDeclaration </i><b>:</b></p>
+	<p class="def1-btm">
+	<code><b>function</b></code> <i>Identifier </i><code><b>(</b></code> <i>FormalParameterList</i><sub>opt</sub><code><b>)</b></code> <code><b>{</b></code> <i>FunctionBody </i><code><b>}</b></code></p>
+	<p class="keep">
+	<i>FunctionExpression </i><b>:</b></p>
+	<p class="def1-btm">
+	<code><b>function</b></code> <i>Identifier</i><sub>opt</sub><code><b>(</b></code> <i>FormalParameterList</i><sub>opt</sub><code><b>)</b></code> <code><b>{</b></code> <i>FunctionBody </i><code><b>}</b></code></p>
+	<p class="keep">
+	<i>FormalParameterList </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>Identifier<br>FormalParameterList </i><code><b>,</b></code> <i>Identifier</i></p>
+	<p class="keep">
+	<i>FunctionBody </i><b>:</b></p>
+	<p class="def1-btm">
+	<i><a href="x14.html#x14">SourceElements</a></i><sub>opt</sub></p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	The
+	production<br><i>FunctionDeclaration </i><b>:</b><i> </i><code><b>function</b></code>
+	<i>Identifier </i><code><b>(</b></code> <i>FormalParameterList</i><sub>opt</sub><code><b>)</b></code> <code><b>{</b></code>
+	<i><a href="#x13">FunctionBody</a></i> <code><b>}</b></code><br>is
+	instantiated as follows during Declaration Binding instantiation
+	(<a href="x10.html#x10.5">10.5</a>):</p>
+	<ol><li><p>
+		Return
+		the result of creating a new Function object as specified in 13.2
+		with parameters specified by <i>FormalParameterList</i><sub>opt</sub>,
+		and body specified by <i><a href="#x13">FunctionBody</a></i>.
+		Pass in the VariableEnvironment of the running execution context as
+		the <i>Scope</i>.
+		Pass in <b>true</b>
+		as the <i>Strict</i>
+		flag if the <i>FunctionDeclaration</i>
+		is contained in <a href="x10.html#x10.1.1">strict code</a> or if its <i><a href="#x13">FunctionBody</a></i>
+		is <a href="x10.html#x10.1.1">strict code</a>.</p>
+	</li></ol><p>
+	The
+	production<br><i>FunctionExpression </i><b>:</b><i> </i><code><b>function</b></code>
+	<code><b>(</b></code> <i>FormalParameterList</i><sub>opt</sub><code><b>)</b></code> <code><b>{</b></code>
+	<i><a href="#x13">FunctionBody</a></i> <code><b>}</b></code>
+	<br>is evaluated as follows:</p>
+	<ol><li><p>
+		Return
+		the result of creating a new Function object as specified in 13.2
+		with parameters specified by <i>FormalParameterList</i><sub>opt</sub>
+		and body specified by <i><a href="#x13">FunctionBody</a></i>.
+		Pass in the <a href="x10.html#x10.2">LexicalEnvironment</a> of the running execution context as
+		the <i>Scope</i>.
+		Pass in <b>true</b>
+		as the <i>Strict</i>
+		flag if the <i>FunctionExpression</i>
+		is contained in <a href="x10.html#x10.1.1">strict code</a> or if its <i><a href="#x13">FunctionBody</a></i>
+		is <a href="x10.html#x10.1.1">strict code</a>.</p>
+	</li></ol><p>
+	The
+	production<br><i>FunctionExpression</i>
+	<b>:</b> <code><b>function</b></code>
+	<i>Identifier</i> <code><b>(</b></code>
+	<i>FormalParameterList</i><sub>opt</sub><code><b>)</b></code> <code><b>{</b></code>
+	<i><a href="#x13">FunctionBody</a></i> <code><b>}</b></code><br>is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>funcEnv </i>be
+		the result of calling <a href="x10.html#x10.2.2.2">NewDeclarativeEnvironment</a> passing the running
+		execution context&#8217;s <a href="x10.html#x10.2">Lexical Environment</a> as the argument</p>
+		</li>
+		<li><p>
+		Let
+		<i>envRec </i>be
+		<i>funcEnv&#8217;s </i>environment record.</p>
+		</li>
+		<li><p>
+		Call
+		the <a href="x10.html#x10.2.1.1.7">CreateImmutableBinding</a>(N) concrete method of <i>envRec </i>passing the String
+		value of <i>Identifier</i>
+		as the argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>closure </i>be
+		the result of creating a new Function object as specified in 13.2
+		with parameters specified by <i>FormalParameterList</i><sub>opt</sub>
+		and body specified by <i><a href="#x13">FunctionBody</a></i>.
+		Pass in <i>funcEnv </i>as
+		the <i>Scope</i>.
+		Pass in <b>true</b>
+		as the <i>Strict</i>
+		flag if the <i>FunctionExpression</i>
+		is contained in <a href="x10.html#x10.1.1">strict code</a> or if its <i><a href="#x13">FunctionBody</a></i>
+		is <a href="x10.html#x10.1.1">strict code</a>.</p>
+		</li>
+		<li><p>
+		Call
+		the <a href="x10.html#x10.2.1.1.8">InitializeImmutableBinding</a>(<i>N,V</i>)
+		concrete method of <i>envRec </i>passing the String
+		value of <i>Identifier </i>and <i>closure </i>as the arguments.</p>
+		</li>
+		<li><p>
+		Return
+		<i>closure</i>.</p>
+	</li></ol><p><b class="note">NOTE</b> The
+	Identifier in a <i>FunctionExpression</i>
+	can be referenced from inside the <i>FunctionExpression's</i>
+	<i><a href="#x13">FunctionBody</a></i> to
+	allow the function to call itself recursively. However, unlike in a
+	<i>FunctionDeclaration</i>,
+	the <i>Identifier</i> in
+	a <i>FunctionExpression</i>
+	cannot be referenced from and does not affect the scope enclosing
+	the <i>FunctionExpression</i>.</p>
+	<p>
+	The
+	production <i>FunctionBody </i><b>:</b><i>SourceElements</i><sub>opt</sub>  is evaluated as follows:</p>
+	<ol><li><p>
+		The
+		code of this <i>FunctionBody </i>is <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a>
+		if it is part of a <i>FunctionDeclaration</i>
+		or <i>FunctionExpression</i>
+		that is contained in <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a> or if the Directive Prologue
+		(<a href="x14.html#x14.1">14.1</a>) of its <i>SourceElements</i>
+		contains a Use Strict Directive or if any of the conditions in
+		<a href="x10.html#x10.1.1">10.1.1</a> apply.  If the code of this <i>FunctionBody </i>is <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a>,
+		<i>SourceElements</i>
+		is evaluated in the following steps as <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a>. Otherwise,
+		<i>SourceElements</i>
+		is evaluated in the following steps as non-<a href="x10.html#x10.1.1" class="term-ref">strict mode code</a>.</p>
+		</li>
+		<li><p>
+		If
+		<i>SourceElements</i>
+		is present return the result of evaluating <i>SourceElements</i>.</p>
+		</li>
+		<li><p>
+		Else
+		return (normal,
+		<b>undefined</b>,
+		empty).</p>
+	</li></ol><h3 id="x13.1">13.1 Strict Mode Restrictions <a href="#x13.1">#</a> <a href="#x13.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	It is
+	a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> if any <i>Identifier</i>
+	value occurs more than once within a <i>FormalParameterList</i>
+	of a strict mode <i>FunctionDeclaration</i>
+	or <i>FunctionExpression</i>.</p>
+	<p>
+	It is
+	a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> if the <i>Identifier</i>
+	<code><b>"eval"</b></code>
+	or the <i>Identifier </i><code><b>"arguments"</b></code>
+	occurs within a <i>FormalParameterList</i>
+	of a strict mode <i>FunctionDeclaration</i>
+	or <i>FunctionExpression</i>.</p>
+	<p>
+	It is
+	a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> if the <i>Identifier</i>
+	<code><b>"eval"</b></code>
+	or the <i>Identifier </i><code><b>"arguments"</b></code>
+	occurs as the <i>Identifier</i>
+	of a strict mode <i>FunctionDeclaration</i>
+	or <i>FunctionExpression</i>.</p>
+	<h3 id="x13.2">13.2 Creating Function Objects <a href="#x13.2">#</a> <a href="#x13.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	Given
+	an optional parameter list specified by <i>FormalParameterList</i>,
+	a body specified by <i><a href="#x13">FunctionBody</a></i>,
+	a <a href="x10.html#x10.2">Lexical Environment</a> specified by <i>Scope</i>,
+	and a Boolean flag <i>Strict</i>,
+	a Function object is constructed as follows:</p>
+	<ol><li><p>
+		Create
+		a new native ECMAScript object and let <i>F</i>
+		be that object.</p>
+		</li>
+		<li><p>
+		Set
+		all the internal methods, except for [[Get]], of <i>F</i>
+		as described in <a href="x8.html#x8.12">8.12</a>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[Class]] internal property of <i>F</i>
+		to <code><b>"Function"</b></code>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[Prototype]] internal property of <i>F</i>
+		to the standard built-in Function prototype object as specified in
+		<a href="x15.html#x15.3.3.1">15.3.3.1</a>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[Get]] internal property of <i>F</i>
+		as described in <a href="x15.html#x15.3.5.4">15.3.5.4</a>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[Call]] internal property of <i>F</i>
+		as described in <a href="#x13.2.1">13.2.1</a>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[Construct]] internal property of <i>F</i>
+		as described in <a href="#x13.2.2">13.2.2</a>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[HasInstance]] internal property of <i>F</i>
+		as described in <a href="x15.html#x15.3.5.3">15.3.5.3</a>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[Scope]] internal property of <i>F</i>
+		to the value of <i>Scope</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>names </i>be
+		a <a href="x8.html#x8.8">List</a> containing, in left to right textual order, the Strings
+		corresponding to the identifiers of <i>FormalParameterList</i>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[FormalParameters]] internal property of <i>F </i>to <i>names</i>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[Code]] internal property of <i>F </i>to <i><a href="#x13">FunctionBody</a></i>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[Extensible]] internal property of <i>F </i>to <b>true</b>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>len</i>
+		be the number of formal parameters specified in
+		<i>FormalParameterList</i>.
+		If no parameters are specified, let <i>len</i>
+		be 0.</p>
+		</li>
+		<li><p>
+		Call
+		the [[DefineOwnProperty]] internal method of <i>F</i>
+		with arguments <code><b>"</b></code><code><b>length</b></code><code><b>"</b></code>,
+	 <a href="x8.html#x8.10">Property Descriptor</a> {[[Value]]: <i>len</i>,
+		[[Writable]]: <b>false</b>,
+		[[Enumerable]]: <b>false</b>,
+		[[Configurable]]: <b>false</b>},
+		and <b>false</b>.
+		
+		</p>
+		</li>
+		<li><p>
+		Let
+		<i>proto</i>
+		be the result of creating a new object as would be constructed by
+		the expression <code><b>new
+		Object()</b></code>where <code><b>Object</b></code>
+		is <a href="x15.html#x15.2">the standard built-in constructor with that name</a>.</p>
+		</li>
+		<li><p>
+		Call
+		the [[DefineOwnProperty]] internal method of <i>proto</i>
+		with arguments <code><b>"</b></code><code><b>constructor</b></code><code><b>"</b></code>,
+	 <a href="x8.html#x8.10">Property Descriptor</a> {[[Value]]: <i>F</i>,
+		{ [[Writable]]: <b>true</b>,
+		[[Enumerable]]: <b>false</b>,
+		[[Configurable]]: <b>true</b>},
+		and <b>false</b>.</p>
+		</li>
+		<li><p>
+		Call
+		the [[DefineOwnProperty]] internal method of <i>F</i>
+		with arguments <code><b>"</b></code><code><b>prototype</b></code><code><b>"</b></code>,
+	 <a href="x8.html#x8.10">Property Descriptor</a> {[[Value]]: <i>proto</i>,
+		{ [[Writable]]: <b>true</b>,
+		[[Enumerable]]: <b>false</b>,
+		[[Configurable]]: <b>false</b>},
+		and <b>false</b>.</p>
+		</li>
+		<li><p>
+		If
+		<i>Strict</i>
+		is <b>true</b>,
+		then</p>
+		<ol><li><p>
+			Let
+			<i>thrower</i>
+			be the [[ThrowTypeError]] function Object (<a href="#x13.2.3">13.2.3</a>).</p>
+			</li>
+			<li><p>
+			Call
+			the [[DefineOwnProperty]] internal method of <i>F</i>
+			with arguments <code><b>"caller"</b></code>,
+			PropertyDescriptor {[[Get]]: <i>thrower</i>,
+			[[Set]]: <i>thrower</i>,
+			[[Enumerable]]: <b>false</b>,
+			[[Configurable]]: <b>false</b>},
+			and <b>false</b>.</p>
+			</li>
+			<li><p>
+			Call
+			the [[DefineOwnProperty]] internal method of <i>F</i>
+			with arguments <code><b>"arguments"</b></code>,
+			PropertyDescriptor {[[Get]]: <i>thrower</i>,
+			[[Set]]: <i>thrower</i>,
+			[[Enumerable]]: <b>false</b>,
+			[[Configurable]]: <b>false</b>},
+			and <b>false</b>.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		<i>F</i>.</p>
+	</li></ol><p><b class="note">NOTE</b> A
+	<code><b>prototype</b></code>
+	property is automatically created for every function, to allow for
+	the possibility that the function will be used as a constructor.</p>
+	<h4 id="x13.2.1">13.2.1 [[Call]] <a href="#x13.2.1">#</a> <a href="#x13.2.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	the [[Call]] internal method for a Function object <i>F</i>
+	is called with a this value and a list of arguments, the following
+	steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>funcCtx </i>be the result of establishing a new execution
+		context for <a href="x10.html#function-code">function code</a> using the value of <i>F</i>'s
+		[[FormalParameters]] internal property, the passed arguments <a href="x8.html#x8.8">List</a>
+		<i>args</i>, and the <b>this</b> value as described in <a href="x10.html#x10.4.3">10.4.3</a>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>result </i>be the result of evaluating the <i><a href="#x13">FunctionBody</a></i>
+		that is the value of<i> F</i>'s [[Code]] internal property. If <i>F</i>
+		does not have a [[Code]] internal property or if its value is an
+		empty <i><a href="#x13">FunctionBody</a></i>, then <i>result</i> is (normal,
+		undefined, empty).</p>
+		</li>
+		<li><p>
+		Exit
+		the execution context <i>funcCtx</i>, restoring the previous
+		execution context.</p>
+		</li>
+		<li><p>
+		If
+		<i>result</i>.type is throw
+		then throw <i>result</i>.value.</p>
+		</li>
+		<li><p>
+		If
+		<i>result</i>.type is return
+		then return <i>result</i>.value.</p>
+		</li>
+		<li><p>
+		Otherwise
+		<i>result</i>.type must be normal.
+		Return <b>undefined</b>.</p>
+	</li></ol><h4 id="x13.2.2">13.2.2 [[Construct]] <a href="#x13.2.2">#</a> <a href="#x13.2.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	the [[Construct]] internal method for a Function object <i>F</i>
+	is called with a possibly empty list of arguments, the following
+	steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>obj </i>be
+		a newly created native ECMAScript object.</p>
+		</li>
+		<li><p>
+		Set
+		all the internal methods of <i>obj</i>
+		as specified in <a href="x8.html#x8.12">8.12</a>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[Class]] internal property of <i>obj </i>to <code><b>"Object"</b></code>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[Extensible]] internal property of <i>obj </i>to <b>true</b>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>proto </i>be
+		the value of calling the [[Get]] internal property of <i>F</i>
+		with argument <code><b>"prototype"</b></code>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>proto</i>) is Object, set the
+		[[Prototype]] internal property of <i>obj </i>to <i>proto</i>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>proto</i>) is not Object, set
+		the [[Prototype]] internal property of <i>obj </i>to the standard
+		built-in Object prototype object as described in <a href="x15.html#x15.2.4">15.2.4</a>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>result </i>be
+		the result of calling the [[Call]] internal property of <i>F</i>,
+		providing <i>obj </i>as
+		the <b>this</b>
+		value and providing the argument list passed into [[Construct]] as
+		<i>args</i>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>result</i>)
+		is Object then return <i>result</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>obj</i>.</p>
+	</li></ol><h4 id="x13.2.3">13.2.3 The [[ThrowTypeError]] Function Object <a href="#x13.2.3">#</a> <a href="#x13.2.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<ol><li><p>
+		The
+		[[ThrowTypeError]] object is a unique function object that is
+		defined once as follows:</p>
+		</li>
+		<li><p>
+		Create
+		a new native ECMAScript object and let <i>F</i>
+		be that object.</p>
+		</li>
+		<li><p>
+		Set
+		all the internal methods of <i>F</i>
+		as described in <a href="x8.html#x8.12">8.12</a>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[Class]] internal property of <i>F</i>
+		to <code><b>"Function"</b></code>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[Prototype]] internal property of <i>F</i>
+		to the standard built-in Function prototype object as specified in
+		<a href="x15.html#x15.3.3.1">15.3.3.1</a>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[Call]] internal property of <i>F</i>
+		as described in <a href="#x13.2.1">13.2.1</a>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[Scope]] internal property of <i>F</i>
+		to the <a href="x10.html#x10.2.3">Global Environment</a>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[FormalParameters]] internal property of <i>F </i>to an empty <a href="x8.html#x8.8">List</a>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[Code]] internal property of <i>F </i>to be a <i><a href="#x13">FunctionBody</a></i>
+		that unconditionally throws a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		exception and performs no other action.</p>
+		</li>
+		<li><p>
+		Call
+		the [[DefineOwnProperty]] internal method of <i>F</i>
+		with arguments <code><b>"</b></code><code><b>length</b></code><code><b>"</b></code>,
+	 <a href="x8.html#x8.10">Property Descriptor</a> {[[Value]]: <i>0</i>,
+		[[Writable]]: <b>false</b>,
+		[[Enumerable]]: <b>false</b>,
+		[[Configurable]]: <b>false</b>},
+		and <b>false</b>.
+		
+		</p>
+		</li>
+		<li><p>
+		Set
+		the [[Extensible]] internal property of <i>F </i>to <b>false</b>.</p>
+		</li>
+		<li><p>
+		Let
+		[[ThrowTypeError]] be <i>F</i>.</p>
+	</li></ol></body><script src="anno.js"></script></html>

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html class="split chapter"><head><meta charset="utf-8"><title>Annex B (informative) Compatibility # &#9417; &#9402; &#9312; &#9398; &#8212; Annotated ES5</title><link rel="stylesheet" href="style.css"><link rel="shortcut icon" href="favicon.ico"><link href="A.html" title="Annex A (informative) Grammar Summary " rel="prev">
+  <link href="index.html#contents" title="TOC" rel="index">
+  <link href="C.html" title="Annex C (informative) The Strict Mode of ECMAScript " rel="next">
+  </head><body><div class="head">
+<h2 id="top">Annotated ECMAScript 5.1 <span id="timestamp"></span></h2>
+<div id="mascot-treehouse">
+	<img id="mascot" align="left" src="js-mascot.svg" alt=""><img id="bubble" src="bubble.svg" alt=""></div>
+<p id="slogan">&#8223;Ex igne vita&#8221;</p>
+<div id="annotations"></div>
+<script src="timestamp.js"></script></div>
+<nav>
+   <a href="A.html">&#8592; Annex A (informative) Grammar Summary </a> &#8211;
+   <a href="index.html#contents">TOC</a> &#8211;
+   <a href="C.html">Annex C (informative) The Strict Mode of ECMAScript  &#8594;</a>
+  <ol class="toc"><li><a href="B.html#B" id="B-toc">Annex B (informative) Compatibility</a>
+    <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="B.html#B.1" id="B.1-toc">B.1 Additional Syntax</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="B.html#B.1.1" id="B.1.1-toc">B.1.1 Numeric Literals</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="B.html#B.1.2" id="B.1.2-toc">B.1.2 String Literals</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="B.html#B.2" id="B.2-toc">B.2 Additional Properties</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="B.html#B.2.1" id="B.2.1-toc">B.2.1 escape (string)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="B.html#B.2.2" id="B.2.2-toc">B.2.2 unescape (string)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="B.html#B.2.3" id="B.2.3-toc">B.2.3 String.prototype.substr (start, length)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="B.html#B.2.4" id="B.2.4-toc">B.2.4 Date.prototype.getYear ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="B.html#B.2.5" id="B.2.5-toc">B.2.5 Date.prototype.setYear (year)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="B.html#B.2.6" id="B.2.6-toc">B.2.6 Date.prototype.toGMTString ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li></ol></li></ol></nav>
+
+  <h2 id="B">Annex B (informative) Compatibility <a href="#B">#</a> <a href="#B-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h2>
+	<h3 id="B.1">B.1 Additional Syntax <a href="#B.1">#</a> <a href="#B.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	Past
+	editions of ECMAScript have included additional syntax and semantics
+	for specifying octal literals and octal escape sequences. These have
+	been removed from this edition of ECMAScript. This non-normative
+	annex presents uniform syntax and semantics for octal literals and
+	octal escape sequences for compatibility with some older ECMAScript
+	programs.</p>
+	<h4 id="B.1.1">B.1.1 Numeric Literals <a href="#B.1.1">#</a> <a href="#B.1.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	syntax and semantics of <a href="x7.html#x7.8.3">7.8.3</a> can be extended as follows except that
+	this extension is not allowed for <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a>:</p>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>NumericLiteral </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>DecimalLiteral<br>HexIntegerLiteral<br>OctalIntegerLiteral</i></p>
+	<p class="keep">
+	<i>OctalIntegerLiteral </i><b>::</b></p>
+	<p class="def1-btm">
+	<code><b>0</b></code> <i>OctalDigit<br>OctalIntegerLiteral OctalDigit</i></p>
+	<p class="keep">
+	<i>OctalDigit </i><b>::</b> <b>one
+	of</b></p>
+	<p class="def1-btm">
+	<code><b>0</b></code> <i><b>
+	 </b></i><code><b>1</b></code> <i><b>
+	 </b></i><code><b>2</b></code> <i><b>
+	 </b></i><code><b>3
+	</b></code> <i> </i><code><b>4
+	</b></code> <i> </i><code><b>5</b></code> <i><b>
+	 </b></i><code><b>6</b></code> <i><b>
+	 </b></i><code><b>7</b></code></p>
+	<p>
+	Semantics</p>
+	<ul><li><p>
+		The
+		MV of <i>NumericLiteral</i>
+		<b>::</b>
+		<i>OctalIntegerLiteral</i> is
+		the MV of <i>OctalIntegerLiteral</i>.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>OctalDigit</i> <b>::</b>
+		<code><b>0</b></code>
+		is 0.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>OctalDigit</i> <b>::</b>
+		<code><b>1</b></code>
+		is 1.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>OctalDigit</i> <b>::</b>
+		<code><b>2</b></code>
+		is 2.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>OctalDigit</i> <b>::</b>
+		<code><b>3</b></code>
+		is 3.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>OctalDigit</i> <b>::</b>
+		<code><b>4</b></code>
+		is 4.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>OctalDigit</i> <b>::</b>
+		<code><b>5</b></code>
+		is 5.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>OctalDigit</i> <b>::</b>
+		<code><b>6</b></code>
+		is 6.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>OctalDigit</i> <b>::</b>
+		<code><b>7</b></code>
+		is 7.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>OctalIntegerLiteral </i><b>::</b>
+		<code><b>0</b></code>
+		<i>OctalDigit</i> is the MV
+		of <i>OctalDigit</i>.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>OctalIntegerLiteral </i><b>::</b>
+		<i>OctalIntegerLiteral</i>
+		<i>OctalDigit</i> is (the MV
+		of <i>OctalIntegerLiteral</i>
+		times 8) plus the MV of <i>OctalDigit</i>.</p>
+	</li></ul><h4 id="B.1.2">B.1.2 String Literals <a href="#B.1.2">#</a> <a href="#B.1.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	syntax and semantics of <a href="x7.html#x7.8.4">7.8.4</a> can be extended as follows except that
+	this extension is not allowed for <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a>:</p>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>EscapeSequence </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>CharacterEscapeSequence<br>OctalEscapeSequence<br>HexEscapeSequence<br>UnicodeEscapeSequence</i></p>
+	<p class="keep">
+	<i>OctalEscapeSequence </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>OctalDigit </i>[<a href="x5.html#lookahead-not-in">lookahead
+	<span class="symbol">&#8713;</span></a>
+	<i>DecimalDigit</i>]<i><br>ZeroToThree
+	OctalDigit </i>[<a href="x5.html#lookahead-not-in">lookahead
+	<span class="symbol">&#8713;</span></a><i>DecimalDigit</i>]<i><br>FourToSeven
+	OctalDigit<br>ZeroToThree OctalDigit OctalDigit</i></p>
+	<p class="keep">
+	<i>ZeroToThree </i><b>::</b> <b>one
+	of</b></p>
+	<p class="def1-btm">
+	<code><b>0
+	 1  2  3</b></code></p>
+	<p class="keep">
+	<i>FourToSeven </i><b>::</b><i><b>
+	</b></i><b>one
+	of</b></p>
+	<p class="def1-btm">
+	<b>4
+	 5  6  7</b></p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+		<ul><li><p>
+			The
+			CV of <i>EscapeSequence </i><b>::</b>
+			<i>OctalEscapeSequence</i>
+			is the CV of the<i> OctalEscapeSequence</i>.</p>
+			</li>
+			<li><p>
+			The
+			CV of <i>OctalEscapeSequence</i>
+			<b>::</b>
+			<i>OctalDigit</i> [<a href="x5.html#lookahead-not-in">lookahead
+			<span class="symbol">&#8713;</span></a>
+			<i>DecimalDigit</i>]
+			is the character whose code unit value is the MV of the
+			<i>OctalDigit</i>.</p>
+			</li>
+			<li><p>
+			The
+			CV of <i>OctalEscapeSequence</i>
+			<b>::</b>
+			<i>ZeroToThree</i>
+			<i>OctalDigit</i> [<a href="x5.html#lookahead-not-in">lookahead
+			<span class="symbol">&#8713;</span></a>
+			<i>DecimalDigit</i>]
+			is the character whose code unit value is (8 times the MV of the
+			<i>ZeroToThree</i>) plus the
+			MV of the <i>OctalDigit</i>.</p>
+			</li>
+			<li><p>
+			The
+			CV of <i>OctalEscapeSequence</i>
+			<b>::</b>
+			<i>FourToSeven</i>
+			<i>OctalDigit</i> is the
+			character whose code unit value is (8 times the MV of the
+			<i>FourToSeven</i>) plus the
+			MV of the <i>OctalDigit</i>.</p>
+			</li>
+			<li><p>
+			The
+			CV of <i>OctalEscapeSequence</i>
+			<b>::</b>
+			<i>ZeroToThree</i>
+			<i>OctalDigit</i> <i>OctalDigit</i>
+			is the character whose code unit value is (64 (that is, 8<sup>2</sup>)
+			times the MV of the <i>ZeroToThree</i>)
+			plus (8 times the MV of the first <i>OctalDigit</i>)
+			plus the MV of the second <i>OctalDigit</i>.</p>
+			</li>
+			<li><p>
+			The
+			MV of <i>ZeroToThree</i> <b>::</b>
+			<code><b>0</b></code>
+			is 0.</p>
+			</li>
+			<li><p>
+			The
+			MV of <i>ZeroToThree </i><b>::</b>
+			<code><b>1</b></code>
+			is 1.</p>
+			</li>
+			<li><p>
+			The
+			MV of <i>ZeroToThree </i><b>::</b>
+			<code><b>2</b></code>
+			is 2.</p>
+			</li>
+			<li><p>
+			The
+			MV of <i>ZeroToThree </i><b>::</b>
+			<code><b>3</b></code>
+			is 3.</p>
+			</li>
+			<li><p>
+			The
+			MV of <i>FourToSeven</i> <b>::</b>
+			<code><b>4</b></code>
+			is 4.</p>
+			</li>
+			<li><p>
+			The
+			MV of <i>FourToSeven</i> <b>::</b>
+			<code><b>5</b></code>
+			is 5.</p>
+			</li>
+			<li><p>
+			The
+			MV of <i>FourToSeven</i> <b>::</b>
+			<code><b>6</b></code>
+			is 6.</p>
+			</li>
+			<li><p>
+			The
+			MV of <i>FourToSeven</i> <b>::</b>
+			<code><b>7</b></code>
+			is 7.</p>
+		</li></ul><h3 id="B.2">B.2 Additional Properties <a href="#B.2">#</a> <a href="#B.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	Some
+	implementations of ECMAScript have included additional properties
+	for some of the standard native objects. This non-normative annex
+	suggests uniform semantics for such properties without making the
+	properties or their semantics part of this standard.</p>
+	<h4 id="B.2.1">B.2.1 escape (string) <a href="#B.2.1">#</a> <a href="#B.2.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	<code><b>escape</b></code> function is
+	a property of the <a href="x15.html#x15.1" class="term-ref">global object</a>. It computes a new version of a
+	String value in which certain characters have been replaced by a
+	hexadecimal escape sequence.</p>
+	<p>
+	For
+	those characters being replaced whose code unit value is <code><b>0xFF
+	</b></code>or less, a two-digit escape sequence of the form <code><b>%</b></code> <i>xx</i>
+	is used. For those characters being replaced whose code unit value
+	is greater than <code><b>0xFF</b></code>,
+	a four-digit escape sequence of the form <code><b>%u</b></code> <i>xxxx</i>
+	is used</p>
+	<p>
+	When
+	the <code><b>escape</b></code>
+	function is called with one argument <i>string</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		Call
+		<a href="x9.html#x9.8">ToString</a>(<i>string</i>).</p>
+		</li>
+		<li><p>
+		Compute
+		the number of characters in Result(1).</p>
+		</li>
+		<li><p>
+		Let
+		<i>R </i>be the empty string.</p>
+		</li>
+		<li><p>
+		Let
+		<i>k</i> be 0.</p>
+		</li>
+		<li><p>
+		If
+		<i>k</i> equals Result(2), return <i>R</i>.</p>
+		</li>
+		<li><p>
+		Get
+		the character (represented as a 16-bit unsigned integer) at
+		position <i>k</i> within Result(1).</p>
+		</li>
+		<li><p>
+		If
+		Result(6) is one of the 69 nonblank
+		characters<br><code><b>&#8220;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@*_+-./&#8221;<br></b></code>then
+		go to step 13.</p>
+		</li>
+		<li><p>
+		If
+		Result(6), is less than 256, go to step 11.</p>
+		</li>
+		<li><p>
+		Let
+		<i>S</i> be a String containing six characters <code><b>&#8220;%u</b></code> <i>wxyz</i><code><b>&#8221;</b></code>
+		where <i>wxyz</i> are four hexadecimal digits encoding the value of
+		Result(6).</p>
+		</li>
+		<li><p>
+		Go
+		to step 14.</p>
+		</li>
+		<li><p>
+		Let
+		<i>S</i> be a String containing three characters <code><b>&#8220;%</b></code> <i>xy</i><code><b>&#8221;</b></code>
+		where <i>xy</i> are two hexadecimal digits encoding the value of
+		Result(6).</p>
+		</li>
+		<li><p>
+		Go
+		to step 14.</p>
+		</li>
+		<li><p>
+		Let
+		<i>S</i> be a String containing the single character Result(6).</p>
+		</li>
+		<li><p>
+		Let
+		<i>R</i> be a new String value computed by concatenating the
+		previous value of <i>R</i> and <i>S</i>.</p>
+		</li>
+		<li><p>
+		Increase
+		<i>k</i> by 1.</p>
+		</li>
+		<li><p>
+		Go
+		to step 5.</p>
+	</li></ol><p><b class="note">NOTE</b> The
+	encoding is partly based on the encoding described in RFC 1738, but
+	the entire encoding specified in this standard is described above
+	without regard to the contents of RFC 1738. This encoding does not
+	reflect changes to RFC 1738 made by RFC 3986.</p>
+
+	<h4 id="B.2.2">B.2.2 unescape (string) <a href="#B.2.2">#</a> <a href="#B.2.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	<code><b>unescape</b></code> function
+	is a property of the <a href="x15.html#x15.1" class="term-ref">global object</a>. It computes a new version of a
+	String value in which each escape sequence of the sort that might be
+	introduced by the <code><b>escape</b></code>
+	function is replaced with the character that it represents.</p>
+	<p>
+	When
+	the <code><b>unescape</b></code>
+	function is called with one argument <i>string</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		Call
+		<a href="x9.html#x9.8">ToString</a>(<i>string</i>).</p>
+		</li>
+		<li><p>
+		Compute
+		the number of characters in Result(1).</p>
+		</li>
+		<li><p>
+		Let
+		<i>R</i> be the empty String.</p>
+		</li>
+		<li><p>
+		Let
+		<i>k</i> be 0.</p>
+		</li>
+		<li><p>
+		If
+		<i>k</i> equals Result(2), return <i>R</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>c</i> be the character at position <i>k</i> within Result(1).</p>
+		</li>
+		<li><p>
+		If
+		<i>c</i> is not <code><b>%</b></code>,
+		go to step 18.</p>
+		</li>
+		<li><p>
+		If
+		<i>k</i> is greater than Result(2)<span class="symbol">&#8722;</span>6,
+		go to step 14.</p>
+		</li>
+		<li><p>
+		If
+		the character at position <i>k</i>+1 within Result(1) is not <code><b>u</b></code>,
+		go to step 14.</p>
+		</li>
+		<li><p>
+		If
+		the four characters at positions <i>k</i>+2, <i>k</i>+3, <i>k</i>+4,
+		and <i>k</i>+5 within Result(1) are not all hexadecimal digits, go
+		to step 14.</p>
+		</li>
+		<li><p>
+		Let
+		<i>c</i> be the character whose code unit value is the integer
+		represented by the four hexadecimal digits at positions <i>k</i>+2,<i>k</i>+3, <i>k</i>+4, and <i>k</i>+5 within Result(1).</p>
+		</li>
+		<li><p>
+		Increase
+		k by 5.</p>
+		</li>
+		<li><p>
+		Go
+		to step 18.</p>
+		</li>
+		<li><p>
+		If
+		<i>k</i> is greater than Result(2)<span class="symbol">&#8722;</span>3,
+		go to step 18.</p>
+		</li>
+		<li><p>
+		If
+		the two characters at positions <i>k</i>+1 and <i>k</i>+2 within
+		Result(1) are not both hexadecimal digits, go to step 18.</p>
+		</li>
+		<li><p>
+		Let
+		<i>c</i> be the character whose code unit value is the integer
+		represented by two zeroes plus the two hexadecimal digits at
+		positions <i>k</i>+1 and <i>k</i>+2 within Result(1).</p>
+		</li>
+		<li><p>
+		Increase
+		<i>k </i>by 2.</p>
+		</li>
+		<li><p>
+		Let
+		<i>R</i> be a new String value computed by concatenating the
+		previous value of <i>R</i> and <i>c</i>.</p>
+		</li>
+		<li><p>
+		Increase
+		<i>k</i> by 1.</p>
+		</li>
+		<li><p>
+		Go
+		to step 5.</p>
+	</li></ol><h4 id="B.2.3">B.2.3 String.prototype.substr (start, length) <a href="#B.2.3">#</a> <a href="#B.2.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	<code><b>substr</b></code> method
+	takes two arguments, <i>start</i>
+	and <i>length</i>, and
+	returns a substring of the result of converting the this object to a
+	String, starting from character position <i>start</i>
+	and running for <i>length</i>
+	characters (or through the end of the String if <i>length</i>
+	is <b>undefined</b>). If <i>start</i>
+	is negative, it is treated as (<i>sourceLength</i>+<i>start</i>)
+	where <i>sourceLength</i>
+	is the length of the String. The result is a String value, not a
+	String object. The following steps are taken:</p>
+	<ol><li><p>
+		Call
+		<a href="x9.html#x9.8">ToString</a>, giving it the <b>this</b> value as its argument.</p>
+		</li>
+		<li><p>
+		Call
+		<a href="x9.html#x9.4">ToInteger</a>(<i>start</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>length</i> is <b>undefined</b>, use <b>+</b><span class="symbol"><b>&#8734;</b></span>;
+		otherwise call <a href="x9.html#x9.4">ToInteger</a>(<i>length</i>).</p>
+		</li>
+		<li><p>
+		Compute
+		the number of characters in Result(1).</p>
+		</li>
+		<li><p>
+		If
+		Result(2) is positive or zero, use Result(2); else use
+		max(Result(4)+Result(2),0).</p>
+		</li>
+		<li><p>
+		Compute
+		min(max(Result(3),0), Result(4)&#8211;Result(5)).</p>
+		</li>
+		<li><p>
+		If
+		Result(6) <span class="symbol">&#8804;</span> 0, return the empty
+		String &#8220;&#8221;.</p>
+		</li>
+		<li><p>
+		Return
+		a String containing Result(6) consecutive characters from Result(1)
+		beginning with the character at position Result(5).</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>substr</b></code> method
+	is <b>2</b>.</p>
+	<p><b class="note">NOTE</b> The
+	<code><b>substr</b></code> function is
+	intentionally generic; it does not require that its <b>this</b>
+	value be a String object. Therefore it can be transferred to other
+	kinds of objects for use as a method.</p>
+	<h4 id="B.2.4">B.2.4 Date.prototype.getYear ( ) <a href="#B.2.4">#</a> <a href="#B.2.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p><b class="note">NOTE</b> The
+	<code><b>getFullYear</b></code> method
+	is preferred for nearly all purposes, because it avoids the &#8220;year
+	2000 problem.&#8221;</p>
+	<p>
+	When
+	the <b>getYear</b> method is called with no arguments, the following
+	steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>t</i> be <a href="x15.html#this-time-value">this time value</a>.</p>
+		</li>
+		<li><p>
+		If
+		<i>t</i> is <b>NaN</b>, return <b>NaN</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<a href="x15.html#YearFromTime">YearFromTime</a>(<a href="x15.html#x15.9.1.9">LocalTime</a>(<i>t</i>)) <span class="symbol">&#8722;</span>
+		1900.</p>
+	</li></ol><h4 id="B.2.5">B.2.5 Date.prototype.setYear (year) <a href="#B.2.5">#</a> <a href="#B.2.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p><b class="note">NOTE</b> The
+	<code><b>setFullYear</b></code> method
+	is preferred for nearly all purposes, because it avoids the &#8220;year
+	2000 problem.&#8221;</p>
+	<p>
+	When
+	the <b>setYear</b> method is called with one argument <i>year</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>t</i> be the result of <a href="x15.html#x15.9.1.9">LocalTime</a>(<a href="x15.html#this-time-value">this time value</a>); but if <a href="x15.html#this-time-value">this time value</a> is <b>NaN</b>, let <i>t</i> be <b>+0</b>.</p>
+		</li>
+		<li><p>
+		Call
+		<a href="x9.html#x9.3">ToNumber</a>(<i>year</i>).</p>
+		</li>
+		<li><p>
+		If
+		Result(2) is<b> NaN</b>, set the [[PrimitiveValue]] internal
+		property of the <b>this</b> value to <b>NaN</b> and return <b>NaN</b>.</p>
+		</li>
+		<li><p>
+		If
+		Result(2) is not <b>NaN</b> and 0 <span class="symbol">&#8804;</span>
+		<a href="x9.html#x9.4">ToInteger</a>(Result(2)) <span class="symbol">&#8804;</span> 99 then
+		Result(4) is <a href="x9.html#x9.4">ToInteger</a>(Result(2)) +&#160;1900. Otherwise, Result(4)
+		is Result(2).</p>
+		</li>
+		<li><p>
+		Compute
+		<a href="x15.html#x15.9.1.12">MakeDay</a>(Result(4), <a href="x15.html#x15.9.1.4">MonthFromTime</a>(<i>t</i>), <a href="x15.html#x15.9.1.5">DateFromTime</a>(<i>t</i>)).</p>
+		</li>
+		<li><p>
+		Compute
+		<a href="x15.html#x15.9.1.9">UTC</a>(<a href="x15.html#x15.9.1.13">MakeDate</a>(Result(5), <a href="x15.html#x15.9.1.2">TimeWithinDay</a>(<i>t</i>))).</p>
+		</li>
+		<li><p>
+		Set
+		the [[PrimitiveValue]] internal property of the <b>this</b> value
+		to <a href="x15.html#x15.9.1.14">TimeClip</a>(Result(6)).</p>
+		</li>
+		<li><p>
+		Return
+		the value of the [[PrimitiveValue]] internal property of the <b>this</b>
+		value.</p>
+	</li></ol><h4 id="B.2.6">B.2.6 Date.prototype.toGMTString ( ) <a href="#B.2.6">#</a> <a href="#B.2.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p><b class="note">NOTE</b> The
+	property <code><b>toUTCString</b></code>
+	is preferred. The <code><b>toGMTString</b></code>
+	property is provided principally for compatibility with old code. It
+	is recommended that the <code><b>toUTCString</b></code>
+	property be used in new ECMAScript code.</p>
+	<p>
+	The
+	Function object that is the initial value of
+	<code><b>Date.prototype.toGMTString</b></code>
+	is the same Function object that is the initial value of
+	<code><b><a href="x15.html#x15.9.5.42">Date.prototype.toUTCString</a></b></code>.</p>
+	</body><script src="anno.js"></script></html>

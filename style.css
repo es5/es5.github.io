@@ -1,3 +1,7 @@
+#alt-version-notice {
+  padding-left: 60px;
+}
+
 #timestamp {
   color: #bbb;
   font-weight: normal;
@@ -169,7 +173,8 @@ b.other {
   padding-left: 24px;
 }
 #toc li,
-#toc-full li  {
+#toc-full li,
+.toc li {
   list-style-type: none;
 }
 #toc ol > li,

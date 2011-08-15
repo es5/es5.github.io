@@ -1,0 +1,2386 @@
+<!DOCTYPE html>
+<html class="split chapter"><head><meta charset="utf-8"><title>8 Types # &#9417; &#9402; &#9312; &#9398; &#8212; Annotated ES5</title><link rel="stylesheet" href="style.css"><link rel="shortcut icon" href="favicon.ico"><link href="x7.html" title="7 Lexical Conventions " rel="prev">
+  <link href="index.html#contents" title="TOC" rel="index">
+  <link href="x9.html" title="9 Type Conversion and Testing " rel="next">
+  </head><body><div class="head">
+<h2 id="top">Annotated ECMAScript 5.1 <span id="timestamp"></span></h2>
+<div id="mascot-treehouse">
+	<img id="mascot" align="left" src="js-mascot.svg" alt=""><img id="bubble" src="bubble.svg" alt=""></div>
+<p id="slogan">&#8223;Ex igne vita&#8221;</p>
+<div id="annotations"></div>
+<script src="timestamp.js"></script></div>
+<nav>
+   <a href="x7.html">&#8592; 7 Lexical Conventions </a> &#8211;
+   <a href="index.html#contents">TOC</a> &#8211;
+   <a href="x9.html">9 Type Conversion and Testing  &#8594;</a>
+  <ol class="toc"><li><a href="x8.html#x8" id="x8-toc">8 Types</a>
+    <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x8.html#x8.1" id="x8.1-toc">8.1 The Undefined Type</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x8.html#x8.2" id="x8.2-toc">8.2 The Null Type</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x8.html#x8.3" id="x8.3-toc">8.3 The Boolean Type</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x8.html#x8.4" id="x8.4-toc">8.4 The String Type</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x8.html#x8.5" id="x8.5-toc">8.5 The Number Type</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x8.html#x8.6" id="x8.6-toc">8.6 The Object Type</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x8.html#x8.6.1" id="x8.6.1-toc">8.6.1 Property Attributes</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x8.html#x8.6.2" id="x8.6.2-toc">8.6.2 Object Internal Properties and Methods</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x8.html#x8.7" id="x8.7-toc">8.7 The Reference Specification Type</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x8.html#x8.7.1" id="x8.7.1-toc">8.7.1 GetValue (V)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x8.html#x8.7.2" id="x8.7.2-toc">8.7.2 PutValue (V, W)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x8.html#x8.8" id="x8.8-toc">8.8 The List Specification Type</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x8.html#x8.9" id="x8.9-toc">8.9 The Completion Specification Type</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x8.html#x8.10" id="x8.10-toc">8.10 The Property Descriptor and Property Identifier Specification Types</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x8.html#x8.10.1" id="x8.10.1-toc">8.10.1 IsAccessorDescriptor ( Desc )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x8.html#x8.10.2" id="x8.10.2-toc">8.10.2 IsDataDescriptor ( Desc )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x8.html#x8.10.3" id="x8.10.3-toc">8.10.3 IsGenericDescriptor ( Desc )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x8.html#x8.10.4" id="x8.10.4-toc">8.10.4 FromPropertyDescriptor ( Desc )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x8.html#x8.10.5" id="x8.10.5-toc">8.10.5 ToPropertyDescriptor ( Obj )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x8.html#x8.11" id="x8.11-toc">8.11 The Lexical Environment and Environment Record Specification Types</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x8.html#x8.12" id="x8.12-toc">8.12 Algorithms for Object Internal Methods</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x8.html#x8.12.1" id="x8.12.1-toc">8.12.1 [[GetOwnProperty]] (P)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x8.html#x8.12.2" id="x8.12.2-toc">8.12.2 [[GetProperty]] (P)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x8.html#x8.12.3" id="x8.12.3-toc">8.12.3 [[Get]] (P)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x8.html#x8.12.4" id="x8.12.4-toc">8.12.4 [[CanPut]] (P)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x8.html#x8.12.5" id="x8.12.5-toc">8.12.5 [[Put]] ( P, V, Throw )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x8.html#x8.12.6" id="x8.12.6-toc">8.12.6 [[HasProperty]] (P)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x8.html#x8.12.7" id="x8.12.7-toc">8.12.7 [[Delete]] (P, Throw)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x8.html#x8.12.8" id="x8.12.8-toc">8.12.8 [[DefaultValue]] (hint)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x8.html#x8.12.9" id="x8.12.9-toc">8.12.9 [[DefineOwnProperty]] (P, Desc, Throw)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li></ol></li></ol></nav>
+
+  <h2 id="x8">8 Types <a href="#x8">#</a> <a href="#x8-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h2>
+	<p>
+	Algorithms
+	within this specification manipulate values each of which has an
+	associated type. The possible value types are exactly those defined
+	in this clause. Types are further subclassified into ECMAScript
+	<a href="#language-type">language types</a> and <a href="#specification-type">specification types</a>.</p>
+	<p>
+	An
+	ECMAScript <dfn id="language-type">language type</dfn> corresponds to values that are directly
+	manipulated by an ECMAScript programmer using the ECMAScript
+	language. The ECMAScript language types are
+<a href="#x8.1">Undefined</a>,
+<a href="#x8.2">Null</a>,
+<a href="#x8.3">Boolean</a>,
+<a href="#x8.4">String</a>,
+<a href="#x8.5">Number</a>,
+and
+<a href="#x8.6">Object</a>.</p>
+	<p>
+	A
+	<dfn id="specification-type">specification type</dfn> corresponds to meta-values that are used within
+	algorithms to describe the semantics of ECMAScript language
+	constructs and ECMAScript <a href="#language-type">language types</a>. The specification types
+	are
+<a href="#x8.7">Reference</a>,
+<a href="#x8.8">List</a>,
+<a href="#x8.9">Completion</a>,
+<a href="#x8.10">Property Descriptor</a>,
+<a href="#property-identifier">Property Identifier</a>,
+<a href="x10.html#x10.2">Lexical Environment</a>,
+and
+<a href="x10.html#x10.2.1">Environment Record</a>.
+	Specification type values are specification artefacts that do not
+	necessarily correspond to any specific entity within an ECMAScript
+	implementation. Specification type values may be used to describe
+	intermediate results of ECMAScript expression evaluation but such
+	values cannot be stored as properties of objects or values of
+	ECMAScript language variables.</p>
+	<p>
+	Within
+	this specification, the notation <dfn id="Type">&#8220;Type(<i>x</i>)&#8221;</dfn>
+	is used as shorthand for &#8220;the
+	type of <i>x</i>&#8221;
+	where &#8220;type&#8221; refers
+	to the ECMAScript language and specification types defined in this
+	clause.</p>
+	<h3 id="x8.1">8.1 The Undefined Type <a href="#x8.1">#</a> <a href="#x8.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	The
+	Undefined type has exactly one value, called <b>undefined</b>. Any
+	variable that has not been assigned a value has the value <b>undefined</b>.</p>
+	<h3 id="x8.2">8.2 The Null Type <a href="#x8.2">#</a> <a href="#x8.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	The
+	Null type has exactly one value, called <b>null</b>.</p>
+	<h3 id="x8.3">8.3 The Boolean Type <a href="#x8.3">#</a> <a href="#x8.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	The
+	Boolean type represents a logical entity having two values, called
+	<b>true </b>and <b>false</b>.</p>
+	<h3 id="x8.4">8.4 The String Type <a href="#x8.4">#</a> <a href="#x8.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	The
+	String type is the set of all finite ordered sequences of zero or
+	more 16-bit unsigned integer values (&#8220;elements&#8221;). The String
+	type is generally used to represent textual data in a running
+	ECMAScript program, in which case each element in the String is
+	treated as a code unit value (see <a href="x6.html#x6">Clause 6</a>). Each element is
+	regarded as occupying a position within the sequence. These
+	positions are indexed with nonnegative integers. The first element
+	(if any) is at position 0, the next element (if any) at position 1,
+	and so on. The length of a String is the number of elements (i.e.,
+	16-bit values) within it. The empty String has length zero and
+	therefore contains no elements.</p>
+	<p>
+	When
+	a String contains actual textual data, each element is considered to
+	be a single UTF-16 code unit. Whether or not this is the actual
+	storage format of a String, the characters within a String are
+	numbered by their initial code unit element position as though they
+	were represented using UTF-16. All operations on Strings (except as
+	otherwise stated) treat them as sequences of undifferentiated 16-bit
+	unsigned integers; they do not ensure the resulting String is in
+	normalised form, nor do they ensure language-sensitive results.</p>
+	<p><b class="note">NOTE</b> The
+	rationale behind this design was to keep the implementation of
+	Strings as simple and high-performing as possible. The intent is
+	that textual data coming into the execution environment from outside
+	(e.g., user input, text read from a file or received over the
+	network, etc.) be converted to Unicode Normalised Form C before the
+	running program sees it. Usually this would occur at the same time
+	incoming text is converted from its original character encoding to
+	Unicode (and would impose no additional overhead). Since it is
+	recommended that ECMAScript source code be in Normalised Form C,
+	string literals are guaranteed to be normalised (if source text is
+	guaranteed to be normalised), as long as they do not contain any
+	Unicode escape sequences.</p>
+	<h3 id="x8.5">8.5 The Number Type <a href="#x8.5">#</a> <a href="#x8.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	The
+	Number type has exactly 18437736874454810627
+	(that is, 2<sup>64</sup><span class="symbol">&#8722;</span>2<sup>53</sup>+3)
+	values, representing the double-precision 64-bit format IEEE 754
+	values as specified in the IEEE Standard for Binary Floating-Point
+	Arithmetic, except that the 9007199254740990
+	(that is, 2<sup>53</sup><span class="symbol">&#8722;</span>2)
+	distinct &#8220;Not-a-Number&#8221; values of the IEEE Standard are
+	represented in ECMAScript as a single special <b>NaN</b> value.
+	(Note that the <b>NaN</b> value is produced by the program
+	expression <code><b>NaN</b></code>.)
+	In some implementations, external code might be able to detect a
+	difference between various Not-a-Number values, but such behaviour
+	is implementation-dependent; to ECMAScript code, all NaN values are
+	indistinguishable from each other.</p>
+	<p>
+	There
+	are two other special values, called <b>positive Infinity</b> and
+	<b>negative Infinity</b>. For brevity, these values are also
+	referred to for expository purposes by the symbols <b>+</b><span class="symbol"><b>&#8734;</b></span>
+	and <span class="symbol"><b>&#8722;&#8734;</b></span>, respectively.
+	(Note that these two infinite Number values are produced by the
+	program expressions <code><b>+Infinity</b></code>
+	(or simply <code><b>Infinity</b></code>)
+	and <code><b>-Infinity</b></code>.)</p>
+	<p>
+	The
+	other 18437736874454810624
+	(that is, 2<sup>64</sup><span class="symbol">&#8722;</span>2<sup>53</sup>)
+	values are called the finite numbers. Half of these are positive
+	numbers and half are negative numbers; for every finite positive
+	Number value there is a corresponding negative value having the same
+	magnitude.</p>
+	<p>
+	Note
+	that there is both a <b>positive zero</b> and a <b>negative zero</b>.
+	For brevity, these values are also referred to for expository
+	purposes by the symbols <b>+0</b>
+	and <span class="symbol"><b>&#8722;</b></span><b>0</b>,
+	respectively. (Note that these two different zero Number values are
+	produced by the program expressions <code><b>+0</b></code>
+	(or simply <code><b>0</b></code>) and
+	<code><b>-0</b></code>.)</p>
+	<p>
+	The
+	18437736874454810622
+	(that is, 2<sup>64</sup><span class="symbol">&#8722;</span>2<sup>53</sup><span class="symbol">&#8722;</span>2)
+	finite nonzero values are of two kinds:</p>
+	<p>
+	18428729675200069632
+	(that is, 2<sup>64</sup><span class="symbol">&#8722;</span>2<sup>54</sup>)
+	of them are normalised, having the form</p>
+	<p class="code-example">
+	<i>s</i>
+	<span class="symbol">&#215;</span> <i>m</i> <span class="symbol">&#215;</span>
+	2<sup><i>e</i></sup></p>
+	<p>
+	where
+	<i>s</i> is +1
+	or <span class="symbol">&#8722;</span>1,
+	<i>m</i> is a positive
+	integer less than 2<sup>53</sup>
+	but not less than 2<sup>52</sup>,
+	and <i>e</i> is an
+	integer ranging from <span class="symbol">&#8722;</span>1074
+	to 971, inclusive.</p>
+	<p>
+	The
+	remaining 9007199254740990
+	(that is, 2<sup>53</sup><span class="symbol">&#8722;</span>2)
+	values are denormalised, having the form</p>
+	<p class="code-example">
+	<i>s</i>
+	<span class="symbol">&#215;</span> <i>m</i> <span class="symbol">&#215;</span>
+	2<sup><i>e</i></sup></p>
+	<p>
+	where
+	<i>s</i>
+	is +1 or <span class="symbol">&#8722;</span>1,
+	<i>m</i> is a positive
+	integer less than 2<sup>52</sup>,
+	and <i>e</i> is <span class="symbol">&#8722;</span>1074.</p>
+	<p>
+	Note
+	that all the positive and negative integers whose magnitude is no
+	greater than 2<sup>53</sup>
+	are representable in the Number type (indeed, the integer 0
+	has two representations, <code><b>+0</b></code>
+	and <code><b>-0</b></code>).</p>
+	<p>
+	A
+	finite number has an <i>odd significand</i> if it is nonzero and the
+	integer <i>m</i> used to
+	express it (in one of the two forms shown above) is odd. Otherwise,
+	it has an <i>even significand</i>.</p>
+	<p>
+	In
+	this specification, the phrase &#8220;the
+	Number value for <i>x</i>&#8221;
+	where <i>x</i> represents
+	an exact nonzero real mathematical quantity (which might even be an
+	irrational number such as <span class="symbol">&#960;</span>)
+	means a Number value chosen in the following manner. Consider the
+	set of all finite values of the Number type, with <span class="symbol"><b>&#8722;</b></span><b>0</b>
+	removed and with two additional values added to it that are not
+	representable in the Number type, namely 2<sup>1024</sup>
+	(which is +1 <span class="symbol">&#215;</span>
+	2<sup>53</sup><span class="symbol">&#215;</span>
+	2<sup>971</sup>)
+	and <span class="symbol">&#8722;</span>2<sup>1024</sup>
+	(which is <span class="symbol">&#8722;</span>1
+	<span class="symbol">&#215;</span>
+	2<sup>53</sup><span class="symbol">&#215;</span>
+	2<sup>971</sup>).
+	Choose the member of this set that is closest in value to <i>x</i>.
+	If two values of the set are equally close, then the one with an
+	even significand is chosen; for this purpose, the two extra values
+	2<sup>1024</sup>
+	and <span class="symbol">&#8722;</span>2<sup>1024</sup>
+	are considered to have even significands. Finally, if 2<sup>1024</sup>
+	was chosen, replace it with <b>+</b><span class="symbol"><b>&#8734;</b></span>;
+	if <span class="symbol">&#8722;</span>2<sup>1024</sup>
+	was chosen, replace it with <span class="symbol"><b>&#8722;&#8734;</b></span>;
+	if <b>+0</b> was chosen,
+	replace it with <span class="symbol"><b>&#8722;</b></span><b>0</b>
+	if and only if <i>x</i>
+	is less than zero; any other chosen value is used unchanged. The
+	result is the Number value for <i>x</i>.
+	(This procedure corresponds exactly to the behaviour of the IEEE 754
+	&#8220;round to nearest&#8221; mode.)</p>
+	<p>
+	Some
+	ECMAScript operators deal only with integers in the range <span class="symbol">&#8722;</span>2<sup>31</sup>
+	through 2<sup>31</sup><span class="symbol">&#8722;</span>1,
+	inclusive, or in the range 0
+	through 2<sup>32</sup><span class="symbol">&#8722;</span>1,
+	inclusive. These operators accept any value of the Number type but
+	first convert each such value to one of 2<sup>32</sup>
+	integer values. See the descriptions of the <a href="x9.html#x9.5">ToInt32</a> and <a href="x9.html#x9.6">ToUint32</a>
+	operators in <a href="x9.html#x9.5">9.5</a> and <a href="x9.html#x9.6">9.6</a>, respectively.</p>
+	<h3 id="x8.6">8.6 The Object Type <a href="#x8.6">#</a> <a href="#x8.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	An
+	Object is a collection of properties.<i> </i>Each property is either
+	a named data property, a named accessor property, or an internal
+	property:</p>
+	<ul><li><p>
+		A
+		<i>named data property</i> associates a name with an ECMAScript
+		language value and a set of Boolean attributes.</p>
+		</li>
+		<li><p>
+		A
+		<i>named accessor property</i> associates a name with one or two
+		accessor functions, and a set of Boolean attributes. The accessor
+		functions are used to store or retrieve an ECMAScript language
+		value that is associated with the property. 
+		</p>
+		</li>
+		<li><p>
+		An
+		<i>internal property</i> has no name and is not directly accessible
+		via ECMAScript language operators. Internal properties exist purely
+		for specification purposes. 
+		</p>
+	</li></ul><p>
+	There
+	are two kinds of access for named (non-internal) properties: <i>get </i>and <i>put</i>, corresponding to retrieval and assignment,
+	respectively.</p>
+	<h4 id="x8.6.1">8.6.1 Property Attributes <a href="#x8.6.1">#</a> <a href="#x8.6.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	Attributes
+	are used in this specification to define and explain the state of
+	named properties. A named data property associates a name with the
+	attributes listed in Table 5</p>
+	<dl><dd>
+	<center>
+		<table width="709" border="2" bordercolor="#000000" cellpadding="8" cellspacing="0"><caption>Table&#160;5 &#8212; Attributes of a Named Data Property</caption>
+			<colgroup><col width="115"><col width="134"><col width="408"></colgroup><tbody><tr valign="TOP"><td width="115" bgcolor="#d8d8d8">
+					<p>
+					<i><b>Attribute
+					Name</b></i></p>
+				</td>
+				<td width="134" bgcolor="#d8d8d8">
+					<p>
+					<i><b>Value
+					Domain</b></i></p>
+				</td>
+				<td width="408" bgcolor="#d8d8d8">
+					<p>
+					<i><b>Description</b></i></p>
+				</td>
+			</tr><tr valign="TOP"><td width="115" height="8">
+					<p>
+					[[Value]]
+					
+					</p>
+				</td>
+				<td width="134">
+					<p>
+					Any
+					ECMAScript <a href="#language-type">language type</a></p>
+				</td>
+				<td width="408">
+					<p>
+					The
+					value retrieved by reading the property.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="115" height="17">
+					<p>
+					[[Writable]]
+					
+					</p>
+				</td>
+				<td width="134">
+					<p>
+					Boolean</p>
+				</td>
+				<td width="408">
+					<p>
+					If
+					<b>false</b>, attempts by ECMAScript code to change the
+					property&#8217;s [[Value]] attribute using [[Put]] will not succeed.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="115" height="1">
+					<p>
+					[[Enumerable]]</p>
+				</td>
+				<td width="134">
+					<p>
+					Boolean</p>
+				</td>
+				<td width="408">
+					<p>
+					If
+					<b>true</b>, the property will be enumerated by a for-in
+					enumeration (see <a href="x12.html#x12.6.4">12.6.4</a>). Otherwise, the property is said to be
+					non-enumerable.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="115" height="12">
+					<p>
+					[[Configurable]]</p>
+				</td>
+				<td width="134">
+					<p>
+					Boolean</p>
+				</td>
+				<td width="408">
+					<p>
+					If
+					<b>false</b>, attempts to delete the property, change the
+					property to be an accessor property, or change its attributes
+					(other than [[Value]]) will fail.</p>
+				</td>
+			</tr></tbody></table></center>
+	</dd></dl><p class="sm-btm">
+	A
+	named accessor property associates a name with the attributes listed
+	in Table 6.</p>
+	<dl><dd>
+	<center>
+		<table width="709" border="2" bordercolor="#000000" cellpadding="8" cellspacing="0"><caption>Table&#160;6 &#8212; Attributes of a Named Accessor Property</caption>
+			<colgroup><col width="115"><col width="131"><col width="411"></colgroup><tbody><tr valign="TOP"><td width="115" bgcolor="#c0c0c0">
+					<p align="CENTER" class="keep">
+					<i><b>Attribute
+					Name</b></i></p>
+				</td>
+				<td width="131" bgcolor="#c0c0c0">
+					<p align="CENTER" class="keep">
+					<i><b>Value
+					Domain</b></i></p>
+				</td>
+				<td width="411" bgcolor="#c0c0c0">
+					<p align="CENTER" class="keep">
+					<i><b>Description</b></i></p>
+				</td>
+			</tr><tr valign="TOP"><td width="115" height="25">
+					<p class="keep">
+					[[Get]]</p>
+				</td>
+				<td width="131">
+					<p class="keep">
+					Object
+					<i>or </i>Undefined</p>
+				</td>
+				<td width="411">
+					<p class="keep">
+					If
+					the value is an Object it must be a function Object.  The
+					function&#8217;s [[Call]] internal method (<a href="#x8.6.2">8.6.2</a>) is called with an
+					empty arguments list to return the property value each time a
+					get access of the property is performed.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="115" height="25">
+					<p class="keep">
+					[[Set]]</p>
+				</td>
+				<td width="131">
+					<p class="keep">
+					Object
+					<i>or </i> Undefined</p>
+				</td>
+				<td width="411">
+					<p class="keep">
+					If
+					the value is an Object it must be a function Object.  The
+					function&#8217;s [[Call]] internal method (<a href="#x8.6.2">8.6.2</a>) is called with an
+					arguments list containing the assigned value as its sole
+					argument each time a set access of the property is performed.
+					The effect of a property's [[Set]] internal method may, but is
+					not required to, have an effect on the value returned by
+					subsequent calls to the property's [[Get]] internal method.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="115" height="45">
+					<p class="keep">
+					[[Enumerable]]</p>
+				</td>
+				<td width="131">
+					<p class="keep">
+					Boolean</p>
+				</td>
+				<td width="411">
+					<p class="keep">
+					If
+					<b>true</b>, the property is to be enumerated by a for-in
+					enumeration (see <a href="x12.html#x12.6.4">12.6.4</a>). Otherwise, the property is said to be
+					non-enumerable.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="115" height="27">
+					<p>
+					[[Configurable]]</p>
+				</td>
+				<td width="131">
+					<p>
+					Boolean</p>
+				</td>
+				<td width="411">
+					<p>
+					If
+					<b>false</b>, attempts to delete the property, change the
+					property to be a data property, or change its attributes will
+					fail.</p>
+				</td>
+			</tr></tbody></table></center>
+	</dd></dl><p>
+	If
+	the value of an attribute is not explicitly specified by this
+	specification for a named property, the default value defined in
+	Table 7 is used.</p>
+	<dl><dl><dl><dl><dl><dl><dd>
+	<center>
+							<table width="278" border="2" bordercolor="#000000" cellpadding="8" cellspacing="0"><caption>Table&#160;7 &#8212; Default Attribute Values</caption>
+								<colgroup><col width="129"><col width="113"></colgroup><tbody><tr valign="TOP"><td width="129" bgcolor="#c0c0c0">
+										<p align="CENTER" class="keep">
+										<b>Attribute
+										Name</b></p>
+									</td>
+									<td width="113" bgcolor="#c0c0c0">
+										<p align="CENTER" class="keep">
+										<b>Default
+										Value</b></p>
+									</td>
+								</tr><tr valign="TOP"><td width="129">
+										<p class="keep">
+										[[Value]]</p>
+									</td>
+									<td width="113">
+										<p class="keep">
+										<b>undefined</b></p>
+									</td>
+								</tr><tr valign="TOP"><td width="129">
+										<p class="keep">
+										[[Get]]</p>
+									</td>
+									<td width="113">
+										<p class="keep">
+										<b>undefined</b></p>
+									</td>
+								</tr><tr valign="TOP"><td width="129">
+										<p class="keep">
+										[[Set]]</p>
+									</td>
+									<td width="113">
+										<p class="keep">
+										<b>undefined</b></p>
+									</td>
+								</tr><tr valign="TOP"><td width="129">
+										<p class="keep">
+										[[Writable]]</p>
+									</td>
+									<td width="113">
+										<p class="keep">
+										<b>false</b></p>
+									</td>
+								</tr><tr valign="TOP"><td width="129">
+										<p class="keep">
+										[[Enumerable]]</p>
+									</td>
+									<td width="113">
+										<p class="keep">
+										<b>false</b></p>
+									</td>
+								</tr><tr valign="TOP"><td width="129">
+										<p>
+										[[Configurable]]</p>
+									</td>
+									<td width="113">
+										<p>
+										<b>false</b></p>
+									</td>
+								</tr></tbody></table></center>
+						</dd></dl></dl></dl></dl></dl></dl><h4 id="x8.6.2">8.6.2 Object Internal Properties and Methods <a href="#x8.6.2">#</a> <a href="#x8.6.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	This
+	specification uses various internal properties to define the
+	semantics of object values. These internal properties are not part
+	of the ECMAScript language. They are defined by this specification
+	purely for expository purposes. An implementation of ECMAScript must
+	behave as if it produced and operated upon internal properties in
+	the manner described here. The names of internal properties are
+	enclosed in double square brackets [[ ]]. When an algorithm uses an
+	internal property of an object and the object does not implement the
+	indicated internal property, a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception is thrown.</p>
+	<p>
+	The
+	Table 8 summarises the internal properties used by this
+	specification that are applicable to all ECMAScript objects. The
+	Table 9 summarises the internal properties used by this
+	specification that are only applicable to some ECMAScript objects.
+	The descriptions in these tables indicates their behaviour for
+	native ECMAScript objects, unless stated otherwise in this document
+	for particular kinds of native ECMAScript objects. Host objects may
+	support these internal properties with any implementation-dependent
+	behaviour as long as it is consistent with the specific host object
+	restrictions stated in this document.</p>
+	<p>
+	The
+	&#8220;Value Type Domain&#8221; columns of the following tables define the
+	types of values associated with internal properties. The type names
+	refer to the types defined in <a href="#x8">Clause 8</a> augmented by the following
+	additional names. &#8220;<i>any</i>&#8221; means the value may be any
+	ECMAScript <a href="#language-type">language type</a>. &#8220;<i>primitive</i>&#8221; means Undefined,
+	Null, Boolean, String, or Number. <dfn id="SpecOp">&#8220;<i>SpecOp</i>&#8221;</dfn> means the
+	internal property is an internal method, an implementation provided
+	procedure defined by an abstract operation specification. &#8220;SpecOp&#8221;
+	is followed by a list of descriptive parameter names. If a parameter
+	name is the same as a type name then the name describes the type of
+	the parameter. If a &#8220;SpecOp&#8221; returns a value, its parameter list
+	is followed by the symbol &#8220;&#8594;&#8221; and the type of the returned
+	value.</p>
+	<div align="RIGHT">
+	<center>
+		<table width="740" border="1" bordercolor="#000000" cellpadding="8" cellspacing="0" rules="ROWS"><caption>Table&#160;8 &#8212; Internal Properties Common to All Objects</caption>
+			<colgroup><col width="158"><col width="194"><col width="338"></colgroup><tbody><tr valign="TOP"><td width="158" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Internal
+					Property</span></b></i></p>
+				</td>
+				<td width="194" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Value
+					Type Domain</span></b></i></p>
+				</td>
+				<td width="338" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Description</span></b></i></p>
+				</td>
+			</tr><tr valign="TOP"><td width="158">
+					<p class="keep">
+					[[Prototype]]</p>
+				</td>
+				<td width="194">
+					<p class="keep">
+					Object
+					<i>or </i>Null</p>
+				</td>
+				<td width="338">
+					<p class="keep">
+					The
+					prototype of this object.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="158">
+					<p class="keep">
+					[[Class]]</p>
+				</td>
+				<td width="194">
+					<p class="keep">
+					String</p>
+				</td>
+				<td width="338">
+					<p class="keep">
+					A
+					String value indicating a specification defined classification
+					of objects.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="158">
+					<p class="keep">
+					[[Extensible]]</p>
+				</td>
+				<td width="194">
+					<p class="keep">
+					Boolean</p>
+				</td>
+				<td width="338">
+					<p class="keep">
+					If
+					<b>true</b>, own properties may be added to the object.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="158">
+					<p class="keep">
+					[[Get]]</p>
+				</td>
+				<td width="194">
+					<p class="keep">
+					<a href="#SpecOp">SpecOp</a>(<i>propertyName</i>)
+					<i><b>&#8594;</b></i> any</p>
+				</td>
+				<td width="338">
+					<p class="keep">
+					Returns
+					the value of the named property.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="158">
+					<p class="keep">
+					[[GetOwnProperty]]</p>
+				</td>
+				<td width="194">
+					<p class="keep">
+					<a href="#SpecOp">SpecOp</a>
+					(<i>propertyName</i>) <i><b>&#8594;</b></i></p>
+					<p class="keep">
+					Undefined<i>or</i>
+ <a href="#x8.10">Property Descriptor</a></p>
+				</td>
+				<td width="338">
+					<p class="keep">
+					Returns
+					the <a href="#x8.10">Property Descriptor</a> of the named own property of this
+					object, or <b>undefined </b>if absent.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="158">
+					<p class="keep">
+					[[GetProperty]]</p>
+				</td>
+				<td width="194">
+					<p class="keep">
+					<a href="#SpecOp">SpecOp</a>
+					(<i>propertyName</i>) <i><b>&#8594;</b></i></p>
+					<p class="keep">
+					Undefined<i>or </i>
+ <a href="#x8.10">Property Descriptor</a></p>
+				</td>
+				<td width="338">
+					<p class="keep">
+					Returns
+					the <a href="#fully-populated">fully populated</a> <a href="#x8.10">Property Descriptor</a> of the named property of
+					this object, or <b>undefined </b>if absent.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="158">
+					<p class="keep">
+					[[Put]]</p>
+				</td>
+				<td width="194">
+					<p class="keep">
+					<a href="#SpecOp">SpecOp</a>
+					(<i>propertyName</i>, <i>any, Boolean</i>)</p>
+				</td>
+				<td width="338">
+					<p class="keep">
+					Sets
+					the specified named property to the value of the second
+					parameter. The flag controls failure handling.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="158">
+					<p class="keep">
+					[[CanPut]]</p>
+				</td>
+				<td width="194">
+					<p class="keep">
+					<a href="#SpecOp">SpecOp</a>
+					(<i>propertyName</i>) <i><b>&#8594;</b></i>
+					Boolean</p>
+				</td>
+				<td width="338">
+					<p class="keep">
+					Returns
+					a Boolean value indicating whether a [[Put]] operation with
+					<i>PropertyName</i> can be performed.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="158">
+					<p class="keep">
+					[[HasProperty]]</p>
+				</td>
+				<td width="194">
+					<p class="keep">
+					<a href="#SpecOp">SpecOp</a>
+					(<i>propertyName</i>) <i><b>&#8594;</b></i>
+					<i>Boolean</i></p>
+				</td>
+				<td width="338">
+					<p class="keep">
+					Returns
+					a Boolean value indicating whether the object already has a
+					property with the given name.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="158">
+					<p class="keep">
+					[[Delete]]</p>
+				</td>
+				<td width="194">
+					<p class="keep">
+					<a href="#SpecOp">SpecOp</a>
+					(<i>propertyName, Boolean</i>) <i><b>&#8594;</b></i>
+					Boolean</p>
+				</td>
+				<td width="338">
+					<p class="keep">
+					Removes
+					the specified named own property from the object. The flag
+					controls failure handling.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="158">
+					<p class="keep">
+					[[DefaultValue]]</p>
+				</td>
+				<td width="194">
+					<p class="keep">
+					<a href="#SpecOp">SpecOp</a>
+					(<i>Hint</i>) <i><b>&#8594;</b></i>
+					<i>primitive</i></p>
+				</td>
+				<td width="338">
+					<p class="keep">
+					Hint
+					is a String. Returns a default value for the object.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="158">
+					<p class="keep">
+					[[DefineOwnProperty]]</p>
+				</td>
+				<td width="194">
+					<p class="keep">
+					<a href="#SpecOp">SpecOp</a>
+					(<i>propertyName, PropertyDescriptor, Boolean</i>)<i><b>
+					&#8594;</b></i> Boolean</p>
+				</td>
+				<td width="338">
+					<p class="keep">
+					Creates
+					or alters the named own property to have the state described by
+					a <a href="#x8.10">Property Descriptor</a>. The flag controls failure handling.</p>
+				</td>
+			</tr></tbody></table></center>
+	</div>
+	<p>
+	Every
+	object (including host objects) must implement all of the internal
+	properties listed in Table 8. However, the [[DefaultValue]] internal
+	method may, for some objects, simply throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+	exception.</p>
+	<p>
+	All
+	objects have an internal property called [[Prototype]]. The value of
+	this property is either <b>null</b> or an object and is used for
+	implementing inheritance. Whether or not a native object can have a
+	host object as its [[Prototype]] depends on the implementation.
+	Every [[Prototype]] chain must have finite length (that is, starting
+	from any object, recursively accessing the [[Prototype]] internal
+	property must eventually lead to a <b>null</b> value). Named data
+	properties of the [[Prototype]] object are inherited (are visible as
+	properties of the child object) for the purposes of get access, but
+	not for put access. Named accessor properties are inherited for both
+	get access and put access.</p>
+	<p>
+	Every
+	ECMAScript object has a Boolean-valued [[Extensible]] internal
+	property that controls whether or not named properties may be added
+	to the object. If the value of the [[Extensible]] internal property
+	is <b>false</b> then additional named properties may not be added to
+	the object.  In addition, if [[Extensible]] is <b>false</b> the
+	value of the [[Class]] and [[Prototype]] internal properties of the
+	object may not be modified.  Once the value of an [[Extensible]]
+	internal property has been set to <b>false</b> it may not be
+	subsequently changed to <b>true</b>.</p>
+	<p><b class="note">NOTE</b> This
+	specification defines no ECMAScript language operators or built-in
+	functions that permit a program to modify an object&#8217;s [[Class]] or
+	[[Prototype]] internal properties or to change the value of
+	[[Extensible]] from <b>false</b> to <b>true</b>. Implementation
+	specific extensions that modify [[Class]], [[Prototype]] or
+	[[Extensible]] must not violate the invariants defined in the
+	preceding paragraph.</p>
+	<p>
+	The
+	value of the [[Class]] internal property is defined by this
+	specification for every kind of built-in object. The value of the
+	[[Class]] internal property of a host object may be any String value
+	except one of <code><b>"Arguments"</b></code>,
+	<code><b>"Array"</b></code>,
+	<code><b>"Boolean"</b></code>,
+	<code><b>"Date"</b></code>,
+	<code><b>"Error"</b></code>,
+	<code><b>"Function"</b></code>,
+	<code><b>"JSON"</b></code>,
+	<code><b>"Math"</b></code>,
+	<code><b>"Number"</b></code>,
+	<code><b>"Object"</b></code>,
+	<code><b>"RegExp"</b></code>,
+	and <code><b>"String"</b></code>.
+	The value of a [[Class]] internal property is used internally to
+	distinguish different kinds of objects. Note that this specification
+	does not provide any means for a program to access that value except
+	through <code><b><a href="x15.html#x15.2.4.2">Object.prototype.toString</a></b></code>
+	(see <a href="x15.html#x15.2.4.2">15.2.4.2</a>).</p>
+	<p>
+	Unless
+	otherwise specified, the common internal methods of native
+	ECMAScript objects behave as described in <a href="#x8.12">8.12</a>. Array objects have a
+	slightly different implementation of the [[DefineOwnProperty]]
+	internal method (see <a href="x15.html#x15.4.5.1">15.4.5.1</a>) and String objects have a slightly
+	different implementation of the [[GetOwnProperty]] internal method
+	(see <a href="x15.html#x15.5.5.2">15.5.5.2</a>). Arguments objects (<a href="x10.html#x10.6">10.6</a>) have different
+	implementations of [[Get]], [[GetOwnProperty]],
+	[[DefineOwnProperty]], and [[Delete]]. Function objects (<a href="x15.html#x15.3">15.3</a>) have
+	a different implementation of [[Get]].</p>
+	<p>
+	Host
+	objects may implement these internal methods in any manner unless
+	specified otherwise; for example, one possibility is that [[Get]]
+	and [[Put]] for a particular host object indeed fetch and store
+	property values but [[HasProperty]] always generates <b>false</b>.
+	However, if any specified manipulation of a host object's internal
+	properties is not supported by an implementation, that manipulation
+	must throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception when attempted.</p>
+	<p class="sm-btm">
+	The
+	[[GetOwnProperty]] internal method of a host object must conform to
+	the following invariants for each property of the host object:</p>
+	<ul><li><p>
+		If a
+		property is described as a data property and it may return
+		different values over time, then either or both of the [[Writable]]
+		and [[Configurable] attributes must be <b>true</b> even if no
+		mechanism to change the value is exposed via the other internal
+		methods.</p>
+		</li>
+		<li><p>
+		If a
+		property is described as a data property and its [[Writable]] and
+		[[Configurable]] are both <b>false</b>, then the <a href="x9.html#x9.12">SameValue</a>
+		(according to <a href="x9.html#x9.12">9.12</a>) must be returned for the [[Value]] attribute of
+		the property on all calls to [[GetOwnProperty]].</p>
+		</li>
+		<li><p>
+		If
+		the attributes other than [[Writable]] may change over time or if
+		the property might disappear, then the [[Configurable]] attribute
+		must be <b>true</b>.</p>
+		</li>
+		<li><p>
+		If
+		the [[Writable]] attribute may change from <b>false</b> to <b>true</b>,
+		then the [[Configurable]] attribute must be <b>true</b>.</p>
+		</li>
+		<li><p>
+		If
+		the value of the host object&#8217;s [[Extensible]] internal property
+		is has been observed by ECMAScript code to be <b>false</b>, then if
+		a call to [[GetOwnProperty]] describes a property as non-existent
+		all subsequent calls must also describe that property as
+		non-existent.</p>
+	</li></ul><p>
+	The
+	[[DefineOwnProperty]] internal method of a host object must not
+	permit the addition of a new property to a host object if the
+	[[Extensible]] internal property of that host object has been
+	observed by ECMAScript code to be <b>false</b>. 
+	</p>
+	<p>
+	If
+	the [[Extensible]] internal property of that host object has been
+	observed by ECMAScript code to be <b>false</b> then it must not
+	subsequently become <b>true</b>.</p>
+	<center>
+		<table width="765" border="1" bordercolor="#000000" cellpadding="8" cellspacing="0" rules="ROWS"><caption>Table&#160;9 &#8212; Internal Properties Only Defined for Some Objects</caption>
+			<colgroup><col width="153"><col width="143"><col width="418"></colgroup><tbody><tr valign="TOP"><td width="153" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Internal
+					Property</span></b></i></p>
+				</td>
+				<td width="143" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Value
+					Type Domain</span></b></i></p>
+				</td>
+				<td width="418" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Description</span></b></i></p>
+				</td>
+			</tr><tr valign="TOP"><td width="153">
+					<p class="keep">
+					[[PrimitiveValue]]</p>
+				</td>
+				<td width="143">
+					<p class="keep">
+					<i>primitive</i></p>
+				</td>
+				<td width="418">
+					<p class="keep">
+					Internal
+					state information associated with this object. Of the standard
+					built-in ECMAScript objects, only Boolean, Date, Number, and
+					String objects implement [[PrimitiveValue]].</p>
+				</td>
+			</tr><tr valign="TOP"><td width="153">
+					<p class="keep">
+					[[Construct]]</p>
+				</td>
+				<td width="143">
+					<p class="keep">
+					<a href="#SpecOp">SpecOp</a>(a
+				 <a href="#x8.8">List</a> of <i>any</i>) <i><b>&#8594;</b></i>
+					Object</p>
+				</td>
+				<td width="418">
+					<p class="keep">
+					Creates
+					an object. Invoked via the <code><b>new</b></code>
+					operator. The arguments to the <a href="#SpecOp">SpecOp</a> are the arguments passed
+					to the <b>new</b> operator. Objects that implement this internal
+					method are called <i>constructors</i>.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="153">
+					<p class="keep">
+					<dfn id="callable">[[Call]]</dfn></p>
+				</td>
+				<td width="143">
+					<p class="keep">
+					<a href="#SpecOp">SpecOp</a>(<i>any</i>,
+					a <a href="#x8.8">List</a> of <i>any</i>) <i><b>&#8594;</b></i>
+					<i>any </i>or <a href="#x8.7">Reference</a></p>
+				</td>
+				<td width="418">
+					<p class="keep">
+					Executes
+					code associated with the object. Invoked via a function call
+					expression. The arguments to the <a href="#SpecOp">SpecOp</a> are a this object and a
+					list containing the arguments passed to the function call
+					expression. Objects that implement this internal method are
+					<i>callable</i>. Only callable objects that are host objects may
+					return <a href="#x8.7">Reference</a> values.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="153">
+					<p class="keep">
+					[[HasInstance]]</p>
+				</td>
+				<td width="143">
+					<p class="keep">
+					<a href="#SpecOp">SpecOp</a>(<i>any</i>)
+					<i><b>&#8594;</b></i>
+					Boolean</p>
+				</td>
+				<td width="418">
+					<p class="keep">
+					Returns
+					a Boolean value indicating whether the argument is likely an
+					Object that was constructed by this object. Of the standard
+					built-in ECMAScript objects, only Function objects implement
+					[[HasInstance]].</p>
+				</td>
+			</tr><tr valign="TOP"><td width="153">
+					<p class="keep">
+					[[Scope]]</p>
+				</td>
+				<td width="143">
+					<p class="keep">
+				 <a href="x10.html#x10.2">Lexical Environment</a></p>
+				</td>
+				<td width="418">
+					<p class="keep">
+					A
+				 <a href="x10.html#x10.2">lexical environment</a> that defines the environment in which a
+					Function object is executed. Of the standard built-in ECMAScript
+					objects, only Function objects implement [[Scope]].</p>
+				</td>
+			</tr><tr valign="TOP"><td width="153">
+					<p class="keep">
+					[[FormalParameters]]</p>
+				</td>
+				<td width="143">
+					<p class="keep">
+				 <a href="#x8.8">List</a>
+					of Strings</p>
+				</td>
+				<td width="418">
+					<p class="keep">
+					A
+					possibly empty <a href="#x8.8">List</a> containing the identifier Strings of a
+					Function&#8217;s <i>FormalParameterList</i>.
+					Of the standard built-in ECMAScript objects, only Function
+					objects implement [[FormalParameterList]].</p>
+				</td>
+			</tr><tr valign="TOP"><td width="153">
+					<p class="keep">
+					[[Code]]</p>
+				</td>
+				<td width="143">
+					<p class="keep">
+					ECMAScript
+					code</p>
+				</td>
+				<td width="418">
+					<p class="keep">
+					The
+					ECMAScript code of a function. Of the standard built-in
+					ECMAScript objects, only Function objects implement [[Code]].</p>
+				</td>
+			</tr><tr valign="TOP"><td width="153">
+					<p class="keep">
+					[[TargetFunction]]</p>
+				</td>
+				<td width="143">
+					<p class="keep">
+					Object</p>
+				</td>
+				<td width="418">
+					<p class="keep">
+					The
+					target function of a function object created using the standard
+					built-in <a href="x15.html#x15.3.4.5">Function.prototype.bind</a> method. Only ECMAScript objects
+					created using <a href="x15.html#x15.3.4.5">Function.prototype.bind</a> have a [[TargetFunction]]
+					internal property.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="153">
+					<p class="keep">
+					[[BoundThis]]</p>
+				</td>
+				<td width="143">
+					<p class="keep">
+					<i>any</i></p>
+				</td>
+				<td width="418">
+					<p class="keep">
+					The
+					pre-bound this value of a function Object created using the
+					standard built-in <a href="x15.html#x15.3.4.5">Function.prototype.bind</a> method. Only
+					ECMAScript objects created using <a href="x15.html#x15.3.4.5">Function.prototype.bind</a> have a
+					[[BoundThis]] internal property.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="153">
+					<p>
+					[[BoundArguments]]</p>
+				</td>
+				<td width="143">
+					<p>
+				 <a href="#x8.8">List</a>
+					of <i>any</i></p>
+				</td>
+				<td width="418">
+					<p>
+					The
+					pre-bound argument values of a function Object created using the
+					standard built-in <a href="x15.html#x15.3.4.5">Function.prototype.bind</a> method. Only
+					ECMAScript objects created using <a href="x15.html#x15.3.4.5">Function.prototype.bind</a> have a
+					[[BoundArguments]] internal property.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="153">
+					<p class="keep">
+					[[Match]]</p>
+				</td>
+				<td width="143">
+					<p class="keep">
+					<a href="#SpecOp">SpecOp</a>(<i>String</i>,
+					<i>index</i>) <i><b>&#8594;</b></i>
+					<i><a href="x15.html#MatchResult">MatchResult</a></i></p>
+				</td>
+				<td width="418">
+					<p class="keep">
+					Tests
+					for a regular expression match and returns a <a href="x15.html#MatchResult">MatchResult</a> value
+					(see <a href="x15.html#x15.10.2.1">15.10.2.1</a>). Of the standard built-in ECMAScript objects,
+					only RegExp objects implement [[Match]].</p>
+				</td>
+			</tr><tr valign="TOP"><td width="153">
+					<p class="keep">
+					[[ParameterMap]]</p>
+				</td>
+				<td width="143">
+					<p class="keep">
+					Object</p>
+				</td>
+				<td width="418">
+					<p class="keep">
+					Provides
+					a mapping between the properties of an arguments object (see
+					<a href="x10.html#x10.6">10.6</a>) and the formal parameters of the associated function. Only
+					ECMAScript objects that are arguments objects have a
+					[[ParameterMap]] internal property.</p>
+				</td>
+			</tr></tbody></table></center>
+	<h3 id="x8.7">8.7 The Reference Specification Type <a href="#x8.7">#</a> <a href="#x8.7-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	The
+	Reference type is used to explain the behaviour of such operators as
+	<code><b>delete</b></code>, <code><b>typeof</b></code>,
+	and the assignment operators. For example, the left-hand operand of
+	an assignment is expected to produce a reference. The behaviour of
+	assignment could, instead, be explained entirely in terms of a case
+	analysis on the syntactic form of the left-hand operand of an
+	assignment operator, but for one difficulty: function calls are
+	permitted to return references. This possibility is admitted purely
+	for the sake of host objects. No built-in ECMAScript function
+	defined by this specification returns a reference and there is no
+	provision for a user-defined function to return a reference.
+	(Another reason not to use a syntactic case analysis is that it
+	would be lengthy and awkward, affecting many parts of the
+	specification.)</p>
+	<p>
+	A
+	<b>Reference </b>is a resolved name binding. A Reference consists of
+	three components, the <i>base </i>value, the <i>referenced
+	name</i> and the Boolean valued <i>strict
+	reference </i>flag. The base value is either <b>undefined</b>,
+	an Object, a Boolean, a String, a Number, or an environment record
+	(<a href="x10.html#x10.2.1">10.2.1</a>). A base value of <b>undefined</b> indicates that the
+	reference could not be resolved to a binding. The referenced name is
+	a String.</p>
+	<p>
+	The
+	following abstract operations are used in this specification to
+	access the components of references:</p>
+	<ul><li><p><dfn id="GetBase">GetBase(V)</dfn>.
+		Returns the base value component of the reference V.</p>
+		</li>
+		<li><p><dfn id="GetReferencedName">GetReferencedName(V)</dfn>.
+		Returns the referenced name component of the reference V.</p>
+		</li>
+		<li><p><dfn id="IsStrictReference">IsStrictReference(V)</dfn>.
+		Returns the strict reference component of the reference V.</p>
+		</li>
+		<li><p><dfn id="HasPrimitiveBase">HasPrimitiveBase(V)</dfn>.
+		Returns <b>true </b>if the base value is a Boolean, String, or
+		Number.</p>
+		</li>
+		<li><p><dfn id="IsPropertyReference">IsPropertyReference</dfn>(V).
+		Returns <b>true</b> if either the base value is an object or
+		<a href="#HasPrimitiveBase">HasPrimitiveBase</a>(V) is <b>true</b>; otherwise returns <b>false</b>.</p>
+		</li>
+		<li><p><dfn id="IsUnresolvableReference">IsUnresolvableReference</dfn>(V).
+		Returns <b>true</b> if the base value is <b>undefined</b> and <b>false</b>
+		otherwise.</p>
+	</li></ul><p>
+	The
+	following abstract operations are used in this specification to
+	operate on references:</p>
+	<h4 id="x8.7.1">8.7.1 GetValue (V) <a href="#x8.7.1">#</a> <a href="#x8.7.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<ol><li><p>
+		If
+		<a href="#Type">Type</a>(<i>V</i>) is not <a href->Reference</a>, return <i>V</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>base </i>be the result of calling <a href="#GetBase">GetBase</a>(<i>V</i>).</p>
+		</li>
+		<li><p>
+		If
+		<a href="#IsUnresolvableReference">IsUnresolvableReference</a>(<i>V</i>), throw a <b><a href="x15.html#x15.11.6.3" class="term-ref">ReferenceError</a></b>
+		exception.</p>
+		</li>
+		<li><p>
+		If
+		<a href="#IsPropertyReference">IsPropertyReference</a>(<i>V</i>), then</p>
+		<ol><li><p>
+			If
+			<a href="#HasPrimitiveBase">HasPrimitiveBase</a>(<i>V</i>) is <b>false</b>, then let <i>get</i> be
+			the [[Get]] internal method of <i>base</i>, otherwise let <i>get</i>
+			be the special [[Get]] internal method defined below.</p>
+			</li>
+			<li><p>
+			Return
+			the result of calling the <i>get</i> internal method using <i>base </i>as its <b>this </b>value, and passing <a href="#GetReferencedName">GetReferencedName</a>(<i>V</i>)
+			for the argument.</p>
+		</li></ol></li>
+		<li><p>
+		Else,
+		<i>base</i> must be an <a href="x10.html#x10.2">environment record</a>.</p>
+		<ol><li><p>
+			Return
+			the result of calling the GetBindingValue (see <a href="x10.html#x10.2.1">10.2.1</a>)  concrete
+			method of <i>base</i> passing <a href="#GetReferencedName">GetReferencedName</a>(<i>V</i>) and
+			<a href="#IsStrictReference">IsStrictReference</a>(<i>V</i>) as arguments.</p>
+		</li></ol></li></ol><p>
+	The
+	following [[Get]] internal method is used by GetValue when <i>V</i>
+	is a <a href="#IsPropertyReference">property reference</a> with a primitive base value. It is called
+	using <i>base</i> as its
+	<b>this</b> value and with property <i>P</i>
+	as its argument. The following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>O</i> be <a href="x9.html#x9.9">ToObject</a>(<i>base</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>desc </i>be the result of calling the [[GetProperty]] internal
+		method of <i>O </i>with property name <i>P</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>desc </i>is <b>undefined</b>, return <b>undefined</b>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="#x8.10.2">IsDataDescriptor</a>(<i>desc</i>) is <b>true</b>, return
+		<i>desc</i>.[[Value]].</p>
+		</li>
+		<li><p>
+		Otherwise,
+		<a href="#x8.10.1">IsAccessorDescriptor</a>(<i>desc</i>) must be <b>true</b> so, let
+		<i>getter</i> be <i>desc</i>.[[Get]].</p>
+		</li>
+		<li><p>
+		If
+		<i>getter </i>is <b>undefined</b>, return <b>undefined</b>.</p>
+		</li>
+		<li><p>
+		Return
+		the result calling the [[Call]] internal method of <i>getter </i>providing <i>base </i>as the <b>this</b> value and providing no
+		arguments.</p>
+	</li></ol><p><b class="note">NOTE</b> The
+	object that may be created in step 1 is not accessible outside of
+	the above method. An implementation might choose to avoid the actual
+	creation of the object. The only situation where such an actual
+	property access that uses this internal method can have visible
+	effect is when it invokes an accessor function.</p>
+	<h4 id="x8.7.2">8.7.2 PutValue (V, W) <a href="#x8.7.2">#</a> <a href="#x8.7.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<ol><li><p>
+		If
+		<a href="#Type">Type</a>(<i>V</i>) is not <a href="#x8.7">Reference</a>,
+ throw a <b><a href="x15.html#x15.11.6.3" class="term-ref">ReferenceError</a></b>
+		exception.</p>
+		</li>
+		<li><p>
+		Let
+		<i>base</i> be the result of calling <a href="#GetBase">GetBase</a>(<i>V</i>).</p>
+		</li>
+		<li><p>
+		If
+		<a href="#IsUnresolvableReference">IsUnresolvableReference</a>(<i>V</i>), then</p>
+		<ol><li><p>
+			If
+			<a href="#IsStrictReference">IsStrictReference</a>(<i>V</i>) is <b>true</b>, then</p>
+			<ol><li><p>
+				Throw
+				<b><a href="x15.html#x15.11.6.3" class="term-ref">ReferenceError</a></b> exception.</p>
+			</li></ol></li>
+			<li><p>
+			Call
+			the [[Put]] internal method of the <a href="x15.html#x15.1" class="term-ref">global object</a>, passing
+			<a href="#GetReferencedName">GetReferencedName</a>(<i>V</i>) for the property name, <i>W</i> for
+			the value, and <b>false</b> for the <i>Throw</i> flag.</p>
+		</li></ol></li>
+		<li><p>
+		Else
+		if <a href="#IsPropertyReference">IsPropertyReference</a>(<i>V</i>), then</p>
+		<ol><li><p>
+			If
+			<a href="#HasPrimitiveBase">HasPrimitiveBase</a>(<i>V</i>) is <b>false</b>, then let <i>put</i> be
+			the [[Put]] internal method of <i>base</i>, otherwise let <i>put</i>
+			be the special [[Put]] internal method defined below.</p>
+			</li>
+			<li><p>
+			Call
+			the <i>put </i>internal method using <i>base </i>as its <b>this
+			</b>value, and passing <a href="#GetReferencedName">GetReferencedName</a>(<i>V</i>) for the
+			property name, <i>W </i>for the value, and <a href="#IsStrictReference">IsStrictReference</a>(<i>V</i>)
+			for the <i>Throw </i>flag.</p>
+		</li></ol></li>
+		<li><p>
+		Else
+		<i>base </i>must be a reference whose base is an <a href="x10.html#x10.2">environment record</a>. So,</p>
+		<ol><li><p>
+			Call
+			the SetMutableBinding (<a href="x10.html#x10.2.1">10.2.1</a>) concrete method of <i>base</i>,
+			passing <a href="#GetReferencedName">GetReferencedName</a>(<i>V</i>), <i>W</i>, and
+			<a href="#IsStrictReference">IsStrictReference</a>(<i>V</i>) as arguments.</p>
+		</li></ol></li>
+		<li><p>
+		Return.</p>
+	</li></ol><p>
+	The
+	following [[Put]] internal method is used by PutValue when <i>V</i>
+	is a <a href="#IsPropertyReference">property reference</a> with a primitive base value. It is called
+	using <i>base</i> as its
+	<b>this</b> value and with property <i>P</i>,
+	value <i>W</i>, and
+	Boolean flag <i>Throw</i>
+	as arguments. The following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>O</i> be <a href="x9.html#x9.9">ToObject</a>(<i>base</i>).</p>
+		</li>
+		<li><p>
+		If
+		the result of calling the [[CanPut]] internal method of <i>O</i>
+		with argument <i>P</i> is <b>false</b>, then</p>
+		<ol><li><p>
+			If
+			<i>Throw</i> is <b>true</b>, then throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+			exception.</p>
+			</li>
+			<li><p>
+			Else
+			return.</p>
+		</li></ol></li>
+		<li><p>
+		Let
+		<i>ownDesc</i> be the result of calling the [[GetOwnProperty]]
+		internal method of <i>O</i> with argument <i>P</i>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="#x8.10.2">IsDataDescriptor</a>(<i>ownDesc</i>) is <b>true</b>, then</p>
+		<ol><li><p>
+			If
+			<i>Throw</i> is <b>true</b>, then throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+			exception.</p>
+			</li>
+			<li><p>
+			Else
+			Return.</p>
+		</li></ol></li>
+		<li><p>
+		Let
+		<i>desc</i> be the result of calling the [[GetProperty]] internal
+		method of <i>O</i> with argument <i>P</i>. This may be either an
+		own or inherited <a href="#accessor-property-descriptor">accessor property descriptor</a>
+ or an inherited <a href="#data-property-descriptor">data property descriptor</a>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="#x8.10.1">IsAccessorDescriptor</a>(<i>desc</i>) is <b>true</b>, then</p>
+		<ol><li><p>
+			Let
+			<i>setter</i> be <i>desc</i>.[[Set]] which cannot be <b>undefined</b>.</p>
+			</li>
+			<li><p>
+			Call
+			the [[Call]] internal method of <i>setter</i> providing <i>base</i>
+			as the <b>this</b> value and an argument list containing only <i>W</i>.</p>
+		</li></ol></li>
+		<li><p>
+		Else,
+		this is a request to create an own property on the transient object
+		<i>O</i></p>
+		<ol><li><p>
+			If
+			<i>Throw</i> is <b>true</b>, then throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+			exception.</p>
+		</li></ol></li>
+		<li><p>
+		Return.</p>
+	</li></ol><p><b class="note">NOTE</b> The
+	object that may be created in step 1 is not accessible outside of
+	the above method.  An implementation might choose to avoid the
+	actual creation of that transient object. The only situations where
+	such an actual property assignment that uses this internal method
+	can have visible effect are when it either invokes an accessor
+	function or is in violation of a <i>Throw</i>
+	predicated error check. When <i>Throw</i>
+	is <b>true</b> any property assignment that would create a new
+	property on the transient object throws an error.</p>
+	<h3 id="x8.8">8.8 The List Specification Type <a href="#x8.8">#</a> <a href="#x8.8-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	The
+	List type is used to explain the evaluation of argument lists (see
+	<a href="x11.html#x11.2.4">11.2.4</a>) in <code><b>new</b></code>
+	expressions, in function calls, and in other algorithms where a
+	simple list of values is needed. Values of the List type are simply
+	ordered sequences of values. These sequences may be of any length.</p>
+	<h3 id="x8.9">8.9 The Completion Specification Type <a href="#x8.9">#</a> <a href="#x8.9-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	The
+	Completion type is used to explain the behaviour of statements
+	(<code><b>break</b></code>, <code><b>continue</b></code>,
+	<code><b>return</b></code> and <code><b>throw</b></code>)
+	that perform nonlocal transfers of control. Values of the Completion
+	type are triples of the form (<i>type</i>, <i>value</i>, <i>target</i>),
+	where <i>type</i> is one of <b>normal</b>, <b>break</b>, <b>continue</b>,
+	<b>return</b>, or <b>throw</b>, <i>value </i>is any ECMAScript
+	language value or <b>empty</b>, and <i>target</i> is any ECMAScript
+	identifier or <b>empty</b>.</p>
+	<p>
+	The
+	term &#8220;abrupt completion&#8221; refers to any completion with a <i>type</i>
+	other than <b>normal</b>.</p>
+	<h3 id="x8.10">8.10 The Property Descriptor and Property Identifier Specification Types <a href="#x8.10">#</a> <a href="#x8.10-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	The
+	Property Descriptor type is used to explain the manipulation and
+	reification of named property attributes. Values of the Property
+	Descriptor type are records composed of named fields where each
+	field&#8217;s name is an attribute name and its value is a corresponding
+	attribute value as specified in <a href="#x8.6.1">8.6.1</a>. In addition, any field may be
+	present or absent.</p>
+	<p>
+	Property
+	Descriptor values may be further classified as data property
+	descriptors and accessor property descriptors based upon the
+	existence or use of certain fields. A <dfn id="data-property-descriptor">data property descriptor</dfn> is
+	one that includes any fields named either [[Value]] or [[Writable]].
+	An <dfn id="accessor-property-descriptor">accessor property descriptor</dfn> is one that includes any fields
+	named either [[Get]] or [[Set]]. Any property descriptor may have
+	fields named [[Enumerable]] and [[Configurable]]. A Property
+	Descriptor value may not be both a data property descriptor and an
+	accessor property descriptor; however, it may be neither. A generic
+	property descriptor is a Property Descriptor value that is neither a
+	data property descriptor nor an accessor property descriptor.
+ A <dfn id="fully-populated">fully populated</dfn> property descriptor is one that is either an
+	accessor property descriptor or a data property descriptor and that
+	has all of the fields that correspond to the property attributes
+	defined in either <a href="#x8.6.1">8.6.1</a> Table 5 or Table 6.</p>
+	<p>
+	For
+	notational convenience within this specification, an object
+	literal-like syntax can be used to define a property descriptor
+	value. For example, Property Descriptor {[[Value]]: 42,
+	[[Writable]]: <b>false</b>, [[Configurable]]: <b>true</b>} defines a
+	data property descriptor. Field name order is not significant. Any
+	fields that are not explicitly listed are considered to be absent.</p>
+	<p>
+	In
+	specification text and algorithms, dot notation may be used to refer
+	to a specific field of a Property Descriptor. For example, if D is a
+	property descriptor then D.[[Value]] is shorthand for &#8220;the field
+	of D named [[Value]]&#8221;.</p>
+	<p>
+	The
+	<dfn id="property-identifier">Property Identifier</dfn> type is used to associate a property name with a
+	Property Descriptor.  Values of the Property Identifier type are
+	pairs of the form (name, descriptor), where name is a String and
+	descriptor is a Property Descriptor value. 
+	</p>
+	<p>
+	The
+	following abstract operations are used in this specification to
+	operate upon Property Descriptor values:</p>
+	<h4 id="x8.10.1">8.10.1 IsAccessorDescriptor ( Desc ) <a href="#x8.10.1">#</a> <a href="#x8.10.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	the abstract operation IsAccessorDescriptor is called with <a href="#x8.10">property descriptor</a> <i>Desc</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		<span class="tr">If
+		<i>Desc</i>
+		is <b>undefined</b>,
+		then return <b>false</b>.</span></p>
+		</li>
+		<li><p>
+		<span class="tr">If
+		both <i>Desc</i>.[[Get]]
+		and <i>Desc</i>.[[Set]]
+		are absent, then return <b>false</b>.</span></p>
+		</li>
+		<li><p class="sm-btm">
+		<span class="tr">Return
+		<b>true</b>.</span></p>
+	</li></ol><h4 id="x8.10.2">8.10.2 IsDataDescriptor ( Desc ) <a href="#x8.10.2">#</a> <a href="#x8.10.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	the abstract operation IsDataDescriptor is called with <a href="#x8.10">property descriptor</a> <i>Desc</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		<span class="tr">If
+		<i>Desc</i>
+		is <b>undefined</b>,
+		then return <b>false</b>.</span></p>
+		</li>
+		<li><p>
+		<span class="tr">If
+		both <i>Desc</i>.[[Value]]
+		and <i>Desc</i>.[[Writable]]
+		are absent, then return <b>false</b>.</span></p>
+		</li>
+		<li><p class="sm-btm">
+		<span class="tr">Return
+		<b>true</b>.</span></p>
+	</li></ol><h4 id="x8.10.3">8.10.3 IsGenericDescriptor ( Desc ) <a href="#x8.10.3">#</a> <a href="#x8.10.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	the abstract operation IsGenericDescriptor is called with <a href="#x8.10">property descriptor</a> <i>Desc</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		<span class="tr">If
+		<i>Desc</i>
+		is <b>undefined</b>,
+		then return <b>false</b>.</span></p>
+		</li>
+		<li><p>
+		<span class="tr">If
+		<a href="#x8.10.1">IsAccessorDescriptor</a>(<i>Desc</i>)
+		and <a href="#x8.10.2">IsDataDescriptor</a>(<i>Desc</i>)
+		are both <b>false</b>,
+		then return <b>true</b>.</span></p>
+		</li>
+		<li><p class="sm-btm">
+		<span class="tr">Return
+		<b>false</b>.</span></p>
+	</li></ol><h4 id="x8.10.4">8.10.4 FromPropertyDescriptor ( Desc ) <a href="#x8.10.4">#</a> <a href="#x8.10.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	the abstract operation FromPropertyDescriptor is called with
+ <a href="#x8.10">property descriptor</a> <i>Desc</i>,
+	the following steps are taken:</p>
+	<p>
+	The
+	following algorithm assumes that <i>Desc </i>is a <a href="#fully-populated">fully populated</a> <a href="#x8.10">Property Descriptor</a>, such as that
+	returned from [[GetOwnProperty]] (see <a href="#x8.12.1">8.12.1</a>).</p>
+	<ol><li><p>
+		<span class="tr">If
+		<i>Desc</i>
+		is <b>undefined</b>,
+		then return <b>undefined</b>.</span></p>
+		</li>
+		<li><p>
+		<span class="tr">Let
+		<i>obj </i>be
+		the result of creating a new object as if by the expression <b>new
+		Object() </b>where<b>
+		Object </b>is the
+		standard built-in constructor with that name.</span></p>
+		</li>
+		<li><p>
+		<span class="tr">If
+		<a href="#x8.10.2">IsDataDescriptor</a>(<i>Desc</i>)
+		is <b>true</b>,
+		then </span>
+		</p>
+		<ol><li><p>
+			<span class="tr">Call
+			the [[DefineOwnProperty]] internal method of <i>obj</i>
+			with arguments "<code><b>value</b></code>",
+		 <a href="#x8.10">Property Descriptor</a> {[[Value]]: <i>Desc</i>.[[Value]],
+			[[Writable]]: <b>true</b>,
+			[[Enumerable]]: <b>true</b>,
+			[[Configurable]]: <b>true</b>},
+			and <b>false</b>.
+			</span>
+			</p>
+			</li>
+			<li><p>
+			<span class="tr">Call
+			the [[DefineOwnProperty]] internal method of <i>obj</i>
+			with arguments "<code><b>writable</b></code>",
+		 <a href="#x8.10">Property Descriptor</a> {[[Value]]: <i>Desc</i>.[[Writable]],
+			[[Writable]]: <b>true</b>,
+			[[Enumerable]]: <b>true</b>,
+			[[Configurable]]: <b>true</b>},
+			and <b>false</b>.
+			</span>
+			</p>
+		</li></ol></li>
+		<li><p>
+		<span class="tr">Else,
+		<a href="#x8.10.1">IsAccessorDescriptor</a>(<i>Desc</i>)
+		must be <b>true</b>,
+		so</span></p>
+		<ol><li><p>
+			<span class="tr">Call
+			the [[DefineOwnProperty]] internal method of <i>obj</i>
+			with arguments "<code><b>get"</b></code>,
+		 <a href="#x8.10">Property Descriptor</a> {[[Value]]: <i>Desc</i>.[[Get]],
+			[[Writable]]: <b>true</b>,
+			[[Enumerable]]: <b>true</b>,
+			[[Configurable]]: <b>true</b>},
+			and <b>false</b>.</span></p>
+			</li>
+			<li><p>
+			<span class="tr">Call
+			the [[DefineOwnProperty]] internal method of <i>obj</i>
+			with arguments "<code><b>set</b></code>",
+		 <a href="#x8.10">Property Descriptor</a> {[[Value]]: <i>Desc</i>.[[Set]],
+			[[Writable]]: <b>true</b>,
+			[[Enumerable]]: <b>true</b>,
+			[[Configurable]]: <b>true</b>},
+			and <b>false</b>.
+			</span>
+			</p>
+		</li></ol></li>
+		<li><p>
+		<span class="tr">Call
+		the [[DefineOwnProperty]] internal method of <i>obj</i>
+		with arguments "<code><b>enumerable</b></code>",
+	 <a href="#x8.10">Property Descriptor</a> {[[Value]]: <i>Desc</i>.[[Enumerable]],
+		[[Writable]]: <b>true</b>,
+		[[Enumerable]]: <b>true</b>,
+		[[Configurable]]: <b>true</b>},
+		and <b>false</b>.
+		</span>
+		</p>
+		</li>
+		<li><p>
+		<span class="tr">Call
+		the [[DefineOwnProperty]] internal method of <i>obj</i>
+		with arguments "<code><b>configurable</b></code>",
+	 <a href="#x8.10">Property Descriptor</a> {[[Value]]: <i>Desc</i>.[[Configurable]],
+		[[Writable]]: <b>true</b>,
+		[[Enumerable]]: <b>true</b>,
+		[[Configurable]]: <b>true</b>},
+		and <b>false</b>.
+		</span>
+		</p>
+		</li>
+		<li><p class="sm-btm">
+		<span class="tr">Return
+		<i>obj</i>.</span></p>
+	</li></ol><h4 id="x8.10.5">8.10.5 ToPropertyDescriptor ( Obj ) <a href="#x8.10.5">#</a> <a href="#x8.10.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	the abstract operation ToPropertyDescriptor is called with object
+	<i>Desc</i>, the
+	following steps are taken:</p>
+	<ol><li><p>
+		If
+		<a href="#Type">Type</a>(<i>Obj</i>) is not Object throw a <b>TypeError </b>exception.</p>
+		</li>
+		<li><p>
+		Let
+		<i>desc</i> be the result of creating a new <a href->Property Descriptor</a>
+		that initially has no fields.</p>
+		</li>
+		<li><p>
+		If
+		the result of calling the [[HasProperty]] internal method of <i>Obj</i>
+		with argument "<code><b>enumerable</b></code>"
+		is <b>true</b>, then</p>
+		<ol><li><p>
+			Let
+			<i>enum</i> be the result of calling the [[Get]] internal method
+			of <i>Obj</i> with "<code><b>enumerable</b></code>".</p>
+			</li>
+			<li><p>
+			Set
+			the [[Enumerable]] field of <i>desc</i> to <a href="x9.html#x9.2">ToBoolean</a>(<i>enum</i>).</p>
+		</li></ol></li>
+		<li><p>
+		If
+		the result of calling the [[HasProperty]] internal method of <i>Obj</i>
+		with argument "<code><b>configurable</b></code>"
+		is <b>true</b>, then</p>
+		<ol><li><p>
+			Let
+			<i>conf</i>  be the result of calling the [[Get]] internal method
+			of <i>Obj</i> with argument "<code><b>configurable</b></code>".</p>
+			</li>
+			<li><p>
+			Set
+			the [[Configurable]] field of <i>desc</i> to <a href="x9.html#x9.2">ToBoolean</a>(<i>conf</i>).</p>
+		</li></ol></li>
+		<li><p>
+		If
+		the result of calling the [[HasProperty]] internal method of <i>Obj</i>
+		with argument "<code><b>value</b></code>"
+		is <b>true</b>, then</p>
+		<ol><li><p>
+			Let
+			<i>value</i> be the result of calling the [[Get]] internal method
+			of <i>Obj</i> with argument &#8220;<code><b>value</b></code>&#8221;.</p>
+			</li>
+			<li><p>
+			Set
+			the [[Value]] field of <i>desc</i> to <i>value</i>.</p>
+		</li></ol></li>
+		<li><p>
+		If
+		the result of calling the [[HasProperty]] internal method of <i>Obj</i>
+		with argument "<code><b>writable</b></code>"
+		is <b>true</b>, then</p>
+		<ol><li><p>
+			Let
+			<i>writable</i> be the result of calling the [[Get]] internal
+			method of <i>Obj</i> with argument "<code><b>writable</b></code>".</p>
+			</li>
+			<li><p>
+			Set
+			the [[Writable]] field of <i>desc</i> to <a href="x9.html#x9.2">ToBoolean</a>(<i>writable</i>).</p>
+		</li></ol></li>
+		<li><p>
+		If
+		the result of calling the [[HasProperty]] internal method of <i>Obj</i>
+		with argument "<code><b>get</b></code>"
+		is <b>true</b>, then</p>
+		<ol><li><p>
+			Let
+			<i>getter</i> be the result of calling the [[Get]] internal method
+			of <i>Obj</i> with argument "<code><b>get</b></code>".</p>
+			</li>
+			<li><p>
+			If
+			<a href="x9.html#x9.11">IsCallable</a>(<i>getter</i>) is <b>false </b>and <i>getter</i> is not
+			<b>undefined</b>, then throw a <b>TypeError </b>exception.</p>
+			</li>
+			<li><p>
+			Set
+			the [[Get]] field of <i>desc</i> to <i>getter</i>.</p>
+		</li></ol></li>
+		<li><p>
+		If
+		the result of calling the [[HasProperty]] internal method of <i>Obj</i>
+		with argument "<code><b>set</b></code>"
+		is <b>true</b>, then</p>
+		<ol><li><p>
+			Let
+			<i>setter</i> be the result of calling the [[Get]] internal method
+			of <i>Obj</i> with argument "<code><b>set</b></code>".</p>
+			</li>
+			<li><p>
+			If
+			<a href="x9.html#x9.11">IsCallable</a>(<i>setter</i>) is <b>false </b>and <i>setter</i> is not
+			<b>undefined</b>, then throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
+			</li>
+			<li><p>
+			Set
+			the [[Set]] field of <i>desc</i> to <i>setter</i>.</p>
+		</li></ol></li>
+		<li><p>
+		If
+		either <i>desc</i>.[[Get]] or <i>desc</i>.[[Set]] are present, then</p>
+		<ol><li><p>
+			If
+			either <i>desc</i>.[[Value]] or <i>desc</i>.[[Writable]] are
+			present, then throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		<i>desc</i>.</p>
+	</li></ol><h3 id="x8.11">8.11 The Lexical Environment and Environment Record Specification Types <a href="#x8.11">#</a> <a href="#x8.11-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	The
+ <a href="x10.html#x10.2">Lexical Environment</a> and <a href="x10.html#x10.2.1">Environment Record</a> types are used to explain
+	the behaviour of name resolution in nested functions and blocks.
+	These types and the operations upon them are defined in <a href="x10.html#x10">Clause 10</a>.</p>
+	<h3 id="x8.12">8.12 Algorithms for Object Internal Methods <a href="#x8.12">#</a> <a href="#x8.12-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	In
+	the following algorithm descriptions, assume <i>O</i>
+	is a native ECMAScript object, <i>P</i>
+	is a String, <i>Desc</i>
+	is a Property Description record, and <i>Throw</i>
+	is a Boolean flag.</p>
+	<h4 id="x8.12.1">8.12.1 [[GetOwnProperty]] (P) <a href="#x8.12.1">#</a> <a href="#x8.12.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	the [[GetOwnProperty]] internal method of <i>O</i>
+	is called with property name <i>P</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		If
+		<i>O </i>doesn&#8217;t have an own property with name <i>P</i>, return
+		<b>undefined</b>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>D </i>be a newly created <a href="#x8.10">Property Descriptor</a> with no fields.</p>
+		</li>
+		<li><p>
+		Let
+		<i>X </i>be <i>O</i>&#8217;s own property named <i>P</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>X </i>is a data property, then</p>
+		<ol><li><p>
+			Set
+			<i>D</i>.[[Value]] to the value of <i>X</i>&#8217;s [[Value]]
+			attribute.</p>
+			</li>
+			<li><p>
+			Set
+			<i>D</i>.[[Writable]] to the value of <i>X</i>&#8217;s [[Writable]]
+			attribute</p>
+		</li></ol></li>
+		<li><p>
+		Else
+		<i>X </i>is an accessor property, so</p>
+		<ol><li><p>
+			Set
+			<i>D</i>.[[Get]] to the value of <i>X</i>&#8217;s [[Get]] attribute.</p>
+			</li>
+			<li><p>
+			Set
+			<i>D</i>.[[Set]] to the value of <i>X</i>&#8217;s [[Set]] attribute.</p>
+		</li></ol></li>
+		<li><p>
+		Set
+		<i>D</i>.[[Enumerable]] to the value of <i>X</i>&#8217;s [[Enumerable]]
+		attribute.</p>
+		</li>
+		<li><p>
+		Set
+		<i>D</i>.[[Configurable]] to the value of <i>X</i>&#8217;s
+		[[Configurable]] attribute.</p>
+		</li>
+		<li><p>
+		Return
+		<i>D</i>.</p>
+	</li></ol><p>
+	However,
+	if <i>O </i>is a String
+	object it has a more elaborate [[GetOwnProperty]] internal method
+	defined in <a href="x15.html#x15.5.5.2">15.5.5.2</a>.</p>
+	<h4 id="x8.12.2">8.12.2 [[GetProperty]] (P) <a href="#x8.12.2">#</a> <a href="#x8.12.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	the [[GetProperty]] internal method of <i>O</i>
+	is called with property name <i>P</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>prop </i>be the result of calling the [[GetOwnProperty]]
+		internal method of <i>O </i>with property name <i>P</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>prop </i>is not <b>undefined</b>, return <i>prop</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>proto</i> be the value of the [[Prototype]] internal property of
+		<i>O.</i></p>
+		</li>
+		<li><p>
+		If
+		<i>proto </i>is <b>null</b>, return <b>undefined</b>.</p>
+		</li>
+		<li><p>
+		Return
+		the result of calling the [[GetProperty]] internal method of <i>proto</i>
+		with argument <i>P</i>.</p>
+	</li></ol><h4 id="x8.12.3">8.12.3 [[Get]] (P) <a href="#x8.12.3">#</a> <a href="#x8.12.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	the [[Get]] internal method of <i>O</i>
+	is called with property name <i>P</i>,
+	the following steps are taken:</p>
+	<ol start="8"><li><p>
+		Let
+		<i>desc </i>be the result of calling the [[GetProperty]] internal
+		method of <i>O </i>with property name <i>P</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>desc </i>is <b>undefined</b>, return <b>undefined</b>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="#x8.10.2">IsDataDescriptor</a>(<i>desc</i>) is <b>true</b>, return
+		<i>desc</i>.[[Value]].</p>
+		</li>
+		<li><p>
+		Otherwise,
+		<a href="#x8.10.1">IsAccessorDescriptor</a>(<i>desc</i>) must be true so, let <i>getter</i>
+		be <i>desc</i>.[[Get]].</p>
+		</li>
+		<li><p>
+		If
+		<i>getter </i>is <b>undefined</b>, return <b>undefined</b>.</p>
+		</li>
+		<li><p>
+		Return
+		the result calling the [[Call]] internal method of <i>getter </i>providing <i>O </i>as the <b>this</b> value and providing no
+		arguments.</p>
+	</li></ol><h4 id="x8.12.4">8.12.4 [[CanPut]] (P) <a href="#x8.12.4">#</a> <a href="#x8.12.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	the [[CanPut]] internal method of <i>O </i>is called with property name <i>P</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>desc</i> be the result of calling the [[GetOwnProperty]]
+		internal method of <i>O</i> with argument <i>P</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>desc</i> is not <b>undefined</b>, then</p>
+		<ol><li><p>
+			If
+			<a href="#x8.10.1">IsAccessorDescriptor</a>(<i>desc</i>) is <b>true</b>, then</p>
+			<ol><li><p>
+				If
+				<i>desc</i>.[[Set]] is <b>undefined</b>, then return <b>false</b>.</p>
+				</li>
+				<li><p>
+				Else
+				return <b>true</b>.</p>
+			</li></ol></li>
+			<li><p>
+			Else,
+			<i>desc</i> must be a DataDescriptor so return the value of
+			<i>desc</i>.[[Writable]].</p>
+		</li></ol></li>
+		<li><p>
+		Let
+		<i>proto</i> be the [[Prototype]] internal property of <i>O</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>proto</i> is <b>null</b>, then return the value of the
+		[[Extensible]] internal property of <i>O</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>inherited</i> be the result of calling the [[GetProperty]]
+		internal method of <i>proto</i> with property name <i>P</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>inherited</i> is <b>undefined</b>, return the value of the
+		[[Extensible]] internal property of <i>O</i>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="#x8.10.1">IsAccessorDescriptor</a>(<i>inherited</i>) is <b>true</b>, then</p>
+		<ol><li><p>
+			If
+			<i>inherited</i>.[[Set]] is <b>undefined</b>, then return <b>false</b>.</p>
+			</li>
+			<li><p>
+			Else
+			return <b>true</b>.</p>
+		</li></ol></li>
+		<li><p>
+		Else,
+		<i>inherited</i> must be a DataDescriptor</p>
+		<ol><li><p>
+			If
+			the [[Extensible]] internal property of <i>O</i> is <b>false</b>,
+			return <b>false</b>.</p>
+			</li>
+			<li><p>
+			Else
+			return the value of <i>inherited</i>.[[Writable]].</p>
+		</li></ol></li></ol><p class="sp">Host
+	objects may define additional constraints upon [[Put]] operations.
+	If possible, host objects should not allow [[Put]] operations in
+	situations where this definition of [[CanPut]] returns false.</p>
+	<h4 id="x8.12.5">8.12.5 [[Put]] ( P, V, Throw ) <a href="#x8.12.5">#</a> <a href="#x8.12.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	the [[Put]] internal method of <i>O</i>
+	is called with property <i>P</i>,
+	value <i>V</i>, and
+	Boolean flag <i>Throw</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		If
+		the result of calling the [[CanPut]] internal method of <i>O </i>with
+		argument <i>P </i>is <b>false</b>, then</p>
+		<ol><li><p>
+			If
+			<i>Throw </i>is <b>true</b>, then throw a <b>TypeError </b>exception.</p>
+			</li>
+			<li><p>
+			Else
+			return.</p>
+		</li></ol></li>
+		<li><p>
+		Let
+		<i>ownDesc </i>be the result of calling the [[GetOwnProperty]]
+		internal method of <i>O </i>with argument <i>P</i>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="#x8.10.2">IsDataDescriptor</a>(<i>ownDesc</i>) is <b>true</b>, then</p>
+		<ol><li><p>
+			Let
+			<i>valueDesc</i> be the <a href="#x8.10">Property Descriptor</a> {[[Value]]: <i>V</i>}.</p>
+			</li>
+			<li><p>
+			Call
+			the [[DefineOwnProperty]] internal method of <i>O</i> passing <i>P</i>,
+			<i>valueDesc</i>, and <i>Throw</i> as arguments.</p>
+			</li>
+			<li><p>
+			Return.</p>
+		</li></ol></li>
+		<li><p>
+		Let
+		<i>desc </i>be the result of calling the [[GetProperty]] internal
+		method of <i>O </i>with argument <i>P</i>. This may be either an
+		own or inherited <a href="#accessor-property-descriptor">accessor property descriptor</a>
+ or an inherited <a href="#data-property-descriptor">data property descriptor</a>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="#x8.10.1">IsAccessorDescriptor</a>(<i>desc</i>) is <b>true</b>, then</p>
+		<ol><li><p>
+			Let
+			<i>setter </i>be <i>desc</i>.[[Set]] which cannot be <b>undefined</b>.</p>
+			</li>
+			<li><p>
+			Call
+			the [[Call]] internal method of <i>setter </i>providing <i>O </i>as
+			the <b>this </b>value and providing <i>V </i>as the sole argument.</p>
+		</li></ol></li>
+		<li><p>
+		Else,
+		create a named data property named <i>P </i>on object <i>O </i>as
+		follows</p>
+		<ol><li><p>
+			Let
+			<i>newDesc</i> be the <a href="#x8.10">Property Descriptor</a><br>{[[Value]]: <i>V</i>,
+			[[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b>,
+			[[Configurable]]: <b>true</b>}.</p>
+			</li>
+			<li><p>
+			Call
+			the [[DefineOwnProperty]] internal method of <i>O</i> passing <i>P</i>,
+			<i>newDesc</i>, and <i>Throw</i> as arguments.</p>
+		</li></ol></li>
+		<li><p>
+		Return.</p>
+	</li></ol><h4 id="x8.12.6">8.12.6 [[HasProperty]] (P) <a href="#x8.12.6">#</a> <a href="#x8.12.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	the [[HasProperty]] internal method of <i>O</i>
+	is called with property name <i>P</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>desc </i>be the result of calling the [[GetProperty]] internal
+		method of <i>O </i>with property name <i>P</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>desc</i> is <b>undefined</b>, then return <b>false</b>.</p>
+		</li>
+		<li><p>
+		Else
+		return <b>true</b>.</p>
+	</li></ol><h4 id="x8.12.7">8.12.7 [[Delete]] (P, Throw) <a href="#x8.12.7">#</a> <a href="#x8.12.7-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	the [[Delete]] internal method of <i>O</i>
+	is called with property name <i>P </i>and the Boolean flag <i>Throw</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>desc</i> be the result of calling the [[GetOwnProperty]]
+		internal method of <i>O</i> with property name <i>P</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>desc</i> is <b>undefined</b>, then return <b>true</b>.</p>
+		</li>
+		<li><p>
+		If
+		<i>desc</i>.[[Configurable]] is <b>true</b>, then</p>
+		<ol><li><p>
+			Remove
+			the own property with name <i>P</i> from <i>O</i>.</p>
+			</li>
+			<li><p>
+			Return
+			<b>true</b>.</p>
+		</li></ol></li>
+		<li><p>
+		Else
+		if <i>Throw</i>, then throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
+		</li>
+		<li><p>
+		Return
+		<b>false</b>.</p>
+	</li></ol><h4 id="x8.12.8">8.12.8 [[DefaultValue]] (hint) <a href="#x8.12.8">#</a> <a href="#x8.12.8-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	the [[DefaultValue]] internal method of <i>O</i>
+	is called with hint String, the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>toString</i> be the result of calling the [[Get]] internal
+		method of object <i>O</i> with argument "<code><b>toString</b></code>".</p>
+		</li>
+		<li><p>
+		If
+		<a href="x9.html#x9.11">IsCallable</a>(<i>toString)</i> is <b>true </b>then,</p>
+		<ol><li><p>
+			Let
+			<i>str</i> be the result of calling the [[Call]] internal method
+			of <i>toString</i>, with <i>O</i> as the <b>this</b> value and an
+			empty argument list.</p>
+			</li>
+			<li><p>
+			If
+			<i>str</i> is a <a href="x4.html#primitive_value" class="term-ref">primitive value</a>, return <i>str</i>.</p>
+		</li></ol></li>
+		<li><p>
+		Let
+		<i>valueOf</i> be the result of calling the [[Get]] internal method
+		of object <i>O</i> with argument "<code><b>valueOf</b></code>".</p>
+		</li>
+		<li><p>
+		If
+		<a href="x9.html#x9.11">IsCallable</a>(<i>valueOf)</i> is <b>true</b> then, 
+		</p>
+		<ol><li><p>
+			Let
+			<i>val</i> be the result of calling the [[Call]] internal method
+			of <i>valueOf</i>, with <i>O</i> as the this value and an empty
+			argument list.</p>
+			</li>
+			<li><p>
+			If
+			<i>val</i> is a <a href="x4.html#primitive_value" class="term-ref">primitive value</a>, return <i>val</i>.</p>
+		</li></ol></li>
+		<li><p>
+		Throw
+		a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
+	</li></ol><p>
+	When
+	the [[DefaultValue]] internal method of <i>O</i>
+	is called with hint Number, the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>valueOf</i> be the result of calling the [[Get]] internal method
+		of object <i>O</i> with argument "<code><b>valueOf</b></code>".</p>
+		</li>
+		<li><p>
+		If
+		<a href="x9.html#x9.11">IsCallable</a>(<i>valueOf)</i> is <b>true</b> then,</p>
+		<ol><li><p>
+			Let
+			<i>val</i> be the result of calling the [[Call]] internal method
+			of <i>valueOf</i>, with <i>O</i> as the <b>this</b> value and an
+			empty argument list.</p>
+			</li>
+			<li><p>
+			If
+			<i>val</i> is a <a href="x4.html#primitive_value" class="term-ref">primitive value</a>, return <i>val</i>.</p>
+		</li></ol></li>
+		<li><p>
+		Let
+		<i>toString</i> be the result of calling the [[Get]] internal
+		method of object <i>O</i> with argument "<code><b>toString</b></code>".</p>
+		</li>
+		<li><p>
+		If
+		<a href="x9.html#x9.11">IsCallable</a>(<i>toString)</i> is <b>true</b> then,</p>
+		<ol><li><p>
+			Let
+			<i>str</i> be the result of calling the [[Call]] internal method
+			of <i>toString</i>, with <i>O</i> as the this value and an empty
+			argument list.</p>
+			</li>
+			<li><p>
+			If
+			<i>str</i> is a <a href="x4.html#primitive_value" class="term-ref">primitive value</a>, return <i>str</i>.</p>
+		</li></ol></li>
+		<li><p>
+		Throw
+		a <b>TypeError </b>exception.</p>
+	</li></ol><p>
+	When
+	the [[DefaultValue]] internal method of <i>O</i>
+	is called with no hint, then it behaves as if the hint were Number,
+	unless <i>O</i> is a Date
+	object (see <a href="x15.html#x15.9.6">15.9.6</a>), in which case it behaves as if the hint were
+	String.</p>
+	<p>
+	The
+	above specification of [[DefaultValue]] for native objects can
+	return only <a href="x4.html#primitive_value" class="term-ref">primitive value</a>s. If a host object implements its own
+	[[DefaultValue]] internal method, it must ensure that its
+	[[DefaultValue]] internal method can return only <a href="x4.html#primitive_value" class="term-ref">primitive value</a>s.</p>
+	<h4 id="x8.12.9">8.12.9 [[DefineOwnProperty]] (P, Desc, Throw) <a href="#x8.12.9">#</a> <a href="#x8.12.9-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	In
+	the following algorithm, the term <dfn id="reject-DefineOwnProperty">&#8220;Reject&#8221;</dfn> means &#8220;If <i>Throw</i>
+	is <b>true</b>, then throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception, otherwise
+	return <b>false</b>&#8221;. The algorithm contains steps that test
+	various fields of the <a href="#x8.10">Property Descriptor</a> <i>Desc</i>
+	for specific values. The fields that are tested in this manner need
+	not actually exist in <i>Desc</i>.
+	 If a field is absent then its value is considered to be <b>false</b>.</p>
+	<p>
+	When
+	the [[DefineOwnProperty]] internal method of <i>O</i>
+	is called with property name <i>P</i>,
+ <a href="#x8.10">property descriptor</a> <i>Desc</i>,
+	and Boolean flag <i>Throw</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>current</i> be the result of calling the [[GetOwnProperty]]
+		internal method of <i>O</i> with property name <i>P</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>extensible</i> be the value of the [[Extensible]] internal
+		property of <i>O</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>current </i>is <b>undefined</b> and <i>extensible</i> is <b>false</b>,
+		then <a href="#reject-DefineOwnProperty">Reject</a>.</p>
+		</li>
+		<li><p>
+		If
+		<i>current</i> is <b>undefined</b> and <i>extensible</i> is <b>true</b>,
+		then</p>
+		<ol><li><p>
+			If
+			 <a href="#x8.10.3">IsGenericDescriptor</a>(<i>Desc</i>) or <a href="#x8.10.2">IsDataDescriptor</a>(<i>Desc</i>)
+			is <b>true</b>, then</p>
+			<ol><li><p>
+				Create
+				an own data property named <i>P</i> of object <i>O</i> whose
+				[[Value]], [[Writable]], [[Enumerable]] and [[Configurable]]
+				attribute values are described by <i>Desc</i>. If the value of an
+				attribute field of <i>Desc</i> is absent, the attribute of the
+				newly created property is set to its default value.</p>
+			</li></ol></li>
+			<li><p>
+			Else,
+			<i>Desc</i> must be an
+ <a href="#accessor-property-descriptor">accessor Property Descriptor</a> so,</p>
+			<ol><li><p>
+				Create
+				an own accessor property named <i>P</i> of object <i>O</i> whose
+				[[Get]], [[Set]], [[Enumerable]] and [[Configurable]] attribute
+				values are described by <i>Desc</i>. If the value of an attribute
+				field of <i>Desc</i> is absent, the attribute of the newly
+				created property is set to its default value.</p>
+			</li></ol></li>
+			<li><p>
+			Return
+			<b>true</b>.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		<b>true</b>, if every field in <i>Desc</i> is absent.</p>
+		</li>
+		<li><p>
+		Return
+		<b>true</b>, if every field in <i>Desc </i>also occurs in <i>current</i>
+		and the value of every field in <i>Desc </i>is the same value as
+		the corresponding field in <i>current </i>when compared using the
+		<a href="x9.html#x9.12">SameValue</a> algorithm (<a href="x9.html#x9.12">9.12</a>).</p>
+		</li>
+		<li><p>
+		If
+		the [[Configurable]] field of <i>current</i> is <b>false</b> then</p>
+		<ol><li><p>
+			<a href="#reject-DefineOwnProperty">Reject</a>,
+			if the [[Configurable]] field of <i>Desc</i> is <b>true</b>.</p>
+			</li>
+			<li><p>
+			<a href="#reject-DefineOwnProperty">Reject</a>,
+			if the [[Enumerable]] field of <i>Desc</i> is present and the
+			[[Enumerable]] fields of <i>current</i> and <i>Desc</i> are the
+			Boolean negation of each other.</p>
+		</li></ol></li>
+		<li><p>
+		If
+		<a href="#x8.10.3">IsGenericDescriptor</a>(<i>Desc</i>) is <b>true</b>, then no further
+		validation is required.</p>
+		</li>
+		<li><p>
+		Else,
+		if <a href="#x8.10.2">IsDataDescriptor</a>(<i>current</i>) and <a href="#x8.10.2">IsDataDescriptor</a>(<i>Desc</i>)
+		have different results, then</p>
+		<ol><li><p>
+			<a href="#reject-DefineOwnProperty">Reject</a>,
+			if the [[Configurable]] field of <i>current</i> is <b>false</b>. 
+			</p>
+			</li>
+			<li><p>
+			If
+			<a href="#x8.10.2">IsDataDescriptor</a>(<i>current</i>) is <b>true</b>, then</p>
+			<ol><li><p>
+				Convert
+				the property named <i>P</i> of object <i>O</i> from a data
+				property to an accessor property. Preserve the existing values of
+				the converted property&#8217;s [[Configurable]] and [[Enumerable]]
+				attributes and set the rest of the property&#8217;s attributes to
+				their default values.</p>
+			</li></ol></li>
+			<li><p>
+			Else,</p>
+			<ol><li><p>
+				Convert
+				the property named <i>P</i> of object <i>O</i> from an accessor
+				property to a data property. Preserve the existing values of the
+				converted property&#8217;s [[Configurable]] and [[Enumerable]]
+				attributes and set the rest of the property&#8217;s attributes to
+				their default values.</p>
+			</li></ol></li></ol></li>
+		<li><p>
+		Else,
+		if <a href="#x8.10.2">IsDataDescriptor</a>(<i>current</i>) and <a href="#x8.10.2">IsDataDescriptor</a>(<i>Desc</i>)
+		are both <b>true</b>, then</p>
+		<ol><li><p>
+			If
+			the [[Configurable]] field of <i>current</i> is <b>false</b>, then</p>
+			<ol><li><p>
+				<a href="#reject-DefineOwnProperty">Reject</a>,
+				if the [[Writable]] field of <i>current</i> is <b>false</b> and
+				the [[Writable]] field of <i>Desc</i> is <b>true</b>.</p>
+				</li>
+				<li><p>
+				If
+				the [[Writable]] field of <i>current</i> is <b>false</b>, then</p>
+				<ol><li><p>
+					<a href="#reject-DefineOwnProperty">Reject</a>,
+					if the [[Value]] field of <i>Desc</i> is present and
+					<a href="x9.html#x9.12">SameValue</a>(<i>Desc</i>.[[Value]], <i>current</i>.[[Value]]) is
+					<b>false</b>. 
+					</p>
+				</li></ol></li></ol></li>
+			<li><p>
+			else,
+			the [[Configurable]] field of <i>current</i> is <b>true</b>, so
+			any change is acceptable.</p>
+		</li></ol></li>
+		<li><p>
+		Else,
+		<a href="#x8.10.1">IsAccessorDescriptor</a>(<i>current</i>) and <a href="#x8.10.1">IsAccessorDescriptor</a>(<i>Desc</i>)
+		are both <b>true</b> so,</p>
+		<ol><li><p>
+			If
+			the [[Configurable]] field of <i>current</i> is <b>false</b>, then</p>
+			<ol><li><p>
+				<a href="#reject-DefineOwnProperty">Reject</a>,
+				if the [[Set]] field of <i>Desc</i> is present and
+				<a href="x9.html#x9.12">SameValue</a>(<i>Desc</i>.[[Set]], <i>current</i>.[[Set]]) is <b>false</b>.</p>
+				</li>
+				<li><p>
+				<a href="#reject-DefineOwnProperty">Reject</a>,
+				if the [[Get]] field of <i>Desc</i> is present and
+				<a href="x9.html#x9.12">SameValue</a>(<i>Desc</i>.[[Get]], <i>current</i>.[[Get]]) is <b>false</b>.</p>
+			</li></ol></li></ol></li>
+		<li><p>
+		For
+		each attribute field of <i>Desc</i> that is present, set the
+		correspondingly named attribute of the property named <i>P</i> of
+		object <i>O</i> to the value of the field.</p>
+		</li>
+		<li><p>
+		Return
+		<b>true</b>.</p>
+	</li></ol><p>
+	However,
+	if <i>O</i> is an Array
+	object, it has a more elaborate [[DefineOwnProperty]] internal
+	method defined in <a href="x15.html#x15.4.5.1">15.4.5.1</a>.</p>
+	<p><b class="note">NOTE</b> Step
+	10.b allows any field of Desc to be different from the corresponding
+	field of current if current&#8217;s [[Configurable]] field is <b>true</b>.
+	This even permits changing the [[Value]] of a property whose
+	[[Writable]] attribute is <b>false</b>. This is allowed because a
+	<b>true</b> [[Configurable]] attribute would permit an equivalent
+	sequence of calls where [[Writable]] is first set to <b>true</b>, a
+	new [[Value]] is set, and then [[Writable]] is set to <b>false</b>.</p>
+	</body><script src="anno.js"></script></html>

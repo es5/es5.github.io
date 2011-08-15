@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html class="split chapter"><head><meta charset="utf-8"><title>10 Executable Code and Execution Contexts # &#9417; &#9402; &#9312; &#9398; &#8212; Annotated ES5</title><link rel="stylesheet" href="style.css"><link rel="shortcut icon" href="favicon.ico"><link href="x9.html" title="9 Type Conversion and Testing " rel="prev">
+  <link href="index.html#contents" title="TOC" rel="index">
+  <link href="x11.html" title="11 Expressions " rel="next">
+  </head><body><div class="head">
+<h2 id="top">Annotated ECMAScript 5.1 <span id="timestamp"></span></h2>
+<div id="mascot-treehouse">
+	<img id="mascot" align="left" src="js-mascot.svg" alt=""><img id="bubble" src="bubble.svg" alt=""></div>
+<p id="slogan">&#8223;Ex igne vita&#8221;</p>
+<div id="annotations"></div>
+<script src="timestamp.js"></script></div>
+<nav>
+   <a href="x9.html">&#8592; 9 Type Conversion and Testing </a> &#8211;
+   <a href="index.html#contents">TOC</a> &#8211;
+   <a href="x11.html">11 Expressions  &#8594;</a>
+  <ol class="toc"><li><a href="x10.html#x10" id="x10-toc">10 Executable Code and Execution Contexts</a>
+    <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x10.html#x10.1" id="x10.1-toc">10.1 Types of Executable Code</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x10.html#x10.1.1" id="x10.1.1-toc">10.1.1 Strict Mode Code</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x10.html#x10.2" id="x10.2-toc">10.2 Lexical Environments</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x10.html#x10.2.1" id="x10.2.1-toc">10.2.1 Environment Records</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x10.html#x10.2.1.1" id="x10.2.1.1-toc">10.2.1.1 Declarative Environment Records</a>
+                <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x10.html#x10.2.1.1.1" id="x10.2.1.1.1-toc">10.2.1.1.1 HasBinding(N)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x10.html#x10.2.1.1.2" id="x10.2.1.1.2-toc">10.2.1.1.2 CreateMutableBinding (N, D)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x10.html#x10.2.1.1.3" id="x10.2.1.1.3-toc">10.2.1.1.3 SetMutableBinding (N,V,S)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x10.html#x10.2.1.1.4" id="x10.2.1.1.4-toc">10.2.1.1.4 GetBindingValue(N,S)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x10.html#x10.2.1.1.5" id="x10.2.1.1.5-toc">10.2.1.1.5 DeleteBinding (N)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x10.html#x10.2.1.1.6" id="x10.2.1.1.6-toc">10.2.1.1.6 ImplicitThisValue()</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x10.html#x10.2.1.1.7" id="x10.2.1.1.7-toc">10.2.1.1.7 CreateImmutableBinding (N)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x10.html#x10.2.1.1.8" id="x10.2.1.1.8-toc">10.2.1.1.8 InitializeImmutableBinding (N,V)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x10.html#x10.2.1.2" id="x10.2.1.2-toc">10.2.1.2 Object Environment Records</a>
+                <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x10.html#x10.2.1.2.1" id="x10.2.1.2.1-toc">10.2.1.2.1 HasBinding(N)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x10.html#x10.2.1.2.2" id="x10.2.1.2.2-toc">10.2.1.2.2 CreateMutableBinding (N, D)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x10.html#x10.2.1.2.3" id="x10.2.1.2.3-toc">10.2.1.2.3 SetMutableBinding (N,V,S)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x10.html#x10.2.1.2.4" id="x10.2.1.2.4-toc">10.2.1.2.4 GetBindingValue(N,S)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x10.html#x10.2.1.2.5" id="x10.2.1.2.5-toc">10.2.1.2.5 DeleteBinding (N)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x10.html#x10.2.1.2.6" id="x10.2.1.2.6-toc">10.2.1.2.6 ImplicitThisValue()</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li></ol></li><li><a href="x10.html#x10.2.2" id="x10.2.2-toc">10.2.2 Lexical Environment Operations</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x10.html#x10.2.2.1" id="x10.2.2.1-toc">10.2.2.1 GetIdentifierReference (lex, name, strict)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x10.html#x10.2.2.2" id="x10.2.2.2-toc">10.2.2.2 NewDeclarativeEnvironment (E)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x10.html#x10.2.2.3" id="x10.2.2.3-toc">10.2.2.3 NewObjectEnvironment (O, E)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x10.html#x10.2.3" id="x10.2.3-toc">10.2.3 The Global Environment</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x10.html#x10.3" id="x10.3-toc">10.3 Execution Contexts</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x10.html#x10.3.1" id="x10.3.1-toc">10.3.1 Identifier Resolution</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x10.html#x10.4" id="x10.4-toc">10.4 Establishing an Execution Context</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x10.html#x10.4.1" id="x10.4.1-toc">10.4.1 Entering Global Code</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x10.html#x10.4.1.1" id="x10.4.1.1-toc">10.4.1.1 Initial Global Execution Context</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x10.html#x10.4.2" id="x10.4.2-toc">10.4.2 Entering Eval Code</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x10.html#x10.4.2.1" id="x10.4.2.1-toc">10.4.2.1 Strict Mode Restrictions</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x10.html#x10.4.3" id="x10.4.3-toc">10.4.3 Entering Function Code</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x10.html#x10.5" id="x10.5-toc">10.5 Declaration Binding Instantiation</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x10.html#x10.6" id="x10.6-toc">10.6 Arguments Object</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li></ol></nav>
+
+  <h2 id="x10">10 Executable Code and Execution Contexts <a href="#x10">#</a> <a href="#x10-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h2>
+	<h3 id="x10.1">10.1 Types of Executable Code <a href="#x10.1">#</a> <a href="#x10.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	There
+	are three types of ECMAScript executable code:</p>
+	<ul><li><p><dfn id="global-code"><i>Global code</i></dfn> is source text that
+		is treated as an ECMAScript <i><a href="x14.html#x14">Program</a></i>.
+		The global code of a particular <i><a href="x14.html#x14">Program</a></i>
+		does not include any source text that is parsed as part of a
+		<i><a href="x13.html#x13">FunctionBody</a></i>.</p>
+		</li>
+		<li><p><dfn id="eval-code"><i>Eval code</i></dfn> is the source text
+		supplied to the built-in <code><b><a href="x15.html#x15.1.2.1">eval</a></b></code> function. More precisely, if the parameter to the built-in <code><b><a href="x15.html#x15.1.2.1">eval</a></b></code> function is a String, it is treated as an ECMAScript <i><a href="x14.html#x14">Program</a></i>.
+		The eval code for a particular invocation of <code><b>eval</b></code>
+		is the <a href="#global-code">global code</a> portion of that <i><a href="x14.html#x14">Program</a></i>.</p>
+		</li>
+		<li><p><dfn id="function-code"><i>Function code</i></dfn> is source text that
+		is parsed as part of a <i><a href="x13.html#x13">FunctionBody</a></i>.
+		The <i>function code</i>
+		of a particular <i><a href="x13.html#x13">FunctionBody</a></i>
+		does not include any source text that is parsed as part of a nested
+		<i><a href="x13.html#x13">FunctionBody</a></i>. <i>Function
+		code</i> also denotes the
+		source text supplied when <a href="x15.html#x15.3.2" class="term-ref">using the built-in <code><b>Function</b></code> object as a constructor</a>. More precisely, the last parameter
+		provided to the <code><b>Function</b></code>
+		constructor is converted to a String and treated as the
+		<i><a href="x13.html#x13">FunctionBody</a></i>. If more
+		than one parameter is provided to the <code><b>Function</b></code>
+		constructor, all parameters except the last one are converted to
+		Strings and concatenated together, separated by commas. The
+		resulting String is interpreted as the <i>FormalParameterList</i>
+		for the <i><a href="x13.html#x13">FunctionBody</a></i>
+		defined by the last parameter. The function code for a particular
+		instantiation of a <code><b>Function</b></code>
+		does not include any source text that is parsed as part of a nested
+		<i><a href="x13.html#x13">FunctionBody</a></i>.</p>
+	</li></ul><h4 id="x10.1.1">10.1.1 Strict Mode Code <a href="#x10.1.1">#</a> <a href="#x10.1.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	An
+	ECMAScript <i><a href="x14.html#x14">Program</a></i>
+	syntactic unit may be processed using either unrestricted or strict
+	mode syntax and semantics. When processed using strict mode the
+	three types of ECMAScript code are referred to as strict global
+	code, strict eval code, and strict function code. Code is
+	interpreted as <a href="#x10.1.1" class="term-ref">strict mode code</a> in the following situations:</p>
+	<ul><li><p>
+	 <a href="#global-code">Global code</a> is strict global code if it begins with a Directive Prologue
+		that contains a Use Strict Directive (see <a href="x14.html#x14.1">14.1</a>).</p>
+		</li>
+		<li><p>
+	 <a href="#eval-code">Eval code</a> is strict eval code if it begins with a Directive Prologue
+		that contains a Use Strict Directive or if the call to eval is a
+		direct call (see <a href="x15.html#x15.1.2.1.1">15.1.2.1.1</a>) to the <a href="x15.html#x15.1.2.1">eval function</a> that is contained
+		in <a href="#x10.1.1" class="term-ref">strict mode code</a>. 
+		</p>
+		</li>
+		<li><p>
+	 <a href="#function-code">Function code</a> that is part of a <i><a href="x13.html#x13">FunctionDeclaration</a></i>,
+		<i><a href="x13.html#x13">FunctionExpression</a></i>,
+		or accessor <i>PropertyAssignment</i>
+		is strict function code if its <i><a href="x13.html#x13">FunctionDeclaration</a></i>,
+		<i><a href="x13.html#x13">FunctionExpression</a></i>,
+		or <i>PropertyAssignment</i>
+		is contained in <a href="#x10.1.1" class="term-ref">strict mode code</a> or if the function code begins
+		with a Directive Prologue that contains a Use Strict Directive.</p>
+		</li>
+		<li><p>
+	 <a href="#function-code">Function code</a> that is supplied as the last argument to the built-in Function
+		constructor is strict function code if the last argument is a
+		String that when processed as a <i><a href="x13.html#x13">FunctionBody</a></i>
+		begins with a Directive Prologue that contains a Use Strict
+		Directive.</p>
+	</li></ul><h3 id="x10.2">10.2 Lexical Environments <a href="#x10.2">#</a> <a href="#x10.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	A
+	<i>Lexical Environment</i> is a <a href="x8.html#specification-type">specification type</a> used to define
+	the association of <i>Identifiers</i>
+	to specific variables and functions based upon the lexical nesting
+	structure of ECMAScript code. A Lexical Environment consists of an
+	<a href="#x10.2.1">Environment Record</a> and a possibly null reference to an <i>outer</i>
+	Lexical Environment. Usually a Lexical Environment is associated
+	with some specific syntactic structure of ECMAScript code such as a
+	<i><a href="x13.html#x13">FunctionDeclaration</a></i>,
+	a <i>WithStatement</i>,
+	or a <i>Catch </i>clause
+	of a <i>TryStatement</i>
+	and a new Lexical Environment is created each time such code is
+	evaluated.</p>
+	<p>
+	An
+	<a href="#x10.2.1"><i>Environment Record</i></a> records the identifier bindings that are
+	created within the scope of its associated Lexical Environment.</p>
+	<p>
+	The
+	<dfn id="outer-environment-reference">outer environment reference</dfn> is used to model the logical nesting of
+	Lexical Environment values. The outer reference of a (inner) Lexical
+	Environment is a reference to the Lexical Environment that logically
+	surrounds the inner Lexical Environment. An outer Lexical
+	Environment may, of course, have its own outer Lexical Environment. 
+	A Lexical Environment may serve as the outer environment for
+	multiple inner Lexical Environments. For example, if a
+	<i><a href="x13.html#x13">FunctionDeclaration</a></i>
+	contains two nested <i>FunctionDeclarations</i>
+	then the Lexical Environments of each of the nested functions will
+	have as their outer Lexical Environment the Lexical Environment of
+	the current execution of the surrounding function.</p>
+	<p>
+	Lexical
+	Environments and Environment Record values are purely specification
+	mechanisms and need not correspond to any specific artefact of an
+	ECMAScript implementation. It is impossible for an ECMAScript
+	program to directly access or manipulate such values.</p>
+	<h4 id="x10.2.1">10.2.1 Environment Records <a href="#x10.2.1">#</a> <a href="#x10.2.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	There
+	are two kinds of Environment Record values used in this
+	specification: <i>declarative environment records</i> and <i>object
+	environment records</i>.  <dfn id="declarative-environment-record">Declarative environment records</dfn> are used
+	to define the effect of ECMAScript language syntactic elements such
+	as <i>FunctionDeclarations</i>,
+	<i>VariableDeclarations</i>,
+	and <i>Catch</i> clauses
+	that directly associate <b>identifier</b> bindings with ECMAScript
+	language values. <dfn id="object-environment-record">Object environment records</dfn> are used to define the
+	effect of ECMAScript elements such as <i><a href="x14.html#x14">Program</a></i>
+	and <i>WithStatement</i>
+	that associate <b>identifier</b> bindings with the properties of
+	some object.</p>
+	<p>
+	For
+	specification purposes Environment Record values can be thought of
+	as existing in a simple object-oriented hierarchy where Environment
+	Record is an abstract class with two concrete subclasses,
+	declarative environment record
+ and object environment record. The
+	abstract class includes the abstract specification methods defined
+	in Table 17. These abstract methods have distinct concrete
+	algorithms for each of the concrete subclasses. 
+	</p>
+	<center>
+		<table width="690" border="1" bordercolor="#000000" cellpadding="8" cellspacing="0" rules="ROWS"><caption>Table&#160;17 &#8212; Abstract Methods of Environment Records</caption>
+			<colgroup><col width="211"><col width="445"></colgroup><tbody><tr valign="TOP"><td width="211" height="11" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Method</span></b></i></p>
+				</td>
+				<td width="445" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Purpose</span></b></i></p>
+				</td>
+			</tr><tr valign="TOP"><td width="211">
+					<p>
+					HasBinding(N)</p>
+				</td>
+				<td width="445">
+					<p>
+					Determine
+					if an environment record has a binding for an identifier. Return
+					<b>true</b> if it
+					does and <b>false</b>
+					if it does not. The String value <i>N</i>
+					is the text of the identifier.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="211" height="43">
+					<p>
+					CreateMutableBinding(N,
+					D)</p>
+				</td>
+				<td width="445">
+					<p>
+					Create
+					a new mutable binding in an environment record. The String value
+					<i>N</i> is the text
+					of the bound name. If the optional Boolean argument <i>D</i>
+					is <b>true</b> the binding is may be subsequently deleted.  
+					</p>
+				</td>
+			</tr><tr valign="TOP"><td width="211" height="76">
+					<p>
+					SetMutableBinding(N,V,
+					S)</p>
+				</td>
+				<td width="445">
+					<p>
+					Set
+					the value of an already existing mutable binding in an
+					environment record. The String value <i>N</i>
+					is the text of the bound name. <i>V</i>
+					is the value for the binding and may be a value of any
+					ECMAScript <a href="x8.html#language-type">language type</a>. <i>S</i>
+					is a Boolean flag.  If <i>S</i>
+					is <b>true</b> and
+					the binding cannot be set throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception. <i>S</i>
+					is used to identify strict mode references.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="211">
+					<p>
+					GetBindingValue(N,S)</p>
+				</td>
+				<td width="445">
+					<p>
+					Returns
+					the value of an already existing binding from an environment
+					record. The String value <i>N</i>
+					is the text of the bound name. <i>S</i>
+					is used to identify strict mode references. If <i>S</i>
+					is <b>true</b> and
+					the binding does not exist or is uninitialized throw a
+					<b><a href="x15.html#x15.11.6.3" class="term-ref">ReferenceError</a></b> exception. 
+					</p>
+				</td>
+			</tr><tr valign="TOP"><td width="211" height="58">
+					<p>
+					DeleteBinding(N)</p>
+				</td>
+				<td width="445">
+					<p>
+					Delete
+					a binding from an environment record. The String value <i>N</i>
+					is the text of the bound name If a binding for <i>N</i>
+					exists, remove the binding and return <b>true</b>. If the
+					binding exists but cannot be removed return <b>false</b>. If the
+					binding does not exist return <b>true</b>.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="211">
+					<p>ImplicitThisValue()</p>
+				</td>
+				<td width="445">
+					<p>Returns
+					the value to use as the <b>this</b> value on calls to function
+					objects that are obtained as binding values from this
+					environment record. 
+					</p>
+				</td>
+			</tr></tbody></table></center>
+	<h5 id="x10.2.1.1">10.2.1.1 Declarative Environment Records <a href="#x10.2.1.1">#</a> <a href="#x10.2.1.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Each
+	declarative environment record is associated with an ECMAScript
+	program scope containing variable and/or function declarations. A
+	declarative environment record binds the set of identifiers defined
+	by the declarations contained within its scope.</p>
+	<p class="sm-btm">
+	In
+	addition to the mutable bindings supported by all Environment
+	Records, declarative environment records also provide for immutable
+	bindings.  An <dfn id="immutable-binding">immutable binding</dfn> is one where the association between
+	an identifier and a value may not be modified once it has been
+	established. Creation and initialization of immutable binding are
+	distinct steps so it is possible for such bindings to exist in
+	either an initialized or uninitialized state. Declarative
+	environment records support the methods listed in Table 18 in
+	addition to the Environment Record abstract specification methods:</p>
+	<center>
+		<table width="698" border="1" bordercolor="#000000" cellpadding="8" cellspacing="0" rules="ROWS"><caption>Table&#160;18 &#8212; Additional Methods of Declarative Environment Records</caption>
+			<colgroup><col width="219"><col width="445"></colgroup><tbody><tr valign="TOP"><td width="219" height="8" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Method</span></b></i></p>
+				</td>
+				<td width="445" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Purpose</span></b></i></p>
+				</td>
+			</tr><tr valign="TOP"><td width="219">
+					<p>
+					<a href="#x10.2.1.1.7">CreateImmutableBinding</a>(N)</p>
+				</td>
+				<td width="445">
+					<p>
+					Create
+					a new but uninitialized <a href="#immutable-binding">immutable binding</a> in an environment
+					record. The String value <i>N</i>
+					is the text of the bound name.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="219">
+					<p><a href="#x10.2.1.1.8">InitializeImmutableBinding</a>(N,V)</p>
+				</td>
+				<td width="445">
+					<p>Set
+					the value of an already existing but uninitialized <a href="#immutable-binding">immutable binding</a> in an environment record. The String value <i>N</i>
+					is the text of the bound name. <i>V</i>
+					is the value for the binding and is a value of any ECMAScript
+					<a href="x8.html#language-type">language type</a>. 
+					</p>
+				</td>
+			</tr></tbody></table></center>
+	<p>
+	The
+	behaviour of the concrete specification methods for Declarative
+	Environment Records are defined by the following algorithms.</p>
+	<h6 id="x10.2.1.1.1">10.2.1.1.1 HasBinding(N) <a href="#x10.2.1.1.1">#</a> <a href="#x10.2.1.1.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h6>
+	<p>
+	The
+	concrete environment record method HasBinding for declarative
+	environment records simply determines if the argument identifier is
+	one of the identifiers bound by the record:</p>
+	<ol><li><p>
+		Let
+		<i>envRec </i>be the declarative environment record for which the
+		method was invoked.</p>
+		</li>
+		<li><p>
+		If
+		<i>envRec</i> has a binding for the name that is the value of <i>N</i>,
+		return <b>true</b>.</p>
+		</li>
+		<li><p>
+		If
+		it does not have such a binding, return <b>false</b></p>
+	</li></ol><h6 id="x10.2.1.1.2">10.2.1.1.2 CreateMutableBinding (N, D) <a href="#x10.2.1.1.2">#</a> <a href="#x10.2.1.1.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h6>
+	<p>
+	The
+	concrete Environment Record method CreateMutableBinding for
+	declarative environment records creates a new mutable binding for
+	the name <i>N</i> that is
+	initialized to the value <b>undefined</b>.  A binding must not
+	already exist in this Environment Record for <i>N</i>.
+	If Boolean argument <i>D</i>
+	is provided and has the value <b>true</b> the new binding is marked
+	as being subject to deletion.</p>
+	<ol><li><p>
+		Let
+		<i>envRec </i>be the declarative environment record for which the
+		method was invoked.</p>
+		</li>
+		<li><p>
+		Assert:
+		<i>envRec</i> does not already have a binding for <i>N</i>.</p>
+		</li>
+		<li><p>
+		Create
+		a mutable binding in <i>envRec</i> for <i>N</i> and set its bound
+		value to <b>undefined</b>. If <i>D</i> is true record that the
+		newly created binding may be deleted by a subsequent DeleteBinding
+		call.</p>
+	</li></ol><h6 id="x10.2.1.1.3">10.2.1.1.3 SetMutableBinding (N,V,S) <a href="#x10.2.1.1.3">#</a> <a href="#x10.2.1.1.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h6>
+
+
+	<p>
+	The
+	concrete Environment Record method SetMutableBinding for declarative
+	environment records attempts to change the bound value of the
+	current binding of the identifier whose name is the value of the
+	argument <i>N</i> to the
+	value of argument <i>V</i>.
+	A binding for <i>N</i>
+	must already exist. If the binding is an <a href="#immutable-binding">immutable binding</a>, a
+	<b>TypeError</b> is
+	thrown
+	if <i>S</i> is <b>true</b>. 
+	</p>
+
+	<ol><li><p>
+		Let
+		<i>envRec</i> be the declarative environment record for which the
+		method was invoked.</p>
+		</li>
+		<li><p>
+		Assert:
+		<i>envRec</i> must have a binding for <i>N</i>.</p>
+		</li>
+		<li><p>
+		If
+		the binding for <i>N</i> in <i>envRec</i> is a mutable binding,
+		change its bound value to <i>V</i>.</p>
+		</li>
+		<li><p>
+		Else
+		this must be an attempt to change the value of an <a href="#immutable-binding">immutable binding</a>
+		so
+		if <i>S</i> is <b>true</b>
+		throw a
+ <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+ exception.</p>
+	</li>
+</ol><h6 id="x10.2.1.1.4">10.2.1.1.4 GetBindingValue(N,S) <a href="#x10.2.1.1.4">#</a> <a href="#x10.2.1.1.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h6>
+	<p>
+	The
+	concrete Environment Record method GetBindingValue for declarative
+	environment records simply returns the value of its bound identifier
+	whose name is the value of the argument <i>N</i>.
+	The binding must already exist. If <i>S</i>
+	is <b>true</b> and the binding is an uninitialized <a href="#immutable-binding">immutable binding</a>
+	throw a <b><a href="x15.html#x15.11.6.3" class="term-ref">ReferenceError</a></b> exception.</p>
+	<ol><li><p>
+		Let
+		<i>envRec</i> be the declarative environment record for which the
+		method was invoked.</p>
+		</li>
+		<li><p>
+		Assert:
+		<i>envRec</i> has a binding for <i>N</i>.</p>
+		</li>
+		<li><p>
+		If
+		the binding for <i>N</i> in <i>envRec</i> is an uninitialized
+		<a href="#immutable-binding">immutable binding</a>, then</p>
+		<ol><li><p>
+			If
+			<i>S</i> is <b>false</b>, return the value <b>undefined</b>,
+			otherwise throw a <b><a href="x15.html#x15.11.6.3" class="term-ref">ReferenceError</a></b> exception.</p>
+		</li></ol></li>
+		<li><p>
+		Else,
+		return the value currently bound to <i>N</i> in <i>envRec</i>.</p>
+	</li></ol><h6 id="x10.2.1.1.5">10.2.1.1.5 DeleteBinding (N) <a href="#x10.2.1.1.5">#</a> <a href="#x10.2.1.1.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h6>
+	<p>
+	The
+	concrete Environment Record method DeleteBinding for declarative
+	environment records can only delete bindings that have been
+	explicitly designated as being subject to deletion.</p>
+	<ol><li><p>
+		Let
+		<i>envRec</i> be the declarative environment record for which the
+		method was invoked.</p>
+		</li>
+		<li><p>
+		If
+		<i>envRec</i> does not have a binding for the name that is the
+		value of <i>N</i>, return <b>true</b>.</p>
+		</li>
+		<li><p>
+		If
+		the binding for <i>N</i> in <i>envRec</i> is cannot be deleted,
+		return <b>false</b>.</p>
+		</li>
+		<li><p>
+		Remove
+		the binding for <i>N</i> from <i>envRec</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<b>true</b>.</p>
+	</li></ol><h6 id="x10.2.1.1.6">10.2.1.1.6 ImplicitThisValue() <a href="#x10.2.1.1.6">#</a> <a href="#x10.2.1.1.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h6>
+	<p>
+	Declarative
+	Environment Records always return <b>undefined</b> as their
+	ImplicitThisValue.</p>
+	<ol><li><p>
+		Return
+		<b>undefined</b>.</p>
+	</li></ol><h6 id="x10.2.1.1.7">10.2.1.1.7 CreateImmutableBinding (N) <a href="#x10.2.1.1.7">#</a> <a href="#x10.2.1.1.7-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h6>
+	<p>
+	The
+	concrete Environment Record method CreateImmutableBinding for
+	declarative environment records creates a new <a href="#immutable-binding">immutable binding</a> for
+	the name <i>N</i> that is
+	initialized to the value <b>undefined</b>.  A binding must not
+	already exist in this environment record for <i>N</i>.</p>
+	<ol><li><p>
+		Let
+		<i>envRec </i>be the declarative environment record for which the
+		method was invoked.</p>
+		</li>
+		<li><p>
+		Assert:
+		<i>envRec </i>does not already have a binding for <i>N</i>.</p>
+		</li>
+		<li><p>
+		Create
+		an <a href="#immutable-binding">immutable binding</a> in <i>envRec</i> for <i>N</i> and record that
+		it is uninitialized.</p>
+	</li></ol><h6 id="x10.2.1.1.8">10.2.1.1.8 InitializeImmutableBinding (N,V) <a href="#x10.2.1.1.8">#</a> <a href="#x10.2.1.1.8-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h6>
+	<p>
+	The
+	concrete Environment Record method InitializeImmutableBinding for
+	declarative environment records is used to set the bound value of
+	the current binding of the identifier whose name is the value of the
+	argument <i>N</i> to the
+	value of argument <i>V</i>.
+	An uninitialized <a href="#immutable-binding">immutable binding</a> for <i>N</i>
+	must already exist. 
+	</p>
+	<ol><li><p>
+		Let
+		<i>envRec </i>be the declarative environment record for which the
+		method was invoked.</p>
+		</li>
+		<li><p>
+		Assert:
+		<i>envRec</i> must have an uninitialized <a href="#immutable-binding">immutable binding</a> for N.</p>
+		</li>
+		<li><p>
+		Set
+		the bound value for <i>N</i> in <i>envRec</i> to <i>V</i>.</p>
+		</li>
+		<li><p>
+		Record
+		that the <a href="#immutable-binding">immutable binding</a> for <i>N</i> in <i>envRec</i> has been
+		initialized.</p>
+	</li></ol><h5 id="x10.2.1.2">10.2.1.2 Object Environment Records <a href="#x10.2.1.2">#</a> <a href="#x10.2.1.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Each
+	object environment record is associated with an object called its
+	<i>binding object</i>. An object environment record binds the set of
+	identifier names that directly correspond  to the property names of
+	its binding object. Property names that are not an <i>IdentifierName </i>are not included in the set of  bound identifiers. Both
+	own and inherited properties are included in the set regardless of
+	the setting of their [[Enumerable]] attribute. Because properties
+	can be dynamically added and deleted from objects, the set of
+	identifiers bound by an object environment record may potentially
+	change as a side-effect of any operation that adds or deletes
+	properties. Any bindings that are created as a result of such a
+	side-effect are considered to be a mutable binding even if the
+	Writable attribute of the corresponding property has the value
+	<b>false</b>. Immutable bindings do not exist for object environment
+	records.</p>
+	<p>
+	Object
+	environment records can be configured to provide their binding
+	object as an implicit this value for use in function calls. This
+	capability is used to specify the behaviour of With Statement
+	(<a href="x12.html#x12.10">12.10</a>) induced bindings. The capability is controlled by a
+	<i>provideThis</i>
+	Boolean value that is associated with each object environment
+	record.  By default, the value of <i>provideThis</i>
+	is <b>false</b> for any object environment record.</p>
+	<p>
+	The
+	behaviour of the concrete specification methods for Object
+	Environment Records is defined by the following algorithms.</p>
+	<h6 id="x10.2.1.2.1">10.2.1.2.1 HasBinding(N) <a href="#x10.2.1.2.1">#</a> <a href="#x10.2.1.2.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h6>
+	<p>
+	The
+	concrete Environment Record method HasBinding for object environment
+	records determines if its associated <a href="#x10.2.1.2">binding object</a> has a property
+	whose name is the value of the argument <i>N</i>:</p>
+	<ol><li><p>
+		Let
+		<i>envRec </i>be the object environment record for which the method
+		was invoked.</p>
+		</li>
+		<li><p>
+		Let
+		<i>bindings </i>be the <a href="#x10.2.1.2">binding object</a> for <i>envRec</i>.</p>
+		</li>
+		<li><p>
+		Return
+		the result of calling the [[HasProperty]] internal method of
+		<i>bindings</i>, passing <i>N</i> as the property name.</p>
+	</li></ol><h6 id="x10.2.1.2.2">10.2.1.2.2 CreateMutableBinding (N, D) <a href="#x10.2.1.2.2">#</a> <a href="#x10.2.1.2.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h6>
+	<p>
+	The
+	concrete Environment Record method CreateMutableBinding for object
+	environment records creates in an environment record&#8217;s associated
+	<a href="#x10.2.1.2">binding object</a> a property whose name is the String value and
+	initializes it to the value <b>undefined</b>. A property named <i>N</i>
+	must not already exist in the <a href="#x10.2.1.2">binding object</a>. If Boolean argument <i>D</i>
+	is provided and has the value <b>true</b> the new property&#8217;s
+	[[Configurable]] attribute is set to <b>true</b>, otherwise it is
+	set to <b>false</b>.</p>
+	<ol><li><p>
+		Let
+		<i>envRec</i> be the object environment record for which the method
+		was invoked.</p>
+		</li>
+		<li><p>
+		Let
+		<i>bindings</i> be the <a href="#x10.2.1.2">binding object</a> for <i>envRec</i>.</p>
+		</li>
+		<li><p>
+		Assert:
+		The result of calling the [[HasProperty]] internal method of
+		<i>bindings</i>, passing <i>N</i> as the property name, is <b>false</b>.</p>
+		</li>
+		<li><p>
+		If
+		 D is <b>true</b> then let <i>configValue</i> be <b>true</b>
+		otherwise let <i>configValue</i> be <b>false</b>.</p>
+		</li>
+
+		<li><p>
+		Call
+		the [[DefineOwnProperty]] internal method of <i>bindings</i>,
+		passing <i>N</i>, <a href="x8.html#x8.10">Property Descriptor</a> {[[Value]]:<b>undefined</b>,
+		[[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b> ,
+		[[Configurable]]: <i>configValue</i>}, and
+		<b>true</b>
+		as
+		arguments.</p>
+	</li>
+</ol><h6 id="x10.2.1.2.3">10.2.1.2.3 SetMutableBinding (N,V,S) <a href="#x10.2.1.2.3">#</a> <a href="#x10.2.1.2.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h6>
+	<p>
+	The
+	concrete Environment Record method SetMutableBinding for object
+	environment records attempts to set the value of the environment
+	record&#8217;s associated <a href="#x10.2.1.2">binding object</a>&#8217;s property whose name is the
+	value of the argument <i>N</i>
+	to the value of argument <i>V</i>.
+	A property named <i>N</i>
+	should already exist but if it does not or is not currently
+	writable, error handling is determined by the value of the Boolean
+	argument <i>S</i>.</p>
+	<ol><li><p>
+		Let
+		<i>envRec</i> be the object environment record for which the method
+		was invoked.</p>
+		</li>
+		<li><p>
+		Let
+		<i>bindings</i> be the <a href="#x10.2.1.2">binding object</a> for <i>envRec</i>.</p>
+		</li>
+		<li><p>
+		Call
+		the [[Put]] internal method of <i>bindings</i> with arguments <i>N</i>,
+		<i>V</i>, and <i>S</i>.</p>
+	</li></ol><h6 id="x10.2.1.2.4">10.2.1.2.4 GetBindingValue(N,S) <a href="#x10.2.1.2.4">#</a> <a href="#x10.2.1.2.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h6>
+	<p>
+	The
+	concrete Environment Record method GetBindingValue for object
+	environment records returns the value of its associated <a href="#x10.2.1.2">binding object</a>&#8217;s property whose name is the String value of the argument
+	identifier <i>N</i>. The
+	property should already exist but if it does not the result depends
+	upon the value of the <i>S</i>
+	argument:</p>
+	<ol><li><p>
+		Let
+		<i>envRec</i> be the object environment record for which the method
+		was invoked.</p>
+		</li>
+		<li><p>
+		Let
+		<i>bindings</i> be the <a href="#x10.2.1.2">binding object</a> for <i>envRec</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>value</i> be the result of calling the [[HasProperty]] internal
+		method of <i>bindings</i>, passing <i>N</i> as the property name.</p>
+		</li>
+		<li><p>
+		If
+		<i>value</i> is <b>false</b>, then</p>
+		<ol><li><p>
+			If
+			<i>S</i> is <b>false</b>, return the value <b>undefined</b>,
+			otherwise throw a <b>ReferenceError </b>exception.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		the result of calling the [[Get]] internal method of <i>bindings</i>,
+		passing <i>N</i> for the argument.</p>
+	</li></ol><h6 id="x10.2.1.2.5">10.2.1.2.5 DeleteBinding (N) <a href="#x10.2.1.2.5">#</a> <a href="#x10.2.1.2.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h6>
+	<p>
+	The
+	concrete Environment Record method DeleteBinding for object
+	environment records can only delete bindings that correspond to
+	properties of the environment object whose [[Configurable]]
+	attribute have the value <b>true</b>.</p>
+	<ol><li><p>
+		Let
+		<i>envRec</i> be the object environment record for which the method
+		was invoked.</p>
+		</li>
+		<li><p>
+		Let
+		<i>bindings </i>be the <a href="#x10.2.1.2">binding object</a> for <i>envRec</i>.</p>
+		</li>
+		<li><p>
+		Return
+		the result of calling the [[Delete]] internal method of <i>bindings</i>,
+		passing <i>N</i> and <b>false</b> as arguments.</p>
+	</li></ol><h6 id="x10.2.1.2.6">10.2.1.2.6 ImplicitThisValue() <a href="#x10.2.1.2.6">#</a> <a href="#x10.2.1.2.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h6>
+	<p>
+	Object
+	Environment Records return <b>undefined</b> as their
+	ImplicitThisValue unless their <i>provideThis</i>
+	flag is <b>true</b>.</p>
+	<ol><li><p>
+		Let
+		<i>envRec</i> be the object environment record for which the method
+		was invoked.</p>
+		</li>
+		<li><p>
+		If
+		the <i>provideThis</i> flag of <i>envRec</i> is <b>true</b>, return
+		the <a href="#x10.2.1.2">binding object</a> for <i>envRec</i>.</p>
+		</li>
+		<li><p>
+		Otherwise,
+		return <b>undefined</b>.</p>
+	</li></ol><h4 id="x10.2.2">10.2.2 Lexical Environment Operations <a href="#x10.2.2">#</a> <a href="#x10.2.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	following abstract operations are used in this specification to
+	operate upon lexical environments:</p>
+	<h5 id="x10.2.2.1">10.2.2.1 GetIdentifierReference (lex, name, strict) <a href="#x10.2.2.1">#</a> <a href="#x10.2.2.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	abstract operation GetIdentifierReference is called with a <a href="#x10.2">Lexical Environment</a> <i>lex</i>,
+	an identifier String <i>name</i>,
+	and a Boolean flag <i>strict. </i>The value of <i>lex </i>may be <b>null</b>. When called, the following steps are
+	performed:</p>
+	<ol><li><p>
+		If
+		<i>lex</i> is the value <b>null</b>, then</p>
+		<ol><li><p>
+			Return
+			a value of type <a href="x8.html#x8.7">Reference</a> whose base value is <b>undefined</b>,
+			whose referenced name is <i>name</i>, and whose strict mode flag
+			is <i>strict</i>.</p>
+		</li></ol></li>
+		<li><p>
+		Let
+		<i>envRec</i> be <i>lex</i>&#8217;s environment record.</p>
+		</li>
+		<li><p>
+		Let
+		<i>exists </i>be the result of calling the HasBinding(<i>N</i>)
+		concrete method of <i>envRec</i> passing <i>name</i> as the
+		argument <i>N</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>exists </i>is <code><b>true</b></code>,
+		then</p>
+		<ol><li><p>
+			Return
+			a value of type <a href="x8.html#x8.7">Reference</a> whose base value is <i>envRec</i>, whose
+			referenced name is <i>name</i>, and whose strict mode flag is
+			<i>strict.</i></p>
+		</li></ol></li>
+		<li><p>
+		Else</p>
+		<ol><li><p>
+			Let
+			<i>outer </i>be the value of <i>lex&#8217;s</i> <a href="#outer-environment-reference">outer environment reference</a>.</p>
+			</li>
+			<li><p>
+			Return
+			the result of calling GetIdentifierReference passing <i>outer</i>,
+			<i>name</i>, and <i>strict</i> as arguments.</p>
+		</li></ol></li></ol><h5 id="x10.2.2.2">10.2.2.2 NewDeclarativeEnvironment (E) <a href="#x10.2.2.2">#</a> <a href="#x10.2.2.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the abstract operation NewDeclarativeEnvironment is called with
+	either a <a href="#x10.2">Lexical Environment</a> or <b>null</b> as argument <i>E </i>the following steps are performed:</p>
+	<ol><li><p>
+		Let
+		<i>env</i> be a new <a href="#x10.2">Lexical Environment</a>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>envRec</i> be a new <a href="#declarative-environment-record">declarative environment record</a> containing no
+		bindings.</p>
+		</li>
+		<li><p>
+		Set
+		<i>env&#8217;s</i> environment record to be <i>envRec</i>.</p>
+		</li>
+		<li><p>
+		Set
+		the outer lexical environment reference of <i>env</i> to <i>E</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>env</i>.</p>
+	</li></ol><h5 id="x10.2.2.3">10.2.2.3 NewObjectEnvironment (O, E) <a href="#x10.2.2.3">#</a> <a href="#x10.2.2.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the abstract operation NewObjectEnvironmentis called with an Object
+	<i>O</i> and a <a href="#x10.2">Lexical Environment</a> <i>E </i>(or
+	<b>null)</b> as arguments, the following steps are performed:</p>
+	<ol><li><p>
+		Let
+		<i>env</i> be a new <a href="#x10.2">Lexical Environment</a>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>envRec</i> be a new <a href="#object-environment-record">object environment record</a> containing <i>O</i>
+		as the <a href="#x10.2.1.2">binding object</a>.</p>
+		</li>
+		<li><p>
+		Set
+		<i>env&#8217;s</i> environment record to be <i>envRec</i>.</p>
+		</li>
+		<li><p>
+		Set
+		the outer lexical environment reference of <i>env</i> to <i>E</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>env</i>.</p>
+	</li></ol><h4 id="x10.2.3">10.2.3 The Global Environment <a href="#x10.2.3">#</a> <a href="#x10.2.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	<i>global environment</i> is a unique <a href="#x10.2">Lexical Environment</a> which is
+	created before any ECMAScript code is executed. The global
+	environment&#8217;s <a href="#x10.2.1">Environment Record</a> is an <a href="#object-environment-record">object environment record</a>
+	whose <a href="#x10.2.1.2">binding object</a> is the <a href="x15.html#x15.1" class="term-ref">global object</a> (<a href="x15.html#x15.1">15.1</a>). The global
+	environment&#8217;s <a href="#outer-environment-reference">outer environment reference</a> is <b>null</b>.</p>
+	<p>
+	As
+	ECMAScript code is executed, additional properties may be added to
+	the <a href="x15.html#x15.1" class="term-ref">global object</a> and the initial properties may be modified.
+	
+	</p>
+	<h3 id="x10.3">10.3 Execution Contexts <a href="#x10.3">#</a> <a href="#x10.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	When
+	control is transferred to ECMAScript executable code, control is
+	entering an <i>execution context</i>. Active execution contexts
+	logically form a stack. The top execution context on this logical
+	stack is the running execution context. A new execution context is
+	created whenever control is transferred from the executable code
+	associated with the currently running execution context to
+	executable code that is not associated with that execution context.
+	The newly created execution context is pushed onto the stack and
+	becomes the running execution context.</p>
+	<p>
+	An
+	execution context contains whatever state is necessary to track the
+	execution progress of its associated code. In addition, each
+	execution context has the state components listed in Table 19.</p>
+	<center>
+		<table width="690" border="1" bordercolor="#000000" cellpadding="8" cellspacing="0" rules="ROWS"><caption>Table&#160;19 &#8212;Execution Context State Components</caption>
+			<colgroup><col width="161"><col width="495"></colgroup><tbody><tr valign="TOP"><td width="161" height="11" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Component</span></b></i></p>
+				</td>
+				<td width="495" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Purpose</span></b></i></p>
+				</td>
+			</tr><tr valign="TOP"><td width="161">
+					<p>
+					LexicalEnvironment</p>
+				</td>
+				<td width="495">
+					<p>
+					Identifies
+					the <a href="#x10.2">Lexical Environment</a> used to resolve identifier references
+					made by code within this execution context.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="161">
+					<p>
+					VariableEnvironment</p>
+				</td>
+				<td width="495">
+					<p>
+					Identifies
+					the <a href="#x10.2">Lexical Environment</a> whose environment record holds bindings
+					created by <i>VariableStatements</i>
+					and <i>FunctionDeclarations</i>
+					within this execution context.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="161">
+					<p>ThisBinding</p>
+				</td>
+				<td width="495">
+					<p>The
+					value associated with the <code><b>this</b></code>
+					keyword within ECMAScript code associated with this execution
+					context.</p>
+				</td>
+			</tr></tbody></table></center>
+	<p>
+	The
+	LexicalEnvironment and VariableEnvironment components of an
+	execution context are always <a href="#x10.2">Lexical Environment</a>s. When an execution
+	context is created its LexicalEnvironment and VariableEnvironment
+	components initially have the same value.  The value of the
+	VariableEnvironment component never changes while the value of the
+	LexicalEnvironment component may change during execution of code
+	within an execution context.</p>
+	<p>
+	In
+	most situations only the running execution context (the top of the
+	execution context stack) is directly manipulated by algorithms
+	within this specification.  Hence when the terms
+	&#8220;LexicalEnvironment&#8221;, &#8220;VariableEnvironment&#8221; and
+	&#8220;ThisBinding&#8221; are used without qualification they are in
+	reference to those components of the running execution context.</p>
+	<p>
+	An
+	execution context is purely a specification mechanism and need not
+	correspond to any particular artefact of an ECMAScript
+	implementation.  It is impossible for an ECMAScript program to
+	access an execution context. 
+	</p>
+	<h4 id="x10.3.1">10.3.1 Identifier Resolution <a href="#x10.3.1">#</a> <a href="#x10.3.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	Identifier
+	resolution is the process of determining the binding of an
+	<i>Identifier</i> using
+	the <a href="#x10.2">LexicalEnvironment</a> of the running execution context. During
+	execution of ECMAScript code, the syntactic production
+	<i>PrimaryExpression</i>
+	<b>:</b>
+	<i>Identifier</i> is
+	evaluated using the following algorithm:</p>
+	<ol><li><p>
+		Let
+		<i>env</i> be the running execution context&#8217;s <a href="#x10.2">LexicalEnvironment</a>.</p>
+		</li>
+		<li><p>
+		If
+		the syntactic production that is being evaluated is contained in a
+		<a href="#x10.1.1" class="term-ref">strict mode code</a>, then let <i>strict</i> be <b>true</b>, else let
+		<i>strict</i> be <b>false</b>.</p>
+		</li>
+		<li><p>
+		Return
+		the result of calling <a href="#x10.2.2.1">GetIdentifierReference</a> function passing <i>env</i>,
+		<i>Identifier</i>, and <i>strict</i> as arguments.</p>
+	</li></ol><p>
+	The
+	result of evaluating an identifier is always a value of type
+	<a href="x8.html#x8.7">Reference</a> with its referenced name component equal to the <i>Identifier</i>
+	String.</p>
+	<h3 id="x10.4">10.4 Establishing an Execution Context <a href="#x10.4">#</a> <a href="#x10.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	Evaluation
+	of <a href="#global-code">global code</a> or code using the eval function (<a href="x15.html#x15.1.2.1">15.1.2.1</a>)
+	establishes and enters a new execution context. Every invocation of
+	an ECMAScript code function (<a href="x13.html#x13.2.1">13.2.1</a>) also establishes and enters a
+	new execution context, even if a function is calling itself
+	recursively. Every return exits an execution context. A thrown
+	exception may also exit one or more execution contexts.</p>
+	<p>
+	When
+	control enters an execution context, the execution context&#8217;s
+	ThisBinding is set, its VariableEnvironment and initial
+	LexicalEnvironment are defined, and declaration binding
+	instantiation (<a href="#x10.5">10.5</a>) is performed. The exact manner in which these
+	actions occur depend on the type of code being entered.</p>
+	<h4 id="x10.4.1">10.4.1 Entering Global Code <a href="#x10.4.1">#</a> <a href="#x10.4.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	following steps are performed when control enters the execution
+	context for <a href="#global-code">global code</a>:</p>
+	<ol><li><p>
+		Initialize
+		the execution context using the <a href="#global-code">global code</a> as described in
+		<a href="#x10.4.1.1">10.4.1.1</a>.</p>
+		</li>
+		<li><p>
+		Perform
+		Declaration Binding Instantiation as described in <a href="#x10.5">10.5</a> using the
+	 <a href="#global-code">global code</a>.</p>
+	</li></ol><h5 id="x10.4.1.1">10.4.1.1 Initial Global Execution Context <a href="#x10.4.1.1">#</a> <a href="#x10.4.1.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	following steps are performed to initialize a global execution
+	context for ECMAScript code <i>C</i>:</p>
+	<ol><li><p>
+		Set
+		the VariableEnvironment to the <a href="#x10.2.3">Global Environment</a>.</p>
+		</li>
+		<li><p>
+		Set
+		the LexicalEnvironment to the <a href="#x10.2.3">Global Environment</a>.</p>
+		</li>
+		<li><p>
+		Set
+		the ThisBinding to the <a href="x15.html#x15.1" class="term-ref">global object</a>.</p>
+	</li></ol><h4 id="x10.4.2">10.4.2 Entering Eval Code <a href="#x10.4.2">#</a> <a href="#x10.4.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	following steps are performed when control enters the execution
+	context for <a href="#eval-code">eval code</a>:</p>
+	<ol><li><p>
+		If
+		there is no calling context or if the <a href="#eval-code">eval code</a> is not being
+		evaluated by a direct call (<a href="x15.html#x15.1.2.1.1">15.1.2.1.1</a>) to the eval function then,</p>
+		<ol><li><p>
+			Initialize
+			the execution context as if it was a global execution context
+			using the <a href="#eval-code">eval code</a> as <i>C</i> as described in <a href="#x10.4.1.1">10.4.1.1</a>.</p>
+		</li></ol></li>
+		<li><p>
+		Else,</p>
+		<ol><li><p>
+			Set
+			the ThisBinding to the same value as the ThisBinding of the
+			calling execution context.</p>
+			</li>
+			<li><p>
+			Set
+			the LexicalEnvironment to the same value as the <a href="#x10.2">LexicalEnvironment</a>
+			of the calling execution context.</p>
+			</li>
+			<li><p>
+			Set
+			the VariableEnvironment to the same value as the
+			VariableEnvironment of the calling execution context.</p>
+		</li></ol></li>
+		<li><p>
+		If
+		the <a href="#eval-code">eval code</a> is <a href="#x10.1.1">strict code</a>, then</p>
+		<ol><li><p>
+			Let
+			<i>strictVarEnv</i> be the result of calling
+			<a href="#x10.2.2.2">NewDeclarativeEnvironment</a>  passing the LexicalEnvironment as the
+			argument.</p>
+			</li>
+			<li><p>
+			Set
+			the LexicalEnvironment to <i>strictVarEnv</i>.</p>
+			</li>
+			<li><p>
+			Set
+			the VariableEnvironment to <i>strictVarEnv</i>.</p>
+		</li></ol></li>
+		<li><p>
+		Perform
+		Declaration Binding Instantiation as described in <a href="#x10.5">10.5</a> using the
+	 <a href="#eval-code">eval code</a>.</p>
+	</li></ol><h5 id="x10.4.2.1">10.4.2.1 Strict Mode Restrictions <a href="#x10.4.2.1">#</a> <a href="#x10.4.2.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+ <a href="#eval-code">eval code</a> cannot <a href="#x10.5">instantiate variable or function bindings</a> in the
+	variable environment of the calling context that invoked the eval if
+	either the code of the calling context or the <a href="#eval-code">eval code</a> is <a href="#x10.1.1">strict code</a>. Instead such bindings are instantiated in a new
+	VariableEnvironment that is only accessible to the <a href="#eval-code">eval code</a>.</p>
+	<h4 id="x10.4.3">10.4.3 Entering Function Code <a href="#x10.4.3">#</a> <a href="#x10.4.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	following steps are performed when control enters the execution
+	context for <a href="#function-code">function code</a> contained in function object <i>F</i>,
+	a caller provided <i>thisArg</i>,
+	and a caller provided <i>argumentsList</i>:</p>
+	<ol><li><p>
+		If
+		the <a href="#function-code">function code</a> is <a href="#x10.1.1">strict code</a>, set the ThisBinding to <i>thisArg</i>.</p>
+		</li>
+		<li><p>
+		Else
+		if <i>thisArg</i> is <b>null</b> or <b>undefined</b>, set the
+		ThisBinding to the <a href="x15.html#x15.1" class="term-ref">global object</a>.</p>
+		</li>
+		<li><p>
+		Else
+		if <a href="x8.html#Type">Type</a>(<i>thisArg</i>) is not Object, set the ThisBinding to
+		<a href="x9.html#x9.9">ToObject</a>(<i>thisArg</i>).</p>
+		</li>
+		<li><p>
+		Else
+		set the ThisBinding to <i>thisArg</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>localEnv</i> be the result of calling <a href="#x10.2.2.2">NewDeclarativeEnvironment</a> 
+		passing the value of the [[Scope]] internal property of <i>F</i> as
+		the argument.</p>
+		</li>
+		<li><p>
+		Set
+		the LexicalEnvironment to <i>localEnv</i>.</p>
+		</li>
+		<li><p>
+		Set
+		the VariableEnvironment to <i>localEnv</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>code</i> be the value of <i>F</i>&#8217;s [[Code]] internal
+		property.</p>
+		</li>
+		<li><p>
+		Perform
+		Declaration Binding Instantiation using the <a href="#function-code">function code</a> <i>code</i>
+		and <i>argumentList</i> as described in <a href="#x10.5">10.5</a>.</p>
+	</li></ol><h3 id="x10.5">10.5 Declaration Binding Instantiation <a href="#x10.5">#</a> <a href="#x10.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	Every
+	execution context has an associated VariableEnvironment. Variables
+	and functions declared in ECMAScript code evaluated in an execution
+	context are added as bindings in that VariableEnvironment&#8217;s
+ <a href="#x10.2.1">Environment Record</a>. For <a href="#function-code">function code</a>, parameters are also added as
+	bindings to that <a href="#x10.2.1">Environment Record</a>.</p>
+	<p>
+	Which
+ <a href="#x10.2.1">Environment Record</a> is used to bind a declaration and its kind
+	depends upon the type of ECMAScript code executed by the execution
+	context, but the remainder of the behaviour is generic. On entering
+	an execution context, bindings are created in the
+	VariableEnvironment as follows using the caller provided <i>code </i>and, if it is <a href="#function-code">function code</a>, argument <a href="x8.html#x8.8">List</a> <i>args</i>:</p>
+	<ol><li value="1"><p>
+		Let
+		<i>env</i> be the <a href="#x10.2">environment record</a> component of the running
+		execution context&#8217;s VariableEnvironment.</p>
+		</li>
+		<li><p>
+		If
+		<i>code</i> is <a href="#eval-code">eval code</a>, then let <i>configurableBindings</i> be
+		<b>true</b> else let <i>configurableBindings</i> be <b>false</b>.</p>
+		</li>
+		<li><p>
+		If
+		<i>code </i>is <a href="#x10.1.1" class="term-ref">strict mode code</a>, then let <i>strict</i> be <b>true</b>
+		else let <i>strict</i> be <b>false</b>.</p>
+		</li>
+		<li><p>
+		If
+		<i>code </i>is <a href="#function-code">function code</a>, then</p>
+		<ol><li><p>
+			Let
+			<i>func </i>be the function whose [[Call]] internal method
+			initiated execution of <i>code</i>. Let <i>names</i> be the value
+			of <i>func</i>&#8217;s [[FormalParameters]] internal property.  
+			</p>
+			</li>
+			<li><p>
+			Let
+			<i>argCount</i> be the number of elements in <i>args</i>.</p>
+			</li>
+			<li><p>
+			Let
+			<i>n</i> be the number 0.</p>
+			</li>
+			<li><p>
+			For
+			each String <i>argName</i> in <i>names</i>, in list order do</p>
+			<ol><li><p>
+				Let
+				<i>n</i> be the current value of <i>n</i> plus 1.</p>
+				</li>
+				<li><p>
+				If
+				<i>n</i> is greater than <i>argCount</i>, let <i>v</i> be
+				<b>undefined</b> otherwise let <i>v</i> be the value of the <i>n</i>&#8217;th
+				element of <i>args</i>.</p>
+				</li>
+				<li><p>
+				Let
+				<i>argAlreadyDeclared </i>be the result of calling <i>env&#8217;s</i>
+				HasBinding concrete method passing <i>argName</i> as the
+				argument.</p>
+				</li>
+				<li><p>
+				If
+				<i>argAlreadyDeclared </i>is <b>false</b>, call <i>env&#8217;s</i>
+				CreateMutableBinding concrete method passing <i>argName</i> as
+				the argument.</p>
+				</li>
+				<li><p>
+				Call
+				<i>env&#8217;s</i> SetMutableBinding concrete method passing <i>argName</i>,
+				<i>v</i>, and <i>strict</i> as the arguments.</p>
+			</li></ol></li></ol></li></ol><ol start="5"><li><p>
+		For each
+		<i><a href="x13.html#x13">FunctionDeclaration</a></i> <i>f</i> in <i>code</i>, in source text
+		order do</p>
+		<ol><li><p>Let
+			<i>fn</i> be the <i>Identifier</i> in <i><a href="x13.html#x13">FunctionDeclaration</a></i>
+			<i>f.</i></p>
+			</li><li><p>Let
+			<i>fo</i> be the result of instantiating <i>FunctionDeclaration f
+			</i>as described in <a href="x13.html#x13">Clause 13</a>.</p>
+			</li><li><p>Let
+			<i>funcAlreadyDeclared </i>be the result of calling <i>env&#8217;s</i>
+			HasBinding concrete method passing <i>fn</i> as the argument.</p>
+			</li><li><p>If
+			<i>funcAlreadyDeclared </i>is <b>false</b>, call <i>env&#8217;s</i>
+			CreateMutableBinding concrete method passing <i>fn</i> and
+			<i>configurableBindings</i> as the arguments.</p>
+			</li><li><p>Else
+			if <i>env</i>
+			is the <a href="#x10.2">environment record</a> component of the global environment then</p>
+			<ol><li><p>Let
+				<i>go</i>
+				be the global object.</p>
+				</li><li><p>Let
+				<i>existingProp</i>
+				be the resulting of calling the [[GetProperty]] internal method
+				of <i>go</i>
+				with argument <i>fn</i>.</p>
+				</li><li><p>If
+				<i>existingProp</i>
+				.[[Configurable]] is <b>true</b>,
+				then</p>
+				<ol><li><p>Call
+					the [[DefineOwnProperty]] internal method of <i>go</i>,
+					passing <i>fn</i>,
+				 <a href="x8.html#x8.10">Property Descriptor</a> {[[Value]]:<i>
+					</i><b>undefined</b>,
+					[[Writable]]: <b>true</b>,
+					[[Enumerable]]: <b>true</b>
+					, [[Configurable]]: <i>configurableBindings</i>
+					}, and <b>true</b>
+					as arguments.</p>
+				</li></ol></li><li><p>Else
+				if IsAccessorDescrptor(<i>existingProp</i>)
+				or <i>existingProp</i>
+				does not have attribute values {[[Writable]]: <b>true</b>,
+				[[Enumerable]]: <b>true</b>},
+				then</p>
+				<ol><li><p>Throw
+					a TypeError exception.</p>
+				</li></ol></li></ol></li><li><p>Call
+			<i>env&#8217;s</i> SetMutableBinding concrete method passing <i>fn</i>,
+			<i>fo</i>, and <i>strict</i> as the arguments.</p>
+	</li></ol></li>
+</ol><ol start="6"><li><p>
+		Let
+		<i>argumentsAlreadyDeclared </i>be the result of calling <i>env&#8217;s</i>
+		HasBinding concrete method passing <code><b>"arguments"</b></code><b>
+		</b>as the argument</p>
+		</li>
+		<li><p>
+		If
+		<i>code</i> is <a href="#function-code">function code</a> and <i>argumentsAlreadyDeclared </i>is
+		<b>false</b>, then</p>
+		<ol><li><p>
+			Let
+			<i>argsObj </i>be the result of calling the abstract operation
+			CreateArgumentsObject (<a href="#x10.6">10.6</a>) passing  <i>func, names, args,</i>
+			<i>env </i>and <i>strict</i> as arguments.</p>
+			</li>
+			<li><p>
+			If
+			<i>strict</i> is <b>true</b>, then 
+			</p>
+			<ol><li><p>
+				Call
+				<i>env</i>&#8217;s <a href="#x10.2.1.1.7">CreateImmutableBinding</a> concrete method passing the
+				String "<code><b>arguments</b></code>"
+				as the argument.</p>
+				</li>
+				<li><p>
+				Call
+				<i>env</i>&#8217;s <a href="#x10.2.1.1.8">InitializeImmutableBinding</a> concrete method passing
+				"<code><b>arguments</b></code>"
+				and <i>argsObj </i> as arguments.</p>
+			</li></ol></li>
+			<li><p>
+			Else,</p>
+			<ol><li><p>
+				Call
+				<i>env</i>&#8217;s CreateMutableBinding concrete method passing the
+				String "<code><b>arguments</b></code>"
+				as the argument.</p>
+				</li>
+				<li><p>
+				Call
+				<i>env</i>&#8217;s SetMutableBinding concrete method passing
+				"<code><b>arguments</b></code>",
+				<i>argsObj</i>, and <b>false</b><i> </i>as arguments.</p>
+			</li></ol></li></ol></li></ol><ol start="8"><li><p>
+		For
+		each <i>VariableDeclaration</i> and <i>VariableDeclarationNoIn</i>
+		<i>d </i>in <i>code</i>, in source text order do</p>
+		<ol><li><p>
+			Let
+			<i>dn</i> be the <i>Identifier</i> in <i>d.</i></p>
+			</li>
+			<li><p>
+			Let
+			<i>varAlreadyDeclared </i>be the result of calling <i>env&#8217;s</i>
+			HasBinding concrete method passing <i>dn</i> as the argument.</p>
+			</li>
+			<li><p>
+			If
+			<i>varAlreadyDeclared </i>is <b>false</b>, then</p>
+			<ol><li><p>
+				Call
+				<i>env</i>&#8217;s CreateMutableBinding concrete method passing <i>dn </i>and <i>configurableBindings</i> as the arguments.</p>
+				</li>
+				<li><p>
+				Call
+				<i>env</i>&#8217;s SetMutableBinding concrete method passing <i>dn</i>,
+				<b>undefined</b>, and <i>strict </i>as the arguments.</p>
+			</li></ol></li></ol></li></ol><h3 id="x10.6">10.6 Arguments Object <a href="#x10.6">#</a> <a href="#x10.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	When
+	control enters an execution context for <a href="#function-code">function code</a>, an arguments
+	object is created unless (as specified in <a href="#x10.5">10.5</a>) the identifier
+	<code><b>arguments</b></code> occurs
+	as an <i>Identifier</i>
+	in the function&#8217;s <i>FormalParameterList</i>
+	or occurs as the <i>Identifier</i>
+	of a <i>VariableDeclaration</i>
+	or <i><a href="x13.html#x13">FunctionDeclaration</a></i>
+	contained in the <a href="#function-code">function code</a>.</p>
+	<p>
+	The
+	arguments object is created by calling the abstract operation
+	CreateArgumentsObject with arguments <i>func</i>
+	the function object whose code is to be evaluated<i>,
+	names</i> a <a href="x8.html#x8.8">List</a> containing the function&#8217;s formal parameter
+	names<i>, args </i>the
+	actual arguments passed to the [[Call]] internal method, <i>env </i>the variable environment for the <a href="#function-code">function code</a>, and
+	<i>strict</i> a Boolean
+	that indicates whether or not the <a href="#function-code">function code</a> is <a href="#x10.1.1">strict code</a>. When
+	CreateArgumentsObject is called the following steps are performed:</p>
+	<ol><li><p>
+		Let
+		<i>len</i> be the number of elements in <i>args</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>obj </i>be the result of creating a new ECMAScript object.</p>
+		</li>
+		<li><p>
+		Set
+		all the internal methods of <i>obj</i> as specified in <a href="x8.html#x8.12">8.12</a>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[Class]] internal property of <i>obj</i> to <b>"</b><code><b>Arguments</b></code>".</p>
+		</li>
+		<li><p>
+		Let
+		<i>Object</i> be the standard built-in Object constructor (<a href="x15.html#x15.2.2">15.2.2</a>).</p>
+		</li>
+		<li><p>
+		Set
+		the [[Prototype]] internal property of <i>obj</i> to the standard
+		built-in Object prototype object (<a href="x15.html#x15.2.4">15.2.4</a>).</p>
+		</li>
+		<li><p>
+		Call
+		the [[DefineOwnProperty]] internal method on <i>obj</i> passing
+		<b>"</b><code><b>length</b></code><b>"</b>,
+		the <a href="x8.html#x8.10">Property Descriptor</a> {[[Value]]: <i>len</i>, [[Writable]]: <b>true</b>,
+		[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>true</b>}, and
+		<b>false</b> as arguments.</p>
+		</li>
+		<li><p>
+		Let
+		<i>map</i> be the result of creating a new object as if by the
+		expression <code><b>new Object()</b></code>
+		where <code><b>Object</b></code> is
+		<a href="x15.html#x15.2">the standard built-in constructor with that name</a></p>
+		</li>
+		<li><p>
+		Let
+		<i>mappedNames</i> be an empty <a href="x8.html#x8.8">List</a>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>indx</i> = <i>len</i>  - 1.</p>
+		</li>
+		<li><p>
+		Repeat
+		while <i>indx</i> &gt;= 0, 
+		</p>
+		<ol><li><p>
+			Let
+			<i>val</i> be the element of <i>args</i> at 0-origined list
+			position <i>indx</i>.</p>
+			</li>
+			<li><p>
+			Call
+			the [[DefineOwnProperty]] internal method on <i>obj</i> passing
+			<a href="x9.html#x9.8">ToString</a>(<i>indx</i>), the <a href="x8.html#x8.10">property descriptor</a> {[[Value]]: <i>val</i>,
+			[[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b>,
+			[[Configurable]]: <b>true</b>}, and <b>false</b> as arguments.</p>
+			</li>
+			<li><p>
+			If
+			<i>indx</i> is less than the number of elements in <i>names</i>,
+			then</p>
+			<ol><li><p>
+				Let
+				<i>name</i> be the element of <i>names</i> at 0-origined list
+				position <i>indx</i>.</p>
+				</li>
+				<li><p>
+				If
+				<i>strict</i> is <b>false</b> and <i>name</i> is not an element
+				of  <i>mappedNames</i>, then</p>
+				<ol><li><p>
+					Add
+					<i>name</i> as an element of the list <i>mappedNames</i>.</p>
+					</li>
+					<li><p>
+					Let
+					<i>g</i> be the result of calling the <i><a href="#MakeArgGetter">MakeArgGetter</a></i>
+					abstract operation with arguments <i>name</i> and <i>env</i>.</p>
+					</li>
+					<li><p>
+					Let
+					<i>p</i> be the result of calling the <i><a href="#MakeArgSetter">MakeArgSetter</a></i>
+					abstract operation with arguments <i>name</i> and <i>env</i>.</p>
+					</li>
+					<li><p>
+					Call
+					the [[DefineOwnProperty]] internal method of <i>map</i> passing
+					<a href="x9.html#x9.8">ToString</a>(<i>indx</i>), the <a href="x8.html#x8.10">Property Descriptor</a> {[[Set]]: <i>p</i>,
+					[[Get]]: <i>g,</i> [[Configurable]]: <b>true</b>}, and <b>false</b>
+					as arguments.</p>
+				</li></ol></li></ol></li>
+			<li><p>
+			Let
+			<i>indx</i> = <i>indx</i> - 1</p>
+		</li></ol></li>
+		<li><p>
+		If
+		<i>mappedNames</i> is not empty, then</p>
+		<ol><li><p>
+			Set
+			the [[ParameterMap]] internal property of <i>obj</i> to <i>map</i>.</p>
+			</li>
+			<li><p>
+			Set
+			the [[Get]], [[GetOwnProperty]], [[DefineOwnProperty]], and
+			[[Delete]] internal methods of <i>obj</i> to the definitions
+			provided below.</p>
+		</li></ol></li>
+		<li><p>
+		If
+		<i>strict</i> is <b>false</b>, then</p>
+		<ol><li><p>
+			Call
+			the [[DefineOwnProperty]] internal method on <i>obj</i> passing
+			"<code><b>callee</b></code>",
+			the <a href="x8.html#x8.10">property descriptor</a> {[[Value]]: <i>func</i>, [[Writable]]:
+			<b>true</b>, [[Enumerable]]: <b>false</b>, [[Configurable]]:
+			<b>true</b>}, and <b>false</b> as arguments.</p>
+		</li></ol></li>
+		<li><p>
+		Else,
+		<i>strict</i> is <b>true </b>so</p>
+		<ol><li><p>
+			Let
+			<i>thrower</i> be the [[ThrowTypeError]] function Object (<a href="x13.html#x13.2.3">13.2.3</a>).</p>
+			</li>
+			<li><p>
+			Call
+			the [[DefineOwnProperty]] internal method of <i>obj</i> with
+			arguments <code><b>"caller"</b></code>,
+			PropertyDescriptor {[[Get]]: <i>thrower</i>, [[Set]]: <i>thrower</i>,
+			[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b>}, and
+			<b>false</b>.</p>
+			</li>
+			<li><p>
+			Call
+			the [[DefineOwnProperty]] internal method of <i>obj</i> with
+			arguments <code><b>"callee"</b></code>,
+			PropertyDescriptor {[[Get]]: <i>thrower</i>, [[Set]]: <i>thrower</i>,
+			[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b>}, and
+			<b>false</b>.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		<i>obj</i></p>
+	</li></ol><p>
+	The
+	abstract operation <dfn id="MakeArgGetter"><i>MakeArgGetter</i></dfn> called with String <i>name</i>
+	and <a href="#x10.2">environment record</a> <i>env</i>
+	creates a function object that when executed returns the value bound
+	for <i>name</i> in <i>env</i>.
+	 It performs the following steps:</p>
+	<ol><li><p>
+		Let
+		<i>body</i> be the result of concatenating the Strings "<code><b>return</b></code><b>
+		</b>", <i>name</i>, and "<code><b>;</b></code>"</p>
+		</li>
+		<li><p>
+		Return
+		the result of creating a function object as described in <a href="x13.html#x13.2">13.2</a> using
+		no <i>FormalParameterList</i>, <i>body</i> for <i><a href="x13.html#x13">FunctionBody</a></i>,
+		<i>env</i> as <i>Scope</i>, and <b>true</b> for <i>Strict</i>.</p>
+	</li></ol><p>
+	The
+	abstract operation <dfn id="MakeArgSetter"><i>MakeArgSetter</i></dfn> called with String <i>name</i>
+	and <a href="#x10.2">environment record</a> <i>env</i>
+	creates a function object that when executed sets the value bound
+	for <i>name</i> in <i>env</i>.
+	 It performs the following steps:</p>
+	<ol><li><p>
+		Let
+		<i>param</i> be the String <i>name </i>concatenated with the String
+		 "<code>_arg</code>"</p>
+		</li>
+		<li><p>
+		Let
+		<i>body</i> be the String <b>"&lt;name&gt; </b><code><b>=</b></code><b>
+		&lt;param&gt;</b><code><b>;</b></code><b>"</b>
+		with <b>&lt;name&gt;</b> replaced by the value of <i>name </i>and
+		<b>&lt;param&gt; </b>replaced by the value of <i>param</i>.</p>
+		</li>
+		<li><p>
+		Return
+		the result of creating a function object as described in <a href="x13.html#x13.2">13.2</a> using
+		a <a href="x8.html#x8.8">List</a> containing the single String <i>param </i>as
+		<i>FormalParameterList</i>, <i>body</i> for <i><a href="x13.html#x13">FunctionBody</a></i>,
+		<i>env</i> as <i>Scope</i>, and <b>true</b> for <i>Strict</i>.</p>
+	</li></ol><p>
+	The
+	[[Get]] internal method of an arguments object for a non-strict mode
+	function with formal parameters when called with a property name <i>P</i>
+	performs the following steps:</p>
+	<ol><li><p>
+		Let
+		<i>map</i> be the value of the  [[ParameterMap]] internal property
+		of the arguments object.</p>
+		</li>
+		<li><p>
+		Let
+		<i>isMapped</i> be the result of calling the [[GetOwnProperty]]
+		internal method of <i>map</i> passing <i>P</i> as the argument.</p>
+		</li>
+		<li><p>
+		If
+		the value of <i>isMapped</i> is <b>undefined</b>, then</p>
+		<ol><li><p>
+			Let
+			<i>v</i> be the result of calling the default [[Get]] internal
+			method (<a href="x8.html#x8.12.3">8.12.3</a>) on the arguments object  passing <i>P</i> as the
+			argument.</p>
+			</li>
+			<li><p>
+			 If
+			<i>P</i> is <code><b>"caller"
+			</b></code>and <i>v</i> is a strict mode Function object, throw a
+			<b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
+			</li>
+			<li><p>
+			Return
+			<i>v</i>.</p>
+		</li></ol></li>
+		<li><p>
+		Else,
+		<i>map</i> contains a formal parameter mapping for <i>P</i> so, 
+		</p>
+		<ol><li><p>
+			Return
+			the result of calling the [[Get]] internal method of <i>map</i>
+			passing <i>P</i> as the argument.</p>
+		</li></ol></li></ol><p>
+	The
+	[[GetOwnProperty]] internal method of an arguments object for a
+	non-strict mode function with formal parameters when called with a
+	property name <i>P</i>
+	performs the following steps:</p>
+	<ol><li><p>
+		Let
+		<i>desc</i> be the result of calling the default [[GetOwnProperty]]
+		internal method (<a href="x8.html#x8.12.1">8.12.1</a>) on the arguments object passing <i>P</i>
+		as the argument.</p>
+		</li>
+		<li><p>
+		If
+		<i>desc</i> is <b>undefined</b> then return <i>desc</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>map</i> be the value of the  [[ParameterMap]] internal property
+		of the arguments object.</p>
+		</li>
+		<li><p>
+		Let
+		<i>isMapped</i> be the result of calling the [[GetOwnProperty]]
+		internal method of <i>map</i> passing <i>P</i> as the argument.</p>
+		</li>
+		<li><p>
+		If
+		the value of <i>isMapped</i> is not <b>undefined</b>, then</p>
+		<ol><li><p>
+			Set
+			<i>desc</i>.[[Value]] to the result of calling the [[Get]]
+			internal method of <i>map</i> passing <i>P</i> as the argument.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		<i>desc</i>. 
+		</p>
+	</li></ol><p>
+	The
+	[[DefineOwnProperty]] internal method of an arguments object  for a
+	non-strict mode function with formal parameters when called with a
+	property name <i>P</i>,
+ <a href="x8.html#x8.10">Property Descriptor</a> <i>Desc</i>,
+	and Boolean flag <i>Throw</i>
+	performs the following steps:</p>
+	<ol><li><p>
+		Let
+		<i>map </i>be the value of the  [[ParameterMap]] internal property
+		of the arguments object.</p>
+		</li>
+		<li><p>
+		Let
+		<i>isMapped </i>be the result of calling the [[GetOwnProperty]]
+		internal method of <i>map</i> passing <i>P </i>as the argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>allowed </i>be the result of calling the default
+		[[DefineOwnProperty]] internal method (<a href="x8.html#x8.12.9">8.12.9</a>) on the arguments
+		object passing <i>P</i>, <i>Desc</i>, and <b>false </b>as the
+		arguments.</p>
+		</li>
+		<li><p>
+		If
+		<i>allowed</i> is <b>false</b>, then</p>
+		<ol><li><p>
+			If
+			<i>Throw </i>is <b>true </b>then throw a <b>TypeError </b>exception,
+			otherwise return <b>false</b>.</p>
+		</li></ol></li>
+		<li><p>
+		If
+		the value of <i>isMapped </i>is not <b>undefined</b>, then</p>
+		<ol><li><p>
+			If
+			<a href="x8.html#x8.10.1">IsAccessorDescriptor</a>(<i>Desc</i>) is <b>true</b>, then</p>
+			<ol><li><p>
+				Call
+				the [[Delete]] internal method of <i>map </i>passing <i>P</i>,
+				and <b>false </b>as the arguments.</p>
+			</li></ol></li>
+			<li><p>
+			Else</p>
+			<ol><li><p>
+				If
+				<i>Desc</i>.[[Value]] is present, then</p>
+				<ol><li><p>
+					Call
+					the [[Put]] internal method of <i>map </i>passing <i>P</i>,
+					<i>Desc</i>.[[Value]], and <i>Throw </i>as the arguments.</p>
+				</li></ol></li>
+				<li><p>
+				If
+				<i>Desc</i>.[[Writable]] is present and its value is <b>false</b>,
+				then</p>
+				<ol><li><p>
+					Call
+					the [[Delete]] internal method of <i>map </i>passing <i>P </i>and
+					<b>false </b>as arguments.</p>
+				</li></ol></li></ol></li></ol></li>
+		<li><p>
+		Return
+		<b>true</b>.</p>
+	</li></ol><p>
+	The
+	[[Delete]] internal method of an arguments object for a non-strict
+	mode function with formal parameters when called with a property
+	name <i>P</i> and Boolean
+	flag <i>Throw</i>
+	performs the following steps:</p>
+	<ol><li><p>
+		Let
+		<i>map</i> be the value of the  [[ParameterMap]] internal property
+		of the arguments object.</p>
+		</li>
+		<li><p>
+		Let
+		<i>isMapped</i> be the result of calling the [[GetOwnProperty]]
+		internal method of <i>map</i> passing <i>P</i> as the argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>result</i> be the result of calling the default [[Delete]]
+		internal method (<a href="x8.html#x8.12.7">8.12.7</a>) on the arguments object passing <i>P </i>and
+		<i>Throw</i> as the arguments.</p>
+		</li>
+		<li><p>
+		If
+		<i>result</i> is  <b>true</b> and the value of <i>isMapped</i> is
+		not <b>undefined</b>, then</p>
+		<ol><li><p>
+			Call
+			the [[Delete]] internal method of <i>map</i> passing <i>P</i>, and
+			<b>false</b> as the arguments.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		<i>result</i>.</p>
+	</li></ol><p class="sp"><b class="note">NOTE 1</b> For non-strict mode functions the array index (defined in <a href="x15.html#x15.4">15.4</a>)
+	named data properties of an arguments object whose numeric name
+	values are less than the number of formal parameters of the
+	corresponding function object initially share their values with the
+	corresponding argument bindings in the function&#8217;s execution
+	context. This means that changing the property changes the
+	corresponding value of the argument binding and vice-versa. This
+	correspondence is broken if such a property is deleted and then
+	redefined or if the property is changed into an accessor property.
+	For strict mode functions, the values of the arguments object&#8216;s
+	properties are simply a copy of the arguments passed to the function
+	and there is no dynamic linkage between the property values and the
+	formal parameter values.</p>
+	<p class="sp"><b class="note">NOTE 2</b> The ParameterMap object and its property values are used as a
+	device for specifying the arguments object correspondence to
+	argument bindings. The ParameterMap object and the objects that are
+	the values of its properties are not directly accessible from
+	ECMAScript code. An ECMAScript implementation does not need to
+	actually create or use such objects to implement the specified
+	semantics.</p>
+	<p class="sp"><b class="note">NOTE 3</b> Arguments objects for strict mode functions define
+	non-configurable accessor properties named "<code><b>caller</b></code>"
+	and "<code><b>callee</b></code>"
+	which throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception on access. The "<code><b>callee</b></code>"
+	property has a more specific meaning for non-strict mode functions
+	and a "<code><b>caller</b></code>"
+	property has historically been provided as an implementation-defined
+	extension by some ECMAScript implementations. The strict mode
+	definition of these properties exists to ensure that neither of them
+	is defined in any other manner by conforming ECMAScript
+	implementations.</p>
+	</body><script src="anno.js"></script></html>

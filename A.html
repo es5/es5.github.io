@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html class="split chapter"><head><meta charset="utf-8"><title>Annex A (informative) Grammar Summary # &#9417; &#9402; &#9312; &#9398; &#8212; Annotated ES5</title><link rel="stylesheet" href="style.css"><link rel="shortcut icon" href="favicon.ico"><link href="x16.html" title="16 Errors " rel="prev">
+  <link href="index.html#contents" title="TOC" rel="index">
+  <link href="B.html" title="Annex B (informative) Compatibility " rel="next">
+  </head><body><div class="head">
+<h2 id="top">Annotated ECMAScript 5.1 <span id="timestamp"></span></h2>
+<div id="mascot-treehouse">
+	<img id="mascot" align="left" src="js-mascot.svg" alt=""><img id="bubble" src="bubble.svg" alt=""></div>
+<p id="slogan">&#8223;Ex igne vita&#8221;</p>
+<div id="annotations"></div>
+<script src="timestamp.js"></script></div>
+<nav>
+   <a href="x16.html">&#8592; 16 Errors </a> &#8211;
+   <a href="index.html#contents">TOC</a> &#8211;
+   <a href="B.html">Annex B (informative) Compatibility  &#8594;</a>
+  <ol class="toc"><li><a href="A.html#A" id="A-toc">Annex A (informative) Grammar Summary</a>
+    <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="A.html#A.1" id="A.1-toc">A.1 Lexical Grammar</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="A.html#A.2" id="A.2-toc">A.2 Number Conversions</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="A.html#A.3" id="A.3-toc">A.3 Expressions</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="A.html#A.4" id="A.4-toc">A.4 Statements</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="A.html#A.5" id="A.5-toc">A.5 Functions and Programs</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="A.html#A.6" id="A.6-toc">A.6 Universal Resource Identifier Character Classes</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="A.html#A.7" id="A.7-toc">A.7 Regular Expressions</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="A.html#A.8" id="A.8-toc">A.8 JSON</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="A.html#A.8.1" id="A.8.1-toc">A.8.1 JSON Lexical Grammar</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="A.html#A.8.2" id="A.8.2-toc">A.8.2 JSON Syntactic Grammar</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li></ol></li></ol></nav>
+
+  <h2 id="A">Annex A (informative) Grammar Summary <a href="#A">#</a> <a href="#A-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h2>
+	<h3 id="A.1">A.1 Lexical Grammar <a href="#A.1">#</a> <a href="#A.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="keep">
+	<i>SourceCharacter </i><b>::</b><i class="see">See <a href="x6.html#x6">clause 6</a></i></p>
+	<p class="def1-btm">
+	any
+	Unicode code unit</p>
+	<p class="keep">
+	<i>InputElementDiv </i><b>::</b><i class="see">See <a href="x7.html#x7">clause 7</a></i></p>
+	<p class="def1-btm">
+	<i>WhiteSpace<br>LineTerminator<br>Comment<br>Token<br>DivPunctuator</i></p>
+	<p class="keep">
+	<i>InputElementRegExp </i><b>::</b><i class="see">See <a href="x7.html#x7">clause 7</a></i></p>
+	<p class="def1-btm">
+	<i>WhiteSpace<br>LineTerminator<br>Comment<br>Token<br>RegularExpressionLiteral</i></p>
+	<p class="keep">
+	<i>WhiteSpace </i><b>::</b><i class="see">See <a href="x7.html#x7.2">7.2</a></i></p>
+	<p class="def1-btm">
+	&lt;TAB&gt;<br>&lt;VT&gt;<br>&lt;FF&gt;<br>&lt;SP&gt;<br>&lt;#x0a&gt;<br>&lt;BOM&gt;<br>&lt;USP&gt;</p>
+	<p class="keep">
+	<i>LineTerminator </i><b>::</b><i class="see">See <a href="x7.html#x7.3">7.3</a></i></p>
+	<p class="def1-btm">
+	&lt;LF&gt;<br>&lt;CR&gt;<br>&lt;LS&gt;<br>&lt;PS&gt;</p>
+	<p class="keep">
+	<i>LineTerminatorSequence </i><b>::</b><i class="see">See <a href="x7.html#x7.3">7.3</a></i></p>
+	<p class="def1-btm">
+	&lt;LF&gt;<br>&lt;CR&gt;
+	[<a href="x5.html#lookahead-not-in">lookahead
+	<span class="symbol">&#8713;</span></a>
+	&lt;LF&gt;
+	]<br>&lt;LS&gt;<br>&lt;PS&gt;<br>&lt;CR&gt;
+	&lt;LF&gt;</p>
+	<p class="keep">
+	<i>Comment </i><b>::</b><i class="see">See <a href="x7.html#x7.4">7.4</a></i></p>
+	<p class="def1-btm">
+	<i>MultiLineComment<br>SingleLineComment</i></p>
+	<p class="keep">
+	<i>MultiLineComment </i><b>::</b><i class="see">See <a href="x7.html#x7.4">7.4</a></i></p>
+	<p class="def1-btm">
+	<code><b>/*</b></code> <i>MultiLineCommentChars</i><sub>opt</sub><code><b>*/</b></code></p>
+	<p class="keep">
+	<i>MultiLineCommentChars </i><b>::</b><i class="see">See <a href="x7.html#x7.4">7.4</a></i></p>
+	<p class="def1-btm">
+	<i>MultiLineNotAsteriskChar
+	MultiLineCommentChars</i><sub>opt</sub><i><br></i><code><b>*</b></code> <i>PostAsteriskCommentChars</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>PostAsteriskCommentChars </i><b>::</b><i class="see">See <a href="x7.html#x7.4">7.4</a></i></p>
+	<p class="def1-btm">
+	<i>MultiLineNotForwardSlashOrAsteriskChar
+	MultiLineCommentChars</i><sub>opt</sub><i><br></i><code><b>*</b></code> <i>PostAsteriskCommentChars</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>MultiLineNotAsteriskChar </i><b>::</b><i class="see">See <a href="x7.html#x7.4">7.4</a></i></p>
+	<p class="def1-btm">
+	<i>SourceCharacter </i><b>but
+	not</b><i> asterisk </i><code><b>*</b></code></p>
+	<p class="keep">
+	<i>MultiLineNotForwardSlashOrAsteriskChar </i><b>::</b><i class="see">See <a href="x7.html#x7.4">7.4</a></i></p>
+	<p class="def1-btm">
+	<i>SourceCharacter </i><b>but
+	not</b><i> forward-slash </i><code><b>/</b></code> <i><b>
+	</b></i><b>or</b><i>asterisk </i><code><b>*</b></code></p>
+	<p class="keep">
+	<i>SingleLineComment </i><b>::</b><i class="see">See <a href="x7.html#x7.4">7.4</a></i></p>
+	<p class="def1-btm">
+	<code><b>//</b></code> <i>SingleLineCommentChars</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>SingleLineCommentChars </i><b>::</b><i class="see">See <a href="x7.html#x7.4">7.4</a></i></p>
+	<p class="def1-btm">
+	<i>SingleLineCommentChar
+	SingleLineCommentChars</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>SingleLineCommentChar </i><b>::</b><i class="see">See <a href="x7.html#x7.4">7.4</a></i></p>
+	<p class="def1-btm">
+	<i>SourceCharacter<b>
+	</b></i><b>but
+	not</b><i><b>
+	</b>LineTerminator</i></p>
+	<p class="keep">
+	<i>Token </i><b>::</b><i class="see">See <a href="x7.html#x7.5">7.5</a></i></p>
+	<p class="def1-btm">
+	<i>IdentifierName<br>Punctuator<br>NumericLiteral<br>StringLiteral</i></p>
+	<p class="keep">
+	<i>Identifier </i><b>::</b><i class="see">See <a href="x7.html#x7.6">7.6</a></i></p>
+	<p class="def1-btm">
+	<i>IdentifierName </i><b>but
+	not</b><i> ReservedWord</i></p>
+	<p class="keep">
+	<i>IdentifierName </i><b>::</b><i class="see">See <a href="x7.html#x7.6">7.6</a></i></p>
+	<p class="def1-btm">
+	<i>IdentifierStart<br>IdentifierName
+	IdentifierPart</i></p>
+	<p class="keep">
+	<i>IdentifierStart </i><b>::</b><i class="see">See <a href="x7.html#x7.6">7.6</a></i></p>
+	<p class="def1-btm">
+	<i>UnicodeLetter<br></i><code><b>$<br>_</b></code> <i><br></i><code><b>\</b></code> <i>UnicodeEscapeSequence</i></p>
+	<p class="keep">
+	<i>IdentifierPart </i><b>::</b><i class="see">See <a href="x7.html#x7.6">7.6</a></i></p>
+	<p class="def1-btm">
+	<i>IdentifierStart<br>UnicodeCombiningMark<br>UnicodeDigit<br>UnicodeConnectorPunctuation<br></i>&lt;ZWNJ&gt;<br>&lt;ZWJ&gt;</p>
+	<p class="keep">
+	<i>UnicodeLetter</i>	<i class="see">See <a href="x7.html#x7.6">7.6</a></i></p>
+	<p class="def1">
+	any
+	character in the Unicode categories &#8220;Uppercase letter (Lu)&#8221;,
+	&#8220;Lowercase letter (Ll)&#8221;, &#8220;Titlecase letter (Lt)&#8221;, &#8220;Modifier
+	letter (Lm)&#8221;, &#8220;Other letter (Lo)&#8221;, or &#8220;Letter number (Nl)&#8221;.</p>
+	<p class="keep">
+	<i>UnicodeCombiningMark</i>	<i class="see">See <a href="x7.html#x7.6">7.6</a></i></p>
+	<p class="def1">
+	any
+	character in the Unicode categories &#8220;Non-spacing mark (Mn)&#8221; or
+	&#8220;Combining spacing mark (Mc)&#8221;</p>
+	<p class="keep">
+	<i>UnicodeDigit</i>	<i class="see">See <a href="x7.html#x7.6">7.6</a></i></p>
+	<p class="def1-btm">
+	any
+	character in the Unicode category &#8220;Decimal number (Nd)&#8221;</p>
+	<p class="keep">
+	<i>UnicodeConnectorPunctuation</i>	<i class="see">See <a href="x7.html#x7.6">7.6</a></i></p>
+	<p class="def1-btm">
+	any
+	character in the Unicode category &#8220;Connector punctuation (Pc)&#8221;</p>
+	<p class="keep">
+	<i>ReservedWord </i><b>::</b><i class="see">See <a href="x7.html#x7.6.1">7.6.1</a></i></p>
+	<p class="def1-btm">
+	<i>Keyword<br>FutureReservedWord<br>NullLiteral<br>BooleanLiteral</i></p>
+	<p class="keep">
+	<i>Keyword </i><b>::</b> <b>one
+	of</b><i class="see">See <a href="x7.html#x7.6.1.1">7.6.1.1</a></i></p>
+	<dl><dl><dd>
+			<table width="590" border="0" cellpadding="8" cellspacing="0"><colgroup><col width="131"><col width="131"><col width="131"><col width="131"></colgroup><tbody><tr valign="TOP"><td width="131" height="3">
+						<p class="sm-btm">
+						<code><b>break</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>do
+						</b></code>
+						</p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>instanceof
+						</b></code>
+						</p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>typeof
+						</b></code>
+						</p>
+					</td>
+				</tr><tr valign="TOP"><td width="131" height="3">
+						<p class="sm-btm">
+						<code><b>case</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>else</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>new</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>var</b></code></p>
+					</td>
+				</tr><tr valign="TOP"><td width="131" height="3">
+						<p class="sm-btm">
+						<code><b>catch</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>finally</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>return</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>void</b></code></p>
+					</td>
+				</tr><tr valign="TOP"><td width="131" height="3">
+						<p class="sm-btm">
+						<code><b>continue</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>for</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>switch</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>while</b></code></p>
+					</td>
+				</tr><tr valign="TOP"><td width="131" height="3">
+						<p class="sm-btm">
+						<code><b>debugger
+						</b></code>
+						</p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>function</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>this</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>with</b></code></p>
+					</td>
+				</tr><tr valign="TOP"><td width="131" height="3">
+						<p class="sm-btm">
+						<code><b>default</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>if</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>throw</b></code></p>
+					</td>
+					<td width="131">
+					</td>
+				</tr><tr valign="TOP"><td width="131" height="3">
+						<p class="sm-btm">
+						<code><b>delete</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>in</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>try</b></code></p>
+					</td>
+					<td width="131">
+					</td>
+				</tr></tbody></table></dd></dl></dl><p class="keep">
+	<i>FutureReservedWord<b>
+	</b></i><b>::</b><i><b>
+	</b></i><b>one
+	of</b><i class="see">See <a href="x7.html#x7.6.1.2">7.6.1.2</a></i></p>
+	<dl><dl><dd>
+			<table width="591" border="0" cellpadding="8" cellspacing="0"><colgroup><col width="131"><col width="131"><col width="131"><col width="133"></colgroup><tbody><tr valign="TOP"><td width="131" height="3">
+						<p>
+						<code><b>class</b></code></p>
+					</td>
+					<td width="131">
+						<p>
+						<code><b>enum</b></code></p>
+					</td>
+					<td width="131">
+						<p>
+						<code><b>extends</b></code></p>
+					</td>
+					<td width="133">
+						<p>
+						<code><b>super</b></code></p>
+					</td>
+				</tr><tr valign="TOP"><td width="131" height="3">
+						<p class="sm-btm">
+						<code><b>const</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>export</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>import<br></b></code><br></p>
+					</td>
+					<td width="133">
+					</td>
+				</tr><tr><td colspan="4" width="575" height="16" valign="TOP">
+						<p>
+						<code>or
+						in <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a> <b>one
+						of</b></code></p>
+					</td>
+				</tr><tr valign="TOP"><td width="131" height="3">
+						<p class="sm-btm">
+						<code><b>implements</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>let</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>private</b></code></p>
+					</td>
+					<td width="133">
+						<p class="sm-btm">
+						<code><b>public</b></code></p>
+					</td>
+				</tr><tr valign="TOP"><td width="131" height="3">
+						<p class="sm-btm">
+						<code><b>interface</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>package</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>protected</b></code></p>
+					</td>
+					<td width="133">
+						<p class="sm-btm">
+						<code><b>static</b></code></p>
+					</td>
+				</tr><tr valign="TOP"><td width="131" height="3">
+						<p class="sm-btm">
+						<code><b>yield</b></code></p>
+					</td>
+					<td width="131">
+					</td>
+					<td width="131">
+					</td>
+					<td width="133">
+					</td>
+				</tr></tbody></table></dd></dl></dl><p class="keep">
+	<i>Punctuator </i><b>::</b> <b>one
+	of</b><i class="see">See <a href="x7.html#x7.7">7.7</a></i></p>
+	<dl><dd>
+		<table width="589" border="0" cellpadding="8" cellspacing="0"><colgroup><col width="82"><col width="82"><col width="82"><col width="82"><col width="82"><col width="82"></colgroup><tbody><tr valign="TOP"><td width="82">
+					<p>
+					<code><b>{</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>}</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>(</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>)</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>[</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>]</b></code></p>
+				</td>
+			</tr><tr valign="TOP"><td width="82">
+					<p>
+					<code><b>.</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>;</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>,</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>&lt;</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>&gt;</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>&lt;=</b></code></p>
+				</td>
+			</tr><tr valign="TOP"><td width="82">
+					<p>
+					<code><b>&gt;=</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>==</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>!=</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>===</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>!==</b></code></p>
+				</td>
+				<td width="82">
+				</td>
+			</tr><tr valign="TOP"><td width="82">
+					<p>
+					<code><b>+</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>-</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>*</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>%</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>++</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>--</b></code></p>
+				</td>
+			</tr><tr valign="TOP"><td width="82">
+					<p>
+					<code><b>&lt;&lt;</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>&gt;&gt;</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>&gt;&gt;&gt;</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>&amp;</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>|</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>^</b></code></p>
+				</td>
+			</tr><tr valign="TOP"><td width="82">
+					<p>
+					<code><b>!</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>~</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>&amp;&amp;</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>||</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>?</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>:</b></code></p>
+				</td>
+			</tr><tr valign="TOP"><td width="82">
+					<p>
+					<code><b>=</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>+=</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>-=</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>*=</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>%=</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>&lt;&lt;=</b></code></p>
+				</td>
+			</tr><tr valign="TOP"><td width="82">
+					<p class="sm-btm">
+					<code><b>&gt;&gt;=</b></code></p>
+				</td>
+				<td width="82">
+					<p class="sm-btm">
+					<code><b>&gt;&gt;&gt;=</b></code></p>
+				</td>
+				<td width="82">
+					<p class="sm-btm">
+					<code><b>&amp;=</b></code></p>
+				</td>
+				<td width="82">
+					<p class="sm-btm">
+					<code><b>|=</b></code></p>
+				</td>
+				<td width="82">
+					<p class="sm-btm">
+					<code><b>^=</b></code></p>
+				</td>
+				<td width="82">
+				</td>
+			</tr></tbody></table></dd></dl><p class="keep">
+	<i>DivPunctuator </i><b>::</b>
+	<b>one
+	of</b><i class="see">See <a href="x7.html#x7.7">7.7</a></i></p>
+	<dl><dd>
+		<table width="589" border="0" cellpadding="8" cellspacing="0"><colgroup><col width="95"><col width="70"><col width="82"><col width="82"><col width="82"><col width="82"></colgroup><tbody><tr valign="TOP"><td width="95">
+					<p class="sm-btm">
+					<code><b>/</b></code></p>
+				</td>
+				<td width="70">
+					<p class="sm-btm">
+					<code><b>/=</b></code></p>
+				</td>
+				<td width="82">
+				</td>
+				<td width="82">
+				</td>
+				<td width="82">
+				</td>
+				<td width="82">
+				</td>
+			</tr></tbody></table></dd></dl><p class="keep">
+	<i>Literal </i><b>::</b><i class="see">See <a href="x7.html#x7.8">7.8</a></i></p>
+	<p class="def1-btm">
+	<i>NullLiteral<br>BooleanLiteral<br>NumericLiteral<br>StringLiteral</i><br><i>RegularExpressionLiteral</i></p>
+	<p class="keep">
+	<i>NullLiteral </i><b>::</b><i class="see">See <a href="x7.html#x7.8.1">7.8.1</a></i></p>
+	<p class="def1-btm">
+	<code><b>null</b></code></p>
+	<p class="keep">
+	<i>BooleanLiteral </i><b>::</b><i class="see">See <a href="x7.html#x7.8.2">7.8.2</a></i></p>
+	<p class="def1-btm">
+	<code><b>true<br>false</b></code></p>
+	<p class="keep">
+	<i>NumericLiteral </i><b>::</b><i class="see">See <a href="x7.html#x7.8.3">7.8.3</a></i></p>
+	<p class="def1-btm">
+	<i>DecimalLiteral<br>HexIntegerLiteral</i></p>
+	<p class="keep">
+	<i>DecimalLiteral </i><b>::</b><i class="see">See <a href="x7.html#x7.8.3">7.8.3</a></i></p>
+	<p class="def1-btm">
+	<i>DecimalIntegerLiteral </i><code><b>.</b></code> <i>DecimalDigits</i><sub>opt</sub><i><sub></sub>ExponentPart</i><sub>opt</sub><i><br></i><code><b>.</b></code> <i>DecimalDigits ExponentPart</i><sub>opt</sub><i><br>DecimalIntegerLiteral
+	ExponentPart</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>DecimalIntegerLiteral </i><b>::</b><i class="see">See <a href="x7.html#x7.8.3">7.8.3</a></i></p>
+	<p class="def1-btm">
+	<code><b>0</b></code> <i><br>NonZeroDigit
+	DecimalDigits</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>DecimalDigits </i><b>::</b><i class="see">See <a href="x7.html#x7.8.3">7.8.3</a></i></p>
+	<p class="def1-btm">
+	<i>DecimalDigit<br>DecimalDigits
+	DecimalDigit</i></p>
+	<p class="keep">
+	<i>DecimalDigit </i><b>::</b><i><b>
+	</b></i><b>one
+	of</b><i class="see">See <a href="x7.html#x7.8.3">7.8.3</a></i></p>
+	<p class="def1-btm">
+	<code><b>0
+	 1  2  3  4  5  6  7  8  9</b></code></p>
+	<p class="keep">
+	<i>NonZeroDigit</i><b>::</b><i><b>
+	</b></i><b>one
+	of</b><i class="see">See <b>7.8.3</b></i></p>
+	<p class="def1-btm">
+	<code><b>1  2  3  4  5  6  7  8  9</b></code></p>
+	<p class="keep">
+	<i>ExponentPart</i><b>::</b><i><b>
+	</b></i> <i class="see">See <b>7.8.3</b></i></p>
+	<p class="def1-btm"><i>ExponentIndicator SignedInteger</i></p>
+	<p class="keep">
+	<i>ExponentIndicator </i><b>::</b><i><b>
+	</b></i><b>one
+	of</b><i class="see">See <a href="x7.html#x7.8.3">7.8.3</a></i></p>
+	<p class="def1-btm">
+	<code><b>e
+	 E</b></code></p>
+	<p class="keep">
+	<i>SignedInteger </i><b>::</b><i class="see">See <a href="x7.html#x7.8.3">7.8.3</a></i></p>
+	<p class="def1-btm">
+	<i>DecimalDigits<br></i><code><b>+</b></code> <i>DecimalDigits<br></i><code><b>-</b></code> <i>DecimalDigits</i></p>
+	<p class="keep">
+	<i>HexIntegerLiteral </i><b>::</b><i class="see">See <a href="x7.html#x7.8.3">7.8.3</a></i></p>
+	<p class="def1-btm">
+	<code><b>0x</b></code> <i>HexDigit<br></i><code><b>0X</b></code> <i>HexDigit<br>HexIntegerLiteral HexDigit</i></p>
+	<p class="keep">
+	<i>HexDigit </i><b>::</b><i><b>
+	</b></i><b>one
+	of</b><i class="see">See <a href="x7.html#x7.8.3">7.8.3</a></i></p>
+	<p class="def1-btm">
+	<code><b>0
+	1 2 3 4 5 6 7 8 9 a b c d e f A B C D E F</b></code></p>
+	<p class="keep">
+	<i>StringLiteral </i><b>::</b><i class="see">See <a href="x7.html#x7.8.4">7.8.4</a></i></p>
+	<p class="def1-btm">
+	<code>"</code><i>DoubleStringCharacters</i><sub>opt</sub><i><b>
+	</b></i><code>"</code><code><b><br></b></code><code>'</code><i>SingleStringCharacters</i><sub>opt</sub><i><sub></sub></i><code>'</code></p>
+	<p class="keep">
+	<i>DoubleStringCharacters </i><b>::</b><i class="see">See <a href="x7.html#x7.8.4">7.8.4</a></i></p>
+	<p class="def1-btm">
+	<i>DoubleStringCharacter
+	DoubleStringCharacters</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>SingleStringCharacters </i><b>::</b><i class="see">See <a href="x7.html#x7.8.4">7.8.4</a></i></p>
+	<p class="def1-btm">
+	<i>SingleStringCharacter
+	SingleStringCharacters</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>DoubleStringCharacter </i><b>::</b><i class="see">See <a href="x7.html#x7.8.4">7.8.4</a></i></p>
+	<p class="def1-btm">
+	<i>SourceCharacter </i><b>but
+	not</b><i> double-quote </i><code><b>"</b></code> <i><b>
+	</b></i><b>or</b><i><b>
+	</b>backslash </i><code><b>\</b></code> <b>or</b><i><b>
+	</b>LineTerminator<br></i><code><b>\
+	</b></code> <i>EscapeSequence<br>LineContinuation</i></p>
+	<p class="keep">
+	<i>SingleStringCharacter </i><b>::</b><i class="see">See <a href="x7.html#x7.8.4">7.8.4</a></i></p>
+	<p class="def1-btm">
+	<i>SourceCharacter </i><b>but
+	not</b><i> single-quote </i><code><b>'</b></code> <i><b>
+	</b></i><b>or</b><i>backslash </i><code><b>\</b></code> <b>or</b><i><b>
+	</b>LineTerminator<br></i><code><b>\
+	</b></code> <i>EscapeSequence<br>LineContinuation</i></p>
+	<p class="keep">
+	<i>LineContinuation </i><b>::</b><i class="see">See <a href="x7.html#x7.8.4">7.8.4</a></i></p>
+	<p class="def1-btm">
+	<code><b>\
+	</b></code> <i>LineTerminatorSequence</i></p>
+	<p class="keep">
+	<i>EscapeSequence </i><b>::</b><i class="see">See <a href="x7.html#x7.8.4">7.8.4</a></i></p>
+	<p class="def1-btm">
+	<i>CharacterEscapeSequence<br></i><code><b>0</b></code> [<a href="x5.html#lookahead-not-in">lookahead
+	<span class="symbol">&#8713;</span></a><i>DecimalDigit</i>]<i><br>HexEscapeSequence<br>UnicodeEscapeSequence</i></p>
+	<p class="keep">
+	<i>CharacterEscapeSequence </i><b>::</b><i class="see">See <a href="x7.html#x7.8.4">7.8.4</a></i></p>
+	<p class="def1-btm">
+	<i>SingleEscapeCharacter<br>NonEscapeCharacter</i></p>
+	<p class="keep">
+	<i>SingleEscapeCharacter </i><b>::</b> <b>one
+	of</b><i class="see">See <a href="x7.html#x7.8.4">7.8.4</a></i></p>
+	<p class="def1-btm">
+	<code><b>'
+	 "  \  b  f  n  r  t  v</b></code></p>
+	<p class="keep">
+	<i>NonEscapeCharacter </i><b>::</b><i class="see">See <a href="x7.html#x7.8.4">7.8.4</a></i></p>
+	<p class="def1">
+	<i>SourceCharacter<b>
+	</b></i><b>but
+	not</b><i>EscapeCharacter </i><b>or</b><i><b>
+	</b>LineTerminator</i></p>
+	<p class="keep">
+	<i>EscapeCharacter </i><b>::</b><i class="see">See <a href="x7.html#x7.8.4">7.8.4</a></i></p>
+	<p class="def1-btm">
+	<i>SingleEscapeCharacter<br>DecimalDigit<br></i><code><b>x</b></code><b><br></b><code><b>u</b></code></p>
+	<p class="keep">
+	<i>HexEscapeSequence </i><b>::</b><i class="see">See <a href="x7.html#x7.8.4">7.8.4</a></i></p>
+	<p class="def1-btm">
+	<code><b>x
+	</b></code> <i>HexDigit HexDigit</i></p>
+	<p class="keep">
+	<i>UnicodeEscapeSequence </i><b>::</b><i class="see">See <a href="x7.html#x7.8.4">7.8.4</a></i></p>
+	<p class="def1-btm">
+	<code><b>u</b></code> <i>HexDigit HexDigit HexDigit HexDigit</i></p>
+	<p class="keep">
+	<i>RegularExpressionLiteral </i><b>::</b><i class="see">See <a href="x7.html#x7.8.5">7.8.5</a></i></p>
+	<p class="def1-btm">
+	<code><b>/</b></code> <i>RegularExpressionBody </i><code><b>/</b></code> <i><b>
+	</b>RegularExpressionFlags</i></p>
+	<p class="keep">
+	<i>RegularExpressionBody </i><b>::</b><i class="see">See <a href="x7.html#x7.8.5">7.8.5</a></i></p>
+	<p class="def1-btm">
+	<i>RegularExpressionFirstChar
+	RegularExpressionChars</i></p>
+	<p class="keep">
+	<i>RegularExpressionChars </i><b>::</b><i class="see">See <a href="x7.html#x7.8.5">7.8.5</a></i></p>
+	<p class="def1-btm">
+	[empty]<i><br>RegularExpressionChars
+	RegularExpressionChar</i></p>
+	<p class="keep">
+	<i>RegularExpressionFirstChar </i><b>::</b><i class="see">See <a href="x7.html#x7.8.5">7.8.5</a></i></p>
+	<p class="def1-btm">
+	<i>RegularExpressionNonTerminator </i><b>but
+	not</b><i> </i><code><b>*</b></code> <i><b>
+	</b></i><b>or</b><i><b>
+	</b></i><code><b>\</b></code> <b>or</b><i><b>
+	</b></i><code><b>/
+	</b></code><b>or</b><code><b>
+	[</b></code> <i><br>RegularExpressionBackslashSequence<br>RegularExpressionClass</i></p>
+	<p class="keep">
+	<i>RegularExpressionChar </i><b>::</b><i class="see">See <a href="x7.html#x7.8.5">7.8.5</a></i></p>
+	<p class="def1-btm">
+	<i>RegularExpressionNonTerminator </i><b>but
+	not</b><i> </i><code><b>\</b></code> <i><b>
+	</b></i><b>or</b><i><b>
+	</b></i><code><b>/
+	</b></code><b>or</b><code><b>
+	[</b></code> <i><br>RegularExpressionBackslashSequence<br>RegularExpressionClass</i></p>
+	<p class="keep">
+	<i>RegularExpressionBackslashSequence </i><b>::</b><i class="see">See <a href="x7.html#x7.8.5">7.8.5</a></i></p>
+	<p class="def1-btm">
+	<code><b>\</b></code> <i>RegularExpressionNonTerminator</i></p>
+	<p class="keep">
+	<i>RegularExpressionNonTerminator </i><b>::</b><i class="see">See <a href="x7.html#x7.8.5">7.8.5</a></i></p>
+	<p class="def1-btm">
+	<i>SourceCharacter </i><b>but
+	not</b><i><b>
+	</b>LineTerminator</i></p>
+	<p class="keep">
+	<i>RegularExpressionClass </i><b>::</b><i class="see">See <a href="x7.html#x7.8.5">7.8.5</a></i></p>
+	<p class="def1-btm">
+	<code><b>[
+	</b></code> <i>RegularExpressionClassChars</i><code><b>
+	]</b></code></p>
+	<p class="keep">
+	<i>RegularExpressionClassChars</i><code><b>
+	</b></code><b>::</b><i class="see">See <a href="x7.html#x7.8.5">7.8.5</a></i></p>
+	<p class="def1-btm">
+	<i>[empty]<br>RegularExpressionClassChars</i><code><b>
+	</b></code> <i>RegularExpressionClassChar</i></p>
+	<p class="keep">
+	<i>RegularExpressionClassChar</i><code><b>
+	</b></code><b>::</b><i class="see">See <a href="x7.html#x7.8.5">7.8.5</a></i></p>
+	<p class="def1-btm">
+	<i>RegularExpressionNonTerminator<b>
+	</b></i><b>but
+	not</b><i> </i><code><b>]</b></code> <i><b>
+	</b></i><b>or</b><i><b>
+	</b></i><code><b>\</b></code> <i><b><br></b>RegularExpressionBackslashSequence</i></p>
+	<p class="keep">
+	<i>RegularExpressionFlags </i><b>::</b><i class="see">See <a href="x7.html#x7.8.5">7.8.5</a></i></p>
+	<p class="def1-btm">
+	[empty]<i><br>RegularExpressionFlags
+	IdentifierPart</i></p>
+	<h3 id="A.2">A.2 Number Conversions <a href="#A.2">#</a> <a href="#A.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="keep">
+	<i>StringNumericLiteral </i><b>:::</b><i class="see">See <a href="x9.html#x9.3.1">9.3.1</a></i></p>
+	<p class="def1-btm">
+	<i>StrWhiteSpace</i><sub>opt</sub><i><br>StrWhiteSpace</i><sub>opt</sub><i>StrNumericLiteral StrWhiteSpace</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>StrWhiteSpace </i><b>:::</b><i class="see">See <a href="x9.html#x9.3.1">9.3.1</a></i></p>
+	<p class="def1-btm">
+	<i>StrWhiteSpaceChar
+	StrWhiteSpace</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>StrWhiteSpaceChar </i><b>:::</b><i class="see">See <a href="x9.html#x9.3.1">9.3.1</a></i></p>
+	<p class="def1-btm">
+	<i>WhiteSpace<br>LineTerminator</i></p>
+	<p class="keep">
+	<i>StrNumericLiteral </i><b>:::</b><i class="see">See <a href="x9.html#x9.3.1">9.3.1</a></i></p>
+	<p class="def1-btm">
+	<i>StrDecimalLiteral<br>HexIntegerLiteral</i></p>
+	<p class="keep">
+	<i>StrDecimalLiteral </i><b>:::</b><i class="see">See <a href="x9.html#x9.3.1">9.3.1</a></i></p>
+	<p class="def1-btm">
+	<i>StrUnsignedDecimalLiteral<br></i><code><b>+
+	</b></code> <i>StrUnsignedDecimalLiteral<br></i><code><b>-
+	</b></code> <i>StrUnsignedDecimalLiteral</i></p>
+	<p class="keep">
+	<i>StrUnsignedDecimalLiteral </i><b>:::</b><i class="see">See <a href="x9.html#x9.3.1">9.3.1</a></i></p>
+	<p class="def1-btm">
+	<code><b>Infinity</b></code> <i><br>DecimalDigits </i><code><b>.</b></code> <i>DecimalDigits</i><sub>opt</sub><i><sub></sub>ExponentPart</i><sub>opt</sub><i><br></i><code><b>.</b></code> <i>DecimalDigits ExponentPart</i><sub>opt</sub><i><br>DecimalDigits
+	ExponentPart</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>DecimalDigits </i><b>:::</b><i class="see">See <a href="x9.html#x9.3.1">9.3.1</a></i></p>
+	<p class="def1-btm">
+	<i>DecimalDigit<br>DecimalDigits
+	DecimalDigit</i></p>
+	<p class="keep">
+	<i>DecimalDigit </i><b>:::</b> <b>one
+	of</b><i class="see">See <a href="x9.html#x9.3.1">9.3.1</a></i></p>
+	<p class="def1-btm">
+	<code><b>0
+	 1  2  3  4  5  6  7  8  9</b></code></p>
+	<p class="keep">
+	<i>ExponentPart </i><b>:::</b><i class="see">See <a href="x9.html#x9.3.1">9.3.1</a></i></p>
+	<p class="def1-btm">
+	<i>ExponentIndicator
+	SignedInteger</i></p>
+	<p class="keep">
+	<i>ExponentIndicator </i><b>:::</b><i><b>
+	</b></i><b>one
+	of</b><i class="see">See <a href="x9.html#x9.3.1">9.3.1</a></i></p>
+	<p class="def1-btm">
+	<code><b>e
+	 E</b></code></p>
+	<p class="keep">
+	<i>SignedInteger </i><b>:::</b><i class="see">See <a href="x9.html#x9.3.1">9.3.1</a></i></p>
+	<p class="def1-btm">
+	<i>DecimalDigits<br></i><code><b>+
+	</b></code> <i>DecimalDigits<br></i><code><b>-
+	</b></code> <i>DecimalDigits</i></p>
+	<p class="keep">
+	<i>HexIntegerLiteral </i><b>:::</b><i class="see">See <a href="x9.html#x9.3.1">9.3.1</a></i></p>
+	<p class="def1-btm">
+	<code><b>0x</b></code> <i>HexDigit<br></i><code><b>0X</b></code> <i>HexDigit<br>HexIntegerLiteral HexDigit</i></p>
+	<p class="keep">
+	<i>HexDigit </i><b>:::</b><i><b>
+	</b></i><b>one
+	of</b><i class="see">See <a href="x9.html#x9.3.1">9.3.1</a></i></p>
+	<p class="def1-btm">
+	<code><b>0
+	1 2 3 4 5 6 7 8 9 a b c d e f A B C D E F</b></code></p>
+	<h3 id="A.3">A.3 Expressions <a href="#A.3">#</a> <a href="#A.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="keep">
+	<i>PrimaryExpression </i><b>:</b><i class="see">See <a href="x11.html#x11.1">11.1</a></i></p>
+	<p class="def1-btm">
+	<code><b>this</b></code> <i><br>Identifier<br>Literal<br>ArrayLiteral<br>ObjectLiteral<br></i><code><b>(</b></code> <i>Expression </i><code><b>)</b></code></p>
+	<p class="keep">
+	<i>ArrayLiteral </i><b>:</b><i class="see">See <a href="x11.html#x11.1.4">11.1.4</a></i></p>
+	<p class="def1-btm">
+	<code><b>[
+	</b></code> <i>Elision</i><sub>opt</sub><code>
+	</code><code><b>]<br>[
+	</b></code> <i>ElementList</i><code>
+	</code><code><b>]<br>[
+	</b></code> <i>ElementList <b>,</b>
+	Elision</i><sub>opt</sub><code>
+	</code><code><b>]</b></code></p>
+	<p class="keep">
+	<i>ElementList </i><b>:</b><i class="see">See <a href="x11.html#x11.1.4">11.1.4</a></i></p>
+	<p class="def1-btm">
+	<i>Elision</i><sub>opt</sub><sub><code>
+	</code></sub><i>AssignmentExpression<br>ElementList
+	<b>,</b>
+	Elision</i><sub>opt</sub><sub><code>
+	</code></sub><i>AssignmentExpression</i></p>
+	<p class="keep">
+	<i>Elision </i><b>:</b><i class="see">See <a href="x11.html#x11.1.4">11.1.4</a></i></p>
+	<p class="def1-btm">
+	<i><b>,</b><br>Elision
+	<b>,</b></i></p>
+	<p class="keep">
+	<i>ObjectLiteral </i><b>:</b><i class="see">See <a href="x11.html#x11.1.5">11.1.5</a></i></p>
+	<p class="def1-btm">
+	<code><b>{
+	}</b></code> <i><br></i><code><b>{
+	</b></code> <i>PropertyNameAndValueList</i><code>
+	</code><code><b>}<br>{
+	</b></code> <i>PropertyNameAndValueList</i><code>
+	, </code><code><b>}</b></code></p>
+	<p class="keep">
+	<i>PropertyNameAndValueList </i><b>:</b><i class="see">See <a href="x11.html#x11.1.5">11.1.5</a></i></p>
+	<p class="def1-btm">
+	<i>PropertyAssignment<br>PropertyNameAndValueList</i><code>
+	,</code><i>  PropertyAssignment</i></p>
+	<p class="keep">
+	<i>PropertyAssignment </i><b>:</b><i class="see">See <a href="x11.html#x11.1.5">11.1.5</a></i></p>
+	<p class="def1-btm">
+	<i>PropertyName<span class="cgt">
+	</span></i><code><b>:</b></code> <i><span class="cgt">
+	</span>AssignmentExpression<br></i><code><b>get
+	</b></code> <i>PropertyName</i><code><b>()
+	{</b></code> <i>FunctionBody </i><code><b>}<br>set
+	</b></code> <i>PropertyName</i><code><b>(
+	</b></code> <i>PropertySetParameterList</i><code><b>
+	) {</b></code> <i>FunctionBody </i><code><b>}</b></code></p>
+	<p class="keep">
+	<i>PropertyName </i><b>:</b><i class="see">See <a href="x11.html#x11.1.5">11.1.5</a></i></p>
+	<p class="def1-btm">
+	<i>IdentifierName<br>StringLiteral<br>NumericLiteral</i></p>
+	<p class="keep">
+	<i>PropertySetParameterList </i><b>:</b><i class="see">See <a href="x11.html#x11.1.5">11.1.5</a></i></p>
+	<p class="def1-btm">
+	<i>Identifier</i></p>
+	<p class="keep">
+	<i>MemberExpression </i><b>:</b><i class="see">See <a href="x11.html#x11.2">11.2</a></i></p>
+	<p class="def1-btm">
+	<i>PrimaryExpression<br>FunctionExpression<br>MemberExpression </i><code><b>[</b></code> <i>Expression </i><code><b>]<br></b></code> <i>MemberExpression </i><code><b>.</b></code> <i>IdentifierName<br></i><code><b>new</b></code> <i>MemberExpression</i><code><b>
+	</b></code> <i>Arguments</i></p>
+	<p class="keep">
+	<i>NewExpression </i><b>:</b><i class="see">See <a href="x11.html#x11.2">11.2</a></i></p>
+	<p class="def1-btm">
+	<i>MemberExpression</i><code><b><br>new</b></code> <i>NewExpression</i></p>
+	<p class="keep">
+	<i>CallExpression </i><b>:</b><i class="see">See <a href="x11.html#x11.2">11.2</a></i></p>
+	<p class="def1-btm">
+	<i>MemberExpression</i><code><b>
+	</b></code> <i>Arguments</i><code><b><br></b></code> <i>CallExpression</i><code><b>
+	</b></code> <i>Arguments</i><code><b><br></b></code> <i>CallExpression </i><code><b>[</b></code> <i>Expression </i><code><b>]<br></b></code> <i>CallExpression </i><code><b>.</b></code> <i>IdentifierName</i></p>
+	<p class="keep">
+	<i>Arguments </i><b>:</b><i class="see">See <a href="x11.html#x11.2">11.2</a></i></p>
+	<p class="def1-btm">
+	<code><b>(</b></code> <code><b>)<br>(</b></code> <i>ArgumentList  </i><code><b>)</b></code></p>
+	<p class="keep">
+	<i>ArgumentList </i><b>:</b><i class="see">See <a href="x11.html#x11.2">11.2</a></i></p>
+	<p class="def1-btm">
+	<i>AssignmentExpression<br>ArgumentList </i><code><b>,</b></code> <i>AssignmentExpression</i></p>
+	<p class="keep">
+	<i>LeftHandSideExpression </i><b>:</b><i class="see">See <a href="x11.html#x11.2">11.2</a></i></p>
+	<p class="def1-btm">
+	<i>NewExpression<br>CallExpression</i></p>
+	<p class="keep">
+	<i>PostfixExpression </i><b>:</b><i class="see">See <a href="x11.html#x11.3">11.3</a></i></p>
+	<p class="def1-btm">
+	<i>LeftHandSideExpression<br>LeftHandSideExpression</i><code><b>
+	</b></code>[no<i>LineTerminator </i>here]<code><b>
+	++</b></code> <i><br>LeftHandSideExpression</i><code><b>
+	</b></code>[no<i>LineTerminator </i>here]<code><b>
+	--</b></code></p>
+	<p class="keep">
+	<i>UnaryExpression </i><b>:</b><i class="see">See <a href="x11.html#x11.4">11.4</a></i></p>
+	<p class="def1-btm">
+	<i>PostfixExpression</i><code><b><br>delete
+	</b></code> <i>UnaryExpression<br></i><code><b>void
+	</b></code> <i>UnaryExpression<br></i><code><b>typeof
+	</b></code> <i>UnaryExpression</i><code><b><br>++</b></code> <i>UnaryExpression<br></i><code><b>--</b></code> <i>UnaryExpression<br></i><code><b>+</b></code> <i>UnaryExpression<br></i><code><b>-</b></code> <i>UnaryExpression<br></i><code><b>~</b></code> <i>UnaryExpression<br></i><code><b>!</b></code> <i>UnaryExpression</i></p>
+	<p class="keep">
+	<i>MultiplicativeExpression </i><b>:</b><i class="see">See <a href="x11.html#x11.5">11.5</a></i></p>
+	<p class="def1-btm">
+	<i>UnaryExpression<br>MultiplicativeExpression </i><code><b>*</b></code> <i>UnaryExpression<br>MultiplicativeExpression </i><code><b>/</b></code> <i>UnaryExpression<br>MultiplicativeExpression </i><code><b>%</b></code> <i>UnaryExpression</i></p>
+	<p class="keep">
+	<i>AdditiveExpression </i><b>:</b><i class="see">See <a href="x11.html#x11.6">11.6</a></i></p>
+	<p class="def1-btm">
+	<i>MultiplicativeExpression<br>AdditiveExpression </i><code><b>+</b></code> <i>MultiplicativeExpression<br>AdditiveExpression </i><code><b>-</b></code> <i>MultiplicativeExpression</i></p>
+	<p class="keep">
+	<i>ShiftExpression </i><b>:</b><i class="see">See <a href="x11.html#x11.7">11.7</a></i></p>
+	<p class="def1-btm">
+	<i>AdditiveExpression<br>ShiftExpression </i><code><b>&lt;&lt;</b></code> <i>AdditiveExpression<br>ShiftExpression </i><code><b>&gt;&gt;</b></code> <i>AdditiveExpression<br>ShiftExpression </i><code><b>&gt;&gt;&gt;</b></code> <i>AdditiveExpression</i></p>
+	<p class="keep">
+	<i>RelationalExpression </i><b>:</b><i class="see">See <a href="x11.html#x11.8">11.8</a></i></p>
+	<p class="def1-btm">
+	<i>ShiftExpression<br>RelationalExpression </i><code><b>&lt;</b></code> <i>ShiftExpression<br>RelationalExpression </i><code><b>&gt;</b></code> <i>ShiftExpression<br>RelationalExpression </i><code><b>&lt;=</b></code> <i>ShiftExpression<br>RelationalExpression </i><code><b>&gt;=</b></code> <i>ShiftExpression<br>RelationalExpression </i><code><b>instanceof</b></code> <i>ShiftExpression<br>RelationalExpression </i><code><b>in</b></code> <i>ShiftExpression</i></p>
+	<p class="keep">
+	<i>RelationalExpressionNoIn </i><b>:</b><i class="see">See <a href="x11.html#x11.8">11.8</a></i></p>
+	<p class="def1-btm">
+	<i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>&lt;</b></code> <i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>&gt;</b></code> <i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>&lt;=</b></code> <i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>&gt;=</b></code> <i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>instanceof</b></code> <i>ShiftExpression</i></p>
+	<p class="keep">
+	<i>EqualityExpression </i><b>:</b><i class="see">See <a href="x11.html#x11.9">11.9</a></i></p>
+	<p class="def1-btm">
+	<i>RelationalExpression<br>EqualityExpression </i><code><b>==</b></code> <i>RelationalExpression<br>EqualityExpression </i><code><b>!=</b></code> <i>RelationalExpression<br>EqualityExpression </i><code><b>===</b></code> <i>RelationalExpression<br>EqualityExpression </i><code><b>!==</b></code> <i>RelationalExpression</i></p>
+	<p class="keep">
+	<i>EqualityExpressionNoIn </i><b>:</b><i class="see">See <a href="x11.html#x11.9">11.9</a></i></p>
+	<p class="def1-btm">
+	<i>RelationalExpressionNoIn<br>EqualityExpressionNoIn </i><code><b>==</b></code> <i>RelationalExpressionNoIn<br>EqualityExpressionNoIn </i><code><b>!=</b></code> <i>RelationalExpressionNoIn<br>EqualityExpressionNoIn </i><code><b>===</b></code> <i>RelationalExpressionNoIn<br>EqualityExpressionNoIn </i><code><b>!==</b></code> <i>RelationalExpressionNoIn</i></p>
+	<p class="keep">
+	<i>BitwiseANDExpression </i><b>:</b><i class="see">See <a href="x11.html#x11.10">11.10</a></i></p>
+	<p class="def1-btm">
+	<i>EqualityExpression<br>BitwiseANDExpression </i><code><b>&amp;</b></code> <i>EqualityExpression</i></p>
+	<p class="keep">
+	<i>BitwiseANDExpressionNoIn </i><b>:</b><i class="see">See <a href="x11.html#x11.10">11.10</a></i></p>
+	<p class="def1-btm">
+	<i>EqualityExpressionNoIn<br>BitwiseANDExpressionNoIn </i><code><b>&amp;</b></code> <i>EqualityExpressionNoIn</i></p>
+	<p class="keep">
+	<i>BitwiseXORExpression </i><b>:</b><i class="see">See <a href="x11.html#x11.10">11.10</a></i></p>
+	<p class="def1-btm">
+	<i>BitwiseANDExpression<br>BitwiseXORExpression </i><code><b>^</b></code> <i>BitwiseANDExpression</i></p>
+	<p class="keep">
+	<i>BitwiseXORExpressionNoIn </i><b>:</b><i class="see">See <a href="x11.html#x11.10">11.10</a></i></p>
+	<p class="def1-btm">
+	<i>BitwiseANDExpressionNoIn<br>BitwiseXORExpressionNoIn </i><code><b>^</b></code> <i>BitwiseANDExpressionNoIn</i></p>
+	<p class="keep">
+	<i>BitwiseORExpression </i><b>:</b><i class="see">See <a href="x11.html#x11.10">11.10</a></i></p>
+	<p class="def1-btm">
+	<i>BitwiseXORExpression<br>BitwiseORExpression </i><code><b>|</b></code> <i>BitwiseXORExpression</i></p>
+	<p class="keep">
+	<i>BitwiseORExpressionNoIn </i><b>:</b><i class="see">See <a href="x11.html#x11.10">11.10</a></i></p>
+	<p class="def1-btm">
+	<i>BitwiseXORExpressionNoIn<br>BitwiseORExpressionNoIn </i><code><b>|</b></code> <i>BitwiseXORExpressionNoIn</i></p>
+	<p class="keep">
+	<i>LogicalANDExpression </i><b>:</b><i class="see">See <a href="x11.html#x11.11">11.11</a></i></p>
+	<p class="def1-btm">
+	<i>BitwiseORExpression<br>LogicalANDExpression </i><code><b>&amp;&amp;</b></code> <i>BitwiseORExpression</i></p>
+	<p class="keep">
+	<i>LogicalANDExpressionNoIn </i><b>:</b><i class="see">See <a href="x11.html#x11.11">11.11</a></i></p>
+	<p class="def1-btm">
+	<i>BitwiseORExpressionNoIn<br>LogicalANDExpressionNoIn </i><code><b>&amp;&amp;</b></code> <i>BitwiseORExpressionNoIn</i></p>
+	<p class="keep">
+	<i>LogicalORExpression </i><b>:</b><i class="see">See <a href="x11.html#x11.11">11.11</a></i></p>
+	<p class="def1-btm">
+	<i>LogicalANDExpression<br>LogicalORExpression </i><code><b>||</b></code> <i>LogicalANDExpression</i></p>
+	<p class="keep">
+	<i>LogicalORExpressionNoIn </i><b>:</b><i class="see">See <a href="x11.html#x11.11">11.11</a></i></p>
+	<p class="def1-btm">
+	<i>LogicalANDExpressionNoIn<br>LogicalORExpressionNoIn </i><code><b>||</b></code> <i>LogicalANDExpressionNoIn</i></p>
+	<p class="keep">
+	<i>ConditionalExpression </i><b>:</b><i class="see">See <a href="x11.html#x11.12">11.12</a></i></p>
+	<p class="def1-btm">
+	<i>LogicalORExpression<br>LogicalORExpression</i><code><b>
+	?</b></code> <i>AssignmentExpression </i><code><b>:</b></code> <i>AssignmentExpression</i></p>
+	<p class="keep">
+	<i>ConditionalExpressionNoIn </i><b>:</b><i class="see">See <a href="x11.html#x11.12">11.12</a></i></p>
+	<p class="def1-btm">
+	<i>LogicalORExpressionNoIn<br>LogicalORExpressionNoIn</i><code><b>
+	?</b></code> <i>AssignmentExpressionNoIn </i><code><b>:</b></code> <i>AssignmentExpressionNoIn</i></p>
+	<p class="keep">
+	<i>AssignmentExpression </i><b>:</b><i class="see">See <a href="x11.html#x11.13">11.13</a></i></p>
+	<p class="def1-btm">
+	<i>ConditionalExpression<br>LeftHandSideExpression
+	AssignmentOperator AssignmentExpression</i></p>
+	<p class="keep">
+	<i>AssignmentExpressionNoIn </i><b>:</b><i class="see">See <a href="x11.html#x11.13">11.13</a></i></p>
+	<p class="def1-btm">
+	<i>ConditionalExpressionNoIn<br>LeftHandSideExpression
+	AssignmentOperator AssignmentExpressionNoIn</i></p>
+	<p class="keep">
+	<i>AssignmentOperator </i><b>:</b><i><b>
+	</b></i><b>one
+	of</b><i class="see">See <a href="x11.html#x11.13">11.13</a></i></p>
+	<dl><dd>
+		<table width="616" border="0" cellpadding="3" cellspacing="0"><colgroup><col width="56"><col width="44"><col width="44"><col width="44"><col width="44"><col width="44"><col width="44"><col width="44"><col width="44"><col width="44"><col width="44"><col width="44"></colgroup><tbody><tr valign="TOP"><td width="56" height="13">
+					<p class="sm-btm">
+					<code><b>=</b></code></p>
+				</td>
+				<td width="44">
+					<p class="sm-btm">
+					<code><b>*=</b></code></p>
+				</td>
+				<td width="44">
+					<p class="sm-btm">
+					<code><b>/=</b></code></p>
+				</td>
+				<td width="44">
+					<p class="sm-btm">
+					<code><b>%=</b></code></p>
+				</td>
+				<td width="44">
+					<p class="sm-btm">
+					<code><b>+=</b></code></p>
+				</td>
+				<td width="44">
+					<p class="sm-btm">
+					<code><b>-=</b></code></p>
+				</td>
+				<td width="44">
+					<p class="sm-btm">
+					<code><b>&lt;&lt;=</b></code></p>
+				</td>
+				<td width="44">
+					<p class="sm-btm">
+					<code><b>&gt;&gt;=</b></code></p>
+				</td>
+				<td width="44">
+					<p class="sm-btm">
+					<code><b>&gt;&gt;&gt;=</b></code></p>
+				</td>
+				<td width="44">
+					<p class="sm-btm">
+					<code><b>&amp;=</b></code></p>
+				</td>
+				<td width="44">
+					<p class="sm-btm">
+					<code><b>^=</b></code></p>
+				</td>
+				<td width="44">
+					<p class="sm-btm">
+					<code><b>|=</b></code></p>
+				</td>
+			</tr></tbody></table></dd></dl><p class="keep">
+	<i>Expression </i><b>:</b><i class="see">See <a href="x11.html#x11.14">11.14</a></i></p>
+	<p class="def1-btm">
+	<i>AssignmentExpression<br>Expression </i><code><b>,</b></code> <i>AssignmentExpression</i></p>
+	<p class="keep">
+	<i>ExpressionNoIn </i><b>:</b><i class="see">See <a href="x11.html#x11.14">11.14</a></i></p>
+	<p class="def1-btm">
+	<i>AssignmentExpressionNoIn<br>ExpressionNoIn </i><code><b>,</b></code> <i>AssignmentExpressionNoIn</i></p>
+	<h3 id="A.4">A.4 Statements <a href="#A.4">#</a> <a href="#A.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="keep">
+	<i>Statement </i><b>:</b><i class="see">See <a href="x12.html#x12">clause 12</a></i></p>
+	<p class="def1-btm">
+	<i>Block<br>VariableStatement<br>EmptyStatement<br>ExpressionStatement<br>IfStatement<br>IterationStatement<br>ContinueStatement<br>BreakStatement<br>ReturnStatement<br>WithStatement<br>LabelledStatement<br>SwitchStatement<br>ThrowStatement<br>TryStatement<br>DebuggerStatement</i></p>
+	<p class="keep">
+	<i>Block </i><b>:</b><i class="see">See <a href="x12.html#x12.1">12.1</a></i></p>
+	<p class="def1-btm">
+	<code><b>{</b></code> <i>StatementList</i><sub>opt</sub><code><b>}</b></code></p>
+	<p class="keep">
+	<i>StatementList </i><b>:</b><i class="see">See <a href="x12.html#x12.1">12.1</a></i></p>
+	<p class="def1-btm">
+	<i>Statement<br>StatementList
+	Statement</i></p>
+	<p class="keep">
+	<i>VariableStatement </i><b>:</b><i class="see">See <a href="x12.html#x12.2">12.2</a></i></p>
+	<p class="def1-btm">
+	<code><b>var</b></code> <i>VariableDeclarationList </i><code><b>;</b></code></p>
+	<p class="keep">
+	<i>VariableDeclarationList </i><b>:</b><i class="see">See <a href="x12.html#x12.2">12.2</a></i></p>
+	<p class="def1-btm">
+	<i>VariableDeclaration<br>VariableDeclarationList </i><code><b>,</b></code> <i>VariableDeclaration</i></p>
+	<p class="keep">
+	<i>VariableDeclarationListNoIn </i><b>:</b><i class="see">See <a href="x12.html#x12.2">12.2</a></i></p>
+	<p class="def1-btm">
+	<i>VariableDeclarationNoIn<br>VariableDeclarationListNoIn </i><code><b>,</b></code> <i>VariableDeclarationNoIn</i></p>
+	<p class="keep">
+	<i>VariableDeclaration </i><b>:</b><i class="see">See <a href="x12.html#x12.2">12.2</a></i></p>
+	<p class="def1-btm">
+	<i>Identifier
+	Initialiser</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>VariableDeclarationNoIn </i><b>:</b><i class="see">See <a href="x12.html#x12.2">12.2</a></i></p>
+	<p class="def1-btm">
+	<i>Identifier
+	InitialiserNoIn</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>Initialiser </i><b>:</b><i class="see">See <a href="x12.html#x12.2">12.2</a></i></p>
+	<p class="def1-btm">
+	<code><b>=</b></code> <i>AssignmentExpression</i></p>
+	<p class="keep">
+	<i>InitialiserNoIn </i><b>:</b><i class="see">See <a href="x12.html#x12.2">12.2</a></i></p>
+	<p class="def1-btm">
+	<code><b>=</b></code> <i>AssignmentExpressionNoIn</i></p>
+	<p class="keep">
+	<i>EmptyStatement </i><b>:</b><i class="see">See <a href="x12.html#x12.3">12.3</a></i></p>
+	<p class="def1-btm">
+	<code><b>;</b></code></p>
+	<p class="keep">
+	<i>ExpressionStatement </i><b>:</b><i class="see">See <a href="x12.html#x12.4">12.4</a></i></p>
+	<p class="def1-btm">
+	[<a href="x5.html#lookahead-not-in">lookahead
+	<span class="symbol">&#8713;</span></a>
+	{<code><b>{</b></code>,<code><b>
+	function</b></code>}]<i>Expression </i><code><b>;</b></code></p>
+	<p class="keep">
+	<i>IfStatement </i><b>:</b><i class="see">See <a href="x12.html#x12.5">12.5</a></i></p>
+	<p class="def1-btm">
+	<code><b>if</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement  </i><code><b>else</b></code> <i>Statement<br></i><code><b>if</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement</i></p>
+	<p class="keep">
+	<i>IterationStatement </i><b>:</b><i class="see">See <a href="x12.html#x12.6">12.6</a></i></p>
+	<p class="def1-btm">
+	<code><b>do
+	</b></code> <i>Statement</i><code><b>
+	while</b></code> <i> </i><code><b>(</b></code> <i>Expression </i><code><b>);</b></code> <i><br></i><code><b>while</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement<br></i><code><b>for</b></code> <code><b>(</b></code> <i>ExpressionNoIn</i><sub>opt</sub><code><b>;</b></code> <i>Expression</i><sub>opt</sub><code><b>;</b></code> <i>Expression</i><sub>opt</sub><code><b>)</b></code> <i>Statement<br></i><code><b>for</b></code> <code><b>(</b></code> <code><b>var</b></code> <i>VariableDeclarationListNoIn</i><code><b>;</b></code> <i>Expression</i><sub>opt</sub><code><b>;</b></code> <i>Expression</i><sub>opt</sub><code><b>)</b></code> <i>Statement<br></i><code><b>for</b></code> <code><b>(</b></code> <i>LeftHandSideExpression </i><code><b>in</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement<br></i><code><b>for</b></code> <code><b>(</b></code> <code><b>var</b></code> <i>VariableDeclarationNoIn </i><code><b>in</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement</i></p>
+	<p class="keep">
+	<i>ContinueStatement </i><b>:</b><i class="see">See <a href="x12.html#x12.7">12.7</a></i></p>
+	<p class="def1-btm">
+	<code><b>continue</b></code> <i><b>
+	</b></i>[no<i>LineTerminator </i>here]<i>Identifier</i><sub>opt</sub><code><b>;</b></code></p>
+	<p class="keep">
+	<i>BreakStatement </i><b>:</b><i class="see">See <a href="x12.html#x12.8">12.8</a></i></p>
+	<p class="def1-btm">
+	<code><b>break
+	</b></code>[no<i>LineTerminator </i>here]<i>Identifier</i><sub>opt</sub><code><b>;</b></code></p>
+	<p class="keep">
+	<i>ReturnStatement </i><b>:</b><i class="see">See <a href="x12.html#x12.9">12.9</a></i></p>
+	<p class="def1-btm">
+	<code><b>return
+	</b></code>[no<i>LineTerminator </i>here]<i>Expression</i><sub>opt</sub><code><b>;</b></code></p>
+	<p class="keep">
+	<i>WithStatement </i><b>:</b><i class="see">See <a href="x12.html#x12.10">12.10</a></i></p>
+	<p class="def1-btm">
+	<code><b>with</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement</i></p>
+	<p class="keep">
+	<i>SwitchStatement </i><b>:</b><i class="see">See <a href="x12.html#x12.11">12.11</a></i></p>
+	<p class="def1-btm">
+	<code><b>switch</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>CaseBlock</i></p>
+	<p class="keep">
+	<i>CaseBlock </i><b>:</b><i class="see">See <a href="x12.html#x12.11">12.11</a></i></p>
+	<p class="def1-btm">
+	<code><b>{</b></code> <i>CaseClauses</i><sub>opt</sub><code><b>}</b></code> <i><br></i><code><b>{</b></code> <i>CaseClauses</i><sub>opt</sub><i>DefaultClause CaseClauses</i><sub>opt</sub><code><b>}</b></code></p>
+	<p class="keep">
+	<i>CaseClauses </i><b>:</b><i class="see">See <a href="x12.html#x12.11">12.11</a></i></p>
+	<p class="def1-btm">
+	<i>CaseClause<br>CaseClauses
+	CaseClause</i></p>
+	<p class="keep">
+	<i>CaseClause </i><b>:</b><i class="see">See <a href="x12.html#x12.11">12.11</a></i></p>
+	<p class="def1-btm">
+	<code><b>case</b></code> <i>Expression </i><code><b>:</b></code> <i>StatementList</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>DefaultClause </i><b>:</b><i class="see">See <a href="x12.html#x12.11">12.11</a></i></p>
+	<p class="def1-btm">
+	<code><b>default</b></code> <code><b>:</b></code> <i>StatementList</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>LabelledStatement </i><b>:</b><i class="see">See <a href="x12.html#x12.12">12.12</a></i></p>
+	<p class="def1-btm">
+	<i>Identifier </i><code><b>:</b></code> <i>Statement</i></p>
+	<p class="keep">
+	<i>ThrowStatement </i><b>:</b><i class="see">See <a href="x12.html#x12.13">12.13</a></i></p>
+	<p class="def1-btm">
+	<code><b>throw
+	</b></code>[no<i>LineTerminator </i>here]<code>
+	</code><i>Expression </i><code><b>;</b></code></p>
+	<p class="keep">
+	<i>TryStatement </i><b>:</b><i class="see">See <a href="x12.html#x12.14">12.14</a></i></p>
+	<p class="def1-btm">
+	<code><b>try</b></code> <i>Block Catch<sub><br></sub></i><code><b>try</b></code> <i>Block Finally<sub><br></sub></i><code><b>try</b></code> <i>Block Catch Finally</i></p>
+	<p class="keep">
+	<i>Catch </i><b>:</b><i class="see">See <a href="x12.html#x12.14">12.14</a></i></p>
+	<p class="def1-btm">
+	<code><b>catch</b></code> <code><b>(
+	</b></code> <i>Identifier </i><code><b>)</b></code> <i>Block</i></p>
+	<p class="keep">
+	<i>Finally </i><b>:</b><i class="see">See <a href="x12.html#x12.14">12.14</a></i></p>
+	<p class="def1-btm">
+	<code><b>finally</b></code> <i>Block</i></p>
+	<p class="keep">
+	<i>DebuggerStatement </i><b>:</b><i class="see">See <a href="x12.html#x12.15">12.15</a></i></p>
+	<p class="def1-btm">
+	<code><b>debugger</b></code> <code><b>;</b></code></p>
+	<h3 id="A.5">A.5 Functions and Programs <a href="#A.5">#</a> <a href="#A.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="keep">
+	<i>FunctionDeclaration </i><b>:</b><i class="see">See <a href="x13.html#x13">clause 13</a></i></p>
+	<p class="def1-btm">
+	<code><b>function</b></code> <i>Identifier </i><code><b>(</b></code> <i>FormalParameterList</i><sub>opt</sub><code><b>)</b></code> <code><b>{</b></code> <i>FunctionBody </i><code><b>}</b></code></p>
+	<p class="keep">
+	<i>FunctionExpression </i><b>:</b><i class="see">See <a href="x13.html#x13">clause 13</a></i></p>
+	<p class="def1-btm">
+	<code><b>function</b></code> <i>Identifier</i><sub>opt</sub><code><b>(</b></code> <i>FormalParameterList</i><sub>opt</sub><code><b>)</b></code> <code><b>{</b></code> <i>FunctionBody </i><code><b>}</b></code></p>
+	<p class="keep">
+	<i>FormalParameterList </i><b>:</b><i class="see">See <a href="x13.html#x13">clause 13</a></i></p>
+	<p class="def1-btm">
+	<i>Identifier<br>FormalParameterList </i><code><b>,</b></code> <i>Identifier</i></p>
+	<p class="keep">
+	<i>FunctionBody </i><b>:</b><i class="see">See <a href="x13.html#x13">clause 13</a></i></p>
+	<p class="def1-btm">
+	<i>SourceElements</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>Program </i><b>:</b><i class="see">See <a href="x14.html#x14">clause 14</a></i></p>
+	<p class="def1-btm">
+	<i>SourceElements</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>SourceElements </i><b>:</b><i class="see">See <a href="x14.html#x14">clause 14</a></i></p>
+	<p class="def1-btm">
+	<i>SourceElement<br>SourceElements
+	SourceElement</i></p>
+	<p class="keep">
+	<i>SourceElement </i><b>:</b><i class="see">See <a href="x14.html#x14">clause 14</a></i></p>
+	<p class="def1-btm">
+	<i>Statement<br>FunctionDeclaration</i></p>
+	<h3 id="A.6">A.6 Universal Resource Identifier Character Classes <a href="#A.6">#</a> <a href="#A.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="keep">
+	<i>uri </i><b>:::</b><i class="see">See <a href="x15.html#x15.1.3">15.1.3</a></i></p>
+	<p class="def1-btm">
+	<i>uriCharacters</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>uriCharacters </i><b>:::</b><i class="see">See <a href="x15.html#x15.1.3">15.1.3</a></i></p>
+	<p class="def1-btm">
+	<i>uriCharacter
+	uriCharacters</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>uriCharacter </i><b>:::</b><i class="see">See <a href="x15.html#x15.1.3">15.1.3</a></i></p>
+	<p class="def1-btm">
+	<i>uriReserved<br>uriUnescaped<br>uriEscaped</i></p>
+	<p class="keep">
+	<i>uriReserved </i><b>:::</b>
+	<b>one
+	of</b><i class="see">See <a href="x15.html#x15.1.3">15.1.3</a></i></p>
+	<p class="def1-btm">
+	<code><b>;
+	 /  ?  :  @  &amp;  =  +  $  ,</b></code></p>
+	<p class="keep">
+	<i>uriUnescaped </i><b>:::</b><i class="see">See <a href="x15.html#x15.1.3">15.1.3</a></i></p>
+	<p class="def1-btm">
+	<i>uriAlpha<br>DecimalDigit<br>uriMark</i></p>
+	<p class="keep">
+	<i>uriEscaped </i><b>:::</b><i class="see">See <a href="x15.html#x15.1.3">15.1.3</a></i></p>
+	<p class="def1-btm">
+	<code><b>%</b></code> <i>HexDigit HexDigit</i></p>
+	<p class="keep">
+	<i>uriAlpha </i><b>:::</b>
+	<b>one
+	of</b><i class="see">See <a href="x15.html#x15.1.3">15.1.3</a></i></p>
+	<p class="def1-btm">
+	<code><b>a
+	 b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x
+	 y  z<br>A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q  R  S  T 
+	U  V  W  X  Y  Z</b></code></p>
+	<p class="keep">
+	<i>uriMark </i><b>:::</b>
+	<b>one
+	of</b><i class="see">See <a href="x15.html#x15.1.3">15.1.3</a></i></p>
+	<p class="def1-btm">
+	<code><b>-
+	 _  .  !  ~  *  &#8216;  (  )</b></code></p>
+	<h3 id="A.7">A.7 Regular Expressions <a href="#A.7">#</a> <a href="#A.7-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="keep">
+	<i>Pattern </i><b>::</b><i class="see">See <a href="x15.html#x15.10.1">15.10.1</a></i></p>
+	<p class="def1-btm">
+	<i>Disjunction</i></p>
+	<p class="keep">
+	<i>Disjunction </i><b>::</b><i class="see">See <a href="x15.html#x15.10.1">15.10.1</a></i></p>
+	<p class="def1-btm">
+	<i>Alternative<br>
+	Alternative </i><code><b>|</b></code> <i>Disjunction</i></p>
+	<p class="keep">
+	<i>Alternative </i><b>::</b><i class="see">See <a href="x15.html#x15.10.1">15.10.1</a></i></p>
+	<p class="def1-btm">
+	[empty]<i><br>Alternative
+	Term</i></p>
+	<p class="keep">
+	<i>Term </i><b>::</b><i class="see">See <a href="x15.html#x15.10.1">15.10.1</a></i></p>
+	<p class="def1-btm">
+	<i>Assertion<br>Atom<br>Atom
+	Quantifier</i></p>
+	<p class="keep">
+	<i>Assertion </i><b>::</b><i class="see">See <a href="x15.html#x15.10.1">15.10.1</a></i></p>
+	<p class="def1-btm">
+	<code><b>^</b></code> <i><br></i><code><b>$</b></code> <i><br></i><code><b>\
+	b</b></code> <i><br></i><code><b>\
+	B</b></code> <i><br></i><code><b>(</b></code> <i><b>
+	</b></i><code><b>?</b></code> <i><b>
+	</b></i><code><b>=</b></code> <i><b>
+	</b>Disjunction </i><code><b>)</b></code> <i><br></i><code><b>(</b></code> <i><b>
+	</b></i><code><b>?</b></code> <i><b>
+	</b></i><code><b>!</b></code> <i><b>
+	</b>Disjunction </i><code><b>)</b></code></p>
+	<p class="keep">
+	<i>Quantifier </i><b>::</b><i class="see">See <a href="x15.html#x15.10.1">15.10.1</a></i></p>
+	<p class="def1-btm">
+	<i>QuantifierPrefix<br>QuantifierPrefix</i><code><b>
+	?</b></code></p>
+	<p class="keep">
+	<i>QuantifierPrefix </i><b>::</b><i class="see">See <a href="x15.html#x15.10.1">15.10.1</a></i></p>
+	<p class="def1-btm">
+	<code><b>*<br>+</b></code> <i><br></i><code><b>?</b></code> <i><br></i><code><b>{</b></code> <i>DecimalDigits </i><code><b>}</b></code> <i><br></i><code><b>{</b></code> <i>DecimalDigits<b>
+	</b></i><code><b>,</b></code> <i><b>
+	</b></i><code><b>}</b></code> <i><br></i><code><b>{</b></code> <i>DecimalDigits<b>
+	</b></i><code><b>,</b></code> <i>DecimalDigits </i><code><b>}</b></code></p>
+	<p class="keep">
+	<i>Atom </i><b>::</b><i class="see">See <a href="x15.html#x15.10.1">15.10.1</a></i></p>
+	<p class="def1-btm">
+	<i>PatternCharacter<br></i><code>.</code><i><br></i><code><b>\
+	</b></code> <i>AtomEscape<br>CharacterClass</i><code><b><br>(</b></code> <i><b>
+	</b>Disjunction </i><code><b>)</b></code> <i><br></i><code><b>(</b></code><b>
+	</b><code><b>?</b></code><b>
+	</b><code><b>:</b></code> <i><b>
+	</b>Disjunction </i><code><b>)</b></code></p>
+	<p class="keep">
+	PatternCharacter :: SourceCharacter <b>but
+	not</b><i> </i><b>any
+	of:</b><i class="see">See <a href="x15.html#x15.10.1">15.10.1</a></i></p>
+	<p class="def1-btm">
+	<code><b>^
+	 $  \  .  *  +  ?  (  )  [  ]  {  }  |</b></code></p>
+	<p class="keep">
+	<i>AtomEscape </i><b>::</b><i class="see">See <a href="x15.html#x15.10.1">15.10.1</a></i></p>
+	<p class="def1-btm">
+	<i>DecimalEscape<br>CharacterEscape<br>CharacterClassEscape</i></p>
+	<p class="keep">
+	<i>CharacterEscape </i><b>::</b><i class="see">See <a href="x15.html#x15.10.1">15.10.1</a></i></p>
+	<p class="def1-btm">
+	<i>ControlEscape<br></i><code><b>c</b></code> <i>ControlLetter<br>HexEscapeSequence<br>UnicodeEscapeSequence<br>IdentityEscape</i></p>
+	<p class="keep">
+	<i>ControlEscape </i><b>::</b> <b>one
+	of</b><i class="see">See <a href="x15.html#x15.10.1">15.10.1</a></i></p>
+	<p class="def1-btm">
+	<code><b>f
+	 n  r  t  v</b></code></p>
+	<p class="keep">
+	<i>ControlLetter </i><b>::</b> <b>one
+	of</b><i class="see">See <a href="x15.html#x15.10.1">15.10.1</a></i></p>
+	<p class="def1-btm">
+	<code><b>a
+	 b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x
+	 y  z<br>A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q  R  S  T 
+	U  V  W  X  Y  Z</b></code></p>
+	<p class="keep">
+	<i>IdentityEscape </i><b>::</b><i class="see">See <a href="x15.html#x15.10.1">15.10.1</a></i></p>
+	<p class="def1-btm">
+	<i>SourceCharacter </i><b>but
+	not</b><i><b>
+	</b>IdentifierPart<br></i>&lt;ZWJ&gt;<br>&lt;ZWNJ&gt;</p>
+	<p class="keep">
+	<i>DecimalEscape </i><b>::</b><i class="see">See <a href="x15.html#x15.10.1">15.10.1</a></i></p>
+	<p class="def1-btm">
+	<i>DecimalIntegerLiteral </i>[<a href="x5.html#lookahead-not-in">lookahead
+	<span class="symbol">&#8713;</span></a>
+	<i>DecimalDigit</i>]</p>
+	<p class="def1-btm">
+	</p>
+	<p class="keep">
+	<i>CharacterClassEscape </i><b>::</b><i><b>
+	 </b></i><b>one
+	of</b><i class="see">See <a href="x15.html#x15.10.1">15.10.1</a></i></p>
+	<p class="def1-btm">
+	<code><b>d
+	 D  s  S  w  W</b></code></p>
+	<p class="keep">
+	<i>CharacterClass </i><b>::</b><i class="see">See <a href="x15.html#x15.10.1">15.10.1</a></i></p>
+	<p class="def1-btm">
+	<code><b>[
+	</b></code>[<a href="x5.html#lookahead-not-in">lookahead
+	<span class="symbol">&#8713;</span></a>
+	{<code><b>^</b></code>}]<code><b>
+	</b></code> <i>ClassRanges</i><code><b>
+	]</b></code> <i><br></i><code><b>[
+	^</b></code> <i>ClassRanges</i><code><b>
+	]</b></code></p>
+	<p class="keep">
+	<i>ClassRanges </i><b>::</b><i class="see">See <a href="x15.html#x15.10.1">15.10.1</a></i></p>
+	<p class="def1-btm">
+	[empty]<i><br>NonemptyClassRanges</i></p>
+	<p class="keep">
+	<i>NonemptyClassRanges </i><b>::</b><i class="see">See <a href="x15.html#x15.10.1">15.10.1</a></i></p>
+	<p class="def1-btm">
+	<i>ClassAtom<br>ClassAtom
+	NonemptyClassRangesNoDash<br>ClassAtom</i><code><b>
+	&#8211;</b></code> <i>ClassAtom ClassRanges</i></p>
+	<p class="keep">
+	<i>NonemptyClassRangesNoDash </i><b>::</b><i class="see">See <a href="x15.html#x15.10.1">15.10.1</a></i></p>
+	<p class="def1-btm">
+	<i>ClassAtom<br>ClassAtomNoDash
+	NonemptyClassRangesNoDash<br>ClassAtomNoDash</i><code><b>
+	&#8211;</b></code> <i>ClassAtom ClassRanges</i></p>
+	<p class="keep">
+	<i>ClassAtom </i><b>::</b><i class="see">See <a href="x15.html#x15.10.1">15.10.1</a></i></p>
+	<p class="def1-btm">
+	<code><b>-</b></code> <i><br>ClassAtomNoDash</i></p>
+	<p class="keep">
+	<i>ClassAtomNoDash </i><b>::</b><i class="see">See <a href="x15.html#x15.10.1">15.10.1</a></i></p>
+	<p class="def1-btm">
+	<i>SourceCharacter </i><b>but
+	not</b><i> </i><b>one
+	of</b><i> </i><code><b>\</b></code> <b>or</b> <code><b>]</b></code><b>
+	or</b><i> </i><code><b>-</b></code> <i><br></i><code>\
+	</code><i>ClassEscape</i></p>
+	<p class="keep">
+	<i>ClassEscape </i><b>::</b><i class="see">See <a href="x15.html#x15.10.1">15.10.1</a></i></p>
+	<p class="def1-btm">
+	<i>DecimalEscape<br></i><code><b>b</b></code> <i><br>CharacterEscape</i><code><b><br></b></code> <i>CharacterClassEscape</i></p>
+	<h3 id="A.8">A.8 JSON <a href="#A.8">#</a> <a href="#A.8-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<h4 id="A.8.1">A.8.1 JSON Lexical Grammar <a href="#A.8.1">#</a> <a href="#A.8.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p class="keep">
+	JSONWhiteSpace <b>::</b><i class="see">See <a href="x15.html#x15.12.1.1">15.12.1.1</a></i></p>
+	<p class="def1">
+	<i>&lt;TAB&gt;<br>&lt;CR&gt;<br>&lt;LF&gt;<br>&lt;SP&gt;</i></p>
+	<p class="keep">
+	<i>JSONString </i><b>::</b><i class="see">See <a href="x15.html#x15.12.1.1">15.12.1.1</a></i></p>
+	<p class="def1">
+	<code><b>"
+	</b></code> <i>JSONStringCharacters</i><sub>opt</sub><code><b>"</b></code></p>
+	<p class="keep">
+	<i>JSONStringCharacters </i><b>::</b><i class="see">See <a href="x15.html#x15.12.1.1">15.12.1.1</a></i></p>
+	<p class="def1">
+	<i>JSONStringCharacter
+	JSONStringCharacters</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>JSONStringCharacter </i><b>::</b><i class="see">See <a href="x15.html#x15.12.1.1">15.12.1.1</a></i></p>
+	<p class="def1">
+	<i>SourceCharacter </i><b>but
+	not</b><i> double-quote </i><code><b>"</b></code>  <b>or</b> <i>backslash </i><code><b>\
+	</b></code> <b>or</b> <i>U+0000 <b>thru</b>
+	U+001F</i></p>
+	<p class="def1">
+	<code><b>\</b></code> <i>JSONEscapeSequence</i></p>
+	<p class="keep">
+	<i>JSONEscapeSequence </i><b>::</b><i class="see">See <a href="x15.html#x15.12.1.1">15.12.1.1</a></i></p>
+	<p class="def1">
+	<i>JSONEscapeCharacter</i></p>
+	<p class="def1">
+	<i>UnicodeEscapeSequence </i>
+	</p>
+	<p class="keep">
+	<i>JSONEscapeCharacter </i><b>::</b><i><b>
+	 </b></i><b>one
+	of</b><i class="see">See <a href="x15.html#x15.12.1.1">15.12.1.1</a></i></p>
+	<p class="def1">
+	 <code><b>"
+	/ \ b f n r t</b></code></p>
+	<p class="keep">
+	<i>JSONNumber </i><b>::</b><i class="see">See <a href="x15.html#x15.12.1.1">15.12.1.1</a></i></p>
+	<p class="def1">
+	<code><b>-</b></code><sub>opt</sub><i>DecimalIntegerLiteral JSONFraction</i><sub>opt</sub><i>ExponentPart</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>JSONFraction </i><b>::</b><i class="see">See <a href="x15.html#x15.12.1.1">15.12.1.1</a></i></p>
+	<p class="def1">
+	<code><b>.</b></code> <i>DecimalDigits</i></p>
+	<p class="keep">
+	<i>JSONNullLiteral </i><b>::</b><i class="see">See <a href="x15.html#x15.12.1.1">15.12.1.1</a></i></p>
+	<p class="def1">
+	<i>NullLiteral</i></p>
+	<p class="keep">
+	<i>JSONBooleanLiteral </i><b>::</b><i class="see">See <a href="x15.html#x15.12.1.1">15.12.1.1</a></i></p>
+	<p class="def1">
+	<i>BooleanLiteral</i></p>
+	<h4 id="A.8.2">A.8.2 JSON Syntactic Grammar <a href="#A.8.2">#</a> <a href="#A.8.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p class="keep">
+	<i>JSONText </i><b>:</b><i class="see">See <a href="x15.html#x15.12.1.2">15.12.1.2</a></i></p>
+	<p class="def1">
+	<i>JSONValue</i></p>
+	<p class="keep">
+	<i>JSONValue </i><b>:</b><i class="see">See <a href="x15.html#x15.12.1.2">15.12.1.2</a>	 </i>
+	</p>
+	<p class="def1">
+	<i>JSONNullLiteral<br>JSONBooleanLiteral<br>JSONObject<br>JSONArray<br>JSONString<br>JSONNumber</i></p>
+	<p class="keep">
+	<i>JSONObject </i><b>:</b><i class="see">See <a href="x15.html#x15.12.1.2">15.12.1.2</a></i></p>
+	<p class="def1">
+	<code><b>{
+	}</b></code> <i><br></i><code><b>{</b></code> <i>JSONMemberList </i><code><b>}</b></code></p>
+	<p class="keep">
+	<i>JSONMember </i><b>:</b><i class="see">See <a href="x15.html#x15.12.1.2">15.12.1.2</a></i></p>
+	<p class="def1">
+	<i>JSONString </i><code><b>:</b></code> <i>JSONValue</i></p>
+	<p class="keep">
+	<i>JSONMemberList </i><b>:</b><i class="see">See <a href="x15.html#x15.12.1.2">15.12.1.2</a></i></p>
+	<p class="def1">
+	<i>JSONMember
+	<br>JSONMemberList </i><code><b>,</b></code> <i><b>
+	</b>JSONMember </i>
+	</p>
+	<p class="keep">
+	<i>JSONArray </i><b>:</b><i class="see">See <a href="x15.html#x15.12.1.2">15.12.1.2</a></i></p>
+	<p class="def1">
+	<code><b>[
+	]</b></code> <i><br></i><code><b>[</b></code> <i>JSONElementList</i><code><b>
+	]</b></code></p>
+	<p class="keep">
+	<i>JSONElementList </i><b>:</b><i class="see">See <a href="x15.html#x15.12.1.2">15.12.1.2</a></i></p>
+	<p class="def1">
+	<i>JSONValue<br>JSONElementList</i><code><b>
+	,</b></code> <i> JSONValue</i></p>
+	</body><script src="anno.js"></script></html>

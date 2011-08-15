@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html class="split chapter"><head><meta charset="utf-8"><title>12 Statements # &#9417; &#9402; &#9312; &#9398; &#8212; Annotated ES5</title><link rel="stylesheet" href="style.css"><link rel="shortcut icon" href="favicon.ico"><link href="x11.html" title="11 Expressions " rel="prev">
+  <link href="index.html#contents" title="TOC" rel="index">
+  <link href="x13.html" title="13 Function Definition " rel="next">
+  </head><body><div class="head">
+<h2 id="top">Annotated ECMAScript 5.1 <span id="timestamp"></span></h2>
+<div id="mascot-treehouse">
+	<img id="mascot" align="left" src="js-mascot.svg" alt=""><img id="bubble" src="bubble.svg" alt=""></div>
+<p id="slogan">&#8223;Ex igne vita&#8221;</p>
+<div id="annotations"></div>
+<script src="timestamp.js"></script></div>
+<nav>
+   <a href="x11.html">&#8592; 11 Expressions </a> &#8211;
+   <a href="index.html#contents">TOC</a> &#8211;
+   <a href="x13.html">13 Function Definition  &#8594;</a>
+  <ol class="toc"><li><a href="x12.html#x12" id="x12-toc">12 Statements</a>
+    <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x12.html#x12.1" id="x12.1-toc">12.1 Block</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x12.html#x12.2" id="x12.2-toc">12.2 Variable Statement</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x12.html#x12.2.1" id="x12.2.1-toc">12.2.1 Strict Mode Restrictions</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x12.html#x12.3" id="x12.3-toc">12.3 Empty Statement</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x12.html#x12.4" id="x12.4-toc">12.4 Expression Statement</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x12.html#x12.5" id="x12.5-toc">12.5 The if Statement</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x12.html#x12.6" id="x12.6-toc">12.6 Iteration Statements</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x12.html#x12.6.1" id="x12.6.1-toc">12.6.1 The do-while Statement</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x12.html#x12.6.2" id="x12.6.2-toc">12.6.2 The while Statement</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x12.html#x12.6.3" id="x12.6.3-toc">12.6.3 The for Statement</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x12.html#x12.6.4" id="x12.6.4-toc">12.6.4 The for-in Statement</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x12.html#x12.7" id="x12.7-toc">12.7 The continue Statement</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x12.html#x12.8" id="x12.8-toc">12.8 The break Statement</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x12.html#x12.9" id="x12.9-toc">12.9 The return Statement</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x12.html#x12.10" id="x12.10-toc">12.10 The with Statement</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x12.html#x12.10.1" id="x12.10.1-toc">12.10.1 Strict Mode Restrictions</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x12.html#x12.11" id="x12.11-toc">12.11 The switch Statement</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x12.html#x12.12" id="x12.12-toc">12.12 Labelled Statements</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x12.html#x12.13" id="x12.13-toc">12.13 The throw Statement</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x12.html#x12.14" id="x12.14-toc">12.14 The try Statement</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x12.html#x12.14.1" id="x12.14.1-toc">12.14.1 Strict Mode Restrictions</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x12.html#x12.15" id="x12.15-toc">12.15 The debugger statement</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li></ol></nav>
+
+  <h2 id="x12">12 Statements <a href="#x12">#</a> <a href="#x12-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h2>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>Statement </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>Block<br>VariableStatement<br>EmptyStatement<br>ExpressionStatement<br>IfStatement<br>IterationStatement<br>ContinueStatement<br>BreakStatement<br>ReturnStatement<br>WithStatement<br>LabelledStatement<br>SwitchStatement<br>ThrowStatement<br>TryStatement<br>DebuggerStatement</i></p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	A
+	<i>Statement</i> can be
+	part of a <i>LabelledStatement</i>,
+	which itself can be part of a <i>LabelledStatement</i>,
+	and so on. The labels introduced this way are collectively referred
+	to as the &#8220;current label set&#8221; when describing the semantics of
+	individual statements. A <i>LabelledStatement</i>
+	has no semantic meaning other than the introduction of a label to a
+	<i>label set</i>. The label set of an <i>IterationStatement</i>
+	or a<i> SwitchStatement</i>
+	initially contains the single element <b>empty</b>. The label set of
+	any other statement is initially empty.</p>
+	<p><b class="note">NOTE</b> Several
+	widely used implementations of ECMAScript are known to support the
+	use of FunctionDeclaration
+	as a Statement. However
+	there are significant and irreconcilable variations among the
+	implementations in the semantics applied to such
+	<i>FunctionDeclarations</i>.
+	Because of these irreconcilable difference, the use of a
+	<i>FunctionDeclaration</i>
+	as a <i>Statement</i>
+	results in code that is not reliably portable among implementations.
+	It is recommended that ECMAScript implementations either disallow
+	this usage of <i>FunctionDeclaration</i>
+	or issue a warning when such a usage is encountered. Future editions
+	of ECMAScript may define alternative portable means for declaring
+	functions in a <i>Statement</i>
+	context.</p>
+	<h3 id="x12.1">12.1 Block <a href="#x12.1">#</a> <a href="#x12.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>Block </i><b>:</b></p>
+	<p class="def1-btm">
+	<code><b>{</b></code> <i>StatementList</i><sub>opt</sub><code><b>}</b></code></p>
+	<p class="keep">
+	<i>StatementList </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>Statement<br>StatementList
+	Statement</i></p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	The
+	production <i>Block </i><b>:</b> <code><b>{</b></code> <code><b>}</b></code><b>
+	</b>is evaluated as follows:</p>
+	<ol><li><p>
+		Return
+		(<b>normal</b>, <b>empty</b>, <b>empty</b>).</p>
+	</li></ol><p>
+	The
+	production <i>Block </i><b>:</b> <code><b>{</b></code>
+	<i>StatementList</i> <code><b>}</b></code>is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Return
+		the result of evaluating <i>StatementList</i>.</p>
+	</li></ol><p>
+	The
+	production <i>StatementList </i><b>:</b><i>Statement</i> is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>s</i> be the result of evaluating <i>Statement</i>.</p>
+		</li>
+		<li><p>
+		If
+		an exception was thrown, return (throw,
+		<i>V</i>, empty) where <i>V</i>
+		is the exception. (Execution now proceeds as if no exception were
+		thrown.)</p>
+		</li>
+		<li><p>
+		Return
+		<i>s</i>.</p>
+	</li></ol><p>
+	The
+	production <i>StatementList </i><b>:</b><i>StatementList Statement</i> is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>sl</i> be the result of evaluating <i>StatementList</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>sl</i> is an <a href="x8.html#x8.9">abrupt completion</a>, return <i>sl</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>s</i> be the result of evaluating <i>Statement</i>.</p>
+		</li>
+		<li><p>
+		If
+		an exception was thrown, return (throw,
+		<i>V</i>, empty) where <i>V</i>
+		is the exception. (Execution now proceeds as if no exception were
+		thrown.)</p>
+		</li>
+		<li><p>
+		If
+		<i>s</i>.value is empty, let
+		<i>V</i> = <i>sl</i>.value, otherwise let <i>V</i> = <i>s</i>.value.</p>
+		</li>
+		<li><p>
+		Return
+		(<i>s</i>.type, <i>V</i>, <i>s</i>.target).</p>
+	</li></ol><h3 id="x12.2">12.2 Variable Statement <a href="#x12.2">#</a> <a href="#x12.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>VariableStatement </i><b>:</b></p>
+	<p class="def1-btm">
+	<code><b>var</b></code> <i>VariableDeclarationList </i><code><b>;</b></code></p>
+	<p class="keep">
+	<i>VariableDeclarationList </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>VariableDeclaration<br>VariableDeclarationList </i><code><b>,</b></code> <i>VariableDeclaration</i></p>
+	<p class="keep">
+	<i>VariableDeclarationListNoIn </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>VariableDeclarationNoIn<br>VariableDeclarationListNoIn </i><code><b>,</b></code> <i>VariableDeclarationNoIn</i></p>
+	<p class="keep">
+	<i>VariableDeclaration </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>Identifier
+	Initialiser</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>VariableDeclarationNoIn </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>Identifier
+	InitialiserNoIn</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>Initialiser </i><b>:</b></p>
+	<p class="def1-btm">
+	<code><b>=</b></code> <i>AssignmentExpression</i></p>
+	<p class="keep">
+	<i>InitialiserNoIn </i><b>:</b></p>
+	<p class="def1-btm">
+	<code><b>=</b></code> <i>AssignmentExpressionNoIn</i></p>
+	<p>
+	A
+	variable statement declares variables that are created as defined in
+	<a href="x10.html#x10.5">10.5</a>. Variables are initialised to <b>undefined</b> when created. A
+	variable with an <i>Initialiser</i>
+	is assigned the value of its <i>AssignmentExpression</i>
+	when the <i>VariableStatement</i>
+	is executed, not when the variable is created.</p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	The
+	production <i>VariableStatement </i><b>:</b><i> </i><code><b>var</b></code> <i>VariableDeclarationList </i><code><b>;</b></code>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Evaluate
+		<i>VariableDeclarationList</i>.</p>
+		</li>
+		<li><p>
+		Return
+		(normal, empty,
+		empty).</p>
+	</li></ol><p>
+	The
+	production <i>VariableDeclarationList</i>
+	<b>:</b> <i>VariableDeclaration</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Evaluate
+		<i>VariableDeclaration</i>.</p>
+	</li></ol><p>
+	The
+	production <i>VariableDeclarationList</i>
+	<b>:</b> <i>VariableDeclarationList</i>
+	<code><b>,</b></code>
+	<i>VariableDeclaration</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Evaluate
+		<i>VariableDeclarationList</i>.</p>
+		</li>
+		<li><p>
+		Evaluate
+		<i>VariableDeclaration</i>.</p>
+	</li></ol><p>
+	The
+	production <i>VariableDeclaration </i><b>:</b> <i>Identifier</i> is evaluated as follows:</p>
+	<ol><li><p>
+		Return
+		a String value containing the same sequence of characters as in the
+		<i>Identifier</i>.</p>
+	</li></ol><p>
+	The
+	production <i>VariableDeclaration</i>
+	<b>:</b> <i>Identifier
+	Initialiser</i> is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>lhs</i> be the result of evaluating <i>Identifier</i> as
+		described in <a href="x11.html#x11.1.2">11.1.2</a>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>rhs </i>be the result of evaluating <i>Initialiser</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>value </i>be <a href="x8.html#x8.7.1">GetValue</a>(<i>rhs</i>).</p>
+		</li>
+		<li><p>
+		Call
+		<a href="x8.html#x8.7.2">PutValue</a>(<i>lhs</i>, <i>value</i>).</p>
+		</li>
+		<li><p>
+		Return
+		a String value containing the same sequence of characters as in the
+		<i>Identifier</i>.</p>
+	</li></ol><p><b class="note">NOTE</b> The
+	String value of a <i>VariableDeclaration</i>
+	is used in the evaluation of for-in statements (<a href="#x12.6.4">12.6.4</a>).</p>
+	<p>
+	If a
+	<i>VariableDeclaration</i>
+	is nested within a with statement and the Identifier in the
+	<i>VariableDeclaration</i>
+	is the same as a property name of the <a href="x10.html#x10.2.1.2">binding object</a> of the with
+	statement&#8217;s object <a href="x10.html#x10.2">environment record</a>, then step 4 will assign
+	value to the property instead of to the VariableEnvironment binding
+	of the <i>Identifier</i>.</p>
+	<p>
+	The
+	production <i>Initialiser </i><b>:</b> <code><b>=</b></code> <i>AssignmentExpression</i> is evaluated as follows:</p>
+	<ol><li><p>
+		Return
+		the result of evaluating <i>AssignmentExpression</i>.</p>
+	</li></ol><p>
+	The
+	<i>VariableDeclarationListNoIn</i>,
+	<i>VariableDeclarationNoIn</i>
+	and <i>InitialiserNoIn</i>
+	productions are evaluated in the same manner as the
+	<i>VariableDeclarationList</i>,
+	<i>VariableDeclaration</i>
+	and <i>Initialiser</i>
+	productions except that the contained <i>VariableDeclarationListNoIn</i>,
+	<i>VariableDeclarationNoIn</i>,
+	<i>InitialiserNoIn</i>
+	and <i>AssignmentExpressionNoIn</i>
+	are evaluated instead of the contained <i>VariableDeclarationList</i>,
+	<i>VariableDeclaration</i>,
+	<i>Initialiser</i> and
+	<i>AssignmentExpression</i>,
+	respectively.</p>
+	<h4 id="x12.2.1">12.2.1 Strict Mode Restrictions <a href="#x12.2.1">#</a> <a href="#x12.2.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	It is
+	a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> if a <i>VariableDeclaration</i>
+	or <i>VariableDeclarationNoIn</i>
+	occurs within <a href="x10.html#x10.1.1">strict code</a> and its <i>Identifier</i>
+	is either <code><b>"eval"</b></code><b>
+	or </b><code><b>"arguments"</b></code>.</p>
+	<h3 id="x12.3">12.3 Empty Statement <a href="#x12.3">#</a> <a href="#x12.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>EmptyStatement </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>;</i></p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	The
+	production <i>EmptyStatement </i><b>:</b> <code><b>;</b></code> is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Return
+		(normal,
+		empty, empty).</p>
+	</li></ol><h3 id="x12.4">12.4 Expression Statement <a href="#x12.4">#</a> <a href="#x12.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>ExpressionStatement </i><b>:</b></p>
+	<p class="def1-btm">
+	[<a href="x5.html#lookahead-not-in">lookahead
+	<span class="symbol">&#8713;</span></a>
+	{<code><b>{</b></code>,<code><b>
+	function</b></code>}] <i>Expression </i><code><b>;</b></code></p>
+	<p><b class="note">NOTE</b> An
+	<i>ExpressionStatement</i>
+	cannot start with an opening curly brace because that might make it
+	ambiguous with a <i>Block</i>.
+	Also, an <i>ExpressionStatement</i>
+	cannot start with the <code><b>function</b></code>
+	keyword because that might make it ambiguous with a
+	<i>FunctionDeclaration</i>.</p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	The
+	production <i>ExpressionStatement </i><b>:</b> [<a href="x5.html#lookahead-not-in">lookahead <span class="symbol">&#8713;</span></a>
+	{<code><b>{</b></code><b>,</b><code><b>
+	function</b></code>}]<i>Expression</i><code><b>;</b></code>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>exprRef</i> be the result of evaluating <i>Expression</i>.</p>
+		</li>
+		<li><p>
+		Return
+		(normal, <a href="x8.html#x8.7.1">GetValue</a>(<i>exprRef</i>),
+		empty).</p>
+	</li></ol><h3 id="x12.5">12.5 The if Statement <a href="#x12.5">#</a> <a href="#x12.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>IfStatement </i><b>:</b></p>
+	<p class="def1-btm">
+	<code><b>if</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement  </i><code><b>else</b></code> <i>Statement<br></i><code><b>if</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement</i></p>
+	<p>
+	Each
+	<code><b>else</b></code> for which the
+	choice of associated <code><b>if</b></code>
+	is ambiguous shall be associated with the nearest possible <b>if</b>
+	that would otherwise have no corresponding <code><b>else</b></code>.</p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	The
+	production <i>IfStatement </i><b>:</b> <code><b>if</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement </i><code><b>else</b></code> <i>Statement</i> is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>exprRef</i> be the result of evaluating <i>Expression</i>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x9.html#x9.2">ToBoolean</a>(<a href="x8.html#x8.7.1">GetValue</a>(<i>exprRef</i>)) is <b>true</b>, then</p>
+		<ol><li><p>
+			Return
+			the result of evaluating the first <i>Statement</i>.</p>
+		</li></ol></li>
+		<li><p>
+		Else,</p>
+		<ol><li><p>
+			Return
+			the result of evaluating the second <i>Statement</i>.</p>
+		</li></ol></li></ol><p>
+	The
+	production <i>IfStatement </i><b>:</b> <code><b>if</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement</i> is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>exprRef</i> be the result of evaluating <i>Expression</i>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x9.html#x9.2">ToBoolean</a>(<a href="x8.html#x8.7.1">GetValue</a>(<i>exprRef</i>)) is <b>false</b>, return
+		(normal, empty,
+		empty).</p>
+		</li>
+		<li><p>
+		Return
+		the result of evaluating <i>Statement</i>.</p>
+	</li></ol><h3 id="x12.6">12.6 Iteration Statements <a href="#x12.6">#</a> <a href="#x12.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>IterationStatement </i><b>:</b></p>
+	<p class="def1-btm">
+	<code><b>do
+	</b></code> <i>Statement</i><code><b>
+	while</b></code> <i> </i><code><b>(</b></code> <i>Expression </i><code><b>);</b></code> <i><br></i><code><b>while</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement<br></i><code><b>for</b></code> <code><b>(</b></code> <i>ExpressionNoIn</i><sub>opt</sub><code><b>;</b></code> <i>Expression</i><sub>opt</sub><code><b>;</b></code> <i>Expression</i><sub>opt</sub><code><b>)</b></code> <i>Statement<br></i><code><b>for</b></code> <code><b>(</b></code> <code><b>var</b></code> <i>VariableDeclarationListNoIn</i><code><b>;</b></code> <i>Expression</i><sub>opt</sub><code><b>;</b></code> <i>Expression</i><sub>opt</sub><code><b>)</b></code> <i>Statement<br></i><code><b>for</b></code> <code><b>(</b></code> <i>LeftHandSideExpression </i><code><b>in</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement<br></i><code><b>for</b></code> <code><b>(</b></code> <code><b>var</b></code> <i>VariableDeclarationNoIn </i><code><b>in</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement</i></p>
+	<h4 id="x12.6.1">12.6.1 The do-while Statement <a href="#x12.6.1">#</a> <a href="#x12.6.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production <code><b>do</b></code> <i>Statement </i><code><b>while</b></code> <code><b>(</b></code> <i>Expression </i><code><b>);</b></code>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>V</i> = empty.</p>
+		</li>
+		<li><p>
+		Let
+		<i>iterating</i> be <b>true</b>.</p>
+		</li>
+		<li><p>
+		Repeat,
+		while <i>iterating</i> is <b>true</b></p>
+		<ol><li><p>
+			Let
+			<i>stmt</i> be the result of evaluating <i>Statement</i>.</p>
+			</li>
+			<li><p>
+			If
+			<i>stmt</i>.value is not empty,
+			let <i>V</i> = <i>stmt</i>.value<i>.</i></p>
+			</li>
+			<li><p>
+			If
+			<i>stmt</i>.type is not continue
+			|| <i>stmt</i>.target is not in the current label set, then</p>
+			<ol><li><p>
+				If
+				<i>stmt</i>.type is break
+				and <i>stmt</i>.target is in the current label set, return
+				(normal, <i>V</i>, empty).</p>
+				</li>
+				<li><p>
+				If
+				<i>stmt</i> is an <a href="x8.html#x8.9">abrupt completion</a>, return <i>stmt</i>.</p>
+			</li></ol></li>
+			<li><p>
+			Let
+			<i>exprRef</i> be the result of evaluating <i>Expression</i>.</p>
+			</li>
+			<li><p>
+			If
+			<a href="x9.html#x9.2">ToBoolean</a>(<a href="x8.html#x8.7.1">GetValue</a>(<i>exprRef</i>)) is <b>false</b>, set <i>iterating</i>
+			to <b>false</b>.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		(normal, <i>V</i>, empty);</p>
+	</li></ol><h4 id="x12.6.2">12.6.2 The while Statement <a href="#x12.6.2">#</a> <a href="#x12.6.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production <i>IterationStatement </i><b>:</b><i> </i><code><b>while</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement</i> is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>V</i> = empty.</p>
+		</li>
+		<li><p>
+		Repeat</p>
+		<ol><li><p>
+			Let
+			<i>exprRef</i> be the result of evaluating <i>Expressio</i>n.</p>
+			</li>
+			<li><p>
+			If
+			<a href="x9.html#x9.2">ToBoolean</a>(<a href="x8.html#x8.7.1">GetValue</a>(<i>exprRef</i>)) is <b>false</b>, return
+			(normal, <i>V</i>, empty).</p>
+			</li>
+			<li><p>
+			Let
+			<i>stmt</i> be the result of evaluating <i>Statement</i>.</p>
+			</li>
+			<li><p>
+			If
+			<i>stmt</i>.value is not empty,
+			let <i>V</i> = <i>stmt</i>.value.</p>
+			</li>
+			<li><p>
+			If
+			<i>stmt</i>.type is not continue
+			|| <i>stmt</i>.target is not in the current label set, then</p>
+			<ol><li><p>
+				If
+				<i>stmt</i>.type is break
+				and <i>stmt</i>.target is in the current label set, then</p>
+				<ol><li><p>
+					Return
+					(normal, <i>V</i>, empty).</p>
+				</li></ol></li>
+				<li><p>
+				If
+				<i>stmt</i> is an <a href="x8.html#x8.9">abrupt completion</a>, return <i>stmt</i>.</p>
+			</li></ol></li></ol></li></ol><h4 id="x12.6.3">12.6.3 The for Statement <a href="#x12.6.3">#</a> <a href="#x12.6.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production<br><i>IterationStatement</i>
+	<b>:</b> <code><b>for</b></code>
+	<code><b>(</b></code> <i>ExpressionNoIn</i><sub>opt</sub><code><b>;</b></code> <i>Expression</i><sub>opt</sub><code><b>;</b></code> <i>Expression</i><sub>opt</sub><code><b>)</b></code>
+	<i>Statement</i><br>is
+	evaluated as follows:</p>
+	<ol><li><p>
+		If
+		<i>ExpressionNoIn</i> is present, then.</p>
+		<ol><li><p>
+			Let
+			<i>exprRef</i> be the result of evaluating <i>ExpressionNoIn</i>.</p>
+			</li>
+			<li><p>
+			Call
+			<a href="x8.html#x8.7.1">GetValue</a>(<i>exprRef</i>). (This value is not used.)</p>
+		</li></ol></li>
+		<li><p>
+		Let
+		<i>V</i> = empty.</p>
+		</li>
+		<li><p>
+		Repeat</p>
+		<ol><li><p>
+			If
+			the first <i>Expression</i> is present, then</p>
+			<ol><li><p>
+				Let
+				<i>testExprRef</i> be the result of evaluating the first
+				<i>Expressio</i>n.</p>
+				</li>
+				<li><p>
+				If
+				<a href="x9.html#x9.2">ToBoolean</a>(<a href="x8.html#x8.7.1">GetValue</a>(<i>testExprRef</i>)) is <b>false</b>, return (normal,
+				<i>V</i>, empty).</p>
+			</li></ol></li>
+			<li><p>
+			Let
+			<i>stmt</i> be the result of evaluating <i>Statement</i>.</p>
+			</li>
+			<li><p>
+			If
+			<i>stmt</i>.value is not empty,
+			let <i>V</i> = <i>stmt</i>.value</p>
+			</li>
+			<li><p>
+			If
+			<i>stmt</i>.type is break
+			and <i>stmt</i>.target is in the current label set, return
+			(<b>normal</b>, <i>V</i>, <b>empty</b>).</p>
+			</li>
+			<li><p>
+			If
+			<i>stmt</i>.type is not continue
+			|| <i>stmt</i>.target is not in the current label set, then</p>
+			<ol><li><p>
+				If
+				<i>stmt</i> is an <a href="x8.html#x8.9">abrupt completion</a>, return <i>stmt</i>.</p>
+			</li></ol></li>
+			<li><p>
+			If
+			the second <i>Expression</i> is present, then</p>
+			<ol><li><p>
+				Let
+				<i>incExprRef</i> be the result of evaluating the second
+				<i>Expressio</i>n.</p>
+				</li>
+				<li><p>
+				Call
+				<a href="x8.html#x8.7.1">GetValue</a>(<i>incExprRef</i>). (This value is not used.)</p>
+			</li></ol></li></ol></li></ol><p>
+	The
+	production<br><i>IterationStatement</i>
+	<b>:</b>  <code><b>for</b></code> <code><b>(</b></code>
+	<code><b>var</b></code>
+	<i>VariableDeclarationListNoIn</i>
+	<code><b>;</b></code> <i>Expression</i><sub>opt</sub><code><b>;</b></code>
+	<i>Expression</i><sub>opt</sub><code><b>)</b></code> <i>Statement</i><br>is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Evaluate
+		<i>VariableDeclarationListNoIn</i>.</p>
+		</li>
+		<li><p>
+		Let
+		V = empty.</p>
+		</li>
+		<li><p>
+		Repeat</p>
+		<ol><li><p>
+			If
+			the first <i>Expression</i> is present, then</p>
+			<ol><li><p>
+				Let
+				<i>testExprRef</i> be the result of evaluating the first
+				<i>Expression</i>.</p>
+				</li>
+				<li><p>
+				If
+				<a href="x9.html#x9.2">ToBoolean</a>(<a href="x8.html#x8.7.1">GetValue</a>(<i>testExprRef</i>)) is <b>false</b>, then return
+				(normal, V, empty).</p>
+			</li>
+</ol></li>
+			<li><p>
+			Let
+			<i>stmt</i> be the result of evaluating <i>Statement</i>.</p>
+			</li>
+			<li><p>
+			If
+			<i>stmt</i>.value is not empty,
+			let V = <i>stmt</i>.value.</p>
+			</li>
+			<li><p>
+			If
+			<i>stmt</i>.type is break
+			and <i>stmt</i>.target is in the current label set, return
+			(<b>normal</b>, V, <b>empty</b>).</p>
+			</li>
+			<li><p>
+			If
+			<i>stmt</i>.type is not continue
+			|| <i>stmt</i>.target is not in the current label set, then</p>
+			<ol><li><p>
+				If
+				<i>stmt</i> is an <a href="x8.html#x8.9">abrupt completion</a>, return <i>stmt</i>.</p>
+			</li></ol></li>
+			<li><p>
+			If
+			the second <i>Expression</i> is present, then.</p>
+			<ol><li><p>
+				Let
+				<i>incExprRef</i> be the result of evaluating the second
+				<i>Expression</i>.</p>
+				</li>
+				<li><p>
+				Call
+				<a href="x8.html#x8.7.1">GetValue</a>(<i>incExprRef</i>). (This value is not used.)</p>
+			</li></ol></li></ol></li></ol><h4 id="x12.6.4">12.6.4 The for-in Statement <a href="#x12.6.4">#</a> <a href="#x12.6.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production <i>IterationStatement</i>
+	<b>:</b> <code><b>for</b></code> <code><b>(</b></code><b>
+	</b><i>LeftHandSideExpression</i>
+	<code><b>in</b></code> <i>Expression</i>
+	<code><b>)</b></code> <i>Statement</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>exprRef</i> be the result of evaluating the <i>Expression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>experValue</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>exprRef</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>experValue</i> is <b>null</b> or <b>undefined</b>, return
+		(normal, empty,
+		empty).</p>
+		</li>
+		<li><p>
+		Let
+		<i>obj</i> be <a href="x9.html#x9.9">ToObject</a>(<i>experValue</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>V</i> = empty.</p>
+		</li>
+		<li><p>
+		Repeat</p>
+		<ol><li><p>
+			Let
+			<i>P</i> be the name of the next property of <i>obj</i> whose
+			[[Enumerable]] attribute is <b>true</b>. If there is no such
+			property, return (normal, <i>V</i>,
+			empty).</p>
+			</li>
+			<li><p>
+			Let
+			<i>lhsRef</i> be the result of evaluating the
+			<i>LeftHandSideExpression</i> ( it may be evaluated repeatedly).</p>
+			</li>
+			<li><p>
+			Call
+			<a href="x8.html#x8.7.2">PutValue</a>(<i>lhsRef</i>, <i>P</i>).</p>
+			</li>
+			<li><p>
+			Let
+			<i>stmt</i> be the result of evaluating <i>Statement</i>.</p>
+			</li>
+			<li><p>
+			If
+			<i>stmt</i>.value is not empty,
+			let <i>V</i> = <i>stmt</i>.value.</p>
+			</li>
+			<li><p>
+			If
+			<i>stmt</i>.type is break
+			and <i>stmt</i>.target is in the current label set, return
+			(normal, <i>V</i>, empty).</p>
+			</li>
+			<li><p>
+			If
+			<i>stmt</i>.type is not <b>continue</b> || <i>stmt</i>.target is
+			not in the current label set, then</p>
+			<ol><li><p>
+				If
+				<i>stmt</i> is an <a href="x8.html#x8.9">abrupt completion</a>, return <i>stmt</i>.</p>
+			</li></ol></li></ol></li></ol><p>
+	The
+	production<br><i>IterationStatement</i>
+	<b>:</b> <code><b>for</b></code> <code><b>(</b></code>
+	<code><b>var</b></code>
+	<i>VariableDeclarationNoIn</i>
+	<code><b>in</b></code> <i>Expression</i>
+	<code><b>)</b></code> <i>Statement</i><br>is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>varName</i> be the result of evaluating <i>VariableDeclarationNoIn</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>exprRef</i> be the result of evaluating the <i>Expression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>experValue</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>exprRef</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>experValue</i> is <b>null</b> or <b>undefined</b>, return
+		(normal, empty,
+		empty).</p>
+		</li>
+		<li><p>
+		Let
+		<i>obj</i> be <a href="x9.html#x9.9">ToObject</a>(<i>experValue</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>V</i> = empty.</p>
+		</li>
+		<li><p>
+		Repeat</p>
+		<ol><li><p>
+			Let
+			<i>P</i> be the name of the next property of <i>obj</i> whose
+			[[Enumerable]] attribute is <b>true</b>. If there is no such
+			property, return (normal, <i>V</i>,
+			empty).</p>
+			</li>
+			<li><p>
+			Let
+			<i>varRef</i> be the result of evaluating <i>varName</i> as if it
+			were an Identifier Reference (<a href="x11.html#x11.1.2">11.1.2</a>); it may be evaluated
+			repeatedly.</p>
+			</li>
+			<li><p>
+			Call
+			<a href="x8.html#x8.7.2">PutValue</a>(<i>varRef</i>, <i>P</i>).</p>
+			</li>
+			<li><p>
+			Let
+			<i>stmt</i> be the result of evaluating <i>Statement</i>.</p>
+			</li>
+			<li><p>
+			If
+			<i>stmt</i>.value is not empty,
+			let <i>V</i> = <i>stmt</i>.value.</p>
+			</li>
+			<li><p>
+			If
+			<i>stmt</i>.type is break
+			and <i>stmt</i>.target is in the current label set, return
+			(normal, <i>V</i>, empty).</p>
+			</li>
+			<li><p>
+			If
+			<i>stmt</i>.type is not continue
+			|| <i>stmt</i>.target is not in the current label set, then</p>
+			<ol><li><p>
+				If
+				<i>stmt</i> is an <a href="x8.html#x8.9">abrupt completion</a>, return <i>stmt</i>.</p>
+			</li></ol></li></ol></li></ol><p>
+	The
+	mechanics and order of enumerating the properties (step 6.a in the
+	first algorithm, step 7.a in the second) is not specified.
+	Properties of the object being enumerated may be deleted during
+	enumeration. If a property that has not yet been visited during
+	enumeration is deleted, then it will not be visited. If new
+	properties are added to the object being enumerated during
+	enumeration, the newly added properties are not guaranteed to be
+	visited in the active enumeration.
+	A property name must not be visited more than once in any enumeration.
+	</p>
+
+	<p>
+	Enumerating
+	the properties of an object includes enumerating properties of its
+	prototype, and the prototype of the prototype, and so on,
+	recursively; but a property of a prototype is not enumerated if it
+	is &#8220;shadowed&#8221; because some previous object in the prototype
+	chain has a property with the same name.
+	The values of [[Enumerable]] attributes are not considered when
+	determining if a property of a prototype object is shadowed by a previous
+	object on the prototype chain.</p>
+
+	<p><b class="note">NOTE</b> See
+	NOTE <a href="x11.html#x11.13.1">11.13.1</a>.</p>
+	<h3 id="x12.7">12.7 The continue Statement <a href="#x12.7">#</a> <a href="#x12.7-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+
+	<p class="keep">
+	<i>ContinueStatement </i><b>:</b></p>
+	<p class="def1-btm">
+	<code><b>continue</b></code> <code><b>;</b></code></p>
+	<p class="def1-btm">
+	<code><b>continue
+	</b></code><a href="x5.html#restricted-production">[no <i>LineTerminator</i> here]</a><i> Identifier</i><code><b>;</b></code></p>
+
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	A
+	program is considered syntactically incorrect if either of the
+	following is true:</p>
+	<ul><li><p>
+		The
+		program contains a <code><b>continue</b></code>
+		statement without the optional <i>Identifier</i>,
+		which is not nested, directly or indirectly (but not crossing
+		function boundaries), within an <i>IterationStatement</i>.</p>
+		</li>
+		<li><p>
+		The
+		program contains a <code><b>continue</b></code>
+		statement with the optional <i>Identifier</i>,
+		where <i>Identifier</i> does
+		not appear in the label set of an enclosing (but not crossing
+		function boundaries) <i>IterationStatement</i>.</p>
+	</li></ul><p>
+	A
+	<i>ContinueStatement</i>
+	without an <i>Identifier</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Return
+		(continue, empty,
+		empty).</p>
+	</li></ol><p>
+	A
+	<i>ContinueStatement</i>
+	with the optional <i>Identifier</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Return
+		(continue, empty,
+		<i>Identifier</i>).</p>
+	</li></ol><h3 id="x12.8">12.8 The break Statement <a href="#x12.8">#</a> <a href="#x12.8-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>BreakStatement </i><b>:</b></p>
+	<p class="def1-btm">
+	<code><b>break</b></code> <code><b>;</b></code></p>
+	<p class="def1-btm">
+	<code><b>break</b></code> <i><b>
+	</b></i><a href="x5.html#restricted-production">[no <i>LineTerminator</i> here]</a> <i>Identifier</i> <code><b>;</b></code></p>
+
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	A
+	program is considered syntactically incorrect if either of the
+	following is true:</p>
+	<ul><li><p>
+		The
+		program contains a <code><b>break</b></code>
+		statement without the optional <i>Identifier</i>,
+		which is not nested, directly or indirectly (but not crossing
+		function boundaries), within an <i>IterationStatement</i>
+		or a <i>SwitchStatement</i>.</p>
+		</li>
+		<li><p>
+		The
+		program contains a <code><b>break</b></code>
+		statement with the optional <i>Identifier</i>,
+		where <i>Identifier</i> does
+		not appear in the label set of an enclosing (but not crossing
+		function boundaries) <i>Statement</i>.</p>
+	</li></ul><p>
+	A
+	<i>BreakStatement</i>
+	without an <i>Identifier</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Return
+		(break, empty,
+		empty).</p>
+	</li></ol><p>
+	A
+	<i>BreakStatement</i>
+	with an <i>Identifier</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Return
+		(break, empty,<i>Identifier</i>).</p>
+	</li></ol><h3 id="x12.9">12.9 The return Statement <a href="#x12.9">#</a> <a href="#x12.9-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>ReturnStatement </i><b>:</b></p>
+	<p class="def1-btm">
+	<code><b>return</b></code> <code><b>;</b></code></p>
+	<p class="def1-btm">
+	<code><b>return
+	</b></code><a href="x5.html#restricted-production">[no <i>LineTerminator</i> here]</a><i> Expression</i> <code><b>;</b></code></p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	An
+	ECMAScript program is considered syntactically incorrect if it
+	contains a <code><b>return</b></code>
+	statement that is not within a <i><a href="x13.html#x13">FunctionBody</a></i>.
+	A <code><b>return</b></code> statement
+	causes a function to cease execution and return a value to the
+	caller. If <i>Expression</i>
+	is omitted, the return value is <b>undefined</b>. Otherwise, the
+	return value is the value of <i>Expression</i>.</p>
+	<p>
+	The
+	production <i>ReturnStatement</i>
+	<b>:</b> <code><b>return</b></code><b>
+	</b><a href="x5.html#restricted-production">[no <i>LineTerminator</i> here]</a><b>
+	</b><i>Expression</i><sub>opt</sub><code><b>;</b></code> is
+	evaluated as:</p>
+	<ol><li><p>
+		If
+		the <i>Expression</i> is not present, return (return,
+		undefined, empty).</p>
+		</li>
+		<li><p>
+		Let
+		<i>exprRef</i> be the result of evaluating <i>Expression</i>.</p>
+		</li>
+		<li><p>
+		Return
+		(return, <a href="x8.html#x8.7.1">GetValue</a>(<i>exprRef</i>),
+		empty).</p>
+	</li></ol><h3 id="x12.10">12.10 The with Statement <a href="#x12.10">#</a> <a href="#x12.10-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>WithStatement </i><b>:</b></p>
+	<p class="def1-btm">
+	<code><b>with</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement</i></p>
+	<p>
+	The
+	<code><b>with </b></code>statement
+	adds an object <a href="x10.html#x10.2">environment record</a> for a computed object to the
+ <a href="x10.html#x10.2">lexical environment</a> of the current execution context. It then
+	executes a statement using this augmented <a href="x10.html#x10.2">lexical environment</a>.
+	Finally, it restores the original <a href="x10.html#x10.2">lexical environment</a>.</p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	The
+	production <i>WithStatement </i><b>:</b> <code><b>with</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>Statement</i> is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>val</i> be the result of evaluating <i>Expression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>obj</i> be <a href="x9.html#x9.9">ToObject</a>(<a href="x8.html#x8.7.1">GetValue</a>(<i>val</i>)).</p>
+		</li>
+		<li><p>
+		Let
+		<i>oldEnv</i> be the running execution context&#8217;s
+	 <a href="x10.html#x10.2">LexicalEnvironment</a>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>newEnv</i> be the result of calling <a href="x10.html#x10.2.2.3">NewObjectEnvironment</a> passing
+		<i>obj</i> and <i>oldEnv</i> as the arguments</p>
+		</li>
+		<li><p>
+		Set
+		the <i>provideThis</i> flag of <i>newEnv</i> to <b>true</b>.</p>
+		</li>
+		<li><p>
+		Set
+		the running execution context&#8217;s <a href="x10.html#x10.2">LexicalEnvironment</a> to <i>newEnv</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>C </i>be the result of evaluating <i>Statement </i>but if an
+		exception is thrown during the evaluation, let <i>C</i> be (throw,
+		<i>V</i>, empty), where <i>V</i>
+		is the exception. (Execution now proceeds as if no exception were
+		thrown.)</p>
+		</li>
+		<li><p>
+		Set
+		the running execution context&#8217;s <a href="x10.html#x10.2">Lexical Environment</a> to <i>oldEnv</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>C</i>.</p>
+	</li></ol><p class="sp">
+	</p><p><b class="note">NOTE</b> No matter how
+	control leaves the embedded <i>Statement</i>,
+	whether normally or by some form of <a href="x8.html#x8.9">abrupt completion</a> or exception,
+	the <a href="x10.html#x10.2">LexicalEnvironment</a> is always restored to its former state.</p>
+	<h4 id="x12.10.1">12.10.1 Strict Mode Restrictions <a href="#x12.10.1">#</a> <a href="#x12.10.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	Strict
+	mode code may not include a <i>WithStatement</i>.
+	The occurrence of a <i>WithStatement</i>
+	in such a context is treated as a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>.</p>
+	<h3 id="x12.11">12.11 The switch Statement <a href="#x12.11">#</a> <a href="#x12.11-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>SwitchStatement </i><b>:</b></p>
+	<p class="def1-btm">
+	<code><b>switch</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>CaseBlock</i></p>
+	<p class="keep">
+	<i>CaseBlock </i><b>:</b></p>
+	<p class="def1-btm">
+	<code><b>{</b></code> <i>CaseClauses</i><sub>opt</sub><code><b>}</b></code> <i><br></i><code><b>{</b></code> <i>CaseClauses</i><sub>opt</sub><i>DefaultClause CaseClauses</i><sub>opt</sub><code><b>}</b></code></p>
+	<p class="keep">
+	<i>CaseClauses </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>CaseClause<br>CaseClauses
+	CaseClause</i></p>
+	<p class="keep">
+	<i>CaseClause </i><b>:</b></p>
+	<p class="def1-btm">
+	<code><b>case</b></code> <i>Expression </i><code><b>:</b></code> <i>StatementList</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>DefaultClause </i><b>:</b></p>
+	<p class="def1-btm">
+	<code><b>default</b></code> <code><b>:</b></code> <i>StatementList</i><sub>opt</sub></p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	The
+	production <i>SwitchStatement </i><b>:</b> <code><b>switch</b></code> <code><b>(</b></code> <i>Expression </i><code><b>)</b></code> <i>CaseBlock</i> is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>exprRef</i> be the result of evaluating <i>Expression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>R</i> be the result of evaluating <i>CaseBlock</i>, passing it
+		<a href="x8.html#x8.7.1">GetValue</a>(<i>exprRef</i>) as a parameter.</p>
+		</li>
+		<li><p>
+		If
+		<i>R</i>.type is break and
+		<i>R</i>.target is in the current label set, return (normal,
+		<i>R</i>.value, empty).</p>
+		</li>
+		<li><p>
+		Return
+		<i>R</i>.</p>
+	</li></ol><p>
+	The
+	production <i>CaseBlock</i>
+	<b>:</b> <code>{</code>
+	<i>CaseClauses</i><sub>opt</sub><code>}</code>
+	is given an input parameter, <i>input</i>,
+	and is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>V</i>
+		= empty.</p>
+		</li>
+		<li><p>
+		Let
+		<i>A</i>
+		be the list of <i>CaseClause</i>
+		items in source text order.</p>
+		</li>
+		<li><p>
+		Let
+		<i>searching</i>
+		be <b>true</b>.</p>
+		</li>
+		<li><p>
+		Repeat,
+		while <i>searching</i>
+		is <b>true</b></p>
+		<ol><li><p>
+			Let
+			<i>C</i>
+			be the next <i>CaseClause</i>
+			in <i>A</i>.
+			If there is no such <i>CaseClause</i>,
+			return (normal,
+			<i>V</i>,
+			empty).</p>
+			</li>
+			<li><p>
+			Let
+			<i>clauseSelector</i>
+			be the result of evaluating <i>C</i>.</p>
+			</li>
+			<li><p>
+			If
+			<i>input</i>
+			is equal to <i>clauseSelector</i>
+			as defined by the <code>===</code>
+			operator, then</p>
+			<ol><li><p>
+				Set
+				<i>searching</i>
+				to <b>false</b>.</p>
+				</li>
+				<li><p>
+				If<i>C</i>
+				has a <i>StatementList</i>,
+				then 
+				</p>
+				<ol><li><p>
+					Evaluate<i>C</i>&#8217;s
+					<i>StatementList</i>
+					and let<i>R</i>
+					be the result.</p>
+					</li>
+					<li><p>
+					If<i>R</i>
+					is an <a href="x8.html#x8.9">abrupt completion</a>, then return<i>R</i>.</p>
+					</li>
+					<li><p>
+					Let<i>V</i>
+					=<i>R</i>.value.</p>
+				</li></ol></li></ol></li></ol></li>
+		<li><p>
+		Repeat</p>
+		<ol><li><p>
+			Let<i>C</i>
+			be the next <i>CaseClause</i>
+			in<i>A</i>.
+			If there is no such <i>CaseClause</i>,
+			return <b>(</b>normal,<i>V</i>,<b>
+			</b>empty).</p>
+			</li>
+			<li><p>
+			If<i>C</i>
+			has a <i>StatementList</i>,
+			then 
+			</p>
+			<ol><li><p>
+				Evaluate<i>C</i>&#8217;s
+				<i>StatementList</i>
+				and let<i>R</i>
+				be the result.</p>
+				</li>
+				<li><p>
+				If<i>R</i>.value
+				is not<b>
+				</b>empty,
+				then let<i>V</i>
+				=<i>R</i>.value.</p>
+				</li>
+				<li><p>
+				If<i>R</i>
+				is an <a href="x8.html#x8.9">abrupt completion</a>, then return <i>(R</i>.type,<i>V</i>,<i>R</i>.target).</p>
+			</li></ol></li></ol></li></ol><p>
+	The
+	production <i>CaseBlock</i>
+	<b>:</b> <code>{</code>
+	<i>CaseClauses</i><sub>opt</sub><i>DefaultClause CaseClauses</i><sub>opt</sub><code>}</code>
+	is given an input parameter, <i>input</i>,
+	and is evaluated as follows:</p>
+	<ol><li><p class="sm-btm">
+		Let
+		<i>V</i>
+		= empty.</p>
+		</li>
+		<li><p class="sm-btm">
+		Let
+		<i>A</i>
+		be the list of <i>CaseClause</i>
+		items in the first <i>CaseClauses</i>,
+		in source text order.</p>
+		</li>
+		<li><p class="sm-btm">
+		Let
+		<i>B</i>
+		be the list of CaseClause items in the second CaseClauses, in
+		source text order.</p>
+		</li>
+		<li><p class="sm-btm">
+		Let
+		<i>found</i>
+		be <b>false</b>.</p>
+		</li>
+		<li><p class="sm-btm">
+		Repeat
+		letting <i>C</i>
+		be in order each <i>CaseClause</i>
+		in <i>A</i></p>
+		<ol><li><p class="sm-btm">
+			If
+			<i>found</i>
+			is <b>false</b>,
+			then</p>
+			<ol><li><p class="sm-btm">
+				Let
+				<i>clauseSelector</i>
+				be the result of evaluating <i>C</i>.</p>
+				</li>
+				<li><p class="sm-btm">
+				If
+				<i>input</i>
+				is equal to <i>clauseSelector</i>
+				as defined by the <code>===</code>
+				operator, then set <i>found</i>
+				to <b>true</b>.</p>
+			</li></ol></li>
+			<li><p class="sm-btm">
+			If
+			<i>found</i>
+			is <b>true</b>,
+			then</p>
+			<ol><li><p class="sm-btm">
+				If
+				<i>C</i>
+				has a StatementList, then</p>
+				<ol><li><p class="sm-btm">
+					Evaluate
+					<i>C</i>&#8217;s
+					<i>StatementList</i>
+					and let <i>R</i>
+					be the result.</p>
+					</li>
+					<li><p class="sm-btm">
+					If<i>R</i>.value
+					is not<b>
+					</b>empty,
+					then let<i>V</i>
+					=<i>R</i>.value.</p>
+					</li>
+					<li><p class="sm-btm">
+					<i>R</i>
+					is an <a href="x8.html#x8.9">abrupt completion</a>, then return <i>(R</i>.type,<i>V</i>,<i>R</i>.target).</p>
+				</li></ol></li></ol></li></ol></li>
+		<li><p class="sm-btm">
+		Let
+		<i>foundInB</i>
+		be <b>false</b>.</p>
+		</li>
+		<li><p class="sm-btm">
+		If
+		<i>found</i>
+		is <b>false</b>,
+		then 
+		</p>
+		<ol><li><p class="sm-btm">
+			Repeat,
+			while <i>foundInB</i>
+			is <b>false</b>
+			and all elements of <i>B</i>
+			have not been processed</p>
+			<ol><li><p class="sm-btm">
+				Let
+				<i>C</i>
+				be the next <i>CaseClause</i>
+				in <i>B</i>.
+				
+				</p>
+				</li>
+				<li><p class="sm-btm">
+				Let
+				<i>clauseSelector</i>
+				be the result of evaluating <i>C</i>.</p>
+				</li>
+				<li><p class="sm-btm">
+				If
+				<i>input</i>
+				is equal to <i>clauseSelector</i>
+				as defined by the <code>===</code>
+				operator, then</p>
+				<ol><li><p class="sm-btm">
+					Set
+					<i>foundInB</i>
+					to <b>true</b>.</p>
+					</li>
+					<li><p class="sm-btm">
+					If<i>C</i>
+					has a <i>StatementList</i>,
+					then</p>
+				</li></ol></li></ol></li></ol></li></ol><ol><ol><ol><ol><ol><li><p class="sm-btm">
+						Evaluate
+						<i>C</i>&#8217;s
+						<i>StatementList</i>
+						and let <i>R</i>
+						be the result.</p>
+						</li>
+						<li><p class="sm-btm">
+						If<i>R</i>.value
+						is not<b>
+						</b>empty,
+						then let<i>V</i>
+						=<i>R</i>.value.</p>
+						</li>
+						<li><p class="sm-btm">
+						<i>R</i>
+						is an <a href="x8.html#x8.9">abrupt completion</a>, then return <i>(R</i>.type,<i>V</i>,<i>R</i>.target).</p>
+					</li></ol></ol></ol></ol></ol><ol start="8"><li><p class="sm-btm">
+		If
+		<i>foundInB</i>
+		is <b>false</b>
+		and the <i>DefaultClause</i>
+		has a <i>StatementList</i>,
+		then</p>
+		<ol><li><p class="sm-btm">
+			Evaluate
+			the <i>DefaultClause&#8217;s</i>
+			<i>StatementList</i>
+			and let <i>R</i>
+			be the result.</p>
+			</li>
+			<li><p class="sm-btm">
+			If
+			<i>R</i>.value
+			is not empty,
+			then let <i>V</i>
+			= <i>R</i>.value.</p>
+			</li>
+			<li><p class="sm-btm">
+			If
+			<i>R</i>
+			is an <a href="x8.html#x8.9">abrupt completion</a>, then return (<i>R</i>.type,
+			<i>V</i>,
+			<i>R</i>.target).</p>
+		</li></ol></li>
+		<li><p class="sm-btm">
+		Repeat
+		(Note that if step 7.a.i has been performed this loop does not
+		start at the beginning of <i>B</i>)</p>
+		<ol><li><p class="sm-btm">
+			Let
+			<i>C</i>
+			be the next <i>CaseClause</i>
+			in <i>B</i>.
+			If there is no such <i>CaseClause</i>,
+			return (normal,
+			<i>V</i>,
+			empty).</p>
+			</li>
+			<li><p class="sm-btm">
+			If
+			<i>C</i>
+			has a StatementList, then 
+			</p>
+			<ol><li><p class="sm-btm">
+				Evaluate
+				<i>C</i>&#8217;s
+				StatementList and let <i>R</i>
+				be the result.</p>
+				</li>
+				<li><p class="sm-btm">
+				If
+				<i>R</i>.value
+				is not empty,
+				then let <i>V</i>
+				= <i>R</i>.value.</p>
+				</li>
+				<li><p class="sm-btm">
+				If
+				<i>R</i>
+				is an <a href="x8.html#x8.9">abrupt completion</a>, then return (<i>R</i>.type,
+				<i>V</i>,
+				<i>R</i>.target).</p>
+			</li></ol></li></ol></li></ol><p>
+	The
+	production <i>CaseClause</i>
+	<b>:</b> <code><b>case</b></code> <i>Expression </i><code><b>:</b></code> <i>StatementList</i><sub>opt</sub> is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>exprRef</i> be the result of evaluating <i>Expression</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<a href="x8.html#x8.7.1">GetValue</a>(<i>exprRef</i>).</p>
+	</li></ol><p><b class="note">NOTE</b> Evaluating
+	<i>CaseClause</i> does
+	not execute the associated <i>StatementList</i>.
+	It simply evaluates the <i>Expression</i>
+	and returns the value, which the <i>CaseBlock</i>
+	algorithm uses to determine which <i>StatementList</i>
+	to start executing.</p>
+	<h3 id="x12.12">12.12 Labelled Statements <a href="#x12.12">#</a> <a href="#x12.12-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>LabelledStatement </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>Identifier </i><code><b>:</b></code> <i>Statement</i></p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	A
+	<i>Statement</i> may be
+	prefixed by a label. Labelled statements are only used in
+	conjunction with labelled <code><b>break</b></code>
+	and <code><b>continue</b></code>
+	statements. ECMAScript has no <code><b>goto</b></code>
+	statement.</p>
+	<p>
+	An
+	ECMAScript program is considered syntactically incorrect if it
+	contains a <i>LabelledStatement</i>
+	that is enclosed by a <i>LabelledStatement</i>
+	with the same <i>Identifier</i>
+	as label. This does not apply to labels appearing within the body of
+	a <i>FunctionDeclaration</i>
+	that is nested, directly or indirectly, within a labelled statement.</p>
+	<p>
+	The
+	production <i>Identifier </i><code><b>:</b></code> <i>Statement </i>is evaluated by adding <i>Identifier</i>
+	to the label set of <i>Statement</i>
+	and then evaluating <i>Statement</i>.
+	If the <i>LabelledStatement</i>
+	itself has a non-empty label set, these labels are also added to the
+	label set of <i>Statement</i>
+	before evaluating it. If the result of evaluating <i>Statement</i>
+	is (<b>break</b>, <i>V</i>,
+	<i>L</i>) where <i>L</i>
+	is equal to <i>Identifier</i>,
+	the production results in (<b>normal</b>, <i>V</i>,
+	<b>empty</b>).</p>
+	<p>
+	Prior
+	to the evaluation of a <i>LabelledStatement</i>,
+	the contained <i>Statement</i>
+	is regarded as possessing an empty label set, unless it is an
+	<i>IterationStatement</i>
+	or a <i>SwitchStatement</i>,
+	in which case it is regarded as possessing a label set consisting of
+	the single element, <b>empty</b>.</p>
+	<h3 id="x12.13">12.13 The throw Statement <a href="#x12.13">#</a> <a href="#x12.13-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>ThrowStatement<b>
+	</b></i><b>:</b></p>
+	<p class="def1-btm">
+	<code><b>throw</b></code> <i><b>
+	</b></i><a href="x5.html#restricted-production">[no <i>LineTerminator</i> here]</a> <i>Expression </i><code><b>;</b></code></p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	The
+	production <i>ThrowStatement</i>
+	<b>:</b> <code><b>throw</b></code><b>
+	</b><a href="x5.html#restricted-production">[no <i>LineTerminator</i> here]</a><i><b>
+	</b></i><i>Expression</i>
+	<code><b>;</b></code> is evaluated as:</p>
+	<ol><li><p>
+		Let
+		<i>exprRef</i> be the result of evaluating <i>Expression</i>.</p>
+		</li>
+		<li><p>
+		Return
+		(throw, <a href="x8.html#x8.7.1">GetValue</a>(<i>exprRef</i>),
+		empty).</p>
+	</li></ol><h3 id="x12.14">12.14 The try Statement <a href="#x12.14">#</a> <a href="#x12.14-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>TryStatement </i><b>:</b></p>
+	<p class="def1-btm">
+	<code><b>try</b></code> <i>Block Catch<sub><br></sub></i><code><b>try</b></code> <i>Block Finally<sub><br></sub></i><code><b>try</b></code> <i>Block Catch Finally</i></p>
+	<p class="keep">
+	<i>Catch </i><b>:</b></p>
+	<p class="def1-btm">
+	<code><b>catch</b></code> <code><b>(
+	</b></code> <i>Identifier</i><code>
+	</code><code><b>)</b></code> <i>Block</i></p>
+	<p class="keep">
+	<i>Finally </i><b>:</b></p>
+	<p class="def1-btm">
+	<code><b>finally</b></code> <i>Block</i></p>
+	<p>
+	The
+	<code><b>try </b></code>statement
+	encloses a block of code in which an exceptional condition can
+	occur, such as a runtime error or a <code><b>throw</b></code>
+	statement. The <code><b>catch</b></code>
+	clause provides the exception-handling code. When a catch clause
+	catches an exception, its <i>Identifier</i>
+	is bound to that exception.</p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	The
+	production <i>TryStatement</i>
+	<b>:</b> <code><b>try</b></code> <i>Block</i>
+	<i>Catch</i> is evaluated
+	as follows:</p>
+	<ol><li><p>
+		Let
+		<i>B</i> be the result of evaluating <i>Block</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>B</i>.type is not throw,
+		return <i>B</i>.</p>
+		</li>
+		<li><p>
+		Return
+		the result of evaluating <i>Catch</i> with parameter <i>B</i>.</p>
+	</li></ol><p>
+	The
+	production <i>TryStatement</i>
+	<b>:</b> <code><b>try</b></code> <i>Block</i>
+	<i>Finally</i> is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>B</i> be the result of evaluating <i>Block</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>F</i> be the result of evaluating <i>Finally</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>F</i>.type is normal,
+		return <i>B</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>F</i>.</p>
+	</li></ol><p>
+	The
+	production <i>TryStatement</i>
+	<b>:</b> <code><b>try</b></code> <i>Block</i>
+	<i>Catch</i> <i>Finally</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>B</i> be the result of evaluating <i>Block</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>B</i>.type is throw, then</p>
+		<ol><li><p>
+			Let
+			<i>C</i> be the result of evaluating <i>Catch</i> with parameter
+			<i>B</i>.</p>
+		</li></ol></li>
+		<li><p>
+		Else,
+		<i>B</i>.type is not throw<b>,</b></p>
+		<ol><li><p>
+			Let
+			<i>C</i> be<i> B</i>.</p>
+		</li></ol></li>
+		<li><p>
+		Let
+		<i>F</i> be the result of evaluating <i>Finally</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>F</i>.type is normal,
+		return <i>C</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>F</i>.</p>
+	</li></ol><p>
+	The
+	production <i>Catch</i> <b>:</b>
+	<code><b>catch</b></code> <code><b>(
+	</b></code> <i>Identifier</i><code>
+	</code><code><b>)</b></code> <i>Block</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>C</i> be the parameter that has been passed to this production.</p>
+		</li>
+		<li><p>
+		Let
+		<i>oldEnv</i> be the running execution context&#8217;s
+	 <a href="x10.html#x10.2">LexicalEnvironment</a>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>catchEnv</i> be the result of calling <a href="x10.html#x10.2.2.2">NewDeclarativeEnvironment</a>
+		passing <i>oldEnv</i> as the argument. 
+		</p>
+		</li>
+		<li><p>
+		Call
+		the CreateMutableBinding concrete method of <i>catchEnv</i> passing
+		the <i>Identifier </i>String value as the argument.</p>
+		</li>
+		<li><p>
+		Call
+		the SetMutableBinding concrete method of <i>catchEnv</i> passing
+		the <i>Identifier</i>, <i>C</i>, and <b>false </b>as arguments.
+		Note that the last argument is immaterial in this situation.</p>
+		</li>
+		<li><p>
+		Set
+		the running execution context&#8217;s <a href="x10.html#x10.2">LexicalEnvironment</a> to <i>catchEnv</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>B</i> be the result of evaluating <i>Block</i>.</p>
+		</li>
+		<li><p>
+		Set
+		the running execution context&#8217;s <a href="x10.html#x10.2">LexicalEnvironment</a> to <i>oldEnv</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>B</i>.</p>
+	</li></ol><p><b class="note">NOTE</b> No
+	matter how control leaves the <i>Block</i>
+	the <a href="x10.html#x10.2">LexicalEnvironment</a> is always restored to its former state.</p>
+	<p>
+	The
+	production <i>Finally</i>
+	<code><b>: finally</b></code> <i>Block</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Return
+		the result of evaluating <i>Block</i>.</p>
+	</li></ol><h4 id="x12.14.1">12.14.1 Strict Mode Restrictions <a href="#x12.14.1">#</a> <a href="#x12.14.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	It is
+	an <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> if a <i>TryStatement</i>
+	with a <i>Catch</i>
+	occurs within <a href="x10.html#x10.1.1">strict code</a> and the <i>Identifier</i>
+	of the <i>Catch</i>
+	production is either <code><b>"eval"</b></code><b>
+	or </b><code><b>"arguments"</b></code>.</p>
+	<h3 id="x12.15">12.15 The debugger statement <a href="#x12.15">#</a> <a href="#x12.15-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>DebuggerStatement </i><b>:</b></p>
+	<p class="def1-btm">
+	<b>debugger </b><code><b>;</b></code></p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	Evaluating
+	the <i>DebuggerStatement </i>production may allow an implementation to cause a
+	breakpoint when run under a debugger. If a debugger is not present
+	or active this statement has no observable effect.</p>
+	<p>
+	The
+	production <i>DebuggerStatement </i><b>:</b><i> </i><code><b>debugger
+	;</b></code> is evaluated as follows:</p>
+	<ol><li><p>
+		If
+		an implementation defined debugging facility is available and
+		enabled, then</p>
+		<ol><li><p>
+			Perform
+			an implementation defined debugging action.</p>
+			</li>
+			<li><p>
+			Let
+			<i>result</i> be an implementation defined <a href="x8.html#x8.9">Completion</a> value. 
+			</p>
+		</li></ol></li>
+		<li><p>
+		Else</p>
+		<ol><li><p>
+			Let
+			<i>result</i> be (normal,
+			empty, empty).</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		<i>result</i>.</p>
+	</li></ol></body><script src="anno.js"></script></html>

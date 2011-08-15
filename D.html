@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html class="split chapter"><head><meta charset="utf-8"><title>Annex D (informative) Corrections and Clarifications in the 5th Edition with Possible 3rd Edition Compatibility Impact # &#9417; &#9402; &#9312; &#9398; &#8212; Annotated ES5</title><link rel="stylesheet" href="style.css"><link rel="shortcut icon" href="favicon.ico"><link href="C.html" title="Annex C (informative) The Strict Mode of ECMAScript " rel="prev">
+  <link href="index.html#contents" title="TOC" rel="index">
+  <link href="E.html" title="Annex E (informative) Additions and Changes in the 5th Edition that Introduce Incompatibilities with the 3rd Edition " rel="next">
+  </head><body><div class="head">
+<h2 id="top">Annotated ECMAScript 5.1 <span id="timestamp"></span></h2>
+<div id="mascot-treehouse">
+	<img id="mascot" align="left" src="js-mascot.svg" alt=""><img id="bubble" src="bubble.svg" alt=""></div>
+<p id="slogan">&#8223;Ex igne vita&#8221;</p>
+<div id="annotations"></div>
+<script src="timestamp.js"></script></div>
+<nav>
+   <a href="C.html">&#8592; Annex C (informative) The Strict Mode of ECMAScript </a> &#8211;
+   <a href="index.html#contents">TOC</a> &#8211;
+   <a href="E.html">Annex E (informative) Additions and Changes in the 5th Edition that Introduce Incompatibilities with the 3rd Edition  &#8594;</a>
+  </nav>
+
+  <h2 id="D">Annex D (informative) Corrections and Clarifications in the 5th Edition with Possible 3rd Edition Compatibility Impact <a href="#D">#</a> <a href="#D-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h2>
+	<p>
+	Throughout:
+	In the Edition 3 specification the meaning of phrases such as &#8220;as
+	if by the expression <code><b>new
+	Array()</b></code>&#8221; are subject to misinterpretation. In the
+	Edition 5 specification text for all internal references and
+	invocations of standard built-in objects and methods has been
+	clarified by making it explicit that the intent is that the actual
+	built-in object is to be used rather than the current dynamic value
+	of the correspondingly named property. 
+	</p>
+	<p>
+	<a href="x11.html#x11.8.2">11.8.2</a>,
+	<a href="x11.html#x11.8.3">11.8.3</a>, <a href="x11.html#x11.8.5">11.8.5</a>: ECMAScript generally uses a left to right evaluation
+	order, however the Edition 3 specification language for the &gt; and
+	&lt;= operators resulted in a partial right to left order. The
+	specification has been corrected for these operators such that it
+	now specifies a full left to right evaluation order. However, this
+	change of order is potentially observable if side-effects occur
+	during the evaluation process.</p>
+	<p>
+	<a href="x11.html#x11.1.4">11.1.4</a>:
+	Edition 5 clarifies the fact that a trailing comma at the end of an
+	<i>ArrayInitialiser</i>
+	does not add to the length of the array. This is not a semantic
+	change from Edition 3 but some implementations may have previously
+	misinterpreted this.</p>
+	<p>
+	<a href="x11.html#x11.2.3">11.2.3</a>:
+	Edition 5 reverses the order of steps 2 and 3 of the algorithm.  The
+	original order as specified in Editions 1 through 3 was incorrectly
+	specified such that side-effects of evaluating <i>Arguments</i>
+	could affect the result of evaluating <i>MemberExpression</i>.</p>
+	<p>
+	<a href="x12.html#x12.4">12.4</a>:
+	In Edition 3, an object is created, as if by <code><b>new
+	Object()</b></code>to serve as the scope for resolving the name of
+	the exception parameter passed to a <code><b>catch</b></code>
+	clause of a <code><b>try</b></code>
+	statement. If the actual exception object is a function and it is
+	called from within the <code><b>catch</b></code>
+	clause, the scope object will be passed as the <b>this</b> value of
+	the call. The body of the function can then define new properties on
+	its <b>this</b> value and those property names become visible
+	identifiers bindings within the scope of the <b>catch</b> clause
+	after the function returns. In Edition 5, when an exception
+	parameter is called as a function, <b>undefined</b> is passed as the
+	<b>this</b> value.</p>
+	<p>
+	<a href="x14.html#x14">13</a>:.
+	In Edition 3, the algorithm for the production <i>FunctionExpression</i>
+	with an <i>Identifier</i>
+	adds an object created as if by <code><b>new
+	Object()</b></code> to the scope chain to serve as a scope for
+	looking up the name of the function. The identifier resolution rules
+	(10.1.4 in Edition 3) when applied to such an object will, if
+	necessary, follow the object&#8217;s prototype chain when attempting to
+	resolve an identifier.  This means all the properties of
+	Object.prototype are visible as identifiers within that scope.  In
+	practice most implementations of Edition 3 have not implemented this
+	semantics.  Edition 5 changes the specified semantics by using a
+	Declarative <a href="x10.html#x10.2.1">Environment Record</a> to bind the name of the function.</p>
+	<p>
+	<a href="x14.html#x14">14</a>:.
+	In Edition 3, the algorithm for the production <i>SourceElements </i><b>:</b> <i>SourceElements
+	SourceElement </i>did not correctly propagate statement
+	result values in the same manner as <i>Block</i>.
+	This could result in the <code><b><a href="x15.html#x15.1.2.1">eval</a></b></code> function producing an incorrect result when evaluating a <i><a href="x14.html#x14">Program</a></i>
+	text. In practice most implementations of Edition 3 have implemented
+	the correct propagation rather than what was specified in Edition 3.</p>
+	<p>
+	<a href="x15.html#x15.10.6">15.10.6</a>:
+	RegExp.prototype is now a RegExp object rather than an instance of
+	Object. The value of its [[Class]] internal property which is
+	observable using <a href="x15.html#x15.2.4.2">Object.prototype.toString</a>
+  is now &#8220;RegExp&#8221; rather than &#8220;Object&#8221;.</p>
+	</body><script src="anno.js"></script></html>

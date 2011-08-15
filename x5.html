@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html class="split chapter"><head><meta charset="utf-8"><title>5 Notational Conventions # &#9417; &#9402; &#9312; &#9398; &#8212; Annotated ES5</title><link rel="stylesheet" href="style.css"><link rel="shortcut icon" href="favicon.ico"><link href="x4.html" title="4 Overview " rel="prev">
+  <link href="index.html#contents" title="TOC" rel="index">
+  <link href="x6.html" title="6 Source Text " rel="next">
+  </head><body><div class="head">
+<h2 id="top">Annotated ECMAScript 5.1 <span id="timestamp"></span></h2>
+<div id="mascot-treehouse">
+	<img id="mascot" align="left" src="js-mascot.svg" alt=""><img id="bubble" src="bubble.svg" alt=""></div>
+<p id="slogan">&#8223;Ex igne vita&#8221;</p>
+<div id="annotations"></div>
+<script src="timestamp.js"></script></div>
+<nav>
+   <a href="x4.html">&#8592; 4 Overview </a> &#8211;
+   <a href="index.html#contents">TOC</a> &#8211;
+   <a href="x6.html">6 Source Text  &#8594;</a>
+  <ol class="toc"><li><a href="x5.html#x5" id="x5-toc">5 Notational Conventions</a>
+    <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x5.html#x5.1" id="x5.1-toc">5.1 Syntactic and Lexical Grammars</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x5.html#x5.1.1" id="x5.1.1-toc">5.1.1 Context-Free Grammars</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x5.html#x5.1.2" id="x5.1.2-toc">5.1.2 The Lexical and RegExp Grammars</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x5.html#x5.1.3" id="x5.1.3-toc">5.1.3 The Numeric String Grammar</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x5.html#x5.1.4" id="x5.1.4-toc">5.1.4 The Syntactic Grammar</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x5.html#x5.1.5" id="x5.1.5-toc">5.1.5 The JSON Grammar</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x5.html#x5.1.6" id="x5.1.6-toc">5.1.6 Grammar Notation</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x5.html#x5.2" id="x5.2-toc">5.2 Algorithm Conventions</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li></ol></nav>
+
+  <h2 id="x5">5 Notational Conventions <a href="#x5">#</a> <a href="#x5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h2>
+	<h3 id="x5.1">5.1 Syntactic and Lexical Grammars <a href="#x5.1">#</a> <a href="#x5.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<h4 id="x5.1.1">5.1.1 Context-Free Grammars <a href="#x5.1.1">#</a> <a href="#x5.1.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	A
+	<i>context-free grammar</i> consists of a number of <i>productions</i>.
+	Each production has an abstract symbol called a <i>nonterminal</i>
+	as its <i>left-hand side</i>, and a sequence of zero or more
+	nonterminal and <i>terminal</i> symbols as its <i>right-hand side</i>.
+	For each grammar, the terminal symbols are drawn from a specified
+	alphabet.</p>
+	<p>
+	Starting
+	from a sentence consisting of a single distinguished nonterminal,
+	called the <i>goal symbol</i>, a given context-free grammar
+	specifies a <i>language</i>, namely, the (perhaps infinite) set of
+	possible sequences of terminal symbols that can result from
+	repeatedly replacing any nonterminal in the sequence with a
+	right-hand side of a production for which the nonterminal is the
+	left-hand side.</p>
+	<h4 id="x5.1.2">5.1.2 The Lexical and RegExp Grammars <a href="#x5.1.2">#</a> <a href="#x5.1.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	A
+	<i>lexical grammar</i> for ECMAScript is given in <a href="x7.html#x7">clause 7</a>. This
+	grammar has as its terminal symbols characters (Unicode code units) 
+	that conform to the rules for <i>SourceCharacter</i>
+	defined in <a href="x6.html#x6">Clause 6</a>. It defines a set of productions, starting from
+	the goal symbol <i>InputElementDiv</i>
+	or <i>InputElementRegExp</i>,
+	that describe how sequences of such characters are translated into a
+	sequence of input elements.</p>
+	<p>
+	Input
+	elements other than white space and comments form the terminal
+	symbols for the syntactic grammar for ECMAScript and are called
+	ECMAScript <i>tokens</i>. These tokens are the reserved words,
+	identifiers, literals, and punctuators of the ECMAScript language.
+	Moreover, line terminators, although not considered to be tokens,
+	also become part of the stream of input elements and guide the
+	process of automatic semicolon insertion (<a href="x7.html#x7.9">7.9</a>). Simple white space
+	and single-line comments are discarded and do not appear in the
+	stream of input elements for the syntactic grammar. A
+	<i>MultiLineComment</i>
+	(that is, a comment of the form &#8220;<code>/*</code>&#8230;<code>*/</code>&#8221;
+	regardless of whether it spans more than one line) is likewise
+	simply discarded if it contains no line terminator; but if a
+	<i>MultiLineComment</i>
+	contains one or more line terminators, then it is replaced by a
+	single line terminator, which becomes part of the stream of input
+	elements for the syntactic grammar.</p>
+	<p>
+	A
+	<i>RegExp grammar</i> for ECMAScript is given in <a href="x15.html#x15.10">15.10</a>. This grammar
+	also has as its terminal symbols the characters as defined by
+	<i>SourceCharacter</i>.
+	It defines a set of productions, starting from the goal symbol
+	<i>Pattern</i>, that
+	describe how sequences of characters are translated into regular
+	expression patterns.</p>
+	<p>
+	Productions
+	of the lexical and RegExp grammars are distinguished by having two
+	colons &#8220;<b>::</b>&#8221; as separating punctuation. The lexical and
+	RegExp grammars share some productions.</p>
+	<h4 id="x5.1.3">5.1.3 The Numeric String Grammar <a href="#x5.1.3">#</a> <a href="#x5.1.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	Another
+	grammar is used for translating Strings into numeric values. This
+	grammar is similar to the part of the lexical grammar having to do
+	with numeric literals and has as its terminal symbols
+	<i>SourceCharacter</i>.
+	This grammar appears in <a href="x9.html#x9.3.1">9.3.1</a>.</p>
+	<p>
+	Productions
+	of the numeric string grammar are distinguished by having three
+	colons &#8220;<b>:::</b>&#8221; as punctuation.</p>
+	<h4 id="x5.1.4">5.1.4 The Syntactic Grammar <a href="#x5.1.4">#</a> <a href="#x5.1.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	<i>syntactic grammar</i> for ECMAScript is given in clauses 11, 12,
+	13 and 14. This grammar has ECMAScript tokens defined by the lexical
+	grammar as its terminal symbols (<a href="#x5.1.2">5.1.2</a>). It defines a set of
+	productions, starting from the goal symbol <i><a href="x14.html#x14">Program</a></i>,
+	that describe how sequences of tokens can form syntactically correct
+	ECMAScript programs.</p>
+	<p>
+	When
+	a stream of characters is to be parsed as an ECMAScript program, it
+	is first converted to a stream of input elements by repeated
+	application of the lexical grammar; this stream of input elements is
+	then parsed by a single application of the syntactic grammar. The
+	program is syntactically in error if the tokens in the stream of
+	input elements cannot be parsed as a single instance of the goal
+	nonterminal <i><a href="x14.html#x14">Program</a></i>,
+	with no tokens left over.</p>
+	<p>
+	Productions
+	of the syntactic grammar are distinguished by having just one colon
+	&#8220;<b>:</b>&#8221; as punctuation.</p>
+	<p>
+	The
+	syntactic grammar as presented in clauses 11, 12, 13 and 14 is
+	actually not a complete account of which token sequences are
+	accepted as correct ECMAScript programs. Certain additional token
+	sequences are also accepted, namely, those that would be described
+	by the grammar if only semicolons were added to the sequence in
+	certain places (such as before line terminator characters).
+	Furthermore, certain token sequences that are described by the
+	grammar are not considered acceptable if a terminator character
+	appears in certain &#8220;awkward&#8221; places.</p>
+	<h4 id="x5.1.5">5.1.5 The JSON Grammar <a href="#x5.1.5">#</a> <a href="#x5.1.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	JSON grammar is used to translate a String describing a set of
+	ECMAScript objects into actual objects. The JSON grammar is given in
+	<a href="x15.html#x15.12.1">15.12.1</a>.</p>
+	<p>
+	The
+	JSON grammar consists of the JSON lexical grammar and the JSON
+	syntactic grammar. The JSON lexical grammar is used to translate
+	character sequences into tokens and is similar to parts of the
+	ECMAScript lexical grammar. The JSON syntactic grammar describes how
+	sequences of tokens from the JSON lexical grammar can form
+	syntactically correct JSON object descriptions.</p>
+	<p>
+	Productions
+	of the JSON lexical grammar are distinguished by having two colons
+	&#8220;<b>::</b>&#8221; as separating punctuation. The JSON lexical grammar
+	uses some productions from the ECMAScript lexical grammar. The JSON
+	syntactic grammar is similar to parts of the ECMAScript syntactic
+	grammar. Productions of the JSON syntactic grammar are distinguished
+	by using one colon &#8220;<b>:</b>&#8221; as separating punctuation.</p>
+	<h4 id="x5.1.6">5.1.6 Grammar Notation <a href="#x5.1.6">#</a> <a href="#x5.1.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	Terminal
+	symbols of the lexical and string grammars, and some of the terminal
+	symbols of the syntactic grammar, are shown in <code><b>fixed
+	width</b></code> font, both in the productions of the grammars and
+	throughout this specification whenever the text directly refers to
+	such a terminal symbol. These are to appear in a program exactly as
+	written. All terminal symbol characters specified in this way are to
+	be understood as the appropriate Unicode character from the ASCII
+	range, as opposed to any similar-looking characters from other
+	Unicode ranges.</p>
+	<p>
+	Nonterminal
+	symbols are shown in <i>italic</i>
+	type. The definition of a nonterminal is introduced by the name of
+	the nonterminal being defined followed by one or more colons. (The
+	number of colons indicates to which grammar the production belongs.)
+	One or more alternative right-hand sides for the nonterminal then
+	follow on succeeding lines. For example, the syntactic definition:</p>
+	<p class="def1">
+	<i>WhileStatement </i><b>:</b></p>
+	<p class="def2">
+	<code><b>while</b></code> <i><b>
+	</b></i><code><b>(</b></code> <i><b>
+	</b>Expression </i><code><b>)</b></code> <i><b>
+	</b>Statement</i></p>
+	<p>
+	states
+	that the nonterminal <i>WhileStatement</i>
+	represents the token <code><b>while</b></code>,
+	followed by a left parenthesis token, followed by an <i>Expression</i>,
+	followed by a right parenthesis token, followed by a <i>Statement</i>.
+	The occurrences of <i>Expression</i>
+	and <i>Statement</i> are
+	themselves nonterminals. As another example, the syntactic
+	definition:</p>
+	<p class="def1">
+	<i>ArgumentList<b>
+	</b></i><b>:</b></p>
+	<p class="def2">
+	<i>AssignmentExpression<br>ArgumentList</i><code><b>
+	,</b></code> <i>AssignmentExpression</i></p>
+	<p>
+	states
+	that an <i>ArgumentList</i>
+	may represent either a single <i>AssignmentExpression</i>
+	or an <i>ArgumentList</i>,
+	followed by a comma, followed by an <i>AssignmentExpression</i>.
+	This definition of <i>ArgumentList</i>
+	is recursive, that is, it is defined in terms of itself. The result
+	is that an <i>ArgumentList</i>
+	may contain any positive number of arguments, separated by commas,
+	where each argument expression is an <i>AssignmentExpression</i>.
+	Such recursive definitions of nonterminals are common.</p>
+	<p>
+	The
+	subscripted suffix &#8220;<sub>opt</sub>&#8221;, which may appear after a
+	terminal or nonterminal, indicates an optional symbol. The
+	alternative containing the optional symbol actually specifies two
+	right-hand sides, one that omits the optional element and one that
+	includes it. This means that:</p>
+	<p class="def1">
+	<i>VariableDeclaration<b>
+	</b></i><b>:</b></p>
+	<p class="def2">
+	<i>Identifier
+	Initialiser</i><sub>opt</sub></p>
+	<p>
+	is a
+	convenient abbreviation for:</p>
+	<p class="def1">
+	<i>VariableDeclaration<b>
+	</b></i><b>:</b></p>
+	<p class="def2">
+	<i>Identifier<br>Identifier
+	Initialiser</i></p>
+	<p>
+	and
+	that:</p>
+	<p class="def1">
+	<i>IterationStatement<b>
+	</b></i><b>:</b></p>
+	<p class="def2">
+	<code><b>for
+	(</b></code> <i>ExpressionNoIn</i><sub>opt</sub><code><b>
+	;</b></code> <i>Expression</i><sub>opt</sub><code><b>
+	;</b></code> <i>Expression</i><sub>opt</sub><code><b>
+	)</b></code> <i>Statement</i></p>
+	<p>
+	is a
+	convenient abbreviation for:</p>
+	<p class="def1">
+	<i>IterationStatement<b>
+	</b></i><b>:</b></p>
+	<p class="def2">
+	<code><b>for
+	( ;</b></code> <i>Expression</i><sub>opt</sub><code><b>
+	;</b></code> <i>Expression</i><sub>opt</sub><code><b>
+	)</b></code> <i>Statement</i><code><b><br>for
+	(</b></code> <i>ExpressionNoIn</i><code><b>
+	;</b></code> <i>Expression</i><sub>opt</sub><code><b>
+	;</b></code> <i>Expression</i><sub>opt</sub><code><b>
+	)</b></code> <i>Statement</i></p>
+	<p>
+	which
+	in turn is an abbreviation for:</p>
+	<p class="def1">
+	<i>IterationStatement<b>
+	</b></i><b>:</b></p>
+	<p class="def2">
+	<code><b>for
+	( ; ;</b></code> <i>Expression</i><sub>opt</sub><code><b>
+	)</b></code> <i>Statement</i><code><b><br>for
+	( ;</b></code> <i>Expression</i><code><b>
+	;</b></code> <i>Expression</i><sub>opt</sub><i><sub></sub></i><code><b>)
+	</b></code> <i>Statement</i><code><b><br>for
+	(</b></code> <i>ExpressionNoIn</i><code><b>
+	; ;</b></code> <i>Expression</i><sub>opt</sub><i><sub></sub></i><code><b>)
+	</b></code> <i>Statement</i><code><b><br>for
+	(</b></code> <i>ExpressionNoIn</i><code><b>
+	;</b></code> <i>Expression</i><code><b>
+	;</b></code> <i>Expression</i><sub>opt</sub><i><sub></sub></i><code><b>)
+	</b></code> <i>Statement</i></p>
+	<p>
+	which
+	in turn is an abbreviation for:</p>
+	<p class="def1">
+	<i>IterationStatement<b>
+	</b></i><b>:</b></p>
+	<p class="def2">
+	<code><b>for
+	( ; ; )</b></code> <i>Statement<br></i><code><b>for
+	( ; ;</b></code> <i>Expression</i><code><b>
+	)</b></code> <i>Statement</i><code><b><br>for
+	( ;</b></code> <i>Expression</i><code><b>
+	; )</b></code> <i>Statement</i><code><b><br>for
+	( ;</b></code> <i>Expression</i><code><b>
+	;</b></code> <i>Expression</i><code><b>
+	)</b></code> <i>Statement</i><code><b><br>for
+	(</b></code> <i>ExpressionNoIn </i><code><b>;
+	; )</b></code> <i>Statement</i><code><b><br>for
+	(</b></code> <i>ExpressionNoIn </i><code><b>;
+	;</b></code> <i>Expression</i><code><b>
+	)</b></code> <i>Statement</i><code><b><br>for
+	(</b></code> <i>ExpressionNoIn </i><code><b>;
+	</b></code> <i>Expression</i><code><b>
+	; )</b></code> <i>Statement</i><code><b><br>for
+	(</b></code> <i>ExpressionNoIn </i><code><b>;
+	</b></code> <i>Expression</i><code><b>
+	;</b></code> <i>Expression</i><code><b>
+	)</b></code> <i>Statement</i></p>
+	<p>
+	so
+	the nonterminal <i>IterationStatement</i>
+	actually has eight alternative right-hand sides.</p>
+	<p>
+	If
+	the phrase &#8220;[empty]&#8221;
+	appears as the right-hand side of a production, it indicates that
+	the production's right-hand side contains no terminals or
+	nonterminals.</p>
+	<p>
+	If
+	the phrase
+ <dfn id="lookahead-not-in">&#8220;[lookahead <span class="symbol">&#8713;</span> <i>set</i>]&#8221;
+	appears in the right-hand side of a production, it indicates that
+	the production may not be used if the immediately following input
+	token is a member of the given <i>set</i>.
+	The <i>set</i> can be
+	written as a list of terminals enclosed in curly braces. For
+	convenience, the set can also be written as a nonterminal, in which
+	case it represents the set of all terminals to which that
+	nonterminal could expand. For example, given the definitions</dfn></p>
+	<p class="def1">
+	<i>DecimalDigit </i><b>::</b><i><b>
+	</b></i><b>one
+	of</b></p>
+	<p class="def2-alt">
+	<code><b>0
+	 1  2  3  4  5  6  7  8  9</b></code></p>
+	<p class="def1">
+	<i>DecimalDigits<b>
+	</b></i><b>::</b></p>
+	<p class="def2">
+	<i>DecimalDigit<br>DecimalDigits
+	DecimalDigit</i></p>
+	<p>
+	the
+	definition</p>
+	<p class="def1">
+	<i>LookaheadExample<b>
+	</b></i><b>::</b></p>
+	<p class="def2">
+	<code><b>n</b></code>
+	[<a href="#lookahead-not-in">lookahead
+	<span class="symbol">&#8713;</span></a>
+	{<code><b>1</b></code> <i>, </i><code><b>3</b></code> <i>, </i><code><b>5</b></code> <i>, </i><code><b>7</b></code> <i>, </i><code><b>9</b></code>}]<i>DecimalDigits<br>DecimalDigit  </i>[<a href="#lookahead-not-in">lookahead
+	<span class="symbol">&#8713;</span></a>
+	<i>DecimalDigit </i>]</p>
+	<p>
+	matches
+	either the letter <code><b>n</b></code>
+	followed by one or more decimal digits the first of which is even,
+	or a decimal digit not followed by another decimal digit.</p>
+	<p>
+	<dfn id="restricted-production">If the phrase &#8220;[no <i>LineTerminator</i> here]&#8221; appears in the right-hand side of a production of
+	the syntactic grammar, it indicates that the production is <i>a restricted production</i></dfn>: it may not be used if a <i>LineTerminator</i>
+	occurs in the input stream at the indicated position. For example,
+	the production:</p>
+	<p class="def1">
+	<i>ReturnStatement<b>
+	</b></i><b>:</b></p>
+	<p class="def2">
+	<code><b>return
+	</b></code><a href="#restricted-production">[no <i>LineTerminator</i> here]</a><code><b>
+	</b></code> <i>Expression</i><sub>opt</sub><code><b>;</b></code></p>
+	<p>
+	indicates
+	that the production may not be used if a <i>LineTerminator</i>
+	occurs in the program between the <code><b>return</b></code>
+	token and the <i>Expression</i>.</p>
+	<p>
+	Unless
+	the presence of a <i>LineTerminator</i>
+	is forbidden by a restricted production, any number of occurrences
+	of <i>LineTerminator</i>
+	may appear between any two consecutive tokens in the stream of input
+	elements without affecting the syntactic acceptability of the
+	program.</p>
+	<p>
+	When
+	the words &#8220;<b>one of</b>&#8221; follow the colon(s) in a grammar
+	definition, they signify that each of the terminal symbols on the
+	following line or lines is an alternative definition. For example,
+	the lexical grammar for ECMAScript contains the production:</p>
+	<p class="def1">
+	<i>NonZeroDigit </i><b>::</b><i><b>
+	</b></i><b>one
+	of</b></p>
+	<p class="def2-alt">
+	<code><b>1
+	 2  3  4  5  6  7  8  9</b></code></p>
+	<p>
+	which
+	is merely a convenient abbreviation for:</p>
+	<p class="def1">
+	<i>NonZeroDigit </i><b>::</b></p>
+	<p class="def2-alt">
+	<code><b>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9</b></code></p>
+	<p>
+	When
+	an alternative in a production of the lexical grammar or the numeric
+	string grammar appears to be a multi-character token, it represents
+	the sequence of characters that would make up such a token.</p>
+	<p>
+	The
+	right-hand side of a production may specify that certain expansions
+	are not permitted by using the phrase &#8220;<b>but not</b>&#8221; and then
+	indicating the expansions to be excluded. For example, the
+	production:</p>
+	<p class="def1">
+	<i>Identifier<b>
+	</b></i><b>::</b></p>
+	<p class="def2">
+	<i>IdentifierName </i><b>but
+	not</b><i> ReservedWord</i></p>
+	<p>
+	means
+	that the nonterminal <i>Identifier</i>
+	may be replaced by any sequence of characters that could replace
+	<i>IdentifierName</i>
+	provided that the same sequence of characters could not replace
+	<i>ReservedWord</i>.</p>
+	<p>
+	Finally,
+	a few nonterminal symbols are described by a descriptive phrase in
+	sans-serif type in cases where it would be impractical to list all
+	the alternatives:</p>
+	<p class="def1">
+	<i>SourceCharacter<b>
+	</b></i><b>::</b></p>
+	<p class="def2-alt">
+	any
+	Unicode code unit</p>
+	<h3 id="x5.2">5.2 Algorithm Conventions <a href="#x5.2">#</a> <a href="#x5.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	The
+	specification often uses a numbered list to specify steps in an
+	algorithm. These algorithms are used to precisely specify the
+	required semantics of ECMAScript language constructs. The algorithms
+	are not intended to imply the use of any specific implementation
+	technique. In practice, there may be more efficient algorithms
+	available to implement a given feature.</p>
+	<p>
+	In
+	order to facilitate their use in multiple parts of this
+	specification, some algorithms, called <i>abstract</i> <i>operations</i>,
+	are named and written in parameterized functional form so that they
+	may be referenced by name from within other algorithms.</p>
+	<p>
+	When
+	an algorithm is to produce a value as a result, the directive
+	&#8220;return <i>x</i>&#8221;
+	is used to indicate that the result of the algorithm is the value of
+	<i>x</i> and that the
+	algorithm should terminate. The notation Result(<i>n</i>)
+	is used as shorthand for &#8220;the result
+	of step <i>n</i>&#8221;.
+	
+	</p>
+	<p>
+	For
+	clarity of expression, algorithm steps may be subdivided into
+	sequential substeps. Substeps are indented and may themselves be
+	further divided into indented substeps.  Outline numbering
+	conventions are used to identify substeps with the first level of
+	substeps labelled with lower case alphabetic characters and the
+	second level of substeps labelled with lower case roman numerals. 
+	If more than three levels are required these rules repeat with the
+	fourth level using numeric labels. For example:</p>
+	<ol><li><p>
+		Top-level
+		step</p>
+		<ol><li><p>
+			Substep.</p>
+			</li>
+			<li><p>
+			Substep
+			
+			</p>
+			<ol><li><p>
+				Subsubstep.</p>
+				</li>
+				<li><p>
+				Subsubstep.</p>
+				<ol><li><p>
+					Subsubsubstep</p>
+					<ol><li><p>
+						Subsubsubsubstep</p>
+					</li></ol></li></ol></li></ol></li></ol></li></ol><p>
+	A
+	step or substep may be written as an &#8220;if&#8221; predicate that
+	conditions its substeps.  In this case, the substeps are only
+	applied if the predicate is true. If a step or substep begins with
+	the word &#8220;else&#8221;, it is a predicate that is the negation of the
+	preceding &#8220;if&#8221; predicate step at the same level.</p>
+	<p>
+	A
+	step may specify the iterative application of its substeps.</p>
+	<p>
+	Mathematical
+	operations such as addition, subtraction, negation, multiplication,
+	division, and the mathematical functions defined later in this
+	clause should always be understood as computing exact mathematical
+	results on mathematical real numbers, which do not include
+	infinities and do not include a negative zero that is distinguished
+	from positive zero. Algorithms in this standard that model
+	floating-point arithmetic include explicit steps, where necessary,
+	to handle infinities and signed zero and to perform rounding. If a
+	mathematical operation or function is applied to a floating-point
+	number, it should be understood as being applied to the exact
+	mathematical value represented by that floating-point number; such a
+	floating-point number must be finite, and if it is <b>+0</b>
+	or <span class="symbol"><b>&#8722;</b></span><b>0</b>
+	then the corresponding mathematical value is simply <b>0</b>.</p>
+	<p>
+	The
+	mathematical function <dfn id="abs">abs(<i>x</i>)</dfn>
+	yields the absolute value of <i>x</i>,
+	which is <span class="symbol">&#8722;</span><i>x</i>
+	if <i>x</i> is negative
+	(less than zero) and otherwise is <i>x</i>
+	itself.</p>
+	<p>
+	The
+	mathematical function <dfn id="sign">sign</dfn>(<i>x</i>)
+	yields 1 if <i>x</i>
+	is positive and <span class="symbol">&#8722;</span>1
+	if <i>x</i> is negative.
+	The sign function is not used in this standard for cases when <i>x</i>
+	is zero.</p>
+	<p>
+	The
+	notation <dfn id="modulo">&#8220;<i>x</i> modulo <i>y</i>&#8221; (<i>y</i>
+	must be finite and nonzero) computes a value <i>k</i>
+	of the same sign as <i>y</i>
+	(or zero) such that <a href="#abs">abs</a>(<i>k</i>)
+	&lt; <a href="#abs">abs</a>(<i>y</i>)
+	and <i>x</i><span class="symbol">&#8722;</span><i>k </i>= <i>q</i>
+	<span class="symbol">&#215;</span>
+	<i>y</i> for some
+	integer <i>q</i>.</dfn></p>
+	<p>
+	The
+	mathematical function <dfn id="floor">floor</dfn>(<i>x</i>)
+	yields the largest integer (closest to positive infinity) that is
+	not larger than <i>x</i>.</p>
+	<p><b class="note">NOTE</b> floor(<i>x</i>)
+	= <i>x</i><span class="symbol">&#8722;</span>(<i>x</i>
+	modulo 1).</p>
+	<p class="sp">
+	If an
+	algorithm is defined to &#8220;throw an exception&#8221;, execution of the
+	algorithm is terminated and no result is returned. The calling
+	algorithms are also terminated, until an algorithm step is reached
+	that explicitly deals with the exception, using terminology such as
+	&#8220;If an exception was thrown&#8230;&#8221;. Once such an algorithm step has
+	been encountered the exception is no longer considered to have
+	occurred.</p>
+	</body><script src="anno.js"></script></html>

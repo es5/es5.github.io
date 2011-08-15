@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html class="split chapter"><head><meta charset="utf-8"><title>9 Type Conversion and Testing # &#9417; &#9402; &#9312; &#9398; &#8212; Annotated ES5</title><link rel="stylesheet" href="style.css"><link rel="shortcut icon" href="favicon.ico"><link href="x8.html" title="8 Types " rel="prev">
+  <link href="index.html#contents" title="TOC" rel="index">
+  <link href="x10.html" title="10 Executable Code and Execution Contexts " rel="next">
+  </head><body><div class="head">
+<h2 id="top">Annotated ECMAScript 5.1 <span id="timestamp"></span></h2>
+<div id="mascot-treehouse">
+	<img id="mascot" align="left" src="js-mascot.svg" alt=""><img id="bubble" src="bubble.svg" alt=""></div>
+<p id="slogan">&#8223;Ex igne vita&#8221;</p>
+<div id="annotations"></div>
+<script src="timestamp.js"></script></div>
+<nav>
+   <a href="x8.html">&#8592; 8 Types </a> &#8211;
+   <a href="index.html#contents">TOC</a> &#8211;
+   <a href="x10.html">10 Executable Code and Execution Contexts  &#8594;</a>
+  <ol class="toc"><li><a href="x9.html#x9" id="x9-toc">9 Type Conversion and Testing</a>
+    <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x9.html#x9.1" id="x9.1-toc">9.1 ToPrimitive</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x9.html#x9.2" id="x9.2-toc">9.2 ToBoolean</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x9.html#x9.3" id="x9.3-toc">9.3 ToNumber</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x9.html#x9.3.1" id="x9.3.1-toc">9.3.1 ToNumber Applied to the String Type</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x9.html#x9.4" id="x9.4-toc">9.4 ToInteger</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x9.html#x9.5" id="x9.5-toc">9.5 ToInt32: (Signed 32 Bit Integer)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x9.html#x9.6" id="x9.6-toc">9.6 ToUint32: (Unsigned 32 Bit Integer)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x9.html#x9.7" id="x9.7-toc">9.7 ToUint16: (Unsigned 16 Bit Integer)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x9.html#x9.8" id="x9.8-toc">9.8 ToString</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x9.html#x9.8.1" id="x9.8.1-toc">9.8.1 ToString Applied to the Number Type</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x9.html#x9.9" id="x9.9-toc">9.9 ToObject</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x9.html#x9.10" id="x9.10-toc">9.10 CheckObjectCoercible</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x9.html#x9.11" id="x9.11-toc">9.11 IsCallable</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x9.html#x9.12" id="x9.12-toc">9.12 The SameValue Algorithm</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li></ol></nav>
+
+  <h2 id="x9">9 Type Conversion and Testing <a href="#x9">#</a> <a href="#x9-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h2>
+	<p>
+	The
+	ECMAScript runtime system performs automatic type conversion as
+	needed. To clarify the semantics of certain constructs it is useful
+	to define a set of conversion abstract operations. These abstract
+	operations are not a part of the language; they are defined here to
+	aid the specification of the semantics of the language. The
+	conversion abstract operations are polymorphic; that is, they can
+	accept a value of any ECMAScript <a href="x8.html#language-type">language type</a>, but not of
+	<a href="x8.html#specification-type">specification types</a>.</p>
+	<h3 id="x9.1">9.1 ToPrimitive <a href="#x9.1">#</a> <a href="#x9.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	The
+	abstract operation ToPrimitive takes an <i>input</i>
+	argument and an optional argument <i>PreferredType</i>.
+	The abstract operation ToPrimitive converts its <i>input</i>
+	argument to a non-Object type. If an object is capable of converting
+	to more than one primitive type, it may use the optional hint
+	<i>PreferredType</i> to
+	favour that type. Conversion occurs according to Table 10:</p>
+	<center>
+		<table width="690" border="1" bordercolor="#000000" cellpadding="8" cellspacing="0" rules="ROWS"><caption>Table&#160;10 &#8212; ToPrimitive Conversions</caption>
+			<colgroup><col width="138"><col width="518"></colgroup><tbody><tr valign="TOP"><td width="138" height="9" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Input
+					Type</span></b></i></p>
+				</td>
+				<td width="518" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Result</span></b></i></p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Undefined</p>
+				</td>
+				<td width="518">
+					<p>
+					The
+					result equals the <i>input</i>
+					argument (no conversion).</p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Null</p>
+				</td>
+				<td width="518">
+					<p>
+					The
+					result equals the <i>input</i>
+					argument (no conversion).</p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Boolean</p>
+				</td>
+				<td width="518">
+					<p>
+					The
+					result equals the <i>input</i>
+					argument (no conversion).</p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Number</p>
+				</td>
+				<td width="518">
+					<p>
+					The
+					result equals the <i>input</i>
+					argument (no conversion).</p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					String</p>
+				</td>
+				<td width="518">
+					<p>
+					The
+					result equals the <i>input</i>
+					argument (no conversion).</p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Object</p>
+				</td>
+				<td width="518">
+					<p>
+					Return
+					a default value for the Object. The default value of an object
+					is retrieved by calling the [[DefaultValue]] internal method of
+					the object, passing the optional hint <i>PreferredType</i>.
+					The behaviour of the [[DefaultValue]] internal method is defined
+					by this specification for all native ECMAScript objects in
+					<a href="x8.html#x8.12.8">8.12.8</a>.</p>
+				</td>
+			</tr></tbody></table></center>
+	<h3 id="x9.2">9.2 ToBoolean <a href="#x9.2">#</a> <a href="#x9.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	The
+	abstract operation ToBoolean converts its argument to a value of
+	type Boolean according to Table 11:</p>
+	<center>
+		<table width="690" border="1" bordercolor="#000000" cellpadding="8" cellspacing="0" rules="ROWS"><caption>Table&#160;11 &#8212; ToBoolean Conversions</caption>
+			<colgroup><col width="138"><col width="518"></colgroup><tbody><tr valign="TOP"><td width="138" height="11" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Argument
+					Type</span></b></i></p>
+				</td>
+				<td width="518" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Result</span></b></i></p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Undefined</p>
+				</td>
+				<td width="518">
+					<p>
+					<b>false</b></p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Null</p>
+				</td>
+				<td width="518">
+					<p>
+					<b>false</b></p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Boolean</p>
+				</td>
+				<td width="518">
+					<p>
+					The
+					result equals the input argument (no conversion).</p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Number</p>
+				</td>
+				<td width="518">
+					<p>
+					The
+					result is <b>false</b> if the argument is <b>+0</b>, <span class="symbol"><b>&#8722;</b></span><b>0</b>,
+					or <b>NaN</b>; otherwise the result is <b>true</b>. 
+					</p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					String</p>
+				</td>
+				<td width="518">
+					<p>
+					The
+					result is <b>false</b> if the argument is the empty String (its
+					length is zero); otherwise the result is <b>true</b>.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>Object</p>
+				</td>
+				<td width="518">
+					<p><b>true</b></p>
+				</td>
+			</tr></tbody></table></center>
+	<h3 id="x9.3">9.3 ToNumber <a href="#x9.3">#</a> <a href="#x9.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	The
+	abstract operation ToNumber converts its argument to a value of type
+	Number according to Table 12:</p>
+	<center>
+		<table width="690" border="1" bordercolor="#000000" cellpadding="8" cellspacing="0" rules="ROWS"><caption>Table&#160;12 &#8212; To Number Conversions</caption>
+			<colgroup><col width="138"><col width="518"></colgroup><tbody><tr valign="TOP"><td width="138" height="9" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Argument
+					Type</span></b></i></p>
+				</td>
+				<td width="518" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Result</span></b></i></p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Undefined</p>
+				</td>
+				<td width="518">
+					<p>
+					<b>NaN</b></p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Null</p>
+				</td>
+				<td width="518">
+					<p>
+					<b>+0</b></p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Boolean</p>
+				</td>
+				<td width="518">
+					<p>
+					The
+					result is <b>1</b> if the argument is <b>true</b>. The result is
+					<b>+0</b> if the argument is <b>false</b>.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Number</p>
+				</td>
+				<td width="518">
+					<p>
+					The
+					result equals the input argument (no conversion).</p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					String</p>
+				</td>
+				<td width="518">
+					<p>
+					See
+					grammar and note below.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Object</p>
+				</td>
+				<td width="518">
+					<p>
+					Apply
+					the following steps:</p>
+					<ol><li><p class="keep">
+						Let
+						<i>primValue</i>
+						be <a href="#x9.1">ToPrimitive</a>(<i>input
+						argument</i>, hint
+						Number).</p>
+						</li>
+						<li><p class="keep">
+						Return
+						ToNumber(<i>primValue</i>).</p>
+					</li></ol></td>
+			</tr></tbody></table></center>
+	<h4 id="x9.3.1">9.3.1 ToNumber Applied to the String Type <a href="#x9.3.1">#</a> <a href="#x9.3.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	ToNumber
+	applied to Strings applies the following grammar to the input
+	String. If the grammar cannot interpret the String as an expansion
+	of <i>StringNumericLiteral</i>,
+	then the result of ToNumber is <b>NaN</b>.</p>
+	<p class="keep">
+	<i>StringNumericLiteral </i><b>:::</b></p>
+	<p class="def1-btm">
+	<i>StrWhiteSpace</i><sub>opt</sub><i><br>StrWhiteSpace</i><sub>opt</sub><i>StrNumericLiteral StrWhiteSpace</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>StrWhiteSpace </i><b>:::</b></p>
+	<p class="def1-btm">
+	<i>StrWhiteSpaceChar
+	StrWhiteSpace</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>StrWhiteSpaceChar </i><b>:::</b></p>
+	<p class="def1-btm">
+	<i>WhiteSpace<br>LineTerminator</i></p>
+	<p class="keep">
+	<i>StrNumericLiteral </i><b>:::</b></p>
+	<p class="def1-btm">
+	<i>StrDecimalLiteral<br>HexIntegerLiteral</i></p>
+	<p class="keep">
+	<i>StrDecimalLiteral </i><b>:::</b></p>
+	<p class="def1-btm">
+	<i>StrUnsignedDecimalLiteral<br></i><code><b>+
+	</b></code> <i>StrUnsignedDecimalLiteral<br></i><code><b>-
+	</b></code> <i>StrUnsignedDecimalLiteral</i></p>
+	<p class="keep">
+	<i>StrUnsignedDecimalLiteral </i><b>:::</b></p>
+	<p class="def1-btm">
+	<code><b>Infinity</b></code> <i><br>
+	DecimalDigits </i><code><b>.</b></code> <i>DecimalDigits</i><sub>opt</sub><i><sub></sub>ExponentPart</i><sub>opt</sub><i><br></i><code><b>.</b></code> <i>DecimalDigits ExponentPart</i><sub>opt</sub><i><br>DecimalDigits
+	ExponentPart</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>DecimalDigits </i><b>:::</b></p>
+	<p class="def1-btm">
+	<i>DecimalDigit<br>DecimalDigits
+	DecimalDigit</i></p>
+	<p class="keep">
+	<i>DecimalDigit </i><b>:::</b><i><b>
+	</b></i><b>one
+	of</b></p>
+	<p class="def1-btm">
+	<code><b>0
+	 1  2  3  4  5  6  7  8  9</b></code></p>
+	<p class="keep">
+	<i>ExponentPart </i><b>:::</b></p>
+	<p class="def1-btm">
+	<i>ExponentIndicator
+	SignedInteger</i></p>
+	<p class="keep">
+	<i>ExponentIndicator </i><b>:::</b><i><b>
+	</b></i><b>one
+	of</b></p>
+	<p class="def1-btm">
+	<code><b>e
+	 E</b></code></p>
+	<p class="keep">
+	<i>SignedInteger </i><b>:::</b></p>
+	<p class="def1-btm">
+	<i>DecimalDigits<br></i><code><b>+
+	</b></code> <i>DecimalDigits<br></i><code><b>-
+	</b></code> <i>DecimalDigits</i></p>
+	<p class="keep">
+	<i>HexIntegerLiteral </i><b>:::</b></p>
+	<p class="def1-btm">
+	<code><b>0x</b></code> <i>HexDigit<br></i><code><b>0X</b></code> <i>HexDigit<br>HexIntegerLiteral HexDigit</i></p>
+	<p class="keep">
+	<i>HexDigit </i>::: <b>one
+	of</b></p>
+	<p class="def1-btm">
+	<code><b>0
+	 1  2  3  4  5  6  7  8  9  a  b  c  d  e  f  A  B  C  D  E  F</b></code></p>
+	<p>
+	Some
+	differences should be noted between the syntax of a
+	<i>StringNumericLiteral</i>
+	and a <i>NumericLiteral</i>
+	(see <a href="x7.html#x7.8.3">7.8.3</a>):</p>
+	<ul><li><p>
+		A
+		<i>StringNumericLiteral</i>
+		may be preceded and/or followed by white space and/or line
+		terminators.</p>
+		</li>
+		<li><p>
+		A
+		<i>StringNumericLiteral</i>
+		that is decimal may have any number of leading <code><b>0</b></code>
+		digits.</p>
+		</li>
+		<li><p>
+		A
+		<i>StringNumericLiteral</i>
+		that is decimal may be preceded by <code><b>+</b></code>
+		or <code><b>-</b></code> to indicate
+		its sign.</p>
+		</li>
+		<li><p>
+		A
+		<i>StringNumericLiteral</i>
+		that is empty or contains only white space is converted to <b>+0</b>.</p>
+	</li></ul><p>
+	The
+	conversion of a String to a Number value is similar overall to the
+	determination of the Number value for a numeric literal (see <a href="x7.html#x7.8.3">7.8.3</a>),
+	but some of the details are different, so the process for converting
+	a String numeric literal to a value of Number type is given here in
+	full. This value is determined in two steps: first, a mathematical
+	value (MV) is derived from the String numeric literal; second, this
+	mathematical value is rounded as described below.</p>
+	<ul><li><p>
+		The
+		MV of <i>StringNumericLiteral</i>
+		<b>:::</b> [empty]
+		is 0.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>StringNumericLiteral</i>
+		<b>:::</b> <i>StrWhiteSpace</i>
+		is 0.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>StringNumericLiteral</i>
+		<b>:::</b> <i>StrWhiteSpace</i><sub>opt</sub><i>StrNumericLiteral</i>
+		<i>StrWhiteSpace</i><sub>opt</sub>
+		is the MV of <i>StrNumericLiteral</i>,
+		no matter whether white space is present or not.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>StrNumericLiteral</i>
+		<b>:::</b> <i>StrDecimalLiteral</i>
+		is the MV of <i>StrDecimalLiteral</i>.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>StrNumericLiteral</i>
+		<b>:::</b> <i>HexIntegerLiteral</i>
+		is the MV of <i>HexIntegerLiteral</i>.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>StrDecimalLiteral</i>
+		<b>:::</b> <i>StrUnsignedDecimalLiteral</i>
+		is the MV of <i>StrUnsignedDecimalLiteral</i>.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>StrDecimalLiteral</i>
+		<b>:::</b> <code><b>+</b></code>
+		<i>StrUnsignedDecimalLiteral</i>
+		is the MV of <i>StrUnsignedDecimalLiteral</i>.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>StrDecimalLiteral</i>
+		<b>:::</b> <code><b>-</b></code>
+		<i>StrUnsignedDecimalLiteral</i>
+		is the negative of the MV of <i>StrUnsignedDecimalLiteral</i>.
+		(Note that if the MV of <i>StrUnsignedDecimalLiteral</i>
+		is 0, the negative of this MV is also 0. The rounding rule
+		described below handles the conversion of this signless
+		mathematical zero to a floating-point <b>+0</b> or <span class="symbol"><b>&#8722;</b></span><b>0</b>
+		as appropriate.)</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>StrUnsignedDecimalLiteral</i><b>:::
+		</b><code><b>Infinity</b></code><b>
+		</b>is 10<sup>10000</sup>
+		(a value so large that it will round to <b>+</b><span class="symbol"><b>&#8734;</b></span>).</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>StrUnsignedDecimalLiteral</i><b>:::
+		</b><i>DecimalDigits</i><code><b>.</b></code><b>
+		</b>is the MV of <i>DecimalDigits</i>.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>StrUnsignedDecimalLiteral</i><b>:::
+		</b><i>DecimalDigits </i><code><b>.</b></code> <i>DecimalDigits</i><b>
+		</b>is the MV of the first <i>DecimalDigits</i>
+		plus (the MV of the second <i>DecimalDigits</i><b>
+		</b>times 10<sup><span class="symbol">&#8722;</span></sup><sup><i>n</i></sup>),
+		where <i>n</i> is the
+		number of characters in the second <i>DecimalDigits</i>.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>StrUnsignedDecimalLiteral</i><b>::: </b><i>DecimalDigits</i><code><b>.</b></code> <i>ExponentPart </i>is the MV of
+		<i>DecimalDigits</i> times 10<sup><i>e</i></sup>, where <i>e</i>
+		is the MV of <i>ExponentPart</i>.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>StrUnsignedDecimalLiteral</i><b>::: </b><i>DecimalDigits</i><code><b>.</b></code> <i>DecimalDigits ExponentPart </i>is (the MV of the first
+		<i>DecimalDigits</i> plus (the MV of the second <i>DecimalDigits</i><i><b>
+		</b></i>times 10<sup><span class="symbol">&#8722;</span></sup><sup><i>n</i></sup>))
+		times 10<sup><i>e</i></sup>, where <i>n</i> is the number of
+		characters in the second <i>DecimalDigit</i>s and <i>e</i> is
+		the MV of <i>ExponentPart</i>.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>StrUnsignedDecimalLiteral</i><b>:::</b><code><b>.</b></code> <i>DecimalDigits</i> is the MV of
+		<i>DecimalDigits</i><i> </i>times 10<sup><span class="symbol">&#8722;</span></sup><sup><i>n</i></sup>,
+		where <i>n</i> is the number of characters in <i>DecimalDigit</i>s.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>StrUnsignedDecimalLiteral</i><b>:::</b><code><b>.</b></code> <i>DecimalDigits ExponentPart </i>is
+		the MV of <i>DecimalDigits</i><i> </i>times 10<sup><i>e</i></sup><sup><span class="symbol">&#8722;</span></sup><sup><i>n</i></sup>,
+		where <i>n</i> is the number of characters in <i>DecimalDigit</i>s
+		and <i>e</i> is the MV of
+		<i>ExponentPart</i>.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>StrUnsignedDecimalLiteral</i><b>::: </b><i>DecimalDigits</i>
+		is the MV of <i>DecimalDigits</i>.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>StrUnsignedDecimalLiteral</i><b>::: </b><i>DecimalDigits</i>
+		<i>ExponentPart </i>is the MV of
+		<i>DecimalDigits</i> times 10<sup><i>e</i></sup>, where <i>e</i>
+		is the MV of <i>ExponentPart</i>.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>DecimalDigits</i> <b>:::</b> <i>DecimalDigit</i> is
+		the MV of <i>DecimalDigit</i>.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>DecimalDigits</i> <b>:::</b> <i>DecimalDigits</i>
+		<i>DecimalDigit</i> is (the MV of <i>DecimalDigits</i> times 10)
+		plus the MV of <i>DecimalDigit</i>.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>ExponentPart </i><b>::: </b><i>ExponentIndicator
+		SignedInteger</i><i> </i>is
+		the MV of <i>SignedInteger</i>.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>SignedInteger </i><b>::: </b><i>DecimalDigits</i><i><b>
+		</b></i>is the MV of <i>DecimalDigits</i>.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>SignedInteger </i><b>::: </b><code><b>+</b></code> <i>DecimalDigits</i><i> </i>is
+		the MV of <i>DecimalDigits</i>.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>SignedInteger </i><b>::: </b><code><b>-</b></code> <i>DecimalDigits</i><i> </i>is the negative of the MV of
+		<i>DecimalDigits</i>.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>DecimalDigit</i> <b>:::</b> <code><b>0</b></code>
+		or of <i>HexDigit</i> <b>:::</b>
+		<code><b>0</b></code> is 0.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>DecimalDigit</i> <b>:::</b> <code><b>1</b></code>
+		or of <i>HexDigit</i> <b>:::</b>
+		<code><b>1</b></code> is 1.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>DecimalDigit</i> <b>:::</b> <code><b>2</b></code>
+		or of <i>HexDigit</i> <b>:::</b>
+		<code><b>2</b></code> is 2.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>DecimalDigit</i> <b>:::</b> <code><b>3</b></code>
+		or of <i>HexDigit</i> <b>:::</b>
+		<code><b>3</b></code> is 3.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>DecimalDigit</i> <b>:::</b> <code><b>4</b></code>
+		or of <i>HexDigit</i> <b>:::</b>
+		<code><b>4</b></code> is 4.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>DecimalDigit</i> <b>:::</b> <code><b>5</b></code>
+		or of <i>HexDigit</i> <b>:::</b>
+		<code><b>5</b></code> is 5.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>DecimalDigit</i> <b>:::</b> <code><b>6</b></code>
+		or of <i>HexDigit</i> <b>:::</b>
+		<code><b>6</b></code> is 6.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>DecimalDigit</i> <b>:::</b> <code><b>7</b></code>
+		or of <i>HexDigit</i> <b>:::</b>
+		<code><b>7</b></code> is 7.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>DecimalDigit</i> <b>:::</b> <code><b>8</b></code>
+		or of <i>HexDigit</i> <b>:::</b>
+		<code><b>8</b></code> is 8.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>DecimalDigit</i> <b>:::</b> <code><b>9</b></code>
+		or of <i>HexDigit</i> <b>:::</b>
+		<code><b>9</b></code> is 9.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>HexDigit</i> <b>:::</b> <code><b>a</b></code>
+		or of <i>HexDigit</i> <b>:::</b>
+		<code><b>A</b></code> is 10.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>HexDigit</i> <b>:::</b> <code><b>b</b></code>
+		or of <i>HexDigit</i> <b>:::</b>
+		<code><b>B</b></code> is 11.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>HexDigit</i> <b>:::</b> <code><b>c</b></code>
+		or of <i>HexDigit</i> <b>:::</b>
+		<code><b>C</b></code> is 12.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>HexDigit</i> <b>:::</b> <code><b>d</b></code>
+		or of <i>HexDigit</i> <b>:::</b>
+		<code><b>D</b></code> is 13.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>HexDigit</i> <b>:::</b> <code><b>e</b></code>
+		or of <i>HexDigit</i> <b>:::</b>
+		<code><b>E</b></code> is 14.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>HexDigit</i> <b>:::</b> <code><b>f</b></code>
+		or of <i>HexDigit</i> <b>:::</b>
+		<code><b>F</b></code> is 15.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>HexIntegerLiteral </i><b>:::</b> <code><b>0x</b></code>
+		<i>HexDigit</i> is the MV of
+		<i>HexDigit</i>.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>HexIntegerLiteral </i><b>:::</b> <code><b>0X</b></code>
+		<i>HexDigit</i> is the MV of
+		<i>HexDigit</i>.</p>
+		</li>
+		<li><p>
+		The
+		MV of <i>HexIntegerLiteral </i><b>:::</b> <i>HexIntegerLiteral</i>
+		<i>HexDigit</i> is (the MV of <i>HexIntegerLiteral</i> times 16)
+		plus the MV of <i>HexDigit</i>.</p>
+	</li></ul><p>
+	Once
+	the exact MV for a String numeric literal has been determined, it is
+	then rounded to a value of the Number type. If the MV is 0, then the
+	rounded value is +0 unless the first non white space character in
+	the String numeric literal is &#8216;<code><b>-</b></code>&#8217;,
+	in which case the rounded value is <span class="symbol">&#8722;</span>0.
+	Otherwise, the rounded value must be the Number value for the MV (in
+	the sense defined in <a href="x8.html#x8.5">8.5</a>), unless the literal includes a
+	<i>StrUnsignedDecimalLiteral</i>
+	and the literal has more than 20 significant digits, in which case
+	the Number value may be either the Number value for the MV of a
+	literal produced by replacing each significant digit after the 20th
+	with a 0 digit or the Number value for the MV of a literal produced
+	by replacing each significant digit after the 20th with a 0 digit
+	and then incrementing the literal at the 20th digit position. A
+	digit is <i>significant</i> if it is not part of an <i>ExponentPart</i>
+	and</p>
+	<ul><li><p>
+		it
+		is not <b>0</b>;
+		or</p>
+		</li>
+		<li><p>
+		there
+		is a nonzero digit to its left and there is a nonzero digit, not in
+		the <i>ExponentPart</i>,
+		to its right.</p>
+	</li></ul><h3 id="x9.4">9.4 ToInteger <a href="#x9.4">#</a> <a href="#x9.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	The
+	abstract operation ToInteger converts its argument to an integral
+	numeric value. This abstract operation functions as follows:</p>
+	<ol><li><p>
+		Let
+		<i>number</i> be the result of calling <a href="#x9.3">ToNumber</a> on the input
+		argument.</p>
+		</li>
+		<li><p>
+		If
+		<i>number</i> is <b>NaN</b>, return <b>+0</b>.</p>
+		</li>
+		<li><p>
+		If
+		<i>number</i> is <b>+0</b>, <span class="symbol"><b>&#8722;</b></span><b>0</b>,
+		<b>+</b><span class="symbol"><b>&#8734;</b></span><b>,</b> or <span class="symbol"><b>&#8722;&#8734;</b></span>,
+		return <i>number</i>.</p>
+		</li>
+		<li><p>
+		Return
+		the result of computing <a href="x5.html#sign">sign</a>(<i>number</i>) * <a href="x5.html#floor">floor</a>(<a href="x5.html#abs">abs</a>(<i>number</i>)).</p>
+	</li></ol><h3 id="x9.5">9.5 ToInt32: (Signed 32 Bit Integer) <a href="#x9.5">#</a> <a href="#x9.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	The
+	abstract operation ToInt32 converts its argument to one of 2<sup>32</sup>
+	integer values in the range <span class="symbol">&#8722;</span>2<sup>31</sup>
+	through 2<sup>31</sup><span class="symbol">&#8722;</span>1,
+	inclusive. This abstract operation functions as follows:</p>
+	<ol><li><p>
+		Let
+		<i>number</i> be the result of calling <a href="#x9.3">ToNumber</a> on the input
+		argument.</p>
+		</li>
+		<li><p>
+		If
+		<i>number</i> is <b>NaN</b>, <b>+0</b>, <span class="symbol"><b>&#8722;</b></span><b>0</b>,
+		<b>+</b><span class="symbol"><b>&#8734;</b></span>, or <span class="symbol"><b>&#8722;&#8734;</b></span>,
+		return <b>+0</b>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>posInt</i> be <a href="x5.html#sign">sign</a>(<i>number</i>) * <a href="x5.html#floor">floor</a>(<a href="x5.html#abs">abs</a>(<i>number</i>)).</p>
+		</li>
+		<li><p>
+		Let
+		<i>int32bit</i> be <i>posInt</i> <a href="x5.html#modulo">modulo</a> 2<sup>32</sup>; that is, a
+		finite integer value k of Number type with positive sign and less
+		than 2<sup>32</sup> in magnitude such that the mathematical
+		difference of <i>posInt</i> and k is mathematically an integer
+		multiple of 2<sup>32</sup>.</p>
+		</li>
+		<li><p>
+		If
+		<i>int32bit</i> is greater than or equal to 2<sup>31</sup>, return
+		<i>int32bit</i> <span class="symbol">&#8722;</span> 2<sup>32</sup>,
+		otherwise return <i>int32bit</i>.</p>
+	</li></ol><p>
+	</p><p><b class="note">NOTE</b> Given the above definition of ToInt32:</p>
+	<ul><li><p>
+		The ToInt32
+		abstract operation is idempotent: if applied to a result that it
+		produced, the second application leaves that value unchanged.</p>
+		</li>
+		<li><p>
+		ToInt32(<a href="#x9.6">ToUint32</a>(<i>x</i>))
+		is equal to ToInt32(<i>x</i>)
+		for all values of <i>x</i>.
+		(It is to preserve this latter property that +<span class="symbol"><b>&#8734;</b></span>
+		and <span class="symbol">&#8722;</span><span class="symbol"><b>&#8734;</b></span>
+		are mapped to <b>+0</b>.)</p>
+		</li>
+		<li><p>
+		ToInt32 maps <span class="symbol"><b>&#8722;</b></span><b>0</b>
+		to <b>+0</b>.</p>
+	</li></ul><h3 id="x9.6">9.6 ToUint32: (Unsigned 32 Bit Integer) <a href="#x9.6">#</a> <a href="#x9.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	The
+	abstract operation ToUint32 converts its argument to one of 2<sup>32</sup>
+	integer values in the range 0
+	through 2<sup>32</sup><span class="symbol">&#8722;</span>1,
+	inclusive. This abstraction operation functions as follows:</p>
+	<ol><li><p>
+		Let
+		<i>number</i> be the result of calling <a href="#x9.3">ToNumber</a> on the input
+		argument.</p>
+		</li>
+		<li><p>
+		If
+		<i>number</i> is <b>NaN</b>, +0, <span class="symbol">&#8722;</span>0,
+		+<span class="symbol"><b>&#8734;</b></span>, or <span class="symbol">&#8722;</span><span class="symbol"><b>&#8734;</b></span>,
+		return <b>+0</b>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>posInt</i> be <a href="x5.html#sign">sign</a>(<i>number</i>) * <a href="x5.html#floor">floor</a>(<a href="x5.html#abs">abs</a>(<i>number</i>)).</p>
+		</li>
+		<li><p>
+		Let
+		<i>int32bit</i> be <i>posInt</i> <a href="x5.html#modulo">modulo</a> 2<sup>32</sup>; that is, a
+		finite integer value k of Number type with positive sign and less
+		than 2<sup>32</sup> in magnitude such that the mathematical
+		difference of <i>posInt</i> and k is mathematically an integer
+		multiple of 2<sup>32</sup>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>int32bit</i>.</p>
+	</li></ol><p>
+	</p><p><b class="note">NOTE</b> Given the above definition of ToUInt32:</p>
+	<ul><li><p>
+		Step 5 is the
+		only difference between ToUint32 and <a href="#x9.5">ToInt32</a>.</p>
+		</li>
+		<li><p>
+		The ToUint32
+		abstract operation is idempotent: if applied to a result that it
+		produced, the second application leaves that value unchanged.</p>
+		</li>
+		<li><p>
+		ToUint32(<a href="#x9.5">ToInt32</a>(<i>x</i>))
+		is equal to ToUint32(<i>x</i>)
+		for all values of <i>x</i>.
+		(It is to preserve this latter property that <b>+</b><span class="symbol"><b>&#8734;</b></span>
+		and <span class="symbol"><b>&#8722;&#8734;</b></span> are mapped to
+		<b>+0</b>.)</p>
+		</li>
+		<li><p>
+		ToUint32 maps <span class="symbol"><b>&#8722;</b></span><b>0</b>
+		to <b>+0</b>.</p>
+	</li></ul><h3 id="x9.7">9.7 ToUint16: (Unsigned 16 Bit Integer) <a href="#x9.7">#</a> <a href="#x9.7-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	The
+	abstract operation ToUint16 converts its argument to one of 2<sup>16</sup>
+	integer values in the range 0
+	through 2<sup>16</sup><span class="symbol">&#8722;</span>1,
+	inclusive. This abstract operation functions as follows:</p>
+	<ol><li><p>
+		Let
+		<i>number</i> be the result of calling <a href="#x9.3">ToNumber</a> on the input
+		argument.</p>
+		</li>
+		<li><p>
+		If
+		<i>number</i> is <b>NaN</b>, +0, <span class="symbol">&#8722;</span>0,
+		+<span class="symbol"><b>&#8734;</b></span>, or <span class="symbol">&#8722;</span><span class="symbol"><b>&#8734;</b></span>,
+		return <b>+0</b>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>posInt</i> be <a href="x5.html#sign">sign</a>(<i>number</i>) * <a href="x5.html#floor">floor</a>(<a href="x5.html#abs">abs</a>(<i>number</i>)).</p>
+		</li>
+		<li><p>
+		Let
+		<i>int16bit</i> be <i>posInt</i> <a href="x5.html#modulo">modulo</a> 2<sup>16</sup>; that is, a
+		finite integer value <i>k</i> of Number type with positive sign and
+		less than 2<sup>16</sup> in magnitude such that the mathematical
+		difference of <i>posInt</i> and <i>k</i> is mathematically an
+		integer multiple of 2<sup>16</sup>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>int16bit</i>.</p>
+	</li></ol><p>
+	</p><p><b class="note">NOTE</b> Given the above definition of ToUint16:</p>
+	<ul><li><p>
+		The substitution
+		of 2<sup>16</sup>
+		for 2<sup>32</sup>
+		in step 4 is the only difference between <a href="#x9.6">ToUint32</a> and ToUint16.</p>
+		</li>
+		<li><p>
+		ToUint16 maps <span class="symbol"><b>&#8722;</b></span><b>0</b>
+		to <b>+0</b>.</p>
+	</li></ul><h3 id="x9.8">9.8 ToString <a href="#x9.8">#</a> <a href="#x9.8-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="sm-btm">
+	The
+	abstract operation ToString converts its argument to a value of type
+	String according to Table 13:</p>
+	<center>
+		<table width="690" border="1" bordercolor="#000000" cellpadding="8" cellspacing="0" rules="ROWS"><caption>Table&#160;13 &#8212; ToString Conversions</caption>
+			<colgroup><col width="138"><col width="518"></colgroup><tbody><tr valign="TOP"><td width="138" height="9" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Argument
+					Type</span></b></i></p>
+				</td>
+				<td width="518" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Result</span></b></i></p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Undefined</p>
+				</td>
+				<td width="518">
+					<p><code><b>"undefined"</b></code></p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Null</p>
+				</td>
+				<td width="518">
+					<p><code><b>"null"</b></code></p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Boolean</p>
+				</td>
+				<td width="518">
+					<p>If
+					the argument is <b>true</b>, then the result is <code><b>"true"</b></code>.</p>
+					<p>If
+					the argument is <b>false</b>, then the result is <code><b>"false"</b></code><b>.</b></p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Number</p>
+				</td>
+				<td width="518">
+					<p>See
+					<a href="#x9.8.1">9.8.1</a>.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					String</p>
+				</td>
+				<td width="518">
+					<p>Return
+					the input argument (no conversion)</p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Object</p>
+				</td>
+				<td width="518">
+					<p>Apply
+					the following steps:</p>
+					<p>
+					1.
+					Let <i>primValue</i>
+					be <a href="#x9.1">ToPrimitive</a>(input argument, hint String).</p>
+					<p>
+					2.
+					Return ToString(<i>primValue</i>).</p>
+				</td>
+			</tr></tbody></table></center>
+	<h4 id="x9.8.1">9.8.1 ToString Applied to the Number Type <a href="#x9.8.1">#</a> <a href="#x9.8.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	abstract operation ToString converts a Number <i>m</i>
+	to String format as follows:</p>
+	<ol><li><p>
+		If
+		<i>m</i> is <b>NaN</b>, return the String <code><b>"NaN"</b></code>.</p>
+		</li>
+		<li><p>
+		If
+		<i>m</i> is <b>+0</b> or <span class="symbol"><b>&#8722;</b></span><b>0</b>,
+		return the String <code><b>"0"</b></code>.</p>
+		</li>
+		<li><p>
+		If
+		<i>m</i> is less than zero, return the String concatenation of the
+		String <code><b>"-"</b></code>
+		and ToString(<span class="symbol">&#8722;</span><i>m</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>m</i> is infinity, return the String <code><b>"Infinity"</b></code>.</p>
+		</li>
+		<li><p>
+		Otherwise,
+		let <i>n</i>, <i>k</i>, and <i>s</i> be integers such that <i>k</i>
+		<span class="symbol">&#8805;</span> 1, 10<sup><i>k</i></sup><sup><span class="symbol">&#8722;</span></sup><sup>1</sup><span class="symbol">&#8804;</span> <i>s</i> &lt; 10<sup><i>k</i></sup>,
+		the Number value for <i>s</i> <span class="symbol">&#215;</span>
+		10<sup><i>n</i></sup><sup><span class="symbol"><i>&#8722;</i></span></sup><sup><i>k</i></sup>
+		is <i>m</i>, and <i>k</i> is as small as possible. Note that <i>k</i>
+		is the number of digits in the decimal representation of <i>s</i>,
+		that <i>s</i> is not divisible by 10, and that the least
+		significant digit of <i>s</i> is not necessarily uniquely
+		determined by these criteria.</p>
+		</li>
+		<li><p>
+		If
+		<i>k</i> <span class="symbol">&#8804;</span> <i>n</i> <span class="symbol">&#8804;</span>
+		21, return the String consisting of the <i>k</i> digits of the
+		decimal representation of s (in order, with no leading zeroes),
+		followed by <i>n</i><span class="symbol"><i>&#8722;</i></span><i>k</i>
+		occurrences of the character &#8216;<code><b>0</b></code>&#8217;.</p>
+		</li>
+		<li><p>
+		If
+		0 &lt; n <span class="symbol">&#8804;</span> 21, return the
+		String consisting of the most significant <i>n</i> digits of the
+		decimal representation of <i>s</i>, followed by a decimal point
+		&#8216;<code><b>.</b></code>&#8217;, followed
+		by the remaining <i>k</i><span class="symbol"><i>&#8722;</i></span><i>n</i>
+		digits of the decimal representation of <i>s</i>.</p>
+		</li>
+		<li><p>
+		If
+		<span class="symbol">&#8722;</span>6 &lt; n <span class="symbol">&#8804;</span>
+		0, return the String consisting of the character &#8216;<code><b>0</b></code>&#8217;,
+		followed by a decimal point &#8216;<code><b>.</b></code>&#8217;,
+		followed by <span class="symbol">&#8722;</span><i>n</i>
+		occurrences of the character &#8216;<code><b>0</b></code>&#8217;,
+		followed by the <i>k</i> digits of the decimal representation of <i>s</i>.</p>
+		</li>
+		<li><p>
+		Otherwise,
+		if <i>k</i> = 1, return the String consisting of the single digit
+		of <i>s</i>, followed by lowercase character &#8216;<code><b>e</b></code>&#8217;,
+		followed by a plus sign &#8216;<code><b>+</b></code>&#8217;
+		or minus sign &#8216;<span class="symbol"><b>&#8722;</b></span>&#8217;
+		according to whether <i>n</i><span class="symbol">&#8722;</span>1
+		is positive or negative, followed by the decimal representation of
+		the integer <a href="x5.html#abs">abs</a>(<i>n</i><span class="symbol">&#8722;</span>1)
+		(with no leading zeros).</p>
+		</li>
+		<li><p>
+		Return
+		the String consisting of the most significant digit of the decimal
+		representation of s, followed by a decimal point &#8216;.&#8217;, followed
+		by the remaining k<span class="symbol">&#8722;</span>1 digits of
+		the decimal representation of s, followed by the lowercase
+		character &#8216;e&#8217;, followed by a plus sign &#8216;+&#8217; or minus sign
+		&#8216;<span class="symbol">&#8722;</span>&#8217; according to whether
+		n<span class="symbol">&#8722;</span>1 is positive or negative,
+		followed by the decimal representation of the integer <a href="x5.html#abs">abs</a>(n<span class="symbol">&#8722;</span>1)
+		(with no leading zeros).</p>
+	</li></ol><p><b class="note">NOTE 1</b> The following observations may be useful as guidelines for
+	implementations, but are not part of the normative requirements of
+	this Standard:</p>
+	<ul><li><p>
+		If x is any
+		Number value other than <span class="symbol"><b>&#8722;</b></span><b>0</b>,
+		then <a href="#x9.3">ToNumber</a>(<a href="#x9.8">ToString</a>(x)) is exactly the same Number value as x.</p>
+		</li>
+		<li><p>
+		The least
+		significant digit of s is not always uniquely determined by the
+		requirements listed in step 5.</p>
+	</li></ul><p><b class="note">NOTE 2</b> For implementations that provide more accurate conversions than
+	required by the rules above, it is recommended that the following
+	alternative version of step 5 be used as a guideline:</p>
+	<p class="indent-1">
+	Otherwise,
+	let <i>n</i>,
+	<i>k</i>,
+	and <i>s</i>
+	be integers such that <i>k</i>
+	<span class="symbol">&#8805;</span>
+	1, 10<sup><i>k</i></sup><sup><span class="symbol">&#8722;</span></sup><sup>1</sup><span class="symbol">&#8804;</span>
+	<i>s</i>
+	&lt; 10<sup><i>k</i></sup>,
+	the Number value for <i>s</i>
+	<span class="symbol">&#215;</span>
+	10<sup><i>n</i></sup><sup><span class="symbol">&#8722;</span></sup><sup><i>k</i></sup>
+	is <i>m</i>,
+	and <i>k</i>
+	is as small as possible. If there are multiple possibilities for <i>s</i>,
+	choose the value of <i>s</i>
+	for which <i>s</i>
+	<span class="symbol">&#215;</span>
+	10<sup><i>n</i></sup><sup><span class="symbol">&#8722;</span></sup><sup><i>k</i></sup>
+	is closest in value to <i>m</i>.
+	If there are two such possible values of <i>s</i>,
+	choose the one that is even. Note that <i>k</i>
+	is the number of digits in the decimal representation of <i>s</i>
+	and that <i>s</i>
+	is not divisible by 10.</p>
+	<p><b class="note">NOTE 3</b> Implementers of ECMAScript may find useful the paper and code
+	written by David M. Gay for binary-to-decimal conversion of
+	floating-point numbers:</p>
+	<p class="indent-1">
+	Gay, David M.
+	Correctly Rounded Binary-Decimal and Decimal-Binary Conversions.
+	Numerical Analysis, Manuscript 90-10. AT&amp;T Bell Laboratories
+	(Murray Hill, New Jersey). November 30, 1990. Available
+	as
+<br><a href="http://cm.bell-labs.com/cm/cs/doc/90/4-10.ps.gz">http://cm.bell-labs.com/cm/cs/doc/90/4-10.ps.gz</a>.
+	Associated code available
+	as
+<br><a href="http://cm.bell-labs.com/netlib/fp/dtoa.c.gz">http://cm.bell-labs.com/netlib/fp/dtoa.c.gz</a>
+ and as
+<br><a href="http://cm.bell-labs.com/netlib/fp/g_fmt.c.gz">http://cm.bell-labs.com/netlib/fp/g_fmt.c.gz</a>
+	and may also be found at the various <code><b>netlib</b></code>
+	mirror sites.</p>
+	<h3 id="x9.9">9.9 ToObject <a href="#x9.9">#</a> <a href="#x9.9-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="sm-btm">
+	The
+	abstract operation ToObject converts its argument to a value of type
+	Object according to Table 14:</p>
+	<center>
+		<table width="690" border="1" bordercolor="#000000" cellpadding="8" cellspacing="0" rules="ROWS"><caption>Table&#160;14 &#8212; ToObject</caption>
+			<colgroup><col width="138"><col width="518"></colgroup><tbody><tr valign="TOP"><td width="138" height="10" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Argument
+					Type</span></b></i></p>
+				</td>
+				<td width="518" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Result</span></b></i></p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Undefined</p>
+				</td>
+				<td width="518">
+					<p>
+					Throw
+					a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Null</p>
+				</td>
+				<td width="518">
+					<p>
+					Throw
+					a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Boolean</p>
+				</td>
+				<td width="518">
+					<p>
+					Create
+					a new Boolean object whose [[PrimitiveValue]] internal property
+					is set to the value of the argument. See <a href="x15.html#x15.6">15.6</a> for a description
+					of Boolean objects.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Number</p>
+				</td>
+				<td width="518">
+					<p>
+					Create
+					a new Number object whose [[PrimitiveValue]] internal property
+					is set to the value of the argument. See <a href="x15.html#x15.7">15.7</a> for a description
+					of Number objects.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					String</p>
+				</td>
+				<td width="518">
+					<p>
+					Create
+					a new String object whose [[PrimitiveValue]] internal property
+					is set to the value of the argument. See <a href="x15.html#x15.5">15.5</a> for a description
+					of String objects.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>Object</p>
+				</td>
+				<td width="518">
+					<p>The
+					result is the input argument (no conversion).</p>
+				</td>
+			</tr></tbody></table></center>
+	<h3 id="x9.10">9.10 CheckObjectCoercible <a href="#x9.10">#</a> <a href="#x9.10-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="sm-btm">
+	The
+	abstract operation CheckObjectCoercible throws an error if its
+	argument is a value that cannot be converted to an Object using
+	<a href="#x9.9">ToObject</a>. It is defined by Table 15:</p>
+	<center>
+		<table width="690" border="1" bordercolor="#000000" cellpadding="8" cellspacing="0" rules="ROWS"><caption>Table&#160;15 &#8212; CheckObjectCoercible Results</caption>
+			<colgroup><col width="138"><col width="518"></colgroup><tbody><tr valign="TOP"><td width="138" height="8" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Argument
+					Type</span></b></i></p>
+				</td>
+				<td width="518" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Result</span></b></i></p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Undefined</p>
+				</td>
+				<td width="518">
+					<p>
+					Throw
+					a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Null</p>
+				</td>
+				<td width="518">
+					<p>
+					Throw
+					a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Boolean</p>
+				</td>
+				<td width="518">
+					<p>
+					Return</p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Number</p>
+				</td>
+				<td width="518">
+					<p>
+					Return</p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					String</p>
+				</td>
+				<td width="518">
+					<p>
+					Return</p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>Object</p>
+				</td>
+				<td width="518">
+					<p>Return</p>
+				</td>
+			</tr></tbody></table></center>
+	<h3 id="x9.11">9.11 IsCallable <a href="#x9.11">#</a> <a href="#x9.11-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	The
+	abstract operation IsCallable determines if its argument, which must
+	be an ECMAScript language value, is a callable function Object
+	according to Table 16:</p>
+	<center>
+		<table width="690" border="1" bordercolor="#000000" cellpadding="8" cellspacing="0" rules="ROWS"><caption>Table&#160;16 &#8212; IsCallable Results</caption>
+			<colgroup><col width="138"><col width="518"></colgroup><tbody><tr valign="TOP"><td width="138" height="6" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Argument
+					Type</span></b></i></p>
+				</td>
+				<td width="518" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Result</span></b></i></p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Undefined</p>
+				</td>
+				<td width="518">
+					<p>
+					Return
+					<b>false</b>.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Null</p>
+				</td>
+				<td width="518">
+					<p>
+					Return
+					<b>false</b>.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Boolean</p>
+				</td>
+				<td width="518">
+					<p>
+					Return
+					<b>false</b>.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					Number</p>
+				</td>
+				<td width="518">
+					<p>
+					Return
+					<b>false</b>.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>
+					String</p>
+				</td>
+				<td width="518">
+					<p>
+					Return
+					<b>false</b>.</p>
+				</td>
+			</tr><tr valign="TOP"><td width="138">
+					<p>Object</p>
+				</td>
+				<td width="518">
+					<p>If
+					the argument object has an [[Call]] internal method, then return
+					<b>true</b>, otherwise return <b>false</b>.</p>
+				</td>
+			</tr></tbody></table></center>
+	<h3 id="x9.12">9.12 The SameValue Algorithm <a href="#x9.12">#</a> <a href="#x9.12-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	The
+	internal comparison abstract operation SameValue(<i>x</i>,
+	<i>y</i>), where <i>x</i>
+	and <i>y</i> are
+	ECMAScript language values, produces <b>true</b> or <b>false</b>.
+	Such a comparison is performed as follows:</p>
+	<ol><li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>x</i>) is different from <a href="x8.html#Type">Type</a>(<i>y</i>), return <b>false</b>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>x</i>) is Undefined, return <b>true</b>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>x</i>) is Null, return <b>true</b>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>x</i>) is Number, then.</p>
+		<ol><li><p>
+			If
+			<i>x</i> is NaN and <i>y</i> is NaN, return <b>true</b>.</p>
+			</li>
+			<li><p>
+			If
+			<i>x</i> is +0 and <i>y</i> is -0, return <b>false</b>.</p>
+			</li>
+			<li><p>
+			If
+			<i>x</i> is -0 and <i>y</i> is +0, return <b>false</b>.</p>
+			</li>
+			<li><p>
+			If
+			<i>x</i> is the same Number value as <i>y</i>, return <b>true</b>.</p>
+			</li>
+			<li><p>
+			Return
+			<b>false</b>.</p>
+		</li></ol></li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>x</i>) is String, then return <b>true </b>if <i>x</i> and <i>y</i>
+		are exactly the same sequence of characters (same length and same
+		characters in corresponding positions); otherwise, return <b>false</b>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>x</i>) is Boolean, return <b>true </b>if <i>x</i> and <i>y</i>
+		are both <b>true</b> or both <b>false</b>; otherwise, return <b>false</b>.</p>
+		</li>
+		<li><p>
+		Return
+		true if <i>x</i> and <i>y</i> refer to the same object. Otherwise,
+		return <b>false</b>.</p>
+	</li></ol></body><script src="anno.js"></script></html>

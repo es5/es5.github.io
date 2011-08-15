@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class="split chapter"><head><meta charset="utf-8"><title>Annex C (informative) The Strict Mode of ECMAScript # &#9417; &#9402; &#9312; &#9398; &#8212; Annotated ES5</title><link rel="stylesheet" href="style.css"><link rel="shortcut icon" href="favicon.ico"><link href="B.html" title="Annex B (informative) Compatibility " rel="prev">
+  <link href="index.html#contents" title="TOC" rel="index">
+  <link href="D.html" title="Annex D (informative) Corrections and Clarifications in the 5th Edition with Possible 3rd Edition Compatibility Impact " rel="next">
+  </head><body><div class="head">
+<h2 id="top">Annotated ECMAScript 5.1 <span id="timestamp"></span></h2>
+<div id="mascot-treehouse">
+	<img id="mascot" align="left" src="js-mascot.svg" alt=""><img id="bubble" src="bubble.svg" alt=""></div>
+<p id="slogan">&#8223;Ex igne vita&#8221;</p>
+<div id="annotations"></div>
+<script src="timestamp.js"></script></div>
+<nav>
+   <a href="B.html">&#8592; Annex B (informative) Compatibility </a> &#8211;
+   <a href="index.html#contents">TOC</a> &#8211;
+   <a href="D.html">Annex D (informative) Corrections and Clarifications in the 5th Edition with Possible 3rd Edition Compatibility Impact  &#8594;</a>
+  </nav>
+
+  <h2 id="C">Annex C (informative) The Strict Mode of ECMAScript <a href="#C">#</a> <a href="#C-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h2>
+	<p>
+	<strong>The
+	strict mode restriction and exceptions</strong></p>
+	<ul><li>The identifiers "<code><b>implements</b></code>", "<code><b>interface</b></code>",
+"<code><b>let</b></code>", "<code><b>package</b></code>", "<code><b>private</b></code>",
+"<code><b>protected</b></code>", "<code><b>public</b></code>", "<code><b>static</b></code>", and
+"<code><b>yield</b></code>" are classified as <i>FutureReservedWord</i> tokens
+within strict mode code.  (<a>7.6.12</a> [?]<!-- FIXME -->).</li>
+		<li><p>
+		A
+		conforming implementation, when processing <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a>, may
+		not extend the syntax of <i>NumericLiteral</i>
+		(<a href="x7.html#x7.8.3">7.8.3</a>) to include <i>OctalIntegerLiteral</i>
+		as described in <a href="B.html#B.1.1">B.1.1</a>.</p>
+		</li>
+		<li><p>
+		A
+		conforming implementation, when
+		processing <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a> (see <a href="x10.html#x10.1.1">10.1.1</a>), may not extend the syntax
+		of <i>EscapeSequence</i> to
+		include <i>OctalEscapeSequence</i>
+		as described in <a href="B.html#B.1.2">B.1.2</a>.</p>
+		</li>
+		<li><p>
+		Assignment
+		to an undeclared identifier or otherwise <a href="x8.html#IsUnresolvableReference">unresolvable reference</a>
+		does not create a property in the <a href="x15.html#x15.1" class="term-ref">global object</a>. When a simple
+		assignment occurs within <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a>, its <i>LeftHandSide </i>must not evaluate to an
+		unresolvable Reference. If it does a <b><a href="x15.html#x15.11.6.3" class="term-ref">ReferenceError</a></b>
+		exception is thrown (<a href="x8.html#x8.7.2">8.7.2</a>). The <i>LeftHandSide </i>also
+		may not be a reference to a data property with the attribute value
+		{[[Writable]]:<b>false</b>},
+		to an accessor property with the attribute value
+		{[[Set]]:<b>undefined</b>},<b>
+		 </b>nor to a non-existent
+		property of an object whose [[Extensible]] internal property has
+		the value <b>false</b>.
+		In these cases a <code><b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b></code>
+		exception is thrown (<a href="x11.html#x11.13.1">11.13.1</a>).</p>
+		</li>
+		<li><p>
+		The
+		identifier <code><b>eval</b></code>
+		or <code><b>arguments</b></code>
+		may not appear as the <i>LeftHandSideExpression</i>
+		of an Assignment operator (<a href="x11.html#x11.13">11.13</a>) or of a <i>PostfixExpression</i>
+		(<a href="x11.html#x11.3">11.3</a>) or as the <i>UnaryExpression</i>
+		operated upon by a Prefix Increment (<a href="x11.html#x11.4.4">11.4.4</a>) or a Prefix Decrement
+		(<a href="x11.html#x11.4.5">11.4.5</a>) operator. 
+		</p>
+		</li>
+		<li><p>
+		Arguments
+		objects for strict mode functions define non-configurable accessor
+		properties named "<code><b>caller</b></code>"
+		and "<code><b>callee</b></code>"
+		which throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception on access
+		(<a href="x10.html#x10.6">10.6</a>).</p>
+		</li>
+		<li><p>
+		Arguments
+		objects for strict mode functions do not dynamically share their
+		array indexed property values with the corresponding formal
+		parameter bindings of their functions. (<a href="x10.html#x10.6">10.6</a>).</p>
+		</li>
+		<li><p>
+		For
+		strict mode functions, if an arguments object is created the
+		binding of the local identifier <code><b>arguments</b></code>
+		to the arguments object is immutable and hence may not be the
+		target of an assignment expression. (<a href="x10.html#x10.5">10.5</a>).</p>
+		</li>
+		<li><p>
+		It
+		is a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+		if <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a> contains an
+		<i>ObjectLiteral</i> with
+		more than one definition of any data property (<a href="x11.html#x11.1.5">11.1.5</a>).</p>
+		</li>
+		<li><p>
+		It
+		is a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+		if the <i>Identifier</i>
+		<code><b>"eval"</b></code>
+		or the <i>Identifier </i><code><b>"arguments"</b></code>
+		occurs as the <i>Identifier</i>
+		in a <i>PropertySetParameterList</i><code><b>
+		</b></code>of a
+		<i>PropertyAssignment</i>
+		that is contained in <a href="x10.html#x10.1.1">strict code</a> or
+		if its <i><a href="x13.html#x13">FunctionBody</a></i> is
+		<a href="x10.html#x10.1.1">strict code</a> (<a href="x11.html#x11.1.5">11.1.5</a>).</p>
+		</li>
+		<li><p>
+		Strict
+		mode <a href="x10.html#eval-code">eval code</a> cannot <a href="x10.html#x10.5">instantiate variables or functions</a> in the
+		variable environment of the caller to eval. Instead, a new variable
+		environment is created and that environment is used for declaration
+		binding instantiation for the <a href="x10.html#eval-code">eval code</a> (<a href="x10.html#x10.4.2">10.4.2</a>).</p>
+		</li>
+		<li><p>
+		If
+		<b>this</b>
+		is evaluated within <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a>, then the <b>this
+		</b>value is not coerced to
+		an object. A <b>this</b>
+		value of <b>null</b>
+		or <b>undefined</b>
+		is not converted to the <a href="x15.html#x15.1" class="term-ref">global object</a> and <a href="x4.html#primitive_value" class="term-ref">primitive value</a>s are not
+		converted to wrapper objects. The <b>this</b>
+		value passed via a function call (including calls made using
+		<code><b><a href="x15.html#x15.3.4.3">Function.prototype.apply</a></b></code>
+		and <code><b><a href="x15.html#x15.3.4.4">Function.prototype.call</a></b></code><b>)</b>
+		do not coerce the passed this value to an object (<a href="x10.html#x10.4.3">10.4.3</a>, <a href="x11.html#x11.1.1">11.1.1</a>,
+		<a href="x15.html#x15.3.4.3">15.3.4.3</a>, <a href="x15.html#x15.3.4.4">15.3.4.4</a>).</p>
+		</li>
+		<li><p>
+		When
+		a <code><b>delete</b></code>
+		operator occurs within <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a>,
+    a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> is thrown if its
+		<i>UnaryExpression</i> is a
+		direct reference to a variable, function argument, or function
+		name(<a href="x11.html#x11.4.1">11.4.1</a>).</p>
+		</li>
+		<li><p>
+		When
+		a <code><b>delete</b></code>
+		operator occurs within <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a>, a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+is thrown if the property to
+		be deleted has the attribute { [[Configurable]]:<b>false</b>
+		} (<a href="x11.html#x11.4.1">11.4.1</a>).</p>
+		</li>
+		<li><p>
+		It
+		is a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+		if a <i>VariableDeclaration</i>
+		or <i>VariableDeclarationNoIn</i>
+		occurs within <a href="x10.html#x10.1.1">strict code</a> and its  <i>Identifier</i>
+		is <code><b>eval</b></code><b>
+		</b>or<b>
+		</b><code><b>arguments</b></code>
+		(<a href="x12.html#x12.2.1">12.2.1</a>).</p>
+		</li>
+		<li><p>
+		Strict
+		mode code may not include a <i>WithStatement</i>.
+		The occurrence of a <i>WithStatement</i>
+		in such a context is an <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+		(<a href="x12.html#x12.10">12.10</a>).</p>
+		</li>
+		<li><p>
+		It
+		is a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> if a <i>TryStatement</i>
+		with a  <i>Catch</i>
+		occurs within <a href="x10.html#x10.1.1">strict code</a> and the <i>Identifier</i>
+		of the <i>Catch</i>
+		production is <code><b>eval</b></code>
+		or <code><b>arguments</b></code>
+		(<a href="x12.html#x12.14.1">12.14.1</a>)</p>
+		</li>
+		<li><p>
+		It
+		is a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> if  the identifier <code><b>eval</b></code>
+		or <code><b>arguments</b></code>
+		appears within a <i>FormalParameterList</i>
+		of a strict mode <i>FunctionDeclaration</i>
+		or <i>FunctionExpression</i>
+		(<a href="x13.html#x13.1">13.1</a>)</p>
+		</li>
+		<li><p>
+		A
+		strict mode function may not have two or more formal parameters
+		that have the same name. An attempt to create such a function using
+		a <i>FunctionDeclaration</i>,
+		<i>FunctionExpression</i>, or
+		<code><b>Function</b></code>
+		constructor is a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+ (<a href="x13.html#x13.1">13.1</a>, <a href="x15.html#x15.3.2">15.3.2</a>).</p>
+		</li>
+
+		<li><p>
+		An
+		implementation may not extend, beyond that defined in this specification,
+    meanings within strict mode functions of properties named <code><b>caller</b></code>
+		or <code><b>arguments</b></code>
+		of function instances. ECMAScript code may not create or modify
+		properties with these names on function objects that correspond to
+		strict mode functions
+    (<a href="x10.html#x10.6">10.6</a>, <a href="x13.html#x13.2">13.2</a>, <a href="x15.html#x15.3.4.5.3">15.3.4.5.3</a>).</p>
+		</li>
+
+		<li><p>
+		It
+		is a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+		to use within <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a> the identifiers <code><b>eval</b></code>
+		or <code><b>arguments</b></code>
+		as the <i>Identifier</i> of a
+		<i>FunctionDeclaration</i> or
+		<i>FunctionExpression</i> or
+		as a formal parameter name (<a href="x13.html#x13.1">13.1</a>). Attempting to dynamically define
+		such a strict mode function using the <code><b>Function</b></code>
+		constructor (<a href="x15.html#x15.3.2">15.3.2</a>) will throw a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+		exception.</p>
+	</li></ul></body><script src="anno.js"></script></html>

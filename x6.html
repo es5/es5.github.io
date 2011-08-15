@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html class="split chapter"><head><meta charset="utf-8"><title>6 Source Text # &#9417; &#9402; &#9312; &#9398; &#8212; Annotated ES5</title><link rel="stylesheet" href="style.css"><link rel="shortcut icon" href="favicon.ico"><link href="x5.html" title="5 Notational Conventions " rel="prev">
+  <link href="index.html#contents" title="TOC" rel="index">
+  <link href="x7.html" title="7 Lexical Conventions " rel="next">
+  </head><body><div class="head">
+<h2 id="top">Annotated ECMAScript 5.1 <span id="timestamp"></span></h2>
+<div id="mascot-treehouse">
+	<img id="mascot" align="left" src="js-mascot.svg" alt=""><img id="bubble" src="bubble.svg" alt=""></div>
+<p id="slogan">&#8223;Ex igne vita&#8221;</p>
+<div id="annotations"></div>
+<script src="timestamp.js"></script></div>
+<nav>
+   <a href="x5.html">&#8592; 5 Notational Conventions </a> &#8211;
+   <a href="index.html#contents">TOC</a> &#8211;
+   <a href="x7.html">7 Lexical Conventions  &#8594;</a>
+  </nav>
+
+  <h2 id="x6">6 Source Text <a href="#x6">#</a> <a href="#x6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h2>
+	<p>
+	ECMAScript
+	source text is represented as a sequence of characters in the
+	Unicode character encoding, version 3.0 or later. The text is
+	expected to have been normalised to Unicode Normalised Form C
+	(canonical composition), as described in Unicode Technical Report
+	#15. Conforming ECMAScript implementations are not required to
+	perform any normalisation of text, or behave as though they were
+	performing normalisation of text, themselves.  ECMAScript source
+	text is assumed to be a sequence of 16-bit code units for the
+	purposes of this specification. Such a source text may include
+	sequences of  16-bit code units that are not valid UTF-16 character
+	encodings. If an actual source text is encoded in a form other than
+	16-bit code units it must be processed as if it was first convert to
+	UTF-16.</p>
+	<p class="def1">
+	<i>SourceCharacter </i><b>::</b></p>
+	<p class="def2-alt">
+	any
+	Unicode code unit</p>
+	<p>
+	Throughout
+	the rest of this document, the phrase &#8220;code unit&#8221; and the word
+	&#8220;character&#8221; will be used to refer to a 16-bit unsigned value
+	used to represent a single 16-bit unit of text. The phrase &#8220;Unicode
+	character&#8221; will be used to refer to the abstract linguistic or
+	typographical unit represented by a single Unicode scalar value
+	(which may be longer than 16 bits and thus may be represented by
+	more than one code unit). The phrase &#8220;code point&#8221; refers to such
+	a Unicode scalar value. &#8220;Unicode character&#8221; only refers to
+	entities represented by single Unicode scalar values: the components
+	of a combining character sequence are still individual &#8220;Unicode
+	characters,&#8221; even though a user might think of the whole sequence
+	as a single character.</p>
+	<p>
+	In
+	string literals, regular expression literals, and identifiers, any
+	character (code unit) may also be expressed as a Unicode escape
+	sequence consisting of six characters, namely <code><b>\u</b></code>
+	plus four hexadecimal digits. Within a comment, such an escape
+	sequence is effectively ignored as part of the comment. Within a
+	string literal or regular expression literal, the Unicode escape
+	sequence contributes one character to the value of the literal.
+	Within an identifier, the escape sequence contributes one character
+	to the identifier.</p>
+	<p><b class="note">NOTE</b> Although
+	this document sometimes refers to a &#8220;transformation&#8221; between a
+	&#8220;character&#8221; within a &#8220;string&#8221; and the 16-bit unsigned
+	integer that is the code unit of that character, there is actually
+	no transformation because a &#8220;character&#8221; within a &#8220;string&#8221; is
+	actually represented using that 16-bit unsigned value.</p>
+	<p>
+	ECMAScript
+	differs from the Java programming language in the behaviour of
+	Unicode escape sequences. In a Java program, if the Unicode escape
+	sequence <code><b>\u000A</b></code>,
+	for example, occurs within a single-line comment, it is interpreted
+	as a line terminator (Unicode character <code><b>000A</b></code>
+	is line feed) and therefore the next character is not part of the
+	comment. Similarly, if the Unicode escape sequence <code><b>\u000A</b></code>
+	occurs within a string literal in a Java program, it is likewise
+	interpreted as a line terminator, which is not allowed within a
+	string literal&#8212;one must write <code><b>\n</b></code>
+	instead of <code><b>\u000A</b></code>
+	to cause a line feed to be part of the string value of a string
+	literal. In an ECMAScript program, a Unicode escape sequence
+	occurring within a comment is never interpreted and therefore cannot
+	contribute to termination of the comment. Similarly, a Unicode
+	escape sequence occurring within a string literal in an ECMAScript
+	program always contributes a character to the String value of the
+	literal and is never interpreted as a line terminator or as a quote
+	mark that might terminate the string literal.</p>
+	</body><script src="anno.js"></script></html>

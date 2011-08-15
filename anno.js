@@ -124,7 +124,7 @@ function annoShow(event) {
 function annotateHeadings(baseUrl, marker, className, annos) {
   var element, hyperlink, i, id, space, tocAnno, tocSpace, tocElement;
   for (id in annos) {
-    if (id != null) {
+    if (id !== null) {
       element = document.getElementById(id);
       tocElement = document.getElementById(id + "-toc");
       for (i = 0; i < annos[id].length; i = i + 1) {
@@ -135,14 +135,18 @@ function annotateHeadings(baseUrl, marker, className, annos) {
         hyperlink.target = "_blank";
         hyperlink.title = "Open " + hyperlink.href + " in new tab/window";
         hyperlink.textContent = marker;
-        element.appendChild(space);
-        element.appendChild(hyperlink);
+        if (document.documentElement.className !== "split index" && element !== null) {
+          element.appendChild(space);
+          element.appendChild(hyperlink);
+        }
         tocSpace = document.createTextNode(" ");
         tocAnno = document.createElement("b");
         tocAnno.className = className;
         tocAnno.textContent = marker;
-        tocElement.appendChild(tocSpace);
-        tocElement.appendChild(tocAnno);
+        if (tocElement !== null) {
+          tocElement.appendChild(tocSpace);
+          tocElement.appendChild(tocAnno);
+        }
       }
     }
   }
@@ -162,6 +166,7 @@ document.addEventListener("keyup", function (e) {
   }
 }, true);
 
+// R markers
 annotateHeadings(
   "https://developer.mozilla.org/en/JavaScript/Reference",
   "\u24c7",
@@ -436,6 +441,8 @@ annotateHeadings(
     "x15.12.3": [ "/Global_Objects/JSON/stringify" ]
   }
 );
+
+// G markers
 annotateHeadings(
   "https://developer.mozilla.org/en/JavaScript/Guide",
   "\u24bc",
@@ -512,6 +519,8 @@ annotateHeadings(
     "B.2.2": [ "/Functions#escape_and_unescape_Functions" ]
   }
 );
+
+// D markers
 annotateHeadings(
   "http://dmitrysoshnikov.com/ecmascript",
   "\u24b9",

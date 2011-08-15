@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html class="split chapter"><head><meta charset="utf-8"><title>16 Errors # &#9417; &#9402; &#9312; &#9398; &#8212; Annotated ES5</title><link rel="stylesheet" href="style.css"><link rel="shortcut icon" href="favicon.ico"><link href="x15.html" title="15 Standard Built-in ECMAScript Objects " rel="prev">
+  <link href="index.html#contents" title="TOC" rel="index">
+  <link href="A.html" title="Annex A (informative) Grammar Summary " rel="next">
+  </head><body><div class="head">
+<h2 id="top">Annotated ECMAScript 5.1 <span id="timestamp"></span></h2>
+<div id="mascot-treehouse">
+	<img id="mascot" align="left" src="js-mascot.svg" alt=""><img id="bubble" src="bubble.svg" alt=""></div>
+<p id="slogan">&#8223;Ex igne vita&#8221;</p>
+<div id="annotations"></div>
+<script src="timestamp.js"></script></div>
+<nav>
+   <a href="x15.html">&#8592; 15 Standard Built-in ECMAScript Objects </a> &#8211;
+   <a href="index.html#contents">TOC</a> &#8211;
+   <a href="A.html">Annex A (informative) Grammar Summary  &#8594;</a>
+  </nav>
+
+  <h2 id="x16">16 Errors <a href="#x16">#</a> <a href="#x16-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h2>
+	<p>
+	An
+	implementation must report most errors at the time the relevant
+	ECMAScript language construct is evaluated. An <i>early error</i> is
+	an error that can be detected and reported prior to the evaluation
+	of any construct in the <i><a href="x14.html#x14">Program</a></i>
+	containing the error.  An implementation must report early errors in
+	a <i><a href="x14.html#x14">Program</a></i> prior to
+	the first evaluation of that <i><a href="x14.html#x14">Program</a></i>.
+	Early errors in <b>eval</b> code are reported at the time <code><b>eval</b></code>
+	is called but prior to evaluation of any construct within the <b>eval</b>
+	code. All errors that are not early errors are runtime errors.</p>
+	<p>
+	An
+	implementation must treat any instance of the following kinds of
+	errors as an early error:</p>
+	<ul><li><p>
+		Any
+		syntax error.</p>
+		</li>
+		<li><p>
+		Attempts
+		to define an <i>ObjectLiteral</i> that has multiple <b>get </b>property assignments with
+		the same name or multiple <b>set </b>property assignments with the
+		same name.</p>
+		</li>
+		<li><p>
+		Attempts
+		to define an <i>ObjectLiteral</i><b>
+		</b>that has both a data property assignment and a <b>get </b>or
+		<b>set </b>property assignment with the same name.</p>
+		</li>
+		<li><p>
+		Errors
+		in <a href="x7.html#x7.8.5">regular expression literals</a> that are not implementation-defined
+		syntax extensions.</p>
+		</li>
+		<li><p>
+		Attempts
+		in <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a> to define an <i>ObjectLiteral</i>
+		that has multiple data property assignments with the same name.</p>
+		</li>
+		<li><p>
+		The
+		occurrence of a <i>WithStatement</i>
+		in <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a>.</p>
+		</li>
+		<li><p>
+		The
+		occurrence of an <i>Identifier</i>
+		value appearing more than once within a <i>FormalParameterList</i>
+		of an individual strict mode <i><a href="x13.html#x13">FunctionDeclaration</a></i>
+		or <i><a href="x13.html#x13">FunctionExpression</a></i>.</p>
+		</li>
+		<li><p>
+		Improper
+		uses of <code><b>return</b></code>,
+		<code><b>break</b></code>, and
+		<code><b>continue</b></code>.</p>
+		</li>
+		<li><p>
+		Attempts
+		to call <a href="x8.html#x8.7.2">PutValue</a> on any value for which an early determination can
+		be made that the value is not a <a href="x8.html#x8.7">Reference</a> (for example, executing
+		the assignment statement <code>3=4</code>).</p>
+	</li></ul><p>
+	An
+	implementation shall not treat other kinds of errors as early errors
+	even if the compiler can prove that a construct cannot execute
+	without error under any circumstances. An implementation may issue
+	an early warning in such a case, but it should not report the error
+	until the relevant construct is actually executed. 
+	</p>
+	<p>
+	An
+	implementation shall report all errors as specified, except for the
+	following:</p>
+	<ul><li><p>
+		An
+		implementation may extend program syntax and regular expression
+		pattern or flag syntax. To permit this, all operations (such as
+		calling <code><b>eval</b></code>,
+		using a regular expression literal, or using the <code><b>Function</b></code>
+		or <code><b>RegExp</b></code>
+		constructor) that are allowed to throw <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+		are permitted to exhibit implementation-defined behaviour instead
+		of throwing <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+		when they encounter an implementation-defined extension to the
+		program syntax or regular expression pattern or flag syntax.</p>
+		</li>
+		<li><p>
+		An
+		implementation may provide additional types, values, objects,
+		properties, and functions beyond those described in this
+		specification. This may cause constructs (such as looking up a
+		variable in the global scope) to have implementation-defined
+		behaviour instead of throwing an error (such as <b><a href="x15.html#x15.11.6.3" class="term-ref">ReferenceError</a></b>).</p>
+		</li>
+		<li><p>
+		An
+		implementation may define behaviour other than throwing <b><a href="x15.html#x15.11.6.2" class="term-ref">RangeError</a></b>
+		for <code><b>toFixed</b></code>,
+		<code><b>toExponential</b></code>,
+		and <code><b>toPrecision</b></code>
+		when the <i>fractionDigits</i>
+		or <i>precision</i>
+		argument is outside the specified range.</p>
+	</li></ul><p>
+	</p>
+	</body><script src="anno.js"></script></html>

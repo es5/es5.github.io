@@ -1,0 +1,2348 @@
+<!DOCTYPE html>
+<html class="split chapter"><head><meta charset="utf-8"><title>7 Lexical Conventions # &#9417; &#9402; &#9312; &#9398; &#8212; Annotated ES5</title><link rel="stylesheet" href="style.css"><link rel="shortcut icon" href="favicon.ico"><link href="x6.html" title="6 Source Text " rel="prev">
+  <link href="index.html#contents" title="TOC" rel="index">
+  <link href="x8.html" title="8 Types " rel="next">
+  </head><body><div class="head">
+<h2 id="top">Annotated ECMAScript 5.1 <span id="timestamp"></span></h2>
+<div id="mascot-treehouse">
+	<img id="mascot" align="left" src="js-mascot.svg" alt=""><img id="bubble" src="bubble.svg" alt=""></div>
+<p id="slogan">&#8223;Ex igne vita&#8221;</p>
+<div id="annotations"></div>
+<script src="timestamp.js"></script></div>
+<nav>
+   <a href="x6.html">&#8592; 6 Source Text </a> &#8211;
+   <a href="index.html#contents">TOC</a> &#8211;
+   <a href="x8.html">8 Types  &#8594;</a>
+  <ol class="toc"><li><a href="x7.html#x7" id="x7-toc">7 Lexical Conventions</a>
+    <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x7.html#x7.1" id="x7.1-toc">7.1 Unicode Format-Control Characters</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x7.html#x7.2" id="x7.2-toc">7.2 White Space</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x7.html#x7.3" id="x7.3-toc">7.3 Line Terminators</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x7.html#x7.4" id="x7.4-toc">7.4 Comments</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x7.html#x7.5" id="x7.5-toc">7.5 Tokens</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x7.html#x7.6" id="x7.6-toc">7.6 Identifier Names and Identifiers</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x7.html#x7.6.1" id="x7.6.1-toc">7.6.1 Reserved Words</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x7.html#x7.6.1.1" id="x7.6.1.1-toc">7.6.1.1 Keywords</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x7.html#x7.6.1.2" id="x7.6.1.2-toc">7.6.1.2 Future Reserved Words</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li></ol></li><li><a href="x7.html#x7.7" id="x7.7-toc">7.7 Punctuators</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x7.html#x7.8" id="x7.8-toc">7.8 Literals</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x7.html#x7.8.1" id="x7.8.1-toc">7.8.1 Null Literals</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x7.html#x7.8.2" id="x7.8.2-toc">7.8.2 Boolean Literals</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x7.html#x7.8.3" id="x7.8.3-toc">7.8.3 Numeric Literals</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x7.html#x7.8.4" id="x7.8.4-toc">7.8.4 String Literals</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x7.html#x7.8.5" id="x7.8.5-toc">7.8.5 Regular Expression Literals</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x7.html#x7.9" id="x7.9-toc">7.9 Automatic Semicolon Insertion</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x7.html#x7.9.1" id="x7.9.1-toc">7.9.1 Rules of Automatic Semicolon Insertion</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x7.html#x7.9.2" id="x7.9.2-toc">7.9.2 Examples of Automatic Semicolon Insertion</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li></ol></li></ol></nav>
+
+  <h2 id="x7">7 Lexical Conventions <a href="#x7">#</a> <a href="#x7-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h2>
+	<p>
+	The
+	source text of an ECMAScript program is first converted into a
+	sequence of input elements, which are tokens, line terminators,
+	comments, or white space. The source text is scanned from left to
+	right, repeatedly taking the longest possible sequence of characters
+	as the next input element.</p>
+	<p>
+	There
+	are two goal symbols for the lexical grammar. The <i>InputElementDiv</i>
+	symbol is used in those syntactic grammar contexts where a leading
+	division (<code><b>/</b></code>) or
+	division-assignment (<code><b>/=</b></code>)
+	operator is permitted. The <i>InputElementRegExp</i>
+	symbol is used in other syntactic grammar contexts.</p>
+	<p><b class="note">NOTE</b> There
+	are no syntactic grammar contexts where both a leading division or
+	division-assignment, and a leading <i><a href="#x7.8.5">RegularExpressionLiteral</a></i>
+	are permitted. This is not affected by semicolon insertion (see
+	<a href="#x7.9">7.9</a>); in examples such as the following:</p>
+	<p class="code-example">
+	<code><b>a
+	= b<br>/hi/g.exec(c).map(d);</b></code></p>
+	<p class="sm-btm">
+	where
+	the first non-whitespace, non-comment
+	character after a <i>LineTerminator</i>
+	is slash
+	(<code><b>/</b></code>)
+	and the syntactic context allows division
+	or division-assignment, no semicolon is inserted at the
+	<i>LineTerminator</i>.
+	That is, the above example is interpreted in the same way as:</p>
+	<p class="code-example">
+	<code><b>a
+	= b / hi / g.</b></code><code><b>exec</b></code><code><b>(c).map(d);</b></code></p>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>InputElementDiv </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>WhiteSpace<br>LineTerminator<br>Comment<br>Token<br>DivPunctuator<br></i>
+	</p>
+	<p class="keep">
+	<i>InputElementRegExp </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>WhiteSpace<br>LineTerminator<br>Comment<br>Token<br>RegularExpressionLiteral</i></p>
+	<h3 id="x7.1">7.1 Unicode Format-Control Characters <a href="#x7.1">#</a> <a href="#x7.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	The
+	Unicode format-control characters (i.e., the characters in category
+	&#8220;Cf&#8221; in the Unicode Character Database such as <span class="small-caps">left-to-right
+	mark</span> or <span class="small-caps">right-to-left
+	mark</span>) are control codes used to control the formatting of a
+	range of text in the absence of higher-level protocols for this
+	(such as mark-up languages).</p>
+	<p>
+	It is
+	useful to allow format-control characters in source text to
+	facilitate editing and display. All format control characters may be
+	used within comments, and within string literals and regular
+	expression literals.</p>
+	<p>
+	&lt;ZWNJ&gt;
+	and &lt;ZWJ&gt; are
+	format-control characters that are used to make necessary
+	distinctions when forming words or phrases in certain languages. In
+	ECMAScript source text, &lt;ZWNJ&gt;
+	and &lt;ZWJ&gt;
+	may also be used in an identifier after the first character. 
+	</p>
+	<p>
+	&lt;BOM&gt;
+	is a format-control character used primarily at the start of a text
+	to mark it as Unicode and to allow detection of the text's encoding
+	and byte order. &lt;BOM&gt;
+	characters intended for this purpose can sometimes also appear after
+	the start of a text, for example as a result of concatenating files.
+	&lt;BOM&gt; characters are treated as white space characters (see
+	<a href="#x7.2">7.2</a>). 
+	</p>
+	<p class="sm-btm">
+	The
+	special treatment of certain format-control characters outside of
+	comments, string literals, and regular expression literals is
+	summarized in Table 1.</p>
+	<center>
+		<table width="690" border="1" bordercolor="#000000" cellpadding="22" cellspacing="0" rules="GROUPS"><caption>Table&#160;1 &#8212; Format-Control Character Usage</caption>
+			<colgroup><col width="130"><col width="159"><col width="120"><col width="103"></colgroup><tbody><tr valign="TOP"><td width="130" bgcolor="#c0c0c0">
+						<p>
+						<i><b><span class="table-header">Code
+						Unit Value</span></b></i></p>
+					</td>
+					<td width="159" bgcolor="#c0c0c0">
+						<p>
+						<i><b><span class="table-header">Name</span></b></i></p>
+					</td>
+					<td width="120" bgcolor="#c0c0c0">
+						<p>
+						<i><b><span class="table-header">Formal
+						Name</span></b></i></p>
+					</td>
+					<td width="103" bgcolor="#c0c0c0">
+						<p>
+						<i><b><span class="table-header">Usage</span></b></i></p>
+					</td>
+				</tr></tbody><tbody><tr valign="TOP"><td width="130">
+						<p>
+						<code><b>\u200C</b></code></p>
+					</td>
+					<td width="159">
+						<p>
+						Zero
+						width non-joiner</p>
+					</td>
+					<td width="120">
+						<p>
+						&lt;ZWNJ&gt;</p>
+					</td>
+					<td width="103">
+						<p>
+						<i>IdentifierPart</i></p>
+					</td>
+				</tr><tr valign="TOP"><td width="130">
+						<p>
+						<code><b>\u200D</b></code></p>
+					</td>
+					<td width="159">
+						<p>
+						Zero
+						width joiner</p>
+					</td>
+					<td width="120">
+						<p>
+						&lt;ZWJ&gt;</p>
+					</td>
+					<td width="103">
+						<p>
+						<i>IdentifierPart</i></p>
+					</td>
+				</tr><tr valign="TOP"><td width="130">
+						<p>
+						<code><b>\uFEFF</b></code></p>
+					</td>
+					<td width="159">
+						<p>
+						Byte
+						Order Mark</p>
+					</td>
+					<td width="120">
+						<p>
+						&lt;BOM&gt;</p>
+					</td>
+					<td width="103">
+						<p>
+						<i>Whitespace</i></p>
+					</td>
+				</tr></tbody></table></center>
+	<h3 id="x7.2">7.2 White Space <a href="#x7.2">#</a> <a href="#x7.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	White
+	space characters are used to improve source text readability and to
+	separate tokens (indivisible lexical units) from each other, but are
+	otherwise insignificant. White space characters may occur between
+	any two tokens and at the start or end of input. White space
+	characters may also occur within a <i><a href="#x7.8.4">StringLiteral</a></i>
+	or a <i><a href="#x7.8.5">RegularExpressionLiteral</a></i>
+	(where they are considered significant characters forming part of
+	the literal value) or within a <i>Comment</i>,
+	but cannot appear within any other kind of token.</p>
+	<p class="sm-btm">
+	The
+	ECMAScript white space characters are listed in Table 2.</p>
+	<center>
+		<table id="WhiteSpace" width="528" border="1" bordercolor="#000000" cellpadding="22" cellspacing="0" rules="GROUPS"><caption>Table&#160;2 &#8212; Whitespace Characters</caption>
+			<colgroup><col width="141"><col width="143"><col width="110"></colgroup><tbody><tr valign="TOP"><td width="141" bgcolor="#c0c0c0">
+						<p>
+						<i><b><span class="table-header">Code
+						Unit Value</span></b></i></p>
+					</td>
+					<td width="143" bgcolor="#c0c0c0">
+						<p>
+						<i><b><span class="table-header">Name</span></b></i></p>
+					</td>
+					<td width="110" bgcolor="#c0c0c0">
+						<p>
+						<i><b><span class="table-header">Formal
+						Name</span></b></i></p>
+					</td>
+				</tr></tbody><tbody><tr valign="TOP"><td width="141">
+						<p>
+						<code><b>\u0009</b></code></p>
+					</td>
+					<td width="143">
+						<p>
+						Tab</p>
+					</td>
+					<td width="110">
+						<p>
+						&lt;TAB&gt;</p>
+					</td>
+				</tr><tr valign="TOP"><td width="141">
+						<p>
+						<code><b>\u000B</b></code></p>
+					</td>
+					<td width="143">
+						<p>
+						Vertical
+						Tab</p>
+					</td>
+					<td width="110">
+						<p>
+						&lt;VT&gt;</p>
+					</td>
+				</tr><tr valign="TOP"><td width="141">
+						<p>
+						<code><b>\u000C</b></code></p>
+					</td>
+					<td width="143">
+						<p>
+						Form
+						Feed</p>
+					</td>
+					<td width="110">
+						<p>
+						&lt;FF&gt;</p>
+					</td>
+				</tr><tr valign="TOP"><td width="141">
+						<p>
+						<code><b>\u0020</b></code></p>
+					</td>
+					<td width="143">
+						<p>
+						Space</p>
+					</td>
+					<td width="110">
+						<p>
+						&lt;SP&gt;</p>
+					</td>
+				</tr><tr valign="TOP"><td width="141">
+						<p>
+						<code><b>\u00A0</b></code></p>
+					</td>
+					<td width="143">
+						<p>
+						No-break
+						space</p>
+					</td>
+					<td width="110">
+						<p>
+						&lt;#x0a&gt;</p>
+					</td>
+				</tr><tr valign="TOP"><td width="141">
+						<p>
+						<code><b>\uFEFF</b></code></p>
+						<p>
+						Other
+						category &#8220;Zs&#8221;</p>
+					</td>
+					<td width="143">
+						<p>
+						Byte
+						Order Mark</p>
+						<p>
+						Any
+						other Unicode &#8220;space separator&#8221;</p>
+					</td>
+					<td width="110">
+						<p>
+						&lt;BOM&gt;</p>
+						<p>
+						&lt;USP&gt;</p>
+					</td>
+				</tr></tbody></table></center>
+	<p>
+	ECMAScript
+	implementations must recognize all of the white space characters
+	defined in Unicode 3.0. Later editions of the Unicode Standard may
+	define other white space characters. ECMAScript implementations may
+	recognize white space characters from later editions of the Unicode
+	Standard.</p>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>WhiteSpace<b>
+	</b></i><b>::</b></p>
+	<p class="def1-btm">
+	&lt;TAB&gt;<br>&lt;VT&gt;<br>&lt;FF&gt;<br>&lt;SP&gt;<br>&lt;#x0a&gt;<br>&lt;BOM&gt;<br>&lt;USP&gt;</p>
+	<h3 id="x7.3">7.3 Line Terminators <a href="#x7.3">#</a> <a href="#x7.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	Like
+	white space characters, line terminator characters are used to
+	improve source text readability and to separate tokens (indivisible
+	lexical units) from each other. However, unlike white space
+	characters, line terminators have some influence over the behaviour
+	of the syntactic grammar. In general, line terminators may occur
+	between any two tokens, but there are a few places where they are
+	forbidden by the syntactic grammar. Line terminators also affect the
+	process of automatic semicolon insertion (<a href="#x7.9">7.9</a>). A line terminator
+	cannot occur within any token except a <i><a href="#x7.8.4">StringLiteral</a></i>.
+	Line terminators may only occur within a <i><a href="#x7.8.4">StringLiteral</a></i>
+	token as part of a <i>LineContinuation</i>.
+	
+	</p>
+	<p>
+	A
+	line terminator can occur within a <i>MultiLineComment</i>
+	(<a href="#x7.4">7.4</a>) but cannot occur within a <i>SingleLineComment</i>.
+	
+	</p>
+	<p>
+	Line
+	terminators are included in the set of white space characters that
+	are matched by the <code><b>\s</b></code>
+	class in regular expressions.</p>
+	<p class="sm-btm">
+	The
+	ECMAScript line terminator characters are listed in Table 3.</p>
+	<center>
+		<table id="LineTerminator" width="566" border="1" bordercolor="#000000" cellpadding="22" cellspacing="0" rules="NONE"><caption>Table&#160;3 &#8212; Line Terminator Characters</caption>
+			<colgroup><col width="133"><col width="152"><col width="147"></colgroup><tbody><tr valign="TOP"><td width="133" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Code
+					Unit Value</span></b></i></p>
+				</td>
+				<td width="152" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Name</span></b></i></p>
+				</td>
+				<td width="147" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Formal
+					Name</span></b></i></p>
+				</td>
+			</tr><tr valign="TOP"><td width="133">
+					<p>
+					<code><b>\u000A</b></code></p>
+				</td>
+				<td width="152">
+					<p>
+					Line
+					Feed</p>
+				</td>
+				<td width="147">
+					<p>
+					&lt;LF&gt;</p>
+				</td>
+			</tr><tr valign="TOP"><td width="133">
+					<p>
+					<code><b>\u000D</b></code></p>
+				</td>
+				<td width="152">
+					<p>
+					Carriage
+					Return 
+					</p>
+				</td>
+				<td width="147">
+					<p>
+					&lt;CR&gt;</p>
+				</td>
+			</tr><tr valign="TOP"><td width="133">
+					<p>
+					<code><b>\u2028</b></code></p>
+				</td>
+				<td width="152">
+					<p>
+					Line
+					separator</p>
+				</td>
+				<td width="147">
+					<p>
+					&lt;LS&gt;</p>
+				</td>
+			</tr><tr valign="TOP"><td width="133">
+					<p>
+					<code><b>\u2029</b></code></p>
+				</td>
+				<td width="152">
+					<p>
+					Paragraph
+					separator</p>
+				</td>
+				<td width="147">
+					<p>
+					&lt;PS&gt;</p>
+				</td>
+			</tr></tbody></table></center>
+	<p>
+	Only
+	the characters in Table 3 are treated as line terminators. Other new
+	line or line breaking characters are treated as white space but not
+	as line terminators. The character sequence &lt;CR&gt;&lt;LF&gt; is
+	commonly used as a line terminator. It should be considered a single
+	character for the purpose of reporting line numbers.</p>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>LineTerminator </i><b>::</b></p>
+	<p class="def1-btm">
+	&lt;LF&gt;<br>&lt;CR&gt;<br>&lt;LS&gt;<br>&lt;PS&gt;</p>
+	<p class="keep">
+	<i>LineTerminatorSequence </i><b>::</b></p>
+	<p class="def1-btm">
+	&lt;LF&gt;<br>&lt;CR&gt;
+	[<a href="x5.html#lookahead-not-in">lookahead
+	<span class="symbol">&#8713;</span></a>
+	&lt;LF&gt;
+	]<br>&lt;LS&gt;<br>&lt;PS&gt;<br>&lt;CR&gt;
+	&lt;LF&gt;</p>
+	<h3 id="x7.4">7.4 Comments <a href="#x7.4">#</a> <a href="#x7.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	Comments
+	can be either single or multi-line. Multi-line comments cannot nest.</p>
+	<p>
+	Because
+	a single-line comment can contain any character except a
+	<i>LineTerminator</i>
+	character, and because of the general rule that a token is always as
+	long as possible, a single-line comment always consists of all
+	characters from the <code><b>//</b></code>
+	marker to the end of the line. However, the <i>LineTerminator</i>
+	at the end of the line is not considered to be part of the
+	single-line comment; it is recognised separately by the lexical
+	grammar and becomes part of the stream of input elements for the
+	syntactic grammar. This point is very important, because it implies
+	that the presence or absence of single-line comments does not affect
+	the process of automatic semicolon insertion (see <a href="#x7.9">7.9</a>).</p>
+	<p>
+	Comments
+	behave like white space and are discarded except that, if a
+	<i>MultiLineComment</i>
+	contains a line terminator character, then the entire comment is
+	considered to be a <i>LineTerminator</i>
+	for purposes of parsing by the syntactic grammar.</p>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>Comment </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>MultiLineComment<br>SingleLineComment</i></p>
+	<p class="keep">
+	<i>MultiLineComment </i><b>::</b></p>
+	<p class="def1-btm">
+	<code><b>/*</b></code> <i>MultiLineCommentChars</i><sub>opt</sub><code><b>*/</b></code></p>
+	<p class="keep">
+	<i>MultiLineCommentChars </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>MultiLineNotAsteriskChar
+	MultiLineCommentChars</i><sub>opt</sub><i><br></i><code><b>*</b></code> <i>PostAsteriskCommentChars</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>PostAsteriskCommentChars </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>MultiLineNotForwardSlashOrAsteriskChar
+	MultiLineCommentChars</i><sub>opt</sub><i><br></i><code><b>*</b></code> <i>PostAsteriskCommentChars</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>MultiLineNotAsteriskChar<b>
+	</b></i><b>::</b></p>
+	<p class="def1-btm">
+	<i>SourceCharacter </i><b>but
+	not</b><i> asterisk </i><code><b>*</b></code></p>
+	<p class="keep">
+	<i>MultiLineNotForwardSlashOrAsteriskChar </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>SourceCharacter<b>
+	</b></i><b>but
+	not</b><i> forward-slash </i><code><b>/</b></code> <i><b>
+	</b></i><b>or</b><i>asterisk </i><code><b>*</b></code></p>
+	<p class="keep">
+	<i>SingleLineComment </i><b>::</b></p>
+	<p class="def1-btm">
+	<code><b>//</b></code> <i>SingleLineCommentChars</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>SingleLineCommentChars </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>SingleLineCommentChar
+	SingleLineCommentChars</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>SingleLineCommentChar </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>SourceCharacter<b>
+	</b></i><b>but
+	not</b><i> LineTerminator</i></p>
+	<h3 id="x7.5">7.5 Tokens <a href="#x7.5">#</a> <a href="#x7.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>Token </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>IdentifierName<br>Punctuator<br>NumericLiteral<br>StringLiteral</i></p>
+	<p class="sp">
+	</p><p><b class="note">NOTE</b> The
+	<i>DivPunctuator</i> and
+	<i><a href="#x7.8.5">RegularExpressionLiteral</a></i>
+	productions define tokens, but are not included in the <i>Token</i>
+	production.</p>
+	<h3 id="x7.6">7.6 Identifier Names and Identifiers <a href="#x7.6">#</a> <a href="#x7.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	Identifier
+	Names are tokens that are interpreted according to the grammar given
+	in the &#8220;Identifiers&#8221; section of chapter 5 of the Unicode
+	standard, with some small modifications. An <i>Identifier</i>
+	is an <i>IdentifierName</i>
+	that is not a <i>ReservedWord</i>
+	(see <a href="#x7.6.1">7.6.1</a>). The Unicode identifier grammar is based on both
+	normative and informative character categories specified by the
+	Unicode Standard. The characters in the specified categories in
+	version 3.0 of the Unicode standard must be treated as in those
+	categories by all conforming ECMAScript implementations.</p>
+	<p>
+	This
+	standard specifies specific character additions: The dollar sign (<code><b>$</b></code>)
+	and the underscore (<code><b>_</b></code>)
+	are permitted anywhere in an <i>IdentifierName</i>.</p>
+	<p>
+	Unicode
+	escape sequences are also permitted in an <i>IdentifierName</i>,
+	where they contribute a single character to the <i>IdentifierName</i>,
+	as computed by the CV of the <i>UnicodeEscapeSequence</i>
+	(see <a href="#x7.8.4">7.8.4</a>). The <code><b>\</b></code>
+	preceding the <i>UnicodeEscapeSequence</i>
+	does not contribute a character to the <i>IdentifierName</i>.
+	A <i>UnicodeEscapeSequence</i>
+	cannot be used to put a character into an <i>IdentifierName </i>that would otherwise be illegal. In other words, if a <code><b>\
+	</b></code> <i>UnicodeEscapeSequence</i>
+	sequence were replaced by its <i>UnicodeEscapeSequence</i>'s
+	CV, the result must still be a valid <i>IdentifierName </i>that has the exact same sequence of characters as the
+	original <i>IdentifierName</i>.
+	All interpretations of identifiers within this specification are
+	based upon their actual characters regardless of whether or not an
+	escape sequence was used to contribute any particular characters.</p>
+	<p>
+	Two
+	<i>IdentifierName </i>that
+	are canonically equivalent according to the Unicode standard are <i>not</i>
+	equal unless they are represented by the exact same sequence of code
+	units (in other words, conforming ECMAScript implementations are
+	only required to do bitwise comparison on IdentifierName values).
+	The intent is that the incoming source text has been converted to
+	normalised form C before it reaches the compiler.</p>
+	<p>
+	ECMAScript
+	implementations may recognize identifier characters defined in later
+	editions of the Unicode Standard. If portability is a concern,
+	programmers should only employ identifier characters defined in
+	Unicode 3.0.</p>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>Identifier </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>IdentifierName </i><b>but
+	not</b><i> ReservedWord</i></p>
+	<p class="keep">
+	<i>IdentifierName<b>
+	</b></i><b>::</b></p>
+	<p class="def1-btm">
+	<i>IdentifierStart<br>IdentifierName
+	IdentifierPart</i></p>
+	<p class="keep">
+	<i>IdentifierStart </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>UnicodeLetter<br></i><code><b>$<br>_</b></code> <i><br></i><code><b>\
+	</b></code> <i>UnicodeEscapeSequence</i></p>
+	<p class="keep">
+	<i>IdentifierPart </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>IdentifierStart<br>UnicodeCombiningMark<br>UnicodeDigit<br>UnicodeConnectorPunctuation<br></i>&lt;ZWNJ&gt;<br>&lt;ZWJ&gt;</p>
+	<p class="keep">
+	<i>UnicodeLetter</i></p>
+	<p class="def1-btm">
+	any
+	character in the Unicode categories &#8220;Uppercase letter (Lu)&#8221;,
+	&#8220;Lowercase letter (Ll)&#8221;, &#8220;Titlecase letter (Lt)&#8221;, &#8220;Modifier
+	letter (Lm)&#8221;, &#8220;Other letter (Lo)&#8221;, or &#8220;Letter number (Nl)&#8221;.</p>
+	<p class="keep">
+	<i>UnicodeCombiningMark</i></p>
+	<p class="def1-btm">
+	any
+	character in the Unicode categories &#8220;Non-spacing mark (Mn)&#8221; or
+	&#8220;Combining spacing mark (Mc)&#8221;</p>
+	<p class="keep">
+	<i>UnicodeDigit</i></p>
+	<p class="def1-btm">
+	any
+	character in the Unicode category &#8220;Decimal number (Nd)&#8221;</p>
+	<p class="keep">
+	<i>UnicodeConnectorPunctuation</i></p>
+	<p class="def1-btm">
+	any
+	character in the Unicode category &#8220;Connector punctuation (Pc)&#8221;</p>
+	<p class="keep">
+	<i>UnicodeEscapeSequence</i></p>
+	<p class="def1-btm">
+	see
+	<a href="#x7.8.4">7.8.4</a>.</p>
+	<h4 id="x7.6.1">7.6.1 Reserved Words <a href="#x7.6.1">#</a> <a href="#x7.6.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	A
+	reserved word is an <i>IdentifierName</i>
+	that cannot be used as an <i>Identifier</i>.</p>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>ReservedWord<b>
+	</b></i><b>::</b></p>
+	<p class="def1-btm">
+	<i>Keyword<br>FutureReservedWord<br>NullLiteral<br>BooleanLiteral</i></p>
+	<h5 id="x7.6.1.1">7.6.1.1 Keywords <a href="#x7.6.1.1">#</a> <a href="#x7.6.1.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	following tokens are ECMAScript keywords and may not be used as
+	<i>Identifiers</i> in
+	ECMAScript programs.</p>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>Keyword </i>:: <b>one
+	of</b></p>
+	<dl><dl><dd>
+			<table width="590" border="0" cellpadding="8" cellspacing="0"><colgroup><col width="131"><col width="131"><col width="131"><col width="131"></colgroup><tbody><tr valign="TOP"><td width="131" height="3">
+						<p>
+						<code><b>break</b></code></p>
+					</td>
+					<td width="131">
+						<p>
+						<code><b>do
+						</b></code>
+						</p>
+					</td>
+					<td width="131">
+						<p>
+						<code><b>instanceof
+						</b></code>
+						</p>
+					</td>
+					<td width="131">
+						<p>
+						<code><b>typeof
+						</b></code>
+						</p>
+					</td>
+				</tr><tr valign="TOP"><td width="131" height="3">
+						<p>
+						<code><b>case</b></code></p>
+					</td>
+					<td width="131">
+						<p>
+						<code><b>else</b></code></p>
+					</td>
+					<td width="131">
+						<p>
+						<code><b>new</b></code></p>
+					</td>
+					<td width="131">
+						<p>
+						<code><b>var</b></code></p>
+					</td>
+				</tr><tr valign="TOP"><td width="131" height="3">
+						<p>
+						<code><b>catch</b></code></p>
+					</td>
+					<td width="131">
+						<p>
+						<code><b>finally</b></code></p>
+					</td>
+					<td width="131">
+						<p>
+						<code><b>return</b></code></p>
+					</td>
+					<td width="131">
+						<p>
+						<code><b>void</b></code></p>
+					</td>
+				</tr><tr valign="TOP"><td width="131" height="3">
+						<p>
+						<code><b>continue</b></code></p>
+					</td>
+					<td width="131">
+						<p>
+						<code><b>for</b></code></p>
+					</td>
+					<td width="131">
+						<p>
+						<code><b>switch</b></code></p>
+					</td>
+					<td width="131">
+						<p>
+						<code><b>while</b></code></p>
+					</td>
+				</tr><tr valign="TOP"><td width="131" height="3">
+						<p class="sm-btm">
+						<code><b>debugger
+						</b></code>
+						</p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>function</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>this</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>with</b></code></p>
+					</td>
+				</tr><tr valign="TOP"><td width="131" height="3">
+						<p class="sm-btm">
+						<code><b>default</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>if</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>throw</b></code></p>
+					</td>
+					<td width="131">
+					</td>
+				</tr><tr valign="TOP"><td width="131" height="3">
+						<p class="sm-btm">
+						<code><b>delete</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>in</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>try</b></code></p>
+					</td>
+					<td width="131">
+					</td>
+				</tr></tbody></table></dd></dl></dl><h5 id="x7.6.1.2">7.6.1.2 Future Reserved Words <a href="#x7.6.1.2">#</a> <a href="#x7.6.1.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	following words are used as keywords in proposed extensions and are
+	therefore reserved to allow for the possibility of future adoption
+	of those extensions.</p>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>FutureReservedWord<b>
+	</b></i><b>::</b><i><b>
+	</b></i><b>one
+	of</b></p>
+	<dl><dl><dd>
+			<table width="590" border="0" cellpadding="8" cellspacing="0"><colgroup><col width="131"><col width="131"><col width="131"><col width="131"></colgroup><tbody><tr valign="TOP"><td width="131" height="3">
+						<p class="sm-btm">
+						<code><b>class</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>enum</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>extends</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>super</b></code></p>
+					</td>
+				</tr><tr valign="TOP"><td width="131" height="3">
+						<p class="sm-btm">
+						<code><b>const</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>export</b></code></p>
+					</td>
+					<td width="131">
+						<p class="sm-btm">
+						<code><b>import</b></code></p>
+					</td>
+					<td width="131">
+					</td>
+				</tr></tbody></table></dd></dl></dl><p>
+	The
+	following tokens are also considered to be <i>FutureReservedWords</i>
+	when they occur within <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a> (see <a href="x10.html#x10.1.1">10.1.1</a>). The
+	occurrence of any of these tokens within <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a> in any
+	context where the occurrence of a <i>FutureReservedWord</i>
+	would produce an error must also produce an equivalent error:</p>
+	<table width="737" border="0" cellpadding="8" cellspacing="0"><colgroup><col width="131"><col width="131"><col width="131"><col width="131"><col width="131"></colgroup><tbody><tr valign="TOP"><td width="131" height="3">
+				<p class="sm-btm">
+				<code><b>implements</b></code></p>
+			</td>
+			<td width="131">
+				<p class="sm-btm">
+				<code><b>let</b></code></p>
+			</td>
+			<td width="131">
+				<p class="sm-btm">
+				<code><b>private</b></code></p>
+			</td>
+			<td width="131">
+				<p class="sm-btm">
+				<code><b>public</b></code></p>
+			</td>
+			<td width="131">
+				<p class="sm-btm">
+				<code><b>yield</b></code></p>
+			</td>
+		</tr><tr valign="TOP"><td width="131" height="3">
+				<p class="sm-btm">
+				<code><b>interface</b></code></p>
+			</td>
+			<td width="131">
+				<p class="sm-btm">
+				<code><b>package</b></code></p>
+			</td>
+			<td width="131">
+				<p class="sm-btm">
+				<code><b>protected</b></code></p>
+			</td>
+			<td width="131">
+				<p class="sm-btm">
+				<code><b>static</b></code></p>
+			</td>
+			<td width="131">
+			</td>
+		</tr></tbody></table><h3 id="x7.7">7.7 Punctuators <a href="#x7.7">#</a> <a href="#x7.7-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>Punctuator </i><b>::</b> <b>one
+	of</b></p>
+	<dl><dd>
+		<table width="589" border="0" cellpadding="8" cellspacing="0"><colgroup><col width="82"><col width="82"><col width="82"><col width="82"><col width="82"><col width="82"></colgroup><tbody><tr valign="TOP"><td width="82">
+					<p>
+					<code><b>{</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>}</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>(</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>)</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>[</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>]</b></code></p>
+				</td>
+			</tr><tr valign="TOP"><td width="82">
+					<p>
+					<code><b>.</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>;</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>,</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>&lt;</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>&gt;</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>&lt;=</b></code></p>
+				</td>
+			</tr><tr valign="TOP"><td width="82">
+					<p>
+					<code><b>&gt;=</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>==</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>!=</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>===</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>!==</b></code></p>
+				</td>
+				<td width="82">
+				</td>
+			</tr><tr valign="TOP"><td width="82">
+					<p>
+					<code><b>+</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>-</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>*</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>%</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>++</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>--</b></code></p>
+				</td>
+			</tr><tr valign="TOP"><td width="82">
+					<p>
+					<code><b>&lt;&lt;</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>&gt;&gt;</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>&gt;&gt;&gt;</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>&amp;</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>|</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>^</b></code></p>
+				</td>
+			</tr><tr valign="TOP"><td width="82">
+					<p>
+					<code><b>!</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>~</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>&amp;&amp;</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>||</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>?</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>:</b></code></p>
+				</td>
+			</tr><tr valign="TOP"><td width="82">
+					<p>
+					<code><b>=</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>+=</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>-=</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>*=</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>%=</b></code></p>
+				</td>
+				<td width="82">
+					<p>
+					<code><b>&lt;&lt;=</b></code></p>
+				</td>
+			</tr><tr valign="TOP"><td width="82">
+					<p class="sm-btm">
+					<code><b>&gt;&gt;=</b></code></p>
+				</td>
+				<td width="82">
+					<p class="sm-btm">
+					<code><b>&gt;&gt;&gt;=</b></code></p>
+				</td>
+				<td width="82">
+					<p class="sm-btm">
+					<code><b>&amp;=</b></code></p>
+				</td>
+				<td width="82">
+					<p class="sm-btm">
+					<code><b>|=</b></code></p>
+				</td>
+				<td width="82">
+					<p class="sm-btm">
+					<code><b>^=</b></code></p>
+				</td>
+				<td width="82">
+				</td>
+			</tr></tbody></table></dd></dl><p class="keep">
+	<i>DivPunctuator </i><b>::</b> <b>one
+	of</b></p>
+	<dl><dd>
+		<table width="589" border="0" cellpadding="8" cellspacing="0"><colgroup><col width="82"><col width="82"><col width="82"><col width="82"><col width="82"><col width="82"></colgroup><tbody><tr valign="TOP"><td width="82">
+					<p class="sm-btm">
+					<code><b>/</b></code></p>
+				</td>
+				<td width="82">
+					<p class="sm-btm">
+					<code><b>/=</b></code></p>
+				</td>
+				<td width="82">
+				</td>
+				<td width="82">
+				</td>
+				<td width="82">
+				</td>
+				<td width="82">
+				</td>
+			</tr></tbody></table></dd></dl><h3 id="x7.8">7.8 Literals <a href="#x7.8">#</a> <a href="#x7.8-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>Literal </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>NullLiteral<br>BooleanLiteral<br>NumericLiteral<br>StringLiteral
+	<br>RegularExpressionLiteral</i></p>
+	<h4 id="x7.8.1">7.8.1 Null Literals <a href="#x7.8.1">#</a> <a href="#x7.8.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>NullLiteral </i><b>::</b></p>
+	<p class="def1-btm">
+	<code><b>null</b></code></p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	The
+	value of the null literal <code><b>null</b></code>
+	is the sole value of the Null type, namely <b>null</b>.</p>
+	<h4 id="x7.8.2">7.8.2 Boolean Literals <a href="#x7.8.2">#</a> <a href="#x7.8.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>BooleanLiteral </i><b>::</b></p>
+	<p class="def1-btm">
+	<code><b>true<br>false</b></code></p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	The
+	value of the Boolean literal <code><b>true</b></code>
+	is a value of the Boolean type, namely <b>true</b>.</p>
+	<p>
+	The
+	value of the Boolean literal <code><b>false</b></code>
+	is a value of the Boolean type, namely <b>false</b>.</p>
+	<h4 id="x7.8.3">7.8.3 Numeric Literals <a href="#x7.8.3">#</a> <a href="#x7.8.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>NumericLiteral<b>
+	</b></i><b>::</b></p>
+	<p class="def1-btm">
+	<i>DecimalLiteral<br>HexIntegerLiteral</i></p>
+	<p class="keep">
+	<i>DecimalLiteral </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>DecimalIntegerLiteral </i><code><b>.</b></code> <i>DecimalDigits</i><sub>opt</sub><i><sub></sub>  ExponentPart</i><sub>opt</sub><i><br></i><code><b>.</b></code> <i>DecimalDigits ExponentPart</i><sub>opt</sub><i><br>DecimalIntegerLiteral
+	ExponentPart</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>DecimalIntegerLiteral<b>
+	</b></i><b>::</b></p>
+	<p class="def1-btm">
+	<code><b>0</b></code> <i><br>NonZeroDigit
+	DecimalDigits</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>DecimalDigits </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>DecimalDigit<br>DecimalDigits
+	DecimalDigit</i></p>
+	<p class="keep">
+	<i>DecimalDigit </i><b>::</b><i><b>
+	</b></i><b>one
+	of</b></p>
+	<p class="def1-btm">
+	<code><b>0
+	 1  2  3  4  5  6  7  8  9</b></code></p>
+	<p class="keep">
+	<i>NonZeroDigit </i><b>::</b><i><b>
+	</b></i><b>one
+	of</b></p>
+	<p class="def1-btm">
+	<code><b>1
+	 2  3  4  5  6  7  8  9</b></code></p>
+	<p class="keep">
+	<i>ExponentPart </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>ExponentIndicator
+	SignedInteger</i></p>
+	<p class="keep">
+	<i>ExponentIndicator </i><b>::</b><i><b>
+	</b></i><b>one
+	of</b></p>
+	<p class="def1-btm">
+	<code><b>e
+	 E</b></code></p>
+	<p class="keep">
+	<i>SignedInteger<b>
+	</b></i><b>::</b></p>
+	<p class="def1-btm">
+	<i>DecimalDigits<br></i><code><b>+</b></code> <i>DecimalDigits<br></i><code><b>-</b></code> <i>DecimalDigits</i></p>
+	<p class="keep">
+	<i>HexIntegerLiteral </i><b>::</b></p>
+	<p class="def1-btm">
+	<code><b>0x</b></code> <i>HexDigit<br></i><code><b>0X</b></code> <i>HexDigit<br>HexIntegerLiteral HexDigit</i></p>
+	<p class="keep">
+	<i>HexDigit </i>:: one
+	of<i>	</i></p>
+	<p class="def1-btm">
+	<code><b>0
+	 1  2  3  4  5  6  7  8  9  a  b  c  d  e  f  A  B  C  D  E  F</b></code></p>
+	<p>
+	The
+	source character immediately following a <i>NumericLiteral</i>
+	must not be an <i>IdentifierStart</i>
+	or <i>DecimalDigit</i>.</p>
+	<p>
+	</p><p><b class="note">NOTE</b> For example:</p>
+	<p class="code-example"><code><b>3in</b></code></p>
+	<p class="sp">is
+	an error and not the two input elements <code><b>3</b></code>
+	and <code><b>in</b></code>.</p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	A
+	numeric literal stands for a value of the Number type. This value is
+	determined in two steps: first, a <dfn id="mv">mathematical value</dfn> (MV) is derived
+	from the literal; second, this mathematical value is rounded as
+	described below.</p>
+	<ul><li><p>
+				The
+				MV of <i>NumericLiteral</i> <b>::</b>
+				<i>DecimalLiteral</i> is the MV of
+				<i>DecimalLiteral</i>.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>NumericLiteral</i> <b>::</b>
+				<i>HexIntegerLiteral</i> is the MV
+				of <i>HexIntegerLiteral</i>.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>DecimalLiteral </i><b>::</b><b>
+				</b><i>DecimalIntegerLiteral </i><code><b>.</b></code> <i><b>
+				</b></i>is the MV of
+				<i>DecimalIntegerLiteral</i>.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>DecimalLiteral </i><b>::</b><b>
+				</b><i>DecimalIntegerLiteral </i><code><b>.</b></code> <i>DecimalDigits</i><i> </i>is
+				the MV of <i>DecimalIntegerLiteral</i> plus
+				(the MV of <i>DecimalDigits</i><i> </i>times
+				10<sup>&#8211;</sup><sup><i>n</i></sup>),
+				where <i>n</i> is the
+				number of characters in <i>DecimalDigit</i>s.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>DecimalLiteral </i><b>::</b><b>
+				</b><i>DecimalIntegerLiteral </i><code><b>.</b></code> <i>ExponentPart </i>is the MV of
+				<i>DecimalIntegerLiteral</i> times
+				10<sup><i>e</i></sup>,
+				where <i>e</i> is
+				the MV of <i>ExponentPart</i>.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>DecimalLiteral </i><b>::</b><b>
+				</b><i>DecimalIntegerLiteral </i><code><b>.</b></code> <i>DecimalDigits ExponentPart </i>is
+				(the MV of <i>DecimalIntegerLiteral</i> plus
+				(the MV of <i>DecimalDigits</i><i> </i>times
+				10<sup>&#8211;</sup><sup><i>n</i></sup>))
+				times 10<sup><i>e</i></sup>,
+				where <i>n</i> is the
+				number of characters in <i>DecimalDigit</i>s <code>and
+				e</code> is the MV of
+				<i>ExponentPart</i>.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>DecimalLiteral </i><b>::</b><code><b>.</b></code> <i>DecimalDigits</i> is the MV of
+				<i>DecimalDigits</i><i> </i>times
+				10<sup>&#8211;</sup><sup><i>n</i></sup>,
+				where <i>n</i> is the
+				number of characters in <i>DecimalDigit</i>s.</p>
+				</li>
+				<li><p>
+				The
+				MV
+				of <i>DecimalLiteral </i><b>::</b><code><b>.</b></code> <i>DecimalDigits ExponentPart </i>is
+				the MV of <i>DecimalDigits</i><i> </i>times
+				10<sup><i>e</i></sup><sup>&#8211;</sup><sup><i>n</i></sup>,
+				where <i>n</i> is the
+				number of characters in <i>DecimalDigit</i>s and
+				<i>e</i> is the MV of
+				<i>ExponentPart</i>.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>DecimalLiteral </i><b>::</b><b>
+				</b><i>DecimalIntegerLiteral</i><i> </i>is
+				the MV of <i>DecimalIntegerLiteral</i>.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>DecimalLiteral </i><b>::</b><b>
+				</b><i>DecimalIntegerLiteral ExponentPart </i>is
+				the MV of <i>DecimalIntegerLiteral</i> times
+				10<sup><i>e</i></sup>,
+				where <i>e</i> is the MV of
+				<i>ExponentPart</i>.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>DecimalIntegerLiteral</i> <b>::</b>
+				<code><b>0</b></code> is 0.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>DecimalIntegerLiteral</i> <b>::</b>
+				<i>NonZeroDigit</i> <i>DecimalDigits</i> is
+				(the MV of <i>NonZeroDigit</i> times
+				10<sup><i>n</i></sup>) plus
+				the MV of <i>DecimalDigits</i>,
+				where <i>n</i>
+				is the number of characters in <i>DecimalDigits</i>.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>DecimalDigits</i> <b>::</b>
+				<i>DecimalDigit</i> is the MV of
+				<i>DecimalDigit</i>.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>DecimalDigits</i> <b>::</b>
+				<i>DecimalDigits</i> <i>DecimalDigit</i> is
+				(the MV of <i>DecimalDigits</i> times
+				10) plus the MV of <i>DecimalDigit</i>.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>ExponentPart </i><b>::</b><b>
+				</b><i>ExponentIndicator SignedInteger</i><i> </i>is
+				the MV of <i>SignedInteger</i>.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>SignedInteger </i><b>::</b><b>
+				</b><i>DecimalDigits</i><i> </i>is
+				the MV of <i>DecimalDigits</i>.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>SignedInteger </i><b>::</b><b>
+				</b><code><b>+</b></code> <i>DecimalDigits</i><i> </i>is
+				the MV of <i>DecimalDigits</i>.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>SignedInteger </i><b>::</b><b>
+				</b><code><b>-</b></code> <i>DecimalDigits</i><i> </i>is
+				the negative of the MV of <i>DecimalDigits</i>.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>DecimalDigit</i> <b>::</b>
+				<code><b>0</b></code> or
+				of <i>HexDigit</i> <b>::</b>
+				<code><b>0</b></code> is
+				0.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>DecimalDigit</i> <b>::</b>
+				<code><b>1</b></code> or
+				of <i>NonZeroDigit</i> <b>::</b>
+				<code><b>1</b></code> or
+				of <i>HexDigit</i> <b>::</b>
+				<code><b>1</b></code> is
+				1.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>DecimalDigit</i> <b>::</b>
+				<code><b>2</b></code> or
+				of <i>NonZeroDigit</i> <b>::</b>
+				<code><b>2</b></code> or
+				of <i>HexDigit</i> <b>::</b>
+				<code><b>2</b></code> is
+				2.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>DecimalDigit</i> <b>::</b>
+				<code><b>3</b></code> or
+				of <i>NonZeroDigit</i> <b>::</b>
+				<code><b>3</b></code> or
+				of <i>HexDigit</i> <b>::</b>
+				<code><b>3</b></code> is
+				3.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>DecimalDigit</i> <b>::</b>
+				<code><b>4</b></code> or
+				of <i>NonZeroDigit</i> <b>::</b>
+				<code><b>4</b></code> or
+				of <i>HexDigit</i> <b>::</b>
+				<code><b>4</b></code> is
+				4.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>DecimalDigit</i> <b>::</b>
+				<code><b>5</b></code> or
+				of <i>NonZeroDigit</i> <b>::</b>
+				<code><b>5</b></code> or
+				of <i>HexDigit</i> <b>::</b>
+				<code><b>5</b></code> is
+				5.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>DecimalDigit</i> <b>::</b>
+				<code><b>6</b></code> or
+				of <i>NonZeroDigit</i> <b>::</b>
+				<code><b>6</b></code> or
+				of <i>HexDigit</i> <b>::</b>
+				<code><b>6</b></code> is
+				6.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>DecimalDigit</i> <b>::</b>
+				<code><b>7</b></code> or
+				of <i>NonZeroDigit</i> <b>::</b>
+				<code><b>7</b></code> or
+				of <i>HexDigit</i> <b>::</b>
+				<code><b>7</b></code> is
+				7.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>DecimalDigit</i> <b>::</b>
+				<code><b>8</b></code> or
+				of <i>NonZeroDigit</i> <b>::</b>
+				<code><b>8</b></code> or
+				of <i>HexDigit</i> <b>::</b>
+				<code><b>8</b></code> is
+				8.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>DecimalDigit</i> <b>::</b>
+				<code><b>9</b></code> or
+				of <i>NonZeroDigit</i> <b>::</b>
+				<code><b>9</b></code> or
+				of <i>HexDigit</i> <b>::</b>
+				<code><b>9</b></code> is
+				9.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>HexDigit</i> <b>::</b>
+				<code><b>a</b></code> or
+				of <i>HexDigit</i> <b>::</b>
+				<code><b>A</b></code> is
+				10.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>HexDigit</i> <b>::</b>
+				<code><b>b</b></code> or
+				of <i>HexDigit</i> <b>::</b>
+				<code><b>B</b></code> is
+				11.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>HexDigit</i> <b>::</b>
+				<code><b>c</b></code> or
+				of <i>HexDigit</i> <b>::</b>
+				<code><b>C</b></code> is
+				12.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>HexDigit</i> <b>::</b>
+				<code><b>d</b></code> or
+				of <i>HexDigit</i> <b>::</b>
+				<code><b>D</b></code> is
+				13.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>HexDigit</i> <b>::</b>
+				<code><b>e</b></code> or
+				of <i>HexDigit</i> <b>::</b>
+				<code><b>E</b></code> is
+				14.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>HexDigit</i> <b>::</b>
+				<code><b>f</b></code> or
+				of <i>HexDigit</i> <b>::</b>
+				<code><b>F</b></code> is
+				15.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>HexIntegerLiteral </i><b>::</b>
+				<code><b>0x</b></code> <i>HexDigit</i>
+				is the MV of <i>HexDigit</i>.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>HexIntegerLiteral </i><b>::</b>
+				<code><b>0X</b></code> <i>HexDigit</i>
+				is the MV of <i>HexDigit</i>.</p>
+				</li>
+				<li><p>
+				The
+				MV of <i>HexIntegerLiteral </i><b>::</b>
+				<i>HexIntegerLiteral</i> <i>HexDigit</i> is
+				(the MV of <i>HexIntegerLiteral</i> times
+				16) plus the MV of
+				<i>HexDigit</i>.</p>
+	</li></ul><p class="sm-btm">
+	Once
+	the exact MV for a numeric literal has been determined, it is then
+	rounded to a value of the Number type. If the MV is 0, then the
+	rounded value is <b>+0</b>;
+	otherwise, the rounded value must be <i>the</i> Number value for the
+	MV (as specified in <a href="x8.html#x8.5">8.5</a>), unless the literal is a <i>DecimalLiteral</i>
+	and the literal has more than 20 significant digits, in which case
+	the Number value may be either the Number value for the MV of a
+	literal produced by replacing each significant digit after the 20th
+	with a <code><b>0</b></code> digit or
+	the Number value for the MV of a literal produced by replacing each
+	significant digit after the 20th with a <code><b>0</b></code>
+	digit and then incrementing the literal at the 20th significant
+	digit position. A digit is <i>significant</i> if it is not part of
+	an <i>ExponentPart</i>
+	and</p>
+	<ul><li><p>
+				it
+				is not <code><b>0</b></code>;
+				or</p>
+				</li>
+				<li><p>
+				there
+				is a nonzero digit to its left and there is a nonzero digit, not
+				in the <i>ExponentPart</i>,
+				to its right.</p>
+	</li></ul><p>
+	A
+	conforming implementation, when processing <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a> (see
+	<a href="x10.html#x10.1.1">10.1.1</a>), must not extend the syntax of <i>NumericLiteral</i>
+	to include <i>OctalIntegerLiteral</i>
+	as described in <a href="B.html#B.1.1">B.1.1</a>.</p>
+	<h4 id="x7.8.4">7.8.4 String Literals <a href="#x7.8.4">#</a> <a href="#x7.8.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	A
+	string literal is zero or more characters enclosed in single or
+	double quotes. Each character may be represented by an escape
+	sequence. All characters may appear literally in a string literal
+	except for the closing quote character, backslash, carriage return,
+	line separator, paragraph separator, and line feed. Any character
+	may appear in the form of an escape sequence.</p>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>StringLiteral </i><b>::</b></p>
+	<p class="def1-btm">
+	<code><b>"</b></code> <i>DoubleStringCharacters</i><sub>opt</sub><i><b>
+	</b></i><code><b>"<br>'</b></code> <i>SingleStringCharacters</i><sub>opt</sub><i><sub></sub></i><code><b>'</b></code></p>
+	<p class="keep">
+	<i>DoubleStringCharacters </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>DoubleStringCharacter
+	DoubleStringCharacters</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>SingleStringCharacters </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>SingleStringCharacter
+	SingleStringCharacters</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>DoubleStringCharacter </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>SourceCharacter </i><b>but
+	not</b><i> double-quote </i><code><b>"</b></code> <i><b>
+	</b></i><b>or</b><i><b>
+	</b>backslash </i><code><b>\</b></code> <b>or</b><i><b>
+	</b>LineTerminator<br></i><code><b>\
+	</b></code> <i>EscapeSequence<br>LineContinuation</i></p>
+	<p class="keep">
+	<i>SingleStringCharacter </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>SourceCharacter </i><b>but
+	not</b><i> single-quote </i><code><b>'</b></code> <i><b>
+	</b></i><b>or</b><i>backslash </i><code><b>\</b></code> <b>or</b><i><b>
+	</b>LineTerminator<br></i><code><b>\
+	</b></code> <i>EscapeSequence<br>LineContinuation</i></p>
+	<p class="keep">
+	<i>LineContinuation </i><b>::</b></p>
+	<p class="def1-btm">
+	<code><b>\
+	</b></code> <i>LineTerminatorSequence</i></p>
+	<p class="keep">
+	<i>EscapeSequence </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>CharacterEscapeSequence<br></i><code><b>0</b></code> [<a href="x5.html#lookahead-not-in">lookahead
+	<span class="symbol">&#8713;</span></a>
+	<i>DecimalDigit</i>]<i><br>HexEscapeSequence<br>UnicodeEscapeSequence</i></p>
+	<p class="keep">
+	<i>CharacterEscapeSequence </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>SingleEscapeCharacter<br>NonEscapeCharacter</i></p>
+	<p class="keep">
+	<i>SingleEscapeCharacter </i><b>::</b><i><b>
+	 </b></i><b>one
+	of</b></p>
+	<p class="def1-btm">
+	<code><b>'
+	 "  \  b  f  n  r  t  v</b></code></p>
+	<p class="keep">
+	<i>NonEscapeCharacter<b>
+	</b></i><b>::</b></p>
+	<p class="def1-btm">
+	<i>SourceCharacter<b>
+	</b></i><b>but
+	not</b><i> EscapeCharacter </i><b>or</b><i><b>
+	</b>LineTerminator</i></p>
+	<p class="keep">
+	<i>EscapeCharacter </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>SingleEscapeCharacter<br>DecimalDigit<br></i><code><b>x</b></code> <i><b><br></b></i><code><b>u</b></code></p>
+	<p class="keep">
+	<i>HexEscapeSequence </i><b>::</b></p>
+	<p class="def1-btm">
+	<code><b>x
+	</b></code> <i>HexDigit HexDigit</i></p>
+	<p class="keep">
+	<i>UnicodeEscapeSequence </i><b>::</b></p>
+	<p class="def1-btm">
+	<code><b>u</b></code> <i>HexDigit HexDigit HexDigit HexDigit</i></p>
+	<p>
+	The
+	definitions of the nonterminal <i>HexDigit</i>
+	is given in <a href="#x7.6">7.6</a>. <i>SourceCharacter</i>
+	is defined in <a href="x6.html#x6">clause 6</a>.</p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	A
+	string literal stands for a value of the String type. The String
+	value (SV) of the literal is described in terms of character values
+	(CV) contributed by the various parts of the string literal. As part
+	of this process, some characters within the string literal are
+	interpreted as having a mathematical value (MV), as described below
+	or in <a href="#x7.8.3">7.8.3</a>.</p>
+	<ul><li><p>
+				The
+				SV of <i>StringLiteral</i> <b>::</b>
+				<code><b>""</b></code> is
+				the empty character sequence.</p>
+				</li>
+				<li><p>
+				The
+				SV of <i>StringLiteral</i> <b>::</b>
+				<code><b>''</b></code> is
+				the empty character sequence.</p>
+				</li>
+				<li><p>
+				The
+				SV of <i>StringLiteral</i> <b>::</b>
+				<code><b>"</b></code>
+				<i>DoubleStringCharacters</i> <code><b>"</b></code>
+				is the SV of
+				<i>DoubleStringCharacters</i>.</p>
+				</li>
+				<li><p>
+				The
+				SV of <i>StringLiteral</i> <b>::</b>
+				<code><b>'</b></code>
+				<i>SingleStringCharacters</i> <code><b>'</b></code>
+				is the SV of
+				<i>SingleStringCharacters</i>.</p>
+				</li>
+				<li><p>
+				The
+				SV of <i>DoubleStringCharacters </i><b>::</b>
+				<i>DoubleStringCharacter</i> is a
+				sequence of one character, the CV of <i>DoubleStringCharacter</i>.</p>
+				</li>
+				<li><p>
+				The
+				SV of <i>DoubleStringCharacters </i><b>::</b>
+				<i>DoubleStringCharacter</i> <i>DoubleStringCharacters </i>is
+				a sequence of the CV of <i>DoubleStringCharacter</i>
+				followed by all the characters in
+				the SV of <i>DoubleStringCharacters</i>
+				in order.</p>
+				</li>
+				<li><p>
+				The
+				SV of <i>SingleStringCharacters </i><b>::</b>
+				<i>SingleStringCharacter</i> is a
+				sequence of one character, the CV of
+				<i>SingleStringCharacter</i>.</p>
+				</li>
+				<li><p>
+				The
+				SV of <i>SingleStringCharacters </i><b>::</b>
+				<i>SingleStringCharacter</i> SingleStringCharacters
+				is a sequence of the CV of <i>SingleStringCharacter</i>
+				followed by all the characters in
+				the SV of <i>SingleStringCharacters</i> in
+				order.</p>
+				</li>
+				<li><p>
+				The
+				SV of <i>LineContinuation</i> <b>::</b>
+				<code><b>\</b></code>
+				<i>LineTerminatorSequence</i> is
+				the empty character sequence.</p>
+				</li>
+				<li><p>
+				The
+				CV of <i>DoubleStringCharacter</i> <b>::</b>
+				<i>SourceCharacter</i> <b>but not</b>
+				<i>double-quote</i> <code><b>"</b></code><b>
+				</b><b>or</b> <i>backslash</i>
+				<code><b>\</b></code> <b>or</b><b>
+				</b><i>LineTerminator</i> is the<i>SourceCharacter</i> character
+				itself.</p>
+				</li>
+				<li><p>
+				The
+				CV of <i>DoubleStringCharacter</i> <b>::</b>
+				<code><b>\</b></code><code>
+				</code><i>EscapeSequence</i> is
+				the CV of the<i> EscapeSequence</i>.</p>
+				</li>
+<li><p>The
+CV of <i>DoubleStringCharacter</i> <b>::</b>
+<i>LineContinuation</i> is the
+empty character sequence.</p></li>
+				<li><p>
+				The
+				CV of <i>SingleStringCharacter</i> <b>::</b>
+				<i>SourceCharacter</i> <b>but not</b>
+				<i>single-quote</i> <code><b>'</b></code><b>
+				</b><b>or</b> <i>backslash</i>
+				<code><b>\</b></code> <b>or</b><b>
+				</b><i>LineTerminator</i> is the<i>SourceCharacter</i> character
+				itself.</p>
+				</li>
+				<li><p>
+				The
+				CV of <i>SingleStringCharacter</i> <b>::</b><b>
+				</b><code><b>\</b></code><code>
+				</code><i>EscapeSequence</i> is
+				the CV of the<i> EscapeSequence</i>.</p>
+				</li>
+<li><p>The
+CV of <i>SingleStringCharacter</i> <b>::</b>
+<i>LineContinuation</i> is
+the empty character sequence.</p></li>
+				<li><p>
+				The
+				CV of <i>EscapeSequence </i><b>::</b>
+				<i>CharacterEscapeSequence</i> is
+				the CV of the<i> CharacterEscapeSequence</i>.</p>
+				</li>
+				<li><p>
+				The
+				CV of <i>EscapeSequence </i><b>::</b>
+				<code><b>0</b></code>  [<a href="x5.html#lookahead-not-in">lookahead
+				<span class="symbol">&#8713;</span></a>
+				<i>DecimalDigit</i>]
+				is a &lt;NUL&gt;
+				character (Unicode value 0000).</p>
+				</li>
+				<li><p>
+				The
+				CV of <i>EscapeSequence </i><b>::</b>
+				<i>HexEscapeSequence</i> is the CV
+				of the<i> HexEscapeSequence</i>.</p>
+				</li>
+				<li><p>
+				The
+				CV of <i>EscapeSequence </i><b>::</b>
+				<i>UnicodeEscapeSequence</i> is
+				the CV of the<i> UnicodeEscapeSequence</i>.</p>
+				</li>
+				<li><p>
+				The CV of <i>CharacterEscapeSequence </i><b>::</b><i>SingleEscapeCharacter </i> is the
+				character whose code unit value is determined by the<i>SingleEscapeCharacter </i> according
+				to Table 4:</p>
+	<br><center>
+		<table width="606" border="1" bordercolor="#000000" cellpadding="17" cellspacing="0" rules="GROUPS"><caption>Table&#160;4 &#8212; String Single Character Escape Sequences</caption>
+			<colgroup><col width="136"><col width="134"><col width="133"><col width="64"></colgroup><tbody><tr valign="TOP"><td width="136" bgcolor="#c0c0c0">
+						<p>
+						<i><b><span class="table-header">Escape
+						Sequence</span></b></i></p>
+					</td>
+					<td width="134" bgcolor="#c0c0c0">
+						<p>
+						<i><b><span class="table-header">Code
+						Unit Value</span></b></i></p>
+					</td>
+					<td width="133" bgcolor="#c0c0c0">
+						<p>
+						<i><b><span class="table-header">Name</span></b></i></p>
+					</td>
+					<td width="64" bgcolor="#c0c0c0">
+						<p>
+						<i><b><span class="table-header">Symbol</span></b></i></p>
+					</td>
+				</tr></tbody><tbody><tr valign="TOP"><td width="136">
+						<p align="CENTER">
+						<code><b>\b</b></code></p>
+					</td>
+					<td width="134">
+						<p>
+						<code><b>\u0008</b></code></p>
+					</td>
+					<td width="133">
+						<p>
+						backspace</p>
+					</td>
+					<td width="64">
+						<p>
+						&lt;BS&gt;</p>
+					</td>
+				</tr><tr valign="TOP"><td width="136">
+						<p align="CENTER">
+						<code><b>\t</b></code></p>
+					</td>
+					<td width="134">
+						<p>
+						<code><b>\u0009</b></code></p>
+					</td>
+					<td width="133">
+						<p>
+						horizontal
+						tab</p>
+					</td>
+					<td width="64">
+						<p>
+						&lt;HT&gt;</p>
+					</td>
+				</tr><tr valign="TOP"><td width="136">
+						<p align="CENTER">
+						<code><b>\n</b></code></p>
+					</td>
+					<td width="134">
+						<p>
+						<code><b>\u000A</b></code></p>
+					</td>
+					<td width="133">
+						<p>
+						line
+						feed (new line)</p>
+					</td>
+					<td width="64">
+						<p>
+						&lt;LF&gt;</p>
+					</td>
+				</tr><tr valign="TOP"><td width="136">
+						<p align="CENTER">
+						<code><b>\v</b></code></p>
+					</td>
+					<td width="134">
+						<p>
+						<code><b>\u000B</b></code></p>
+					</td>
+					<td width="133">
+						<p>
+						vertical
+						tab</p>
+					</td>
+					<td width="64">
+						<p>
+						&lt;VT&gt;</p>
+					</td>
+				</tr><tr valign="TOP"><td width="136">
+						<p align="CENTER">
+						<code><b>\f</b></code></p>
+					</td>
+					<td width="134">
+						<p>
+						<code><b>\u000C</b></code></p>
+					</td>
+					<td width="133">
+						<p>
+						form
+						feed</p>
+					</td>
+					<td width="64">
+						<p>
+						&lt;FF&gt;</p>
+					</td>
+				</tr><tr valign="TOP"><td width="136">
+						<p align="CENTER">
+						<code><b>\r</b></code></p>
+					</td>
+					<td width="134">
+						<p>
+						<code><b>\u000D</b></code></p>
+					</td>
+					<td width="133">
+						<p>
+						carriage
+						return</p>
+					</td>
+					<td width="64">
+						<p>
+						&lt;CR&gt;</p>
+					</td>
+				</tr><tr valign="TOP"><td width="136">
+						<p align="CENTER">
+						<code><b>\"</b></code></p>
+					</td>
+					<td width="134">
+						<p>
+						<code><b>\u0022</b></code></p>
+					</td>
+					<td width="133">
+						<p>
+						double
+						quote</p>
+					</td>
+					<td width="64">
+						<p>
+						<code><b>"</b></code></p>
+					</td>
+				</tr><tr valign="TOP"><td width="136">
+						<p align="CENTER">
+						<code><b>\'</b></code></p>
+					</td>
+					<td width="134">
+						<p>
+						<code><b>\u0027</b></code></p>
+					</td>
+					<td width="133">
+						<p>
+						single
+						quote</p>
+					</td>
+					<td width="64">
+						<p>
+						<code><b>'</b></code></p>
+					</td>
+				</tr><tr valign="TOP"><td width="136">
+						<p align="CENTER">
+						<code><b>\\</b></code></p>
+					</td>
+					<td width="134">
+						<p>
+						<code><b>\u005C</b></code></p>
+					</td>
+					<td width="133">
+						<p>
+						backslash</p>
+					</td>
+					<td width="64">
+						<p>
+						<code><b>\</b></code></p>
+					</td>
+				</tr></tbody></table></center>
+	<br></li>
+				<li><p>
+				The
+				CV of <i>CharacterEscapeSequence</i> <b>::</b>
+				<i>NonEscapeCharacter</i> is the
+				CV of the<i> NonEscapeCharacter</i>.</p>
+				</li>
+				<li><p>
+				The
+				CV of <i>NonEscapeCharacter</i> <b>::</b>
+				<i>SourceCharacter</i> <b>but
+				not</b> <i>EscapeCharacter</i> <b>or</b><b>
+				</b><i>LineTerminator</i> is the
+				<i>SourceCharacter</i> character
+				itself.</p>
+				</li>
+				<li><p>
+				The
+				CV of <i>HexEscapeSequence</i> <b>::</b>
+				<code><b>x</b></code> <i> HexDigit</i>
+				<i>HexDigit</i> is the character
+				whose code unit value is (16
+				times the MV of the first <i>HexDigit</i>)
+				plus the MV of the second <i>HexDigit</i>.</p>
+				</li>
+				<li><p>
+				The
+				CV of <i>UnicodeEscapeSequence</i> <b>::</b>
+				<code><b>u</b></code> <i> </i><i>HexDigit</i>
+				<i>HexDigit</i> <i>HexDigit</i> <i>HexDigit</i> is the
+				character whose code unit value is (4096
+				times the MV of the first <i>HexDigit</i>)
+				plus (256 times the MV of
+				the second <i>HexDigit</i>)
+				plus (16 times the MV of
+				the third <i>HexDigit</i>)
+				plus the MV of the fourth <i>HexDigit</i>.</p>
+			</li></ul><p>
+	A
+	conforming implementation, when processing <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a> (see
+	<a href="x10.html#x10.1.1">10.1.1</a>), may not extend the syntax of <i>EscapeSequence</i>
+	to include <i>OctalEscapeSequence</i>
+	as described in <a href="B.html#B.1.2">B.1.2</a>.</p>
+	<p class="sp">
+	</p><p><b class="note">NOTE</b> A line
+	terminator character cannot appear in a string literal, except as
+	part of a <i>LineContinuation</i>
+	to produce the empty character sequence. The correct way to cause a
+	line terminator character to be part of the String value of a string
+	literal is to use an escape sequence such as <code><b>\n</b></code>
+	or <code><b>\u000A</b></code>.</p>
+	<h4 id="x7.8.5">7.8.5 Regular Expression Literals <a href="#x7.8.5">#</a> <a href="#x7.8.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	A
+	regular expression literal is an input element that is converted to
+	a RegExp object (see <a href="x15.html#x15.10">15.10</a>) each time the literal is evaluated. Two
+	regular expression literals in a program evaluate to regular
+	expression objects that never compare as <code><b>===</b></code>
+	to each other even if the two literals' contents are identical. A
+	RegExp object may also be created at runtime by <code><b>new
+	RegExp</b></code> (see <a href="x15.html#x15.10.4">15.10.4</a>) or calling the <code><b>RegExp</b></code>
+	constructor as a function (<a href="x15.html#x15.10.3">15.10.3</a>).</p>
+	<p>
+	The
+	productions below describe the syntax for a regular expression
+	literal and are used by the input element scanner to find the end of
+	the regular expression literal. The Strings of characters comprising
+	the <i>RegularExpressionBody</i>
+	and the <i>RegularExpressionFlags</i>
+	are passed uninterpreted to the regular expression constructor,
+	which interprets them according to its own, more stringent grammar.
+	An implementation may extend the regular expression constructor's
+	grammar, but it must not extend the <i>RegularExpressionBody</i>
+	and <i>RegularExpressionFlags</i>
+	productions or the productions used by these productions.</p>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>RegularExpressionLiteral </i><b>::</b></p>
+	<p class="def1-btm">
+	<code><b>/</b></code> <i>RegularExpressionBody </i><code><b>/</b></code> <i><b>
+	</b>RegularExpressionFlags</i></p>
+	<p class="keep">
+	<i>RegularExpressionBody<b>
+	</b></i><b>::</b></p>
+	<p class="def1-btm">
+	<i>RegularExpressionFirstChar
+	RegularExpressionChars</i></p>
+	<p class="keep">
+	<i>RegularExpressionChars </i><b>::</b></p>
+	<p class="def1-btm">
+	[empty]<i><br>RegularExpressionChars
+	RegularExpressionChar</i></p>
+	<p class="keep">
+	<i>RegularExpressionFirstChar </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>RegularExpressionNonTerminator </i><b>but
+	not</b><i> </i><code><b>*</b></code> <i><b>
+	</b></i><b>or</b><i><b>
+	</b></i><code><b>\</b></code> <b>or</b><i><b>
+	</b></i><code><b>/
+	</b></code><b>or</b><code><b>
+	[</b></code> <i><br>RegularExpressionBackslashSequence<br>RegularExpressionClass</i></p>
+	<p class="keep">
+	<i>RegularExpressionChar </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>RegularExpressionNonTerminator<b>
+	</b></i><b>but
+	not</b><i> </i><code><b>\</b></code> <i><b>
+	</b></i><b>or</b><i><b>
+	</b></i><code><b>/
+	</b></code><b>or</b><code><b>
+	[</b></code> <i><br>RegularExpressionBackslashSequence<br>RegularExpressionClass</i></p>
+	<p class="keep">
+	<i>RegularExpressionBackslashSequence </i><b>::</b></p>
+	<p class="def1-btm">
+	<code><b>\</b></code> <i>RegularExpressionNonTerminator</i></p>
+	<p class="keep">
+	<i>RegularExpressionNonTerminator </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>SourceCharacter<b>
+	</b></i><b>but
+	not</b><i> LineTerminator</i></p>
+	<p class="keep">
+	<i>RegularExpressionClass </i><b>::</b></p>
+	<p class="def1-btm">
+	<code><b>[
+	</b></code> <i>RegularExpressionClassChars</i><code><b>
+	]</b></code></p>
+	<p class="keep">
+	<i>RegularExpressionClassChars</i><code><b>
+	</b></code><b>::</b></p>
+	<p class="def1-btm">
+	[empty]<i><br>RegularExpressionClassChars</i><code><b>
+	</b></code> <i>RegularExpressionClassChar</i></p>
+	<p class="keep">
+	<i>RegularExpressionClassChar</i><code><b>
+	</b></code><b>::</b></p>
+	<p class="def1-btm">
+	<i>RegularExpressionNonTerminator<b>
+	</b></i><b>but
+	not</b><i> </i><code><b>]</b></code> <i><b>
+	</b></i><b>or</b><i><b>
+	</b></i><code><b>\</b></code> <i><b><br></b>RegularExpressionBackslashSequence</i></p>
+	<p class="keep">
+	<i>RegularExpressionFlags<b>
+	</b></i><b>::</b></p>
+	<p class="def1-btm">
+	[empty]<i><br>RegularExpressionFlags
+	IdentifierPart</i></p>
+	<p><b class="note">NOTE</b> Regular
+	expression literals may not be empty; instead of representing an
+	empty regular expression literal, the characters <code><b>//</b></code>
+	start a single-line comment. To specify an empty regular expression,
+	use:  <code><b>/(?:)/</b></code>.</p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	A
+	regular expression literal evaluates to a value of the Object type
+	that is an instance of the standard built-in constructor RegExp.
+	This value is determined in two steps: first, the characters
+	comprising the regular expression's <i>RegularExpressionBody</i>
+	and <i>RegularExpressionFlags</i>
+	production expansions are collected uninterpreted into two Strings
+	Pattern and Flags, respectively. Then each time the literal is
+	evaluated, a new object is created as if by the expression <code><b>new
+	RegExp(</b></code><code>Pattern,
+	Flags</code><code><b>)</b></code>
+	where RegExp is the standard built-in constructor with that name.
+	The newly constructed object becomes the value of the
+	<i>RegularExpressionLiteral</i>.
+	If the call to <code><b>new RegExp</b></code>
+	would generate an error as specified in <a href="x15.html#x15.10.4.1">15.10.4.1</a>, the error must be
+	treated as an early error (<a href="x16.html#x16">Clause 16</a>).</p>
+	<h3 id="x7.9">7.9 Automatic Semicolon Insertion <a href="#x7.9">#</a> <a href="#x7.9-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	Certain
+	ECMAScript statements (empty statement, variable statement,
+	expression statement, <code><b>do</b></code>-<code><b>while</b></code>
+	statement, <code><b>continue</b></code>
+	statement, <code><b>break</b></code>
+	statement, <code><b>return</b></code>
+	statement, and <code><b>throw</b></code>
+	statement) must be terminated with semicolons. Such semicolons may
+	always appear explicitly in the source text. For convenience,
+	however, such semicolons may be omitted from the source text in
+	certain situations. These situations are described by saying that
+	semicolons are automatically inserted into the source code token
+	stream in those situations.</p>
+	<h4 id="x7.9.1">7.9.1 Rules of Automatic Semicolon Insertion <a href="#x7.9.1">#</a> <a href="#x7.9.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	There
+	are three basic rules of semicolon insertion:</p>
+			<ol><li><p>
+				When,
+				as the program is parsed from left to right, a token (called the
+				<i>offending token</i>)
+				is encountered that is not allowed by any production of the
+				grammar, then a semicolon is automatically inserted before the
+				offending token if one or more of the following conditions is
+				true:</p>
+	<ul><li><p>
+		The
+		offending token is separated from the previous token by at least
+		one <i>LineTerminator</i>.</p>
+		</li>
+		<li><p>
+		The
+		offending token is <code><b>}</b></code>.</p>
+	</li></ul></li>
+			</ol><ol start="2"><li><p>
+				When,
+				as the program is parsed from left to right, the end of the input
+				stream of tokens is encountered and the parser is unable to parse
+				the input token stream as a single complete ECMAScript <i><a href="x14.html#x14">Program</a></i>,
+				then a semicolon is automatically inserted at the end of the
+				input stream.</p>
+				</li>
+				<li><p>
+				When,
+				as the program is parsed from left to right, a token is
+				encountered that is allowed by some production of the grammar,
+				but the production is a <i>restricted
+				production</i> and the
+				token would be the first token for a terminal or nonterminal
+				immediately following the annotation &#8220;<a href="x5.html#restricted-production">[no <i>LineTerminator</i> here]</a>&#8221;
+				within the restricted production
+				(and therefore such a token is called a restricted token), and
+				the restricted token is separated from the previous token by at
+				least one <i>LineTerminator</i>,
+				then a semicolon is automatically inserted before the restricted
+				token.</p>
+			</li></ol><p>
+	However,
+	there is an additional overriding condition on the preceding rules:
+	a semicolon is never inserted automatically if the semicolon would
+	then be parsed as an empty statement or if that semicolon would
+	become one of the two semicolons in the header of a <code><b>for</b></code>
+	statement (see <a href="x12.html#x12.6.3">12.6.3</a>).</p>
+	<p>
+
+	</p><p><b class="note">NOTE</b> The following
+	are the only restricted productions in the grammar:</p>
+	<p class="def1">
+	<i>PostfixExpression </i><b>:</b></p>
+	<p class="def2">
+	<i>LeftHandSideExpression</i><code><b>
+	</b></code><a href="x5.html#restricted-production">[no <i>LineTerminator</i> here]</a><code><b>
+	++</b></code> <i><br>LeftHandSideExpression</i><code><b>
+	</b></code><a href="x5.html#restricted-production">[no <i>LineTerminator</i> here]</a><code><b>
+	--</b></code></p>
+	<p class="def1">
+	<i>ContinueStatement </i><b>:</b></p>
+	<p class="def2">
+	<code><b>continue</b></code> <a href="x5.html#restricted-production">[no <i>LineTerminator</i> here]</a> <i>Identifier</i><code><b>;</b></code></p>
+	<p class="def1">
+	<i>BreakStatement </i><b>:</b></p>
+	<p class="def2">
+	<code><b>break</b></code> <a href="x5.html#restricted-production">[no <i>LineTerminator</i> here]</a> <i>Identifier</i><code><b>;</b></code></p>
+	<p class="def1">
+	<i>ReturnStatement </i><b>:</b></p>
+	<p class="def2">
+	<code><b>return</b></code> <a href="x5.html#restricted-production">[no <i>LineTerminator</i> here]</a> <i>Expression</i><code><b>;</b></code></p>
+	<p class="def1">
+	<i>ThrowStatement<b>
+	</b></i><b>:</b></p>
+	<p class="def2">
+	<code><b>throw</b></code> <a href="x5.html#restricted-production">[no <i>LineTerminator</i> here]</a> <i>Expression<b>;</b></i></p>
+	<p>
+	The
+	practical effect of these restricted productions is as follows:</p>
+	<p>
+	When
+	a <code><b>++</b></code>
+	or <code><b>--</b></code>
+	token is encountered where the parser would treat it as a postfix
+	operator, and at least one <i>LineTerminator</i>
+	occurred between the preceding token and the <code><b>++</b></code>
+	or <code><b>--</b></code>
+	token, then a semicolon is automatically inserted before the <code><b>++</b></code>
+	or <code><b>--</b></code>
+	token.</p>
+	<p>
+	When
+	a <code><b>continue</b></code>,
+	<code><b>break</b></code>,
+	<code><b>return</b></code>,
+	or <code><b>throw</b></code>
+	token is encountered and a <i>LineTerminator</i>
+	is encountered before the next token, a semicolon is automatically
+	inserted after the <code><b>continue</b></code>,
+	<code><b>break</b></code>,
+	<code><b>return</b></code>,
+	or <code><b>throw</b></code>
+	token.</p>
+	<p>
+	The
+	resulting practical advice to ECMAScript programmers is:</p>
+	<p>
+	A
+	postfix <code><b>++</b></code>
+	or <code><b>--</b></code>
+	operator should appear on the same line as its operand.</p>
+	<p>
+	An
+	<i>Expression</i>
+	in a <code><b>return</b></code>
+	or <code><b>throw</b></code>
+	statement should start on the same line as the <code><b>return</b></code>
+	or <code><b>throw</b></code>
+	token.</p>
+	<p>
+	A
+	<i>Identifier</i>
+	in a <code><b>break</b></code>
+	or <code><b>continue</b></code>
+	statement should be on the same line as the <code><b>break</b></code>
+	or <code><b>continue</b></code>
+	token.</p>
+	<h4 id="x7.9.2">7.9.2 Examples of Automatic Semicolon Insertion <a href="#x7.9.2">#</a> <a href="#x7.9.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	source</p>
+	<p class="code-example">
+	<code><b>{
+	1 2 } 3</b></code></p>
+	<p>is
+	not a valid sentence in the ECMAScript grammar, even with the
+	automatic semicolon insertion rules. In contrast, the source</p>
+	<p class="code-example">
+	<code><b>{
+	1<br>2 } 3</b></code></p>
+	<p>is
+	also not a valid ECMAScript sentence, but is transformed by
+	automatic semicolon insertion into the following:</p>
+	<p class="code-example">
+	<code><b>{
+	1<br>;2 ;} 3;</b></code></p>
+	<p>
+	which
+	is a valid ECMAScript sentence.</p>
+	<p>The
+	source</p>
+	<p class="code-example">
+	<code><b>for
+	(a; b<br>)</b></code></p>
+	<p>
+	is
+	not a valid ECMAScript sentence and is not altered by automatic
+	semicolon insertion because the semicolon is needed for the header
+	of a <code><b>for</b></code>
+	statement. Automatic semicolon insertion never inserts one of the
+	two semicolons in the header of a <code><b>for</b></code>
+	statement.</p>
+	<p>The
+	source</p>
+	<p class="code-example"><code><b>return<br>a
+	+ b</b></code></p>
+	<p>is
+	transformed by automatic semicolon insertion into the following:</p>
+	<p class="code-example">
+	<code><b>return;<br>a
+	+ b;</b></code></p>
+	<p><b class="note">NOTE</b> The
+	expression <code><b>a + b</b></code>
+	is not treated as a value to be returned by the <code><b>return</b></code>
+	statement, because a <i>LineTerminator</i>
+	separates it from the token <code><b>return</b></code>.</p>
+	<p>The
+	source</p>
+	<p class="code-example">
+	<code><b>a
+	= b<br>++c</b></code></p>
+	<p>is
+	transformed by automatic semicolon insertion into the following:</p>
+	<p class="code-example">
+	<code><b>a
+	= b;<br>++c;</b></code></p>
+	<p><b class="note">NOTE</b> The
+	token <code><b>++</b></code> is not
+	treated as a postfix operator applying to the variable <code><b>b</b></code>,
+	because a <i>LineTerminator</i>
+	occurs between <code><b>b</b></code>
+	and <code><b>++</b></code>.</p>
+	<p>The
+	source</p>
+	<p class="code-example">
+	<code><b>if
+	(a &gt; b)<br>else c = d</b></code></p>
+	<p>
+	is
+	not a valid ECMAScript sentence and is not altered by automatic
+	semicolon insertion before the <code><b>else</b></code>
+	token, even though no production of the grammar applies at that
+	point, because an automatically inserted semicolon would then be
+	parsed as an empty statement.</p>
+	<p>The
+	source</p>
+	<p class="code-example">
+	<code><b>a
+	= b + c<br>(d + e).print()</b></code></p>
+	<p>is
+	<i>not</i> transformed by automatic semicolon insertion, because the
+	parenthesised expression that begins the second line can be
+	interpreted as an argument list for a function call:</p>
+	<p class="code-example">
+	<code><b>a
+	= b + c(d + e).print()</b></code></p>
+	<p>
+	In
+	the circumstance that an assignment statement must begin with a left
+	parenthesis, it is a good idea for the programmer to provide an
+	explicit semicolon at the end of the preceding statement rather than
+	to rely on automatic semicolon insertion.</p>
+	</body><script src="anno.js"></script></html>

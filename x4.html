@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html class="split chapter"><head><meta charset="utf-8"><title>4 Overview # &#9417; &#9402; &#9312; &#9398; &#8212; Annotated ES5</title><link rel="stylesheet" href="style.css"><link rel="shortcut icon" href="favicon.ico"><link href="x3.html" title="3 Normative references " rel="prev">
+  <link href="index.html#contents" title="TOC" rel="index">
+  <link href="x5.html" title="5 Notational Conventions " rel="next">
+  </head><body><div class="head">
+<h2 id="top">Annotated ECMAScript 5.1 <span id="timestamp"></span></h2>
+<div id="mascot-treehouse">
+	<img id="mascot" align="left" src="js-mascot.svg" alt=""><img id="bubble" src="bubble.svg" alt=""></div>
+<p id="slogan">&#8223;Ex igne vita&#8221;</p>
+<div id="annotations"></div>
+<script src="timestamp.js"></script></div>
+<nav>
+   <a href="x3.html">&#8592; 3 Normative references </a> &#8211;
+   <a href="index.html#contents">TOC</a> &#8211;
+   <a href="x5.html">5 Notational Conventions  &#8594;</a>
+  <ol class="toc"><li><a href="x4.html#x4" id="x4-toc">4 Overview</a>
+    <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x4.html#x4.1" id="x4.1-toc">4.1 Web Scripting</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.2" id="x4.2-toc">4.2 Language Overview</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x4.html#x4.2.1" id="x4.2.1-toc">4.2.1 Objects</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.2.2" id="x4.2.2-toc">4.2.2 The Strict Variant of ECMAScript</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x4.html#x4.3" id="x4.3-toc">4.3 Definitions</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x4.html#x4.3.1" id="x4.3.1-toc">4.3.1 type</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.2" id="x4.3.2-toc">4.3.2 primitive value</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.3" id="x4.3.3-toc">4.3.3 object</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.4" id="x4.3.4-toc">4.3.4 constructor</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.5" id="x4.3.5-toc">4.3.5 prototype</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.6" id="x4.3.6-toc">4.3.6 native object</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.7" id="x4.3.7-toc">4.3.7 built-in object</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.8" id="x4.3.8-toc">4.3.8 host object</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.9" id="x4.3.9-toc">4.3.9 undefined value</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.10" id="x4.3.10-toc">4.3.10 Undefined type</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.11" id="x4.3.11-toc">4.3.11 null value</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.12" id="x4.3.12-toc">4.3.12 Null type</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.13" id="x4.3.13-toc">4.3.13 Boolean value</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.14" id="x4.3.14-toc">4.3.14 Boolean type</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.15" id="x4.3.15-toc">4.3.15 Boolean object</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.16" id="x4.3.16-toc">4.3.16 String value</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.17" id="x4.3.17-toc">4.3.17 String type</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.18" id="x4.3.18-toc">4.3.18 String object</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.19" id="x4.3.19-toc">4.3.19 Number value</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.20" id="x4.3.20-toc">4.3.20 Number type</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.21" id="x4.3.21-toc">4.3.21 Number object</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.22" id="x4.3.22-toc">4.3.22 Infinity</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.23" id="x4.3.23-toc">4.3.23 NaN</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.24" id="x4.3.24-toc">4.3.24 function</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.25" id="x4.3.25-toc">4.3.25 built-in function</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.26" id="x4.3.26-toc">4.3.26 property</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.27" id="x4.3.27-toc">4.3.27 method</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.28" id="x4.3.28-toc">4.3.28 built-in method</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.29" id="x4.3.29-toc">4.3.29 attribute</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.30" id="x4.3.30-toc">4.3.30 own property</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x4.html#x4.3.31" id="x4.3.31-toc">4.3.31 inherited property</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li></ol></li></ol></nav>
+
+  <h2 id="x4">4 Overview <a href="#x4">#</a> <a href="#x4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h2>
+	<p>
+	This
+	section contains a non-normative overview of the ECMAScript
+	language.</p>
+	<p>
+	ECMAScript
+	is an object-oriented programming language for performing
+	computations and manipulating computational objects within a host
+	environment. ECMAScript as defined here is not intended to be
+	computationally self-sufficient; indeed, there are no provisions in
+	this specification for input of external data or output of computed
+	results. Instead, it is expected that the computational environment
+	of an ECMAScript program will provide not only the objects and other
+	facilities described in this specification but also certain
+	environment-specific <i>host </i>objects, whose description and
+	behaviour are beyond the scope of this specification except to
+	indicate that they may provide certain properties that can be
+	accessed and certain functions that can be called from an ECMAScript
+	program.</p>
+	<p>
+	A
+	<i><b>scripting language</b></i> is a programming language that is
+	used to manipulate, customise, and automate the facilities of an
+	existing system. In such systems, useful functionality is already
+	available through a user interface, and the scripting language is a
+	mechanism for exposing that functionality to program control. In
+	this way, the existing system is said to provide a host environment
+	of objects and facilities, which completes the capabilities of the
+	scripting language. A scripting language is intended for use by both
+	professional and non-professional programmers.</p>
+	<p>
+	ECMAScript
+	was originally designed to be a <i><b>Web scripting language</b></i>,
+	providing a mechanism to enliven Web pages in browsers and to
+	perform server computation as part of a Web-based client-server
+	architecture. ECMAScript can provide core scripting capabilities for
+	a variety of host environments, and therefore the core scripting
+	language is specified in this document apart from any particular
+	host environment.</p>
+	<p>
+	Some
+	of the facilities of ECMAScript are similar to those used in other
+	programming languages; in particular Java<span class="symbol">&#8482;</span>,
+	Self, and Scheme as described in:</p>
+	<p>
+	Gosling,
+	James, Bill Joy and Guy Steele. The Java<sup><span class="symbol">&#8482;</span></sup>
+	Language Specification. Addison Wesley Publishing Co., 1996.</p>
+	<p>
+	Ungar,
+	David, and Smith, Randall B. Self: The Power of Simplicity. OOPSLA
+	'87 Conference Proceedings, pp. 227&#8211;241, Orlando, FL, October
+	1987.</p>
+	<p>
+	IEEE
+	Standard for the Scheme Programming Language. IEEE Std 1178-1990.</p>
+	<h3 id="x4.1">4.1 Web Scripting <a href="#x4.1">#</a> <a href="#x4.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	A web
+	browser provides an ECMAScript host environment for client-side
+	computation including, for instance, objects that represent windows,
+	menus, pop-ups, dialog boxes, text areas, anchors, frames, history,
+	cookies, and input/output. Further, the host environment provides a
+	means to attach scripting code to events such as change of focus,
+	page and image loading, unloading, error and abort, selection, form
+	submission, and mouse actions. Scripting code appears within the
+	HTML and the displayed page is a combination of user interface
+	elements and fixed and computed text and images. The scripting code
+	is reactive to user interaction and there is no need for a main
+	program.</p>
+	<p>
+	A web
+	server provides a different host environment for server-side
+	computation including objects representing requests, clients, and
+	files; and mechanisms to lock and share data. By using browser-side
+	and server-side scripting together, it is possible to distribute
+	computation between the client and server while providing a
+	customised user interface for a Web-based application.</p>
+	<p>
+	Each
+	Web browser and server that supports ECMAScript supplies its own
+	host environment, completing the ECMAScript execution environment.</p>
+	<h3 id="x4.2">4.2 Language Overview <a href="#x4.2">#</a> <a href="#x4.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	The
+	following is an informal overview of ECMAScript&#8212;not all parts of
+	the language are described. This overview is not part of the
+	standard proper.</p>
+	<p>
+	ECMAScript
+	is object-based: basic language and host facilities are provided by
+	objects, and an ECMAScript program is a cluster of communicating
+	objects. An ECMAScript <i><b>object</b></i> is a collection of
+	<i><b>properties</b></i> each with zero or more <i><b>attributes</b></i>
+	that determine how each property can be used&#8212;for example, when the
+	Writable attribute for a property is set to <b>false</b>, any
+	attempt by executed ECMAScript code to change the value of the
+	property fails. Properties are containers that hold other objects,
+	<i><b>primitive values</b></i>, or <i><b>functions</b></i>. A
+	primitive value is a member of one of the following built-in types:
+<a href="x8.html#x8.1" class="term-ref"><b>Undefined</b></a>,
+<a href="x8.html#x8.2" class="term-ref"><b>Null</b></a>,
+<a href="x8.html#x8.3" class="term-ref"><b>Boolean</b></a>,
+<a href="x8.html#x8.5" class="term-ref"><b>Number</b></a>,
+and
+<a href="x8.html#x8.4" class="term-ref"><b>String</b></a>;
+an object is a member of the remaining built-in type
+<a href="x8.html#x8.6" class="term-ref"><b>Object</b></a>; and a function is a
+ <a href="x8.html#callable" class="term-ref">callable object</a>. A function that
+	is associated with an object via a property is a <i><b>method</b></i>.</p>
+	<p>
+	ECMAScript
+	defines a collection of <i><b>built-in objects</b></i> that round
+	out the definition of ECMAScript entities. These built-in objects
+	include the <a href="x15.html#x15.1" class="term-ref">global object</a>, the <b><a href="x15.html#x15.2" class="term-ref">Object</a></b> object, the <b><a href="x15.html#x15.3" class="term-ref">Function</a></b> object, the <b><a href="x15.html#x15.4" class="term-ref">Array</a></b> object, the <b><a href="x15.html#x15.5" class="term-ref">String</a></b> object, the
+	<b><a href="x15.html#x15.6" class="term-ref">Boolean</a></b> object, the <b><a href="x15.html#x15.7" class="term-ref">Number</a></b> object, the <b><a href="x15.html#x15.8" class="term-ref">Math</a></b> object, the <b><a href="x15.html#x15.9" class="term-ref">Date</a></b> object, the <b><a href="x15.html#x15.10" class="term-ref">RegExp</a></b> object, the <b><a href="x15.html#x15.12" class="term-ref">JSON</a></b> object, and the Error objects <b><a href="x15.html#x15.11" class="term-ref">Error</a></b>, <b><a href="x15.html#x15.11.6.1" class="term-ref">EvalError</a></b>, <b><a href="x15.html#x15.11.6.2" class="term-ref">RangeError</a></b>,
+	<b><a href="x15.html#x15.11.6.3" class="term-ref">ReferenceError</a></b>, <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>, <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> and <b><a href="x15.html#x15.11.6.6" class="term-ref">URIError</a></b>.</p>
+	<p>
+	ECMAScript
+	also defines a set of built-in <i><b>operators</b></i>. ECMAScript
+	operators include various
+<a href="x11.html#x11.4" class="term-ref">unary operations</a>,
+<a href="x11.html#x11.5" class="term-ref">multiplicative operators</a>,
+<a href="x11.html#x11.6" class="term-ref">additive operators</a>,
+<a href="x11.html#x11.7" class="term-ref">bitwise shift operators</a>,
+<a href="x11.html#x11.8" class="term-ref">relational operators</a>,
+<a href="x11.html#x11.9" class="term-ref">equality operators</a>,
+<a href="x11.html#x11.10" class="term-ref">binary bitwise operators</a>,
+<a href="x11.html#x11.11" class="term-ref">binary logical operators</a>,
+<a href="x11.html#x11.13" class="term-ref">assignment operators</a>, and
+<a href="x11.html#x11.14" class="term-ref">the comma operator</a>.</p>
+	<p>
+	ECMAScript
+	syntax intentionally resembles Java syntax. ECMAScript syntax
+	is relaxed to enable it to serve as an easy-to-use scripting
+	language. For example, a variable is not required to have its type
+	declared nor are types associated with properties, and defined
+	functions are not required to have their declarations appear
+	textually before calls to them.</p>
+	<h4 id="x4.2.1">4.2.1 Objects <a href="#x4.2.1">#</a> <a href="#x4.2.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	ECMAScript
+	does not use classes such as those in C++, Smalltalk, or Java.
+	Instead objects may be created in various ways including via a
+	literal notation or via <i><b>constructors</b></i> which create
+	objects and then execute code that initialises all or part of them
+	by assigning initial values to their properties. Each constructor is
+	a function that has a property named &#8220;<code><b>prototype</b></code>&#8221;
+	that is used to implement <i><b>prototype-based inheritance</b></i>
+	and <i><b>shared properties</b></i>. Objects are created by using
+	constructors in <b>new</b> expressions; for example, <code><b>new
+	Date(2009,11)</b></code> creates a new Date object. Invoking
+	a constructor without using <b>new</b> has consequences that depend
+	on the constructor. For example, <code><b>Date()</b></code>
+	produces a string representation of the current date and time rather
+	than an object.</p>
+	<p>
+	Every
+	object created by a constructor has an implicit reference (called
+	the object&#8217;s<i> prototype</i>) to the value of its constructor&#8217;s
+	&#8220;<code><b>prototype</b></code>&#8221;
+	property. Furthermore, a prototype may have a non-null implicit
+	reference to its prototype, and so on; this is called the <i>prototype
+	chain</i>. When a reference is made to a property in an object, that
+	reference is to the property of that name in the first object in the
+	prototype chain that contains a property of that name. In other
+	words, first the object mentioned directly is examined for such a
+	property; if that object contains the named property, that is the
+	property to which the reference refers; if that object does not
+	contain the named property, the prototype for that object is
+	examined next; and so on.</p>
+	<div class="figure">
+	<p><img src="figure1.gif" alt="text equivalent follows in 3rd paragraph below that begins, 'CF is a constructor&#8230;'"></p>
+	<p class="caption">Figure 1 &#8212; Object/Prototype Relationships</p>
+	</div>
+	<p>
+	In a
+	class-based object-oriented language, in general, state is carried
+	by instances, methods are carried by classes, and inheritance is
+	only of structure and behaviour. In ECMAScript, the state and
+	methods are carried by objects, and structure, behaviour, and state
+	are all inherited.</p>
+	<p>
+	All
+	objects that do not directly contain a particular property that
+	their prototype contains share that property and its value. Figure 1
+	illustrates this:</p>
+	<p>
+	<b>CF</b>
+	is a constructor (and also an object). Five objects have been
+	created by using <code><b>new</b></code>
+	expressions: <b>cf</b><sub><b>1</b></sub>, <b>cf</b><sub><b>2</b></sub>,
+	<b>cf</b><sub><b>3</b></sub>, <b>cf</b><sub><b>4</b></sub>, and <b>cf</b><sub><b>5</b></sub>.
+	Each of these objects contains properties named <code>q1</code>
+	and <code>q2</code>. The dashed lines
+	represent the implicit prototype relationship; so, for example,
+	<b>cf</b><sub><b>3</b></sub>&#8217;s prototype is <b>CF</b><sub><b>p</b></sub>.
+	The constructor, <b>CF</b>, has two properties itself, named <code>P1</code>
+	and <code>P2</code>, which are not
+	visible to <b>CF</b><sub><b>p</b></sub>, <b>cf</b><sub><b>1</b></sub>,
+	<b>cf</b><sub><b>2</b></sub>, <b>cf</b><sub><b>3</b></sub>, <b>cf</b><sub><b>4</b></sub>,
+	or <b>cf</b><sub><b>5</b></sub>. The property named <code>CFP1</code>
+	in <b>CF</b><sub><b>p</b></sub> is shared by <b>cf</b><sub><b>1</b></sub>,
+	<b>cf</b><sub><b>2</b></sub>, <b>cf</b><sub><b>3</b></sub>, <b>cf</b><sub><b>4</b></sub>,
+	and <b>cf</b><sub><b>5</b></sub> (but not by <b>CF</b>), as are any
+	properties found in <b>CF</b><sub><b>p</b></sub>&#8217;s implicit
+	prototype chain that are not named <code>q1</code>,
+	<code>q2</code>, or <code>CFP1</code>.
+	Notice that there is no implicit prototype link between <b>CF</b>
+	and <b>CF</b><sub><b>p</b></sub>.</p>
+	<p>
+	Unlike
+	class-based object languages, properties can be added to objects
+	dynamically by assigning values to them. That is, constructors are
+	not required to name or assign values to all or any of the
+	constructed object&#8217;s properties. In the above diagram, one could
+	add a new shared property for <b>cf</b><sub><b>1</b></sub>, <b>cf</b><sub><b>2</b></sub>,
+	<b>cf</b><sub><b>3</b></sub>, <b>cf</b><sub><b>4</b></sub>, and <b>cf</b><sub><b>5
+	</b></sub>by assigning a new value to the property in <b>CF</b><sub><b>p</b></sub>.</p>
+	<h4 id="x4.2.2">4.2.2 The Strict Variant of ECMAScript <a href="#x4.2.2">#</a> <a href="#x4.2.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	ECMAScript Language recognizes the possibility that some users of
+	the language may wish to restrict their usage of some features
+	available in the language. They might do so in the interests of
+	security, to avoid what they consider to be error-prone features, to
+	get enhanced error checking, or for other reasons of their choosing.
+	In support of this possibility, ECMAScript defines a strict variant
+	of the language. The strict variant of the language excludes some
+	specific syntactic and semantic features of the regular ECMAScript
+	language and modifies the detailed semantics of some features. The
+	strict variant also specifies additional error conditions that must
+	be reported by throwing error exceptions in situations that are not
+	specified as errors by the non-strict form of the language.</p>
+	<p>
+	The
+	strict variant of ECMAScript is commonly referred to as the <i>strict
+	mode</i> of the language. Strict mode selection and use of the
+	strict mode syntax and semantics of ECMAScript is explicitly made at
+	the level of individual ECMAScript code units. Because strict mode
+	is selected at the level of a syntactic code unit, strict mode only
+	imposes restrictions that have local effect within such a code unit.
+	Strict mode does not restrict or modify any aspect of the ECMAScript
+	semantics that must operate consistently across multiple code units.
+	A complete ECMAScript program may be composed for both strict mode
+	and non-strict mode ECMAScript code units. In this case, strict mode
+	only applies when actually executing code that is defined within a
+	<a href="x10.html#x10.1.1" class="term-ref">strict mode code</a> unit. 
+	</p>
+	<p>
+	In
+	order to conform to this specification, an ECMAScript implementation
+	must implement both the full unrestricted ECMAScript language and
+	the strict mode variant of the ECMAScript language as defined by
+	this specification. In addition, an implementation must support the
+	combination of unrestricted and <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a> units into a single
+	composite program.</p>
+	<h3 id="x4.3">4.3 Definitions <a href="#x4.3">#</a> <a href="#x4.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	For
+	the purposes of this document, the following terms and definitions
+	apply.</p>
+	<h4 id="x4.3.1">4.3.1<br><dfn id="type">type</dfn> <a href="#x4.3.1">#</a> <a href="#x4.3.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	set
+	of data values as defined in <a href="x8.html#x8">Clause 8</a> of this specification.</p>
+	<h4 id="x4.3.2">4.3.2<br><dfn id="primitive_value">primitive value</dfn> <a href="#x4.3.2">#</a> <a href="#x4.3.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	member
+	of one of the types Undefined, Null, Boolean, Number, or String as
+	defined in <a href="x8.html#x8">Clause 8</a>.</p>
+	<p><b class="note">NOTE</b> A
+	primitive value is a datum that is represented directly at the
+	lowest level of the language implementation.</p>
+	<h4 id="x4.3.3">4.3.3<br><dfn id="object">object</dfn> <a href="#x4.3.3">#</a> <a href="#x4.3.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	member
+	of the type Object.</p>
+	<p><b class="note">NOTE</b> An
+	object is a collection of properties and has a single prototype
+	object. The prototype may be the null value.</p>
+	<h4 id="x4.3.4">4.3.4<br><dfn id="constructor">constructor</dfn> <a href="#x4.3.4">#</a> <a href="#x4.3.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	Function
+	object that creates and initialises objects.</p>
+	<p><b class="note">NOTE</b> The
+	value of a constructor&#8217;s &#8220;<code>prototype</code>&#8221;
+	property is a prototype object that is used to implement inheritance
+	and shared properties.</p>
+	<h4 id="x4.3.5">4.3.5<br><dfn id="prototype">prototype</dfn> <a href="#x4.3.5">#</a> <a href="#x4.3.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	object
+	that provides shared properties for other objects.</p>
+	<p><b class="note">NOTE</b> When
+	a constructor creates an object, that object implicitly references
+	the constructor&#8217;s &#8220;<code><b>prototype</b></code>&#8221;
+	property for the purpose of resolving property references. The
+	constructor&#8217;s &#8220;<code><b>prototype</b></code>&#8221;
+	property can be referenced by the program expression
+	<code><i>constructor</i></code><code><b>.prototype</b></code>,
+	and properties added to an object&#8217;s prototype are shared, through
+	inheritance, by all objects sharing the prototype. Alternatively, a
+	new object may be created with an explicitly specified prototype by
+	using the <code><b><a href="x15.html#x15.2.3.5">Object.create</a></b></code>
+	built-in function.</p>
+	<h4 id="x4.3.6">4.3.6<br><dfn id="native_object">native object</dfn> <a href="#x4.3.6">#</a> <a href="#x4.3.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	object
+	in an ECMAScript implementation whose semantics are fully defined by
+	this specification rather than by  the host environment.</p>
+	<p><b class="note">NOTE</b> Standard
+	native objects are defined in this specification. Some native
+	objects are built-in; others may be constructed during the course of
+	execution of an ECMAScript program.</p>
+	<h4 id="x4.3.7">4.3.7<br><dfn id="built-in_object">built-in object</dfn> <a href="#x4.3.7">#</a> <a href="#x4.3.7-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	object
+	supplied by an ECMAScript implementation, independent of the host
+	environment, that is present at the start of the execution of an
+	ECMAScript program.</p>
+	<p><b class="note">NOTE</b> Standard
+	built-in objects are defined in this specification, and an
+	ECMAScript implementation may specify and define others. Every
+	built-in object is a native object. A <i>built-in constructor</i><i><b>
+	</b></i>is a built-in object that is also a constructor.</p>
+	<h4 id="x4.3.8">4.3.8<br><dfn id="host_object">host object</dfn> <a href="#x4.3.8">#</a> <a href="#x4.3.8-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	object
+	supplied by the host environment to complete the execution
+	environment of ECMAScript.</p>
+	<p><b class="note">NOTE</b> Any
+	object that is not native is a host object.</p>
+	<h4 id="x4.3.9">4.3.9<br><dfn id="undefined_value">undefined value</dfn> <a href="#x4.3.9">#</a> <a href="#x4.3.9-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	<a href="#primitive_value" class="term-ref">primitive value</a> used when a variable has not been assigned a value.</p>
+	<h4 id="x4.3.10">4.3.10<br><dfn id="Undefined_type">Undefined type</dfn> <a href="#x4.3.10">#</a> <a href="#x4.3.10-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	type
+	whose sole value is the undefined value. 
+	</p>
+	<h4 id="x4.3.11">4.3.11<br><dfn id="null_value">null value</dfn> <a href="#x4.3.11">#</a> <a href="#x4.3.11-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	<a href="#primitive_value" class="term-ref">primitive value</a> that represents the intentional absence of any object value.</p>
+	<h4 id="x4.3.12">4.3.12<br><dfn id="Null_type">Null type</dfn> <a href="#x4.3.12">#</a> <a href="#x4.3.12-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	type
+	whose sole value is the null value.</p>
+	<h4 id="x4.3.13">4.3.13<br><dfn id="Boolean_value">Boolean value</dfn> <a href="#x4.3.13">#</a> <a href="#x4.3.13-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	member
+	of the Boolean type.</p>
+	<p><b class="note">NOTE</b> There
+	are only two Boolean values, <b>true</b> and <b>false</b>.</p>
+	<h4 id="x4.3.14">4.3.14<br><dfn id="Boolean_type">Boolean type</dfn> <a href="#x4.3.14">#</a> <a href="#x4.3.14-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	type
+	consisting of the primitive values <b>true</b> and <b>false</b>.</p>
+	<h4 id="x4.3.15">4.3.15<br><dfn id="Boolean_object">Boolean object</dfn> <a href="#x4.3.15">#</a> <a href="#x4.3.15-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	member
+	of the Object type that is an instance of the standard built-in
+	<code><b>Boolean</b></code>
+	constructor.</p>
+	<p><b class="note">NOTE</b> A
+	Boolean object is created by using the <code><b>Boolean</b></code>
+	constructor in a <code><b>new</b></code>
+	expression, supplying a Boolean value as an argument. The resulting
+	object has an internal property whose value is the Boolean value. A
+	Boolean object can be coerced to a Boolean value.</p>
+	<h4 id="x4.3.16">4.3.16<br><dfn id="String_value">String value</dfn> <a href="#x4.3.16">#</a> <a href="#x4.3.16-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	<a href="#primitive_value" class="term-ref">primitive value</a> that is a finite ordered sequence of zero or more 16-bit
+	unsigned integer. 
+	</p>
+	<p><b class="note">NOTE</b> A
+	String value is a member of the String type. Each integer value in
+	the sequence usually represents a single 16-bit unit of UTF-16 text.
+	However, ECMAScript does not place any restrictions or requirements
+	on the values except that they must be 16-bit unsigned integers.</p>
+	<h4 id="x4.3.17">4.3.17<br><dfn id="String_type">String type</dfn> <a href="#x4.3.17">#</a> <a href="#x4.3.17-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	set
+	of all possible String values.</p>
+	<h4 id="x4.3.18">4.3.18<br><dfn id="String_object">String object</dfn> <a href="#x4.3.18">#</a> <a href="#x4.3.18-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	member
+	of the Object type that is an instance of the standard built-in
+	<code><b>String</b></code>
+	constructor.</p>
+	<p><b class="note">NOTE</b> A
+	String object is created by using the <code><b>String</b></code>
+	constructor in a <code><b>new</b></code>
+	expression, supplying a String value as an argument. The resulting
+	object has an internal property whose value is the String value. A
+	String object can be coerced to a String value by calling the <code><b>String</b></code>
+	constructor as a function (<a href="x15.html#x15.5.1">15.5.1</a>).</p>
+	<h4 id="x4.3.19">4.3.19<br><dfn id="Number_value">Number value</dfn> <a href="#x4.3.19">#</a> <a href="#x4.3.19-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	<a href="#primitive_value" class="term-ref">primitive value</a> corresponding to a double-precision 64-bit binary format IEEE
+	754 value.</p>
+	<p><b class="note">NOTE</b> A
+	Number value is a member of the Number type and is a direct
+	representation of a number.</p>
+	<h4 id="x4.3.20">4.3.20<br><dfn id="Number_type">Number type</dfn> <a href="#x4.3.20">#</a> <a href="#x4.3.20-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	set
+	of all possible Number values including the special &#8220;Not-a-Number&#8221;
+	(NaN) values, positive infinity, and negative infinity.</p>
+	<h4 id="x4.3.21">4.3.21<br><dfn id="Number_object">Number object</dfn> <a href="#x4.3.21">#</a> <a href="#x4.3.21-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	member
+	of the Object type that is an instance of the standard built-in
+	<code><b>Number</b></code>
+	constructor.</p>
+	<p><b class="note">NOTE</b> A
+	Number object is created by using the <code><b>Number</b></code>
+	constructor in a <code><b>new</b></code>
+	expression, supplying a Number value as an argument. The resulting
+	object has an internal property whose value is the Number value. A
+	Number object can be coerced to a Number value by calling the <code><b>Number</b></code>
+	constructor as a function (<a href="x15.html#x15.7.1">15.7.1</a>).</p>
+	<h4 id="x4.3.22">4.3.22<br><dfn id="Infinity">Infinity</dfn> <a href="#x4.3.22">#</a> <a href="#x4.3.22-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	Number
+	value that is the
+	positive infinite Number value.</p>
+	<h4 id="x4.3.23">4.3.23<br><dfn id="NaN">NaN</dfn> <a href="#x4.3.23">#</a> <a href="#x4.3.23-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	Number
+	value that is a IEEE 754 &#8220;Not-a-Number&#8221; value.</p>
+	<h4 id="x4.3.24">4.3.24<br><dfn id="function">function</dfn> <a href="#x4.3.24">#</a> <a href="#x4.3.24-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	member
+	of the Object type that is an instance of the standard built-in
+	<code><b>Function</b></code>
+	constructor and that may be invoked as a subroutine.</p>
+	<p><b class="note">NOTE</b> In
+	addition to its named properties, a function contains executable
+	code and state that determine how it behaves when invoked. A
+	function&#8217;s code may or may not be written in ECMAScript.</p>
+	<h4 id="x4.3.25">4.3.25<br><dfn id="built-in_function">built-in function</dfn> <a href="#x4.3.25">#</a> <a href="#x4.3.25-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	built-in
+	object that is a function.</p>
+	<p><b class="note">NOTE</b> Examples
+	of built-in functions include <code><b>parseInt</b></code>
+	and <code><b><a href="x15.html#x15.8.2.8">Math.exp</a></b></code>. An
+	implementation may provide implementation-dependent built-in
+	functions that are not described in this specification.
+	
+	</p>
+	<h4 id="x4.3.26">4.3.26<br><dfn id="property">property</dfn> <a href="#x4.3.26">#</a> <a href="#x4.3.26-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	association
+	between a name and a value that is a part of an object.</p>
+	<p><b class="note">NOTE</b> Depending
+	upon the form of the property the value may be represented either
+	directly as a data value (a <a href="#primitive_value" class="term-ref">primitive value</a>, an object, or a
+	function object) or indirectly by a pair of accessor functions.</p>
+	<h4 id="x4.3.27">4.3.27<br><dfn id="method">method</dfn> <a href="#x4.3.27">#</a> <a href="#x4.3.27-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	function
+	that is the value of a property.</p>
+	<p><b class="note">NOTE</b> When
+	a function is called as a method of an object, the object is passed
+	to the function as its <b>this</b> value.</p>
+	<h4 id="x4.3.28">4.3.28<br><dfn id="built-in_method">built-in method</dfn> <a href="#x4.3.28">#</a> <a href="#x4.3.28-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	method
+	that is a built-in function.</p>
+	<p><b class="note">NOTE</b> Standard
+	built-in methods are defined in this specification, and an
+	ECMAScript implementation may specify and provide other additional
+	built-in methods. 
+	</p>
+	<h4 id="x4.3.29">4.3.29<br><dfn id="attribute">attribute</dfn> <a href="#x4.3.29">#</a> <a href="#x4.3.29-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	internal
+	value that defines some characteristic of a property.</p>
+	<h4 id="x4.3.30">4.3.30<br><dfn id="own_property">own property</dfn> <a href="#x4.3.30">#</a> <a href="#x4.3.30-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	property
+	that is directly contained by its object.</p>
+	<h4 id="x4.3.31">4.3.31<br><dfn id="inherited_property">inherited property</dfn> <a href="#x4.3.31">#</a> <a href="#x4.3.31-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	property
+	of an object that is not an own property but is a property (either
+	own or inherited) of the object&#8217;s prototype.</p>
+	</body><script src="anno.js"></script></html>

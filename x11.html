@@ -1,0 +1,3123 @@
+<!DOCTYPE html>
+<html class="split chapter"><head><meta charset="utf-8"><title>11 Expressions # &#9417; &#9402; &#9312; &#9398; &#8212; Annotated ES5</title><link rel="stylesheet" href="style.css"><link rel="shortcut icon" href="favicon.ico"><link href="x10.html" title="10 Executable Code and Execution Contexts " rel="prev">
+  <link href="index.html#contents" title="TOC" rel="index">
+  <link href="x12.html" title="12 Statements " rel="next">
+  </head><body><div class="head">
+<h2 id="top">Annotated ECMAScript 5.1 <span id="timestamp"></span></h2>
+<div id="mascot-treehouse">
+	<img id="mascot" align="left" src="js-mascot.svg" alt=""><img id="bubble" src="bubble.svg" alt=""></div>
+<p id="slogan">&#8223;Ex igne vita&#8221;</p>
+<div id="annotations"></div>
+<script src="timestamp.js"></script></div>
+<nav>
+   <a href="x10.html">&#8592; 10 Executable Code and Execution Contexts </a> &#8211;
+   <a href="index.html#contents">TOC</a> &#8211;
+   <a href="x12.html">12 Statements  &#8594;</a>
+  <ol class="toc"><li><a href="x11.html#x11" id="x11-toc">11 Expressions</a>
+    <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x11.html#x11.1" id="x11.1-toc">11.1 Primary Expressions</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x11.html#x11.1.1" id="x11.1.1-toc">11.1.1 The this Keyword</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.1.2" id="x11.1.2-toc">11.1.2 Identifier Reference</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.1.3" id="x11.1.3-toc">11.1.3 Literal Reference</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.1.4" id="x11.1.4-toc">11.1.4 Array Initialiser</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.1.5" id="x11.1.5-toc">11.1.5 Object Initialiser</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.1.6" id="x11.1.6-toc">11.1.6 The Grouping Operator</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x11.html#x11.2" id="x11.2-toc">11.2 Left-Hand-Side Expressions</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x11.html#x11.2.1" id="x11.2.1-toc">11.2.1 Property Accessors</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.2.2" id="x11.2.2-toc">11.2.2 The new Operator</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.2.3" id="x11.2.3-toc">11.2.3 Function Calls</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.2.4" id="x11.2.4-toc">11.2.4 Argument Lists</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.2.5" id="x11.2.5-toc">11.2.5 Function Expressions</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x11.html#x11.3" id="x11.3-toc">11.3 Postfix Expressions</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x11.html#x11.3.1" id="x11.3.1-toc">11.3.1 Postfix Increment Operator</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.3.2" id="x11.3.2-toc">11.3.2 Postfix Decrement Operator</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x11.html#x11.4" id="x11.4-toc">11.4 Unary Operators</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x11.html#x11.4.1" id="x11.4.1-toc">11.4.1 The delete Operator</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.4.2" id="x11.4.2-toc">11.4.2 The void Operator</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.4.3" id="x11.4.3-toc">11.4.3 The typeof Operator</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.4.4" id="x11.4.4-toc">11.4.4 Prefix Increment Operator</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.4.5" id="x11.4.5-toc">11.4.5 Prefix Decrement Operator</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.4.6" id="x11.4.6-toc">11.4.6 Unary + Operator</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.4.7" id="x11.4.7-toc">11.4.7 Unary - Operator</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.4.8" id="x11.4.8-toc">11.4.8 Bitwise NOT Operator ( ~ )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.4.9" id="x11.4.9-toc">11.4.9 Logical NOT Operator ( ! )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x11.html#x11.5" id="x11.5-toc">11.5 Multiplicative Operators</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x11.html#x11.5.1" id="x11.5.1-toc">11.5.1 Applying the * Operator</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.5.2" id="x11.5.2-toc">11.5.2 Applying the / Operator</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.5.3" id="x11.5.3-toc">11.5.3 Applying the % Operator</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x11.html#x11.6" id="x11.6-toc">11.6 Additive Operators</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x11.html#x11.6.1" id="x11.6.1-toc">11.6.1 The Addition operator ( + )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.6.2" id="x11.6.2-toc">11.6.2 The Subtraction Operator ( - )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.6.3" id="x11.6.3-toc">11.6.3 Applying the Additive Operators to Numbers</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x11.html#x11.7" id="x11.7-toc">11.7 Bitwise Shift Operators</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x11.html#x11.7.1" id="x11.7.1-toc">11.7.1 The Left Shift Operator ( &lt;&lt; )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.7.2" id="x11.7.2-toc">11.7.2 The Signed Right Shift Operator ( &gt;&gt; )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.7.3" id="x11.7.3-toc">11.7.3 The Unsigned Right Shift Operator ( &gt;&gt;&gt; )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x11.html#x11.8" id="x11.8-toc">11.8 Relational Operators</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x11.html#x11.8.1" id="x11.8.1-toc">11.8.1 The Less-than Operator ( &lt; )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.8.2" id="x11.8.2-toc">11.8.2 The Greater-than Operator ( &gt; )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.8.3" id="x11.8.3-toc">11.8.3 The Less-than-or-equal Operator ( &lt;= )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.8.4" id="x11.8.4-toc">11.8.4 The Greater-than-or-equal Operator ( &gt;= )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.8.5" id="x11.8.5-toc">11.8.5 The Abstract Relational Comparison Algorithm</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.8.6" id="x11.8.6-toc">11.8.6 The instanceof operator</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.8.7" id="x11.8.7-toc">11.8.7 The in operator</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x11.html#x11.9" id="x11.9-toc">11.9 Equality Operators</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x11.html#x11.9.1" id="x11.9.1-toc">11.9.1 The Equals Operator ( == )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.9.2" id="x11.9.2-toc">11.9.2 The Does-not-equals Operator ( != )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.9.3" id="x11.9.3-toc">11.9.3 The Abstract Equality Comparison Algorithm</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.9.4" id="x11.9.4-toc">11.9.4 The Strict Equals Operator ( === )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.9.5" id="x11.9.5-toc">11.9.5 The Strict Does-not-equal Operator ( !== )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.9.6" id="x11.9.6-toc">11.9.6 The Strict Equality Comparison Algorithm</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x11.html#x11.10" id="x11.10-toc">11.10 Binary Bitwise Operators</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.11" id="x11.11-toc">11.11 Binary Logical Operators</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.12" id="x11.12-toc">11.12 Conditional Operator ( ? : )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.13" id="x11.13-toc">11.13 Assignment Operators</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x11.html#x11.13.1" id="x11.13.1-toc">11.13.1 Simple Assignment ( = )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x11.html#x11.13.2" id="x11.13.2-toc">11.13.2 Compound Assignment ( op= )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x11.html#x11.14" id="x11.14-toc">11.14 Comma Operator ( , )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li></ol></nav>
+
+  <h2 id="x11">11 Expressions <a href="#x11">#</a> <a href="#x11-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h2>
+	<h3 id="x11.1">11.1 Primary Expressions <a href="#x11.1">#</a> <a href="#x11.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax
+	</b>
+	</p>
+	<p class="keep">
+	<i>PrimaryExpression </i><b>:</b></p>
+	<p class="def1-btm">
+	<code><b>this</b></code> <i><br>Identifier<br>Literal<br>ArrayLiteral<br>ObjectLiteral<br></i><code><b>(</b></code> <i>Expression </i><code><b>)</b></code></p>
+	<h4 id="x11.1.1">11.1.1 The this Keyword <a href="#x11.1.1">#</a> <a href="#x11.1.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	<code><b>this</b></code> keyword
+	evaluates to the value of the ThisBinding of the current execution
+	context.</p>
+	<h4 id="x11.1.2">11.1.2 Identifier Reference <a href="#x11.1.2">#</a> <a href="#x11.1.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	An
+	<i>Identifier</i> is
+	evaluated by performing Identifier Resolution as specified in
+	<a href="x10.html#x10.3.1">10.3.1</a>. The result of evaluating an <i>Identifier</i>
+	is always a value of type <a href="x8.html#x8.7">Reference</a>.</p>
+	<h4 id="x11.1.3">11.1.3 Literal Reference <a href="#x11.1.3">#</a> <a href="#x11.1.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	A
+	<i>Literal</i> is
+	evaluated as described in <a href="x7.html#x7.8">7.8</a>.</p>
+	<h4 id="x11.1.4">11.1.4 Array Initialiser <a href="#x11.1.4">#</a> <a href="#x11.1.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	An
+	array initialiser is an expression describing the initialisation of
+	an Array object, written in a form of a literal. It is a list of
+	zero or more expressions, each of which represents an <a href="x15.html#array-element">array element</a>,
+	enclosed in square brackets. The elements need not be literals; they
+	are evaluated each time the array initialiser is evaluated.</p>
+	<p>
+ <a href="x15.html#array-element">Array element</a>s may be elided at the beginning, middle or end of the
+	element list. Whenever a comma in the element list is not preceded
+	by an <i>AssignmentExpression</i>
+	(i.e., a comma at the beginning or after another comma), the missing
+ <a href="x15.html#array-element">array element</a> contributes to the length of the Array and increases
+	the index of subsequent elements. Elided <a href="x15.html#array-element">array element</a>s are not
+	defined. If an element is elided at the end of an array, that
+	element does not contribute to the length of the Array.</p>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>ArrayLiteral </i><b>:</b></p>
+	<p class="def1-btm">
+	<code><b>[
+	</b></code> <i>Elision</i><sub>opt</sub><code>
+	</code><code><b>]<br>[
+	</b></code> <i>ElementList</i><code>
+	</code><code><b>]<br>[
+	</b></code> <i>ElementList <b>,</b> Elision</i><sub>opt</sub><code>
+	</code><code><b>]</b></code></p>
+	<p class="keep">
+	<i>ElementList </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>Elision</i><sub>opt</sub><sub><code>
+	</code></sub><i>AssignmentExpression<br>ElementList </i><code><b>,</b></code> <i>Elision</i><sub>opt</sub><sub><code>
+	</code></sub><i>AssignmentExpression</i></p>
+	<p class="keep">
+	<i>Elision </i><b>:</b></p>
+	<p class="def1-btm">
+	<code><b>,</b></code> <i><br>Elision </i><code><b>,</b></code></p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	The
+	production  <i>ArrayLiteral</i>
+	<b>:</b>  <code><b>[</b></code> <i>Elision</i><sub>opt</sub><code>
+	</code><code><b>]</b></code>  is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>array </i>be the result of creating a new object as if by the
+		expression <code><b>new Array() </b></code>where<code><b>
+		Array </b></code>is the standard built-in constructor with that
+		name.</p>
+		</li>
+		<li><p>
+		Let
+		<i>pad </i>be the result of evaluating <i>Elision</i>; if not
+		present, use the numeric value zero.</p>
+		</li>
+		<li><p>
+		Call
+		the [[Put]] internal method of <i>array </i>with arguments
+		<code>"</code><code><b>length</b></code><code>"</code>,
+		<i>pad</i>, and <b>false</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>array</i>.</p>
+	</li></ol><p>
+	The
+	production  <i>ArrayLiteral</i>
+	<b>:</b> <code><b>[</b></code> <i>ElementList</i><code>
+	</code><code><b>]</b></code>  is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Return
+		the result of evaluating <i>ElementList</i>.</p>
+	</li></ol><p>
+	The
+	production  <i>ArrayLiteral</i>
+	<b>: </b><code><b>[</b></code> <i>ElementList</i>
+	<code><b>,</b></code> <i> </i><i>Elision</i><sub>opt</sub><code>
+	</code><code><b>]</b></code>  is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>array </i>be the result of evaluating <i>ElementList</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>pad </i>be the result of evaluating <i>Elision</i>; if not
+		present, use the numeric value zero.</p>
+		</li>
+		<li><p>
+		Let
+		<i>len </i>be the result of calling the [[Get]] internal method of
+		<i>array </i>with argument <code>"</code><code><b>length</b></code><code>"</code>.</p>
+		</li>
+		<li><p>
+		Call
+		the [[Put]] internal method of <i>array </i>with arguments
+		<code>"</code><code><b>length</b></code><code>"</code>,
+		<a href="x9.html#x9.6">ToUint32</a>(<i>pad</i>+<i>len</i>), and <b>false</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>array</i>.</p>
+	</li></ol><p>
+	The
+	production  <i>ElementList</i>
+	<b>:</b>  <i>Elision</i><sub>opt</sub><code>
+	</code><i>AssignmentExpression</i>
+	 is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>array </i>be the result of creating a new object as if by the
+		expression <code><b>new Array() </b></code>where<code><b>
+		Array </b></code>is the standard built-in constructor with that
+		name.</p>
+		</li>
+		<li><p>
+		Let
+		<i>firstIndex </i>be the result of evaluating <i>Elision</i>; if
+		not present, use the numeric value zero.</p>
+		</li>
+		<li><p>
+		Let
+		<i>initResult </i>be the result of evaluating <i>AssignmentExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>initValue </i>be <a href="x8.html#x8.7.1">GetValue</a>(<i>initResult</i>).</p>
+		</li>
+		<li><p>
+		Call
+		the [[DefineOwnProperty]] internal method of <i>array </i>with
+		arguments <a href="x9.html#x9.8">ToString</a>(<i>firstIndex)</i>, the <a href="x8.html#x8.10">Property Descriptor</a> {
+		[[Value]]: <i>initValue</i>, [[Writable]]: <b>true</b>,
+		[[Enumerable]]: <b>true</b>, [[Configurable]]: <b>true</b>}, and
+		<b>false</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>array</i>.</p>
+	</li></ol><p>
+	The
+	production  <i>ElementList</i>
+	<b>:</b>  <i>ElementList</i>
+	<b>,</b> <i>Elision</i><sub>opt</sub><code>
+	</code><i>AssignmentExpression</i>
+	 is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>array </i>be the result of evaluating <i>ElementList</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>pad </i>be the result of evaluating <i>Elision</i>; if not
+		present, use the numeric value zero.</p>
+		</li>
+		<li><p>
+		Let
+		<i>initResult </i>be the result of evaluating <i>AssignmentExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>initValue </i>be <a href="x8.html#x8.7.1">GetValue</a>(<i>initResult</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>len </i>be the result of calling the [[Get]] internal method of
+		<i>array </i>with argument <code>"</code><code><b>length</b></code><code>"</code>.</p>
+		</li>
+		<li><p>
+		Call
+		the [[DefineOwnProperty]] internal method of <i>array </i>with
+		arguments <a href="x9.html#x9.8">ToString</a>(<a href="x9.html#x9.6">ToUint32</a>((<i>pad</i>+<i>len</i>)) and the
+	 <a href="x8.html#x8.10">Property Descriptor</a> { [[Value]]: <i>initValue</i>, [[Writable]]:
+		<b>true</b>, [[Enumerable]]: <b>true</b>, [[Configurable]]: <b>true</b>},
+		and <b>false</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>array</i>.</p>
+	</li></ol><p>
+	The
+	production  <i>Elision</i>
+	<b>:</b>  <b>,</b>  is evaluated as follows:</p>
+	<ol><li><p>
+		Return
+		the numeric value 1.</p>
+	</li></ol><p>
+	The
+	production  <i>Elision</i>
+	<b>:</b>  <i>Elision</i>
+	<b>,</b>  is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>preceding</i> be the result of evaluating <i>Elision</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>preceding</i>+1.</p>
+	</li></ol><p class="sp">
+	</p><p><b class="note">NOTE</b> 
+	[[DefineOwnProperty]] is used to ensure that own properties are
+	defined for the array even if the standard built-in Array prototype
+	object has been modified in a manner that would preclude the
+	creation of new own properties using [[Put]].</p>
+	<h4 id="x11.1.5">11.1.5 Object Initialiser <a href="#x11.1.5">#</a> <a href="#x11.1.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	An
+	object initialiser is an expression describing the initialisation of
+	an Object, written in a form resembling a literal. It is a list of
+	zero or more pairs of property names and associated values, enclosed
+	in curly braces. The values need not be literals; they are evaluated
+	each time the object initialiser is evaluated.</p>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>ObjectLiteral </i><b>:</b></p>
+	<p class="def1-btm">
+	<code><b>{
+	}</b></code> <i><br></i><code><b>{
+	</b></code> <i>PropertyNameAndValueList</i><code>
+	</code><code><b>}<br>{
+	</b></code> <i>PropertyNameAndValueList</i><code>
+	, </code><code><b>}</b></code></p>
+	<p class="keep">
+	<i>PropertyNameAndValueList </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>PropertyAssignment<br>PropertyNameAndValueList</i><code>
+	</code><code><b>,</b></code><code>
+	</code><i>PropertyAssignment</i></p>
+	<p class="keep">
+	<i>PropertyAssignment<b>
+	</b></i><b>:</b></p>
+	<p class="def1-btm">
+	<i>PropertyName </i><code><b>:</b></code> <i>AssignmentExpression<br></i><code><b>get</b></code> <i><b>
+	</b>PropertyName </i><code><b>(
+	)</b></code> <i> </i><code><b>{</b></code> <i>FunctionBody </i><code><b>}</b></code> <i><b><br></b></i><code><b>set</b></code> <i><b>
+	</b>PropertyName </i><code><b>(</b></code> <i><b>
+	</b>PropertySetParameterList </i><code><b>)
+	{</b></code> <i> FunctionBody </i><code><b>}</b></code></p>
+	<p class="keep">
+	<i>PropertyName </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>IdentifierName<br>StringLiteral<br>NumericLiteral</i></p>
+	<p class="keep">
+	<i>PropertySetParameterList<b>
+	</b></i><b>:</b></p>
+	<p class="def1-btm">
+	<i>Identifier</i></p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	The
+	production  <i>ObjectLiteral</i>
+	<b>:</b>  <code><b>{</b></code><code>
+	</code><code><b>}</b></code>  is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Return
+		a new object created as if by the expression <code><b>new
+		Object() </b></code>where <code><b>Object</b></code>
+		is <a href="x15.html#x15.2">the standard built-in constructor with that name</a>.</p>
+	</li></ol><p>
+	The
+	productions <i>ObjectLiteral</i>
+	<b>:</b> <code><b>{</b></code><code>
+	</code><i>PropertyNameAndValueList</i>
+	<code><b>}</b></code>
+	and<br><i>ObjectLiteral</i>
+	<b>:</b> <code><b>{</b></code><code>
+	</code><i>PropertyNameAndValueList</i>
+	<code>,</code><code><b>}</b></code>
+	are evaluated as follows:</p>
+	<ol><li><p>
+		Return
+		the result of evaluating <i>PropertyNameAndValueList</i>.</p>
+	</li></ol><p>
+	The
+	production <i>PropertyNameAndValueList</i>
+	<b>:</b>  <i>PropertyAssignment</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>obj </i>be the result of creating a new object as if by the
+		expression <code><b>new Object()
+		</b></code>where <code><b>Object</b></code>
+		is <a href="x15.html#x15.2">the standard built-in constructor with that name</a>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>propId </i>be the result of evaluating <i>PropertyAssignment</i>.</p>
+		</li>
+		<li><p>
+		Call
+		the [[DefineOwnProperty]] internal method of <i>obj</i> with
+		arguments <i>propId</i>.name, <i>propId</i>.descriptor, and <b>false</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>obj</i>.</p>
+	</li></ol><p>
+	The
+	production<br><i>PropertyNameAndValueList</i>
+	<b>:</b>  <i>PropertyNameAndValueList</i>
+	<b>,</b> <i>PropertyAssignment</i><br>is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>obj</i> be the result of evaluating <i>PropertyNameAndValueList</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>propId</i> be the result of evaluating <i>PropertyAssignment</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>previous</i> be the result of calling the [[GetOwnProperty]]
+		internal method of <i>obj</i> with argument <i>propId</i>.name.</p>
+		</li>
+		<li><p>
+		If
+		<i>previous</i> is not <b>undefined</b> then throw a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+		exception if any of the following conditions are true</p>
+		<ol><li><p>
+			This
+			production is contained in <a href="x10.html#x10.1.1">strict code</a> and
+			<a href="x8.html#x8.10.2">IsDataDescriptor</a>(<i>previous</i>) is <b>true</b> and
+			<a href="x8.html#x8.10.2">IsDataDescriptor</a>(<i>propId</i>.descriptor) is <b>true</b>.</p>
+			</li>
+			<li><p>
+			<a href="x8.html#x8.10.2">IsDataDescriptor</a>(<i>previous</i>)
+			is <b>true</b> and <a href="x8.html#x8.10.1">IsAccessorDescriptor</a>(<i>propId</i>.descriptor)
+			is <b>true.</b></p>
+			</li>
+			<li><p>
+			<a href="x8.html#x8.10.1">IsAccessorDescriptor</a>(<i>previous</i>)
+			is <b>true</b> and <a href="x8.html#x8.10.2">IsDataDescriptor</a>(<i>propId</i>.descriptor) is
+			<b>true</b>.</p>
+			</li>
+			<li><p>
+			<a href="x8.html#x8.10.1">IsAccessorDescriptor</a>(<i>previous</i>)
+			is <b>true </b>and <a href="x8.html#x8.10.1">IsAccessorDescriptor</a>(<i>propId</i>.descriptor)
+			is <b>true </b>and either both <i>previous</i> and
+			<i>propId</i>.descriptor have [[Get]] fields or both <i>previous</i>
+			and <i>propId</i>.descriptor have [[Set]] fields</p>
+		</li></ol></li></ol><ol start="5"><li><p>
+		Call
+		the [[DefineOwnProperty]] internal method of <i>obj</i> with
+		arguments <i>propId</i>.name, <i>propId</i>.descriptor, and <b>false</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>obj</i>.</p>
+	</li></ol><p>
+	If
+	the above steps would throw a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> then an
+	implementation must treat the error as an early error (<a href="x16.html#x16">Clause 16</a>).</p>
+	<p>
+	The
+	production  <i>PropertyAssignment</i>
+	<b>:</b> <i>PropertyName</i>
+	<code><b>:</b></code>
+	<i>AssignmentExpression</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>propName </i>be the result of evaluating <i>PropertyName</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>exprValue </i>be the result of evaluating <i>AssignmentExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>propValue </i>be <a href="x8.html#x8.7.1">GetValue</a>(<i>exprValue</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>desc </i>be the <a href="x8.html#x8.10">Property Descriptor</a>{[[Value]]: <i>propValue</i>,
+		[[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b>,
+		[[Configurable]]: <b>true</b>}</p>
+		</li>
+		<li><p>
+		Return
+	 <a href="x8.html#property-identifier">Property Identifier</a> (<i>propName</i>, <i>desc</i>).</p>
+	</li></ol><p>
+	The
+	production  <i>PropertyAssignment</i>
+	<b>:</b> <code><b>get</b></code>
+	<i>PropertyName</i> <code><b>(
+	) {</b></code> <i><a href="x13.html#x13">FunctionBody</a></i><code>
+	</code><code><b>}</b></code> is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>propName </i>be the result of evaluating <i>PropertyName</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>closure </i>be the result of creating a new Function object as
+		specified in <a href="x13.html#x13.2">13.2</a> with an empty parameter list and body specified
+		by <i><a href="x13.html#x13">FunctionBody</a></i>. Pass in the <a href="x10.html#x10.2">LexicalEnvironment</a> of the
+		running execution context as the <i>Scope</i>. Pass in <b>true</b>
+		as the <i>Strict</i> flag if the <i>PropertyAssignment</i>
+		is contained in <a href="x10.html#x10.1.1">strict code</a> or if its <i><a href="x13.html#x13">FunctionBody</a></i> is <a href="x10.html#x10.1.1">strict code</a>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>desc</i> be the <a href="x8.html#x8.10">Property Descriptor</a>{[[Get]]: <i>closure</i>,
+		[[Enumerable]]: <b>true</b>, [[Configurable]]: <b>true</b>}</p>
+		</li>
+		<li><p>
+		Return
+	 <a href="x8.html#property-identifier">Property Identifier</a> (<i>propName</i>, <i>desc</i>).</p>
+	</li></ol><p>
+	The
+	production  <i>PropertyAssignment</i>
+	<b>:</b> <code><b>set</b></code>
+	<i>PropertyName</i> <code><b>(
+	</b></code> <i>PropertySetParameterList</i><code><b>
+	)</b></code><code> </code><code><b>{</b></code><code>
+	</code><i><a href="x13.html#x13">FunctionBody</a></i>
+	<code><b>}</b></code> is evaluated as
+	follows:</p>
+	<ol><li><p>
+		Let
+		<i>propName </i>be the result of evaluating <i>PropertyName</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>closure</i> be the result of creating a new Function object as
+		specified in <a href="x13.html#x13.2">13.2</a> with parameters specified by
+		<i>PropertySetParameterList </i>and body specified by <i><a href="x13.html#x13">FunctionBody</a></i>.
+		Pass in the <a href="x10.html#x10.2">LexicalEnvironment</a> of the running execution context as
+		the <i>Scope</i>. Pass in <b>true</b> as the <i>Strict</i> flag if
+		the <i>PropertyAssignment</i>
+		is contained in <a href="x10.html#x10.1.1">strict code</a> or if its <i><a href="x13.html#x13">FunctionBody</a></i> is <a href="x10.html#x10.1.1">strict code</a>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>desc</i> be the <a href="x8.html#x8.10">Property Descriptor</a>{[[Set]]: <i>closure</i>,
+		[[Enumerable]]: <b>true</b>, [[Configurable]]: <b>true</b>}</p>
+		</li>
+		<li><p>
+		Return
+	 <a href="x8.html#property-identifier">Property Identifier</a> (<i>propName</i>, <i>desc</i>).</p>
+	</li></ol><p>
+	It is
+	a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> if the <i>Identifier</i>
+	<code><b>"eval"</b></code>
+	or the <i>Identifier </i><code><b>"arguments"</b></code>
+	occurs as the <i>Identifier</i>
+	in a <i>PropertySetParameterList</i><code><b>
+	</b></code>of a
+	<i>PropertyAssignment</i>
+	that is contained in <a href="x10.html#x10.1.1">strict code</a>
+	or if its <i><a href="x13.html#x13">FunctionBody</a></i>
+	is <a href="x10.html#x10.1.1">strict code</a>.</p>
+	<p>
+	The
+	production  <i>PropertyName</i>
+	<b>: </b> <i>IdentifierName</i>
+	 is evaluated as follows:</p>
+	<ol><li><p>
+		Return
+		the String value containing the same sequence of characters as the
+		<i>IdentifierName</i>.</p>
+	</li></ol><p>
+	The
+	production  <i>PropertyName</i>
+	<b>: </b> <i>StringLiteral</i>
+	 is evaluated as follows:</p>
+	<ol><li><p>
+		Return
+		the SV of the <i>StringLiteral</i>.</p>
+	</li></ol><p>
+	The
+	production  <i>PropertyName</i>
+	<b>:</b> <i>NumericLiteral</i>
+	 is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>nbr </i>be the result of forming the value of the
+		<i>NumericLiteral</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<a href="x9.html#x9.8">ToString</a>(<i>nbr</i>).</p>
+	</li></ol><h4 id="x11.1.6">11.1.6 The Grouping Operator <a href="#x11.1.6">#</a> <a href="#x11.1.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production <i>PrimaryExpression</i>
+	<b>:</b><i> </i><code><b>(</b></code>
+	<i>Expression</i> <code><b>)</b></code>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Return
+		the result of evaluating <i>Expression</i>. This may be of type
+		Reference.</p>
+	</li></ol><p class="sp">
+	</p><p><b class="note">NOTE</b> This
+	algorithm does not apply <a href="x8.html#x8.7.1">GetValue</a> to the result of evaluating
+	Expression. The principal motivation for this is so that operators
+	such as <code><b>delete</b></code> and
+	<code><b>typeof</b></code> may be
+	applied to parenthesised expressions.</p>
+	<h3 id="x11.2">11.2 Left-Hand-Side Expressions <a href="#x11.2">#</a> <a href="#x11.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>MemberExpression </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>PrimaryExpression<br>FunctionExpression<br>MemberExpression </i><code><b>[</b></code> <i>Expression </i><code><b>]<br></b></code> <i>MemberExpression </i><code><b>.</b></code> <i>IdentifierName<br></i><code><b>new</b></code> <i>MemberExpression</i><code><b>
+	</b></code> <i>Arguments</i></p>
+	<p class="keep">
+	<i>NewExpression </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>MemberExpression</i><code><b><br>new</b></code> <i>NewExpression</i></p>
+	<p class="keep">
+	<i>CallExpression </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>MemberExpression</i><code><b>
+	</b></code> <i>Arguments</i><code><b><br></b></code> <i>CallExpression</i><code><b>
+	</b></code> <i>Arguments</i><code><b><br></b></code> <i>CallExpression </i><code><b>[</b></code> <i>Expression </i><code><b>]<br></b></code> <i>CallExpression </i><code><b>.</b></code> <i>IdentifierName</i></p>
+	<p class="keep">
+	<i>Arguments </i><b>:</b></p>
+	<p class="def1-btm">
+	<code><b>(</b></code> <code><b>)<br>(</b></code> <i>ArgumentList  </i><code><b>)</b></code></p>
+	<p class="keep">
+	<i>ArgumentList </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>AssignmentExpression<br>ArgumentList </i><code><b>,</b></code> <i>AssignmentExpression</i></p>
+	<p class="keep">
+	<i>LeftHandSideExpression </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>NewExpression<br>CallExpression</i></p>
+	<h4 id="x11.2.1">11.2.1 Property Accessors <a href="#x11.2.1">#</a> <a href="#x11.2.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	Properties
+	are accessed by name, using either the dot notation:</p>
+	<p class="code-example">
+	<i>MemberExpression </i><code><b>.</b></code> <i>IdentifierName<br>CallExpression </i><code><b>.</b></code> <i>IdentifierName</i></p>
+	<p class="sm-btm">
+	or
+	the bracket notation:</p>
+	<p class="code-example">
+	<i>MemberExpression </i><code><b>[</b></code> <i>Expression </i><code><b>]</b></code> <i><br>CallExpression </i><code><b>[</b></code> <i>Expression </i><code><b>]</b></code></p>
+	<p class="sm-btm">
+	The
+	dot notation is explained by the following syntactic conversion:</p>
+	<p class="code-example">
+	<i>MemberExpression </i><code><b>.</b></code> <i>IdentifierName</i></p>
+	<p class="sm-btm">
+	is
+	identical in its behaviour to</p>
+	<p class="code-example">
+	<i>MemberExpression </i><code><b>[</b></code> <i>&lt;identifier-name-string&gt; </i><code><b>]</b></code></p>
+	<p class="sm-btm">
+	and
+	similarly</p>
+	<p class="code-example">
+	<i>CallExpression </i><code><b>.</b></code> <i>IdentifierName</i></p>
+	<p>
+	is
+	identical in its behaviour to</p>
+	<p class="code-example">
+	<i>CallExpression </i><code><b>[</b></code> <i>&lt;identifier-name-string&gt; </i><code><b>]</b></code></p>
+	<p>
+	where
+	<i>&lt;identifier-name-string&gt;</i>
+	is a string literal containing the same sequence of characters after
+	processing of Unicode escape sequences as the <i>IdentifierName</i>.</p>
+	<p>
+	The
+	production <i>MemberExpression</i>
+	<b>:</b> <i>MemberExpression</i>
+	<code><b>[</b></code> <i>Expression</i>
+	<code><b>]</b></code> is evaluated as
+	follows:</p>
+	<ol><li><p>
+		Let
+		<i>baseReference</i> be the result of evaluating <i>MemberExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>baseValue</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>baseReference</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>propertyNameReference</i> be the result of evaluating
+		<i>Expression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>propertyNameValue</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>propertyNameReference</i>).</p>
+		</li>
+		<li><p>
+		Call
+		<a href="x9.html#x9.10">CheckObjectCoercible</a>(<i>baseValue</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>propertyNameString</i> be <a href="x9.html#x9.8">ToString</a>(<i>propertyNameValue</i>).</p>
+		</li>
+		<li><p>
+		If
+		the syntactic production that is being evaluated is contained in
+		<a href="x10.html#x10.1.1" class="term-ref">strict mode code</a>, let <i>strict</i> be <b>true</b>, else let <i>strict</i>
+		be <b>false</b>.</p>
+		</li>
+		<li><p>
+		Return
+		a value of type <a href="x8.html#x8.7">Reference</a> whose base value is <i>baseValue</i> and
+		whose referenced name is <i>propertyNameString</i>, and whose
+		strict mode flag is <i>strict</i>.</p>
+	</li></ol><p>
+	The
+	production <i>CallExpression</i>
+	<b>:</b><i> </i><i>CallExpression</i> <code><b>[</b></code> <i>Expression</i> <code><b>]</b></code> is evaluated
+	in exactly the same manner, except that the contained <i>CallExpression</i>
+	is evaluated in step 1.</p>
+	<h4 id="x11.2.2">11.2.2 The new Operator <a href="#x11.2.2">#</a> <a href="#x11.2.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production <i>NewExpression</i> <b>:</b><i> </i><code><b>new</b></code> <i>NewExpression</i> is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>ref</i> be the result of evaluating <i>NewExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>constructor</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>ref</i>).</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>constructor</i>) is not Object, throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		exception.</p>
+		</li>
+		<li><p>
+		If
+		<i>constructor</i> does not implement the [[Construct]] internal
+		method, throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
+		</li>
+		<li><p>
+		Return
+		the result of calling the [[Construct]] internal method on
+		<i>constructor</i>, providing no arguments (that is, an empty list
+		of arguments).</p>
+	</li></ol><p>
+	The
+	production <i>MemberExpression</i>
+	<b>:</b> <code><b>new</b></code>
+	<i>MemberExpression</i>
+	<i>Arguments</i> is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>ref</i> be the result of evaluating <i>MemberExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>constructor</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>ref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>argList</i> be the result of evaluating <i>Arguments</i>,
+		producing an internal list of argument values (<a href="#x11.2.4">11.2.4</a>).</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>constructor</i>) is not Object, throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		exception.</p>
+		</li>
+		<li><p>
+		If
+		<i>constructor</i> does not implement the [[Construct]] internal
+		method, throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
+		</li>
+		<li><p>
+		Return
+		the result of calling the [[Construct]] internal method on
+		<i>constructor</i>, providing the list <i>argList</i> as the
+		argument values.</p>
+	</li></ol><h4 id="x11.2.3">11.2.3 Function Calls <a href="#x11.2.3">#</a> <a href="#x11.2.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production <i>CallExpression</i>
+	<b>:</b> <i>MemberExpression</i>
+	<i>Arguments</i> is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>ref</i> be the result of evaluating <i>MemberExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>func</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>ref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>argList</i> be the result of evaluating <i>Arguments</i>,
+		producing an internal list of argument values (see <a href="#x11.2.4">11.2.4</a>).</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>func</i>) is not Object, throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		exception.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x9.html#x9.11">IsCallable</a>(<i>func</i>) is <b>false</b>, throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		exception.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>ref</i>) is <a href="x8.html#x8.7">Reference</a>, then</p>
+		<ol><li><p>
+			If
+			<a href="x8.html#IsPropertyReference">IsPropertyReference</a>(<i>ref</i>) is <b>true</b>, then</p>
+			<ol><li><p>
+				Let
+				<i>thisValue</i> be <a href="x8.html#GetBase">GetBase</a>(<i>ref</i>).</p>
+			</li></ol></li>
+			<li><p>
+			Else,
+			the base of <i>ref</i> is an <a href="x10.html#x10.2.1">Environment Record</a></p>
+			<ol><li><p>
+				Let
+				<i>thisValue</i> be the result of calling the ImplicitThisValue
+				concrete method of <a href="x8.html#GetBase">GetBase</a>(ref).</p>
+			</li></ol></li></ol></li>
+		<li><p>
+		Else,
+		<a href="x8.html#Type">Type</a>(<i>ref</i>) is not <a href="x8.html#x8.7">Reference</a>.</p>
+		<ol><li><p>
+			Let
+			<i>thisValue</i> be <b>undefined</b>.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		the result of calling the [[Call]] internal method on <i>func</i>,
+		providing <i>thisValue</i> as the <b>this</b> value and providing
+		the list <i>argList</i> as the argument values.</p>
+	</li></ol><p>
+	The
+	production <i>CallExpression</i>
+	<b>:</b> <i>CallExpression</i>
+	<i>Arguments</i>  is
+	evaluated in exactly the same manner, except that the contained
+	<i>CallExpression</i> is
+	evaluated in step 1.</p>
+	<p class="sp">
+	</p><p><b class="note">NOTE</b> The returned
+	result will never be of type <a href="x8.html#x8.7">Reference</a> if <i>func</i>
+	is a native ECMAScript object. Whether calling a host object can
+	return a value of type <a href="x8.html#x8.7">Reference</a> is implementation-dependent. If a
+	value of type <a href="x8.html#x8.7">Reference</a> is returned, it must be a non-strict
+	Property <a href="x8.html#x8.7">Reference</a>.</p>
+	<h4 id="x11.2.4">11.2.4 Argument Lists <a href="#x11.2.4">#</a> <a href="#x11.2.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	evaluation of an argument list produces a <a href="x8.html#x8.8">List</a> of values (see <a href="x8.html#x8.8">8.8</a>).</p>
+	<p>
+	The
+	production <i>Arguments </i><b>:</b>
+	<code><b>( )</b></code> is evaluated
+	as follows:</p>
+	<ol><li><p>
+		Return
+		an empty <a href="x8.html#x8.8">List</a>.</p>
+	</li></ol><p>
+	The
+	production <i>Arguments</i> <b>:</b><i> </i><code><b>(
+	</b></code> <i>ArgumentList</i><code><b>
+	)</b></code> is evaluated as follows:</p>
+	<ol><li><p>
+		Return
+		the result of evaluating <i>ArgumentList</i>.</p>
+	</li></ol><p>
+	The
+	production <i>ArgumentList</i> <b>:</b><code><b>
+	</b></code> <i>AssignmentExpression</i><code><b>
+	</b></code>is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>ref</i> be the result of evaluating <i>AssignmentExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>arg</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>ref</i>).</p>
+		</li>
+		<li><p>
+		Return
+		a <a href="x8.html#x8.8">List</a> whose sole item is <i>arg</i>.</p>
+	</li></ol><p>
+	The
+	production <i>ArgumentList</i> <b>:</b><code><b></b></code> <i>ArgumentList</i><code><b>
+	,</b></code> <i>AssignmentExpression</i><code><b>
+	</b></code>is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>precedingArgs</i> be the result of evaluating <i>ArgumentList</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>ref</i> be the result of evaluating <i>AssignmentExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>arg</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>ref</i>).</p>
+		</li>
+		<li><p>
+		Return
+		a <a href="x8.html#x8.8">List</a> whose length is one greater than the length of <i>precedingArgs</i>
+		and whose items are the items of <i>precedingArgs</i>, in order,
+		followed at the end by <i>arg</i> which is the last item of the new
+		list.</p>
+	</li></ol><h4 id="x11.2.5">11.2.5 Function Expressions <a href="#x11.2.5">#</a> <a href="#x11.2.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production <i>MemberExpression</i>
+	<b>:</b> <i>FunctionExpression</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Return
+		the result of evaluating <i>FunctionExpression</i>.</p>
+	</li></ol><h3 id="x11.3">11.3 Postfix Expressions <a href="#x11.3">#</a> <a href="#x11.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>PostfixExpression </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>LeftHandSideExpression<br>LeftHandSideExpression</i><code><b>
+	</b></code><a href="x5.html#restricted-production">[no <i>LineTerminator</i> here]</a><code><b>
+	++</b></code> <i><br>LeftHandSideExpression</i><code><b>
+	</b></code><a href="x5.html#restricted-production">[no <i>LineTerminator</i> here]</a><code><b>
+	--</b></code></p>
+	<h4 id="x11.3.1">11.3.1 Postfix Increment Operator <a href="#x11.3.1">#</a> <a href="#x11.3.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production <i>PostfixExpression</i>
+	<b>:</b> <i>LeftHandSideExpression</i><code>
+	</code><a href="x5.html#restricted-production">[no <i>LineTerminator</i> here]</a><code> </code><code><b>++
+	</b></code>is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>lhs</i> be the result of evaluating <i>LeftHandSideExpression</i>.</p>
+		</li>
+		<li><p>
+		Throw
+		a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception if the following conditions are all
+		true:</p>
+	<ul><li><p>
+		<a href="x8.html#Type">Type</a>(<i>lhs</i>)
+		is <a href="x8.html#x8.7">Reference</a> is <b>true</b></p>
+		</li>
+		<li><p>
+		<a href="x8.html#IsStrictReference">IsStrictReference</a>(<i>lhs</i>)
+		is <b>true</b></p>
+		</li>
+		<li><p>
+		<a href="x8.html#Type">Type</a>(<a href="x8.html#GetBase">GetBase</a>(<i>lhs</i>))
+		is <a href="x10.html#x10.2.1">Environment Record</a></p>
+		</li>
+		<li><p>
+		<a href="x8.html#GetReferencedName">GetReferencedName</a>(<i>lhs</i>)
+		is either <code><b>"eval"</b></code>
+		or<code><b> "arguments"</b></code></p>
+	</li></ul></li></ol><ol start="3"><li><p>
+		Let
+		<i>oldValue</i> be <a href="x9.html#x9.3">ToNumber</a>(<a href="x8.html#x8.7.1">GetValue</a>(<i>lhs</i>)).</p>
+		</li>
+		<li><p>
+		Let
+		<i>newValue</i> be the result of adding the value <code><b>1</b></code>
+		to <i>oldValue</i>, using the same rules as for the <code><b>+</b></code>
+		operator (see <a href="#x11.6.3">11.6.3</a>).</p>
+		</li>
+		<li><p>
+		Call
+		<a href="x8.html#x8.7.2">PutValue</a>(<i>lhs</i>, <i>newValue</i>).</p>
+		</li>
+		<li><p>
+		Return
+		<i>oldValue</i>.</p>
+	</li></ol><h4 id="x11.3.2">11.3.2 Postfix Decrement Operator <a href="#x11.3.2">#</a> <a href="#x11.3.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production <i>PostfixExpression</i>
+	<b>:</b> <i>LeftHandSideExpression</i><code>
+	</code>[no <i>LineTerminator</i> here]<code>
+	</code><code><b>-- </b></code>is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>lhs</i> be the result of evaluating <i>LeftHandSideExpression</i>.</p>
+		</li>
+		<li><p>
+		Throw
+		a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception if the following conditions are all
+		true:</p>
+	<ul><li><p>
+		<a href="x8.html#Type">Type</a>(<i>lhs</i>)
+		is <a href="x8.html#x8.7">Reference</a> is <b>true</b></p>
+		</li>
+		<li><p>
+		<a href="x8.html#IsStrictReference">IsStrictReference</a>(<i>lhs</i>)
+		is <b>true</b></p>
+		</li>
+		<li><p>
+		<a href="x8.html#Type">Type</a>(<a href="x8.html#GetBase">GetBase</a>(<i>lhs</i>))
+		is <a href="x10.html#x10.2.1">Environment Record</a></p>
+		</li>
+		<li><p>
+		<a href="x8.html#GetReferencedName">GetReferencedName</a>(<i>lhs</i>)
+		is either <code><b>"eval"</b></code>
+		or<code><b> "arguments"</b></code></p>
+	</li></ul></li></ol><ol start="3"><li><p>
+		Let
+		<i>oldValue</i> be <a href="x9.html#x9.3">ToNumber</a>(<a href="x8.html#x8.7.1">GetValue</a>(<i>lhs</i>)).</p>
+		</li>
+		<li><p>
+		Let
+		<i>newValue</i> be the result of subtracting the value <code><b>1</b></code>
+		from <i>oldValue</i>, using the same rules as for the <code><b>-</b></code>
+		operator (<a href="#x11.6.3">11.6.3</a>).</p>
+		</li>
+		<li><p>
+		Call
+		<a href="x8.html#x8.7.2">PutValue</a>(<i>lhs</i>, <i>newValue</i>).</p>
+		</li>
+		<li><p>
+		Return
+		<i>oldValue</i>.</p>
+	</li></ol><h3 id="x11.4">11.4 Unary Operators <a href="#x11.4">#</a> <a href="#x11.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>UnaryExpression </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>PostfixExpression</i><code><b><br>delete
+	</b></code> <i>UnaryExpression<br></i><code><b>void
+	</b></code> <i>UnaryExpression<br></i><code><b>typeof
+	</b></code> <i>UnaryExpression</i><code><b><br>++</b></code> <i>UnaryExpression<br></i><code><b>--</b></code> <i>UnaryExpression<br></i><code><b>+</b></code> <i>UnaryExpression<br></i><code><b>-</b></code> <i>UnaryExpression<br></i><code><b>~</b></code> <i>UnaryExpression<br></i><code><b>!</b></code> <i>UnaryExpression</i></p>
+	<h4 id="x11.4.1">11.4.1 The delete Operator <a href="#x11.4.1">#</a> <a href="#x11.4.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production <i>UnaryExpression</i>
+	<b>:</b> <code><b>delete</b></code> <i>UnaryExpression</i> is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>ref </i>be the result of evaluating <i>UnaryExpression</i>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>ref</i>) is not <a href="x8.html#x8.7">Reference</a>, return <b>true</b>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#IsUnresolvableReference">IsUnresolvableReference</a>(<i>ref</i>) then,</p>
+		<ol><li><p>
+			If
+			<a href="x8.html#IsStrictReference">IsStrictReference</a>(<i>ref</i>) is <b>true</b>, throw a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+			exception.</p>
+			</li>
+			<li><p>
+			Else,
+			return <b>true</b>.</p>
+		</li></ol></li>
+		<li><p>
+		If
+		<a href="x8.html#IsPropertyReference">IsPropertyReference</a>(<i>ref</i>) is <b>true</b>, then</p>
+		<ol><li><p>
+			Return
+			the result of calling the [[Delete]] internal method on
+			<a href="x9.html#x9.9">ToObject</a>(<a href="x8.html#GetBase">GetBase</a>(<i>ref)</i>) providing <a href="x8.html#GetReferencedName">GetReferencedName</a>(<i>ref</i>)
+			and <a href="x8.html#IsStrictReference">IsStrictReference</a>(<i>ref</i>) as the arguments.</p>
+		</li></ol></li>
+		<li><p>
+		Else,
+		<i>ref</i> is a <a href="x8.html#x8.10">Reference</a> to an <a href="x10.html#x10.2.1">Environment Record</a> binding, so</p>
+		<ol><li><p>
+			If
+			<a href="x8.html#IsStrictReference">IsStrictReference</a>(<i>ref</i>) is <b>true</b>, throw a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+			exception.</p>
+			</li>
+			<li><p>
+			Let
+			<i>bindings</i> be <a href="x8.html#GetBase">GetBase</a>(<i>ref</i>).</p>
+			</li>
+			<li><p>
+			Return
+			the result of calling the DeleteBinding concrete method of
+			<i>bindings</i>, providing <a href="x8.html#GetReferencedName">GetReferencedName</a>(<i>ref</i>) as the
+			argument.</p>
+		</li></ol></li></ol><p><b class="note">NOTE</b> When
+	a <code><b>delete</b></code> operator
+	occurs within <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a>, a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception is
+	thrown if its <i>UnaryExpression</i>
+	is a direct reference to a variable, function argument, or function
+	name. In addition, if a <code><b>delete</b></code>
+	operator occurs within <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a> and the property to be
+	deleted has the attribute { [[Configurable]]: <b>false</b> }, a
+	<b>TypeError </b>exception is thrown.</p>
+	<h4 id="x11.4.2">11.4.2 The void Operator <a href="#x11.4.2">#</a> <a href="#x11.4.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production <i>UnaryExpression</i>
+	<b>:</b> <code><b>void</b></code>
+	<i>UnaryExpression</i> is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>expr</i> be the result of evaluating <i>UnaryExpression</i>.</p>
+		</li>
+		<li><p>
+		Call
+		<a href="x8.html#x8.7.1">GetValue</a>(<i>expr</i>).</p>
+		</li>
+		<li><p>
+		Return
+		<b>undefined</b>.</p>
+	</li></ol><p><b class="note">NOTE</b> <a href="x8.html#x8.7.1">GetValue</a>
+	must be called even though its value is not used because it may have
+	observable side-effects.</p>
+	<h4 id="x11.4.3">11.4.3 The typeof Operator <a href="#x11.4.3">#</a> <a href="#x11.4.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production <i>UnaryExpression</i>
+	<b>:</b> <code><b>typeof</b></code> <i>UnaryExpression</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>val </i>be the result of evaluating <i>UnaryExpression</i>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>val</i>) is <a href="x8.html#x8.10">Reference</a>, then</p>
+		<ol><li><p>
+			If
+			<a href="x8.html#IsUnresolvableReference">IsUnresolvableReference</a>(<i>val</i>) is <b>true</b>, return
+			<code><b>"undefined"</b></code>.</p>
+			</li>
+			<li><p>
+			Let
+			<i>val </i>be <a href="x8.html#x8.7.1">GetValue</a>(<i>val</i>).</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		a String determined by <a href="x8.html#Type">Type</a>(<i>val</i>) according to Table 20.</p>
+	</li></ol><center>
+		<table width="479" border="1" bordercolor="#000000" cellpadding="8" cellspacing="0" rules="ROWS"><caption>Table&#160;20 &#8212; typeof Operator Results</caption>
+			<colgroup><col width="186"><col width="259"></colgroup><tbody><tr valign="TOP"><td width="186" height="10" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Type
+					of </span></b></i><i><span class="table-header">val</span></i></p>
+				</td>
+				<td width="259" bgcolor="#c0c0c0">
+					<p>
+					<i><b><span class="table-header">Result</span></b></i></p>
+				</td>
+			</tr><tr valign="TOP"><td width="186">
+					<p>
+					Undefined</p>
+				</td>
+				<td width="259">
+					<p>
+					<code><b>"undefined"</b></code></p>
+				</td>
+			</tr><tr valign="TOP"><td width="186">
+					<p>
+					Null</p>
+				</td>
+				<td width="259">
+					<p>
+					<code><b>"object"</b></code></p>
+				</td>
+			</tr><tr valign="TOP"><td width="186">
+					<p>
+					Boolean</p>
+				</td>
+				<td width="259">
+					<p>
+					<code><b>"boolean"</b></code></p>
+				</td>
+			</tr><tr valign="TOP"><td width="186">
+					<p>
+					Number</p>
+				</td>
+				<td width="259">
+					<p>
+					<code><b>"number"</b></code></p>
+				</td>
+			</tr><tr valign="TOP"><td width="186">
+					<p>
+					String</p>
+				</td>
+				<td width="259">
+					<p>
+					<code><b>"string"</b></code></p>
+				</td>
+			</tr><tr valign="TOP"><td width="186">
+					<p>
+					Object
+					(native and does not implement [[Call]])</p>
+				</td>
+				<td width="259">
+					<p>
+					<code><b>"object"</b></code></p>
+				</td>
+			</tr><tr valign="TOP"><td width="186">
+					<p>Object
+					(native or host and does implement [[Call]])</p>
+				</td>
+				<td width="259">
+					<p><code><b>"function"</b></code></p>
+				</td>
+			</tr><tr valign="TOP"><td width="186">
+					<p>Object
+					(host and does not implement [[Call]])</p>
+				</td>
+				<td width="259">
+					<p>
+					Implementation-defined
+					except may not be <code><b>"undefined"</b></code>,
+					<code><b>"boolean"</b></code>,
+					<code><b>"number</b></code>",
+					or<code><b> "string".</b></code></p>
+				</td>
+			</tr></tbody></table></center>
+	<h4 id="x11.4.4">11.4.4 Prefix Increment Operator <a href="#x11.4.4">#</a> <a href="#x11.4.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production <i>UnaryExpression</i> <b>:</b><i> </i><code><b>++
+	</b></code> <i>UnaryExpression</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>expr</i> be the result of evaluating UnaryExpression.</p>
+		</li>
+		<li><p>
+		Throw
+		a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception if the following conditions are all
+		true:</p>
+	<ul><li><p>
+		<a href="x8.html#Type">Type</a>(<i>expr</i>)
+		is <a href="x8.html#x8.7">Reference</a> is <b>true</b></p>
+		</li>
+		<li><p>
+		<a href="x8.html#IsStrictReference">IsStrictReference</a>(<i>expr</i>)
+		is <b>true</b></p>
+		</li>
+		<li><p>
+		<a href="x8.html#Type">Type</a>(<a href="x8.html#GetBase">GetBase</a>(<i>expr</i>))
+		is <a href="x10.html#x10.2.1">Environment Record</a></p>
+		</li>
+		<li><p>
+		<a href="x8.html#GetReferencedName">GetReferencedName</a>(<i>expr</i>)
+		is either <code><b>"eval"</b></code>
+		or<code><b> "arguments"</b></code></p>
+	</li></ul></li></ol><ol start="3"><li><p>
+		Let
+		<i>oldValue</i> be <a href="x9.html#x9.3">ToNumber</a>(<a href="x8.html#x8.7.1">GetValue</a>(<i>expr</i>)).</p>
+		</li>
+		<li><p>
+		Let
+		<i>newValue</i> be the result of adding the value <code><b>1</b></code>
+		to <i>oldValue</i>, using the same rules as for the <code><b>+</b></code>
+		operator (see <a href="#x11.6.3">11.6.3</a>).</p>
+		</li>
+		<li><p>
+		Call
+		<a href="x8.html#x8.7.2">PutValue</a>(<i>expr</i>, <i>newValue</i>).</p>
+		</li>
+		<li><p>
+		Return
+		<i>newValue</i>.</p>
+	</li></ol><h4 id="x11.4.5">11.4.5 Prefix Decrement Operator <a href="#x11.4.5">#</a> <a href="#x11.4.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production <i>UnaryExpression</i> <b>:</b><i> </i><code><b>--
+	</b></code> <i>UnaryExpression</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>expr</i> be the result of evaluating UnaryExpression.</p>
+		</li>
+		<li><p>
+		Throw
+		a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception if the following conditions are all
+		true:</p>
+	<ul><li><p>
+		<a href="x8.html#Type">Type</a>(<i>expr</i>)
+		is <a href="x8.html#x8.7">Reference</a> is <b>true</b></p>
+		</li>
+		<li><p>
+		<a href="x8.html#IsStrictReference">IsStrictReference</a>(<i>expr</i>)
+		is <b>true</b></p>
+		</li>
+		<li><p>
+		<a href="x8.html#Type">Type</a>(<a href="x8.html#GetBase">GetBase</a>(<i>expr</i>))
+		is <a href="x10.html#x10.2.1">Environment Record</a></p>
+		</li>
+		<li><p>
+		<a href="x8.html#GetReferencedName">GetReferencedName</a>(<i>expr</i>)
+		is either <code><b>"eval"</b></code>
+		or<code><b> "arguments"</b></code></p>
+	</li></ul></li></ol><ol start="3"><li><p>
+		Let
+		<i>oldValue</i> be <a href="x9.html#x9.3">ToNumber</a>(<a href="x8.html#x8.7.1">GetValue</a>(<i>expr</i>)).</p>
+		</li>
+		<li><p>
+		Let
+		<i>newValue</i> be the result of  subtracting the value <code><b>1</b></code>
+		from <i>oldValue</i>, using the same rules as for the <code><b>-</b></code>
+		operator (see <a href="#x11.6.3">11.6.3</a>).</p>
+		</li>
+		<li><p>
+		Call
+		<a href="x8.html#x8.7.2">PutValue</a>(<i>expr</i>, <i>newValue</i>).</p>
+		</li>
+		<li><p>
+		Return
+		<i>newValue</i>.</p>
+	</li></ol><h4 id="x11.4.6">11.4.6 Unary + Operator <a href="#x11.4.6">#</a> <a href="#x11.4.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	unary + operator converts its operand to Number type.</p>
+	<p>
+	The
+	production <i>UnaryExpression</i> <b>:</b><i> </i><code><b>+</b></code>
+	<i>UnaryExpression</i> is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>expr</i> be the result of evaluating UnaryExpression.</p>
+		</li>
+		<li><p>
+		Return
+		<a href="x9.html#x9.3">ToNumber</a>(<a href="x8.html#x8.7.1">GetValue</a>(<i>expr</i>)).</p>
+	</li></ol><h4 id="x11.4.7">11.4.7 Unary - Operator <a href="#x11.4.7">#</a> <a href="#x11.4.7-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	unary <code><b>-</b></code> operator
+	converts its operand to Number type and then negates it. Note that
+	negating <b>+0</b> produces <span class="symbol"><b>&#8722;</b></span><b>0</b>,
+	and negating <span class="symbol"><b>&#8722;</b></span><b>0</b>
+	produces <b>+0</b>.</p>
+	<p>
+	The
+	production <i>UnaryExpression</i> <b>:</b><i> </i><code><b>-</b></code>
+	<i>UnaryExpression</i> is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>expr</i> be the result of evaluating UnaryExpression.</p>
+		</li>
+		<li><p>
+		Let
+		<i>oldValue</i> be <a href="x9.html#x9.3">ToNumber</a>(<a href="x8.html#x8.7.1">GetValue</a>(<i>expr</i>)).</p>
+		</li>
+		<li><p>
+		If
+		<i>oldValue</i> is <b>NaN</b>, return <b>NaN</b>.</p>
+		</li>
+		<li><p>
+		Return
+		the result of negating <i>oldValue</i>; that is, compute a Number
+		with the same magnitude but opposite sign.</p>
+	</li></ol><h4 id="x11.4.8">11.4.8 Bitwise NOT Operator ( ~ ) <a href="#x11.4.8">#</a> <a href="#x11.4.8-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production <i>UnaryExpression</i> <b>:</b><i> </i><code><b>~</b></code>
+	<i>UnaryExpression</i> is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>expr</i> be the result of evaluating <i>UnaryExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>oldValue</i> be <a href="x9.html#x9.5">ToInt32</a>(<a href="x8.html#x8.7.1">GetValue</a>(<i>expr</i>)).</p>
+		</li>
+		<li><p>
+		Return
+		the result of applying bitwise complement to <i>oldValue</i>. The
+		result is a signed 32-bit integer.</p>
+	</li></ol><h4 id="x11.4.9">11.4.9 Logical NOT Operator ( ! ) <a href="#x11.4.9">#</a> <a href="#x11.4.9-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production <i>UnaryExpression</i> <b>:</b><i> </i><code><b>!</b></code>
+	<i>UnaryExpression</i> is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>expr</i> be the result of evaluating <i>UnaryExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>oldValue</i> be <a href="x9.html#x9.2">ToBoolean</a>(<a href="x8.html#x8.7.1">GetValue</a>(<i>expr</i>)).</p>
+		</li>
+		<li><p>
+		If
+		<i>oldValue</i> is <b>true</b>, return <b>false</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<b>true</b>.</p>
+	</li></ol><h3 id="x11.5">11.5 Multiplicative Operators <a href="#x11.5">#</a> <a href="#x11.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>MultiplicativeExpression </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>UnaryExpression<br>MultiplicativeExpression </i><code><b>*</b></code> <i>UnaryExpression<br>MultiplicativeExpression </i><code><b>/</b></code> <i>UnaryExpression<br>MultiplicativeExpression </i><code><b>%</b></code> <i>UnaryExpression</i></p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	The
+	production <i>MultiplicativeExpression </i><b>:</b><i> </i><i>MultiplicativeExpression</i><i>@ </i><i>UnaryExpression</i>,
+	where @ stands for one of the operators in the above definitions, is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>left</i> be the result of evaluating MultiplicativeExpression.</p>
+		</li>
+		<li><p>
+		Let
+		<i>leftValue</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>left</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>right</i> be the result of evaluating UnaryExpression.</p>
+		</li>
+		<li><p>
+		Let
+		<i>rightValue</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>right</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>leftNum</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>leftValue</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>rightNum</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>rightValue</i>).</p>
+		</li>
+		<li><p>
+		Return
+		the result of applying the specified operation (*, /, or %) to
+		<i>leftNum</i> and <i>rightNum</i>. See the Notes below <a href="#x11.5.1">11.5.1</a>,
+		<a href="#x11.5.2">11.5.2</a>, <a href="#x11.5.3">11.5.3</a>.</p>
+	</li></ol><h4 id="x11.5.1">11.5.1 Applying the * Operator <a href="#x11.5.1">#</a> <a href="#x11.5.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The <code><b>*</b></code><b>
+	</b>operator performs multiplication, producing the product of its
+	operands. Multiplication is commutative. Multiplication is not
+	always associative in ECMAScript, because of finite precision.</p>
+	<p>The
+	result of a floating-point multiplication is governed by the rules
+	of IEEE 754 binary double-precision arithmetic:</p>
+	<ul><li><p>
+			If
+			either operand is <b>NaN</b>,
+			the result is <b>NaN</b>.</p>
+			</li>
+			<li><p>
+			The
+			sign of the result is positive if both operands have the same
+			sign, negative if the operands have different signs.</p>
+			</li>
+			<li><p>
+			Multiplication
+			of an infinity by a zero results in <b>NaN</b>.</p>
+			</li>
+			<li><p>
+			Multiplication
+			of an infinity by an infinity results in an infinity. The sign is
+			determined by the rule already stated above.</p>
+			</li>
+			<li><p>
+			Multiplication
+			of an infinity by a finite non-zero value results in a signed
+			infinity. The sign is determined by the rule already stated above.</p>
+			</li>
+			<li><p>
+			In
+			the remaining cases, where neither an infinity or NaN is involved,
+			the product is computed and rounded to the nearest representable
+			value using IEEE 754 round-to-nearest mode. If the magnitude is
+			too large to represent, the result is then an infinity of
+			appropriate sign. If the magnitude is too small to represent, the
+			result is then a zero of appropriate sign. The ECMAScript language
+			requires support of gradual underflow as defined by IEEE 754.</p>
+	</li></ul><h4 id="x11.5.2">11.5.2 Applying the / Operator <a href="#x11.5.2">#</a> <a href="#x11.5.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>The
+	<code><b>/</b></code> operator
+	performs division, producing the quotient of its operands. The left
+	operand is the dividend and the right operand is the divisor.
+	ECMAScript does not perform integer division. The operands and
+	result of all division operations are double-precision
+	floating-point numbers. The result of division is determined by the
+	specification of IEEE 754 arithmetic:</p>
+	<ul><li><p>
+			If
+			either operand is <b>NaN</b>,
+			the result is <b>NaN</b>.</p>
+			</li>
+			<li><p>
+			The
+			sign of the result is positive if both operands have the same
+			sign, negative if the operands have different signs.</p>
+			</li>
+			<li><p>
+			Division
+			of an infinity by an infinity results in <b>NaN</b>.</p>
+			</li>
+			<li><p>
+			Division
+			of an infinity by a zero results in an infinity. The sign is
+			determined by the rule already stated above.</p>
+			</li>
+			<li><p>
+			Division
+			of an infinity by a non-zero finite value results in a signed
+			infinity. The sign is determined by the rule already stated above.</p>
+			</li>
+			<li><p>
+			Division
+			of a finite value by an infinity results in zero. The sign is
+			determined by the rule already stated above.</p>
+			</li>
+			<li><p>
+			Division
+			of a zero by a zero results in <b>NaN</b>;
+			division of zero by any other finite value results in zero, with
+			the sign determined by the rule already stated above.</p>
+			</li>
+			<li><p>
+			Division
+			of a non-zero finite value by a zero results in a signed infinity.
+			The sign is determined by the rule already stated above.</p>
+			</li>
+			<li><p>
+			In
+			the remaining cases, where neither an infinity, nor a zero, nor
+			<b>NaN</b>
+			is involved, the quotient is computed and rounded to the nearest
+			representable value using IEEE 754 round-to-nearest mode. If the
+			magnitude is too large to represent, the operation overflows; the
+			result is then an infinity of appropriate sign. If the magnitude
+			is too small to represent, the operation underflows and the result
+			is a zero of the appropriate sign. The ECMAScript language
+			requires support of gradual underflow as defined by IEEE 754.</p>
+	</li></ul><h4 id="x11.5.3">11.5.3 Applying the % Operator <a href="#x11.5.3">#</a> <a href="#x11.5.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The <code><b>%</b></code>
+	operator yields the remainder of its operands from an implied
+	division; the left operand is the dividend and the right operand is
+	the divisor.</p>
+	<p><b class="note">NOTE</b> In
+	C and C++, the remainder operator accepts only integral operands; in
+	ECMAScript, it also accepts floating-point operands.</p>
+	<p>
+	The
+	result of a floating-point remainder operation as computed by the <code><b>%</b></code>
+	operator is not the same as the &#8220;remainder&#8221; operation defined by
+	IEEE 754. The IEEE 754 &#8220;remainder&#8221; operation computes the
+	remainder from a rounding division, not a truncating division, and
+	so its behaviour is not analogous to that of the usual integer
+	remainder operator. Instead the ECMAScript language defines <code><b>%</b></code>
+	on floating-point operations to behave in a manner analogous to that
+	of the Java integer remainder operator; this may be compared with
+	the C library function fmod.</p>
+	<p>The
+	result of an ECMAScript floating-point remainder operation is
+	determined by the rules of IEEE arithmetic:</p>
+	<ul><li><p>
+			If
+			either operand is <b>NaN</b>,
+			the result is <b>NaN</b>.</p>
+				</li>
+				<li><p>
+				The
+				sign of the result equals the sign of the dividend.</p>
+				</li>
+				<li><p>
+				If
+				the dividend is an infinity, or the divisor is a zero, or both,
+				the result is <b>NaN</b>.</p>
+				</li>
+				<li><p>
+				If
+				the dividend is finite and the divisor is an infinity, the result
+				equals the dividend.</p>
+				</li>
+				<li><p>
+				If
+				the dividend is a zero and the divisor is finite, the result is
+				the same as the dividend.</p>
+				</li>
+				<li><p>
+				In
+				the remaining cases, where neither an infinity, nor a zero, nor
+				<b>NaN</b>
+				is involved, the floating-point remainder r from a dividend n and
+				a divisor d is defined by the mathematical relation r = n <span class="symbol">&#8722;</span>
+				(d * q) where q is an integer that is negative only if n/d is
+				negative and positive only if n/d is positive, and whose
+				magnitude is as large as possible without exceeding the magnitude
+				of the true mathematical quotient of n and d.
+r is computed and rounded to the nearest representable value using
+IEEE 754 round-to-nearest mode.
+</p>
+	</li></ul><h3 id="x11.6">11.6 Additive Operators <a href="#x11.6">#</a> <a href="#x11.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>AdditiveExpression </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>MultiplicativeExpression<br>AdditiveExpression </i><code><b>+</b></code> <i>MultiplicativeExpression<br>AdditiveExpression </i><code><b>-</b></code> <i>MultiplicativeExpression</i></p>
+	<h4 id="x11.6.1">11.6.1 The Addition operator ( + ) <a href="#x11.6.1">#</a> <a href="#x11.6.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	addition operator either performs string concatenation or numeric
+	addition.</p>
+	<p>
+	The
+	production <i>AdditiveExpression</i>
+	<b>:</b> <i>AdditiveExpression</i>
+	<code><b>+</b></code>
+	<i>MultiplicativeExpression</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>lref</i> be the result of evaluating AdditiveExpression.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>lref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>rref</i> be the result of evaluating MultiplicativeExpression.</p>
+		</li>
+		<li><p>
+		Let
+		<i>rval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>rref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>lprim</i> be <a href="x9.html#x9.1">ToPrimitive</a>(<i>lval</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>rprim</i> be <a href="x9.html#x9.1">ToPrimitive</a>(<i>rval</i>).</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>lprim</i>) is String or <a href="x8.html#Type">Type</a>(<i>rprim</i>) is String, then 
+		</p>
+		<ol><li><p>
+			Return
+			the String that is the result of concatenating <a href="x9.html#x9.8">ToString</a>(<i>lprim</i>)
+			followed by <a href="x9.html#x9.8">ToString</a>(<i>rprim</i>)</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		the result of applying the addition operation to <a href="x9.html#x9.3">ToNumber</a>(<i>lprim</i>)
+		and <a href="x9.html#x9.3">ToNumber</a>(<i>rprim</i>). See the Note below <a href="#x11.6.3">11.6.3</a>.</p>
+	</li></ol><p class="sp"><b class="note">NOTE 1</b> No hint is provided in the calls to <a href="x9.html#x9.1">ToPrimitive</a> in steps 5 and 6.
+	All native ECMAScript objects except Date objects handle the absence
+	of a hint as if the hint Number were given; Date objects handle the
+	absence of a hint as if the hint String were given. Host objects may
+	handle the absence of a hint in some other manner.</p>
+	<p class="sp"><b class="note">NOTE 2</b> Step 7 differs from step 3 of the comparison algorithm for the
+	relational operators (<a href="#x11.8.5">11.8.5</a>), by using the logical-or operation
+	instead of the logical-and operation.</p>
+	<h4 id="x11.6.2">11.6.2 The Subtraction Operator ( - ) <a href="#x11.6.2">#</a> <a href="#x11.6.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production <i>AdditiveExpression</i>
+	<b>:</b> <i>AdditiveExpression</i>
+	<code><b>-</b></code>
+	<i>MultiplicativeExpression</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>lref</i> be the result of evaluating AdditiveExpression.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>lref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>rref</i> be the result of evaluating MultiplicativeExpression.</p>
+		</li>
+		<li><p>
+		Let
+		<i>rval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>rref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>lnum</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>lval</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>rnum</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>rval</i>).</p>
+		</li>
+		<li><p>
+		Return
+		the result of applying the subtraction operation to <i>lnum</i> and
+		r<i>num</i>. See the note below <a href="#x11.6.3">11.6.3</a>.</p>
+	</li></ol><h4 id="x11.6.3">11.6.3 Applying the Additive Operators to Numbers <a href="#x11.6.3">#</a> <a href="#x11.6.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The <code><b>+</b></code>
+	operator performs addition when applied to two operands of numeric
+	type, producing the sum of the operands. The <code><b>-</b></code>
+	operator performs subtraction, producing the difference of two
+	numeric operands.</p>
+	<p>
+	Addition
+	is a commutative operation, but not always associative.</p>
+	<p>The
+	result of an addition is determined using the rules of IEEE 754
+	binary double-precision arithmetic:</p>
+	<ul><li><p>
+			If
+			either operand is <b>NaN</b>,
+			the result is <b>NaN</b>.</p>
+			</li>
+			<li><p>
+			The
+			sum of two infinities of opposite sign is <b>NaN</b>.</p>
+			</li>
+			<li><p>
+			The
+			sum of two infinities of the same sign is the infinity of that
+			sign.</p>
+			</li>
+			<li><p>
+			The
+			sum of an infinity and a finite value is equal to the infinite
+			operand.</p>
+			</li>
+			<li><p>
+			The
+			sum of two negative zeros is <span class="symbol"><b>&#8722;</b></span><b>0</b>.
+			The sum of two positive zeros, or of two zeros of opposite sign,
+			is <b>+0</b>.</p>
+			</li>
+			<li><p>
+			The
+			sum of a zero and a nonzero finite value is equal to the nonzero
+			operand.</p>
+			</li>
+			<li><p>
+			The
+			sum of two nonzero finite values of the same magnitude and
+			opposite sign is <b>+0</b>.</p>
+			</li>
+			<li><p>
+			In
+			the remaining cases, where neither an infinity, nor a zero, nor
+			NaN is involved, and the operands have the same sign or have
+			different magnitudes, the sum is computed and rounded to the
+			nearest representable value using IEEE 754 round-to-nearest mode.
+			If the magnitude is too large to represent, the operation
+			overflows and the result is then an infinity of appropriate sign.
+			The ECMAScript language requires support of gradual underflow as
+			defined by IEEE 754.</p>
+	</li></ul><p>
+	The <code><b>-</b></code>
+	operator performs subtraction when applied to two operands of
+	numeric type, producing the difference of its operands; the left
+	operand is the minuend and the right operand is the subtrahend.
+	Given numeric operands <i>a</i>
+	and <i>b</i>, it is
+	always the case that <i>a</i><code><i>&#8211;</i></code><i>b</i>
+	produces the same result as <i>a </i><code><i>+(&#8211;</i></code><i>b</i><code><i>)</i></code>.</p>
+	<h3 id="x11.7">11.7 Bitwise Shift Operators <a href="#x11.7">#</a> <a href="#x11.7-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>ShiftExpression </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>AdditiveExpression<br>ShiftExpression </i><code><b>&lt;&lt;</b></code> <i>AdditiveExpression<br>ShiftExpression </i><code><b>&gt;&gt;</b></code> <i>AdditiveExpression<br>ShiftExpression </i><code><b>&gt;&gt;&gt;</b></code> <i>AdditiveExpression</i></p>
+	<h4 id="x11.7.1">11.7.1 The Left Shift Operator ( &lt;&lt; ) <a href="#x11.7.1">#</a> <a href="#x11.7.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	Performs
+	a bitwise left shift operation on the left operand by the amount
+	specified by the right operand.</p>
+	<p>
+	The
+	production <i>ShiftExpression</i>
+	<b>:</b> <i>ShiftExpression</i>
+	<code><b>&lt;&lt;</b></code>
+	<i>AdditiveExpression</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>lref</i> be the result of evaluating <i>ShiftExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>lref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>rref</i> be the result of evaluating <i>AdditiveExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>rval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>rref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>lnum</i> be <a href="x9.html#x9.5">ToInt32</a>(<i>lval</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>rnum</i> be <a href="x9.html#x9.6">ToUint32</a>(<i>rval</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>shiftCount</i> be the result of masking out all but the least
+		significant 5 bits of <i>rnum</i>, that is, compute <i>rnum</i> &amp;
+		0x1F.</p>
+		</li>
+		<li><p>
+		Return
+		the result of left shifting <i>lnum</i> by <i>shiftCount</i> bits.
+		The result is a signed 32-bit integer.</p>
+	</li></ol><h4 id="x11.7.2">11.7.2 The Signed Right Shift Operator ( &gt;&gt; ) <a href="#x11.7.2">#</a> <a href="#x11.7.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	Performs
+	a sign-filling bitwise right shift operation on the left operand by
+	the amount specified by the right operand.</p>
+	<p>
+	The
+	production <i>ShiftExpression</i>
+	<b>:</b> <i>ShiftExpression</i>
+	<code><b>&gt;&gt;</b></code>
+	<i>AdditiveExpression</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>lref</i> be the result of evaluating <i>ShiftExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>lref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>rref</i> be the result of evaluating <i>AdditiveExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>rval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>rref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>lnum</i> be <a href="x9.html#x9.5">ToInt32</a>(<i>lval</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>rnum</i> be <a href="x9.html#x9.6">ToUint32</a>(<i>rval</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>shiftCount</i> be the result of masking out all but the least
+		significant 5 bits of <i>rnum</i>, that is, compute <i>rnum</i> &amp;
+		0x1F.</p>
+		</li>
+		<li><p>
+		Return
+		the result of performing a sign-extending right shift of <i>lnum</i>
+		by <i>shiftCount</i> bits. The most significant bit is propagated.
+		The result is a signed 32-bit integer.</p>
+	</li></ol><h4 id="x11.7.3">11.7.3 The Unsigned Right Shift Operator ( &gt;&gt;&gt; ) <a href="#x11.7.3">#</a> <a href="#x11.7.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	Performs
+	a zero-filling bitwise right shift operation on the left operand by
+	the amount specified by the right operand.</p>
+	<p>
+	The
+	production <i>ShiftExpression</i>
+	<b>:</b> <i>ShiftExpression</i>
+	<code><b>&gt;&gt;&gt;</b></code>
+	<i>AdditiveExpression</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>lref</i> be the result of evaluating <i>ShiftExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>lref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>rref</i> be the result of evaluating <i>AdditiveExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>rval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>rref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>lnum</i> be <a href="x9.html#x9.6">ToUint32</a>(<i>lval</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>rnum</i> be <a href="x9.html#x9.6">ToUint32</a>(<i>rval</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>shiftCount</i> be the result of masking out all but the least
+		significant 5 bits of <i>rnum</i>, that is, compute <i>rnum</i> &amp;
+		0x1F.</p>
+		</li>
+		<li><p>
+		Return
+		the result of performing a zero-filling right shift of <i>lnum</i>
+		by <i>shiftCount</i> bits. Vacated bits are filled with zero. The
+		result is an unsigned 32-bit integer.</p>
+	</li></ol><h3 id="x11.8">11.8 Relational Operators <a href="#x11.8">#</a> <a href="#x11.8-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>RelationalExpression </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>ShiftExpression<br>RelationalExpression </i><code><b>&lt;</b></code> <i>ShiftExpression<br>RelationalExpression </i><code><b>&gt;</b></code> <i>ShiftExpression<br>RelationalExpression </i><code><b>&lt;=</b></code> <i>ShiftExpression<br>RelationalExpression </i><code><b>&gt;=</b></code> <i>ShiftExpression<br>RelationalExpression </i><code><b>instanceof</b></code> <i>ShiftExpression<br>RelationalExpression </i><code><b>in</b></code> <i>ShiftExpression</i></p>
+	<p class="keep">
+	<i>RelationalExpressionNoIn </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>&lt;</b></code> <i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>&gt;</b></code> <i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>&lt;=</b></code> <i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>&gt;=</b></code> <i>ShiftExpression<br>RelationalExpressionNoIn </i><code><b>instanceof</b></code> <i>ShiftExpression</i></p>
+	<p><b class="note">NOTE</b> The
+	&#8220;NoIn&#8221; variants are needed to avoid confusing the <code>in</code>
+	operator in a relational expression with the <code>in</code>
+	operator in a <code>for</code>
+	statement.</p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	The
+	result of evaluating a relational operator is always of type
+	Boolean, reflecting whether the relationship named by the operator
+	holds between its two operands.</p>
+	<p>
+	The
+	<i>RelationalExpressionNoIn</i>
+	productions are evaluated in the same manner as the
+	<i>RelationalExpression</i>
+	productions except that the contained <i>RelationalExpressionNoIn</i>
+	is evaluated instead of the contained <i>RelationalExpression</i>.</p>
+	<h4 id="x11.8.1">11.8.1 The Less-than Operator ( &lt; ) <a href="#x11.8.1">#</a> <a href="#x11.8.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production <i>RelationalExpression</i>
+	<b>:</b> <i>RelationalExpression</i>
+	<code><b>&lt;</b></code>
+	<i>ShiftExpression</i> is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>lref</i> be the result of evaluating <i>RelationalExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>lref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>rref</i> be the result of evaluating <i>ShiftExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>rval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>rref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>r</i> be the result of performing abstract relational comparison
+		<i>lval</i> &lt; <i>rval</i>. (see <a href="#x11.8.5">11.8.5</a>)</p>
+		</li>
+		<li><p>
+		If
+		<i>r</i> is <b>undefined</b>, return <b>false</b>. Otherwise,
+		return <i>r</i>.</p>
+	</li></ol><h4 id="x11.8.2">11.8.2 The Greater-than Operator ( &gt; ) <a href="#x11.8.2">#</a> <a href="#x11.8.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production RelationalExpression <b>:</b> <i>RelationalExpression</i>
+	<code><b>&gt;</b></code>
+	<i>ShiftExpression</i> is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>lref</i> be the result of evaluating <i>RelationalExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>lref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>rref</i> be the result of evaluating <i>ShiftExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>rval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>rref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>r</i> be the result of performing abstract relational comparison
+		<i>rval</i> &lt; <i>lval</i> with <i>LeftFirst</i> equal to <b>false</b>.
+		(see <a href="#x11.8.5">11.8.5</a>).</p>
+		</li>
+		<li><p>
+		If
+		<i>r</i> is <b>undefined</b>, return <b>false</b>. Otherwise,
+		return <i>r</i>.</p>
+	</li></ol><h4 id="x11.8.3">11.8.3 The Less-than-or-equal Operator ( &lt;= ) <a href="#x11.8.3">#</a> <a href="#x11.8.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production RelationalExpression <b>:</b> <i>RelationalExpression</i>
+	<code><b>&lt;=</b></code>
+	<i>ShiftExpression</i> is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>lref</i> be the result of evaluating <i>RelationalExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>lref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>rref</i> be the result of evaluating <i>ShiftExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>rval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>rref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>r</i> be the result of performing abstract relational comparison
+		<i>rval</i> &lt; <i>lval</i>  with <i>LeftFirst</i> equal to <b>false</b>.
+		(see <a href="#x11.8.5">11.8.5</a>).</p>
+		</li>
+		<li><p>
+		If
+		<i>r</i> is <b>true </b>or<b> undefined</b>, return <b>false</b>.
+		Otherwise, return <b>true</b>.</p>
+	</li></ol><h4 id="x11.8.4">11.8.4 The Greater-than-or-equal Operator ( &gt;= ) <a href="#x11.8.4">#</a> <a href="#x11.8.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production RelationalExpression <b>:</b> <i>RelationalExpression</i>
+	<code><b>&gt;=</b></code>
+	<i>ShiftExpression</i> is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>lref</i> be the result of evaluating <i>RelationalExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>lref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>rref</i> be the result of evaluating <i>ShiftExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>rval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>rref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>r</i> be the result of performing abstract relational comparison
+		<i>lval</i> &lt; <i>rval</i>. (see <a href="#x11.8.5">11.8.5</a>)</p>
+		</li>
+		<li><p>
+		If
+		<i>r</i> is <b>true </b>or<b> undefined</b>, return <b>false</b>.
+		Otherwise, return <b>true</b>.</p>
+	</li></ol><h4 id="x11.8.5">11.8.5 The Abstract Relational Comparison Algorithm <a href="#x11.8.5">#</a> <a href="#x11.8.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	comparison <i>x</i> &lt;
+	<i>y</i>, where <i>x</i>
+	and <i>y</i> are values,
+	produces <b>true</b>, <b>false</b>, or <b>undefined</b> (which
+	indicates that at least one operand is <b>NaN</b>). In addition to <i>x</i>
+	and <i>y</i> the
+	algorithm takes a Boolean flag named <i>LeftFirst</i>
+	as a parameter. The flag is used to control the order in which
+	operations with potentially visible side-effects are performed upon
+	<i>x </i>and <i>y</i>.
+	It is necessary because ECMAScript specifies left to right
+	evaluation of expressions. The default value of <i>LeftFirst</i>
+	is <b>true</b> and indicates that the <i>x</i>
+	parameter corresponds to an expression that occurs to the left of
+	the <i>y</i> parameter&#8217;s
+	corresponding expression. If <i>LeftFirst </i>is <b>false</b>, the reverse is the case and operations
+	must be performed upon <i>y </i>before <i>x</i>.
+	Such a comparison is performed as follows:</p>
+	<ol><li><p>
+		If
+		the <i>LeftFirst </i>flag is <b>true</b>, then</p>
+		<ol><li><p>
+			Let
+			<i>px </i>be the result of calling <a href="x9.html#x9.1">ToPrimitive</a>(<i>x</i>, hint
+			Number).</p>
+			</li>
+			<li><p>
+			Let
+			<i>py </i>be the result of calling <a href="x9.html#x9.1">ToPrimitive</a>(<i>y</i>, hint
+			Number).</p>
+		</li></ol></li>
+		<li><p>
+		Else
+		the order of evaluation needs to be reversed to preserve left to
+		right evaluation</p>
+		<ol><li><p>
+			Let
+			<i>py </i>be the result of calling <a href="x9.html#x9.1">ToPrimitive</a>(<i>y</i>, hint
+			Number).</p>
+			</li>
+			<li><p>
+			Let
+			<i>px </i>be the result of calling <a href="x9.html#x9.1">ToPrimitive</a>(<i>x</i>, hint
+			Number).</p>
+		</li></ol></li>
+		<li><p>
+		If
+		it is not the case that both <a href="x8.html#Type">Type</a>(<i>px</i>) is String and <a href="x8.html#Type">Type</a>(<i>py</i>)
+		is String, then 
+		</p>
+		<ol><li><p>
+			Let
+			<i>nx </i>be the result of calling <a href="x9.html#x9.3">ToNumber</a>(<i>px</i>). Because <i>px </i>and <i>py </i>are <a href="x4.html#primitive_value" class="term-ref">primitive value</a>s evaluation order is not
+			important.</p>
+			</li>
+			<li><p>
+			Let
+			<i>ny</i> be the result of calling <a href="x9.html#x9.3">ToNumber</a>(<i>py</i>).</p>
+			</li>
+			<li><p>
+			If
+			<i>nx </i>is <b>NaN</b>, return <b>undefined</b>.</p>
+			</li>
+			<li><p>
+			If
+			<i>ny </i>is <b>NaN</b>, return <b>undefined</b>.</p>
+			</li>
+			<li><p>
+			If
+			<i>nx</i> and <i>ny</i> are the same Number value, return <b>false</b>.</p>
+			</li>
+			<li><p>
+			If
+			<i>nx</i> is <b>+0</b> and <i>ny</i> is <span class="symbol"><b>&#8722;</b></span><b>0</b>,
+			return <b>false</b>.</p>
+			</li>
+			<li><p>
+			If
+			<i>nx</i> is <span class="symbol"><b>&#8722;</b></span><b>0</b>
+			and <i>ny</i> is <b>+0</b>, return <b>false</b>.</p>
+			</li>
+			<li><p>
+			If
+			<i>nx</i> is <b>+</b><span class="symbol"><b>&#8734;</b></span>,
+			return <b>false</b>.</p>
+			</li>
+			<li><p>
+			If
+			<i>ny</i> is <b>+</b><span class="symbol"><b>&#8734;</b></span>,
+			return <b>true</b>.</p>
+			</li>
+			<li><p>
+			If
+			<i>ny</i> is <span class="symbol"><b>&#8722;&#8734;</b></span>,
+			return <b>false</b>.</p>
+			</li>
+			<li><p>
+			If
+			<i>nx</i> is <span class="symbol"><b>&#8722;&#8734;</b></span>,
+			return <b>true</b>.</p>
+			</li>
+			<li><p>
+			If
+			the mathematical value of <i>nx</i> is less than the mathematical
+			value of <i>ny</i> &#8212;note that these mathematical values are both
+			finite and not both zero&#8212;return <b>true</b>. Otherwise, return
+			<b>false</b>.</p>
+		</li></ol></li>
+		<li><p>
+		Else,
+		both <i>px </i>and <i>py </i>are Strings</p>
+		<ol><li><p>
+			If
+			<i>py</i> is a prefix of <i>px</i>, return <b>false</b>. (A String
+			value <i>p</i> is a prefix of String value <i>q</i> if <i>q</i>
+			can be the result of concatenating <i>p</i> and some other String
+			<i>r</i>. Note that any String is a prefix of itself, because <i>r</i>
+			may be the empty String.)</p>
+			</li>
+			<li><p>
+			If
+			<i>px</i> is a prefix of <i>py</i>, return <b>true</b>.</p>
+			</li>
+			<li><p>
+			Let
+			<i>k</i> be the smallest nonnegative integer such that the
+			character at position <i>k</i> within <i>px</i> is different from
+			the character at position <i>k</i> within <i>py</i>. (There must
+			be such a <i>k</i>, for neither String is a prefix of the other.)</p>
+			</li>
+			<li><p>
+			Let
+			<i>m</i> be the integer that is the code unit value for the
+			character at position <i>k</i> within <i>px</i>.</p>
+			</li>
+			<li><p>
+			Let
+			<i>n</i> be the integer that is the code unit value for the
+			character at position <i>k</i> within <i>py</i>.</p>
+			</li>
+			<li><p>
+			If
+			<i>m</i> &lt; <i>n</i>, return <b>true</b>. Otherwise, return
+			<b>false</b>.</p>
+		</li></ol></li></ol><p class="sp"><b class="note">NOTE 1</b> Step 3 differs from step 7 in the algorithm for the addition
+	operator <code><b>+</b></code>
+	(<a href="#x11.6.1">11.6.1</a>) in using and instead of or.</p>
+	<p class="sp"><b class="note">NOTE 2</b> The comparison of Strings uses a simple lexicographic ordering on
+	sequences of code unit values. There is no attempt to use the more
+	complex, semantically oriented definitions of character or string
+	equality and collating order defined in the Unicode specification.
+	Therefore String values that are canonically equal according to the
+	Unicode standard could test as unequal. In effect this algorithm
+	assumes that both Strings are already in normalised form.
+	Also, note that for strings containing supplementary characters,
+	lexicographic ordering on sequences of UTF-16 code unit values
+	differs from that on sequences of code point values.</p>
+	<h4 id="x11.8.6">11.8.6 The instanceof operator <a href="#x11.8.6">#</a> <a href="#x11.8.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production <i>RelationalExpression</i><b>:</b>
+	<i>RelationalExpression</i>
+	<code><b>instanceof</b></code>
+	<i>ShiftExpression</i> is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>lref</i> be the result of evaluating <i>RelationalExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>lref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>rref</i> be the result of evaluating <i>ShiftExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>rval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>rref</i>).</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>rval</i>) is not Object, throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		exception.</p>
+		</li>
+		<li><p>
+		If
+		<i>rval</i> does not have a [[HasInstance]] internal method, throw
+		a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
+		</li>
+		<li><p>
+		Return
+		the result of calling the [[HasInstance]] internal method of <i>rval</i>
+		with argument <i>lval</i>.</p>
+	</li></ol><h4 id="x11.8.7">11.8.7 The in operator <a href="#x11.8.7">#</a> <a href="#x11.8.7-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production <i>RelationalExpression</i>
+	<b>:</b> <i>RelationalExpression</i>
+	<code><b>in</b></code> <i>ShiftExpression</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>lref</i> be the result of evaluating <i>RelationalExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>lref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>rref</i> be the result of evaluating <i>ShiftExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>rval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>rref</i>).</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>rval</i>) is not Object, throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		exception.</p>
+		</li>
+		<li><p>
+		Return
+		the result of calling the [[HasProperty]] internal method of <i>rval</i>
+		with argument <a href="x9.html#x9.8">ToString</a>(<i>lval</i>).</p>
+	</li></ol><h3 id="x11.9">11.9 Equality Operators <a href="#x11.9">#</a> <a href="#x11.9-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>EqualityExpression </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>RelationalExpression<br>EqualityExpression </i><code><b>==</b></code> <i>RelationalExpression<br>EqualityExpression </i><code><b>!=</b></code> <i>RelationalExpression<br>EqualityExpression </i><code><b>===</b></code> <i>RelationalExpression<br>EqualityExpression </i><code><b>!==</b></code> <i>RelationalExpression</i></p>
+	<p class="keep">
+	<i>EqualityExpressionNoIn </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>RelationalExpressionNoIn<br>EqualityExpressionNoIn </i><code><b>==</b></code> <i>RelationalExpressionNoIn<br>EqualityExpressionNoIn </i><code><b>!=</b></code> <i>RelationalExpressionNoIn<br>EqualityExpressionNoIn </i><code><b>===</b></code> <i>RelationalExpressionNoIn<br>EqualityExpressionNoIn </i><code><b>!==</b></code> <i>RelationalExpressionNoIn</i></p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	The
+	result of evaluating an equality operator is always of type Boolean,
+	reflecting whether the relationship named by the operator holds
+	between its two operands.</p>
+	<p>
+	The
+	<i>EqualityExpressionNoIn</i>
+	productions are evaluated in the same manner as the
+	<i>EqualityExpression</i>
+	productions except that the contained <i>EqualityExpressionNoIn</i>
+	and <i>RelationalExpressionNoIn</i>
+	are evaluated instead of the contained <i>EqualityExpression</i>
+	and <i>RelationalExpression</i>,
+	respectively.</p>
+	<h4 id="x11.9.1">11.9.1 The Equals Operator ( == ) <a href="#x11.9.1">#</a> <a href="#x11.9.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production EqualityExpression : <i>EqualityExpression</i>
+	<code><b>==</b></code>
+	<i>RelationalExpression</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>lref</i> be the result of evaluating <i>EqualityExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>lref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>rref</i> be the result of evaluating <i>RelationalExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>rval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>rref</i>).</p>
+		</li>
+		<li><p>
+		Return
+		the result of performing abstract equality comparison <i>rval</i>
+		== <i>lval</i>. (see <a href="#x11.9.3">11.9.3</a>).</p>
+	</li></ol><h4 id="x11.9.2">11.9.2 The Does-not-equals Operator ( != ) <a href="#x11.9.2">#</a> <a href="#x11.9.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production EqualityExpression <b>:</b> <i>EqualityExpression</i>
+	<code><b>!=</b></code>
+	<i>RelationalExpression</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>lref</i> be the result of evaluating <i>EqualityExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>lref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>rref</i> be the result of evaluating <i>RelationalExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>rval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>rref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>r</i> be the result of performing abstract equality comparison
+		<i>rval</i> == <i>lval</i>. (see <a href="#x11.9.3">11.9.3</a>).</p>
+		</li>
+		<li><p>
+		If
+		<i>r</i> is <b>true</b>, return <b>false</b>. Otherwise, return
+		<b>true</b>.</p>
+	</li></ol><h4 id="x11.9.3">11.9.3 The Abstract Equality Comparison Algorithm <a href="#x11.9.3">#</a> <a href="#x11.9.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	comparison <i>x</i> == <i>y</i>,
+	where <i>x</i> and <i>y</i>
+	are values, produces <b>true</b> or <b>false</b>. Such a comparison
+	is performed as follows:</p>
+	<ol><li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>x</i>) is the same as <a href="x8.html#Type">Type</a>(<i>y</i>), then</p>
+		<ol><li><p>
+				If
+			<a href="x8.html#Type">Type</a>(<i>x</i>) is Undefined, return <b>true</b>.</p>
+			</li>
+			<li><p>
+			If
+			<a href="x8.html#Type">Type</a>(<i>x</i>) is Null, return <b>true</b>.</p>
+			</li>
+			<li><p>
+				If
+			<a href="x8.html#Type">Type</a>(<i>x</i>) is Number, then</p>
+			<ol><li><p>
+				If
+				<i>x</i> is <b>NaN</b>, return <b>false</b>.</p>
+				</li>
+				<li><p>
+				If
+				<i>y</i> is <b>NaN</b>, return <b>false</b>.</p>
+				</li>
+				<li><p>
+				If
+				<i>x</i> is the same Number value as <i>y</i>, return <b>true</b>.</p>
+				</li>
+				<li><p>
+				If
+				<i>x</i> is <b>+0</b> and <i>y </i>is <span class="symbol"><b>&#8722;</b></span><b>0</b>,
+				return <b>true</b>.</p>
+				</li>
+				<li><p>
+				If
+				<i>x</i> is <span class="symbol"><b>&#8722;</b></span><b>0</b>
+				and <i>y </i>is <b>+0</b>, return <b>true</b>.</p>
+				</li>
+				<li><p>
+				Return
+				<b>false</b>.</p>
+			</li></ol></li>
+			<li><p>
+			If
+			<a href="x8.html#Type">Type</a>(<i>x</i>) is String, then return <b>true</b> if <i>x</i> and
+			<i>y</i> are exactly the same sequence of characters (same length
+			and same characters in corresponding positions). Otherwise, return
+			<b>false</b>.</p>
+			</li>
+			<li><p>
+			If
+			<a href="x8.html#Type">Type</a>(<i>x</i>) is Boolean, return <b>true</b> if <i>x</i> and <i>y </i>are both <b>true</b> or both <b>false</b>. Otherwise, return
+			<b>false</b>.</p>
+			</li>
+			<li><p>
+			Return
+			<b>true</b> if <i>x</i> and <i>y </i>refer to the same object.
+			Otherwise, return <b>false</b>.</p>
+		</li></ol></li>
+		<li><p>
+		If
+		<i>x</i> is <b>null</b> and <i>y </i>is <b>undefined</b>, return
+		<b>true</b>.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i> is <b>undefined</b> and <i>y </i>is <b>null</b>, return
+		<b>true</b>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>x</i>) is Number and <a href="x8.html#Type">Type</a>(<i>y</i>) is String,<br>return
+		the result of the comparison<i> x</i> == <a href="x9.html#x9.3">ToNumber</a>(<i>y</i>).</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>x</i>) is String and <a href="x8.html#Type">Type</a>(<i>y</i>) is Number,<br>return
+		the result of the comparison <a href="x9.html#x9.3">ToNumber</a>(<i>x</i>) == <i>y</i>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>x</i>) is Boolean, return the result of the comparison
+		<a href="x9.html#x9.3">ToNumber</a>(<i>x</i>) == <i>y</i>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>y</i>) is Boolean, return the result of the comparison<i> x</i>
+		== <a href="x9.html#x9.3">ToNumber</a>(<i>y</i>).</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>x</i>) is either String or Number and <a href="x8.html#Type">Type</a>(<i>y</i>) is
+		Object,<br>return the result of the comparison <i>x</i> ==
+		<a href="x9.html#x9.1">ToPrimitive</a>(<i>y</i>).</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>x</i>) is Object and <a href="x8.html#Type">Type</a>(<i>y</i>) is either String or
+		Number,<br>return the result of the comparison <a href="x9.html#x9.1">ToPrimitive</a>(<i>x</i>)
+		== <i>y</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<b>false</b>.</p>
+	</li></ol><p><b class="note">NOTE 1</b> Given the above definition of equality:</p>
+	<ul><li><p>
+			String
+			comparison can be forced by:
+			<code><b>""
+			+ a == "" + b</b></code>.</p>
+			</li>
+			<li><p>
+			Numeric
+			comparison can be forced by:
+			<code><b>+a
+			== +b</b></code>.</p>
+			</li>
+			<li><p>
+			Boolean
+			comparison can be forced by:
+			<code><b>!a
+			== !b</b></code>.</p>
+	</li></ul><p><b class="note">NOTE 2</b> The equality operators maintain the following invariants:</p>
+	<ul><li><p>
+			<code><b>A</b></code>
+			<code><b>!=</b></code>
+			<code><b>B</b></code>
+			is
+			equivalent to
+			<code><b>!(A</b></code>
+			<code><b>==</b></code>
+			<code><b>B)</b></code>.</p>
+			</li>
+			<li><p>
+			<code><b>A</b></code><b>
+			</b><code><b>==</b></code><b>
+			</b><code><b>B</b></code>
+			is
+			equivalent to <code><b>B</b></code><b>
+			</b><code><b>==</b></code><b>
+			</b><code><b>A</b></code>,
+			except in the order of evaluation of
+			<code><b>A</b></code>
+			and
+			<code><b>B</b></code>.</p>
+	</li></ul><p class="sp"><b class="note">NOTE 3</b> The
+	equality operator is not always transitive. For example, there might
+	be two distinct String objects, each representing the same String
+	value; each String object would be considered equal to the String
+	value by the <code><b>==</b></code>
+	operator, but the two String objects would not be equal to each
+	other.</p>
+	<p class="sp"><b class="note">NOTE 4</b> Comparison of Strings uses a simple equality test on sequences of
+	code unit values. There is no attempt to use the more complex,
+	semantically oriented definitions of character or string equality
+	and collating order defined in the Unicode specification. Therefore
+	Strings values that are canonically equal according to the Unicode
+	standard could test as unequal. In effect this algorithm assumes
+	that both Strings are already in normalised form.</p>
+	<h4 id="x11.9.4">11.9.4 The Strict Equals Operator ( === ) <a href="#x11.9.4">#</a> <a href="#x11.9.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production EqualityExpression<b> :</b> <i>EqualityExpression</i>
+	<code><b>===</b></code>
+	<i>RelationalExpression</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>lref</i> be the result of evaluating <i>EqualityExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>lref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>rref</i> be the result of evaluating <i>RelationalExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>rval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>rref</i>).</p>
+		</li>
+		<li><p>
+		Return
+		the result of performing the strict equality comparison <i>rval</i>
+		=== <i>lval</i>. (See <a href="#x11.9.6">11.9.6</a>)</p>
+	</li></ol><h4 id="x11.9.5">11.9.5 The Strict Does-not-equal Operator ( !== ) <a href="#x11.9.5">#</a> <a href="#x11.9.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production EqualityExpression <b>:</b> <i>EqualityExpression</i>
+	<code><b>!==</b></code>
+	<i>RelationalExpression</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>lref</i> be the result of evaluating <i>EqualityExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>lref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>rref</i> be the result of evaluating <i>RelationalExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>rval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>rref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>r</i> be the result of performing strict equality comparison
+		<i>rval</i> === <i>lval</i>. (See <a href="#x11.9.6">11.9.6</a>)</p>
+		</li>
+		<li><p>
+		If
+		<i>r</i> is <b>true</b>, return <b>false</b>. Otherwise, return
+		<b>true</b>.</p>
+	</li></ol><h4 id="x11.9.6">11.9.6 The Strict Equality Comparison Algorithm <a href="#x11.9.6">#</a> <a href="#x11.9.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	comparison <i>x</i> ===
+	<i>y</i>, where <i>x</i>
+	and <i>y</i> are values,
+	produces <b>true</b> or <b>false</b>. Such a comparison is performed
+	as follows:</p>
+	<ol><li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>x</i>) is different from <a href="x8.html#Type">Type</a>(<i>y</i>), return <b>false</b>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>x</i>) is Undefined, return <b>true</b>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>x</i>) is Null, return <b>true</b>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>x</i>) is Number, then</p>
+		<ol><li><p>
+			If
+			<i>x</i> is <b>NaN</b>, return <b>false</b>.</p>
+			</li>
+			<li><p>
+			If
+			<i>y</i> is <b>NaN</b>, return <b>false</b>.</p>
+			</li>
+			<li><p>
+			If
+			<i>x</i> is the same Number value as <i>y</i>, return <b>true</b>.</p>
+			</li>
+			<li><p>
+			If
+			<i>x</i> is <b>+0</b> and <i>y</i> is <span class="symbol"><b>&#8722;</b></span><b>0</b>,
+			return <b>true</b>.</p>
+			</li>
+			<li><p>
+			If
+			<i>x</i> is <span class="symbol"><b>&#8722;</b></span><b>0</b>
+			and <i>y</i> is <b>+0</b>, return <b>true</b>.</p>
+			</li>
+			<li><p>
+			Return
+			<b>false</b>.</p>
+		</li></ol></li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>x</i>) is String, then return <b>true</b> if <i>x</i> and <i>y</i>
+		are exactly the same sequence of characters (same length and same
+		characters in corresponding positions); otherwise, return <b>false</b>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>x</i>) is Boolean, return <b>true</b> if <i>x</i> and <i>y</i>
+		are both <b>true</b> or both <b>false</b>; otherwise, return <b>false</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<b>true</b> if <i>x</i> and <i>y</i> refer to the same object.
+		Otherwise, return <b>false</b>.</p>
+	</li></ol><p><b class="note">NOTE</b> This
+	algorithm differs from the <a href="x9.html#x9.12">SameValue</a> Algorithm (<a href="x9.html#x9.12">9.12</a>) in its
+	treatment of signed zeroes and NaNs.</p>
+	<h3 id="x11.10">11.10 Binary Bitwise Operators <a href="#x11.10">#</a> <a href="#x11.10-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>BitwiseANDExpression </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>EqualityExpression<br>BitwiseANDExpression </i><code><b>&amp;</b></code> <i>EqualityExpression</i></p>
+	<p class="keep">
+	<i>BitwiseANDExpressionNoIn </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>EqualityExpressionNoIn<br>BitwiseANDExpressionNoIn </i><code><b>&amp;</b></code> <i>EqualityExpressionNoIn</i></p>
+	<p class="keep">
+	<i>BitwiseXORExpression </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>BitwiseANDExpression<br>BitwiseXORExpression </i><code><b>^</b></code> <i>BitwiseANDExpression</i></p>
+	<p class="keep">
+	<i>BitwiseXORExpressionNoIn </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>BitwiseANDExpressionNoIn<br>BitwiseXORExpressionNoIn </i><code><b>^</b></code> <i>BitwiseANDExpressionNoIn</i></p>
+	<p class="keep">
+	<i>BitwiseORExpression </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>BitwiseXORExpression<br>BitwiseORExpression </i><code><b>|</b></code> <i>BitwiseXORExpression</i></p>
+	<p class="keep">
+	<i>BitwiseORExpressionNoIn </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>BitwiseXORExpressionNoIn<br>BitwiseORExpressionNoIn </i><code><b>|</b></code> <i>BitwiseXORExpressionNoIn</i></p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	The
+	production <i>A </i><b>:</b> <i>A</i><i> @ </i><i>B</i>,
+	where @ is one of the bitwise operators in the productions above, is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>lref</i> be the result of evaluating <i>A</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>lref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>rref</i> be the result of evaluating <i>B</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>rval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>rref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>lnum</i> be <a href="x9.html#x9.5">ToInt32</a>(<i>lval</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>rnum</i> be <a href="x9.html#x9.5">ToInt32</a>(<i>rval</i>).</p>
+		</li>
+		<li><p>
+		Return
+		the result of applying the bitwise operator @ to <i>lnum</i> and
+		<i>rnum</i>. The result is a signed 32 bit integer.</p>
+	</li></ol><h3 id="x11.11">11.11 Binary Logical Operators <a href="#x11.11">#</a> <a href="#x11.11-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>LogicalANDExpression </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>BitwiseORExpression<br>LogicalANDExpression </i><code><b>&amp;&amp;</b></code> <i>BitwiseORExpression</i></p>
+	<p class="keep">
+	<i>LogicalANDExpressionNoIn </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>BitwiseORExpressionNoIn<br>LogicalANDExpressionNoIn </i><code><b>&amp;&amp;</b></code> <i>BitwiseORExpressionNoIn</i></p>
+	<p class="keep">
+	<i>LogicalORExpression </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>LogicalANDExpression<br>LogicalORExpression </i><code><b>||</b></code> <i>LogicalANDExpression</i></p>
+	<p class="keep">
+	<i>LogicalORExpressionNoIn </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>LogicalANDExpressionNoIn<br>LogicalORExpressionNoIn </i><code><b>||</b></code> <i>LogicalANDExpressionNoIn</i></p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	The
+	production <i>LogicalANDExpression</i>
+	<b>:</b> <i>LogicalANDExpression</i>
+	<code><b>&amp;&amp;</b></code>
+	<i>BitwiseORExpression</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>lref</i> be the result of evaluating <i>LogicalANDExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>lref</i>).</p>
+		</li>
+		<li><p>
+		If
+		<a href="x9.html#x9.2">ToBoolean</a>(<i>lval</i>) is <b>false</b>, return <i>lval</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>rref</i> be the result of evaluating <i>BitwiseORExpression</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<a href="x8.html#x8.7.1">GetValue</a>(<i>rref</i>).</p>
+	</li></ol><p>
+	The
+	production <i>LogicalORExpression</i>
+	<b>:</b> <i>LogicalORExpression</i>
+	<code><b>||</b></code>
+	<i>LogicalANDExpression</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>lref</i> be the result of evaluating <i>LogicalORExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>lref</i>).</p>
+		</li>
+		<li><p>
+		If
+		<a href="x9.html#x9.2">ToBoolean</a>(<i>lval</i>) is <b>true</b>, return <i>lval</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>rref</i> be the result of evaluating <i>LogicalANDExpression</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<a href="x8.html#x8.7.1">GetValue</a>(<i>rref</i>).</p>
+	</li></ol><p>
+	The
+	<i>LogicalANDExpressionNoIn</i>
+	and <i>LogicalORExpressionNoIn</i>
+	productions are evaluated in the same manner as the
+	<i>LogicalANDExpression</i>
+	and <i>LogicalORExpression</i>
+	productions except that the contained <i>LogicalANDExpressionNoIn</i>,
+	<i>BitwiseORExpressionNoIn</i>
+	and <i>LogicalORExpressionNoIn</i>
+	are evaluated instead of the contained <i>LogicalANDExpression</i>,
+	<i>BitwiseORExpression</i>
+	and <i>LogicalORExpression</i>,
+	respectively.</p>
+	<p><b class="note">NOTE</b> The
+	value produced by a <code><b>&amp;&amp;</b></code>
+	or <code><b>||</b></code> operator is
+	not necessarily of type Boolean. The value produced will always be
+	the value of one of the two operand expressions.</p>
+	<h3 id="x11.12">11.12 Conditional Operator ( ? : ) <a href="#x11.12">#</a> <a href="#x11.12-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>ConditionalExpression </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>LogicalORExpression<br>LogicalORExpression</i><code><b>
+	?</b></code> <i>AssignmentExpression </i><code><b>:</b></code> <i>AssignmentExpression</i></p>
+	<p class="keep">
+	<i>ConditionalExpressionNoIn </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>LogicalORExpressionNoIn<br>LogicalORExpressionNoIn</i><code><b>
+	?</b></code> <i>AssignmentExpression </i><code><b>:</b></code> <i>AssignmentExpressionNoIn</i></p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	The
+	production <i>ConditionalExpression</i>
+	<b>:</b>
+	<i>LogicalORExpression</i>
+	<code><b>?</b></code>
+	<i>AssignmentExpression</i>
+	<code><b>:</b></code>
+	<i>AssignmentExpression</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>lref</i> be the result of evaluating <i>LogicalORExpression</i>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x9.html#x9.2">ToBoolean</a>(<a href="x8.html#x8.7.1">GetValue</a>(<i>lref</i>)) is <b>true</b>, then</p>
+		<ol><li><p>
+			Let
+			<i>trueRef</i> be the result of evaluating the first
+			<i>AssignmentExpression</i>.</p>
+			</li>
+			<li><p>
+			Return
+			<a href="x8.html#x8.7.1">GetValue</a>(<i>trueRef</i>).</p>
+		</li></ol></li>
+	<li><p>
+		Else</p>
+		<ol><li><p>
+			Let
+			<i>falseRef</i> be the result of evaluating the second
+			<i>AssignmentExpression</i>.</p>
+	</li>
+	<li><p>
+			Return
+			<a href="x8.html#x8.7.1">GetValue</a>(<i>falseRef</i>).</p>
+		</li></ol></li></ol><p>
+	The
+	<i>ConditionalExpressionNoIn</i>
+	production is evaluated in the same manner as the
+	<i>ConditionalExpression</i>
+	production except that the contained <i>LogicalORExpressionNoIn</i>,
+	<i>AssignmentExpression</i>
+	and <i>AssignmentExpressionNoIn</i>
+	are evaluated instead of the contained <i>LogicalORExpression</i>,
+	first <i>AssignmentExpression</i>
+	and second <i>AssignmentExpression</i>,
+	respectively.</p>
+	<p class="sp">
+	</p><p><b class="note">NOTE</b> The grammar
+	for a ConditionalExpression in ECMAScript is a little bit different
+	from that in C and Java, which each allow the second subexpression
+	to be an Expression but restrict the third expression to be a
+	ConditionalExpression. The motivation for this difference in
+	ECMAScript is to allow an assignment expression to be governed by
+	either arm of a conditional and to eliminate the confusing and
+	fairly useless case of a comma expression as the centre expression.</p>
+	<h3 id="x11.13">11.13 Assignment Operators <a href="#x11.13">#</a> <a href="#x11.13-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>AssignmentExpression </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>ConditionalExpression<br>LeftHandSideExpression
+	AssignmentOperator AssignmentExpression</i></p>
+	<p class="keep">
+	<i>AssignmentExpressionNoIn </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>ConditionalExpressionNoIn<br>LeftHandSideExpression
+	AssignmentOperator AssignmentExpressionNoIn</i></p>
+	<p class="keep">
+	<i>AssignmentOperator </i><b>:</b><i><b>
+	</b></i><b>one
+	of</b></p>
+	<dl><dd>
+		<table width="616" border="0" cellpadding="3" cellspacing="0"><colgroup><col width="56"><col width="44"><col width="44"><col width="44"><col width="44"><col width="44"><col width="44"><col width="44"><col width="44"><col width="44"><col width="44"><col width="44"></colgroup><tbody><tr valign="TOP"><td width="56" height="13">
+					<p class="sm-btm">
+					<code><b>=</b></code></p>
+				</td>
+				<td width="44">
+					<p class="sm-btm">
+					<code><b>*=</b></code></p>
+				</td>
+				<td width="44">
+					<p class="sm-btm">
+					<code><b>/=</b></code></p>
+				</td>
+				<td width="44">
+					<p class="sm-btm">
+					<code><b>%=</b></code></p>
+				</td>
+				<td width="44">
+					<p class="sm-btm">
+					<code><b>+=</b></code></p>
+				</td>
+				<td width="44">
+					<p class="sm-btm">
+					<code><b>-=</b></code></p>
+				</td>
+				<td width="44">
+					<p class="sm-btm">
+					<code><b>&lt;&lt;=</b></code></p>
+				</td>
+				<td width="44">
+					<p class="sm-btm">
+					<code><b>&gt;&gt;=</b></code></p>
+				</td>
+				<td width="44">
+					<p class="sm-btm">
+					<code><b>&gt;&gt;&gt;=</b></code></p>
+				</td>
+				<td width="44">
+					<p class="sm-btm">
+					<code><b>&amp;=</b></code></p>
+				</td>
+				<td width="44">
+					<p class="sm-btm">
+					<code><b>^=</b></code></p>
+				</td>
+				<td width="44">
+					<p class="sm-btm">
+					<code><b>|=</b></code></p>
+				</td>
+			</tr></tbody></table></dd></dl><p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	The
+	<i>AssignmentExpressionNoIn</i>
+	productions are evaluated in the same manner as the
+	<i>AssignmentExpression</i>
+	productions except that the contained <i>ConditionalExpressionNoIn</i> and<i>AssignmentExpressionNoIn</i> are evaluated instead of the
+	contained <i>ConditionalExpression</i>
+	and <i>AssignmentExpression</i>,
+	respectively.</p>
+	<h4 id="x11.13.1">11.13.1 Simple Assignment ( = ) <a href="#x11.13.1">#</a> <a href="#x11.13.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production <i>AssignmentExpression</i>
+	<b>:</b> <i>LeftHandSideExpression</i>
+	<code><b>=</b></code>
+	<i>AssignmentExpression</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>lref</i> be the result of evaluating <i>LeftHandSideExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>rref</i> be the result of evaluating <i>AssignmentExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>rval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>rref</i>).</p>
+		</li>
+		<li><p>
+		Throw
+		a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception if the following conditions are all
+		true:</p>
+	<ul><li><p>
+		 <a href="x8.html#Type">Type</a>(<i>lref</i>)
+		is <a href="x8.html#x8.7">Reference</a> is <b>true</b></p>
+		</li>
+		<li><p>
+		 <a href="x8.html#IsStrictReference">IsStrictReference</a>(<i>lref</i>)
+		is <b>true</b></p>
+		</li>
+		<li><p>
+		 <a href="x8.html#Type">Type</a>(<a href="x8.html#GetBase">GetBase</a>(<i>lref</i>))
+		is <a href="x10.html#x10.2.1">Environment Record</a></p>
+		</li>
+		<li><p>
+		 <a href="x8.html#GetReferencedName">GetReferencedName</a>(<i>lref</i>)
+		is either <code><b>"eval"</b></code>
+		or<code><b> "arguments"</b></code></p>
+	</li></ul></li>
+		<li><p>
+		Call
+		<a href="x8.html#x8.7.2">PutValue</a>(<i>lref</i>, <i>rval</i>).</p>
+		</li>
+		<li><p>
+		Return
+		<i>rval</i>.</p>
+	</li></ol><p><b class="note">NOTE</b> When
+	an assignment occurs within <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a>, its <i>LeftHandSide</i>
+	must not evaluate to an <a href="x8.html#IsUnresolvableReference">unresolvable reference</a>. If it does a
+	<b><a href="x15.html#x15.11.6.3" class="term-ref">ReferenceError</a></b> exception is thrown upon assignment. The
+	<i>LeftHandSide</i> also
+	may not be a reference to a data property with the attribute value
+	{[[Writable]]:<b>false</b>},
+	to an accessor property with the attribute value
+	{[[Set]]:<b>undefined</b>},<b>
+	</b>nor to a non-existent property of an object whose [[Extensible]]
+	internal property has the value <b>false</b>. In these cases a
+	<b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception is thrown.</p>
+	<h4 id="x11.13.2">11.13.2 Compound Assignment ( op= ) <a href="#x11.13.2">#</a> <a href="#x11.13.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	production <i>AssignmentExpression</i> <b>:</b> <i>LeftHandSideExpression</i><i>@ </i><code><b>=</b></code> <i>AssignmentExpression</i>,
+	where @ represents one of the operators indicated above, is
+	evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>lref</i> be the result of evaluating <i>LeftHandSideExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>lref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>rref</i> be the result of evaluating <i>AssignmentExpression</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>rval</i> be <a href="x8.html#x8.7.1">GetValue</a>(<i>rref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>r</i> be the result of applying operator @ to <i>lval</i> and
+		<i>rval</i>.</p>
+		</li>
+		<li><p>
+		Throw
+		a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception if the following conditions are all
+		true:</p>
+	<ul><li><p>
+		 <a href="x8.html#Type">Type</a>(<i>lref</i>)
+		is <a href="x8.html#x8.7">Reference</a> is <b>true</b></p>
+		</li>
+		<li><p>
+		 <a href="x8.html#IsStrictReference">IsStrictReference</a>(<i>lref</i>)
+		is <b>true</b></p>
+		</li>
+		<li><p>
+		 <a href="x8.html#Type">Type</a>(<a href="x8.html#GetBase">GetBase</a>(<i>lref</i>))
+		is <a href="x10.html#x10.2.1">Environment Record</a></p>
+		</li>
+		<li><p>
+		 <a href="x8.html#GetReferencedName">GetReferencedName</a>(lref)
+		is either <code><b>"eval"</b></code>
+		or<code><b> "arguments"</b></code></p>
+	</li></ul></li></ol><ol start="7"><li><p>
+		Call
+		<a href="x8.html#x8.7.2">PutValue</a>(<i>lref</i>, <i>r</i>).</p>
+		</li>
+		<li><p>
+		Return
+		<i>r</i>.</p>
+	</li></ol><p><b class="note">NOTE</b> See
+	NOTE <a href="#x11.13.1">11.13.1</a>.</p>
+	<h3 id="x11.14">11.14 Comma Operator ( , ) <a href="#x11.14">#</a> <a href="#x11.14-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>Expression</i> <b>:</b></p>
+	<p class="def1-btm">
+	<i>AssignmentExpression</i><i><br>Expression </i><code><b>,</b></code> <i>AssignmentExpression</i></p>
+	<p class="keep">
+	<i>ExpressionNoIn </i><b>:</b></p>
+	<p class="def1-btm">
+	<i>AssignmentExpressionNoIn<br>ExpressionNoIn </i><code><b>,</b></code> <i>AssignmentExpressionNoIn</i></p>
+	<p class="tiny-btm">
+	<b>Semantics</b></p>
+	<p>
+	The
+	production <i>Expression</i>
+	<b>:</b> <i>Expression</i>
+	<code><b>,</b></code>
+	<i>AssignmentExpression</i>
+	is evaluated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>lref</i> be the result of evaluating <i>Expression</i>.</p>
+		</li>
+		<li><p>
+		Call
+		<a href="x8.html#x8.7.1">GetValue</a>(<i>lref</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>rref</i> be the result of evaluating <i>AssignmentExpression</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<a href="x8.html#x8.7.1">GetValue</a>(<i>rref</i>).</p>
+	</li></ol><p>
+	The
+	<i>ExpressionNoIn</i>
+	production is evaluated in the same manner as the <i>Expression</i>
+	production except that the contained <i>ExpressionNoIn</i>
+	and <i>AssignmentExpressionNoIn</i>
+	are evaluated instead of the contained <i>Expression</i>
+	and <i>AssignmentExpression</i>,
+	respectively.</p>
+	<p class="sp">
+	</p><p><b class="note">NOTE</b> <a href="x8.html#x8.7.1">GetValue</a> must
+	be called even though its value is not used because it may have
+	observable side-effects.</p>
+	</body><script src="anno.js"></script></html>
