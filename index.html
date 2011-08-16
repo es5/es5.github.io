@@ -7,91 +7,43 @@
 <p id="slogan">&#8223;Ex igne vita&#8221;</p>
 <div id="annotations"></div>
 <script src="timestamp.js"></script></div>
-<p id="alt-version-notice"><a href="#toc" title="skip to TOC">toc</a> &#183; <a href="spec.html">single-page version</a> &#183; <a href="https://github.com/es5/es5.github.com">source</a></p><div id="disclaimer">
-<p><b class="note">NOTE</b> <b class="other">This is <i>not</i> the normative ECMAScript Language specification.</b></p>
-<p>The normative ECMAScript specification (<a href="http://www.ecmascript.org/">ECMA 262</a>) is a PDF file maintained by
-ECMA TC39 and is available at the following location:</p>
-
-<p class="url"><a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">http://www.ecma-international.org/publications/standards/Ecma-262.htm</a></p>
+<p id="alt-version-notice"><a href="#toc" title="skip to TOC">toc</a> &#183; <a href="spec.html">single-page version</a> &#183; <a href="key.html">key</a> &#183; <a href="https://github.com/es5/es5.github.com">source</a></p><div id="disclaimer">
+<p><b class="other">This is <i>not</i> the normative ECMAScript Language specification.</b>
+The normative spec
+(<a href="http://www.ecmascript.org/">ECMA 262</a>)
+is a PDF file maintained by ECMA TC39 and is available from 
+<a href="http://www.ecmascript.org/">http://www.ecmascript.org/</a></p>
 </div>
 
-<p>This document is an <b><a href="#annos">annotated</a>,
-<a href="#hyperlinks">hyperlinked</a>, HTML version</b>
-  of Edition 5.1 of the ECMAScript Specification.
+<p>This is an <b>annotated, hyperlinked, HTML version</b> of Edition 5.1 of
+the ECMAScript Specification,
+<!--
   It&#8217;s provided as a means for making annotations to the spec available
   online, in HTML and at &#8220;point of use&#8221;, <b>for the purposes of
   explaining the spec and assisting in its implementation</b> that are
-  allowed for in the spec <a href="#license">license</a>.</p>
+  allowed for in the spec <a href="#license">license</a>. -->
 
-<p>This version is maintained by <a href="http://sideshowbarker.net/+">Michael[tm] Smith</a>
- &lt;<a href="mailto:sideshowbarker@gmail.com">sideshowbarker@gmail.com</a>&gt;</p>
-
-<p>No copyright is asserted on the front matter of this version (everything
- up to and including the Table of Contents). However, any reuse of the body
- text from this document (everything following the Table of Contents) must
- adhere to the terms of the license on the normative spec. See the spec&#8217;s
+  maintained by <a href="http://sideshowbarker.net/+">Michael[tm] Smith</a>.
+  No copyright is asserted on its front matter (everything up through
+  the Table of Contents), but any reuse of its body text
+  (everything following the Table of Contents) must include the normative
+  spec&#8217;s
   <a href="#copyright">copyright</a>
   notice and
   <a href="#license">license</a>
-  statement.</p>
-
-<p>The complete source for this version is available at
+  statement. The source for this version is at
  <a href="https://github.com/es5/es5.github.com">https://github.com/es5/es5.github.com</a></p>
 
-<h3 id="annos">About the annotations</h3>
-
-<p>To view annotations for a particular section of the present
-  document, follow the hyperlinks
-  marked <b>&#9398;</b>, <b>&#9401;</b>, <b>&#9415;</b>, <b>&#9404;</b>, <b>&#9402;</b>, and <b>&#9312;</b> in
-  the section headings. The different types of annotations provided by each
-  of those are as follows:</p>
-
-<dl><dt><b>&#9398;</b> Contributed annotations</dt>
-<dd>These mark the availability of user-contributed annotations that are
-  collaboratively maintained at the current site. Note that these
-  annotations are made available under the terms of the
-  <a href="anno/LICENSE.txt">MIT license</a>, and may be freely reused,
-  copied, modified, republished, redistributed, etc., as permitted
-  by that license. If you&#8217;d like to contribute annotations, see
-  the
-  <a href="http://github.com/es5/es5.github.com/#readme">instructions on the Annotated ES5 project page</a>.</dd>
-
-<dt><b>&#9401;</b> Dmitry A. Soshnikov ECMA-262 article series</dt>
-<dd>These do not mark annotations at this site but are instead direct
-    hyperlinks to relevant articles by
-    <a href="http://dmitrysoshnikov.com/">Dmitry A. Soshnikov</a> in his
-    <a href="http://dmitrysoshnikov.com/ecmascript/">ECMA-262 article series</a>.</dd>
-
-<dt><b>&#9415;</b> MDC JavaScript Reference</dt>
-<dd>These do not mark annotations at this site but are instead direct
-    hyperlinks to corresponding sections in the
-  <a href="https://developer.mozilla.org/en/JavaScript/Reference">MDC JavaScript Reference</a>.</dd>
-
-<dt><b>&#9404;</b> MDC JavaScript Guide</dt>
-<dd>These do not mark annotations at this site but are instead direct
-    hyperlinks to relevant sections in the
-  <a href="https://developer.mozilla.org/en/JavaScript/Guide">MDC JavaScript Guide</a>.</dd>
-
-<dt><b>&#9402;</b> Errata as of July 2010</dt>
-<dd>These provide errata copied from the &#8220;Items with Technical Significance&#8221;
-  section of the
-  <a href="http://wiki.ecmascript.org/doku.php?id=es3.1:es3.1_proposal_working_draft">July 2010 erratum document available at the TC39 wiki</a>.
-  Note that only the contents of the &#8220;Items with Technical
-  Significance&#8221; section were copied over; the contents of the
-  &#8220;Editorial Items with no Technical Significance&#8221; section were
-  not.</dd>
-
-<dt><b>&#9312;</b> Additional changes in Edition 5.1</dt>
-<dd>These provide details about changes included in Annex F of Edition 5.1
-  of the spec but that were not already in the July 2010 erratum document.</dd>
-</dl><h3 id="hyperlinks">About the hyperlinks</h3>
-<p>Jason Orendorff was the first to make a usefully hyperlinked
-version of the ECMAScript spec. The hyperlinking here just follows
-his example. His version remains available at
+<p id="annos">To view annotations, follow the <b>&#9398;</b>, <b>&#9401;</b>, <b>&#9415;</b>,
+  <b>&#9404;</b>, <b>&#9402;</b>, and <b>&#9312;</b> hyperlinks in the headings. A
+  <a href="key.html">key to the markers</a> explains the different types
+  of annotations.
+  Also included are a variety of hyperlinked cross-references,
+  following the example of Jason Orendorff&#8217;s version at
 <a href="http://people.mozilla.org/~jorendorff/es5.html">http://people.mozilla.org/~jorendorff/es5.html</a></p>
 
 </div>
-<h1 id="doc-title">ECMAScript Language Specification</h1>
+<!--<h1 id="doc-title">ECMAScript Language Specification</h1> -->
 <div id="toc">
   <h2>Table of Contents</h2>
   <ol><li><a href="introduction.html#introduction">Introduction</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></li>

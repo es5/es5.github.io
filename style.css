@@ -162,6 +162,8 @@ b.other {
   background-color: green;
   color: white;
   padding: 4px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-left: 8px;
 }
 #toc > ol,
@@ -226,7 +228,7 @@ b.other {
 }
 #disclaimer {
   background-color: lightgoldenrodyellow;
-  padding: 4px;
+  padding: 1px;
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 6px;

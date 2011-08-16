@@ -172,7 +172,10 @@ for e in child_iter:
     page_body.append(e)
 
 alt_version_notice = page_body.find('.//*[@id="alt-version-notice"]')
-replacement = etree.XML(u'<p id="alt-version-notice"><a href="#toc" title="skip to TOC">toc</a> · <a href="spec.html">single-page version</a> · <a href="https://github.com/es5/es5.github.com">source</a></p> ')
+replacement = etree.XML(u'<p id="alt-version-notice"><a href="#toc" title="skip to TOC">toc</a>\
+ · <a href="spec.html">single-page version</a>\
+ · <a href="key.html">key</a>\
+ · <a href="https://github.com/es5/es5.github.com">source</a></p> ')
 alt_version_notice.getparent().replace(alt_version_notice, replacement)
 
 pages.append( (index_page, page, 'Front cover') )
