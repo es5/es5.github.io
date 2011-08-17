@@ -2,6 +2,11 @@
   padding-left: 60px;
 }
 
+.toc-nav {
+  color: green !important;
+  font-weight: bold;
+}
+
 #timestamp {
   color: #bbb;
   font-weight: normal;

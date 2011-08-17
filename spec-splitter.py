@@ -264,10 +264,10 @@ for i in range(len(pages)):
         link.tail = '\n  '
         head.append(link)
 
-    a = etree.XML('<a href="%s.html#contents">TOC</a>' % index_page)
+    a = etree.XML('<a href="%s.html" class="toc-nav">TOC</a>' % index_page)
     a.tail = '\n  '
     nav.append(a)
-    link = etree.XML('<link href="%s.html#contents" title="TOC" rel="index"/>' % index_page)
+    link = etree.XML('<link href="%s.html" title="TOC" rel="index"/>' % index_page)
     link.tail = '\n  '
     head.append(link)
 
