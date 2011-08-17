@@ -1,0 +1,3143 @@
+<!DOCTYPE html>
+<html class="split chapter"><head><meta charset="utf-8"><title>15.4 Array Objects # &#9417; &#9402; &#9312; &#9398; &#8212; Annotated ES5</title><link rel="stylesheet" href="style.css"><link rel="shortcut icon" href="favicon.ico"><link href="x15.3.html" title="15.3 Function Objects " rel="prev">
+  <link href="spec.html#contents" title="TOC" rel="index">
+  <link href="x15.5.html" title="15.5 String Objects " rel="next">
+  </head><body><div class="head">
+<h2 id="top">Annotated ECMAScript 5.1 <span id="timestamp"></span></h2>
+<div id="mascot-treehouse">
+	<img id="mascot" align="left" src="js-mascot.svg" alt=""><img id="bubble" src="bubble.svg" alt=""></div>
+<p id="slogan">&#8223;Ex igne vita&#8221;</p>
+<div id="annotations"></div>
+<script src="timestamp.js"></script></div>
+<nav>
+   <a href="x15.3.html">&#8592; 15.3 Function Objects </a> &#8211;
+   <a href="spec.html#contents">TOC</a> &#8211;
+   <a href="x15.5.html">15.5 String Objects  &#8594;</a>
+  <ol class="toc"><li><ol><li><a href="x15.4.html#x15.4" id="x15.4-toc">15.4 Array Objects</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.4.html#x15.4.1" id="x15.4.1-toc">15.4.1 The Array Constructor Called as a Function</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.4.html#x15.4.1.1" id="x15.4.1.1-toc">15.4.1.1 Array ( [ item1 [ , item2 [ , &#8230; ] ] ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.4.html#x15.4.2" id="x15.4.2-toc">15.4.2 The Array Constructor</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.4.html#x15.4.2.1" id="x15.4.2.1-toc">15.4.2.1 new Array ( [ item0 [ , item1 [ , &#8230; ] ] ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.4.html#x15.4.2.2" id="x15.4.2.2-toc">15.4.2.2 new Array (len)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.4.html#x15.4.3" id="x15.4.3-toc">15.4.3 Properties of the Array Constructor</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.4.html#x15.4.3.1" id="x15.4.3.1-toc">15.4.3.1 Array.prototype</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.4.html#x15.4.3.2" id="x15.4.3.2-toc">15.4.3.2 Array.isArray ( arg )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.4.html#x15.4.4" id="x15.4.4-toc">15.4.4 Properties of the Array Prototype Object</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.4.html#x15.4.4.1" id="x15.4.4.1-toc">15.4.4.1 Array.prototype.constructor</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.4.html#x15.4.4.2" id="x15.4.4.2-toc">15.4.4.2 Array.prototype.toString ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.4.html#x15.4.4.3" id="x15.4.4.3-toc">15.4.4.3 Array.prototype.toLocaleString ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.4.html#x15.4.4.4" id="x15.4.4.4-toc">15.4.4.4 Array.prototype.concat ( [ item1 [ , item2 [ , &#8230; ] ] ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.4.html#x15.4.4.5" id="x15.4.4.5-toc">15.4.4.5 Array.prototype.join (separator)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.4.html#x15.4.4.6" id="x15.4.4.6-toc">15.4.4.6 Array.prototype.pop ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.4.html#x15.4.4.7" id="x15.4.4.7-toc">15.4.4.7 Array.prototype.push ( [ item1 [ , item2 [ , &#8230; ] ] ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.4.html#x15.4.4.8" id="x15.4.4.8-toc">15.4.4.8 Array.prototype.reverse ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.4.html#x15.4.4.9" id="x15.4.4.9-toc">15.4.4.9 Array.prototype.shift ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.4.html#x15.4.4.10" id="x15.4.4.10-toc">15.4.4.10 Array.prototype.slice (start, end)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.4.html#x15.4.4.11" id="x15.4.4.11-toc">15.4.4.11 Array.prototype.sort (comparefn)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.4.html#x15.4.4.12" id="x15.4.4.12-toc">15.4.4.12 Array.prototype.splice (start, deleteCount [ , item1 [ , item2 [ , &#8230; ] ] ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.4.html#x15.4.4.13" id="x15.4.4.13-toc">15.4.4.13 Array.prototype.unshift ( [ item1 [ , item2 [ , &#8230; ] ] ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.4.html#x15.4.4.14" id="x15.4.4.14-toc">15.4.4.14 Array.prototype.indexOf ( searchElement [ , fromIndex ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.4.html#x15.4.4.15" id="x15.4.4.15-toc">15.4.4.15 Array.prototype.lastIndexOf ( searchElement [ , fromIndex ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.4.html#x15.4.4.16" id="x15.4.4.16-toc">15.4.4.16 Array.prototype.every ( callbackfn [ , thisArg ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.4.html#x15.4.4.17" id="x15.4.4.17-toc">15.4.4.17 Array.prototype.some ( callbackfn [ , thisArg ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.4.html#x15.4.4.18" id="x15.4.4.18-toc">15.4.4.18 Array.prototype.forEach ( callbackfn [ , thisArg ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.4.html#x15.4.4.19" id="x15.4.4.19-toc">15.4.4.19 Array.prototype.map ( callbackfn [ , thisArg ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.4.html#x15.4.4.20" id="x15.4.4.20-toc">15.4.4.20 Array.prototype.filter ( callbackfn [ , thisArg ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.4.html#x15.4.4.21" id="x15.4.4.21-toc">15.4.4.21 Array.prototype.reduce ( callbackfn [ , initialValue ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.4.html#x15.4.4.22" id="x15.4.4.22-toc">15.4.4.22 Array.prototype.reduceRight ( callbackfn [ , initialValue ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.4.html#x15.4.5" id="x15.4.5-toc">15.4.5 Properties of Array Instances</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.4.html#x15.4.5.1" id="x15.4.5.1-toc">15.4.5.1 [[DefineOwnProperty]] ( P, Desc, Throw )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.4.html#x15.4.5.2" id="x15.4.5.2-toc">15.4.5.2 length</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li></ol></li></ol></li></ol></nav>
+
+  <h3 id="x15.4" class="splitme">15.4 Array Objects <a href="#x15.4">#</a> <a href="#x15.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	Array
+	objects give special treatment to a certain class of property names.
+	A property name <i>P</i>
+	(in the form of a String value) is an <i>array index</i> if and only
+	if <a href="x9.html#x9.8">ToString</a>(<a href="x9.html#x9.6">ToUint32</a>(<i>P</i>))
+	is equal to <i>P</i> and
+	<a href="x9.html#x9.6">ToUint32</a>(<i>P</i>)
+	is not equal to 2<sup>32</sup><span class="symbol">&#8722;</span>1.
+	A property whose property name is an array index is also called an
+	<dfn id="array-element"><i>element</i></dfn>. Every Array object has a <code><b>length</b></code>
+	property whose value is always a nonnegative integer less than 2<sup>32</sup>.
+	The value of the <code><b>length</b></code>
+	property is numerically greater than the name of every property
+	whose name is an array index; whenever a property of an Array object
+	is created or changed, other properties are adjusted as necessary to
+	maintain this invariant. Specifically, whenever a property is added
+	whose name is an array index, the <code><b>length</b></code>
+	property is changed, if necessary, to be one more than the numeric
+	value of that array index; and whenever the <code><b>length</b></code>
+	property is changed, every property whose name is an array index
+	whose value is not smaller than the new length is automatically
+	deleted. This constraint applies only to own properties of an Array
+	object and is unaffected by <code><b>length</b></code>
+	or array index properties that may be inherited from its prototypes.</p>
+	<p>
+	An
+	object, <i>O</i>,  is
+	said to be <dfn id="sparse"><i>sparse</i></dfn> if the following algorithm returns <b>true</b>:</p>
+	<ol><li><p class="sm-btm">
+		Let
+		<i>len</i>
+		be the result of calling the [[Get]] internal method of <i>O</i>
+		with argument <b>"length"</b>.</p>
+		</li>
+		<li><p class="sm-btm">
+		For
+		each integer <i>i</i>
+		in the range 0&#8804;<i>i</i>&lt;<a href="x9.html#x9.6">ToUint32</a>(<i>len</i>)</p>
+		<ol><li><p class="sm-btm">
+			Let
+			<i>elem</i>
+			be the result of calling the [[GetOwnProperty]] internal method of
+			<i>O</i>
+			with argument <a href="x9.html#x9.8">ToString</a>(<i>i</i>).</p>
+			</li>
+			<li><p class="sm-btm">
+			If
+			<i>elem</i>
+			is <b>undefined</b>,
+			return <b>true</b>.</p>
+		</li></ol></li>
+		<li><p class="sm-btm">
+		Return
+		<b>false</b>.</p>
+	</li></ol><h4 id="x15.4.1">15.4.1 The Array Constructor Called as a Function <a href="#x15.4.1">#</a> <a href="#x15.4.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	<code><b>Array</b></code> is called as
+	a function rather than as a constructor, it creates and initialises
+	a new Array object. Thus the function call <code><b>Array(</b></code><code>&#8230;</code><code><b>)</b></code>
+	is equivalent to the object creation expression <code><b>new&#160;Array(</b></code><code>&#8230;</code><code><b>)</b></code>
+	with the same arguments.</p>
+	<h5 id="x15.4.1.1">15.4.1.1 Array ( [ item1 [ , item2 [ , &#8230; ] ] ] ) <a href="#x15.4.1.1">#</a> <a href="#x15.4.1.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <code><b>Array</b></code> function
+	is called the following steps are taken:</p>
+	<ol><li><p>
+		Create
+		and return a new Array object exactly as if the standard built-in
+		constructor <code><b>Array</b></code>
+		was used in a <code><b>new</b></code>
+		expression with the same arguments (<a href="#x15.4.2">15.4.2</a>).</p>
+	</li></ol><h4 id="x15.4.2">15.4.2 The Array Constructor <a href="#x15.4.2">#</a> <a href="#x15.4.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	<code><b>Array</b></code> is called as
+	part of a <code><b>new</b></code>
+	expression, it is a constructor: it initialises the newly created
+	object.</p>
+	<h5 id="x15.4.2.1">15.4.2.1 new Array ( [ item0 [ , item1 [ , &#8230; ] ] ] ) <a href="#x15.4.2.1">#</a> <a href="#x15.4.2.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	This
+	description applies if and only if the Array constructor is given no
+	arguments or at least two arguments.</p>
+	<p>
+	The
+	[[Prototype]] internal property of the newly constructed object is
+	set to the original Array prototype object, the one that is the
+	initial value of <code><b>Array.prototype</b></code>
+	(<a href="#x15.4.3.1">15.4.3.1</a>).</p>
+	<p>
+	The
+	[[Class]] internal property of the newly constructed object is set
+	to <code><b>"Array"</b></code>.</p>
+	<p>
+	The
+	[[Extensible]] internal property of the newly constructed object is
+	set to <b>true</b>.</p>
+	<p>
+	The
+	<code><b>length</b></code> property of
+	the newly constructed object is set to the number of arguments.</p>
+	<p>
+	The <code><b>0</b></code>
+	property of the newly constructed object is set to <i>item0</i>
+	(if supplied); the <code><b>1</b></code>
+	property of the newly constructed object is set to <i>item1</i>
+	(if supplied); and, in general, for as many arguments as there are,
+	the <i>k</i> property of
+	the newly constructed object is set to argument <i>k</i>,
+	where the first argument is considered to be argument number <code><b>0</b></code>.
+	These properties all have the attributes {[[Writable]]: <b>true</b>,
+	[[Enumerable]]: <b>true</b>, [[Configurable]]: <b>true</b>}.</p>
+	<h5 id="x15.4.2.2">15.4.2.2 new Array (len) <a href="#x15.4.2.2">#</a> <a href="#x15.4.2.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	[[Prototype]] internal property of the newly constructed object is
+	set to the original Array prototype object, the one that is the
+	initial value of <code><b>Array.prototype</b></code>
+	(<a href="#x15.4.3.1">15.4.3.1</a>). The [[Class]] internal property of the newly constructed
+	object is set to <code><b>"Array"</b></code>.
+	The [[Extensible]] internal property of the newly constructed object
+	is set to <b>true</b>.</p>
+	<p>
+	If
+	the argument <i>len</i>
+	is a Number and <a href="x9.html#x9.6">ToUint32</a>(<i>len</i>)
+	is equal to <i>len</i>,
+	then the <code><b>length</b></code>
+	property of the newly constructed object is set to <a href="x9.html#x9.6">ToUint32</a>(<i>len</i>).
+	If the argument <i>len</i>
+	is a Number and <a href="x9.html#x9.6">ToUint32</a>(<i>len</i>)
+	is not equal to <i>len</i>,
+	a <b><a href="x15.11.html#x15.11.6.2" class="term-ref">RangeError</a></b> exception is thrown.</p>
+	<p>
+	If
+	the argument <i>len</i>
+	is not a Number, then the <code><b>length</b></code>
+	property of the newly constructed object is set to <code><b>1</b></code>
+	and the <code><b>0</b></code> property
+	of the newly constructed object is set to <i>len</i>
+	with attributes {[[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b>,
+	[[Configurable]]: <b>true</b>}..</p>
+	<h4 id="x15.4.3">15.4.3 Properties of the Array Constructor <a href="#x15.4.3">#</a> <a href="#x15.4.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	value of the [[Prototype]] internal property of the Array
+	constructor is the Function prototype object (<a href="x15.3.html#x15.3.4">15.3.4</a>).</p>
+	<p>
+	Besides
+	the internal properties and the <code><b>length</b></code>
+	property (whose value is <b>1</b>), the Array constructor has the
+	following properties:</p>
+	<h5 id="x15.4.3.1">15.4.3.1 Array.prototype <a href="#x15.4.3.1">#</a> <a href="#x15.4.3.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	initial value of <code><b>Array.prototype</b></code>
+	is the Array prototype object (<a href="#x15.4.4">15.4.4</a>).</p>
+	<p>
+	This
+	property has the attributes { [[Writable]]: <b>false</b>,
+	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b> }.</p>
+	<h5 id="x15.4.3.2">15.4.3.2 Array.isArray ( arg ) <a href="#x15.4.3.2">#</a> <a href="#x15.4.3.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	isArray function takes one argument <i>arg</i>,
+	and returns the Boolean value <b>true </b>if the argument is an
+	object whose class internal property is <code><b>"Array"</b></code>;
+	otherwise it returns <b>false</b>. The following steps are taken:</p>
+	<ol><li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>arg</i>) is not Object, return <b>false</b>.</p>
+		</li>
+		<li><p>
+		If
+		the value of the [[Class]] internal property of <i>arg </i>is
+		<code><b>"Array"</b></code>,
+		then return <b>true</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<b>false</b>.</p>
+	</li></ol><h4 id="x15.4.4">15.4.4 Properties of the Array Prototype Object <a href="#x15.4.4">#</a> <a href="#x15.4.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	value of the [[Prototype]] internal property of the Array prototype
+	object is the standard built-in Object prototype object (<a href="x15.2.html#x15.2.4">15.2.4</a>).</p>
+	<p>
+	The
+	Array prototype object is itself an array; its [[Class]] is <code><b>"Array"</b></code>,
+	and it has a <code><b>length</b></code>
+	property (whose initial value is <b>+0</b>) and the special
+	[[DefineOwnProperty]] internal method described in <a href="#x15.4.5.1">15.4.5.1</a>.</p>
+	<p>
+	In
+	following descriptions of functions that are properties of the Array
+	prototype object, the phrase &#8220;this object&#8221; refers to the object
+	that is the <b>this</b> value for the invocation of the function. It
+	is permitted for the <b>this</b> to be an object for which the value
+	of the [[Class]] internal property is not <code><b>"Array"</b></code>.</p>
+	<p><b class="note">NOTE</b> The
+	Array prototype object does not have a <code><b>valueOf</b></code>
+	property of its own; however, it inherits the <code><b>valueOf</b></code>
+	property from the standard built-in Object prototype Object.</p>
+	<h5 id="x15.4.4.1">15.4.4.1 Array.prototype.constructor <a href="#x15.4.4.1">#</a> <a href="#x15.4.4.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	initial value of <code><b>Array.prototype.constructor</b></code>
+	is the standard built-in <code><b>Array</b></code>
+	constructor.</p>
+	<h5 id="x15.4.4.2">15.4.4.2 Array.prototype.toString ( ) <a href="#x15.4.4.2">#</a> <a href="#x15.4.4.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <code><b>toString</b></code>
+	method is called, the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>array</i> be the result of calling <a href="x9.html#x9.9">ToObject</a> on the <b>this</b>
+		value.</p>
+		</li>
+		<li><p>
+		Let
+		<i>func</i> be the result of calling the [[Get]] internal method of
+		<i>array</i> with argument <code><b>"join"</b></code>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x9.html#x9.11">IsCallable</a>(<i>func</i>) is <b>false</b>, then let <i>func</i> be
+		the standard built-in method <a href="x15.2.html#x15.2.4.2">Object.prototype.toString</a> (<a href="x15.2.html#x15.2.4.2">15.2.4.2</a>).</p>
+		</li>
+		<li><p>
+		Return
+		 the result of calling the [[Call]] internal method of <i>func</i>
+		providing <i>array</i> as the <b>this</b> value and an empty
+		arguments list.</p>
+	</li></ol><p class="sp">
+	</p><p><b class="note">NOTE</b> The <code><b>toString</b></code>
+	function is intentionally generic; it does not require that its <b>this</b>
+	value be an Array object. Therefore it can be transferred to other
+	kinds of objects for use as a method. Whether the <code><b>toString</b></code>
+	function can be applied successfully to a host object is
+	implementation-dependent.</p>
+	<h5 id="x15.4.4.3">15.4.4.3 Array.prototype.toLocaleString ( ) <a href="#x15.4.4.3">#</a> <a href="#x15.4.4.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	<a href="#array-element">elements of the array</a> are converted to Strings using their
+	<code><b>toLocaleString</b></code>
+	methods, and these Strings are then concatenated, separated by
+	occurrences of a separator String that has been derived in an
+	implementation-defined locale-specific way. The result of calling
+	this function is intended to be analogous to the result of <code><b>toString</b></code>,
+	except that the result of this function is intended to be
+	locale-specific.</p>
+	<p>
+	The
+	result is calculated as follows:</p>
+	<ol><li><p>
+		Let
+		<i>O </i>be the result of calling <a href="x9.html#x9.9">ToObject</a> passing the <b>this
+		</b>value as the argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>arrayLen</i> be the result of calling the [[Get]] internal
+		method of <i>array</i> with argument <code><b>"length"</b></code>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>len</i> be <a href="x9.html#x9.6">ToUint32</a>(<i>arrayLen</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>separator</i> be the String value for the list-separator String
+		appropriate for the host environment&#8217;s current locale (this is
+		derived in an implementation-defined way).</p>
+		</li>
+		<li><p>
+		If
+		<i>len</i> is zero, return the empty String.</p>
+		</li>
+		<li><p>
+		Let
+		<i>firstElement</i> be the result of calling the [[Get]] internal
+		method of <i>array</i> with argument <code><b>"0"</b></code>.</p>
+		</li>
+		<li><p>
+		If
+		<i>firstElement</i> is <b>undefined</b> or <b>null</b>, then</p>
+		<ol><li><p>
+			Let
+			<i>R</i> be the empty String.</p>
+		</li></ol></li>
+		<li><p>
+		Else
+		
+		</p>
+		<ol><li><p>
+			Let
+			<i>elementObj</i> be <a href="x9.html#x9.9">ToObject</a>(<i>firstElement</i>).</p>
+			</li>
+			<li><p>
+			Let
+			<i>func</i> be the result of calling the [[Get]] internal method
+			of <i>elementObj</i> with argument <code><b>"toLocaleString"</b></code>.</p>
+			</li>
+			<li><p>
+			If
+			<a href="x9.html#x9.11">IsCallable</a>(<i>func</i>) is <b>false</b>, throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+			exception.</p>
+			</li>
+			<li><p>
+			Let
+			<i>R</i> be the result of calling the [[Call]] internal method of
+			<i>func</i> providing <i>elementObj</i> as the <b>this</b> value
+			and an empty arguments list. 
+			</p>
+		</li></ol></li>
+		<li><p>
+		Let
+		<i>k</i> be <code><b>1</b></code>.</p>
+		</li>
+		<li><p>
+		Repeat,
+		while <i>k</i> &lt; <i>len</i></p>
+		<ol><li><p>
+			Let
+			<i>S</i> be a String value produced by concatenating <i>R</i> and
+			<i>separator</i>.</p>
+			</li>
+			<li><p>
+			Let
+			<i>nextElement</i> be the result of calling the [[Get]] internal
+			method of <i>array</i> with argument <a href="x9.html#x9.8">ToString</a>(<i>k</i>).</p>
+			</li>
+			<li><p>
+			If
+			<i>nextElement</i> is <b>undefined</b> or <b>null</b>, then</p>
+			<ol><li><p>
+				Let
+				<i>R</i> be the empty String.</p>
+			</li></ol></li>
+			<li><p>
+			Else
+			
+			</p>
+			<ol><li><p>
+				Let
+				<i>elementObj</i> be <a href="x9.html#x9.9">ToObject</a>(<i>nextElement</i>).</p>
+				</li>
+				<li><p>
+				Let
+				<i>func</i> be the result of calling the [[Get]] internal method
+				of <i>elementObj</i> with argument <code><b>"toLocaleString"</b></code>.</p>
+				</li>
+				<li><p>
+				If
+				<a href="x9.html#x9.11">IsCallable</a>(<i>func</i>) is <b>false</b>, throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+				exception.</p>
+				</li>
+				<li><p>
+				Let
+				<i>R</i> be the result of calling the [[Call]] internal method of
+				<i>func</i> providing <i>elementObj</i> as the <b>this</b> value
+				and an empty arguments list. 
+				</p>
+			</li></ol></li>
+			<li><p>
+			Let
+			<i>R</i> be a String value produced by concatenating <i>S</i> and
+			<i>R</i>.</p>
+			</li>
+			<li><p>
+			Increase
+			<i>k</i> by 1.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		<i>R</i>.</p>
+	</li></ol><p class="sp"><b class="note">NOTE 1</b> The first parameter to this function is likely to be used in a
+	future version of this standard; it is recommended that
+	implementations do not use this parameter position for anything
+	else.</p>
+	<p><b class="note">NOTE 2</b> The <code><b>toLocaleString</b></code>
+	function is intentionally generic; it does not require that its <b>this</b>
+	value be an Array object. Therefore it can be transferred to other
+	kinds of objects for use as a method. Whether the <code><b>toLocaleString</b></code>
+	function can be applied successfully to a host object is
+	implementation-dependent.</p>
+	<h5 id="x15.4.4.4">15.4.4.4 Array.prototype.concat ( [ item1 [ , item2 [ , &#8230; ] ] ] ) <a href="#x15.4.4.4">#</a> <a href="#x15.4.4.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <code><b>concat</b></code> method
+	is called with zero or more arguments <i>item1</i>,
+	<i>item2</i>, etc., it
+	returns an array containing the <a href="#array-element">array element</a>s of the object
+	followed by the <a href="#array-element">array element</a>s of each argument in order.</p>
+	<p>
+	The
+	following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>O </i>be the result of calling <a href="x9.html#x9.9">ToObject</a> passing the <b>this
+		</b>value as the argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>A</i> be a new array created as if by the expression <code><b>new
+		Array()</b></code> where <code><b>Array</b></code>
+		is the standard built-in constructor with that name.</p>
+		</li>
+		<li><p>
+		Let
+		<i>n</i> be 0.</p>
+		</li>
+		<li><p>
+		Let
+		<i>items</i> be an internal <a href="x8.html#x8.8">List</a> whose first element is <i>O</i>
+		and whose subsequent elements are, in left to right order, the
+		arguments that were passed to this function invocation.</p>
+		</li>
+		<li><p>
+		Repeat,
+		while <i>items</i> is not empty</p>
+		<ol><li><p>
+			Remove
+			the first element from <i>items</i> and let <i>E</i> be the value
+			of the element.</p>
+			</li>
+			<li><p>
+			If
+			the value of the [[Class]] internal property of <i>E</i> is
+			<code><b>"Array"</b></code>,
+			then</p>
+			<ol><li><p>
+				Let
+				<i>k</i> be 0.</p>
+				</li>
+				<li><p>
+				Let
+				<i>len</i> be the result of calling the [[Get]] internal method
+				of <i>E</i> with argument <code><b>"length"</b></code>.</p>
+				</li>
+				<li><p>
+				Repeat,
+				while <i>k</i> &lt; <i>len</i></p>
+				<ol><li><p>
+					Let
+					<i>P</i> be <a href="x9.html#x9.8">ToString</a>(<i>k</i>).</p>
+					</li>
+					<li><p>
+					Let
+					<i>exists</i> be the result of calling the [[HasProperty]]
+					internal method of <i>E</i> with <i>P</i>.</p>
+					</li>
+					<li><p>
+					If
+					<i>exists</i> is <b>true</b>, then</p>
+					<ol><li><p>
+						Let
+						<i>subElement</i> be the result of calling the [[Get]] internal
+						method of <i>E</i> with argument <i>P</i>.</p>
+						</li>
+						<li><p>
+						Call
+						the [[DefineOwnProperty]] internal method of <i>A</i> with
+						arguments <a href="x9.html#x9.8">ToString</a>(<i>n</i>), <a href="x8.html#x8.10">Property Descriptor</a> {[[Value]]:
+						<i>subElement</i>, [[Writable]]: <b>true</b>, [[Enumerable]]:
+						<b>true</b>, [[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
+					</li></ol></li>
+					<li><p>
+					Increase
+					<i>n</i> by 1.</p>
+					</li>
+					<li><p>
+					Increase
+					<i>k</i> by 1.</p>
+				</li></ol></li></ol></li>
+			<li><p>
+			Else,
+			<i>E</i> is not an Array</p>
+			<ol><li><p>
+				Call
+				the [[DefineOwnProperty]] internal method of <i>A</i> with
+				arguments <a href="x9.html#x9.8">ToString</a>(<i>n</i>), <a href="x8.html#x8.10">Property Descriptor</a> {[[Value]]: <i>E</i>,
+				[[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b>,
+				[[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
+				</li>
+				<li><p>
+				Increase
+				n by 1.</p>
+			</li></ol></li></ol></li>
+		<li><p>
+		Return
+		<i>A</i>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>concat</b></code> method
+	is <b>1</b>.</p>
+	<p><b class="note">NOTE</b> The
+	<code><b>concat</b></code> function is
+	intentionally generic; it does not require that its <b>this</b>
+	value be an Array object. Therefore it can be transferred to other
+	kinds of objects for use as a method. Whether the <code><b>concat</b></code>
+	function can be applied successfully to a host object is
+	implementation-dependent.</p>
+	<h5 id="x15.4.4.5">15.4.4.5 Array.prototype.join (separator) <a href="#x15.4.4.5">#</a> <a href="#x15.4.4.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	<a href="#array-element">elements of the array</a> are converted to Strings, and these Strings
+	are then concatenated, separated by occurrences of the <i>separator</i>.
+	If no separator is provided, a single comma is used as the
+	separator.</p>
+	<p>
+	The
+	<code><b>join</b></code> method takes
+	one argument, <i>separator</i>,
+	and performs the following steps:</p>
+	<ol><li><p>
+		Let
+		<i>O </i>be the result of calling <a href="x9.html#x9.9">ToObject</a> passing the <b>this
+		</b>value as the argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lenVal</i> be the result of calling the [[Get]] internal method
+		of <i>O</i> with argument <code><b>"length"</b></code>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>len</i> be <a href="x9.html#x9.6">ToUint32</a>(<i>lenVal</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>separator</i> is <b>undefined</b>, let <i>separator</i> be the
+		single-character String <code><b>","</b></code>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>sep</i> be <a href="x9.html#x9.8">ToString</a>(<i>separator</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>len</i> is zero, return the empty String.</p>
+		</li>
+		<li><p>
+		Let
+		<i>element0</i> be the result of calling the [[Get]] internal
+		method of <i>O</i> with argument <code><b>"0"</b></code>.</p>
+		</li>
+		<li><p>
+		If
+		<i>element0</i> is <b>undefined</b> or <b>null</b>, let <i>R</i> be
+		the empty String; otherwise, Let <i>R</i> be <a href="x9.html#x9.8">ToString</a>(<i>element0</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>k</i> be <code><b>1</b></code>.</p>
+		</li>
+		<li><p>
+		Repeat,
+		while <i>k</i> &lt; <i>len</i></p>
+		<ol><li><p>
+			Let
+			<i>S</i> be the String value produced by concatenating <i>R</i>
+			and <i>sep</i>.</p>
+			</li>
+			<li><p>
+			Let
+			<i>element</i> be the result of calling the [[Get]] internal
+			method of <i>O</i> with argument <a href="x9.html#x9.8">ToString</a>(<i>k</i>).</p>
+			</li>
+			<li><p>
+			If
+			<i>element</i> is <b>undefined</b> or <b>null</b>, Let <i>next</i>
+			be the empty String; otherwise, let <i>next</i> be
+			<a href="x9.html#x9.8">ToString</a>(<i>element</i>).</p>
+			</li>
+			<li><p>
+			Let
+			<i>R</i> be a String value produced by concatenating <i>S</i> and
+			<i>next</i>.</p>
+			</li>
+			<li><p>
+			Increase
+			<i>k</i> by 1.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		<i>R</i>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>join</b></code> method is
+	<b>1</b>.</p>
+	<p><b class="note">NOTE</b> The
+	<code><b>join</b></code> function is
+	intentionally generic; it does not require that its <b>this</b>
+	value be an Array object. Therefore, it can be transferred to other
+	kinds of objects for use as a method. Whether the <code><b>join</b></code>
+	function can be applied successfully to a host object is
+	implementation-dependent.</p>
+	<h5 id="x15.4.4.6">15.4.4.6 Array.prototype.pop ( ) <a href="#x15.4.4.6">#</a> <a href="#x15.4.4.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	last <a href="#array-element">element of the array</a> is removed from the array and returned.</p>
+	<ol><li><p>
+		Let
+		<i>O </i>be the result of calling <a href="x9.html#x9.9">ToObject</a> passing the <b>this
+		</b>value as the argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lenVal</i> be the result of calling the [[Get]] internal method
+		of <i>O</i> with argument <code>"</code><code><b>length</b></code><code>"</code>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>len</i> be <a href="x9.html#x9.6">ToUint32</a>(<i>lenVal</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>len</i> is zero, 
+		</p>
+		<ol><li><p>
+			Call
+			the [[Put]] internal method of <i>O</i> with arguments <code>"</code><code><b>length</b></code><code>"</code>,
+			0, and <b>true</b>.</p>
+			</li>
+			<li><p>
+			Return
+			<b>undefined</b>.</p>
+		</li></ol></li>
+		<li><p>
+		Else,
+		<i>len</i> &gt; 0</p>
+		<ol><li><p>
+			Let
+			<i>indx</i> be <a href="x9.html#x9.8">ToString</a>(<i>len</i>&#8211;1).</p>
+			</li>
+			<li><p>
+			Let
+			<i>element</i> be the result of calling the [[Get]] internal
+			method of <i>O</i> with argument <i>indx</i>.</p>
+			</li>
+			<li><p>
+			Call
+			the [[Delete]] internal method of <i>O</i> with arguments <i>indx</i>
+			and <b>true</b>.</p>
+			</li>
+			<li><p>
+			Call
+			the [[Put]] internal method of <i>O</i> with arguments <code>"</code><code><b>length</b></code><code>"</code>,
+			<i>indx</i>, and <b>true</b>.</p>
+			</li>
+			<li><p>
+			Return
+			<i>element</i>.</p>
+		</li></ol></li></ol><p><b class="note">NOTE</b> The
+	<code><b>pop</b></code> function is
+	intentionally generic; it does not require that its <b>this</b>
+	value be an Array object. Therefore it can be transferred to other
+	kinds of objects for use as a method. Whether the <code><b>pop</b></code>
+	function can be applied successfully to a host object is
+	implementation-dependent.</p>
+	<h5 id="x15.4.4.7">15.4.4.7 Array.prototype.push ( [ item1 [ , item2 [ , &#8230; ] ] ] ) <a href="#x15.4.4.7">#</a> <a href="#x15.4.4.7-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	arguments are appended to the end of the array, in the order in
+	which they appear. The new length of the array is returned as the
+	result of the call.</p>
+	<p>
+	When
+	the <code><b>push</b></code> method is
+	called with zero or more arguments <i>item1</i>,<i>item2</i>, etc., the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>O </i>be the result of calling <a href="x9.html#x9.9">ToObject</a> passing the <b>this
+		</b>value as the argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lenVal</i> be the result of calling the [[Get]] internal method
+		of <i>O</i> with argument <code>"</code><code><b>length</b></code><code>"</code>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>n</i> be <a href="x9.html#x9.6">ToUint32</a>(<i>lenVal</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>items</i> be an internal <a href="x8.html#x8.8">List</a> whose elements are, in left to
+		right order, the arguments that were passed to this function
+		invocation.</p>
+		</li>
+		<li><p>
+		Repeat,
+		while <i>items</i> is not empty</p>
+		<ol><li><p>
+			Remove
+			the first element from <i>items</i> and let <i>E</i> be the value
+			of the element.</p>
+			</li>
+			<li><p>
+			Call
+			the [[Put]] internal method of <i>O</i> with arguments
+			<a href="x9.html#x9.8">ToString</a>(<i>n</i>), <i>E</i>, and <b>true</b>.</p>
+			</li>
+			<li><p>
+			Increase
+			<i>n</i> by 1.</p>
+		</li></ol></li>
+		<li><p>
+		Call
+		the [[Put]] internal method of <i>O</i> with arguments <code>"</code><code><b>length</b></code><code>"</code>,
+		<i>n</i>, and <b>true</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>n</i>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>push</b></code> method is
+	<b>1</b>.</p>
+	<p><b class="note">NOTE</b> The
+	<code><b>push</b></code> function is
+	intentionally generic; it does not require that its <b>this</b>
+	value be an Array object. Therefore it can be transferred to other
+	kinds of objects for use as a method. Whether the <code><b>push</b></code>
+	function can be applied successfully to a host object is
+	implementation-dependent.</p>
+	<h5 id="x15.4.4.8">15.4.4.8 Array.prototype.reverse ( ) <a href="#x15.4.4.8">#</a> <a href="#x15.4.4.8-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	<a href="#array-element">elements of the array</a> are rearranged so as to reverse their order.
+	The object is returned as the result of the call.</p>
+	<ol><li><p>
+		Let
+		<i>O </i>be the result of calling <a href="x9.html#x9.9">ToObject</a> passing the <b>this
+		</b>value as the argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lenVal</i> be the result of calling the [[Get]] internal method
+		of <i>O</i> with argument <code><b>"length"</b></code>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>len</i> be <a href="x9.html#x9.6">ToUint32</a>(<i>lenVal</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>middle</i> be  <a href="x5.html#floor">floor</a>(<i>len</i>/2).</p>
+		</li>
+		<li><p>
+		Let<i>lower</i> be <b>0</b>.</p>
+		</li>
+		<li><p>
+		Repeat,
+		while <i>lower</i> <span class="symbol">&#8800;</span> <i>middle</i></p>
+		<ol><li><p>
+			Let
+			<i>upper</i> be <i>len</i><span class="symbol">&#8722;</span><i>lower</i> <span class="symbol">&#8722;</span>1.</p>
+			</li>
+			<li><p>
+			Let
+			<i>upperP</i> be <a href="x9.html#x9.8">ToString</a>(<i>upper</i>).</p>
+			</li>
+			<li><p>
+			Let
+			<i>lowerP</i> be <a href="x9.html#x9.8">ToString</a>(<i>lower</i>).</p>
+			</li>
+			<li><p>
+			Let
+			<i>lowerValue</i> be the result of calling the [[Get]] internal
+			method of <i>O</i> with argument <i> lowerP</i>.</p>
+			</li>
+			<li><p>
+			Let
+			<i>upperValue</i> be the result of calling the [[Get]] internal
+			method of <i>O</i> with argument <i>upperP</i> .</p>
+			</li>
+			<li><p>
+			Let
+			<i>lowerExists</i> be the result of calling the [[HasProperty]]
+			internal method of <i>O</i> with argument <i>lowerP</i>.</p>
+			</li>
+			<li><p>
+			Let
+			<i>upperExists</i> be the result of calling the [[HasProperty]]
+			internal method of <i>O</i> with argument <i>upperP</i>.</p>
+			</li>
+			<li><p>
+			If
+			<i>lowerExists</i> is <b>true</b> and <i>upperExists</i> is <b>true</b>,
+			then</p>
+			<ol><li><p>
+				Call
+				the [[Put]] internal method of <i>O</i> with arguments <i>lowerP</i>,
+				<i>upperValue</i>, and <b>true</b> .</p>
+				</li>
+				<li><p>
+				Call
+				the [[Put]] internal method of <i>O</i> with arguments <i>upperP</i>,
+				<i>lowerValue</i>, and <b>true</b> .</p>
+			</li></ol></li>
+			<li><p>
+			Else
+			if <i>lowerExists</i> is <b>false</b> and <i>upperExists</i> is
+			<b>true</b>, then</p>
+			<ol><li><p>
+				Call
+				the [[Put]] internal method of <i>O</i> with arguments <i>lowerP</i>,
+				<i>upperValue</i>, and <b>true</b> .</p>
+				</li>
+				<li><p>
+				Call
+				the [[Delete]] internal method of <i>O</i>, with arguments <i>upperP</i>
+				and <b>true</b>.</p>
+			</li></ol></li>
+			<li><p>
+			Else
+			if <i>lowerExists</i> is <b>true</b> and <i>upperExists</i> is
+			<b>false</b>, then</p>
+			<ol><li><p>
+				Call
+				the [[Delete]] internal method of <i>O</i>, with arguments <i>lowerP</i>
+				and <b>true</b> .</p>
+				</li>
+				<li><p>
+				Call
+				the [[Put]] internal method of <i>O</i> with arguments <i>upperP</i>,
+				<i>lowerValue</i>, and <b>true</b> .</p>
+			</li></ol></li>
+			<li><p>
+			Else,
+			both <i>lowerExists</i> and <i>upperExists</i> are <b>false</b></p>
+			<ol><li><p>
+				No
+				action is required.</p>
+			</li></ol></li>
+			<li><p>
+			Increase
+			<i>lower</i> by 1.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		<i>O</i> .</p>
+	</li></ol><p><b class="note">NOTE</b> The
+	<code><b>reverse</b></code> function
+	is intentionally generic; it does not require that its <b>this</b>
+	value be an Array object. Therefore, it can be transferred to other
+	kinds of objects for use as a method. Whether the <code><b>reverse</b></code>
+	function can be applied successfully to a host object is
+	implementation-dependent.</p>
+	<h5 id="x15.4.4.9">15.4.4.9 Array.prototype.shift ( ) <a href="#x15.4.4.9">#</a> <a href="#x15.4.4.9-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	first <a href="#array-element">element of the array</a> is removed from the array and returned.</p>
+	<ol><li><p>
+		Let
+		<i>O </i>be the result of calling <a href="x9.html#x9.9">ToObject</a> passing the <b>this
+		</b>value as the argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lenVal</i> be the result of calling the [[Get]] internal method
+		of <i>O</i> with argument <code>"</code><code><b>length</b></code><code>"</code>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>len</i> be <a href="x9.html#x9.6">ToUint32</a>(<i>lenVal</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>len</i> is zero, then</p>
+		<ol><li><p>
+			Call
+			the [[Put]] internal method of <i>O</i> with arguments <code>"</code><code><b>length</b></code><code>"</code>,
+			0, and <b>true</b>.</p>
+			</li>
+			<li><p>
+			Return
+			<b>undefined</b>.</p>
+		</li></ol></li>
+		<li><p>
+		Let
+		<i>first</i> be the result of calling the [[Get]] internal method
+		of <i>O</i> with argument <code>"</code><code><b>0</b></code><code>"</code>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>k</i> be 1.</p>
+		</li>
+		<li><p>
+		Repeat,
+		while <i>k</i> &lt; <i>len</i></p>
+		<ol><li><p>
+			Let
+			<i>from</i> be <a href="x9.html#x9.8">ToString</a>(<i>k</i>).</p>
+			</li>
+			<li><p>
+			Let
+			<i>to</i> be <a href="x9.html#x9.8">ToString</a>(<i>k</i>&#8211;1).</p>
+			</li>
+			<li><p>
+			Let
+			<i>fromPresent</i> be the result of calling the [[HasProperty]]
+			internal method of <i>O</i> with argument <i>from</i>.</p>
+			</li>
+			<li><p>
+			If
+			<i>fromPresent</i> is <b>true</b>, then</p>
+			<ol><li><p>
+				Let
+				<i>fromVal</i> be the result of calling the [[Get]] internal
+				method of <i>O</i> with argument <i>from</i>.</p>
+				</li>
+				<li><p>
+				Call
+				the [[Put]] internal method of <i>O</i> with arguments <i>to</i>,
+				<i>fromVal</i>, and <b>true</b>.</p>
+			</li></ol></li>
+			<li><p>
+			Else,
+			fromPresent is <b>false</b></p>
+			<ol><li><p>
+				Call
+				the [[Delete]] internal method of <i>O</i> with arguments <i>to</i>
+				and <b>true</b>.</p>
+			</li></ol></li>
+			<li><p>
+			Increase
+			<i>k</i> by 1.</p>
+		</li></ol></li>
+		<li><p>
+		Call
+		the [[Delete]] internal method of <i>O</i> with arguments
+		<a href="x9.html#x9.8">ToString</a>(<i>len</i>&#8211;1) and <b>true</b>.</p>
+		</li>
+		<li><p>
+		Call
+		the [[Put]] internal method of <i>O</i> with arguments <code>"</code><code><b>length</b></code><code>"</code>,
+		(<i>len</i>&#8211;1) , and <b>true</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>first</i>.</p>
+	</li></ol><p><b class="note">NOTE</b> The
+	<code><b>shift</b></code> function is
+	intentionally generic; it does not require that its <b>this</b>
+	value be an Array object. Therefore it can be transferred to other
+	kinds of objects for use as a method. Whether the <code><b>shift</b></code>
+	function can be applied successfully to a host object is
+	implementation-dependent.</p>
+	<h5 id="x15.4.4.10">15.4.4.10 Array.prototype.slice (start, end) <a href="#x15.4.4.10">#</a> <a href="#x15.4.4.10-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	<code><b>slice</b></code> method takes
+	two arguments, <i>start</i>
+	and <i>end</i>, and
+	returns an array containing the <a href="#array-element">elements of the array</a> from element
+	<i>start</i> up to, but
+	not including, element <i>end</i>
+	(or through the end of the array if <i>end</i>
+	is <b>undefined</b>). If <i>start</i>
+	is negative, it is treated as <i>length</i>+<i>start</i>
+	where <i>length</i> is
+	the length of the array. If <i>end</i>
+	is negative, it is treated as <i>length</i>+<i>end</i>
+	where <i>length</i>
+	is the length of the array. The following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>O </i>be the result of calling <a href="x9.html#x9.9">ToObject</a> passing the <b>this
+		</b>value as the argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>A</i> be a new array created as if by the expression <code><b>new
+		Array() </b></code>where <code><b>Array</b></code>
+		is the standard built-in constructor with that name.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lenVal</i> be the result of calling the [[Get]] internal method
+		of <i>O</i> with argument <code>"</code><code><b>length</b></code><code>"</code>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>len</i> be <a href="x9.html#x9.6">ToUint32</a>(<i>lenVal</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>relativeStart</i> be <a href="x9.html#x9.4">ToInteger</a>(<i>start</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>relativeStart</i> is negative, let <i>k</i> be max((<i>len</i> +<i>relativeStart</i>),0); else let <i>k</i> be min(<i>relativeStart</i>,<i>len</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>end</i> is <b>undefined</b>, let <i>relativeEnd</i> be <i>len</i>;
+		else let <i>relativeEnd</i> be <a href="x9.html#x9.4">ToInteger</a>(<i>end</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>relativeEnd</i> is negative, let <i>final</i> be max((<i>len</i>
+		+<i> relativeEnd</i>),0); else let <i>final</i> be min(<i>relativeEnd</i>,<i>len</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>n</i> be 0.</p>
+		</li>
+		<li><p>
+		Repeat,
+		while <i>k</i> &lt; <i>final</i></p>
+		<ol><li><p>
+			Let
+			<i>Pk</i> be <a href="x9.html#x9.8">ToString</a>(<i>k</i>).</p>
+			</li>
+			<li><p>
+			Let
+			<i>kPresent</i> be the result of calling the [[HasProperty]]
+			internal method of <i>O</i> with argument <i>Pk</i>.</p>
+			</li>
+			<li><p>
+			If
+			<i>kPresent</i> is <b>true</b>, then</p>
+			<ol><li><p>
+				Let
+				<i>kValue</i> be the result of calling the [[Get]] internal
+				method of <i>O</i> with argument <i>Pk</i>.</p>
+				</li>
+				<li><p>
+				Call
+				the [[DefineOwnProperty]] internal method of <i>A</i> with
+				arguments <a href="x9.html#x9.8">ToString</a>(<i>n</i>), <a href="x8.html#x8.10">Property Descriptor</a> {[[Value]]:
+				<i>kValue</i>, [[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b>,
+				[[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
+			</li></ol></li>
+			<li><p>
+			Increase
+			<i>k</i> by 1.</p>
+			</li>
+			<li><p>
+			Increase
+			<i>n</i> by 1.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		<i>A</i>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>slice</b></code> method
+	is <b>2</b>.</p>
+	<p><b class="note">NOTE</b> The
+	<code><b>slice</b></code> function is
+	intentionally generic; it does not require that its <b>this</b>
+	value be an Array object. Therefore it can be transferred to other
+	kinds of objects for use as a method. Whether the <code><b>slice</b></code>
+	function can be applied successfully to a host object is
+	implementation-dependent.</p>
+	<h5 id="x15.4.4.11">15.4.4.11 Array.prototype.sort (comparefn) <a href="#x15.4.4.11">#</a> <a href="#x15.4.4.11-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	<a href="#array-element">elements of this array</a> are sorted. The sort is not necessarily
+	stable (that is, elements that compare equal do not necessarily
+	remain in their original order). If <i>comparefn</i>
+	is not <b>undefined</b>, it should be a function that accepts two
+	arguments <i>x</i> and <i>y</i>
+	and returns a negative value if <i>x</i>
+	&lt; <i>y</i>,
+	zero if <i>x</i> =
+	<i>y</i>, or a positive
+	value if <i>x</i> &gt;
+	<i>y</i>.</p>
+	<p>
+	Let
+	<i>obj </i>be the result
+	of calling <a href="x9.html#x9.9">ToObject</a> passing the <b>this </b>value as the argument.</p>
+	<p>
+	Let
+	<i>len</i> be the result
+	of applying Uint32 to the result of calling the [[Get]] internal
+	method of <i>obj</i> with
+	argument "<code><b>length</b></code>".</p>
+	<p>
+	If
+	<i>comparefn</i> is not
+	<b>undefined</b> and is not a consistent comparison function for the
+	<a href="#array-element">elements of this array</a> (see below), the behaviour of <code><b>sort</b></code>
+	is implementation-defined.</p>
+	<p>
+	Let
+	<i>proto</i> be the value
+	of the [[Prototype]] internal property of <i>obj</i>.
+	If <i>proto</i> is not
+	<b>null</b> and there exists an integer  <i>j</i>
+	such that all of the conditions below are satisfied then the
+	behaviour of <code><b>sort</b></code>
+	is implementation-defined:</p>
+	<ul><li><p>
+		<i>obj</i>
+		is <a href="#sparse">sparse</a> (<a href="#x15.4">15.4</a>)</p>
+		</li>
+		<li><p>
+		0 <span class="symbol">&#8804;</span>
+		<i>j</i> &lt; <i>len</i></p>
+		</li>
+		<li><p>
+		The
+		result of calling the [[HasProperty]] internal method of <i>proto</i>
+		with argument <a href="x9.html#x9.8">ToString</a>(<i>j</i>)
+		is <b>true</b>.</p>
+	</li></ul><p>
+	The
+	behaviour of <code><b>sort</b></code>
+	is also implementation defined if <i>obj </i>is <a href="#sparse">sparse</a> and any of the following conditions are true:</p>
+	<ul><li><p>
+		The
+		[[Extensible]] internal property of <i>obj</i>
+		is <b>false</b>.</p>
+		</li>
+		<li><p>
+		Any
+		array index property of <i>obj</i>
+		whose name is a nonnegative integer less than <i>len </i>is a data property whose [[Configurable]] attribute is
+		<b>false</b>.</p>
+	</li></ul><p>
+	The
+	behaviour of <code><b>sort</b></code>
+	is also implementation defined if any array index property of <i>obj</i>
+	whose name is a nonnegative integer less than <i>len</i>
+	is an accessor property or is a data property whose [[Writable]]
+	attribute is <b>false</b>.</p>
+	<p>
+	Otherwise,
+	the following steps are taken.</p>
+	<ol><li><p>
+		Perform
+		an implementation-dependent sequence of calls to the [[Get]] ,
+		[[Put]], and [[Delete]] internal methods of <i>obj</i> and to
+		<a href="#SortCompare">SortCompare</a> (described below), where the first argument for each
+		call to [[Get]], [[Put]], or [[Delete]] is a nonnegative integer
+		less than <i>len </i>and where the arguments for calls to
+		<a href="#SortCompare">SortCompare</a> are results of previous calls to the [[Get]] internal
+		method. The throw argument to the [[Put]] and [[Delete]] internal
+		methods will be the value <b>true</b>. If <i>obj</i> is not <a href="#sparse">sparse</a>
+		then [[Delete]] must not be called.</p>
+		</li>
+		<li><p>
+		Return
+		<i>obj</i>.</p>
+	</li></ol><p>
+	The
+	returned object must have the following two properties.</p>
+	<ul><li><p>
+		There
+		must be some mathematical permutation <span class="symbol">&#960;</span>
+		of the nonnegative integers less than <i>len</i>,
+		such that for every nonnegative integer <i>j</i>
+		less than <i>len</i>, if
+		property old[<i>j</i>]<code><b>
+		</b></code>existed, then new[<span class="symbol">&#960;</span>(<i>j</i>)]
+		is exactly the same value as old[<i>j</i>]<b>,</b>.
+		But if property old[<i>j</i>]<code><b>
+		</b></code>did not exist, then new[<span class="symbol">&#960;</span>(<i>j</i>)]
+		does not exist.</p>
+		</li>
+		<li><p>
+		Then
+		for all nonnegative integers <i>j</i>
+		and <i>k</i>, each less
+		than <i>len</i>, if
+		<a href="#SortCompare">SortCompare</a>(<i>j</i>,<i>k</i>)
+		&lt; 0<code> </code>(see
+		<a href="#SortCompare">SortCompare</a> below), then <span class="symbol"><b>&#960;</b></span>(<i>j</i>)
+		&lt; <span class="symbol"><b>&#960;</b></span>(<i>k</i>).</p>
+	</li></ul><p>
+	Here
+	the notation old[<i>j</i>]
+	is used to refer to the hypothetical result of calling the [[Get]]
+	internal method of <i>obj</i>
+	with argument <i>j</i>
+	before this function is executed, and the notation new[<i>j</i>]
+	to refer to the hypothetical result of calling the [[Get]] internal
+	method of <i>obj</i> with
+	argument <i>j</i> after
+	this function has been executed.</p>
+	<p>
+	A
+	function <i>comparefn</i>
+	is a consistent comparison function for a set of values <i>S</i>
+	if all of the requirements below are met for all values <i>a</i>,
+	<i>b</i>, and <i>c</i>
+	(possibly the same value) in the set <i>S</i>:
+	The notation <i>a</i>&#160;&lt;<sub>CF</sub>&#160;<i>b</i>
+	means <i>comparefn</i>(<i>a</i>,<i>b</i>)&#160;&lt;&#160;0;
+	<i>a</i>&#160;=<sub>CF</sub>&#160;<i>b</i>
+	means <i>comparefn</i>(<i>a</i>,<i>b</i>)&#160;=&#160;0
+	(of either sign); and <i>a</i>&#160;&gt;<sub>CF</sub>&#160;<i>b</i>
+	means <i>comparefn</i>(<i>a</i>,<i>b</i>)&#160;&gt;&#160;0.</p>
+	<ul><li><p>
+		Calling
+		<i>comparefn</i>(<i>a</i>,<i>b</i>)
+		always returns the same value <i>v</i>
+		when given a specific pair of values <i>a</i>
+		and <i>b</i>
+		as its two arguments. Furthermore, <a href="x8.html#Type">Type</a>(<i>v</i>)
+		is Number, and <i>v</i>
+		is not NaN. Note that this implies that exactly one of <i>a</i>&#160;&lt;<sub>CF</sub>&#160;<i>b</i>,
+		<i>a</i>&#160;=<sub>CF</sub>&#160;<i>b</i>,
+		and <i>a</i>&#160;&gt;<sub>CF</sub>&#160;<i>b</i>
+		will be true for a given pair of <i>a</i>
+		and <i>b</i>.</p>
+		</li>
+		<li><p>
+		Calling
+		<i>comparefn</i>(<i>a</i>,<i>b</i>)
+		does not modify the <b>this</b>
+		object.</p>
+		</li>
+		<li><p>
+		<i>a</i>&#160;=<sub>CF</sub>&#160;<i>a</i>
+		  (reflexivity)</p>
+		</li>
+		<li><p>
+		If
+		<i>a</i>&#160;=<sub>CF</sub>&#160;<i>b</i>,
+		then <i>b</i>&#160;=<sub>CF</sub>&#160;<i>a</i>
+		  (symmetry)</p>
+		</li>
+		<li><p>
+		If
+		<i>a</i>&#160;=<sub>CF</sub>&#160;<i>b</i>
+		and <i>b</i>&#160;=<sub>CF</sub>&#160;<i>c</i>,
+		then <i>a</i>&#160;=<sub>CF</sub>&#160;<i>c</i>
+		  (transitivity of =<sub>CF</sub>)</p>
+		</li>
+		<li><p>
+		If
+		<i>a</i>&#160;&lt;<sub>CF</sub>&#160;<i>b</i>
+		and <i>b</i>&#160;&lt;<sub>CF</sub>&#160;<i>c</i>,
+		then <i>a</i>&#160;&lt;<sub>CF</sub>&#160;<i>c</i>
+		  (transitivity of &lt;<sub>CF</sub>)</p>
+		</li>
+		<li><p>
+		If
+		<i>a</i>&#160;&gt;<sub>CF</sub>&#160;<i>b</i>
+		and <i>b</i>&#160;&gt;<sub>CF</sub>&#160;<i>c</i>,
+		then <i>a</i>&#160;&gt;<sub>CF</sub>&#160;<i>c</i>
+		  (transitivity of &gt;<sub>CF</sub>)</p>
+	</li></ul><p><b class="note">NOTE</b> The
+	above conditions are necessary and sufficient to ensure that
+	<i>comparefn</i> divides
+	the set <i>S</i> into
+	equivalence classes and that these equivalence classes are totally
+	ordered.</p>
+	<p>
+	When
+	the <dfn id="SortCompare">SortCompare</dfn> abstract operation is called with two arguments <i>j</i>
+	and <i>k</i>, the
+	following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>jString</i> be <a href="x9.html#x9.8">ToString</a>(<i>j</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>kString</i> be <a href="x9.html#x9.8">ToString</a>(<i>k</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>hasj</i> be the result of calling the [[HasProperty]] internal
+		method of <i>obj</i> with argument <i>jString</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>hask</i> be the result of calling the [[HasProperty]] internal
+		method of <i>obj</i> with argument <i>kString</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>hasj </i>and<i> hask </i>are both<i> </i><b>false</b>, then
+		return <b>+0</b>.</p>
+		</li>
+		<li><p>
+		If
+		<i>hasj </i>is <b>false</b>, then return 1.</p>
+		</li>
+		<li><p>
+		If
+		<i>hask </i>is <b>false</b>, then return &#8211;1.</p>
+		</li>
+		<li><p>
+		Let
+		<i>x</i> be the result of calling the [[Get]] internal method of
+		<i>obj</i> with argument <i>jString</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>y</i> be the result of calling the [[Get]] internal method of
+		<i>obj</i> with argument <i>kString</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i> and <i>y</i> are both <b>undefined</b>, return <b>+0</b>.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i> is <b>undefined</b>, return 1.</p>
+		</li>
+		<li><p>
+		If
+		<i>y</i> is <b>undefined</b>, return <span class="symbol">&#8722;</span>1.</p>
+		</li>
+		<li><p>
+		If
+		the argument <i>comparefn</i> is not <b>undefined</b>, then</p>
+		<ol><li><p>
+			If
+			<a href="x9.html#x9.11">IsCallable</a>(<i>comparefn</i>) is <b>false</b>, throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+			exception.</p>
+			</li>
+			<li><p>
+			Return
+			the result of calling the [[Call]] internal method of <i>comparefn</i>
+			passing <b>undefined</b> as the <b>this</b> value and with
+			arguments <i>x</i> and <i>y</i>.</p>
+		</li></ol></li>
+		<li><p>
+		Let
+		<i>xString</i> be <a href="x9.html#x9.8">ToString</a>(<i>x</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>yString</i> be <a href="x9.html#x9.8">ToString</a>(<i>y</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>xString</i> &lt; <i>yString</i>, return <span class="symbol">&#8722;</span>1.</p>
+		</li>
+		<li><p>
+		If
+		<i>xString</i> &gt; <i>yString</i>, return 1.</p>
+		</li>
+		<li><p>
+		Return
+		<b>+0</b>.</p>
+	</li></ol><p class="sp"><b class="note">NOTE 1</b> Because non-existent property values always compare greater than
+	<b>undefined</b> property values, and <b>undefined</b> always
+	compares greater than any other value, undefined property values
+	always sort to the end of the result, followed by non-existent
+	property values.</p>
+	<p class="sp"><b class="note">NOTE 2</b> The <code><b>sort</b></code>
+	function is intentionally generic; it does not require that its <b>this</b>
+	value be an Array object. Therefore, it can be transferred to other
+	kinds of objects for use as a method. Whether the <code><b>sort</b></code>
+	function can be applied successfully to a host object is
+	implementation-dependent.</p>
+	<h5 id="x15.4.4.12">15.4.4.12 Array.prototype.splice (start, deleteCount [ , item1 [ , item2 [ , &#8230; ] ] ] ) <a href="#x15.4.4.12">#</a> <a href="#x15.4.4.12-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <code><b>splice</b></code> method
+	is called with two or more arguments <i>start</i>,
+	<i>deleteCount</i> and
+	(optionally) <i>item1</i>,
+	<i>item2</i>, etc., the
+	<i>deleteCount</i>
+	<a href="#array-element">elements of the array</a> starting at array index <i>start</i>
+	are replaced by the arguments <i>item1</i>,
+	<i>item2</i>, etc. An
+	Array object containing the deleted elements (if any) is returned.
+	The following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>O </i>be the result of calling <a href="x9.html#x9.9">ToObject</a> passing the <b>this
+		</b>value as the argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>A</i> be a new array created as if by the expression <code><b>new
+		Array()</b></code>where <code><b>Array</b></code>
+		is the standard built-in constructor with that name.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lenVal</i> be the result of calling the [[Get]] internal method
+		of <i>O</i> with argument <code>"</code><code><b>length</b></code><code>"</code>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>len</i> be <a href="x9.html#x9.6">ToUint32</a>(<i>lenVal</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>relativeStart</i> be <a href="x9.html#x9.4">ToInteger</a>(<i>start</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>relativeStart</i> is negative, let <i>actualStart</i> be
+		max((<i>len</i> +<i> relativeStart</i>),0); else let <i>actualStart</i>
+		be min(<i>relativeStart</i>,<i> len</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>actualDeleteCount</i> be min(max(<a href="x9.html#x9.4">ToInteger</a>(<i>deleteCount</i>),0),<i>len</i> &#8211;<i> actualStart</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>k</i> be 0.</p>
+		</li>
+		<li><p>
+		Repeat,
+		while <i>k</i> &lt; <i>actualDeleteCount</i></p>
+		<ol><li><p>
+			Let
+			<i>from</i> be <a href="x9.html#x9.8">ToString</a>(<i>actualStart</i>+<i>k</i>).</p>
+			</li>
+			<li><p>
+			Let
+			<i>fromPresent</i> be the result of calling the [[HasProperty]]
+			internal method of <i>O</i> with argument <i>from</i>.</p>
+			</li>
+			<li><p>
+			If
+			<i>fromPresent</i> is <b>true</b>, then</p>
+			<ol><li><p>
+				Let
+				<i>fromValue</i> be the result of calling the [[Get]] internal
+				method of <i>O</i> with argument <i>from</i>.</p>
+				</li>
+				<li><p>
+				Call
+				the [[DefineOwnProperty]] internal method of <i>A</i> with
+				arguments <a href="x9.html#x9.8">ToString</a>(<i>k</i>), <a href="x8.html#x8.10">Property Descriptor</a> {[[Value]]:
+				<i>fromValue</i>, [[Writable]]: <b>true</b>, [[Enumerable]]:
+				<b>true</b>, [[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
+			</li></ol></li>
+			<li><p>
+			Increment
+			<i>k</i> by 1.</p>
+		</li></ol></li>
+		<li><p>
+		Let
+		<i>items</i> be an internal <a href="x8.html#x8.8">List</a> whose elements are, in left to
+		right order, the portion of the actual argument list starting with
+		<i>item1</i>. The list will be empty if no such items are present.</p>
+		</li>
+		<li><p>
+		Let
+		<i>itemCount</i> be the number of elements in <i>items</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>itemCount</i> &lt; <i>actualDeleteCount</i>, then</p>
+		<ol><li><p>
+			Let
+			<i>k</i> be <i>actualStart</i>.</p>
+			</li>
+			<li><p>
+			Repeat,
+			while <i>k</i> &lt; (<i>len</i> &#8211; <i>actualDeleteCount</i>)</p>
+			<ol><li><p>
+				Let
+				<i>from</i> be <a href="x9.html#x9.8">ToString</a>(<i>k</i>+<i>actualDeleteCount</i>).</p>
+				</li>
+				<li><p>
+				Let
+				<i>to</i> be <a href="x9.html#x9.8">ToString</a>(<i>k</i>+<i>itemCount</i>).</p>
+				</li>
+				<li><p>
+				Let
+				<i>fromPresent</i> be the result of calling the [[HasProperty]]
+				internal method of <i>O</i> with argument <i>from</i>.</p>
+				</li>
+				<li><p>
+				If
+				<i>fromPresent</i> is <b>true</b>, then</p>
+				<ol><li><p>
+					Let
+					<i>fromValue</i> be the result of calling the [[Get]] internal
+					method of <i>O</i> with argument <i>from</i>.</p>
+					</li>
+					<li><p>
+					Call
+					the [[Put]] internal method of <i>O</i> with arguments <i>to</i>,
+					<i>fromValue</i>, and <b>true</b>.</p>
+				</li></ol></li>
+				<li><p>
+				Else,
+				<i>fromPresent</i> is <b>false</b></p>
+				<ol><li><p>
+					Call
+					the [[Delete]] internal method of <i>O</i> with arguments <i>to</i>
+					and <b>true</b>.</p>
+				</li></ol></li>
+				<li><p>
+				Increase
+				k by 1.</p>
+			</li></ol></li>
+			<li><p>
+			Let
+			<i>k</i> be <i>len</i>.</p>
+			</li>
+			<li><p>
+			Repeat,
+			while <i>k</i> &gt; (<i>len</i> &#8211;<i> actualDeleteCount</i> +<i>itemCount</i>) 
+			</p>
+			<ol><li><p>
+				Call
+				the [[Delete]] internal method of <i>O</i> with arguments
+				<a href="x9.html#x9.8">ToString</a>(<i>k</i>&#8211;1) and <b>true</b>.</p>
+				</li>
+				<li><p>
+				Decrease
+				<i>k</i> by 1.</p>
+			</li></ol></li></ol></li>
+		<li><p>
+		Else
+		if <i>itemCount</i> &gt; <i>actualDeleteCount</i>, then</p>
+		<ol><li><p>
+			Let
+			<i>k</i> be (<i>len</i> &#8211;<i> actualDeleteCount</i>).</p>
+			</li>
+			<li><p>
+			Repeat,
+			while <i>k</i> &gt; <i>actualStart</i></p>
+			<ol><li><p>
+				Let
+				<i>from</i> be <a href="x9.html#x9.8">ToString</a>(<i>k </i>+<i> actualDeleteCount</i> &#8211;
+				1).</p>
+				</li>
+				<li><p>
+				Let
+				<i>to</i> be <a href="x9.html#x9.8">ToString</a>(<i>k </i>+<i> itemCount</i> &#8211; 1)</p>
+				</li>
+				<li><p>
+				Let
+				<i>fromPresent</i> be the result of calling the [[HasProperty]]
+				internal method of <i>O</i> with argument <i>from</i>.</p>
+				</li>
+				<li><p>
+				If
+				<i>fromPresent</i> is <b>true</b>, then</p>
+				<ol><li><p>
+					Let
+					<i>fromValue</i> be the result of calling the [[Get]] internal
+					method of <i>O</i> with argument <i>from</i>.</p>
+					</li>
+					<li><p>
+					Call
+					the [[Put]] internal method of <i>O</i> with arguments <i>to</i>,
+					<i>fromValue</i>, and <b>true</b>.</p>
+				</li></ol></li>
+				<li><p>
+				Else,
+				<i>fromPresent</i> is <b>false</b></p>
+				<ol><li><p>
+					Call
+					the [[Delete]] internal method of <i>O</i> with argument <i>to</i>
+					and <b>true</b>.</p>
+				</li></ol></li>
+				<li><p>
+				Decrease
+				<i>k</i> by 1.</p>
+			</li></ol></li></ol></li>
+		<li><p>
+		Let
+		<i>k</i> be <i>actualStart</i>.</p>
+		</li>
+		<li><p>
+		Repeat,
+		while <i>items</i> is not empty</p>
+		<ol><li><p>
+			Remove
+			the first element from <i>items</i> and let <i>E</i> be the value
+			of that element.</p>
+			</li>
+			<li><p>
+			Call
+			the [[Put]] internal method of <i>O</i> with arguments
+			<a href="x9.html#x9.8">ToString</a>(<i>k</i>), <i>E</i>, and <b>true</b>.</p>
+			</li>
+			<li><p>
+			Increase
+			<i>k</i> by 1.</p>
+		</li></ol></li>
+		<li><p>
+		Call
+		the [[Put]] internal method of <i>O</i> with arguments <code>"</code><code><b>length</b></code><code>"</code>,
+		(<i>len </i>&#8211;<i> actualDeleteCount</i> +<i> itemCount</i>), and
+		<b>true</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>A</i>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>splice</b></code> method
+	is <b>2</b>.</p>
+	<p><b class="note">NOTE</b> The
+	<code><b>splice</b></code> function is
+	intentionally generic; it does not require that its <b>this</b>
+	value be an Array object. Therefore it can be transferred to other
+	kinds of objects for use as a method. Whether the <code><b>splice</b></code>
+	function can be applied successfully to a host object is
+	implementation-dependent.</p>
+	<h5 id="x15.4.4.13">15.4.4.13 Array.prototype.unshift ( [ item1 [ , item2 [ , &#8230; ] ] ] ) <a href="#x15.4.4.13">#</a> <a href="#x15.4.4.13-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	arguments are prepended to the start of the array, such that their
+	order within the array is the same as the order in which they appear
+	in the argument list.</p>
+	<p>
+	When
+	the <code><b>unshift</b></code> method
+	is called with zero or more arguments <i>item1</i>,<i>item2</i>, etc., the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>O </i>be the result of calling <a href="x9.html#x9.9">ToObject</a> passing the <b>this
+		</b>value as the argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lenVal</i> be the result of calling the  [[Get]] internal method
+		of <i>O</i> with argument <code>"</code><code><b>length</b></code><code>"</code>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>len</i> be <a href="x9.html#x9.6">ToUint32</a>(<i>lenVal</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>argCount</i> be the number of actual arguments.</p>
+		</li>
+		<li><p>
+		Let
+		<i>k</i> be <i>len</i>.</p>
+		</li>
+		<li><p>
+		Repeat,
+		while <i>k</i> &gt; 0, 
+		</p>
+		<ol><li><p>
+			Let
+			<i>from</i> be <a href="x9.html#x9.8">ToString</a>(<i>k</i>&#8211;1).</p>
+			</li>
+			<li><p>
+			Let
+			<i>to</i> be <a href="x9.html#x9.8">ToString</a>(<i>k</i>+<i>argCount</i> &#8211;1).</p>
+			</li>
+			<li><p>
+			Let
+			<i>fromPresent</i> be the result of calling the [[HasProperty]]
+			internal method of <i>O</i> with argument <i>from</i>.</p>
+			</li>
+			<li><p>
+			If
+			<i>fromPresent</i> is <b>true</b>, then</p>
+			<ol><li><p>
+				Let
+				<i>fromValue</i> be the result of calling the [[Get]] internal
+				method of <i>O</i> with argument <i>from</i>.</p>
+				</li>
+				<li><p>
+				Call
+				the [[Put]] internal method of <i>O</i> with arguments <i>to</i>,
+				<i>fromValue</i>, and <b>true</b>.</p>
+			</li></ol></li>
+			<li><p>
+			Else,
+			<i>fromPresent</i> is <b>false</b></p>
+			<ol><li><p>
+				Call
+				the [[Delete]] internal method of <i>O</i> with arguments <i>to</i>,
+				and <b>true</b>.</p>
+			</li></ol></li>
+			<li><p>
+			Decrease
+			<i>k</i> by 1.</p>
+		</li></ol></li>
+		<li><p>
+		Let
+		<i>j</i> be 0.</p>
+		</li>
+		<li><p>
+		Let
+		<i>items</i> be an internal <a href="x8.html#x8.8">List</a> whose elements are, in left to
+		right order, the arguments that were passed to this function
+		invocation.</p>
+		</li>
+		<li><p>
+		Repeat,
+		while <i>items</i> is not empty</p>
+		<ol><li><p>
+			Remove
+			the first element from <i>items</i> and let <i>E</i> be the value
+			of that element.</p>
+			</li>
+			<li><p>
+			Call
+			the [[Put]] internal method of <i>O</i> with arguments
+			<a href="x9.html#x9.8">ToString</a>(<i>j</i>), <i>E</i>, and <b>true</b>.</p>
+			</li>
+			<li><p>
+			Increase
+			<i>j</i> by 1.</p>
+		</li></ol></li>
+		<li><p>
+		Call
+		the [[Put]] internal method of <i>O</i> with arguments <code>"</code><code><b>length</b></code><code>"</code>,
+		<i>len</i>+<i>argCount</i>, and <b>true</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>len</i>+<i>argCount</i>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>unshift</b></code> method
+	is <b>1</b>.</p>
+	<p><b class="note">NOTE</b> The
+	<code><b>unshift</b></code> function
+	is intentionally generic; it does not require that its <b>this</b>
+	value be an Array object. Therefore it can be transferred to other
+	kinds of objects for use as a method. Whether the <code><b>unshift</b></code>
+	function can be applied successfully to a host object is
+	implementation-dependent.</p>
+	<h5 id="x15.4.4.14">15.4.4.14 Array.prototype.indexOf ( searchElement [ , fromIndex ] ) <a href="#x15.4.4.14">#</a> <a href="#x15.4.4.14-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	<code><b>indexOf</b></code>
+	compares <i>searchElement</i>
+	to the <a href="#array-element">elements of the array</a>, in ascending order, using the internal
+	Strict Equality Comparison Algorithm (<a href="x11.html#x11.9.6">11.9.6</a>), and if found at one
+	or more positions, returns the index of the first such position;
+	otherwise, -1 is returned.</p>
+	<p>
+	The
+	optional second argument <i>fromIndex</i>
+	defaults to 0 (i.e. the whole array is searched). If it is greater
+	than or equal to the length of the array, -1 is returned, i.e. the
+	array will not be searched. If it is negative, it is used as the
+	offset from the end of the array to compute <i>fromIndex</i>.
+	If the computed index is less than 0, the whole array will be
+	searched.</p>
+	<p>
+	When
+	the <code><b>indexOf</b></code> method
+	is called with one or two arguments, the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>O </i>be the result of calling <a href="x9.html#x9.9">ToObject</a> passing the <b>this
+		</b>value as the argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lenValue</i>  be the result of calling the [[Get]] internal
+		method of <i>O </i>with the argument <code>"</code><code><b>length</b></code><code>"</code>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>len</i> be <a href="x9.html#x9.6">ToUint32</a>(<i>lenValue</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>len</i> is 0, return -1.</p>
+		</li>
+		<li><p>
+		If
+		argument <i>fromIndex</i> was passed let <i>n</i> be
+		<a href="x9.html#x9.4">ToInteger</a>(<i>fromIndex</i>); else let <i>n</i> be 0.</p>
+		</li>
+		<li><p>
+		If
+		<i>n </i>&#8805; <i>len</i>, return -1.</p>
+		</li>
+		<li><p>
+		If
+		<i>n </i>&#8805; 0, then 
+		</p>
+		<ol><li><p>
+			Let
+			<i>k </i>be <i>n</i>.</p>
+		</li></ol></li>
+		<li><p>
+		Else,
+		<i>n</i>&lt;0</p>
+		<ol><li><p>
+			Let
+			<i>k </i>be <i>len</i> - <a href="x5.html#abs">abs</a>(<i>n</i>).</p>
+			</li>
+			<li><p>
+			If
+			<i>k </i>is less than 0, then let <i>k</i> be 0.</p>
+		</li></ol></li>
+		<li><p>
+		Repeat,
+		while <i>k</i>&lt;<i>len</i></p>
+		<ol><li><p>
+			Let
+			<i>kPresent</i> be the result of calling the [[HasProperty]]
+			internal method of <i>O</i> with argument <a href="x9.html#x9.8">ToString</a>(<i>k</i>).</p>
+			</li>
+			<li><p>
+			If
+			<i>kPresent</i> is <b>true</b>, then</p>
+			<ol><li><p>
+				Let
+				<i>elementK</i> be the result of calling the [[Get]] internal
+				method of <i>O </i>with the argument <a href="x9.html#x9.8">ToString</a>(<i>k</i>).</p>
+				</li>
+				<li><p>
+				Let
+				<i>same</i> be the result of applying the Strict Equality
+				Comparison Algorithm to<i> searchElement</i> and <i>elementK</i>.</p>
+				</li>
+				<li><p>
+				If
+				<i>same</i> is <b>true,  </b>return <i>k</i>.</p>
+			</li></ol></li>
+			<li><p>
+			Increase
+			<i>k </i>by 1.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		-1.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>indexOf</b></code> method
+	is <b>1</b>.</p>
+	<p><b class="note">NOTE</b> The
+	<code><b>indexOf</b></code> function
+	is intentionally generic; it does not require that its <b>this</b>
+	value be an Array object. Therefore it can be transferred to other
+	kinds of objects for use as a method. Whether the <code><b>indexOf</b></code>
+	function can be applied successfully to a host object is
+	implementation-dependent.</p>
+	<h5 id="x15.4.4.15">15.4.4.15 Array.prototype.lastIndexOf ( searchElement [ , fromIndex ] ) <a href="#x15.4.4.15">#</a> <a href="#x15.4.4.15-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	<code><b>lastIndexOf</b></code>
+	compares <i>searchElement</i>
+	to the <a href="#array-element">elements of the array</a> in descending order using the internal
+	Strict Equality Comparison Algorithm (<a href="x11.html#x11.9.6">11.9.6</a>), and if found at one
+	or more positions, returns the index of the last such position;
+	otherwise, -1 is returned.</p>
+	<p>
+	The
+	optional second argument <i>fromIndex</i>
+	defaults to the array's length minus one (i.e. the whole array is searched).
+	If it is greater than or equal to the length of the array, the whole
+	array will be searched. If it is negative, it is used as the offset
+	from the end of the array to compute <i>fromIndex</i>.
+	If the computed index is less than 0, -1 is returned.</p>
+	<p>
+	When
+	the <code><b>lastIndexOf</b></code>
+	method is called with one or two arguments, the following steps are
+	taken:</p>
+	<ol><li><p>
+		Let
+		<i>O</i> be the result of calling <a href="x9.html#x9.9">ToObject</a> passing the <b>this
+		</b>value as the argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lenValue</i>  be the result of calling the [[Get]] internal
+		method of <i>O </i>with the argument <code>"</code><code><b>length</b></code><code>"</code>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>len</i> be <a href="x9.html#x9.6">ToUint32</a>(<i>lenValue</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>len</i> is 0, return -1.</p>
+		</li>
+		<li><p>
+		If
+		argument <i>fromIndex</i> was passed let <i>n</i> be
+		<a href="x9.html#x9.4">ToInteger</a>(<i>fromIndex</i>); else let <i>n</i> be <i>len</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>n</i> &#8805; <i>0</i>, then let <i>k</i> be min(<i>n</i>, <i>len</i>
+		&#8211; 1).</p>
+		</li>
+		<li><p>
+		Else,
+		 <i>n</i> &lt; 0</p>
+		<ol><li><p>
+			Let
+			<i>k</i> be <i>len</i> - <a href="x5.html#abs">abs</a>(<i>n</i>).</p>
+		</li></ol></li>
+		<li><p>
+		Repeat,
+		while <i>k</i>&#8805; <i>0</i></p>
+		<ol><li><p>
+			Let
+			<i>kPresent</i> be the result of calling the [[HasProperty]]
+			internal method of <i>O</i> with argument <a href="x9.html#x9.8">ToString</a>(<i>k</i>).</p>
+			</li>
+			<li><p>
+			If
+			<i>kPresent</i> is <b>true</b>, then</p>
+			<ol><li><p>
+				Let
+				<i>elementK</i> be the result of calling the [[Get]] internal
+				method of <i>O </i>with the argument <a href="x9.html#x9.8">ToString</a>(<i>k</i>).</p>
+				</li>
+				<li><p>
+				Let
+				<i>same</i> be the result of applying the Strict Equality
+				Comparision Algorithm to<i> searchElement</i> and <i>elementK</i>.</p>
+				</li>
+				<li><p>
+				If
+				<i>same</i> is <b>true,  </b>return <i>k</i>.</p>
+			</li></ol></li>
+			<li><p>
+			Decrease
+			<i>k</i> by 1.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		-1.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>lastIndexOf</b></code>
+	method is <b>1</b>.</p>
+	<p><b class="note">NOTE</b> The
+	<code><b>lastIndexOf</b></code>
+	function is intentionally generic; it does not require that its <b>this</b>
+	value be an Array object. Therefore it can be transferred to other
+	kinds of objects for use as a method. Whether the <code><b>lastIndexOf</b></code>
+	function can be applied successfully to a host object is
+	implementation-dependent.</p>
+	<h5 id="x15.4.4.16">15.4.4.16 Array.prototype.every ( callbackfn [ , thisArg ] ) <a href="#x15.4.4.16">#</a> <a href="#x15.4.4.16-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	<i>callbackfn </i>should be a function that accepts three arguments and
+	returns a value that is coercible to the Boolean value <b>true</b>
+	or <b>false</b>. <code><b>every</b></code>
+	calls <i>callbackfn</i>
+	once for <a href="#array-element">each element present in the array</a>, in ascending order,
+	until it finds one where <i>callbackfn</i>
+	returns <b>false</b>. If such an element is found, <code><b>every</b></code>
+	immediately returns <b>false</b>. Otherwise, if <i>callbackfn</i>
+	returned <b>true</b> for all elements, <code><b>every</b></code>
+	will return <b>true</b>. <i>callbackfn</i>
+	is called only for <a href="#array-element">elements of the array</a> which actually exist; it is
+	not called for missing <a href="#array-element">elements of the array</a>.</p>
+	<p>
+	If a
+	<i>thisArg</i> parameter
+	is provided, it will be used as the <b>this </b>value for each
+	invocation of <i>callbackfn</i>.
+	If it is not provided, <b>undefined</b> is used instead.</p>
+	<p>
+	<i>callbackfn</i>
+	is called with three arguments: the value of the element, the index
+	of the element, and the object being traversed.</p>
+	<p>
+	<code><b>every</b></code>
+	does not directly mutate the object on which it is called but the
+	object may be mutated by the calls to <i>callbackfn</i>.
+	
+	</p>
+	<p>
+	The
+	range of elements processed by <code><b>every</b></code>
+	is set before the first call to <i>callbackfn</i>.
+	Elements which are appended to the array after the call to <code><b>every</b></code>
+	begins will not be visited by <i>callbackfn</i>.
+	If existing <a href="#array-element">elements of the array</a> are changed, their value as passed
+	to <i>callbackfn</i> will
+	be the value at the time <code><b>every</b></code>
+	visits them; elements that are deleted after the call to <code><b>every</b></code>
+	begins and before being visited are not visited. <code><b>every</b></code>
+	acts like the "for all" quantifier in mathematics. In
+	particular, for an empty array, it returns <b>true</b>.</p>
+	<p>
+	When
+	the <code><b>every</b></code> method
+	is called with one or two arguments, the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>O</i> be the result of calling <a href="x9.html#x9.9">ToObject</a> passing the <b>this
+		</b>value as the argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lenValue</i>  be the result of calling the [[Get]] internal
+		method of <i>O</i> with the argument <code><b>"length"</b></code>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>len</i> be <a href="x9.html#x9.6">ToUint32</a>(<i>lenValue</i>).</p>
+		</li>
+		<li><p>
+		If
+		<a href="x9.html#x9.11">IsCallable</a>(<i>callbackfn</i>) is <b>false</b>, throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		exception.</p>
+		</li>
+		<li><p>
+		If
+		<i>thisArg</i> was supplied, let <i>T</i> be <i>thisArg</i>; else
+		let <i>T</i> be <b>undefined</b>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>k</i> be 0.</p>
+		</li>
+		<li><p>
+		Repeat,
+		while <i>k </i>&lt; <i>len</i></p>
+		<ol><li><p>
+			Let
+			<i>Pk</i> be <a href="x9.html#x9.8">ToString</a>(<i>k</i>).</p>
+			</li>
+			<li><p>
+			Let
+			<i>kPresent</i> be the result of calling the [[HasProperty]]
+			internal method of <i>O</i> with argument <i>Pk</i>.</p>
+			</li>
+			<li><p>
+			If
+			<i>kPresent</i> is <b>true</b>, then</p>
+			<ol><li><p>
+				Let
+				<i>kValue</i> be the result of calling the [[Get]] internal
+				method of <i>O</i> with argument <i>Pk</i>.</p>
+				</li>
+				<li><p>
+				Let
+				<i>testResult</i> be the result of calling the [[Call]] internal
+				method of <i>callbackfn</i> with <i>T</i> as the <b>this</b>
+				value and argument list containing <i>kValue</i>, <i>k</i>, and
+				<i>O</i>.</p>
+				</li>
+				<li><p>
+				If
+				<a href="x9.html#x9.2">ToBoolean</a>(<i>testResult)</i> is <b>false</b>, return <b>false</b>.</p>
+			</li></ol></li>
+			<li><p>
+			Increase
+			<i>k</i> by 1.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		<b>true</b>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>every</b></code> method
+	is <b>1</b>.</p>
+	<p><b class="note">NOTE</b> The
+	<code><b>every</b></code> function is
+	intentionally generic; it does not require that its <b>this</b>
+	value be an Array object. Therefore it can be transferred to other
+	kinds of objects for use as a method. Whether the <code><b>every</b></code>
+	function can be applied successfully to a host object is
+	implementation-dependent.</p>
+	<h5 id="x15.4.4.17">15.4.4.17 Array.prototype.some ( callbackfn [ , thisArg ] ) <a href="#x15.4.4.17">#</a> <a href="#x15.4.4.17-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	<i>callbackfn </i>should be a function that accepts three arguments and
+	returns a value that is coercible to the Boolean value <b>true</b>
+	or <b>false</b>. <code><b>some</b></code>
+	calls <i>callbackfn</i>
+	once for <a href="#array-element">each element present in the array,</a> in ascending order,
+	until it finds one where <i>callbackfn</i>
+	returns <b>true</b>. If such an element is found, <code><b>some</b></code>
+	immediately returns <b>true</b>. Otherwise, <code><b>some</b></code>
+	returns <b>false</b>. <i>callbackfn</i>
+	is called only for <a href="#array-element">elements of the array</a> which actually exist; it is
+	not called for missing <a href="#array-element">elements of the array</a>.</p>
+	<p>
+	If a
+	<i>thisArg</i> parameter
+	is provided, it will be used as the <b>this </b>value for each
+	invocation of <i>callbackfn</i>.
+	If it is not provided, <b>undefined</b> is used instead.</p>
+	<p>
+	<i>callbackfn</i>
+	is called with three arguments: the value of the element, the index
+	of the element, and the object being traversed.</p>
+	<p>
+	<code><b>some</b></code>
+	does not directly mutate the object on which it is called but the
+	object may be mutated by the calls to <i>callbackfn</i>.</p>
+	<p>
+	The
+	range of elements processed by <code><b>some</b></code>
+	is set before the first call to <i>callbackfn</i>.
+	Elements that are appended to the array after the call to <code><b>some</b></code>
+	begins will not be visited by <i>callbackfn</i>.
+	If existing <a href="#array-element">elements of the array</a> are changed, their value as passed
+	to <i>callbackfn</i> will
+	be the value at the time that <code><b>some</b></code>
+	visits them; elements that are deleted after the call to <code><b>some</b></code>
+	begins and before being visited are not visited.<code><b>
+	some</b></code> acts like the "exists" quantifier in
+	mathematics. In particular, for an empty array, it returns <b>false</b>.</p>
+	<p>
+	When
+	the <code><b>some</b></code> method is
+	called with one or two arguments, the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>O</i> be the result of calling <a href="x9.html#x9.9">ToObject</a> passing the <b>this
+		</b>value as the argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lenValue</i>  be the result of calling the [[Get]] internal
+		method of <i>O</i> with the argument <code><b>"length"</b></code>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>len</i> be <a href="x9.html#x9.6">ToUint32</a>(<i>lenValue</i>).</p>
+		</li>
+		<li><p>
+		If
+		<a href="x9.html#x9.11">IsCallable</a>(<i>callbackfn</i>) is <b>false</b>, throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		exception.</p>
+		</li>
+		<li><p>
+		If
+		<i>thisArg</i> was supplied, let <i>T</i> be <i>thisArg</i>; else
+		let <i>T</i> be <b>undefined</b>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>k</i> be 0.</p>
+		</li>
+		<li><p>
+		Repeat,
+		while <i>k </i>&lt; <i>len</i></p>
+		<ol><li><p>
+			Let
+			<i>Pk</i> be <a href="x9.html#x9.8">ToString</a>(<i>k</i>).</p>
+			</li>
+			<li><p>
+			Let
+			<i>kPresent</i> be the result of calling the [[HasProperty]]
+			internal method of <i>O</i> with argument <i>Pk</i>.</p>
+			</li>
+			<li><p>
+			If
+			<i>kPresent</i> is <b>true</b>, then</p>
+			<ol><li><p>
+				Let
+				<i>kValue</i> be the result of calling the [[Get]] internal
+				method of <i>O</i> with argument <i>Pk</i>.</p>
+				</li>
+				<li><p>
+				Let
+				<i>testResult</i> be the result of calling the [[Call]] internal
+				method of <i>callbackfn</i> with <i>T</i> as the <b>this</b>
+				value and argument list containing <i>kValue</i>, <i>k</i>, and
+				<i>O</i>.</p>
+				</li>
+				<li><p>
+				If
+				<a href="x9.html#x9.2">ToBoolean</a>(<i>testResult)</i> is <b>true</b>, return <b>true</b>.</p>
+			</li></ol></li>
+			<li><p>
+			Increase
+			<i>k</i> by 1.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		<b>false</b>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>some</b></code> method is
+	<b>1</b>.</p>
+	<p><b class="note">NOTE</b> The
+	<code><b>some</b></code> function
+	is intentionally generic; it does not require that its <b>this</b>
+	value be an Array object. Therefore it can be transferred to other
+	kinds of objects for use as a method. Whether the <code><b>some</b></code><b>
+	</b>function can be applied successfully to a host object is
+	implementation-dependent.</p>
+	<h5 id="x15.4.4.18">15.4.4.18 Array.prototype.forEach ( callbackfn [ , thisArg ] ) <a href="#x15.4.4.18">#</a> <a href="#x15.4.4.18-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	<i>callbackfn </i>should be a function that accepts three arguments.
+	<code><b>forEach</b></code> calls
+	<i>callbackfn</i> once
+	for <a href="#array-element">each element present in the array,</a> in ascending order.
+	<i>callbackfn</i> is
+	called only for <a href="#array-element">elements of the array</a> which actually exist; it is
+	not called for missing <a href="#array-element">elements of the array</a>.</p>
+	<p>
+	If a
+	<i>thisArg</i> parameter
+	is provided, it will be used as the <b>this </b>value for each
+	invocation of <i>callbackfn</i>.
+	If it is not provided, <b>undefined</b> is used instead.</p>
+	<p>
+	<i>callbackfn</i>
+	is called with three arguments: the value of the element, the index
+	of the element, and the object being traversed. 
+	</p>
+	<p>
+	<code><b>forEach</b></code>
+	does not directly mutate the object on which it is called but the
+	object may be mutated by the calls to <i>callbackfn</i>.
+	
+	</p>
+	<p>
+	The
+	range of elements processed by <code><b>forEach</b></code>
+	is set before the first call to <i>callbackfn</i>.
+	Elements which are appended to the array after the call to <code><b>forEach</b></code>
+	begins will not be visited by <i>callbackfn</i>.
+	If existing <a href="#array-element">elements of the array</a> are changed, their value as passed
+	to callback will be the value at the time <code><b>forEach</b></code>
+	visits them; elements that are deleted after the call to <code><b>forEach</b></code>
+	begins and before being visited are not visited.</p>
+	<p>
+	When
+	the <code><b>forEach</b></code> method
+	is called with one or two arguments, the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>O</i> be the result of calling <a href="x9.html#x9.9">ToObject</a> passing the <b>this
+		</b>value as the argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lenValue</i>  be the result of calling the [[Get]] internal
+		method of <i>O</i> with the argument <code><b>"length"</b></code>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>len</i> be <a href="x9.html#x9.6">ToUint32</a>(<i>lenValue</i>).</p>
+		</li>
+		<li><p>
+		If
+		<a href="x9.html#x9.11">IsCallable</a>(<i>callbackfn</i>) is <b>false</b>, throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		exception.</p>
+		</li>
+		<li><p>
+		If
+		<i>thisArg</i> was supplied, let <i>T</i> be <i>thisArg</i>; else
+		let <i>T</i> be <b>undefined</b>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>k</i> be 0.</p>
+		</li>
+		<li><p>
+		Repeat,
+		while <i>k </i>&lt; <i>len</i></p>
+		<ol><li><p>
+			Let
+			<i>Pk</i> be <a href="x9.html#x9.8">ToString</a>(<i>k</i>).</p>
+			</li>
+			<li><p>
+			Let
+			<i>kPresent</i> be the result of calling the [[HasProperty]]
+			internal method of <i>O</i> with argument <i>Pk</i>.</p>
+			</li>
+			<li><p>
+			If
+			<i>kPresent</i> is <b>true</b>, then</p>
+			<ol><li><p>
+				Let
+				<i>kValue</i> be the result of calling the [[Get]] internal
+				method of <i>O</i> with argument <i>Pk</i>.</p>
+				</li>
+				<li><p>
+				Call
+				the [[Call]] internal method of <i>callbackfn</i> with <i>T</i>
+				as the <b>this</b> value and argument list containing <i>kValue</i>,
+				<i>k</i>, and <i>O</i>.</p>
+			</li></ol></li>
+			<li><p>
+			Increase
+			<i>k</i> by 1.</p>
+		</li></ol></li>
+		<li><p>
+		Return <b>undefined</b>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>forEach</b></code> method
+	is <b>1</b>.</p>
+	<p><b class="note">NOTE</b> The
+	<code><b>forEach</b></code><b>
+	</b>function is intentionally generic; it does not require that its
+	<b>this</b> value be an Array object. Therefore it can be
+	transferred to other kinds of objects for use as a method. Whether
+	the <code><b>forEach</b></code><b>
+	</b>function can be applied successfully to a host object is
+	implementation-dependent.</p>
+	<h5 id="x15.4.4.19">15.4.4.19 Array.prototype.map ( callbackfn [ , thisArg ] ) <a href="#x15.4.4.19">#</a> <a href="#x15.4.4.19-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	<i>callbackfn </i>should be a function that accepts three arguments. <code><b>map</b></code>
+	calls <i>callbackfn</i>
+	once for <a href="#array-element">each element in the array</a>, in ascending order, and
+	constructs a new Array from the results. <i>callbackfn</i>
+	is called only for <a href="#array-element">elements of the array</a> which actually exist; it is
+	not called for missing <a href="#array-element">elements of the array</a>.</p>
+	<p>
+	If a
+	<i>thisArg</i> parameter
+	is provided, it will be used as the <b>this </b>value for
+	each invocation of <i>callbackfn</i>.
+	If it is not provided, <b>undefined</b> is used instead.</p>
+	<p>
+	<i>callbackfn</i>
+	is called with three arguments: the value of the element, the index
+	of the element, and the object being traversed.</p>
+	<p>
+	<code><b>map</b></code>
+	does not directly mutate the object on which it is called but the
+	object may be mutated by the calls to <i>callbackfn</i>.</p>
+	<p>
+	The
+	range of elements processed by <code><b>map</b></code>
+	is set before the first call to <i>callbackfn</i>.
+	Elements which are appended to the array after the call to <code><b>map</b></code>
+	begins will not be visited by <i>callbackfn</i>.
+	If existing <a href="#array-element">elements of the array</a> are changed, their value as passed
+	to <i>callbackfn</i> will
+	be the value at the time <code><b>map</b></code>
+	visits them; elements that are deleted after the call to <code><b>map</b></code>
+	begins and before being visited are not visited.</p>
+	<p>
+	When
+	the <code><b>map</b></code> method is
+	called with one or two arguments, the following steps are taken: 
+	</p>
+	<ol><li><p>
+		Let
+		<i>O</i> be the result of calling <a href="x9.html#x9.9">ToObject</a> passing the <b>this
+		</b>value as the argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lenValue</i>  be the result of calling the [[Get]] internal
+		method of <i>O</i> with the argument <code><b>"length"</b></code>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>len</i> be <a href="x9.html#x9.6">ToUint32</a>(<i>lenValue</i>).</p>
+		</li>
+		<li><p>
+		If
+		<a href="x9.html#x9.11">IsCallable</a>(<i>callbackfn</i>) is <b>false</b>, throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		exception.</p>
+		</li>
+		<li><p>
+		If
+		<i>thisArg</i> was supplied, let <i>T</i> be <i>thisArg</i>; else
+		let <i>T</i> be <b>undefined</b>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>A</i> be a new array created as if by the expression <code><b>new
+		Array(</b></code> <i>len</i><code><b>)</b></code>
+		where <code><b>Array</b></code> is
+		the standard built-in constructor with that name and <i>len</i> is
+		the value of <i>len</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>k</i> be 0.</p>
+		</li>
+		<li><p>
+		Repeat,
+		while <i>k </i>&lt; <i>len</i></p>
+		<ol><li><p>
+			Let
+			<i>Pk</i> be <a href="x9.html#x9.8">ToString</a>(<i>k</i>).</p>
+			</li>
+			<li><p>
+			Let
+			<i>kPresent</i> be the result of calling the [[HasProperty]]
+			internal method of <i>O</i> with argument <i>Pk</i>.</p>
+			</li>
+			<li><p>
+			If
+			<i>kPresent</i> is <b>true</b>, then</p>
+			<ol><li><p>
+				Let
+				<i>kValue</i> be the result of calling the [[Get]] internal
+				method of <i>O</i> with argument <i>Pk</i>.</p>
+				</li>
+				<li><p>
+				Let
+				<i>mappedValue</i> be the result of calling the [[Call]] internal
+				method of <i>callbackfn</i> with <i>T</i> as the <b>this</b>
+				value and argument list containing <i>kValue</i>, <i>k</i>, and
+				<i>O</i>.</p>
+				</li>
+				<li><p>
+				Call
+				the [[DefineOwnProperty]] internal method of <i>A</i> with
+				arguments <i>Pk</i>, <a href="x8.html#x8.10">Property Descriptor</a> {[[Value]]: <i>mappedValue</i>,
+				[[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b>,
+				[[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
+			</li></ol></li>
+			<li><p>
+			Increase
+			<i>k</i> by 1.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		<i>A</i>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>map</b></code> method is
+	<b>1</b>.</p>
+	<p><b class="note">NOTE</b> The
+	<code><b>map</b></code> function
+	is intentionally generic; it does not require that its <b>this</b>
+	value be an Array object. Therefore it can be transferred to other
+	kinds of objects for use as a method. Whether the <code><b>map</b></code><b>
+	</b>function can be applied successfully to a host object is
+	implementation-dependent.</p>
+	<h5 id="x15.4.4.20">15.4.4.20 Array.prototype.filter ( callbackfn [ , thisArg ] ) <a href="#x15.4.4.20">#</a> <a href="#x15.4.4.20-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	<i>callbackfn </i>should be a function that accepts three arguments and
+	returns a value that is coercible to the Boolean value <b>true</b>
+	or <b>false</b>. <code><b>filter</b></code>
+	calls <i>callbackfn</i>
+	once for <a href="#array-element">each element in the array</a>, in ascending order, and
+	constructs a new array of all the values for which <i>callbackfn</i>
+	returns <b>true</b>. <i>callbackfn</i>
+	is called only for <a href="#array-element">elements of the array</a> which actually exist; it is
+	not called for missing <a href="#array-element">elements of the array</a>.</p>
+	<p>
+	If a
+	<i>thisArg</i> parameter
+	is provided, it will be used as the <b>this </b>value for each
+	invocation of <i>callbackfn</i>.
+	If it is not provided, <b>undefined</b> is used instead.</p>
+	<p>
+	<i>callbackfn</i>
+	is called with three arguments: the value of the element, the index
+	of the element, and the object being traversed.</p>
+	<p>
+	<code><b>filter</b></code>
+	does not directly mutate the object on which it is called but the
+	object may be mutated by the calls to <i>callbackfn</i>.</p>
+	<p>
+	The
+	range of elements processed by <code><b>filter</b></code>
+	is set before the first call to <i>callbackfn</i>.
+	Elements which are appended to the array after the call to <code><b>filter</b></code>
+	begins will not be visited by <i>callbackfn</i>.
+	If existing <a href="#array-element">elements of the array</a> are changed their value as passed
+	to <i>callbackfn</i> will
+	be the value at the time <code><b>filter</b></code>
+	visits them; elements that are deleted after the call to <code><b>filter</b></code>
+	begins and before being visited are not visited.</p>
+	<p>
+	When
+	the <code><b>filter</b></code> method
+	is called with one or two arguments, the following steps are taken: 
+	</p>
+	<ol><li><p>
+		Let
+		<i>O</i> be the result of calling <a href="x9.html#x9.9">ToObject</a> passing the <b>this
+		</b>value as the argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lenValue</i>  be the result of calling the [[Get]] internal
+		method of <i>O</i> with the argument <code><b>"length"</b></code>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>len</i> be <a href="x9.html#x9.6">ToUint32</a>(<i>lenValue</i>).</p>
+		</li>
+		<li><p>
+		If
+		<a href="x9.html#x9.11">IsCallable</a>(<i>callbackfn</i>) is <b>false</b>, throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		exception.</p>
+		</li>
+		<li><p>
+		If
+		<i>thisArg</i> was supplied, let <i>T</i> be <i>thisArg</i>; else
+		let <i>T</i> be <b>undefined</b>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>A</i> be a new array created as if by the expression <code><b>new
+		Array()</b></code> where <code><b>Array</b></code>
+		is the standard built-in constructor with that name.</p>
+		</li>
+		<li><p>
+		Let
+		<i>k</i> be 0.</p>
+		</li>
+		<li><p>
+		Let
+		<i>to</i> be 0.</p>
+		</li>
+		<li><p>
+		Repeat,
+		while <i>k </i>&lt; <i>len</i></p>
+		<ol><li><p>
+			Let
+			<i>Pk</i> be <a href="x9.html#x9.8">ToString</a>(<i>k</i>).</p>
+			</li>
+			<li><p>
+			Let
+			<i>kPresent</i> be the result of calling the [[HasProperty]]
+			internal method of <i>O</i> with argument <i>Pk</i>.</p>
+			</li>
+			<li><p>
+			If
+			<i>kPresent</i> is <b>true</b>, then</p>
+			<ol><li><p>
+				Let
+				<i>kValue</i> be the result of calling the [[Get]] internal
+				method of <i>O</i> with argument <i>Pk</i>.</p>
+				</li>
+				<li><p>
+				Let
+				<i>selected</i> be the result of calling the [[Call]] internal
+				method of <i>callbackfn</i> with <i>T</i> as the <b>this</b>
+				value and argument list containing <i>kValue</i>, <i>k</i>, and
+				<i>O</i>.</p>
+				</li>
+				<li><p>
+				If
+				<a href="x9.html#x9.2">ToBoolean</a>(<i>selected</i>) is <b>true</b>, then</p>
+				<ol><li><p>
+					Call
+					the [[DefineOwnProperty]] internal method of <i>A</i> with
+					arguments <a href="x9.html#x9.8">ToString</a>(<i>to</i>), <a href="x8.html#x8.10">Property Descriptor</a> {[[Value]]:
+					<i>kValue</i>, [[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b>,
+					[[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
+					</li>
+					<li><p>
+					Increase
+					<i>to</i> by 1.</p>
+				</li></ol></li></ol></li>
+			<li><p>
+			Increase
+			<i>k</i> by 1.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		<i>A</i>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>filter</b></code> method
+	is <b>1</b>.</p>
+	<p><b class="note">NOTE</b> The
+	<code><b>filter</b></code> function
+	is intentionally generic; it does not require that its <b>this</b>
+	value be an Array object. Therefore it can be transferred to other
+	kinds of objects for use as a method. Whether the <code><b>filter</b></code><b>
+	</b>function can be applied successfully to a host object is
+	implementation-dependent.</p>
+	<h5 id="x15.4.4.21">15.4.4.21 Array.prototype.reduce ( callbackfn [ , initialValue ] ) <a href="#x15.4.4.21">#</a> <a href="#x15.4.4.21-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	<i>callbackfn </i>should be a function that takes four arguments. <code><b>reduce</b></code>
+	calls the callback, as a function, once for <a href="#array-element">each element present in
+	the array</a>, in ascending order.</p>
+	<p>
+	<i>callbackfn </i>is called with four arguments: the <i>previousValue</i>
+	(or value from the previous call to <i>callbackfn</i>),
+	the <i>currentValue</i> (value of the current element), the
+	<i>currentIndex</i>, and the object being traversed. The first time
+	that callback is called, the <i>previousValue</i> and <i>currentValue</i>
+	can be one of two values. If an <i>initialValue </i>was provided in the call to <code><b>reduce</b></code>,
+	then <i>previousValue</i> will be equal to <i>initialValue </i>and <i>currentValue</i> will be equal to the first value
+	in the array. If no <i>initialValue </i>was provided, then <i>previousValue</i> will be equal to
+	the first value in the array and <i>currentValue</i> will be equal
+	to the second. It is a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> if the array contains no
+	elements and <i>initialValue</i>
+	is not provided.</p>
+	<p>
+	<code><b>reduce</b></code>
+	does not directly mutate the object on which it is called but the
+	object may be mutated by the calls to <i>callbackfn</i>.</p>
+	<p>
+	The
+	range of elements processed by <code><b>reduce</b></code>
+	is set before the first call to <i>callbackfn</i>.
+	Elements that are appended to the array after the call to <code><b>reduce</b></code>
+	begins will not be visited by <i>callbackfn</i>.
+	If existing <a href="#array-element">elements of the array</a> are changed, their value as passed
+	to <i>callbackfn </i>will
+	be the value at the time <code><b>reduce</b></code>
+	visits them; elements that are deleted after the call to <code><b>reduce</b></code>
+	begins and before being visited are not visited.</p>
+	<p>
+	When
+	the <code><b>reduce</b></code> method
+	is called with one or two arguments, the following steps are taken: 
+	</p>
+	<ol><li><p>
+		Let
+		<i>O</i> be the result of calling <a href="x9.html#x9.9">ToObject</a> passing the <b>this
+		</b>value as the argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lenValue</i>  be the result of calling the [[Get]] internal
+		method of <i>O</i> with the argument <code><b>"length"</b></code>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>len</i> be <a href="x9.html#x9.6">ToUint32</a>(<i>lenValue</i>  ).</p>
+		</li>
+		<li><p>
+		If
+		<a href="x9.html#x9.11">IsCallable</a>(<i>callbackfn</i>) is <b>false</b>, throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		exception.</p>
+		</li>
+		<li><p>
+		If
+		len is 0 and <i>initialValue</i> is not present, throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		exception.</p>
+		</li>
+		<li><p>
+		Let
+		<i>k</i> be 0.</p>
+		</li>
+		<li><p>
+		If
+		<i>initialValue</i> is present, then</p>
+		<ol><li><p>
+			Set
+			<i>accumulator</i> to <i>initialValue</i>.</p>
+		</li></ol></li>
+		<li><p>
+		Else,
+		<i>initialValue</i> is not present</p>
+		<ol><li><p>
+			Let
+			<i>kPresent</i> be <b>false</b>.</p>
+			</li>
+			<li><p>
+			Repeat,
+			while  <i>kPresent</i> is <b>false</b> and  <i>k</i> &lt; <i>len</i></p>
+			<ol><li><p>
+				Let
+				<i>Pk</i> be <a href="x9.html#x9.8">ToString</a>(<i>k</i>).</p>
+				</li>
+				<li><p>
+				Let
+				<i>kPresent</i> be the result of calling the [[HasProperty]]
+				internal method of <i>O</i> with argument <i>Pk</i>.</p>
+				</li>
+				<li><p>
+				If
+				<i>kPresent</i> is <b>true</b>, then</p>
+				<ol><li><p>
+					Let
+					<i>accumulator</i> be the result of calling the [[Get]] internal
+					method of <i>O</i> with argument <i>Pk</i>.</p>
+				</li></ol></li>
+				<li><p>
+				Increase
+				<i>k</i> by 1.</p>
+			</li></ol></li>
+			<li><p>
+			If
+			<i>kPresent</i> is <b>false</b>, throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+			exception.</p>
+		</li></ol></li>
+		<li><p>
+		Repeat,
+		while <i>k </i>&lt; <i>len</i></p>
+		<ol><li><p>
+			Let
+			<i>Pk</i> be <a href="x9.html#x9.8">ToString</a>(<i>k</i>).</p>
+			</li>
+			<li><p>
+			Let
+			<i>kPresent</i> be the result of calling the [[HasProperty]]
+			internal method of <i>O</i> with argument <i>Pk</i>.</p>
+			</li>
+			<li><p>
+			If
+			<i>kPresent</i> is <b>true</b>, then</p>
+			<ol><li><p>
+				Let
+				<i>kValue</i> be the result of calling the [[Get]] internal
+				method of <i>O</i> with argument <i>Pk</i>.</p>
+				</li>
+				<li><p>
+				Let
+				<i>accumulator</i> be the result of calling the [[Call]] internal
+				method of <i>callbackfn</i> with <b>undefined</b> as the <b>this</b>
+				value and argument list containing <i>accumulator</i>, <i>kValue</i>,
+				<i>k</i>, and <i>O</i>.</p>
+			</li></ol></li>
+			<li><p>
+			Increase
+			<i>k</i> by 1.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		<i>accumulator</i>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>reduce</b></code> method
+	is <b>1</b>.</p>
+	<p><b class="note">NOTE</b> The
+	<code><b>reduce</b></code> function
+	is intentionally generic; it does not require that its <b>this</b>
+	value be an Array object. Therefore it can be transferred to other
+	kinds of objects for use as a method. Whether the <code><b>reduce</b></code><b>
+	</b>function can be applied successfully to a host object is
+	implementation-dependent.</p>
+	<h5 id="x15.4.4.22">15.4.4.22 Array.prototype.reduceRight ( callbackfn [ , initialValue ] ) <a href="#x15.4.4.22">#</a> <a href="#x15.4.4.22-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	<i>callbackfn </i>should be a function that takes four arguments.
+	<code><b>reduceRight </b></code>calls
+	the callback, as a function, once for <a href="#array-element">each element present in the array</a>, in descending order.</p>
+	<p>
+	<i>callbackfn </i>is called with four arguments: the previousValue (or
+	value from the previous call to <i>callbackfn</i>),
+	the currentValue (value of the current element), the currentIndex,
+	and the object being traversed. The first time the function is
+	called, the previousValue and currentValue can be one of two values.
+	If an <i>initialValue </i>was
+	provided in the call to <code><b>reduceRight</b></code>,
+	then previousValue will be equal to <i>initialValue</i>
+	and currentValue will be equal to the last value in the array. If no
+	<i>initialValue </i>was
+	provided, then previousValue will be equal to the last value in the
+	array and currentValue will be equal to the second-to-last value. It
+	is a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> if the array contains no
+ <a href="#array-element">elements</a> and
+	<i>initialValue</i> is
+	not provided.</p>
+	<p>
+	<code><b>reduceRight
+	</b></code>does not directly mutate the object on which it is called
+	but the object may be mutated by the calls to <i>callbackfn</i>.</p>
+	<p>
+	The
+	range of elements processed by <code><b>reduceRight</b></code> is set before the first call to <i>callbackfn</i>.
+	Elements that are appended to the array after the call to
+	<code><b>reduceRight</b></code> begins
+	will not be visited by <i>callbackfn</i>.
+	If existing <a href="#array-element">elements of the array</a> are changed by <i>callbackfn</i>,
+	their value as passed to <i>callbackfn </i>will be the value at the time <code><b>reduceRight
+	</b></code>visits them; elements that are deleted after the call to
+	<code><b>reduceRight</b></code> begins and
+	before being visited are not visited.</p>
+	<p>
+	When
+	the <code><b>reduceRight </b></code>method
+	is called with one or two arguments, the following steps are taken: 
+	</p>
+	<ol><li><p>
+		Let
+		<i>O</i> be the result of calling <a href="x9.html#x9.9">ToObject</a> passing the <b>this
+		</b>value as the argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lenValue</i>  be the result of calling the [[Get]] internal
+		method of <i>O</i> with the argument <code><b>"length"</b></code>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>len</i> be <a href="x9.html#x9.6">ToUint32</a>(<i>lenValue</i>  ).</p>
+		</li>
+		<li><p>
+		If
+		<a href="x9.html#x9.11">IsCallable</a>(<i>callbackfn</i>) is <b>false</b>, throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		exception.</p>
+		</li>
+		<li><p>
+		If
+		len is 0 and <i>initialValue</i> is not present, throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		exception.</p>
+		</li>
+		<li><p>
+		Let
+		<i>k</i> be <i>len</i>-1.</p>
+		</li>
+		<li><p>
+		If
+		<i>initialValue</i> is present, then</p>
+		<ol><li><p>
+			Set
+			<i>accumulator</i> to <i>initialValue</i>.</p>
+		</li></ol></li>
+		<li><p>
+		Else,
+		<i>initialValue</i> is not present</p>
+		<ol><li><p>
+			Let
+			<i>kPresent</i> be <b>false</b>.</p>
+			</li>
+			<li><p>
+			Repeat,
+			while  <i>kPresent</i> is <b>false</b> and  <i>k</i> &#8805; 0</p>
+			<ol><li><p>
+				Let
+				<i>Pk</i> be <a href="x9.html#x9.8">ToString</a>(<i>k</i>).</p>
+				</li>
+				<li><p>
+				Let
+				<i>kPresent</i> be the result of calling the [[HasProperty]]
+				internal method of <i>O</i> with argument <i>Pk</i>.</p>
+				</li>
+				<li><p>
+				If
+				<i>kPresent</i> is <b>true</b>, then</p>
+				<ol><li><p>
+					Let
+					<i>accumulator</i> be the result of calling the [[Get]] internal
+					method of <i>O</i> with argument <i>Pk</i>.</p>
+				</li></ol></li>
+				<li><p>
+				Decrease
+				<i>k</i> by 1.</p>
+			</li></ol></li>
+			<li><p>
+			If
+			<i>kPresent</i> is <b>false</b>, throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+			exception.</p>
+		</li></ol></li>
+		<li><p>
+		Repeat,
+		while <i>k </i>&#8805; 0</p>
+		<ol><li><p>
+			Let
+			<i>Pk</i> be <a href="x9.html#x9.8">ToString</a>(<i>k</i>).</p>
+			</li>
+			<li><p>
+			Let
+			<i>kPresent</i> be the result of calling the [[HasProperty]]
+			internal method of <i>O</i> with argument <i>Pk</i>.</p>
+			</li>
+			<li><p>
+			If
+			<i>kPresent</i> is <b>true</b>, then</p>
+			<ol><li><p>
+				Let
+				<i>kValue</i> be the result of calling the [[Get]] internal
+				method of <i>O</i> with argument <i>Pk</i>.</p>
+				</li>
+				<li><p>
+				Let
+				<i>accumulator</i> be the result of calling the [[Call]] internal
+				method of <i>callbackfn</i> with <b>undefined</b> as the <b>this</b>
+				value and argument list containing <i>accumulator</i>, <i>kValue</i>,
+				<i>k</i>, and <i>O</i>.</p>
+			</li></ol></li>
+			<li><p>
+			Decrease
+			<i>k</i> by 1.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		<i>accumulator</i>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>reduceRight</b></code>
+	method is <b>1</b>.</p>
+	<p><b class="note">NOTE</b> The
+	<code><b>reduceRight </b></code>function
+	is intentionally generic; it does not require that its this value be
+	an Array object. Therefore it can be transferred to other kinds of
+	objects for use as a method. Whether the <code><b>reduceRight
+	</b></code>function can be applied successfully to a host object is
+	implementation-dependent.</p>
+	<h4 id="x15.4.5">15.4.5 Properties of Array Instances <a href="#x15.4.5">#</a> <a href="#x15.4.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	Array
+	instances inherit properties from the Array prototype object and
+	their [[Class]] internal property value is <code><b>"Array"</b></code>.
+	Array instances also have the following properties.</p>
+	<h5 id="x15.4.5.1">15.4.5.1 [[DefineOwnProperty]] ( P, Desc, Throw ) <a href="#x15.4.5.1">#</a> <a href="#x15.4.5.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Array
+	objects use a variation of the [[DefineOwnProperty]] internal method
+	used for other native ECMAScript objects (<a href="x8.html#x8.12.9">8.12.9</a>).</p>
+	<p>
+	Assume
+	<i>A </i>is an Array
+	object, <i>Desc</i> is a
+	<a href="x8.html#x8.10">Property Descriptor</a>, and <i>Throw </i>is a Boolean flag.</p>
+	<p>
+	In
+	the following algorithm, the term <dfn id="reject-DefineOwnProperty-2">&#8220;Reject&#8221;</dfn>
+	means &#8220;If <i>Throw </i>is <b>true</b>,
+	then throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+	exception, otherwise return <b>false</b>.&#8221;</p>
+	<p>
+	When
+	the [[DefineOwnProperty]] internal method of <i>A</i>
+	is called with property <i>P</i>,
+ <a href="x8.html#x8.10">Property Descriptor</a> <i>Desc</i>,
+	and Boolean flag <i>Throw</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>oldLenDesc</i> be the result of calling the [[GetOwnProperty]]
+		internal method of <i>A</i> passing <b>"</b><code><b>length</b></code><b>"</b>
+		as the argument.  The result will never be <b>undefined </b>or an
+		accessor descriptor because Array objects are created with a length
+		data property that cannot be deleted or reconfigured.</p>
+		</li>
+		<li><p>
+		Let
+		<i>oldLen</i> be <i>oldLenDesc</i>.[[Value]].</p>
+		</li>
+		<li><p>
+		If
+		<i>P</i> is <b>"</b><code><b>length</b></code><b>"</b>,
+		then</p>
+		<ol><li><p>
+			If
+			the [[Value]] field of <i>Desc</i> is absent, then</p>
+			<ol><li><p>
+				Return
+				the result of calling the default [[DefineOwnProperty]] internal
+				method (<a href="x8.html#x8.12.9">8.12.9</a>) on <i>A</i> passing <b>"</b><code><b>length</b></code><b>"</b>,
+				<i>Desc</i>, and <i>Throw</i> as arguments.</p>
+			</li></ol></li>
+			<li><p>
+			Let
+			 <i>newLenDesc</i> be a  copy of <i>Desc</i>.</p>
+			</li>
+			<li><p>
+			Let
+			<i>newLen</i> be <a href="x9.html#x9.6">ToUint32</a>(<i>Desc</i>.[[Value]]).</p>
+			</li>
+			<li><p>
+			If
+			<i>newLen</i> is not equal to <a href="x9.html#x9.3">ToNumber</a>(<i> Desc</i>.[[Value]]),
+			throw a <b><a href="x15.11.html#x15.11.6.2" class="term-ref">RangeError</a></b> exception.</p>
+			</li>
+			<li><p>
+			Set
+			<i>newLenDesc</i>.[[Value] to <i>newLen</i>.</p>
+			</li>
+			<li><p>
+			If
+			<i>newLen</i> &#8805;<i>oldLen</i>, then</p>
+			<ol><li><p>
+				Return
+				the result of calling the default [[DefineOwnProperty]] internal
+				method (<a href="x8.html#x8.12.9">8.12.9</a>) on <i>A</i> passing <b>"</b><code><b>length</b></code><b>"</b>,
+				<i>newLenDesc</i>, and <i>Throw</i> as arguments.</p>
+			</li></ol></li>
+			<li><p>
+			<a href="#reject-DefineOwnProperty-2">Reject</a>
+			if <i>oldLenDesc</i>.[[Writable]] is <b>false</b>.</p>
+			</li>
+			<li><p>
+			If
+			<i>newLenDesc</i>.[[Writable]] is absent or has the value <b>true</b>,
+			let <i>newWritable</i> be <b>true</b>.</p>
+			</li>
+			<li><p>
+			Else,</p>
+			<ol><li><p>
+				Need
+				to defer setting the [[Writable]] attribute to <b>false</b> in
+				case any <a href="#array-element">elements</a> cannot be deleted.</p>
+				</li>
+				<li><p>
+				Let
+				<i>newWritable</i> be <b>false</b>.</p>
+				</li>
+				<li><p>
+				Set
+				<i>newLenDesc</i>.[[Writable] to <b>true</b>.</p>
+			</li></ol></li>
+			<li><p>
+			Let
+			<i>succeeded</i> be the result of calling the default
+			[[DefineOwnProperty]] internal method (<a href="x8.html#x8.12.9">8.12.9</a>) on <i>A</i> passing
+			<b>"</b><code><b>length</b></code><b>"</b>,
+			<i>newLenDesc</i>, and <i>Throw</i> as arguments.</p>
+			</li>
+			<li><p>
+			If
+			<i>succeeded</i> is <b>false</b>, return <b>false</b>..</p>
+			</li>
+			<li><p>
+			While
+			<i>newLen</i> &lt; <i>oldLen</i> repeat,</p>
+			<ol><li><p>
+				Set
+				<i>oldLen</i> to <i>oldLen</i> &#8211; 1.</p>
+				</li>
+				<li><p>
+				Let
+				<i>deleteSucceeded</i>
+				be the result of calling the [[Delete]]
+				internal method of <i>A</i> passing <a href="x9.html#x9.8">ToString</a>(<i>oldLen</i>) and
+				<b>false</b> as arguments.</p>
+				</li>
+				<li><p>
+				If
+				<i>deleteSucceeded</i>
+				is <b>false</b>, then</p>
+				<ol><li><p>
+					Set
+					<i>newLenDesc</i>.[[Value] to <i>oldLen+1</i>.</p>
+					</li>
+					<li><p>
+					If
+					<i>newWritable</i> is <b>false</b>, set <i>newLenDesc</i>.[[Writable]
+					to <b>false</b>.</p>
+					</li>
+					<li><p>
+					Call
+					the default [[DefineOwnProperty]] internal method (<a href="x8.html#x8.12.9">8.12.9</a>) on <i>A</i>
+					passing <b>"</b><code><b>length</b></code><b>"</b>,
+					<i>newLenDesc</i>, and <b>false</b> as arguments. 
+					</p>
+					</li>
+					<li><p>
+					<a href="#reject-DefineOwnProperty-2">Reject</a>.</p>
+				</li></ol></li></ol></li>
+			<li><p>
+			If
+			<i>newWritable</i> is <b>false</b>, then</p>
+			<ol><li><p>
+				Call
+				the default [[DefineOwnProperty]] internal method (<a href="x8.html#x8.12.9">8.12.9</a>) on <i>A</i>
+				passing <b>"</b><code><b>length</b></code><b>"</b>,
+			 <a href="x8.html#x8.10">Property Descriptor</a>{[[Writable]]: <b>false</b>}, and <b>false</b>
+				as arguments. This call will always return <b>true</b>.</p>
+			</li></ol></li>
+			<li><p>
+			Return
+			<b>true</b>.</p>
+		</li></ol></li>
+		<li><p>
+		Else
+		if <i>P</i> is an array index (<a href="#x15.4">15.4</a>), then</p>
+		<ol><li><p>
+			Let
+			<i>index</i> be <a href="x9.html#x9.6">ToUint32</a>(<i>P</i>).</p>
+			</li>
+			<li><p>
+			<a href="#reject-DefineOwnProperty-2">Reject</a>
+			if <i>index</i> &#8805; <i>oldLen</i> and <i>oldLenDesc</i>.[[Writable]]
+			is <b>false</b>.</p>
+			</li>
+			<li><p>
+			Let
+			<i>succeeded</i> be the result of calling the default
+			[[DefineOwnProperty]] internal method (<a href="x8.html#x8.12.9">8.12.9</a>) on <i>A</i> passing
+			<i>P</i>, <i>Desc</i>, and <b>false</b> as arguments.</p>
+			</li>
+			<li><p>
+			<a href="#reject-DefineOwnProperty-2">Reject</a>
+			if <i>succeeded</i> is <b>false</b>.</p>
+			</li>
+			<li><p>
+			If
+			 <i>index</i> &#8805; <i>oldLen</i></p>
+			<ol><li><p>
+				Set
+				<i>oldLenDesc</i>.[[Value]] to <i>index</i> + 1.</p>
+				</li>
+				<li><p>
+				Call
+				the default [[DefineOwnProperty]] internal method (<a href="x8.html#x8.12.9">8.12.9</a>) on <i>A</i>
+				passing <b>"</b><code><b>length</b></code><b>"</b>,
+				<i>oldLenDesc</i>, and <b>false</b> as arguments. This call will
+				always return <b>true</b>.</p>
+			</li></ol></li>
+			<li><p>
+			Return
+			<b>true</b>.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		the result of calling the default [[DefineOwnProperty]] internal
+		method (<a href="x8.html#x8.12.9">8.12.9</a>) on <i>A</i> passing <i>P</i>, <i>Desc</i>, and
+		<i>Throw</i> as arguments.</p>
+	</li></ol><h5 id="x15.4.5.2">15.4.5.2 length <a href="#x15.4.5.2">#</a> <a href="#x15.4.5.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	<code><b>length</b></code> property of
+	this Array object is a data property whose value is always
+	numerically greater than the name of every deletable property whose
+	name is an array index.</p>
+	<p>
+	The
+	<code><b>length</b></code> property
+	initially has the attributes {
+	[[Writable]]: <b>true</b>,
+	[[Enumerable]]: <b>false</b>,
+	[[Configurable]]: <b>false</b>
+	}.</p>
+	<p><b class="note">NOTE</b> Attempting
+	to set the length property of an Array object to a value that is
+	numerically less than or equal to the largest numeric property name
+	of an existing array indexed non-deletable property of the array
+	will result in the length being set to a numeric value that is one
+	greater than that largest numeric property name. See <a href="#x15.4.5.1">15.4.5.1</a>.</p>
+	</body><script src="anno.js"></script></html>

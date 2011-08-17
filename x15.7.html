@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html class="split chapter"><head><meta charset="utf-8"><title>15.7 Number Objects # &#9417; &#9402; &#9312; &#9398; &#8212; Annotated ES5</title><link rel="stylesheet" href="style.css"><link rel="shortcut icon" href="favicon.ico"><link href="x15.6.html" title="15.6 Boolean Objects " rel="prev">
+  <link href="spec.html#contents" title="TOC" rel="index">
+  <link href="x15.8.html" title="15.8 The Math Object " rel="next">
+  </head><body><div class="head">
+<h2 id="top">Annotated ECMAScript 5.1 <span id="timestamp"></span></h2>
+<div id="mascot-treehouse">
+	<img id="mascot" align="left" src="js-mascot.svg" alt=""><img id="bubble" src="bubble.svg" alt=""></div>
+<p id="slogan">&#8223;Ex igne vita&#8221;</p>
+<div id="annotations"></div>
+<script src="timestamp.js"></script></div>
+<nav>
+   <a href="x15.6.html">&#8592; 15.6 Boolean Objects </a> &#8211;
+   <a href="spec.html#contents">TOC</a> &#8211;
+   <a href="x15.8.html">15.8 The Math Object  &#8594;</a>
+  <ol class="toc"><li><ol><li><a href="x15.7.html#x15.7" id="x15.7-toc">15.7 Number Objects</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.7.html#x15.7.1" id="x15.7.1-toc">15.7.1 The Number Constructor Called as a Function</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.7.html#x15.7.1.1" id="x15.7.1.1-toc">15.7.1.1 Number ( [ value ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.7.html#x15.7.2" id="x15.7.2-toc">15.7.2 The Number Constructor</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.7.html#x15.7.2.1" id="x15.7.2.1-toc">15.7.2.1 new Number ( [ value ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.7.html#x15.7.3" id="x15.7.3-toc">15.7.3 Properties of the Number Constructor</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.7.html#x15.7.3.1" id="x15.7.3.1-toc">15.7.3.1 Number.prototype</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.7.html#x15.7.3.2" id="x15.7.3.2-toc">15.7.3.2 Number.MAX_VALUE</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.7.html#x15.7.3.3" id="x15.7.3.3-toc">15.7.3.3 Number.MIN_VALUE</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.7.html#x15.7.3.4" id="x15.7.3.4-toc">15.7.3.4 Number.NaN</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.7.html#x15.7.3.5" id="x15.7.3.5-toc">15.7.3.5 Number.NEGATIVE_INFINITY</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.7.html#x15.7.3.6" id="x15.7.3.6-toc">15.7.3.6 Number.POSITIVE_INFINITY</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.7.html#x15.7.4" id="x15.7.4-toc">15.7.4 Properties of the Number Prototype Object</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.7.html#x15.7.4.1" id="x15.7.4.1-toc">15.7.4.1 Number.prototype.constructor</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.7.html#x15.7.4.2" id="x15.7.4.2-toc">15.7.4.2 Number.prototype.toString ( [ radix ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.7.html#x15.7.4.3" id="x15.7.4.3-toc">15.7.4.3 Number.prototype.toLocaleString()</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.7.html#x15.7.4.4" id="x15.7.4.4-toc">15.7.4.4 Number.prototype.valueOf ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.7.html#x15.7.4.5" id="x15.7.4.5-toc">15.7.4.5 Number.prototype.toFixed (fractionDigits)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.7.html#x15.7.4.6" id="x15.7.4.6-toc">15.7.4.6 Number.prototype.toExponential (fractionDigits)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.7.html#x15.7.4.7" id="x15.7.4.7-toc">15.7.4.7 Number.prototype.toPrecision (precision)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.7.html#x15.7.5" id="x15.7.5-toc">15.7.5 Properties of Number Instances</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li></ol></li></ol></nav>
+
+  <h3 id="x15.7" class="splitme">15.7 Number Objects <a href="#x15.7">#</a> <a href="#x15.7-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<h4 id="x15.7.1">15.7.1 The Number Constructor Called as a Function <a href="#x15.7.1">#</a> <a href="#x15.7.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	<code><b>Number</b></code> is called
+	as a function rather than as a constructor, it performs a type
+	conversion.</p>
+	<h5 id="x15.7.1.1">15.7.1.1 Number ( [ value ] ) <a href="#x15.7.1.1">#</a> <a href="#x15.7.1.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Returns
+	a Number value (not a Number object) computed by <a href="x9.html#x9.3">ToNumber</a>(<i>value</i>)
+	if <i>value</i> was
+	supplied, else returns <b>+0</b>.</p>
+	<h4 id="x15.7.2">15.7.2 The Number Constructor <a href="#x15.7.2">#</a> <a href="#x15.7.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	<code><b>Number</b></code> is called
+	as part of a <code><b>new</b></code>
+	expression it is a constructor: it initialises the newly created
+	object.</p>
+	<h5 id="x15.7.2.1">15.7.2.1 new Number ( [ value ] ) <a href="#x15.7.2.1">#</a> <a href="#x15.7.2.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	[[Prototype]] internal property of the newly constructed object is
+	set to the original Number prototype object, the one that is the
+	initial value of <code><b>Number.prototype</b></code>
+	(<a href="#x15.7.3.1">15.7.3.1</a>).</p>
+	<p>
+	The
+	[[Class]] internal property of the newly constructed object is set
+	to <code><b>"Number"</b></code>.</p>
+	<p>
+	The
+	[[PrimitiveValue]] internal property of the newly constructed object
+	is set to <a href="x9.html#x9.3">ToNumber</a>(<i>value</i>)
+	if <i>value</i> was
+	supplied, else to +0.</p>
+	<p>
+	The
+	[[Extensible]] internal property of the newly constructed object is
+	set to <b>true</b>.</p>
+	<h4 id="x15.7.3">15.7.3 Properties of the Number Constructor <a href="#x15.7.3">#</a> <a href="#x15.7.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	value of the [[Prototype]] internal property of the Number
+	constructor is the Function prototype object (<a href="x15.3.html#x15.3.4">15.3.4</a>).</p>
+	<p>
+	Besides
+	the internal properties and the <code><b>length</b></code>
+	property (whose value is <b>1</b>), the Number constructor has the
+	following property:</p>
+	<h5 id="x15.7.3.1">15.7.3.1 Number.prototype <a href="#x15.7.3.1">#</a> <a href="#x15.7.3.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	initial value of <code><b>Number.prototype</b></code>
+	is the Number prototype object (<a href="#x15.7.4">15.7.4</a>).</p>
+	<p>
+	This
+	property has the attributes { [[Writable]]: <b>false</b>,
+	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b> }.</p>
+	<h5 id="x15.7.3.2">15.7.3.2 Number.MAX_VALUE <a href="#x15.7.3.2">#</a> <a href="#x15.7.3.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	value of <code><b>Number.MAX_VALUE</b></code>
+	is the largest positive finite value of the Number type, which is
+	approximately 1.7976931348623157&#160;<span class="symbol">&#215;</span>&#160;10<sup>308</sup>.</p>
+	<p>
+	This
+	property has the attributes { [[Writable]]: <b>false</b>,
+	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b> }.</p>
+	<h5 id="x15.7.3.3">15.7.3.3 Number.MIN_VALUE <a href="#x15.7.3.3">#</a> <a href="#x15.7.3.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	value of <code><b>Number.MIN_VALUE</b></code>
+	is the smallest positive value of the Number type, which is
+	approximately 5&#160;<span class="symbol">&#215;</span>&#160;10<sup>&#160;324</sup>.</p>
+	<p>
+	This
+	property has the attributes { [[Writable]]: <b>false</b>,
+	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b> }.</p>
+	<h5 id="x15.7.3.4">15.7.3.4 Number.NaN <a href="#x15.7.3.4">#</a> <a href="#x15.7.3.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	value of <code><b>Number.NaN</b></code>
+	is <b>NaN</b>.</p>
+	<p>
+	This
+	property has the attributes { [[Writable]]: <b>false</b>,
+	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b> }.</p>
+	<h5 id="x15.7.3.5">15.7.3.5 Number.NEGATIVE_INFINITY <a href="#x15.7.3.5">#</a> <a href="#x15.7.3.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	value of Number.NEGATIVE_INFINITY is <span class="symbol">&#8722;&#8734;</span>.</p>
+	<p>
+	This
+	property has the attributes { [[Writable]]: <b>false</b>,
+	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b> }.</p>
+	<h5 id="x15.7.3.6">15.7.3.6 Number.POSITIVE_INFINITY <a href="#x15.7.3.6">#</a> <a href="#x15.7.3.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	value of Number.POSITIVE_INFINITY is +<span class="symbol">&#8734;</span>.</p>
+	<p>
+	This
+	property has the attributes { [[Writable]]: <b>false</b>,
+	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b> }.</p>
+	<h4 id="x15.7.4">15.7.4 Properties of the Number Prototype Object <a href="#x15.7.4">#</a> <a href="#x15.7.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	Number prototype object is itself a Number object (its [[Class]] is
+	<code><b>"Number"</b></code>)
+	whose value is +0.</p>
+	<p>
+	The
+	value of the [[Prototype]] internal property of the Number prototype
+	object is the standard built-in Object prototype object (<a href="x15.2.html#x15.2.4">15.2.4</a>).</p>
+	<p>
+	Unless
+	explicitly stated otherwise, the methods of the Number prototype
+	object defined below are not generic and the this value passed to
+	them must be either a Number value or an Object for which the value
+	of the [[Class]] internal property is <code><b>"Number"</b></code>.</p>
+	<p>
+	In
+	the following descriptions of functions that are properties of the
+	Number prototype object, the phrase &#8220;this Number object&#8221; refers
+	to either the object that is the <b>this</b> value for the
+	invocation of the function or, if <a href="x8.html#Type">Type</a>(<b>this</b> value) is Number,
+	 an object that is created as if by the expression <code><b>new
+	Number(</b></code><b>this</b> value<code><b>)</b></code>
+	where <code><b>Number</b></code> is
+	the standard built-in constructor with that name.  Also, the phrase
+	<dfn id="this-Number-value">&#8220;this Number value&#8221;</dfn> refers to either the Number value
+	represented by this Number object, that is, the value of the
+	[[PrimitiveValue]] internal property of this Number object or the
+	<b>this</b> value if its type is Number.  A <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+	exception is thrown if the <b>this</b> value is neither an object
+	for which the value of the [[Class]] internal property is <code><b>"Number"</b></code>
+	or a value whose type is Number.</p>
+	<h5 id="x15.7.4.1">15.7.4.1 Number.prototype.constructor <a href="#x15.7.4.1">#</a> <a href="#x15.7.4.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	initial value of <code><b>Number.prototype.constructor</b></code>
+	is the built-in <code><b>Number</b></code>
+	constructor.</p>
+	<h5 id="x15.7.4.2">15.7.4.2 Number.prototype.toString ( [ radix ] ) <a href="#x15.7.4.2">#</a> <a href="#x15.7.4.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	optional <i>radix</i>
+	should be an integer value in the inclusive range 2
+	to 36. If <i>radix</i>
+	not present or is <b>undefined</b> the Number 10
+	is used as the value of <i>radix</i>.
+	If <a href="x9.html#x9.4">ToInteger</a>(<i>radix</i>)
+	is the Number 10 then
+	 <a href="#this-Number-value">this Number value</a> is given as an argument to the <a href="x9.html#x9.8">ToString</a> abstract
+	operation; the resulting String value is returned.</p>
+	<p>
+	If
+	<a href="x9.html#x9.4">ToInteger</a>(<i>radix</i>)
+	is not an integer between 2 and 36 inclusive throw a RangeError
+	exception. If <a href="x9.html#x9.4">ToInteger</a>(<i>radix</i>)
+	is an integer from 2 to 36, but not 10, the result is a String
+	representation of  <a href="#this-Number-value">this Number value</a> using the specified radix.
+	Letters <code><b>a</b></code>-<code><b>z</b></code>
+	are used for digits with values 10 through 35. The precise algorithm
+	is implementation-dependent if the radix is not 10, however the
+	algorithm should be a generalization of that specified in <a href="x9.html#x9.8.1">9.8.1</a>.</p>
+	<p>
+	The
+	<code><b>toString</b></code> function
+	is not generic; it throws a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception if its <b>this</b>
+	value is not a Number or a Number object. Therefore, it cannot be
+	transferred to other kinds of objects for use as a method.</p>
+	<h5 id="x15.7.4.3">15.7.4.3 Number.prototype.toLocaleString() <a href="#x15.7.4.3">#</a> <a href="#x15.7.4.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Produces
+	a String value that represents  <a href="#this-Number-value">this Number value</a> formatted according
+	to the conventions of the host environment&#8217;s current locale. This
+	function is implementation-dependent, and it is permissible, but not
+	encouraged, for it to return the same thing as <code><b>toString</b></code>.</p>
+	<p><b class="note">NOTE</b> The
+	first parameter to this function is likely to be used in a future
+	version of this standard; it is recommended that implementations do
+	not use this parameter position for anything else.</p>
+	<h5 id="x15.7.4.4">15.7.4.4 Number.prototype.valueOf ( ) <a href="#x15.7.4.4">#</a> <a href="#x15.7.4.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Returns
+	 <a href="#this-Number-value">this Number value</a>.</p>
+	<p>
+	The
+	<code><b>valueOf</b></code> function
+	is not generic; it throws a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception if its <b>this</b>
+	value is not a Number or a Number object. Therefore, it cannot be
+	transferred to other kinds of objects for use as a method.</p>
+	<h5 id="x15.7.4.5">15.7.4.5 Number.prototype.toFixed (fractionDigits) <a href="#x15.7.4.5">#</a> <a href="#x15.7.4.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Return
+	a String containing  <a href="#this-Number-value">this Number value</a> represented in decimal
+	fixed-point notation with <i>fractionDigits</i>
+	digits after the decimal point. If <i>fractionDigits</i>
+	is <b>undefined</b>, 0 is assumed. Specifically, perform the
+	following steps:</p>
+	<ol><li><p>
+		Let
+		<i>f</i> be <a href="x9.html#x9.4">ToInteger</a>(<i>fractionDigits</i>). (If <i>fractionDigits</i>
+		is <b>undefined</b>, this step produces the value <code><b>0</b></code>).</p>
+		</li>
+		<li><p>
+		If
+		<i>f</i> &lt; 0 or <i>f</i> &gt; 20, throw a <b><a href="x15.11.html#x15.11.6.2" class="term-ref">RangeError</a></b>
+		exception.</p>
+		</li>
+		<li><p>
+		Let
+		<i>x</i> be  <a href="#this-Number-value">this Number value</a>.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i> is <b>NaN</b>, return the String <code><b>"NaN"</b></code>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>s</i> be the empty String.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i> &lt; 0, then</p>
+		<ol><li><p>
+			Let
+			s be "<code><b>-</b></code>".</p>
+			</li>
+			<li><p>
+			Let
+			x = &#8211;x.</p>
+		</li></ol></li>
+		<li><p>
+		If
+		<i>x</i> <span class="symbol">&#8805;</span> 10<sup>21</sup>,
+		then</p>
+		<ol><li><p>
+			Let
+			<i>m</i> = <a href="x9.html#x9.8">ToString</a>(<i>x</i>).</p>
+		</li></ol></li>
+		<li><p>
+		Else,
+		<i>x</i> &lt; 10<sup>21</sup></p>
+		<ol><li><p>
+			Let
+			<i>n</i> be an integer for which the exact mathematical value of <i>n</i>
+			<span class="symbol">&#247;</span> 10<sup>f</sup> &#8211; <i>x</i>
+			is as close to zero as possible. If there are two such <i>n</i>,
+			pick the larger <i>n</i>.</p>
+			</li>
+			<li><p>
+			If
+			<i>n</i> = 0, let <i>m</i> be the String <code><b>"0"</b></code>.
+			Otherwise, let <i>m</i> be the String consisting of the digits of
+			the decimal representation of <i>n</i> (in order, with no leading
+			zeroes).</p>
+			</li>
+			<li><p>
+			If
+			<i>f</i> <span class="symbol">&#8800;</span> 0, then</p>
+			<ol><li><p>
+				Let
+				<i>k</i> be the number of characters in <i>m</i>.</p>
+				</li>
+				<li><p>
+				If
+				<i>k</i> &#8804; <i>f</i>, then</p>
+				<ol><li><p>
+					Let
+					<i>z</i> be the String consisting of <i>f</i>+1&#8211;<i>k</i>
+					occurrences of the character &#8216;<code>0</code>&#8217;.</p>
+					</li>
+					<li><p>
+					Let
+					<i>m</i> be the concatenation of Strings <i>z</i> and <i>m</i>.</p>
+					</li>
+					<li><p>
+					Let
+					<i>k</i> = <i>f </i>+ 1.</p>
+				</li></ol></li>
+				<li><p>
+				Let
+				a be the first <i>k</i>&#8211;<i>f</i> characters of <i>m</i>, and
+				let <i>b</i> be the remaining <i>f</i> characters of <i>m</i>.</p>
+				</li>
+				<li><p>
+				Let
+				<i>m</i> be the concatenation of the three Strings <i>a</i>, <code><b>"."</b></code>,
+				and <i>b</i>.</p>
+			</li></ol></li></ol></li>
+		<li><p>
+		Return
+		the concatenation of the Strings <i>s</i> and <i>m</i>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>toFixed</b></code> method
+	is <b>1</b>.</p>
+	<p>
+	If
+	the <code><b>toFixed</b></code> method
+	is called with more than one argument, then the behaviour is
+	undefined (see clause&#160;15).</p>
+	<p>
+	An
+	implementation is permitted to extend the behaviour of <code><b>toFixed</b></code>
+	for values of <i>fractionDigits</i>
+	less than 0 or greater than 20. In this case <code><b>toFixed</b></code>
+	would not necessarily throw <b><a href="x15.11.html#x15.11.6.2" class="term-ref">RangeError</a></b> for such values.</p>
+	<p><b class="note">NOTE</b> The
+	output of <code><b>toFixed</b></code>
+	may be more precise than <code><b>toString</b></code>
+	for some values because toString only prints enough significant
+	digits to distinguish the number from adjacent number values. For
+	example, 
+	</p>
+	<p class="sp">(<code><b>1000000000000000128).toString()</b></code>
+	returns <code><b>"1000000000000000100"</b></code>,<br>while
+	(<code><b>1000000000000000128).toFixed(0)</b></code>
+	returns <code><b>"</b></code><code><b>1000000000000000128"</b></code>.</p>
+	<h5 id="x15.7.4.6">15.7.4.6 Number.prototype.toExponential (fractionDigits) <a href="#x15.7.4.6">#</a> <a href="#x15.7.4.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Return
+	a String containing  <a href="#this-Number-value">this Number value</a> represented in decmal
+	exponential notation with one digit before the significand's decimal
+	point and <i>fractionDigits</i>
+	digits after the significand's decimal point. If <i>fractionDigits</i>
+	is <b>undefined</b>, include as many significand digits as necessary
+	to uniquely specify the Number (just like in <a href="x9.html#x9.8">ToString</a> except that in
+	this case the Number is always output in exponential notation).
+	Specifically, perform the following steps:</p>
+	<ol><li><p>
+		Let
+		<i>x</i> be  <a href="#this-Number-value">this Number value</a>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>f</i> be <a href="x9.html#x9.4">ToInteger</a>(<i>fractionDigits</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i> is <b>NaN</b>, return the String <code><b>"NaN"</b></code>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>s</i> be the empty String.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i> <i>&lt;</i> 0, then</p>
+		<ol><li><p>
+			Let
+			<i>s</i> be <code><b>"-"</b></code>.</p>
+			</li>
+			<li><p>
+			Let
+			<i>x</i> = &#8211;<i>x</i>.</p>
+		</li></ol></li>
+		<li><p>
+		If
+		<i>x</i> = +<span class="symbol">&#8734;</span>, then</p>
+		<ol><li><p>
+			Return
+			the concatenation of the Strings <i>s</i> and <code><b>"Infinity"</b></code>.
+			
+			</p>
+		</li></ol></li>
+		<li><p>
+		If
+		<i>fractionDigits</i> is not <b>undefined</b> and  (<i>f</i> &lt; 0
+		or <i>f</i> &gt; 20), throw a <b><a href="x15.11.html#x15.11.6.2" class="term-ref">RangeError</a></b> exception.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i> = 0, then</p>
+		<ol><li><p>
+			Let
+			<i>f</i> = 0.</p>
+			</li>
+			<li><p>
+			Let
+			<i>m</i> be the String consisting of <i>f</i>+1 occurrences of the
+			character &#8216;<code>0</code>&#8217;.</p>
+			</li>
+			<li><p>
+			Let
+			<i>e</i> = 0.</p>
+		</li></ol></li>
+		<li><p>
+		Else,
+		<i>x</i> <span class="symbol">&#8800;</span> 0</p>
+		<ol><li><p>
+			If
+			fractionDigits is not <b>undefined</b>, then</p>
+			<ol><li><p>
+				Let
+				<i>e</i> and <i>n</i> be integers such that 10<sup><i>f</i></sup><span class="symbol">&#8804;</span> <i>n</i> &lt; 10<sup><i>f</i></sup><sup>+1</sup>
+				and for which the exact mathematical value of <i>n</i> <span class="symbol">&#215;</span>
+				10<sup><i>e</i></sup><sup>&#8211;</sup><sup><i>f</i></sup> &#8211; <i>x</i>
+				is as close to zero as possible. If there are two such sets of <i>e</i>
+				and <i>n</i>, pick the <i>e</i> and <i>n</i> for which <i>n</i> <span class="symbol">&#215;</span>
+				10<sup><i>e</i></sup><sup>&#8211;</sup><sup><i>f</i></sup> is larger.</p>
+			</li></ol></li>
+			<li><p>
+			Else,
+			<i>fractionDigits</i> is <b>undefined</b> 
+			</p>
+			<ol><li><p>
+				Let
+				<i>e</i>, <i>n</i>, and <i>f</i> be integers such that <i>f</i> <span class="symbol">&#8805;</span>
+				0, 10<sup><i>f</i></sup><span class="symbol">&#8804;</span> <i>n</i>
+				&lt; 10<sup><i>f</i></sup><sup>+1</sup>, the number value for n <span class="symbol">&#215;</span>
+				10<sup><i>e</i></sup><sup>&#8211;</sup><sup><i>f</i></sup> is <i>x</i>,
+				and <i>f</i> is as small as possible. Note that the decimal
+				representation of <i>n</i> has <i>f</i>+1 digits, <i>n</i> is not
+				divisible by 10, and the least significant digit of <i>n</i> is
+				not necessarily uniquely determined by these criteria.</p>
+			</li></ol></li>
+			<li><p>
+			Let
+			<i>m</i> be the String consisting of the digits of the decimal
+			representation of <i>n</i> (in order, with no leading zeroes).</p>
+		</li></ol></li>
+		<li><p>
+		If
+		<i>f</i> <span class="symbol">&#8800;</span> 0, then</p>
+		<ol><li><p>
+			Let
+			<i>a</i> be the first character of <i>m</i>, and let <i>b</i> be
+			the remaining <i>f</i> characters of <i>m</i>.</p>
+			</li>
+			<li><p>
+			Let
+			<i>m</i> be the concatenation of the three Strings <i>a</i>, <code><b>"."</b></code>,
+			and <i>b</i>.</p>
+		</li></ol></li>
+		<li><p>
+		If
+		<i>e</i> = 0, then 
+		</p>
+		<ol><li><p>
+			Let
+			<i>c</i> = <code><b>"+".</b></code></p>
+			</li>
+			<li><p>
+			Let
+			<i>d</i> = <code><b>"0".</b></code></p>
+		</li></ol></li>
+		<li><p>
+		Else</p>
+		<ol><li><p>
+			If
+			<i>e</i> &gt; 0, then let <i>c</i> = <code><b>"+".</b></code></p>
+			</li>
+			<li><p>
+			Else,
+			<i>e</i> &#8804; 0</p>
+			<ol><li><p>
+				Let
+				<i>c</i> = <code><b>"-"</b></code>.</p>
+				</li>
+				<li><p>
+				Let
+				<i>e</i> = &#8211;<i>e</i>.</p>
+			</li></ol></li>
+			<li><p>
+			Let
+			<i>d</i> be the String consisting of the digits of the decimal
+			representation of <i>e</i> (in order, with no leading zeroes).</p>
+		</li></ol></li>
+		<li><p>
+		Let
+		<i>m</i> be the concatenation of the four Strings <i>m</i>, <code><b>"e"</b></code>,
+		<i>c</i>, and <i>d</i>.</p>
+		</li>
+		<li><p>
+		Return
+		the concatenation of the Strings <i>s</i> and <i>m</i>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>toExponential</b></code>
+	method is <b>1</b>.</p>
+	<p>
+	If
+	the <code><b>toExponential</b></code>
+	method is called with more than one argument, then the behaviour is
+	undefined (see <a href="x15.html#x15">clause 15</a>).</p>
+	<p>
+	An
+	implementation is permitted to extend the behaviour of <code><b>toExponential</b></code>
+	for values of <i>fractionDigits</i>
+	less than 0 or greater than 20. In this case <code><b>toExponential</b></code>
+	would not necessarily throw <b><a href="x15.11.html#x15.11.6.2" class="term-ref">RangeError</a></b> for such values.</p>
+	<p></p><p><b class="note">NOTE</b> For
+	implementations that provide more accurate conversions than required
+	by the rules above, it is recommended that the following alternative
+	version of step 9.b.i be used as a guideline:</p>
+			<ol class="lower-roman"><li><p>
+				Let
+				<i>e</i>,
+				<i>n</i>,
+				and <i>f </i>be
+				integers such that <i>f</i>
+				<span class="symbol">&#8805;</span>
+				0, 10<sup><i>f</i></sup><span class="symbol">&#8804;</span>
+				n &lt; 10<sup><i>f</i></sup><sup>+1</sup>,
+				the number value for n <span class="symbol">&#215;</span>
+				10<sup><i>e</i></sup><sup>&#8211;</sup><sup><i>f</i></sup>
+				is x, and <i>f</i>
+				is as small as possible. If there are multiple possibilities for
+				<i>n</i>,
+				choose the value of <i>n</i>
+				for which <i>n</i>
+				<span class="symbol">&#215;</span>
+				10<sup><i>e</i></sup><sup>&#8211;</sup><sup><i>f</i></sup>
+				is closest in value to <i>x</i>.
+				If there are two such possible values of <i>n</i>,
+				choose the one that is even.</p>
+			</li></ol><h5 id="x15.7.4.7">15.7.4.7 Number.prototype.toPrecision (precision) <a href="#x15.7.4.7">#</a> <a href="#x15.7.4.7-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Return
+	a String containing  <a href="#this-Number-value">this Number value</a> represented either in decimal
+	exponential notation with one digit before the significand's decimal
+	point and <i>precision</i>&#8211;1
+	digits after the significand's decimal point or in decimal fixed
+	notation with <i>precision</i>
+	significant digits. If <i>precision</i>
+	is <b>undefined</b>, call <a href="x9.html#x9.8">ToString</a> (<a href="x9.html#x9.8.1">9.8.1</a>) instead. Specifically,
+	perform the following steps:</p>
+	<ol><li><p>
+		Let
+		<i>x</i> be  <a href="#this-Number-value">this Number value</a>.</p>
+		</li>
+		<li><p>
+		If
+		<i>precision</i> is <b>undefined</b>, return <a href="x9.html#x9.8">ToString</a>(<i>x</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>p</i> be <a href="x9.html#x9.4">ToInteger</a>(<i>precision</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i> is <b>NaN</b>, return the String <code><b>"NaN"</b></code>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>s</i> be the empty String.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i> &lt; 0, then</p>
+		<ol><li><p>
+			Let
+			<i>s</i> be <code><b>"-"</b></code>.</p>
+			</li>
+			<li><p>
+			Let
+			<i>x</i> = &#8211;<i>x</i>.</p>
+		</li></ol></li>
+		<li><p>
+		If
+		<i>x</i> = +<span class="symbol">&#8734;</span>, then</p>
+		<ol><li><p>
+			Return
+			the concatenation of the Strings <i>s</i> and <code><b>"Infinity"</b></code>.</p>
+		</li></ol></li>
+		<li><p>
+		If
+		<i>p</i> &lt; 1 or <i>p</i> &gt; 21, throw a <b><a href="x15.11.html#x15.11.6.2" class="term-ref">RangeError</a></b>
+		exception.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i> = 0, then</p>
+		<ol><li><p>
+			Let
+			<i>m</i> be the String consisting of <i>p</i> occurrences of the
+			character &#8216;<code>0</code>&#8217;.</p>
+			</li>
+			<li><p>
+			Let
+			<i>e</i> = 0.</p>
+		</li></ol></li>
+		<li><p>
+		Else
+		<i>x</i> <span class="symbol">&#8800;</span> 0,</p>
+		<ol><li><p>
+			Let
+			<i>e</i> and <i>n</i> be integers such that 10<sup><i>p</i></sup><sup>&#8211;1</sup><span class="symbol">&#8804;</span> <i>n</i> &lt; 10<sup><i>p</i></sup>
+			and for which the exact mathematical value of <i>n</i> <span class="symbol">&#215;</span>
+			10<sup><i>e</i></sup><sup>&#8211;</sup><sup><i>p</i></sup><sup>+1</sup>
+			&#8211; <i>x</i> is as close to zero as possible. If there are two
+			such sets of <i>e</i> and <i>n</i>, pick the <i>e</i> and <i>n</i>
+			for which <i>n</i> <span class="symbol">&#215;</span> 10<sup><i>e</i></sup><sup>&#8211;</sup><sup><i>p</i></sup><sup>+1</sup>
+			is larger.</p>
+			</li>
+			<li><p>
+			Let
+			<i>m</i> be the String consisting of the digits of the decimal
+			representation of <i>n</i> (in order, with no leading zeroes).</p>
+			</li>
+			<li><p>
+			If
+			<i>e</i> &lt; &#8211;6 or <i>e</i> <span class="symbol">&#8805;</span>
+			<i>p</i>, then</p>
+			<ol><li><p>
+				Let
+				<i>a</i> be the first character of <i>m</i>, and let <i>b</i> be
+				the remaining <i>p</i>&#8211;1 characters of <i>m</i>.</p>
+				</li>
+				<li><p>
+				Let
+				<i>m</i> be the concatenation of the three Strings <i>a</i>, <code><b>"."</b></code>,
+				and <i>b</i>.</p>
+				</li>
+				<li><p>
+				If
+				<i>e</i> = 0, then</p>
+				<ol><li><p>
+					Let
+					<i>c</i> = <code><b>"+"</b></code>
+					and <i>d</i> = <code><b>"0"</b></code>.</p>
+				</li></ol></li>
+				<li><p>
+				Else
+				<i>e</i> <span class="symbol">&#8800;</span> 0,</p>
+				<ol><li><p>
+					If
+					<i>e</i> &gt; 0,  then 
+					</p>
+					<ol><li><p>
+						Let
+						<i>c</i> = <code><b>"+"</b></code>.</p>
+					</li></ol></li>
+					<li><p>
+					Else
+					<i>e</i> &lt; 0,</p>
+					<ol><li><p>
+						Let
+						<i>c</i> = <code><b>"-"</b></code>.</p>
+						</li>
+						<li><p>
+						Let
+						<i>e</i> = &#8211;<i>e</i>.</p>
+					</li></ol></li>
+					<li><p>
+					Let
+					<i>d</i> be the String consisting of the digits of the decimal
+					representation of <i>e</i> (in order, with no leading zeroes).</p>
+				</li></ol></li>
+				<li><p>
+				Let
+				<i>m</i> be the concatenation of the five Strings <i>s</i>, <i>m</i>,
+				<code><b>"e"</b></code>,
+				<i>c</i>, and <i>d</i>.</p>
+			</li></ol></li></ol></li>
+		<li><p>
+		If
+		<i>e</i> = <i>p</i>&#8211;1, then return the concatenation of the
+		Strings <i>s</i> and <i>m</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>e</i> <span class="symbol">&#8805;</span> 0, then</p>
+		<ol><li><p>
+			Let
+			<i>m</i> be the concatenation of the first <i>e</i>+1 characters
+			of <i>m</i>, the character &#8216;<code>.</code>&#8217;,
+			and the remaining <i>p</i>&#8211; (<i>e</i>+1) characters of <i>m</i>.</p>
+		</li></ol></li>
+		<li><p>
+		Else
+		<i>e</i> &lt; 0,</p>
+		<ol><li><p>
+			Let
+			<i>m</i> be the concatenation of the String <code><b>"0."</b></code>,
+			&#8211;(<i>e</i>+1) occurrences of the character &#8216;<code><b>0</b></code>&#8217;,
+			and the String <i>m</i>.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		the concatenation of the Strings <i>s</i> and <i>m</i>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>toPrecision</b></code>
+	method is <b>1</b>.</p>
+	<p>
+	If
+	the <code><b>toPrecision</b></code>
+	method is called with more than one argument, then the behaviour is
+	undefined (see <a href="x15.html#x15">clause 15</a>).</p>
+	<p>
+	An
+	implementation is permitted to extend the behaviour of <code><b>toPrecision</b></code>
+	for values of <i>precision</i>
+	less than 1 or greater than 21. In this case <code><b>toPrecision</b></code>
+	would not necessarily throw <b><a href="x15.11.html#x15.11.6.2" class="term-ref">RangeError</a></b> for such values.</p>
+	<h4 id="x15.7.5">15.7.5 Properties of Number Instances <a href="#x15.7.5">#</a> <a href="#x15.7.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	Number
+	instances inherit properties from the Number prototype object and
+	their [[Class]] internal property value is <code><b>"Number"</b></code>.
+	Number instances also have a [[PrimitiveValue]] internal property.</p>
+	<p>
+	The
+	[[PrimitiveValue]] internal property is the Number value represented
+	by this Number object.</p>
+	</body><script src="anno.js"></script></html>

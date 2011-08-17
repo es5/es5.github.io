@@ -56,16 +56,16 @@
 	have been interpreted as the final character of the literal.</p>
 	<p>
 	<a href="x10.html#x10.4.2">10.4.2</a>:
-	In Edition 5, indirect calls to the <code><b><a href="x15.html#x15.1.2.1">eval</a></b></code> function use the global environment as both the variable environment
+	In Edition 5, indirect calls to the <code><b><a href="x15.1.html#x15.1.2.1">eval</a></b></code> function use the global environment as both the variable environment
 	and <a href="x10.html#x10.2">lexical environment</a> for the <a href="x10.html#eval-code">eval code</a>.  In Edition 3, the
 	variable and <a href="x10.html#x10.2">lexical environment</a>s of the caller of an indirect <code><b>eval</b></code>
 	was used as the environments for the <a href="x10.html#eval-code">eval code</a>.</p>
 	<p>
-	<a href="x15.html#x15.4.4">15.4.4</a>:
-	In Edition 5 all methods of <code><b><a href="x15.html#x15.4.3.1">Array.prototype</a></b></code>
+	<a href="x15.4.html#x15.4.4">15.4.4</a>:
+	In Edition 5 all methods of <code><b><a href="x15.4.html#x15.4.3.1">Array.prototype</a></b></code>
 	are intentionally generic. In Edition 3 <code><b>toString</b></code>
 	and <code><b>toLocaleString</b></code>
-	were not generic and would throw a <code><b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b></code>
+	were not generic and would throw a <code><b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b></code>
 	exception if applied to objects that were not instances of Array.</p>
 	<p>
 	<a href="x10.html#x10.6">10.6</a>:
@@ -82,7 +82,7 @@
 	</p>
 	<p>
 	<a href="x12.html#x12.6.4">12.6.4</a>:
-	for-in statements no longer throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> if the <code><b>in</b></code>
+	for-in statements no longer throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> if the <code><b>in</b></code>
 	expression evaluates to <b>null</b> or <b>undefined</b>. Instead,
 	the statement behaves as if the value of the expression was an
 	object with no enumerable properties.</p>
@@ -123,38 +123,38 @@
 	Implementations are now required to ignore extra arguments to
 	standard built-in methods unless otherwise explicitly specified. In
 	Edition 3 the handling of extra arguments was unspecified and
-	implementations were explicitly allowed to throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+	implementations were explicitly allowed to throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
 	exception.</p>
 	<p>
-	<a href="x15.html#x15.1.1">15.1.1</a>:
+	<a href="x15.1.html#x15.1.1">15.1.1</a>:
 	The value properties <b>NaN</b>, <b>Infinity</b>, and <b>undefined</b>
 	of the Global Object have been changed to be read-only properties.</p>
 	<p>
-	<a href="x15.html#x15.1.2.1">15.1.2.1</a>.
+	<a href="x15.1.html#x15.1.2.1">15.1.2.1</a>.
 	Implementations are no longer permitted to restrict the use of eval
 	in ways that are not a direct call.  In addition, any invocation of
 	eval that is not a direct call uses the global environment as its
 	variable environment rather than the caller&#8217;s variable
 	environment.</p>
 	<p>
-	<a href="x15.html#x15.1.2.2">15.1.2.2</a>:
+	<a href="x15.1.html#x15.1.2.2">15.1.2.2</a>:
 	The specification of the function <code><b>parseInt</b></code>
 	no longer allows implementations to treat Strings beginning with a <code><b>0</b></code>
 	character as octal values.</p>
 	<p>
-	<a href="x15.html#x15.3.4.3">15.3.4.3</a>:
-	In Edition 3, a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> is thrown if the second argument
-	passed to <code><b><a href="x15.html#x15.3.4.3">Function.prototype.apply</a></b></code>
+	<a href="x15.3.html#x15.3.4.3">15.3.4.3</a>:
+	In Edition 3, a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> is thrown if the second argument
+	passed to <code><b><a href="x15.3.html#x15.3.4.3">Function.prototype.apply</a></b></code>
 	is neither an array object nor an arguments object. In Edition 5,
 	the second argument may be any kind of generic array-like object
 	that has a valid <code><b>length</b></code>
 	property.</p>
 	<p>
-	<a href="x15.html#x15.3.4.3">15.3.4.3</a>,&#160;<a href="x15.html#x15.3.4.4">15.3.4.4</a>:
+	<a href="x15.3.html#x15.3.4.3">15.3.4.3</a>,&#160;<a href="x15.3.html#x15.3.4.4">15.3.4.4</a>:
 	In Edition 3 passing <b>undefined</b> or <b>null</b> as the first
-	argument to either <code><b><a href="x15.html#x15.3.4.3">Function.prototype.apply</a></b></code>
-	or <code><b><a href="x15.html#x15.3.4.4">Function.prototype.call</a></b></code>
-	causes the <a href="x15.html#x15.1" class="term-ref">global object</a> to be passed to the indirectly invoked
+	argument to either <code><b><a href="x15.3.html#x15.3.4.3">Function.prototype.apply</a></b></code>
+	or <code><b><a href="x15.3.html#x15.3.4.4">Function.prototype.call</a></b></code>
+	causes the <a href="x15.1.html#x15.1" class="term-ref">global object</a> to be passed to the indirectly invoked
 	target function as the <b>this</b> value. If the first argument is a
 	<a href="x4.html#primitive_value" class="term-ref">primitive value</a> the result of calling <a href="x9.html#x9.9">ToObject</a> on the <a href="x4.html#primitive_value" class="term-ref">primitive value</a> is passed as the <b>this</b> value. In Edition 5, these
 	transformations are not performed and the actual first argument
@@ -170,15 +170,15 @@
 	cause behaviour in Edition 5 implementations that differ from
 	Edition 3 behaviour. In particular, in Edition 5 built-in functions
 	that are specified to actually use the passed <b>this</b> value as
-	an object typically throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception if passed
+	an object typically throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception if passed
 	<b>null</b> or <b>undefined</b> as the <b>this</b> value.</p>
 	<p>
-	<a href="x15.html#x15.3.5.2">15.3.5.2</a>:
+	<a href="x15.3.html#x15.3.5.2">15.3.5.2</a>:
 	In Edition 5, the <code><b>prototype</b></code>
 	property of Function instances is not enumerable. In Edition 3, this
 	property was enumerable.</p>
 	<p>
-	<a href="x15.html#x15.5.5.2">15.5.5.2</a>:
+	<a href="x15.5.html#x15.5.5.2">15.5.5.2</a>:
 	In Edition 5, the individual characters of a String object&#8217;s
 	[[PrimitiveValue] may be accessed as array indexed properties of the
 	String object. These properties are non-writable and
@@ -188,43 +188,43 @@
 	names and could access inherited properties with such names.  
 	</p>
 	<p>
-	<a href="x15.html#x15.9.4.2">15.9.4.2</a>:
-	<code><b><a href="x15.html#x15.9.4.2">Date.parse</a></b></code> is now
+	<a href="x15.9.html#x15.9.4.2">15.9.4.2</a>:
+	<code><b><a href="x15.9.html#x15.9.4.2">Date.parse</a></b></code> is now
 	required to first attempt to parse its argument as an ISO format
 	string. Programs that use this format but depended upon
 	implementation specific behaviour (including failure) may behave
 	differently.</p>
 	<p>
-	<a href="x15.html#x15.10.2.12">15.10.2.12</a>:
+	<a href="x15.10.html#x15.10.2.12">15.10.2.12</a>:
 	In Edition 5, <code><b>\s</b></code>
 	now additionally matches &lt;BOM&gt;.</p>
 	<p>
-	<a href="x15.html#x15.10.4.1">15.10.4.1</a>:
+	<a href="x15.10.html#x15.10.4.1">15.10.4.1</a>:
 	In Edition 3, the exact form of the String value of the <code><b>source</b></code>
 	property of an object created by the <code><b>RegExp</b></code>
 	constructor is implementation defined. In Edition 5, the String must
 	conform to certain specified requirements and hence may be different
 	from that produced by an Edition 3 implementation.</p>
 	<p>
-	<a href="x15.html#x15.10.6.4">15.10.6.4</a>:
-	In Edition 3, the result of <code><b><a href="x15.html#x15.10.6.4">RegExp.prototype.toString</a></b></code>
+	<a href="x15.10.html#x15.10.6.4">15.10.6.4</a>:
+	In Edition 3, the result of <code><b><a href="x15.10.html#x15.10.6.4">RegExp.prototype.toString</a></b></code>
 	need not be derived from the value of the RegExp object&#8217;s <code><b>source</b></code>
 	property.  In Edition 5 the result must be derived from the <code><b>source</b></code>
 	property in a specified manner and hence may be different from the
 	result produced by an Edition 3 implementation.</p>
 	<p>
-	<a href="x15.html#x15.11.2.1">15.11.2.1</a>,
-	<a href="x15.html#x15.11.4.3">15.11.4.3</a>:  In Edition 5, if an initial value for the <code><b>message</b></code>
+	<a href="x15.11.html#x15.11.2.1">15.11.2.1</a>,
+	<a href="x15.11.html#x15.11.4.3">15.11.4.3</a>:  In Edition 5, if an initial value for the <code><b>message</b></code>
 	property of an Error object is not specified via the <code><b>Error</b></code>
 	constructor the initial value of the property is the empty String. 
 	In Edition 3, such an initial value is implementation defined.</p>
 	<p>
-	<a href="x15.html#x15.11.4.4">15.11.4.4</a>:
+	<a href="x15.11.html#x15.11.4.4">15.11.4.4</a>:
 	 In Edition 3, the result of <code><b>Error.prototype.toString</b></code>
 	is implementation defined.  In Edition 5, the result is fully
 	specified and hence may differ from some Edition 3 implementations.</p>
 	<p>
-	<a href="x15.html#x15.12">15.12</a>:
+	<a href="x15.12.html#x15.12">15.12</a>:
 	In Edition 5, the name <code><b>JSON</b></code>
 	is defined in the global environment. In Edition 3, testing for the
 	presence of that name will show it to be undefined unless it is

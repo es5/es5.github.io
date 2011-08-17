@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html class="split chapter"><head><meta charset="utf-8"><title>15.5 String Objects # &#9417; &#9402; &#9312; &#9398; &#8212; Annotated ES5</title><link rel="stylesheet" href="style.css"><link rel="shortcut icon" href="favicon.ico"><link href="x15.4.html" title="15.4 Array Objects " rel="prev">
+  <link href="spec.html#contents" title="TOC" rel="index">
+  <link href="x15.6.html" title="15.6 Boolean Objects " rel="next">
+  </head><body><div class="head">
+<h2 id="top">Annotated ECMAScript 5.1 <span id="timestamp"></span></h2>
+<div id="mascot-treehouse">
+	<img id="mascot" align="left" src="js-mascot.svg" alt=""><img id="bubble" src="bubble.svg" alt=""></div>
+<p id="slogan">&#8223;Ex igne vita&#8221;</p>
+<div id="annotations"></div>
+<script src="timestamp.js"></script></div>
+<nav>
+   <a href="x15.4.html">&#8592; 15.4 Array Objects </a> &#8211;
+   <a href="spec.html#contents">TOC</a> &#8211;
+   <a href="x15.6.html">15.6 Boolean Objects  &#8594;</a>
+  <ol class="toc"><li><ol><li><a href="x15.5.html#x15.5" id="x15.5-toc">15.5 String Objects</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.5.html#x15.5.1" id="x15.5.1-toc">15.5.1 The String Constructor Called as a Function</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.5.html#x15.5.1.1" id="x15.5.1.1-toc">15.5.1.1 String ( [ value ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.5.html#x15.5.2" id="x15.5.2-toc">15.5.2 The String Constructor</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.5.html#x15.5.2.1" id="x15.5.2.1-toc">15.5.2.1 new String ( [ value ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.5.html#x15.5.3" id="x15.5.3-toc">15.5.3 Properties of the String Constructor</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.5.html#x15.5.3.1" id="x15.5.3.1-toc">15.5.3.1 String.prototype</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.5.html#x15.5.3.2" id="x15.5.3.2-toc">15.5.3.2 String.fromCharCode ( [ char0 [ , char1 [ , &#8230; ] ] ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.5.html#x15.5.4" id="x15.5.4-toc">15.5.4 Properties of the String Prototype Object</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.5.html#x15.5.4.1" id="x15.5.4.1-toc">15.5.4.1 String.prototype.constructor</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.5.html#x15.5.4.2" id="x15.5.4.2-toc">15.5.4.2 String.prototype.toString ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.5.html#x15.5.4.3" id="x15.5.4.3-toc">15.5.4.3 String.prototype.valueOf ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.5.html#x15.5.4.4" id="x15.5.4.4-toc">15.5.4.4 String.prototype.charAt (pos)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.5.html#x15.5.4.5" id="x15.5.4.5-toc">15.5.4.5 String.prototype.charCodeAt (pos)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.5.html#x15.5.4.6" id="x15.5.4.6-toc">15.5.4.6 String.prototype.concat ( [ string1 [ , string2 [ , &#8230; ] ] ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.5.html#x15.5.4.7" id="x15.5.4.7-toc">15.5.4.7 String.prototype.indexOf (searchString, position)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.5.html#x15.5.4.8" id="x15.5.4.8-toc">15.5.4.8 String.prototype.lastIndexOf (searchString, position)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.5.html#x15.5.4.9" id="x15.5.4.9-toc">15.5.4.9 String.prototype.localeCompare (that)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.5.html#x15.5.4.10" id="x15.5.4.10-toc">15.5.4.10 String.prototype.match (regexp)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.5.html#x15.5.4.11" id="x15.5.4.11-toc">15.5.4.11 String.prototype.replace (searchValue, replaceValue)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.5.html#x15.5.4.12" id="x15.5.4.12-toc">15.5.4.12 String.prototype.search (regexp)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.5.html#x15.5.4.13" id="x15.5.4.13-toc">15.5.4.13 String.prototype.slice (start, end)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.5.html#x15.5.4.14" id="x15.5.4.14-toc">15.5.4.14 String.prototype.split (separator, limit)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.5.html#x15.5.4.15" id="x15.5.4.15-toc">15.5.4.15 String.prototype.substring (start, end)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.5.html#x15.5.4.16" id="x15.5.4.16-toc">15.5.4.16 String.prototype.toLowerCase ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.5.html#x15.5.4.17" id="x15.5.4.17-toc">15.5.4.17 String.prototype.toLocaleLowerCase ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.5.html#x15.5.4.18" id="x15.5.4.18-toc">15.5.4.18 String.prototype.toUpperCase ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.5.html#x15.5.4.19" id="x15.5.4.19-toc">15.5.4.19 String.prototype.toLocaleUpperCase ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.5.html#x15.5.4.20" id="x15.5.4.20-toc">15.5.4.20 String.prototype.trim ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.5.html#x15.5.5" id="x15.5.5-toc">15.5.5 Properties of String Instances</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.5.html#x15.5.5.1" id="x15.5.5.1-toc">15.5.5.1 length</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.5.html#x15.5.5.2" id="x15.5.5.2-toc">15.5.5.2 [[GetOwnProperty]] ( P )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li></ol></li></ol></li></ol></nav>
+
+  <h3 id="x15.5" class="splitme">15.5 String Objects <a href="#x15.5">#</a> <a href="#x15.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<h4 id="x15.5.1">15.5.1 The String Constructor Called as a Function <a href="#x15.5.1">#</a> <a href="#x15.5.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	<code><b>String</b></code> is called
+	as a function rather than as a constructor, it performs a type
+	conversion.</p>
+	<h5 id="x15.5.1.1">15.5.1.1 String ( [ value ] ) <a href="#x15.5.1.1">#</a> <a href="#x15.5.1.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Returns
+	a String value (not a String object) computed by <a href="x9.html#x9.8">ToString</a>(<i>value</i>).
+	If <i>value</i> is not
+	supplied, the empty String <code><b>""</b></code>
+	is returned.</p>
+	<h4 id="x15.5.2">15.5.2 The String Constructor <a href="#x15.5.2">#</a> <a href="#x15.5.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	<code><b>String</b></code> is called
+	as part of a <code><b>new</b></code>
+	expression, it is a constructor: it initialises the newly created
+	object.</p>
+	<h5 id="x15.5.2.1">15.5.2.1 new String ( [ value ] ) <a href="#x15.5.2.1">#</a> <a href="#x15.5.2.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	[[Prototype]] internal
+	property of the newly constructed object is set to the standard
+	built-in String prototype object that is the initial value of
+	<code><b>String.prototype</b></code>
+	(<a href="#x15.5.3.1">15.5.3.1</a>).</p>
+	<p>
+	The
+	[[Class]] internal
+	property of the newly constructed object is set to <code><b>"String"</b></code>.</p>
+	<p>
+	The
+	[[Extensible]] internal
+	property of the newly constructed object is set to <b>true</b>.</p>
+	<p>
+	The
+	[[PrimitiveValue]] internal
+	property of the newly constructed object is set to <a href="x9.html#x9.8">ToString</a>(<i>value</i>),
+	or to the empty String if <i>value</i>
+	is not supplied.</p>
+	<h4 id="x15.5.3">15.5.3 Properties of the String Constructor <a href="#x15.5.3">#</a> <a href="#x15.5.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	value of the [[Prototype]] internal property of the String
+	constructor is the standard built-in Function prototype object
+	(<a href="x15.3.html#x15.3.4">15.3.4</a>).</p>
+	<p>
+	Besides
+	the internal properties and the <code><b>length</b></code>
+	property (whose value is <b>1</b>), the String constructor has the
+	following properties:</p>
+	<h5 id="x15.5.3.1">15.5.3.1 String.prototype <a href="#x15.5.3.1">#</a> <a href="#x15.5.3.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	initial value of <code><b>String.prototype</b></code>
+	is the standard built-in String prototype object (<a href="#x15.5.4">15.5.4</a>).</p>
+	<p>
+	This
+	property has the attributes { [[Writable]]: <b>false</b>,
+	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b> }.</p>
+	<h5 id="x15.5.3.2">15.5.3.2 String.fromCharCode ( [ char0 [ , char1 [ , &#8230; ] ] ] ) <a href="#x15.5.3.2">#</a> <a href="#x15.5.3.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Returns
+	a String value containing as many characters as the number of
+	arguments. Each argument specifies one character of the resulting
+	String, with the first argument specifying the first character, and
+	so on, from left to right. An argument is converted to a character
+	by applying the operation <a href="x9.html#x9.7">ToUint16</a> (<a href="x9.html#x9.7">9.7</a>) and regarding the resulting
+	16-bit integer as the code unit value of a character. If no
+	arguments are supplied, the result is the empty String.</p>
+	<p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>fromCharCode</b></code>
+	function is <b>1</b>.</p>
+	<h4 id="x15.5.4">15.5.4 Properties of the String Prototype Object <a href="#x15.5.4">#</a> <a href="#x15.5.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	String prototype object is itself a String object (its [[Class]] is
+	<code><b>"String"</b></code>)
+	whose value is an empty String.</p>
+	<p>
+	The
+	value of the [[Prototype]] internal property of the String prototype
+	object is the standard built-in Object prototype object (<a href="x15.2.html#x15.2.4">15.2.4</a>).</p>
+	<h5 id="x15.5.4.1">15.5.4.1 String.prototype.constructor <a href="#x15.5.4.1">#</a> <a href="#x15.5.4.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	initial value of <code><b>String.prototype.constructor</b></code>
+	is the built-in <code><b>String</b></code>
+	constructor.</p>
+	<h5 id="x15.5.4.2">15.5.4.2 String.prototype.toString ( ) <a href="#x15.5.4.2">#</a> <a href="#x15.5.4.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Returns
+	this String value. (Note that, for a String object, the <code><b>toString</b></code>
+	method happens to return the same thing as the <code><b>valueOf</b></code>
+	method.)</p>
+	<p>
+	The
+	<code><b>toString</b></code> function
+	is not generic; it throws a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception if its <b>this</b>
+	value is not a String or a String object. Therefore, it cannot be
+	transferred to other kinds of objects for use as a method.</p>
+	<h5 id="x15.5.4.3">15.5.4.3 String.prototype.valueOf ( ) <a href="#x15.5.4.3">#</a> <a href="#x15.5.4.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Returns
+	this String value.</p>
+	<p>
+	The
+	<code><b>valueOf</b></code> function
+	is not generic; it throws a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception if its <b>this</b>
+	value is not a String or String object. Therefore, it cannot be
+	transferred to other kinds of objects for use as a method.</p>
+	<h5 id="x15.5.4.4">15.5.4.4 String.prototype.charAt (pos) <a href="#x15.5.4.4">#</a> <a href="#x15.5.4.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Returns
+	a String containing the character at position <i>pos</i>
+	in the String resulting from converting this object to a String. If
+	there is no character at that position, the result is the empty
+	String. The result is a String value, not a String object.</p>
+	<p>
+	If
+	<i>pos</i> is a value of
+	Number type that is an integer, then the result of <code><b>x.charAt(</b></code> <i>pos</i><code><b>)</b></code>
+	is equal to the result of <code><b>x.substring(</b></code> <i>pos</i><code><b>,</b></code>
+	<i>pos</i><code><b>+1)</b></code>.</p>
+	<p>
+	When
+	the <code><b>charAt</b></code> method
+	is called with one argument <i>pos</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		Call
+		<a href="x9.html#x9.10">CheckObjectCoercible</a> passing the <b>this</b> value as its argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>S</i> be the result of calling <a href="x9.html#x9.8">ToString</a>, giving it the <b>this</b>
+		value as its argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>position</i> be <a href="x9.html#x9.4">ToInteger</a>(<i>pos</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>size</i> be the number of characters in <i>S</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>position</i> &lt; 0 or <i>position</i> &#8805; <i>size</i>, return
+		the empty String.</p>
+		</li>
+		<li><p>
+		Return
+		a String of length 1, containing one character from <i>S</i>,
+		namely the character at position <i>position</i>, where the first
+		(leftmost) character in <i>S</i> is considered to be at position 0,
+		the next one at position 1, and so on.</p>
+	</li></ol><p><b class="note">NOTE</b> The
+	<code><b>charAt</b></code> function is
+	intentionally generic; it does not require that its <b>this</b>
+	value be a String object. Therefore, it can be transferred to other
+	kinds of objects for use as a method.</p>
+	<h5 id="x15.5.4.5">15.5.4.5 String.prototype.charCodeAt (pos) <a href="#x15.5.4.5">#</a> <a href="#x15.5.4.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Returns
+	a Number (a nonnegative integer less than 2<sup>16</sup>)
+	representing the code unit value of the character at position <i>pos</i>
+	in the String resulting from converting this object to a String. If
+	there is no character at that position, the result is <b>NaN</b>.</p>
+	<p>
+	When
+	the <code><b>charCodeAt</b></code>
+	method is called with one argument <i>pos</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		Call
+		<a href="x9.html#x9.10">CheckObjectCoercible</a> passing the <b>this</b> value as its argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>S</i> be the result of calling <a href="x9.html#x9.8">ToString</a>, giving it the <b>this</b>
+		value as its argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>position</i> be <a href="x9.html#x9.4">ToInteger</a>(<i>pos</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>size</i> be the number of characters in <i>S</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>position</i> &lt; 0 or <i>position</i> &#8805; <i>size</i>, return
+		<b>NaN</b>.</p>
+		</li>
+		<li><p>
+		Return
+		a value of Number type, whose value is the code unit value of the
+		character at position <i>position</i> in the String <i>S</i>, where
+		the first (leftmost) character in <i>S</i> is considered to be at
+		position 0, the next one at position 1, and so on.</p>
+	</li></ol><p><b class="note">NOTE</b> The
+	<code><b>charCodeAt</b></code>
+	function is intentionally generic; it does not require that its <b>this</b>
+	value be a String object. Therefore it can be transferred to other
+	kinds of objects for use as a method.</p>
+	<h5 id="x15.5.4.6">15.5.4.6 String.prototype.concat ( [ string1 [ , string2 [ , &#8230; ] ] ] ) <a href="#x15.5.4.6">#</a> <a href="#x15.5.4.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <code><b>concat</b></code> method
+	is called with zero or more arguments <i>string1</i>,
+	<i>string2</i>, etc., it
+	returns a String consisting of the characters of this object
+	(converted to a String) followed by the characters of each of
+	<i>string1</i>, <i>string2</i>,
+	etc. (where each argument is converted to a String). The result is a
+	String value, not a String object. The following steps are taken:</p>
+	<ol><li><p>
+		Call
+		<a href="x9.html#x9.10">CheckObjectCoercible</a> passing the <b>this</b> value as its argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>S</i> be the result of calling <a href="x9.html#x9.8">ToString</a>, giving it the <b>this</b>
+		value as its argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>args</i> be an internal list that is a copy of the argument list
+		passed to this function.</p>
+		</li>
+		<li><p>
+		Let
+		<i>R</i> be <i>S</i>.</p>
+		</li>
+		<li><p>
+		Repeat,
+		while <i>args</i> is not empty</p>
+		<ol><li><p>
+			Remove
+			the first element from <i>args</i> and let <i>next</i> be the
+			value of that element.</p>
+			</li>
+			<li><p>
+			Let
+			<i>R</i> be the String value consisting of the characters in the
+			previous value of <i>R</i> followed by the characters of
+			<a href="x9.html#x9.8">ToString</a>(<i>next</i>).</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		<i>R</i>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>concat</b></code> method
+	is <b>1</b>.</p>
+	<p><b class="note">NOTE</b> The
+	<code><b>concat</b></code> function is
+	intentionally generic; it does not require that its <b>this</b>
+	value be a String object. Therefore it can be transferred to other
+	kinds of objects for use as a method.</p>
+	<h5 id="x15.5.4.7">15.5.4.7 String.prototype.indexOf (searchString, position) <a href="#x15.5.4.7">#</a> <a href="#x15.5.4.7-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	If
+	<i>searchString</i>
+	appears as a substring of the result of converting this object to a
+	String, at one or more positions that are greater than or equal to
+	<i>position</i>, then the
+	index of the smallest such position is returned; otherwise, <code><b>-1</b></code>
+	is returned. If <i>position</i>
+	is <b>undefined</b>, 0 is assumed, so as to search all of the
+	String.</p>
+	<p>
+	The
+	<code><b>indexOf</b></code> method
+	takes two arguments, <i>searchString </i>and<i> position</i>,
+	and performs the following steps:</p>
+	<ol><li><p>
+		Call
+		<a href="x9.html#x9.10">CheckObjectCoercible</a> passing the <b>this</b> value as its argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>S</i> be the result of calling <a href="x9.html#x9.8">ToString</a>, giving it the <b>this</b>
+		value as its argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>searchStr</i> be <a href="x9.html#x9.8">ToString</a>(<i>searchString</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>pos</i> be <a href="x9.html#x9.4">ToInteger</a>(<i>position</i>). (If <i>position</i> is
+		<b>undefined</b>, this step produces the value <code><b>0</b></code>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>len</i> be the number of characters in <i>S</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>start</i> be min(max(<i>pos</i>, 0), <i>len</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>searchLen</i> be the number of characters in <i>searchStr</i>.</p>
+		</li>
+		<li><p>
+		Return
+		the smallest possible integer <i>k</i> not smaller than <i>start</i>
+		such that <i>k</i>+<i> searchLen</i> is not greater than <i>len</i>,
+		and for all nonnegative integers <i>j</i> less than <i>searchLen</i>,
+		the character at position <i>k</i>+<i>j</i> of <i>S</i> is the same
+		as the character at position <i>j</i> of <i>searchStr</i>); but if
+		there is no such integer <i>k</i>, then return the value <code><b>-1</b></code>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>indexOf</b></code> method
+	is <b>1</b>.</p>
+	<p><b class="note">NOTE</b> The
+	<code><b>indexOf</b></code> function
+	is intentionally generic; it does not require that its <b>this</b>
+	value be a String object. Therefore, it can be transferred to other
+	kinds of objects for use as a method.</p>
+	<h5 id="x15.5.4.8">15.5.4.8 String.prototype.lastIndexOf (searchString, position) <a href="#x15.5.4.8">#</a> <a href="#x15.5.4.8-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	If
+	<i>searchString</i>
+	appears as a substring of the result of converting this object to a
+	String at one or more positions that are smaller than or equal to
+	<i>position</i>, then the
+	index of the greatest such position is returned; otherwise, <code><b>-1</b></code>
+	is returned. If <i>position</i>
+	is <b>undefined</b>, the length of the String value is assumed, so
+	as to search all of the String.</p>
+	<p>
+	The
+	<code><b>lastIndexOf</b></code> method
+	takes two arguments, <i>searchString </i>and<i> position</i>,
+	and performs the following steps:</p>
+	<ol><li><p>
+		Call
+		<a href="x9.html#x9.10">CheckObjectCoercible</a> passing the <b>this</b> value as its argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>S</i> be the result of calling <a href="x9.html#x9.8">ToString</a>, giving it the <b>this</b>
+		value as its argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>searchStr</i> be <a href="x9.html#x9.8">ToString</a>(<i>searchString</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>numPos</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>position</i>). (If <i>position</i> is
+		<b>undefined</b>, this step produces the value <b>NaN</b>).</p>
+		</li>
+		<li><p>
+		If
+		<i>numPos</i> is <b>NaN</b>, let <i>pos</i> be <b>+</b><span class="symbol"><b>&#8734;</b></span>;
+		otherwise, let <i>pos</i> be <a href="x9.html#x9.4">ToInteger</a>(<i>numPos</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>len</i> be the number of characters in <i>S</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>start</i> min(max(<i>pos</i>, 0), <i>len</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>searchLen</i> be the number of characters in <i>searchStr</i>.</p>
+		</li>
+		<li><p>
+		Return
+		the largest possible nonnegative integer <i>k</i> not larger than
+		<i>start</i> such that <i>k</i>+<i> searchLen</i> is not greater
+		than <i>len</i>, and for all nonnegative integers <i>j</i> less
+		than <i>searchLen</i>, the character at position <i>k</i>+<i>j</i>
+		of <i>S</i> is the same as the character at position <i>j</i> of
+		<i>searchStr</i>; but if there is no such integer <i>k</i>, then
+		return the value <code><b>-1</b></code>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>lastIndexOf</b></code>
+	method is <b>1</b>.</p>
+	<p><b class="note">NOTE</b> The
+	<code><b>lastIndexOf</b></code>
+	function is intentionally generic; it does not require that its <b>this</b>
+	value be a String object. Therefore, it can be transferred to other
+	kinds of objects for use as a method.</p>
+	<h5 id="x15.5.4.9">15.5.4.9 String.prototype.localeCompare (that) <a href="#x15.5.4.9">#</a> <a href="#x15.5.4.9-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <code><b>localeCompare</b></code>
+	method is called with one argument <i>that</i>,
+	it returns a Number other than <b>NaN</b> that represents the result
+	of a locale-sensitive String comparison of the this value (converted
+	to a String) with <i>that</i>
+	(converted to a String). The two Strings are <i>S</i>
+	and <i>That</i>. The two
+	Strings are compared in an implementation-defined fashion. The
+	result is intended to order String values in the sort order
+	specified by the system default locale, and will be negative, zero,
+	or positive, depending on whether <i>S</i>
+	comes before <i>That</i>
+	in the sort order, the Strings are equal, or <i>S</i>
+	comes after <i>That</i>
+	in the sort order, respectively.</p>
+	<p>
+	Before
+	perform the comparisons the following steps are performed to prepare
+	the Strings:</p>
+	<ol><li><p>
+		Call
+		<a href="x9.html#x9.10">CheckObjectCoercible</a> passing the <b>this</b> value as its argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>S</i> be the result of calling <a href="x9.html#x9.8">ToString</a>, giving it the <b>this</b>
+		value as its argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>That</i> be <a href="x9.html#x9.8">ToString</a>(<i>that</i>).</p>
+	</li></ol><p>
+	The
+	<code><b>localeCompare</b></code>
+	method, if considered as a function of two arguments <b>this</b> and
+	<i>that</i>,  is a
+	consistent comparison function (as defined in <a href="x15.4.html#x15.4.4.11">15.4.4.11</a>) on the set
+	of all Strings.</p>
+	<p>
+	The
+	actual return values are implementation-defined to permit
+	implementers to encode additional information in the value, but the
+	function is required to define a total ordering on all Strings and
+	to return <code><b>0</b></code> when
+	comparing Strings that are considered canonically equivalent by the
+	Unicode standard.</p>
+	<p>
+	If no
+	language-sensitive comparison at all is available from the host
+	environment, this function may perform a bitwise comparison.</p>
+	<p class="sp"><b class="note">NOTE 1</b> The <code><b>localeCompare</b></code>
+	method itself is not directly suitable as an argument to
+	<code><b><a href="x15.4.html#x15.4.4.11">Array.prototype.sort</a></b></code>
+	because the latter requires a function of two arguments.</p>
+	<p class="sp"><b class="note">NOTE 2</b> This function is intended to rely on whatever language-sensitive
+	comparison functionality is available to the ECMAScript environment
+	from the host environment, and to compare according to the rules of
+	the host environment&#8217;s current locale. It is strongly recommended
+	that this function treat Strings that are canonically equivalent
+	according to the Unicode standard as identical (in other words,
+	compare the Strings as if they had both been converted to Normalised
+	Form C or D first). It is also recommended that this function not
+	honour Unicode compatibility equivalences or decompositions.</p>
+	<p class="sp"><b class="note">NOTE 3</b> The second parameter to this function is likely to be used in a
+	future version of this standard; it is recommended that
+	implementations do not use this parameter position for anything
+	else.</p>
+	<p class="sp"><b class="note">NOTE 4</b> The <code><b>localeCompare</b></code>
+	function is intentionally generic; it does not require that its <b>this</b>
+	value be a String object. Therefore, it can be transferred to other
+	kinds of objects for use as a method.</p>
+	<h5 id="x15.5.4.10">15.5.4.10 String.prototype.match (regexp) <a href="#x15.5.4.10">#</a> <a href="#x15.5.4.10-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <code><b>match</b></code> method
+	is called with argument <i>regexp</i>,
+	the following steps are taken:</p>
+	<ol><li value="1"><p>
+		Call
+		<a href="x9.html#x9.10">CheckObjectCoercible</a> passing the <b>this</b> value as its argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>S</i> be the result of calling <a href="x9.html#x9.8">ToString</a>, giving it the <b>this</b>
+		value as its argument.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>regexp</i>) is Object and the value of the [[Class]]
+		internal property of <i>regexp</i> is <code><b>"RegExp"</b></code>,
+		then let <i>rx</i> be <i>regexp</i>;</p>
+		</li>
+		<li><p>
+		Else,
+		let <i>rx</i> be a new RegExp object created as if by the
+		expression <code><b>new
+		RegExp(</b></code> <i>regexp</i><code><b>)</b></code>
+		where <code><b>RegExp</b></code> is
+		the standard built-in constructor with that name.</p>
+		</li>
+		<li><p>
+		Let
+		<i>global</i> be the result of calling the [[Get]] internal method
+		of <i>rx</i> with argument <code><b>"global"</b></code>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>exec</i> be the standard built-in function <code><b><a href="x15.10.html#x15.10.6.2">RegExp.prototype.exec</a></b></code>
+		(see <a href="x15.10.html#x15.10.6.2">15.10.6.2</a>)</p>
+		</li>
+		<li><p>
+		If
+		<i>global</i> is not <b>true</b>, then</p>
+		<ol><li><p>
+			Return
+			the result of calling the [[Call]] internal method of <i>exec</i>
+			with <i>rx</i> as the <b>this</b> value and argument list
+			containing <i>S</i>.</p>
+		</li></ol></li></ol><ol start="8"><li><p>
+		Else,
+		<i>global</i> is <b>true</b></p>
+		<ol><li><p>
+			Call
+			the [[Put]] internal method of <i>rx</i> with arguments
+			<code><b>"lastIndex"</b></code>
+			and 0.</p>
+			</li>
+			<li><p>
+			Let
+			<i>A</i> be a new array created as if by the expression <code><b>new
+			Array()</b></code> where <code><b>Array</b></code>
+			is the standard built-in constructor with that name.</p>
+			</li>
+			<li><p>
+			Let
+			<i>previousLastIndex</i> be 0.</p>
+			</li>
+			<li><p>
+			Let
+			<i>n</i> be 0.</p>
+			</li>
+			<li><p>
+			Let
+			<i>lastMatch</i> be <b>true</b>.</p>
+			</li>
+			<li><p>
+			Repeat,
+			while <i>lastMatch</i> is <b>true</b></p>
+			<ol><li><p>
+				Let
+				<i>result</i> be the result of calling the [[Call]] internal
+				method of <i>exec</i> with <i>rx</i> as the <b>this</b> value and
+				argument list containing <i>S</i>.</p>
+				</li>
+				<li><p>
+				If
+				<i>result</i> is <b>null</b>, then set <i>lastMatch</i> to <b>false</b>.</p>
+				</li>
+				<li><p>
+				Else,
+				<i>result</i> is not <b>null</b></p>
+				<ol><li><p>
+					Let
+					<i>thisIndex</i>  be the result of calling the [[Get]] internal
+					method of <i>rx</i> with argument <code><b>"lastIndex"</b></code>.</p>
+					</li>
+					<li><p>
+					If
+					<i>thisIndex</i> = <i>previousLastIndex</i> then</p>
+					<ol><li><p>
+						Call
+						the [[Put]] internal method of <i>rx</i> with arguments
+						<code><b>"lastIndex"</b></code>
+						and <i>thisIndex</i>+1.</p>
+						</li>
+						<li><p>
+						Set
+						<i>previousLastIndex</i> to <i>thisIndex</i>+1.</p>
+					</li></ol></li>
+					<li><p>
+					Else,
+					set <i>previousLastIndex</i> to <i>thisIndex</i>.</p>
+					</li>
+					<li><p>
+					Let
+					<i>matchStr</i> be the result of calling the [[Get]] internal
+					method of <i>result</i> with argument <code><b>"0"</b></code>.</p>
+					</li>
+					<li><p>
+					Call
+					the [[DefineOwnProperty]] internal method of <i>A</i> with
+					arguments <a href="x9.html#x9.8">ToString</a>(<i>n</i>), the <a href="x8.html#x8.10">Property Descriptor</a>
+					{[[Value]]: <i>matchStr</i>, [[Writable]]: <b>true</b>,
+					[[Enumerable]]: <b>true</b>, [[configurable]]: <b>true</b>}, and
+					<b>false</b>.</p>
+					</li>
+					<li><p>
+					Increment
+					<i>n</i>.</p>
+				</li></ol></li></ol></li>
+			<li><p>
+			If
+			<i>n</i> = 0, then return <b>null</b>.</p>
+			</li>
+			<li><p>
+			Return
+			<i>A</i>.</p>
+		</li></ol></li></ol><p><b class="note">NOTE</b> The
+	<code><b>match</b></code> function is
+	intentionally generic; it does not require that its <b>this</b>
+	value be a String object. Therefore, it can be transferred to other
+	kinds of objects for use as a method.</p>
+	<h5 id="x15.5.4.11">15.5.4.11 String.prototype.replace (searchValue, replaceValue) <a href="#x15.5.4.11">#</a> <a href="#x15.5.4.11-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	First
+	set <i>string</i> according to the following steps:</p>
+	<ol><li><p>
+		Call
+		<a href="x9.html#x9.10">CheckObjectCoercible</a> passing the <b>this</b> value as its argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>string</i> be the result of calling <a href="x9.html#x9.8">ToString</a>, giving it the <b>this</b>
+		value as its argument.</p>
+	</li></ol><p>
+	If
+	<i>searchValue</i> is a
+	regular expression (an object whose [[Class]] internal property is
+	<code><b>"RegExp"</b></code>),
+	do the following: If <i>searchValue</i>.global
+	is <b>false</b>, then search <i>string</i>
+	for the first match of the regular expression <i>searchValue</i>.
+	If <i>searchValue</i>.global
+	is <b>true</b>, then search <i>string</i>
+	for all matches of the regular expression <i>searchValue</i>.
+	Do the search in the same manner as in <code><b><a href="#x15.5.4.10">String.prototype.match</a></b></code>,
+	including the update of <i>searchValue</i>.<code><b>lastIndex</b></code>.
+	Let <i>m</i> be the
+	number of left capturing parentheses in <i>searchValue</i>
+	(using <i>NcapturingParens</i>
+	as specified in <a href="x15.10.html#x15.10.2.1">15.10.2.1</a>).</p>
+	<p>
+	If
+	<i>searchValue</i> is not
+	a regular expression, let <i>searchString</i>
+	be <a href="x9.html#x9.8">ToString</a>(<i>searchValue</i>)
+	and search <i>string</i>
+	for the first occurrence of <i>searchString</i>.
+	Let <i>m</i> be 0.</p>
+	<p>
+	If
+	<i>replaceValue</i> is a
+	function, then for each matched substring, call the function with
+	the following <i>m</i> +
+	3 arguments. Argument 1 is the substring that matched. If
+	<i>searchValue</i> is a
+	regular expression, the next <i>m</i>
+	arguments are all of the <a href="x15.10.html#captures">captures</a> in the <a href="x15.10.html#MatchResult">MatchResult</a> (see
+	<a href="x15.10.html#x15.10.2.1">15.10.2.1</a>). Argument <i>m</i>
+	+ 2 is the offset within <i>string</i>
+	where the match occurred, and argument <i>m</i>
+	+ 3 is <i>string</i>. The
+	result is a String value derived from the original input by
+	replacing each matched substring with the corresponding return value
+	of the function call, converted to a String if need be.</p>
+	<p>
+	Otherwise,
+	let <i>newstring</i>
+	denote the result of converting <i>replaceValue</i>
+	to a String. The result is a String value derived from the original
+	input String by replacing each matched substring with a String
+	derived from <i>newstring</i>
+	by replacing characters in <i>newstring</i>
+	by replacement text as specified in Table 22. These <code><b>$</b></code>
+	replacements are done left-to-right, and, once such a replacement is
+	performed, the new replacement text is not subject to further
+	replacements. For example, <code><b>"$1,$2".replace(/(\$(\d))/g,
+	"$$1-$1$2")</b></code> returns <code><b>"$1-$11,$1-$22"</b></code>.
+	A <code><b>$</b></code> in <i>newstring</i>
+	that does not match any of the forms below is left as is.</p>
+<center>
+	<table width="708" border="1" bordercolor="#000000" cellpadding="0" cellspacing="0" rules="ROWS"><caption>Table&#160;22 &#8212; Replacement Text Symbol Substitutions</caption>
+		<colgroup><col width="132"><col width="574"></colgroup><tbody><tr valign="TOP"><td width="132" bgcolor="#c0c0c0">
+				<p class="sm-btm">
+				<span class="table-header">Characters</span></p>
+			</td>
+			<td width="574" bgcolor="#c0c0c0">
+				<p class="sm-btm">
+				<span class="table-header">Replacement
+				text</span></p>
+			</td>
+		</tr><tr valign="TOP"><td width="132">
+				<p>
+				<code><b>$$</b></code></p>
+			</td>
+			<td width="574">
+				<p>
+				<code><b>$</b></code></p>
+			</td>
+		</tr><tr valign="TOP"><td width="132">
+				<p>
+				<code><b>$&amp;</b></code></p>
+			</td>
+			<td width="574">
+				<p>
+				The
+				matched substring.</p>
+			</td>
+		</tr><tr valign="TOP"><td width="132">
+				<p>
+				<code><b>$&#8216;</b></code></p>
+			</td>
+			<td width="574">
+				<p>
+				The
+				portion of <i>string</i>
+				that precedes the matched substring.</p>
+			</td>
+		</tr><tr valign="TOP"><td width="132">
+				<p>
+				<code><b>$&#8217;</b></code></p>
+			</td>
+			<td width="574">
+				<p>
+				The
+				portion of <i>string</i>
+				that follows the matched substring.</p>
+			</td>
+		</tr><tr valign="TOP"><td width="132">
+				<p>
+				<code><b>$n</b></code></p>
+			</td>
+			<td width="574">
+				<p>
+				The
+				<i>n</i><sup>th</sup>
+				capture, where <i>n</i>
+				is a single digit in the range 1
+				to 9 and <code><b>$</b></code> <i>n</i>
+				is not followed by a decimal digit. If <i>n</i><span class="symbol">&#8804;</span><i>m</i>
+				and the <i>n</i>th
+				capture is <b>undefined</b>, use the empty String instead. If
+				<i>n</i>&gt;<i>m</i>,
+				the result is implementation-defined.</p>
+			</td>
+		</tr><tr valign="TOP"><td width="132">
+				<p>
+				<code><b>$nn</b></code></p>
+			</td>
+			<td width="574">
+				<p>
+				The
+				<i>nn</i><sup>th</sup>
+				capture, where <i>nn</i>
+				is a two-digit decimal number in the range 01
+				to 99. If <i>nn</i><span class="symbol">&#8804;</span><i>m</i>
+				and the <i>nn</i><sup>th</sup>
+				capture is <b>undefined</b>, use the empty String instead. If
+				<i>nn</i>&gt;<i>m</i>,
+				the result is implementation-defined.</p>
+			</td>
+		</tr></tbody></table></center>
+	<p><b class="note">NOTE</b> The
+	<code><b>replace</b></code> function
+	is intentionally generic; it does not require that its <b>this</b>
+	value be a String object. Therefore, it can be transferred to other
+	kinds of objects for use as a method.</p>
+	<h5 id="x15.5.4.12">15.5.4.12 String.prototype.search (regexp) <a href="#x15.5.4.12">#</a> <a href="#x15.5.4.12-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the search method is called with argument <i>regexp</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		Call
+		<a href="x9.html#x9.10">CheckObjectCoercible</a> passing the <b>this</b> value as its argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>string</i> be the result of calling <a href="x9.html#x9.8">ToString</a>, giving it the <b>this</b>
+		value as its argument.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>regexp</i>) is Object and the value of the [[Class]]
+		internal property of <i>regexp</i> is <code><b>"RegExp"</b></code>,
+		then let <i>rx</i> be <i>regexp</i>;</p>
+		</li>
+		<li><p>
+		Else,
+		let <i>rx</i> be a new RegExp object created as if by the
+		expression <code><b>new
+		RegExp(</b></code> <i>regexp</i><code><b>)</b></code>
+		where <code><b>RegExp</b></code> is
+		the standard built-in constructor with that name.</p>
+		</li>
+		<li><p>
+		Search
+		the value <i>string</i> from its beginning for an occurrence of the
+		regular expression pattern <i>rx</i>. Let <i>result</i> be a Number
+		indicating the offset within <i>string</i> where the pattern
+		matched, or &#8211;1 if there was no match. The<i> </i><code><b>lastIndex</b></code>
+		and <code><b>global</b></code>
+		properties of regexp are ignored when performing the search. The
+		<code><b>lastIndex</b></code>
+		property of regexp is left unchanged.</p>
+		</li>
+		<li><p>
+		Return
+		<i>result</i>.</p>
+	</li></ol><p><b class="note">NOTE</b> The
+	<code><b>search</b></code> function is
+	intentionally generic; it does not require that its <b>this</b>
+	value be a String object. Therefore, it can be transferred to other
+	kinds of objects for use as a method.</p>
+	<h5 id="x15.5.4.13">15.5.4.13 String.prototype.slice (start, end) <a href="#x15.5.4.13">#</a> <a href="#x15.5.4.13-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	<code><b>slice</b></code> method takes
+	two arguments, <i>start</i>
+	and <i>end</i>, and
+	returns a substring of the result of converting this object to a
+	String, starting from character position <i>start</i>
+	and running to, but not including, character position <i>end</i>
+	(or through the end of the String if <i>end</i>
+	is <b>undefined</b>). If <i>start</i>
+	is negative, it is treated as <i>sourceLength</i>+<i>start </i>where <i>sourceLength</i>
+	is the length of the String. If <i>end</i>
+	is negative, it is treated as <i>sourceLength</i>+<i>end</i>
+	where <i>sourceLength</i>
+	is the length of the String. The result is a String value, not a
+	String object. The following steps are taken:</p>
+	<ol><li><p>
+		Call
+		<a href="x9.html#x9.10">CheckObjectCoercible</a> passing the <b>this</b> value as its argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>S</i> be the result of calling <a href="x9.html#x9.8">ToString</a>, giving it the <b>this</b>
+		value as its argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>len</i> be the number of characters in <i>S</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>intStart</i> be <a href="x9.html#x9.4">ToInteger</a>(<i>start</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>end</i> is <b>undefined</b>, let <i>intEnd</i> be <i>len</i>;
+		else let <i>intEnd</i> be <a href="x9.html#x9.4">ToInteger</a>(<i>end</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i> intStart </i>is negative, let <i>from</i> be max(<i>len</i> + <i>intStart</i>,0); else let <i>from</i> be min(<i>intStart</i>,<i>len</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>intEnd</i> is negative, let <i>to</i> be max(<i>len</i> +<i>intEnd</i>,0); else let <i>to</i> be min(<i>intEnd</i>,<i> len</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>span</i> be max(<i>to</i> &#8211;<i> from</i>,0).</p>
+		</li>
+		<li><p>
+		Return
+		a String containing <i>span</i> consecutive characters from <i>S</i>
+		beginning with the character at position <i>from</i>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>slice</b></code> method
+	is <b>2</b>.</p>
+	<p><b class="note">NOTE</b> The
+	<code><b>slice</b></code> function is
+	intentionally generic; it does not require that its <b>this</b>
+	value be a String object. Therefore it can be transferred to other
+	kinds of objects for use as a method.</p>
+	<h5 id="x15.5.4.14">15.5.4.14 String.prototype.split (separator, limit) <a href="#x15.5.4.14">#</a> <a href="#x15.5.4.14-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Returns
+	an Array object into which substrings of the result of converting
+	this object to a String have been stored. The substrings are
+	determined by searching from left to right for occurrences of
+	<i>separator</i>; these
+	occurrences are not part of any substring in the returned array, but
+	serve to divide up the String value. The value of <i>separator</i>
+	may be a String of any length or it may be a RegExp object (i.e., an
+	object whose [[Class]] internal property is <code><b>"RegExp"</b></code>;
+	see <a href="x15.10.html#x15.10">15.10</a>).</p>
+	<p>
+	The
+	value of <i>separator</i>
+	may be an empty String, an empty regular expression, or a regular
+	expression that can match an empty String. In this case, <i>separator</i>
+	does not match the empty substring at the beginning or end of the
+	input String, nor does it match the empty substring at the end of
+	the previous separator match. (For example, if <i>separator</i>
+	is the empty String, the String is split up into individual
+	characters; the length of the result array equals the length of the
+	String, and each substring contains one character.) If <i>separator</i>
+	is a regular expression, only the first match at a given position of
+	the <b>this</b> String is considered, even if backtracking could
+	yield a non-empty-substring match at that position. (For example,
+	<code><b>"ab".split(/a*?/)</b></code>
+	evaluates to the array <code><b>["a","b"]</b></code>,
+	while <code><b>"ab".split(/a*/)</b></code>
+	evaluates to the array<code><b>["","b"]</b></code>.)</p>
+	<p>
+	If
+	the <b>this</b> object is (or converts to) the empty String, the
+	result depends on whether <i>separator</i>
+	can match the empty String. If it can, the result array contains no
+	<a href="x15.4.html#array-element">elements</a>. Otherwise, the result array contains one element, which is
+	the empty String.</p>
+	<p>If
+	<i>separator</i> is a
+	regular expression that contains capturing parentheses, then each
+	time <i>separator</i> is
+	matched the results (including any <b>undefined</b> results) of the
+	capturing parentheses are spliced into the output array.
+	For&#160;example,</p>
+	<p class="code-example">
+	<code><b>"A&lt;B&gt;bold&lt;/B&gt;and&lt;CODE&gt;coded&lt;/CODE&gt;".split(/&lt;(\/)?([^&lt;&gt;]+)&gt;/)</b></code></p>
+	<p>evaluates
+	to the array</p>
+	<p class="code-example">
+	<code><b>["A",
+	undefined, "B", "bold", "/", "B",
+	"and", undefined,<br> "CODE", "coded",
+	"/", "CODE", ""]</b></code></p>
+	<p>
+	If
+	<i>separator</i> is
+	<b>undefined</b>, then the result array contains just one String,
+	which is the <b>this</b> value (converted to a String). If <i>limit</i>
+	is not <b>undefined</b>, then the output array is truncated so that
+	it contains no more than <i>limit</i>
+	<a href="x15.4.html#array-element">elements</a>.</p>
+	<p>
+	When
+	the <code><b>split</b></code> method
+	is called, the following steps are taken:</p>
+	<ol><li><p>
+		Call
+		<a href="x9.html#x9.10">CheckObjectCoercible</a> passing the <b>this</b> value as its argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>S</i> be the result of calling <a href="x9.html#x9.8">ToString</a>, giving it the <b>this</b>
+		value as its argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>A</i> be a new array created as if by the expression <code><b>new
+		Array()</b></code>where <code><b>Array</b></code>
+		is the standard built-in constructor with that name.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lengthA</i> be 0.</p>
+		</li>
+		<li><p>
+		If
+		<i>limit</i> is <b>undefined</b>, let <i>lim</i> = 2<sup>32</sup>&#8211;1;
+		else let <i>lim</i> = <a href="x9.html#x9.6">ToUint32</a>(<i>limit</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>s</i> be the number of characters in <i>S</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>p</i> = 0.</p>
+		</li>
+		<li><p>
+		If
+		<i>separator</i> is a RegExp object (its [[Class]] is <code><b>"RegExp"</b></code>),
+		let <i>R</i> = <i>separator</i>; otherwise let <i>R</i> =
+		<a href="x9.html#x9.8">ToString</a>(<i>separator</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>lim</i> = 0, return <i>A</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>separator</i> is <b>undefined</b>, then</p>
+		<ol><li><p>
+			Call
+			the [[DefineOwnProperty]] internal method of <i>A</i> with
+			arguments <code>"</code><code><b>0</b></code><code>"</code>,
+		 <a href="x8.html#x8.10">Property Descriptor</a> {[[Value]]: <i>S</i>, [[Writable]]: <b>true</b>,
+			[[Enumerable]]: <b>true</b>, [[Configurable]]: <b>true</b>}, and
+			<b>false</b>.</p>
+			</li>
+			<li><p>
+			Return
+			<i>A</i>.</p>
+		</li></ol></li>
+		<li><p>
+		If
+		<i>s</i> = 0, then</p>
+		<ol><li><p>
+			Call
+			<i><a href="#SplitMatch">SplitMatch</a></i>(<i>S</i>, 0, <i>R</i>) and let <i>z</i> be its
+			<a href="x15.10.html#MatchResult">MatchResult</a> result.</p>
+			</li>
+			<li><p>
+			If
+			<i>z</i> is not <b>failure</b>, return <i>A</i>.</p>
+			</li>
+			<li><p>
+			Call
+			the [[DefineOwnProperty]] internal method of <i>A</i> with
+			arguments <code>"</code><code><b>0</b></code><code>"</code>,
+		 <a href="x8.html#x8.10">Property Descriptor</a> {[[Value]]: <i>S</i>, [[Writable]]: <b>true</b>,
+			[[Enumerable]]: <b>true</b>, [[Configurable]]: <b>true</b>}, and
+			<b>false</b>.</p>
+			</li>
+			<li><p>
+			Return
+			<i>A</i>.</p>
+		</li></ol></li>
+		<li><p>
+		Let
+		<i>q</i> = <i>p</i>.</p>
+		</li>
+		<li><p>
+		Repeat,
+		while <i>q</i> <span class="symbol">&#8800;</span> <i>s</i></p>
+		<ol><li><p>
+			Call
+			<i><a href="#SplitMatch">SplitMatch</a></i>(<i>S</i>, <i>q</i>, <i>R</i>) and let <i>z</i>
+			be its <a href="x15.10.html#MatchResult">MatchResult</a> result.</p>
+			</li>
+
+			<li><p>
+			If
+			<i>z</i> is <b>failure</b>, then let <i>q</i> = <i>q</i>+1.</p>
+			</li>
+			<li><p>
+			Else,
+			 <i>z</i> is not <b>failure</b></p>
+			<ol><li><p>
+				<i>z</i>
+				must be a State. Let <i>e</i> be <i>z</i>'s <i><a href="x15.10.html#endIndex">endIndex</a></i> and
+				let <i>cap</i> be <i>z</i>'s <i><a href="x15.10.html#captures">captures</a></i> array.</p>
+				</li>
+				<li><p>
+				If
+				<i>e</i> = <i>p</i>, then let <i>q</i> = <i>q</i>+1.</p>
+				</li>
+				<li><p>
+				Else,
+				<i>e</i> <span class="symbol">&#8800;</span> <i>p</i></p>
+				<ol><li><p>
+					Let
+					<i>T</i> be a String value equal to the substring of <i>S</i>
+					consisting of the characters at positions <i>p</i> (inclusive)
+					through <i>q</i> (exclusive).</p>
+					</li>
+					<li><p>
+					Call
+					the [[DefineOwnProperty]] internal method of <i>A</i> with
+					arguments <a href="x9.html#x9.8">ToString</a>(<i>lengthA</i>), <a href="x8.html#x8.10">Property Descriptor</a>
+					{[[Value]]: <i>T</i>, [[Writable]]: <b>true</b>, [[Enumerable]]:
+					<b>true</b>, [[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
+					</li>
+					<li><p>
+					Increment
+					<i>lengthA</i> by 1.</p>
+					</li>
+					<li><p>
+					If
+					<i>lengthA</i> = <i>lim</i>, return <i>A</i>.</p>
+					</li>
+					<li><p>
+					Let
+					p = e.</p>
+					</li>
+					<li><p>
+					Let
+					<i>i</i> = 0.</p>
+					</li>
+					<li><p>
+					Repeat,
+					while <i>i</i> is not equal to the number of elements in <i>cap</i>.</p>
+					<ol><li><p>
+						Let
+						<i>i</i> = <i>i</i>+1.</p>
+						</li>
+						<li><p>
+						Call
+						the [[DefineOwnProperty]] internal method of <i>A</i> with
+						arguments <a href="x9.html#x9.8">ToString</a>(<i>lengthA</i>), <a href="x8.html#x8.10">Property Descriptor</a>
+						{[[Value]]: <i>cap</i>[<i>i</i>], [[Writable]]: <b>true</b>,
+						[[Enumerable]]: <b>true</b>, [[Configurable]]: <b>true</b>},
+						and <b>false</b>.</p>
+						</li>
+						<li><p>
+						Increment
+						<i>lengthA</i> by 1.</p>
+						</li>
+
+			<li><p>
+						If
+						<i>lengthA</i>
+						= <i>lim</i>, return <i>A</i>.</p>
+					</li>
+
+</ol></li>
+					<li><p>
+					Let
+					<i>q</i> = <i>p</i>.</p>
+				</li></ol></li></ol></li></ol></li>
+		<li><p>
+		Let
+		<i>T</i> be a String value equal to the substring of <i>S</i>
+		consisting of the characters at positions <i>p</i> (inclusive)
+		through <i>s</i> (exclusive).</p>
+		</li>
+		<li><p>
+		Call
+		the [[DefineOwnProperty]] internal method of <i>A</i> with
+		arguments <a href="x9.html#x9.8">ToString</a>(<i>lengthA</i>), <a href="x8.html#x8.10">Property Descriptor</a> {[[Value]]:
+		<i>T</i>, [[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b>,
+		[[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>A</i>.</p>
+	</li></ol><p>
+	The
+	abstract operation <dfn id="SplitMatch"><i>SplitMatch</i></dfn>
+	takes three parameters, a String <i>S</i>,
+	an integer <i>q</i>, and
+	a String or RegExp <i>R</i>,
+	and performs the following in order to return a <a href="x15.10.html#MatchResult">MatchResult</a> (see
+	<a href="x15.10.html#x15.10.2.1">15.10.2.1</a>):</p>
+	<ol><li><p>
+		If
+		<i>R</i> is a RegExp object (its [[Class]] is <code><b>"RegExp"</b></code>),
+		then</p>
+		<ol><li><p>
+			Call
+			the [[Match]] internal method of <i>R</i> giving it the arguments
+			<i>S</i> and <i>q</i>, and return the <a href="x15.10.html#MatchResult">MatchResult</a> result.</p>
+		</li></ol></li>
+		<li><p>
+		<a href="x8.html#Type">Type</a>(<i>R</i>)
+		must be String. Let <i>r</i> be the number of characters in <i>R</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>s</i> be the number of characters in <i>S</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>q</i>+<i>r</i> &gt; <i>s</i> then return the <a href="x15.10.html#MatchResult">MatchResult</a>
+		<b>failure</b>.</p>
+		</li>
+		<li><p>
+		If
+		there exists an integer <i>i</i> between 0 (inclusive) and <i>r</i>
+		(exclusive) such that the character at position <i>q</i>+<i>i</i>
+		of <i>S</i> is different from the character at position <i>i</i> of
+		<i>R</i>, then return <b>failure</b>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>cap</i> be an empty array of <a href="x15.10.html#captures">captures</a> (see <a href="x15.10.html#x15.10.2.1">15.10.2.1</a>).</p>
+		</li>
+		<li><p>
+		Return
+		the <a href="x15.10.html#State">State</a> (<i>q</i>+<i>r</i>, <i>cap</i>). (see <a href="x15.10.html#x15.10.2.1">15.10.2.1</a>)</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>split</b></code> method
+	is <b>2</b>.</p>
+	<p class="sp"><b class="note">NOTE 1</b> The <code><b>split</b></code> method
+	ignores the value of separator<code><b>.global</b></code>
+	for separators that are RegExp objects.</p>
+	<p class="sp"><b class="note">NOTE 2</b> The <code><b>split</b></code>
+	function is intentionally generic; it does not require that its <b>this</b>
+	value be a String object. Therefore, it can be transferred to other
+	kinds of objects for use as a method.</p>
+	<h5 id="x15.5.4.15">15.5.4.15 String.prototype.substring (start, end) <a href="#x15.5.4.15">#</a> <a href="#x15.5.4.15-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	<b>substring</b> method takes two arguments, <i>start</i>
+	and <i>end</i>, and
+	returns a substring of the result of converting this object to a
+	String, starting from character position <i>start</i>
+	and running to, but not including, character position <i>end</i>
+	of the String (or through the end of the String is <i>end</i>
+	is <b>undefined</b>). The result is a String value, not a String
+	object.</p>
+	<p>
+	If
+	either argument is <b>NaN</b> or negative, it is replaced with zero;
+	if either argument is larger than the length of the String, it is
+	replaced with the length of the String.</p>
+	<p>
+	If
+	<i>start</i> is larger
+	than <i>end</i>, they are
+	swapped.</p>
+	<p>
+	The
+	following steps are taken:</p>
+	<ol><li><p>
+		Call
+		<a href="x9.html#x9.10">CheckObjectCoercible</a> passing the <b>this</b> value as its argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>S</i> be the result of calling <a href="x9.html#x9.8">ToString</a>, giving it the <b>this</b>
+		value as its argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>len</i> be the number of characters in <i>S</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>intStart</i> be <a href="x9.html#x9.4">ToInteger</a>(<i>start</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>end</i> is <b>undefined</b>, let <i>intEnd</i> be <i>len</i>;
+		else let <i>intEnd</i> be <a href="x9.html#x9.4">ToInteger</a>(<i>end</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>finalStart</i> be min(max(<i>intStart</i>, 0), <i>len</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>finalEnd</i> be min(max(<i>intEnd</i>, 0), <i>len</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>from</i> be min(<i>finalStart</i>, <i>finalEnd</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>to</i> be max(<i>finalStart</i>, <i>finalEnd</i>).</p>
+		</li>
+		<li><p>
+		Return
+		a String whose length is <i>to</i> - <i>from</i>, containing
+		characters from <i>S</i>, namely the characters with indices <i>from</i>
+		through <i>to</i> <span class="symbol">&#8722;</span>1, in
+		ascending order.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>substring</b></code>
+	method is <b>2</b>.</p>
+	<p><b class="note">NOTE</b> The
+	<code><b>substring</b></code> function
+	is intentionally generic; it does not require that its <b>this</b>
+	value be a String object. Therefore, it can be transferred to other
+	kinds of objects for use as a method.</p>
+	<h5 id="x15.5.4.16">15.5.4.16 String.prototype.toLowerCase ( ) <a href="#x15.5.4.16">#</a> <a href="#x15.5.4.16-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	following steps are taken:</p>
+	<ol><li><p>
+		Call
+		<a href="x9.html#x9.10">CheckObjectCoercible</a> passing the <b>this</b> value as its argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>S</i> be the result of calling <a href="x9.html#x9.8">ToString</a>, giving it the <b>this</b>
+		value as its argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>L</i> be a String where each character of <i>L</i> is either the
+		Unicode lowercase equivalent of the corresponding character of <i>S</i>
+		or the actual corresponding character of <i>S</i> if no Unicode
+		lowercase equivalent exists.</p>
+		</li>
+		<li><p>
+		Return
+		<i>L</i>.</p>
+	</li></ol><p>
+	For
+	the purposes of this operation, the 16-bit code units of the Strings
+	are treated as code points in the Unicode Basic Multilingual Plane.
+	Surrogate code points are directly transferred from <i>S</i>
+	to <i>L</i> without any
+	mapping.</p>
+	<p class="sp">The
+	result must be derived according to the case mappings in the Unicode
+	character database (this explicitly includes not only the
+	UnicodeData.txt file, but also the SpecialCasings.txt file that
+	accompanies it in Unicode 2.1.8 and later).</p>
+	<p class="sp"><b class="note">NOTE 1</b> The case mapping of some characters may produce multiple
+	characters.  In this case the result String may not be the same
+	length as the source String. Because both <code><b>toUpperCase</b></code>
+	and <code><b>toLowerCase</b></code>
+	have context-sensitive behaviour, the functions are not symmetrical.
+	In other words, <code><b>s.toUpperCase().toLowerCase()</b></code>
+	is not necessarily equal to <code><b>s.toLowerCase()</b></code>.</p>
+	<p class="sp"><b class="note">NOTE 2</b> The <code><b>toLowerCase</b></code>
+	function is intentionally generic; it does not require that its <b>this</b>
+	value be a String object. Therefore, it can be transferred to other
+	kinds of objects for use as a method.</p>
+	<h5 id="x15.5.4.17">15.5.4.17 String.prototype.toLocaleLowerCase ( ) <a href="#x15.5.4.17">#</a> <a href="#x15.5.4.17-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	This
+	function works exactly the same as <code><b>toLowerCase</b></code>
+	except that its result is intended to yield the correct result for
+	the host environment&#8217;s current locale, rather than a
+	locale-independent result. There will only be a difference in the
+	few cases (such as Turkish) where the rules for that language
+	conflict with the regular Unicode case mappings.</p>
+	<p class="sp"><b class="note">NOTE 1</b> The first parameter to this function is likely to be used in a
+	future version of this standard; it is recommended that
+	implementations do not use this parameter position for anything
+	else.</p>
+	<p class="sp"><b class="note">NOTE 2</b> The <code><b>toLocaleLowerCase</b></code>
+	function is intentionally generic; it does not require that its <b>this</b>
+	value be a String object. Therefore, it can be transferred to other
+	kinds of objects for use as a method.</p>
+	<h5 id="x15.5.4.18">15.5.4.18 String.prototype.toUpperCase ( ) <a href="#x15.5.4.18">#</a> <a href="#x15.5.4.18-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	This
+	function behaves in exactly the same way as
+	<code><b><a href="#x15.5.4.16">String.prototype.toLowerCase</a></b></code>,
+	except that characters are mapped to their <i>uppercase</i>
+	equivalents as specified in the Unicode Character Database.</p>
+	<p><b class="note">NOTE</b> The
+	<code><b>toUpperCase</b></code>
+	function is intentionally generic; it does not require that its <b>this</b>
+	value be a String object. Therefore, it can be transferred to other
+	kinds of objects for use as a method.</p>
+	<h5 id="x15.5.4.19">15.5.4.19 String.prototype.toLocaleUpperCase ( ) <a href="#x15.5.4.19">#</a> <a href="#x15.5.4.19-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	This
+	function works exactly the same as <code><b>toUpperCase</b></code>
+	except that its result is intended to yield the correct result for
+	the host environment&#8217;s current locale, rather than a
+	locale-independent result. There will only be a difference in the
+	few cases (such as Turkish) where the rules for that language
+	conflict with the regular Unicode case mappings.</p>
+	<p class="sp"><b class="note">NOTE 1</b> The first parameter to this function is likely to be used in a
+	future version of this standard; it is recommended that
+	implementations do not use this parameter position for anything
+	else.</p>
+	<p class="sp"><b class="note">NOTE 2</b> The <code><b>toLocaleUpperCase</b></code>
+	function is intentionally generic; it does not require that its <b>this</b>
+	value be a String object. Therefore, it can be transferred to other
+	kinds of objects for use as a method.</p>
+	<h5 id="x15.5.4.20">15.5.4.20 String.prototype.trim ( ) <a href="#x15.5.4.20">#</a> <a href="#x15.5.4.20-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	following steps are taken:</p>
+	<ol><li><p>
+		Call
+		<a href="x9.html#x9.10">CheckObjectCoercible</a> passing the <b>this</b> value as its argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>S</i> be the result of calling <a href="x9.html#x9.8">ToString</a>, giving it the <b>this</b>
+		value as its argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>T</i> be a String value that is a copy of <i>S</i> with both
+		leading and trailing white space removed. The definition of white
+		space is the union of <i><a href="x7.html#WhiteSpace">WhiteSpace</a></i> and <i><a href="x7.html#LineTerminator">LineTerminator</a></i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>T</i>.</p>
+	</li></ol><p><b class="note">NOTE</b> The
+	<code><b>trim</b></code> function is
+	intentionally generic; it does not require that its <b>this</b>
+	value be a String object. Therefore, it can be transferred to other
+	kinds of objects for use as a method.</p>
+	<h4 id="x15.5.5">15.5.5 Properties of String Instances <a href="#x15.5.5">#</a> <a href="#x15.5.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	String
+	instances inherit properties from the String prototype object and
+	their [[Class]] internal property value is <code><b>"String"</b></code>.
+	String instances also have a [[PrimitiveValue]] internal property, a
+	<code><b>length</b></code> property,
+	and a set of enumerable properties with array index names.</p>
+	<p>
+	The
+	[[PrimitiveValue]] internal property is the String value represented
+	by this String object. The array index named properties correspond
+	to the individual characters of the String value. A special
+	[[GetOwnProperty]] internal method is used to specify the number,
+	values, and attributes of the array index named properties. 
+	</p>
+	<h5 id="x15.5.5.1">15.5.5.1 length <a href="#x15.5.5.1">#</a> <a href="#x15.5.5.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	number of characters in the String value represented by this String
+	object.</p>
+	<p>
+	Once
+	a String object is created, this property is unchanging. It has the
+	attributes { [[Writable]]: <b>false</b>, [[Enumerable]]: <b>false</b>,
+	[[Configurable]]: <b>false</b> }.</p>
+	<h5 id="x15.5.5.2">15.5.5.2 [[GetOwnProperty]] ( P ) <a href="#x15.5.5.2">#</a> <a href="#x15.5.5.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	String
+	objects use a variation of the [[GetOwnProperty]] internal method
+	used for other native ECMAScript objects (<a href="x8.html#x8.12.1">8.12.1</a>).
+
+ This special internal method is used to add access for named properties
+ corresponding to individual characters of String objects.</p>
+	<p>
+	Assume
+	<i>S </i>is a String
+	object and <i>P </i>is a
+	String.</p>
+	<p>
+	When
+	the [[GetOwnProperty]] internal method of <i>S </i>is called with property name <i>P</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>desc</i> be the result of calling the default [[GetOwnProperty]]
+		internal method (<a href="x8.html#x8.12.1">8.12.1</a>) on <i>S </i>with argument <i>P</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>desc</i> is not <b>undefined </b>return <i>desc</i>. 
+		</p>
+		</li>
+
+		<li><p>
+		If
+		<a href="x9.html#x9.8">ToString</a>(<a href="x5.html#abs">abs</a>(<a href="x9.html#x9.4">ToInteger</a>(<i>P</i>)))
+		is not
+		the same value as <i>P</i>,
+		return <b>undefined</b>.</p>
+		</li>
+
+		<li><p>
+		Let
+		<i>str</i> be the String value of the [[PrimitiveValue]] internal
+		property of <i>S</i>.</p>
+		</li>
+
+		<li><p>
+		Let
+		<i>index</i> be
+		<a href="x9.html#x9.4">ToInteger</a>(<i>P</i>).</p> </li>
+
+		<li><p>
+		Let
+		<i>len</i> be the number of characters in <i>str</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>len</i> &#8804; <i>index</i>, return <b>undefined</b>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>resultStr</i> be a String of length 1, containing one character
+		from <i>str</i>, specifically the character at position <i>index</i>,
+		where the first (leftmost) character in <i>str</i> is considered to
+		be at position 0, the next one at position 1, and so on.</p>
+		</li>
+		<li><p>
+		Return
+		a <a href="x8.html#x8.10">Property Descriptor</a> { [[Value]]: <i>resultStr</i>,
+		[[Enumerable]]: <b>true</b>, [[Writable]]: <b>false</b>,
+		[[Configurable]]: <b>false </b>}</p>
+	</li></ol></body><script src="anno.js"></script></html>

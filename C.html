@@ -42,9 +42,9 @@ within strict mode code.  (<a>7.6.12</a> [?]<!-- FIXME -->).</li>
 		<li><p>
 		Assignment
 		to an undeclared identifier or otherwise <a href="x8.html#IsUnresolvableReference">unresolvable reference</a>
-		does not create a property in the <a href="x15.html#x15.1" class="term-ref">global object</a>. When a simple
+		does not create a property in the <a href="x15.1.html#x15.1" class="term-ref">global object</a>. When a simple
 		assignment occurs within <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a>, its <i>LeftHandSide </i>must not evaluate to an
-		unresolvable Reference. If it does a <b><a href="x15.html#x15.11.6.3" class="term-ref">ReferenceError</a></b>
+		unresolvable Reference. If it does a <b><a href="x15.11.html#x15.11.6.3" class="term-ref">ReferenceError</a></b>
 		exception is thrown (<a href="x8.html#x8.7.2">8.7.2</a>). The <i>LeftHandSide </i>also
 		may not be a reference to a data property with the attribute value
 		{[[Writable]]:<b>false</b>},
@@ -53,7 +53,7 @@ within strict mode code.  (<a>7.6.12</a> [?]<!-- FIXME -->).</li>
 		 </b>nor to a non-existent
 		property of an object whose [[Extensible]] internal property has
 		the value <b>false</b>.
-		In these cases a <code><b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b></code>
+		In these cases a <code><b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b></code>
 		exception is thrown (<a href="x11.html#x11.13.1">11.13.1</a>).</p>
 		</li>
 		<li><p>
@@ -72,7 +72,7 @@ within strict mode code.  (<a>7.6.12</a> [?]<!-- FIXME -->).</li>
 		objects for strict mode functions define non-configurable accessor
 		properties named "<code><b>caller</b></code>"
 		and "<code><b>callee</b></code>"
-		which throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception on access
+		which throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception on access
 		(<a href="x10.html#x10.6">10.6</a>).</p>
 		</li>
 		<li><p>
@@ -90,14 +90,14 @@ within strict mode code.  (<a>7.6.12</a> [?]<!-- FIXME -->).</li>
 		</li>
 		<li><p>
 		It
-		is a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+		is a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 		if <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a> contains an
 		<i>ObjectLiteral</i> with
 		more than one definition of any data property (<a href="x11.html#x11.1.5">11.1.5</a>).</p>
 		</li>
 		<li><p>
 		It
-		is a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+		is a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 		if the <i>Identifier</i>
 		<code><b>"eval"</b></code>
 		or the <i>Identifier </i><code><b>"arguments"</b></code>
@@ -124,19 +124,19 @@ within strict mode code.  (<a>7.6.12</a> [?]<!-- FIXME -->).</li>
 		an object. A <b>this</b>
 		value of <b>null</b>
 		or <b>undefined</b>
-		is not converted to the <a href="x15.html#x15.1" class="term-ref">global object</a> and <a href="x4.html#primitive_value" class="term-ref">primitive value</a>s are not
+		is not converted to the <a href="x15.1.html#x15.1" class="term-ref">global object</a> and <a href="x4.html#primitive_value" class="term-ref">primitive value</a>s are not
 		converted to wrapper objects. The <b>this</b>
 		value passed via a function call (including calls made using
-		<code><b><a href="x15.html#x15.3.4.3">Function.prototype.apply</a></b></code>
-		and <code><b><a href="x15.html#x15.3.4.4">Function.prototype.call</a></b></code><b>)</b>
+		<code><b><a href="x15.3.html#x15.3.4.3">Function.prototype.apply</a></b></code>
+		and <code><b><a href="x15.3.html#x15.3.4.4">Function.prototype.call</a></b></code><b>)</b>
 		do not coerce the passed this value to an object (<a href="x10.html#x10.4.3">10.4.3</a>, <a href="x11.html#x11.1.1">11.1.1</a>,
-		<a href="x15.html#x15.3.4.3">15.3.4.3</a>, <a href="x15.html#x15.3.4.4">15.3.4.4</a>).</p>
+		<a href="x15.3.html#x15.3.4.3">15.3.4.3</a>, <a href="x15.3.html#x15.3.4.4">15.3.4.4</a>).</p>
 		</li>
 		<li><p>
 		When
 		a <code><b>delete</b></code>
 		operator occurs within <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a>,
-    a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> is thrown if its
+    a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> is thrown if its
 		<i>UnaryExpression</i> is a
 		direct reference to a variable, function argument, or function
 		name(<a href="x11.html#x11.4.1">11.4.1</a>).</p>
@@ -144,14 +144,14 @@ within strict mode code.  (<a>7.6.12</a> [?]<!-- FIXME -->).</li>
 		<li><p>
 		When
 		a <code><b>delete</b></code>
-		operator occurs within <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a>, a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		operator occurs within <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a>, a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
 is thrown if the property to
 		be deleted has the attribute { [[Configurable]]:<b>false</b>
 		} (<a href="x11.html#x11.4.1">11.4.1</a>).</p>
 		</li>
 		<li><p>
 		It
-		is a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+		is a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 		if a <i>VariableDeclaration</i>
 		or <i>VariableDeclarationNoIn</i>
 		occurs within <a href="x10.html#x10.1.1">strict code</a> and its  <i>Identifier</i>
@@ -164,12 +164,12 @@ is thrown if the property to
 		Strict
 		mode code may not include a <i>WithStatement</i>.
 		The occurrence of a <i>WithStatement</i>
-		in such a context is an <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+		in such a context is an <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 		(<a href="x12.html#x12.10">12.10</a>).</p>
 		</li>
 		<li><p>
 		It
-		is a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> if a <i>TryStatement</i>
+		is a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> if a <i>TryStatement</i>
 		with a  <i>Catch</i>
 		occurs within <a href="x10.html#x10.1.1">strict code</a> and the <i>Identifier</i>
 		of the <i>Catch</i>
@@ -179,7 +179,7 @@ is thrown if the property to
 		</li>
 		<li><p>
 		It
-		is a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> if  the identifier <code><b>eval</b></code>
+		is a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> if  the identifier <code><b>eval</b></code>
 		or <code><b>arguments</b></code>
 		appears within a <i>FormalParameterList</i>
 		of a strict mode <i>FunctionDeclaration</i>
@@ -193,8 +193,8 @@ is thrown if the property to
 		a <i>FunctionDeclaration</i>,
 		<i>FunctionExpression</i>, or
 		<code><b>Function</b></code>
-		constructor is a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
- (<a href="x13.html#x13.1">13.1</a>, <a href="x15.html#x15.3.2">15.3.2</a>).</p>
+		constructor is a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+ (<a href="x13.html#x13.1">13.1</a>, <a href="x15.3.html#x15.3.2">15.3.2</a>).</p>
 		</li>
 
 		<li><p>
@@ -205,12 +205,12 @@ is thrown if the property to
 		of function instances. ECMAScript code may not create or modify
 		properties with these names on function objects that correspond to
 		strict mode functions
-    (<a href="x10.html#x10.6">10.6</a>, <a href="x13.html#x13.2">13.2</a>, <a href="x15.html#x15.3.4.5.3">15.3.4.5.3</a>).</p>
+    (<a href="x10.html#x10.6">10.6</a>, <a href="x13.html#x13.2">13.2</a>, <a href="x15.3.html#x15.3.4.5.3">15.3.4.5.3</a>).</p>
 		</li>
 
 		<li><p>
 		It
-		is a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+		is a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 		to use within <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a> the identifiers <code><b>eval</b></code>
 		or <code><b>arguments</b></code>
 		as the <i>Identifier</i> of a
@@ -218,6 +218,6 @@ is thrown if the property to
 		<i>FunctionExpression</i> or
 		as a formal parameter name (<a href="x13.html#x13.1">13.1</a>). Attempting to dynamically define
 		such a strict mode function using the <code><b>Function</b></code>
-		constructor (<a href="x15.html#x15.3.2">15.3.2</a>) will throw a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+		constructor (<a href="x15.3.html#x15.3.2">15.3.2</a>) will throw a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 		exception.</p>
 	</li></ul></body><script src="anno.js"></script></html>

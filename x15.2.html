@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html class="split chapter"><head><meta charset="utf-8"><title>15.2 Object Objects # &#9417; &#9402; &#9312; &#9398; &#8212; Annotated ES5</title><link rel="stylesheet" href="style.css"><link rel="shortcut icon" href="favicon.ico"><link href="x15.1.html" title="15.1 The Global Object " rel="prev">
+  <link href="spec.html#contents" title="TOC" rel="index">
+  <link href="x15.3.html" title="15.3 Function Objects " rel="next">
+  </head><body><div class="head">
+<h2 id="top">Annotated ECMAScript 5.1 <span id="timestamp"></span></h2>
+<div id="mascot-treehouse">
+	<img id="mascot" align="left" src="js-mascot.svg" alt=""><img id="bubble" src="bubble.svg" alt=""></div>
+<p id="slogan">&#8223;Ex igne vita&#8221;</p>
+<div id="annotations"></div>
+<script src="timestamp.js"></script></div>
+<nav>
+   <a href="x15.1.html">&#8592; 15.1 The Global Object </a> &#8211;
+   <a href="spec.html#contents">TOC</a> &#8211;
+   <a href="x15.3.html">15.3 Function Objects  &#8594;</a>
+  <ol class="toc"><li><ol><li><a href="x15.2.html#x15.2" id="x15.2-toc">15.2 Object Objects</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.2.html#x15.2.1" id="x15.2.1-toc">15.2.1 The Object Constructor Called as a Function</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.2.html#x15.2.1.1" id="x15.2.1.1-toc">15.2.1.1 Object ( [ value ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.2.html#x15.2.2" id="x15.2.2-toc">15.2.2 The Object Constructor</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.2.html#x15.2.2.1" id="x15.2.2.1-toc">15.2.2.1 new Object ( [ value ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.2.html#x15.2.3" id="x15.2.3-toc">15.2.3 Properties of the Object Constructor</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.2.html#x15.2.3.1" id="x15.2.3.1-toc">15.2.3.1 Object.prototype</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.2.html#x15.2.3.2" id="x15.2.3.2-toc">15.2.3.2 Object.getPrototypeOf ( O )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.2.html#x15.2.3.3" id="x15.2.3.3-toc">15.2.3.3 Object.getOwnPropertyDescriptor ( O, P ) </a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.2.html#x15.2.3.4" id="x15.2.3.4-toc">15.2.3.4 Object.getOwnPropertyNames ( O )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.2.html#x15.2.3.5" id="x15.2.3.5-toc">15.2.3.5 Object.create ( O [, Properties] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.2.html#x15.2.3.6" id="x15.2.3.6-toc">15.2.3.6 Object.defineProperty ( O, P, Attributes )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.2.html#x15.2.3.7" id="x15.2.3.7-toc">15.2.3.7 Object.defineProperties ( O, Properties )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.2.html#x15.2.3.8" id="x15.2.3.8-toc">15.2.3.8 Object.seal ( O )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.2.html#x15.2.3.9" id="x15.2.3.9-toc">15.2.3.9 Object.freeze ( O )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.2.html#x15.2.3.10" id="x15.2.3.10-toc">15.2.3.10 Object.preventExtensions ( O )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.2.html#x15.2.3.11" id="x15.2.3.11-toc">15.2.3.11 Object.isSealed ( O )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.2.html#x15.2.3.12" id="x15.2.3.12-toc">15.2.3.12 Object.isFrozen ( O )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.2.html#x15.2.3.13" id="x15.2.3.13-toc">15.2.3.13 Object.isExtensible ( O )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.2.html#x15.2.3.14" id="x15.2.3.14-toc">15.2.3.14 Object.keys ( O )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.2.html#x15.2.4" id="x15.2.4-toc">15.2.4 Properties of the Object Prototype Object</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.2.html#x15.2.4.1" id="x15.2.4.1-toc">15.2.4.1 Object.prototype.constructor</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.2.html#x15.2.4.2" id="x15.2.4.2-toc">15.2.4.2 Object.prototype.toString ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.2.html#x15.2.4.3" id="x15.2.4.3-toc">15.2.4.3 Object.prototype.toLocaleString ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.2.html#x15.2.4.4" id="x15.2.4.4-toc">15.2.4.4 Object.prototype.valueOf ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.2.html#x15.2.4.5" id="x15.2.4.5-toc">15.2.4.5 Object.prototype.hasOwnProperty (V)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.2.html#x15.2.4.6" id="x15.2.4.6-toc">15.2.4.6 Object.prototype.isPrototypeOf (V)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.2.html#x15.2.4.7" id="x15.2.4.7-toc">15.2.4.7 Object.prototype.propertyIsEnumerable (V)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.2.html#x15.2.5" id="x15.2.5-toc">15.2.5 Properties of Object Instances</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li></ol></li></ol></nav>
+
+  <h3 id="x15.2" class="splitme">15.2 Object Objects <a href="#x15.2">#</a> <a href="#x15.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<h4 id="x15.2.1">15.2.1 The Object Constructor Called as a Function <a href="#x15.2.1">#</a> <a href="#x15.2.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	<code><b>Object</b></code> is called
+	as a function rather than as a constructor, it performs a type
+	conversion.</p>
+	<h5 id="x15.2.1.1">15.2.1.1 Object ( [ value ] ) <a href="#x15.2.1.1">#</a> <a href="#x15.2.1.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <code><b>Object</b></code>
+	function is called with no arguments or with one argument <i>value</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		If
+		<i>value</i> is <b>null</b>, <b>undefined</b> or not supplied,
+		create and return a new Object object exactly as if the standard
+		built-in Object constructor had been called with the same arguments
+		(<a href="#x15.2.2.1">15.2.2.1</a>).</p>
+		</li>
+		<li><p>
+		Return
+		<a href="x9.html#x9.9">ToObject</a>(<i>value</i>).</p>
+	</li></ol><h4 id="x15.2.2">15.2.2 The Object Constructor <a href="#x15.2.2">#</a> <a href="#x15.2.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	<code><b>Object</b></code> is called
+	as part of a <code><b>new</b></code>
+	expression, it is a constructor that may create an object.</p>
+	<h5 id="x15.2.2.1">15.2.2.1 new Object ( [ value ] ) <a href="#x15.2.2.1">#</a> <a href="#x15.2.2.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <code><b>Object</b></code>
+	constructor is called with no arguments or with one argument <i>value</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		If
+		<i>value</i> is supplied, then</p>
+		<ol><li><p>
+			If
+			<a href="x8.html#Type">Type</a>(<i>value</i>)  is Object, then</p>
+			<ol><li><p>
+				If
+				the <i>value</i> is a native ECMAScript object, do not create a
+				new object but simply return <i>value</i>.</p>
+				</li>
+				<li><p>
+				If
+				the <i>value</i> is a host object, then actions are taken and a
+				result is returned in an implementation-dependent manner that may
+				depend on the host object.</p>
+			</li></ol></li>
+			<li><p>
+			If
+			<a href="x8.html#Type">Type</a>(<i>value</i>) is String, return <a href="x9.html#x9.9">ToObject</a>(<i>value</i>).</p>
+			</li>
+			<li><p>
+			If
+			<a href="x8.html#Type">Type</a>(<i>value</i>) is Boolean, return <a href="x9.html#x9.9">ToObject</a>(<i>value</i>).</p>
+			</li>
+			<li><p>
+			If
+			<a href="x8.html#Type">Type</a>(<i>value</i>) is Number, return <a href="x9.html#x9.9">ToObject</a>(<i>value</i>).</p>
+		</li></ol></li>
+		<li><p>
+		Asset:
+		The argument <i>value</i> was not supplied or its type was Null or
+		Undefined. 
+		</p>
+		</li>
+		<li><p>
+		Let
+		<i>obj</i> be a newly created native ECMAScript object.</p>
+		</li>
+		<li><p>
+		Set
+		the [[Prototype]] internal property of <i>obj</i> t to the standard
+		built-in Object prototype object (<a href="#x15.2.4">15.2.4</a>).</p>
+		</li>
+		<li><p>
+		Set
+		the [[Class]] internal property of <i>obj</i> to <code><b>"Object"</b></code>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[Extensible]] internal property of <i>obj</i> to <b>true</b>.</p>
+		</li>
+		<li><p>
+		Set
+		the all the internal methods of <i>obj</i> as specified in <a href="x8.html#x8.12">8.12</a></p>
+		</li>
+		<li><p>
+		Return
+		<i>obj</i>.</p>
+	</li></ol><h4 id="x15.2.3">15.2.3 Properties of the Object Constructor <a href="#x15.2.3">#</a> <a href="#x15.2.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	value of the [[Prototype]] internal property of the Object
+	constructor is the standard built-in Function prototype object.</p>
+	<p>
+	Besides
+	the internal properties and the <code><b>length</b></code>
+	property (whose value is <b>1</b>), the Object constructor has the
+	following properties:</p>
+	<h5 id="x15.2.3.1">15.2.3.1 Object.prototype <a href="#x15.2.3.1">#</a> <a href="#x15.2.3.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	initial value of <code><b>Object.prototype</b></code>
+	is the standard built-in Object prototype object (<a href="#x15.2.4">15.2.4</a>).</p>
+	<p>
+	This
+	property has the attributes {[[Writable]]: false, [[Enumerable]]:
+	false, [[Configurable]]: false }.</p>
+	<h5 id="x15.2.3.2">15.2.3.2 Object.getPrototypeOf ( O ) <a href="#x15.2.3.2">#</a> <a href="#x15.2.3.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <code><b>getPrototypeOf</b></code>
+	function is called with argument <i>O</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
+		</li>
+		<li><p>
+		Return
+		the value of the [[Prototype]] internal property of <i>O</i>.</p>
+	</li></ol><h5 id="x15.2.3.3">15.2.3.3 Object.getOwnPropertyDescriptor ( O, P ) <a href="#x15.2.3.3">#</a> <a href="#x15.2.3.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <b>getOwnPropertyDescriptor</b> function is called, the
+	following steps are taken:</p>
+	<ol><li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
+		</li>
+		<li><p>
+		Let
+		<i>name </i>be <a href="x9.html#x9.8">ToString</a>(<i>P</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>desc </i>be the result of calling the [[GetOwnProperty]]
+		internal method of <i>O </i>with argument <i>name</i>.</p>
+		</li>
+		<li><p>
+		Return
+		the result of calling <a href="x8.html#x8.10.4">FromPropertyDescriptor</a>(<i>desc</i>) (<a href="x8.html#x8.10.4">8.10.4</a>).
+		</p>
+	</li>
+</ol><h5 id="x15.2.3.4">15.2.3.4 Object.getOwnPropertyNames ( O ) <a href="#x15.2.3.4">#</a> <a href="#x15.2.3.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <b>getOwnPropertyNames</b> function is called, the following
+	steps are taken:</p>
+	<ol><li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
+		</li>
+		<li><p>
+		Let
+		<i>array </i>be the result of creating a new object as if by the
+		expression <code><b>new Array ()</b></code>
+		where <code><b>Array</b></code> is
+		the standard built-in constructor with that name.</p>
+		</li>
+		<li><p>
+		Let
+		<i>n</i> be 0.</p>
+		</li>
+		<li><p>
+		For
+		each named own property <i>P </i>of <i>O</i></p>
+		<ol><li><p>
+			Let
+			<i>name </i>be the String value that is the name of <i>P</i>.</p>
+			</li>
+			<li><p>
+			Call
+			the [[DefineOwnProperty]] internal method of <i>array</i> with
+			arguments <a href="x9.html#x9.8">ToString</a>(<i>n</i>), the PropertyDescriptor {[[Value]]:
+			<i>name</i>, [[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b>,
+			[[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
+			</li>
+			<li><p>
+			Increment
+			<i>n</i> by 1.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		<i>array</i>.</p>
+	</li></ol><p><b class="note">NOTE</b> If
+	<i>O</i> is a String
+	instance, the set of own properties processed in step 4 includes the
+	implicit properties defined in <a href="x15.5.html#x15.5.5.2">15.5.5.2</a> that correspond to character
+	positions within the object&#8217;s [[PrimitiveValue]] String.</p>
+	<h5 id="x15.2.3.5">15.2.3.5 Object.create ( O [, Properties] ) <a href="#x15.2.3.5">#</a> <a href="#x15.2.3.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	<b>create</b> function creates a new object with a specified
+	prototype. When the <b>create</b> function is called, the following
+	steps are taken:</p>
+	<ol><li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>O</i>) is not Object or Null throw a <b>TypeError
+		</b>exception.</p>
+		</li>
+		<li><p>
+		Let
+		<i>obj </i>be the result of creating a new object as if by the
+		expression new Object() where Object is the standard built-in
+		constructor with that name</p>
+		</li>
+		<li><p>
+		Set
+		the [[Prototype]] internal property of <i>obj </i>to <i>O</i>.</p>
+		</li>
+		<li><p>
+		If
+		the argument <i>Properties</i> is present and not <b>undefined</b>,
+		add own properties to <i>obj </i>as if by calling the standard
+		built-in function <code><b><a href="#x15.2.3.7">Object.defineProperties</a></b></code>
+with arguments <i>obj </i>and <i>Properties</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>obj</i>.</p>
+	</li></ol><h5 id="x15.2.3.6">15.2.3.6 Object.defineProperty ( O, P, Attributes ) <a href="#x15.2.3.6">#</a> <a href="#x15.2.3.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	<b>defineProperty</b> function is used to add an own property and/or
+	update the attributes of an existing own property of an object. When
+	the <b>defineProperty</b> function is called, the following steps
+	are taken:</p>
+	<ol><li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
+		</li>
+		<li><p>
+		Let
+		<i>name </i>be <a href="x9.html#x9.8">ToString</a>(<i>P</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>desc </i>be the result of calling <a href="x8.html#x8.10.5">ToPropertyDescriptor</a> with
+		<i>Attributes</i> as the argument.</p>
+		</li>
+		<li><p>
+		Call
+		the [[DefineOwnProperty]] internal method of <i>O </i>with
+		arguments <i>name</i>, <i>desc</i>, and <b>true</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>O</i>.</p>
+	</li></ol><h5 id="x15.2.3.7">15.2.3.7 Object.defineProperties ( O, Properties ) <a href="#x15.2.3.7">#</a> <a href="#x15.2.3.7-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	<b>defineProperties</b> function is used to add own properties
+	and/or update the attributes of existing own properties of an
+	object. When the <b>defineProperties</b> function is called, the
+	following steps are taken:</p>
+	<ol><li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>O</i>) is not Object throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
+		</li>
+		<li><p>
+		Let
+		<i>props</i> be <a href="x9.html#x9.9">ToObject</a>(<i>Properties</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>names</i> be an internal list containing the names of each
+		enumerable own property of <i>props</i><i><u>.</u></i></p>
+		</li>
+		<li><p>
+		Let
+		<i>descriptors</i> be an empty internal <a href="x8.html#x8.8">List</a>.</p>
+		</li>
+		<li><p>
+		For
+		each element <i>P</i> of <i>names</i> in list order,</p>
+		<ol><li><p>
+			Let
+			<i>descObj</i> be the result of calling the [[Get]] internal
+			method of <i>props</i> with <i>P</i> as the argument.</p>
+			</li>
+			<li><p>
+			Let
+			<i>desc</i> be the result of calling <a href="x8.html#x8.10.5">ToPropertyDescriptor</a> with
+			<i>descObj</i> as the argument.</p>
+			</li>
+			<li><p>
+			Append
+			<i>desc</i> to the end of <i>descriptors</i>.</p>
+		</li></ol></li>
+
+		<li><p>For
+		each element <i>desc</i> of <i>descriptors</i> in list order,</p>
+		<ol><li><p>Call the [[DefineOwnProperty]] internal method of <i>O</i> with
+			arguments <i>P</i>, <i>desc</i>, and <b>true</b>.</p></li>
+		</ol></li><li><p>Return <i>O</i></p>
+</li>
+</ol><p>
+	If an
+	implementation defines a specific order of enumeration for the
+	for-in statement, that same enumeration order must be used to order
+	the list elements in step 3 of this algorithm.</p>
+	<h5 id="x15.2.3.8">15.2.3.8 Object.seal ( O ) <a href="#x15.2.3.8">#</a> <a href="#x15.2.3.8-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <b>seal</b> function is called, the following steps are taken:</p>
+	<ol><li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
+		</li>
+		<li><p>
+		For
+		each named own property name <i>P</i> of <i>O</i>,</p>
+		<ol><li><p>
+			Let
+			<i>desc </i>be the result of calling the [[GetOwnProperty]]
+			internal method of <i>O </i>with <i>P</i>.</p>
+			</li>
+			<li><p>
+			If
+			<i>desc</i>.[[Configurable]] is <b>true</b>, set
+			<i>desc</i>.[[Configurable]] to <b>false</b>.</p>
+			</li>
+			<li><p>
+			Call
+			the [[DefineOwnProperty]] internal method of <i>O </i>with <i>P</i>,
+			<i>desc</i>, and <b>true</b> as arguments.</p>
+		</li></ol></li>
+		<li><p>
+		Set
+		the [[Extensible]] internal property of <i>O </i>to <b>false</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>O</i>.</p>
+	</li></ol><h5 id="x15.2.3.9">15.2.3.9 Object.freeze ( O ) <a href="#x15.2.3.9">#</a> <a href="#x15.2.3.9-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <b>freeze</b> function is called, the following steps are taken:</p>
+	<ol><li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
+		</li>
+		<li><p>
+		For
+		each named own property name <i>P</i> of <i>O</i>,</p>
+		<ol><li><p>
+			Let
+			<i>desc </i>be the result of calling the [[GetOwnProperty]]
+			internal method of <i>O </i>with <i>P</i>.</p>
+			</li>
+			<li><p>
+			If
+			<a href="x8.html#x8.10.2">IsDataDescriptor</a>(<i>desc</i>) is <b>true</b>, then</p>
+			<ol><li><p>
+				If
+				<i>desc</i>.[[Writable]] is <b>true</b>, set <i>desc</i>.[[Writable]]
+				to <b>false</b>.</p>
+			</li></ol></li>
+			<li><p>
+			If
+			<i>desc</i>.[[Configurable]] is <b>true</b>, set
+			<i>desc</i>.[[Configurable]] to <b>false</b>.</p>
+			</li>
+			<li><p>
+			Call
+			the [[DefineOwnProperty]] internal method of <i>O </i>with <i>P</i>,
+			<i>desc</i>, and <b>true</b> as arguments.</p>
+		</li></ol></li>
+		<li><p>
+		Set
+		the [[Extensible]] internal property of <i>O </i>to <b>false</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>O</i>.</p>
+	</li></ol><h5 id="x15.2.3.10">15.2.3.10 Object.preventExtensions ( O ) <a href="#x15.2.3.10">#</a> <a href="#x15.2.3.10-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <b>preventExtensions</b> function is called, the following steps
+	are taken:</p>
+	<ol><li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
+		</li>
+		<li><p>
+		Set
+		the [[Extensible]] internal property of <i>O </i>to <b>false</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>O</i>.</p>
+	</li></ol><h5 id="x15.2.3.11">15.2.3.11 Object.isSealed ( O ) <a href="#x15.2.3.11">#</a> <a href="#x15.2.3.11-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <b>isSealed</b> function is called with argument <i>O</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
+		</li>
+		<li><p>
+		For
+		each named own property name <i>P</i> of <i>O</i>,</p>
+		<ol><li><p>
+			Let
+			<i>desc </i>be the result of calling the [[GetOwnProperty]]
+			internal method of <i>O </i>with <i>P</i>.</p>
+			</li>
+			<li><p>
+			If
+			<i>desc</i>.[[Configurable]] is <b>true</b>, then return <b>false</b>.</p>
+		</li></ol></li>
+		<li><p>
+		If
+		the [[Extensible]] internal property of <i>O </i>is <b>false</b>,
+		then return <b>true</b>.</p>
+		</li>
+		<li><p>
+		Otherwise,
+		return <b>false</b>.</p>
+	</li></ol><h5 id="x15.2.3.12">15.2.3.12 Object.isFrozen ( O ) <a href="#x15.2.3.12">#</a> <a href="#x15.2.3.12-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <b>isFrozen</b> function is called with argument <i>O</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
+		</li>
+		<li><p>
+		For
+		each named own property name <i>P</i> of <i>O</i>,</p>
+		<ol><li><p>
+			Let
+			<i>desc </i>be the result of calling the [[GetOwnProperty]]
+			internal method of <i>O </i>with <i>P</i>.</p>
+			</li>
+			<li><p>
+			If
+			<a href="x8.html#x8.10.2">IsDataDescriptor</a>(<i>desc</i>) is <b>true</b> then</p>
+			<ol><li><p>
+				If
+				<i>desc</i>.[[Writable]] is <b>true</b>, return <b>false</b>.</p>
+			</li></ol></li>
+			<li><p>
+			If
+			<i>desc</i>.[[Configurable]] is <b>true</b>, then return <b>false</b>.</p>
+		</li></ol></li>
+		<li><p>
+		If
+		the [[Extensible]] internal property of <i>O </i>is <b>false</b>,
+		then return <b>true</b>.</p>
+		</li>
+		<li><p>
+		Otherwise,
+		return <b>false</b>.</p>
+	</li></ol><h5 id="x15.2.3.13">15.2.3.13 Object.isExtensible ( O ) <a href="#x15.2.3.13">#</a> <a href="#x15.2.3.13-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <b>isExtensible</b> function is called with argument <i>O</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>O</i>) is not Object throw a <b>TypeError </b>exception.</p>
+		</li>
+		<li><p>
+		Return
+		the Boolean value of the [[Extensible]] internal property of <i>O</i>.</p>
+	</li></ol><h5 id="x15.2.3.14">15.2.3.14 Object.keys ( O ) <a href="#x15.2.3.14">#</a> <a href="#x15.2.3.14-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <b>keys</b> function is called with argument <i>O</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		If
+		the <a href="x8.html#Type">Type</a>(<i>O</i>) is not Object, throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		exception.</p>
+		</li>
+		<li><p>
+		Let
+		<i>n</i> be the number of own enumerable properties of <i>O</i></p>
+		</li>
+		<li><p>
+		Let
+		<i>array </i>be the result of creating a new Object as if by the
+		expression <code><b>new Array(n)
+		</b></code>where <code><b>Array</b></code>
+		is the standard built-in constructor with that name.</p>
+		</li>
+		<li><p>
+		Let
+		<i>index</i> be 0.</p>
+		</li>
+		<li><p>
+		For
+		each own enumerable property of <i>O</i> whose name String is <i>P</i>
+		
+		</p>
+		<ol><li><p>
+			Call
+			the [[DefineOwnProperty]] internal method of <i>array</i> with
+			arguments <a href="x9.html#x9.8">ToString</a>(<i>index</i>), the PropertyDescriptor
+			{[[Value]]: <i>P</i>, [[Writable]]: <b>true</b>, [[Enumerable]]:
+			<b>true</b>, [[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
+			</li>
+			<li><p>
+			Increment
+			<i>index</i> by 1.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		<i>array</i>.</p>
+	</li></ol><p>
+	If an
+	implementation defines a specific order of enumeration for the
+	for-in statement, that same enumeration order must be used in step 5
+	of this algorithm.</p>
+	<h4 id="x15.2.4">15.2.4 Properties of the Object Prototype Object <a href="#x15.2.4">#</a> <a href="#x15.2.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	value of the [[Prototype]] internal property of the Object prototype
+	object is <b>null</b>, the value of the [[Class]] internal property
+	is <code><b>"Object"</b></code>,
+	and the initial value of the [[Extensible]] internal property is
+	<b>true</b>.</p>
+	<h5 id="x15.2.4.1">15.2.4.1 Object.prototype.constructor <a href="#x15.2.4.1">#</a> <a href="#x15.2.4.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	initial value of <code><b>Object.prototype.constructor</b></code>
+	is the standard built-in <code><b>Object</b></code>
+	constructor.</p>
+	<h5 id="x15.2.4.2">15.2.4.2 Object.prototype.toString ( ) <a href="#x15.2.4.2">#</a> <a href="#x15.2.4.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <code><b>toString</b></code>
+	method is called, the following steps are taken:</p>
+	<ol><li><p>If
+	the <b>this</b>
+	value is <b>undefined</b>,
+	return "<b>[object Undefined]</b>".</p></li>
+	<li><p>If
+	the <b>this</b>
+	value is <b>null</b>,
+	return "<b>[object Null]</b>".</p></li>
+	<li><p>Let
+	<i>O </i>be the result of calling <a href="x9.html#x9.9">ToObject</a> passing the <b>this </b>value
+	as the argument.</p></li>
+	<li><p>Let
+	<i>class</i> be the value of the [[Class]] internal property of <i>O</i>.</p></li>
+	<li><p>Return
+	the String value that is the result of concatenating the three
+	Strings "<b>[object </b>",
+	<i>class</i>, and "<b>]</b>".</p></li>
+</ol><h5 id="x15.2.4.3">15.2.4.3 Object.prototype.toLocaleString ( ) <a href="#x15.2.4.3">#</a> <a href="#x15.2.4.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <b>toLocaleString </b>method is called, the following steps are
+	taken:</p>
+	<ol><li><p>
+		Let
+		<i>O </i>be the result of calling <a href="x9.html#x9.9">ToObject</a> passing the <b>this
+		</b>value as the argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>toString</i> be the result of calling the [[Get]] internal
+		method of <i>O </i>passing <b>"toString"</b> as the
+		argument.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x9.html#x9.11">IsCallable</a>(<i>toString</i>) is <b>false</b>, throw a <b>TypeError
+		</b>exception.</p>
+		</li>
+		<li><p>
+		Return
+		the result of calling the [[Call]] internal method of <i>toString</i>
+		passing <i>O </i>as the <b>this </b>value and no arguments.</p>
+	</li></ol><p class="sp"><b class="note">NOTE 1</b> This function is provided to give all Objects a generic
+	<code><b>toLocaleString</b></code>
+	interface, even though not all may use it. Currently, <code><b>Array</b></code>,
+	<code><b>Number</b></code>, and <code><b>Date</b></code>
+	provide their own locale-sensitive <code><b>toLocaleString</b></code>
+	methods.</p>
+	<p class="sp"><b class="note">NOTE 2</b> The first parameter to this function is likely to be used in a
+	future version of this standard; it is recommended that
+	implementations do not use this parameter position for anything
+	else.</p>
+	<h5 id="x15.2.4.4">15.2.4.4 Object.prototype.valueOf ( ) <a href="#x15.2.4.4">#</a> <a href="#x15.2.4.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <b>valueOf</b> method is called, the following steps are taken: 
+	</p>
+	<ol><li><p>
+		Let
+		<i>O </i>be the result of calling <a href="x9.html#x9.9">ToObject</a> passing the <b>this
+		</b>value as the argument.</p>
+		</li>
+		<li><p>
+		If
+		<i>O</i> is the result of calling the Object constructor with a
+		host object (<a href="#x15.2.2.1">15.2.2.1</a>), then</p>
+		<ol><li><p>
+			Return
+			either <i>O</i> or another value such as the host object
+			originally passed to the constructor. The specific result that is
+			returned is implementation-defined.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		<i>O</i>.</p>
+	</li></ol><h5 id="x15.2.4.5">15.2.4.5 Object.prototype.hasOwnProperty (V) <a href="#x15.2.4.5">#</a> <a href="#x15.2.4.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <code><b>hasOwnProperty</b></code>
+	method is called with argument <i>V</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>P</i> be <a href="x9.html#x9.8">ToString</a>(<i>V</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>O</i> be the result of calling <a href="x9.html#x9.9">ToObject</a> passing the <b>this
+		</b>value as the argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>desc</i> be the result of calling the [[GetOwnProperty]]
+		internal method of <i>O</i> passing <i>P</i> as the argument.</p>
+		</li>
+		<li><p>
+		If
+		<i>desc</i> is <b>undefined</b>, return <b>false</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<b>true</b>.</p>
+	</li></ol><p class="sp"><b class="note">NOTE 1</b> Unlike [[HasProperty]] (<a href="x8.html#x8.12.6">8.12.6</a>), this method does not consider
+	objects in the prototype chain.</p>
+	<p class="sp"><b class="note">NOTE 2</b> The ordering of steps 1 and 2 is chosen to ensure that any
+	exception that would have been thrown by step 1 in previous editions
+	of this specification will continue to be thrown even if the <b>this</b>
+	value is <b>undefined</b> or <b>null</b>.</p>
+	<h5 id="x15.2.4.6">15.2.4.6 Object.prototype.isPrototypeOf (V) <a href="#x15.2.4.6">#</a> <a href="#x15.2.4.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <code><b>isPrototypeOf</b></code>
+	method is called with argument <i>V</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		If
+		<i>V</i> is not an object, return <b>false</b>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>O</i> be the result of calling <a href="x9.html#x9.9">ToObject</a> passing the <b>this
+		</b>value as the argument.</p>
+		</li>
+		<li><p>
+		Repeat</p>
+		<ol><li><p>
+			Let
+			<i>V</i> be the value of the [[Prototype]] internal property of <i>V</i>.</p>
+			</li>
+			<li><p>
+			if
+			<i>V</i> is <b>null</b>, return <b>false</b></p>
+			</li>
+			<li><p>
+			If
+			<i>O</i> and <i>V</i> refer to the same object, return <b>true</b>.</p>
+		</li></ol></li></ol><p><b class="note">NOTE</b> The
+	ordering of steps 1 and 2 is chosen to preserve the behaviour
+	specified by previous editions of this specification for the case
+	where V is not an object and the this value is undefined or null.</p>
+	<h5 id="x15.2.4.7">15.2.4.7 Object.prototype.propertyIsEnumerable (V) <a href="#x15.2.4.7">#</a> <a href="#x15.2.4.7-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <code><b>propertyIsEnumerable</b></code>
+	method is called with argument <i>V</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>P</i> be <a href="x9.html#x9.8">ToString</a>(<i>V</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>O</i> be the result of calling <a href="x9.html#x9.9">ToObject</a> passing the <b>this
+		</b>value as the argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>desc</i> be the result of calling the [[GetOwnProperty]]
+		internal method of <i>O</i> passing <i>P</i> as the argument.</p>
+		</li>
+		<li><p>
+		If
+		<i>desc</i> is <b>undefined</b>, return <b>false</b>.</p>
+		</li>
+		<li><p>
+		Return
+		the value of <i>desc</i>.[[Enumerable]].</p>
+	</li></ol><p class="sp"><b class="note">NOTE 1</b> This method does not consider objects in the prototype chain.</p>
+	<p class="sp"><b class="note">NOTE 2</b> The ordering of steps 1 and 2 is chosen to ensure that any
+	exception that would have been thrown by step 1 in previous editions
+	of this specification will continue to be thrown even if the <b>this</b>
+	value is <b>undefined</b> or <b>null</b>.</p>
+	<h4 id="x15.2.5">15.2.5 Properties of Object Instances <a href="#x15.2.5">#</a> <a href="#x15.2.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	Object
+	instances have no special properties beyond those inherited from the
+	Object prototype object.</p>
+	</body><script src="anno.js"></script></html>

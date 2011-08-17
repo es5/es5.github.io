@@ -38,7 +38,7 @@
 		<i><a href="x13.html#x13">FunctionBody</a></i>.</p>
 		</li>
 		<li><p><dfn id="eval-code"><i>Eval code</i></dfn> is the source text
-		supplied to the built-in <code><b><a href="x15.html#x15.1.2.1">eval</a></b></code> function. More precisely, if the parameter to the built-in <code><b><a href="x15.html#x15.1.2.1">eval</a></b></code> function is a String, it is treated as an ECMAScript <i><a href="x14.html#x14">Program</a></i>.
+		supplied to the built-in <code><b><a href="x15.1.html#x15.1.2.1">eval</a></b></code> function. More precisely, if the parameter to the built-in <code><b><a href="x15.1.html#x15.1.2.1">eval</a></b></code> function is a String, it is treated as an ECMAScript <i><a href="x14.html#x14">Program</a></i>.
 		The eval code for a particular invocation of <code><b>eval</b></code>
 		is the <a href="#global-code">global code</a> portion of that <i><a href="x14.html#x14">Program</a></i>.</p>
 		</li>
@@ -49,7 +49,7 @@
 		does not include any source text that is parsed as part of a nested
 		<i><a href="x13.html#x13">FunctionBody</a></i>. <i>Function
 		code</i> also denotes the
-		source text supplied when <a href="x15.html#x15.3.2" class="term-ref">using the built-in <code><b>Function</b></code> object as a constructor</a>. More precisely, the last parameter
+		source text supplied when <a href="x15.3.html#x15.3.2" class="term-ref">using the built-in <code><b>Function</b></code> object as a constructor</a>. More precisely, the last parameter
 		provided to the <code><b>Function</b></code>
 		constructor is converted to a String and treated as the
 		<i><a href="x13.html#x13">FunctionBody</a></i>. If more
@@ -78,7 +78,7 @@
 		<li><p>
 	 <a href="#eval-code">Eval code</a> is strict eval code if it begins with a Directive Prologue
 		that contains a Use Strict Directive or if the call to eval is a
-		direct call (see <a href="x15.html#x15.1.2.1.1">15.1.2.1.1</a>) to the <a href="x15.html#x15.1.2.1">eval function</a> that is contained
+		direct call (see <a href="x15.1.html#x15.1.2.1.1">15.1.2.1.1</a>) to the <a href="x15.1.html#x15.1.2.1">eval function</a> that is contained
 		in <a href="#x10.1.1" class="term-ref">strict mode code</a>. 
 		</p>
 		</li>
@@ -217,7 +217,7 @@
 					ECMAScript <a href="x8.html#language-type">language type</a>. <i>S</i>
 					is a Boolean flag.  If <i>S</i>
 					is <b>true</b> and
-					the binding cannot be set throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception. <i>S</i>
+					the binding cannot be set throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception. <i>S</i>
 					is used to identify strict mode references.</p>
 				</td>
 			</tr><tr valign="TOP"><td width="211">
@@ -233,7 +233,7 @@
 					is used to identify strict mode references. If <i>S</i>
 					is <b>true</b> and
 					the binding does not exist or is uninitialized throw a
-					<b><a href="x15.html#x15.11.6.3" class="term-ref">ReferenceError</a></b> exception. 
+					<b><a href="x15.11.html#x15.11.6.3" class="term-ref">ReferenceError</a></b> exception. 
 					</p>
 				</td>
 			</tr><tr valign="TOP"><td width="211" height="58">
@@ -397,7 +397,7 @@
 		so
 		if <i>S</i> is <b>true</b>
 		throw a
- <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+ <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
  exception.</p>
 	</li>
 </ol><h6 id="x10.2.1.1.4">10.2.1.1.4 GetBindingValue(N,S) <a href="#x10.2.1.1.4">#</a> <a href="#x10.2.1.1.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h6>
@@ -408,7 +408,7 @@
 	whose name is the value of the argument <i>N</i>.
 	The binding must already exist. If <i>S</i>
 	is <b>true</b> and the binding is an uninitialized <a href="#immutable-binding">immutable binding</a>
-	throw a <b><a href="x15.html#x15.11.6.3" class="term-ref">ReferenceError</a></b> exception.</p>
+	throw a <b><a href="x15.11.html#x15.11.6.3" class="term-ref">ReferenceError</a></b> exception.</p>
 	<ol><li><p>
 		Let
 		<i>envRec</i> be the declarative environment record for which the
@@ -425,7 +425,7 @@
 		<ol><li><p>
 			If
 			<i>S</i> is <b>false</b>, return the value <b>undefined</b>,
-			otherwise throw a <b><a href="x15.html#x15.11.6.3" class="term-ref">ReferenceError</a></b> exception.</p>
+			otherwise throw a <b><a href="x15.11.html#x15.11.6.3" class="term-ref">ReferenceError</a></b> exception.</p>
 		</li></ol></li>
 		<li><p>
 		Else,
@@ -813,12 +813,12 @@
 	<i>global environment</i> is a unique <a href="#x10.2">Lexical Environment</a> which is
 	created before any ECMAScript code is executed. The global
 	environment&#8217;s <a href="#x10.2.1">Environment Record</a> is an <a href="#object-environment-record">object environment record</a>
-	whose <a href="#x10.2.1.2">binding object</a> is the <a href="x15.html#x15.1" class="term-ref">global object</a> (<a href="x15.html#x15.1">15.1</a>). The global
+	whose <a href="#x10.2.1.2">binding object</a> is the <a href="x15.1.html#x15.1" class="term-ref">global object</a> (<a href="x15.1.html#x15.1">15.1</a>). The global
 	environment&#8217;s <a href="#outer-environment-reference">outer environment reference</a> is <b>null</b>.</p>
 	<p>
 	As
 	ECMAScript code is executed, additional properties may be added to
-	the <a href="x15.html#x15.1" class="term-ref">global object</a> and the initial properties may be modified.
+	the <a href="x15.1.html#x15.1" class="term-ref">global object</a> and the initial properties may be modified.
 	
 	</p>
 	<h3 id="x10.3">10.3 Execution Contexts <a href="#x10.3">#</a> <a href="#x10.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
@@ -937,7 +937,7 @@
 	<h3 id="x10.4">10.4 Establishing an Execution Context <a href="#x10.4">#</a> <a href="#x10.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
 	<p>
 	Evaluation
-	of <a href="#global-code">global code</a> or code using the eval function (<a href="x15.html#x15.1.2.1">15.1.2.1</a>)
+	of <a href="#global-code">global code</a> or code using the eval function (<a href="x15.1.html#x15.1.2.1">15.1.2.1</a>)
 	establishes and enters a new execution context. Every invocation of
 	an ECMAScript code function (<a href="x13.html#x13.2.1">13.2.1</a>) also establishes and enters a
 	new execution context, even if a function is calling itself
@@ -979,7 +979,7 @@
 		</li>
 		<li><p>
 		Set
-		the ThisBinding to the <a href="x15.html#x15.1" class="term-ref">global object</a>.</p>
+		the ThisBinding to the <a href="x15.1.html#x15.1" class="term-ref">global object</a>.</p>
 	</li></ol><h4 id="x10.4.2">10.4.2 Entering Eval Code <a href="#x10.4.2">#</a> <a href="#x10.4.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
 	<p>
 	The
@@ -988,7 +988,7 @@
 	<ol><li><p>
 		If
 		there is no calling context or if the <a href="#eval-code">eval code</a> is not being
-		evaluated by a direct call (<a href="x15.html#x15.1.2.1.1">15.1.2.1.1</a>) to the eval function then,</p>
+		evaluated by a direct call (<a href="x15.1.html#x15.1.2.1.1">15.1.2.1.1</a>) to the eval function then,</p>
 		<ol><li><p>
 			Initialize
 			the execution context as if it was a global execution context
@@ -1053,7 +1053,7 @@
 		<li><p>
 		Else
 		if <i>thisArg</i> is <b>null</b> or <b>undefined</b>, set the
-		ThisBinding to the <a href="x15.html#x15.1" class="term-ref">global object</a>.</p>
+		ThisBinding to the <a href="x15.1.html#x15.1" class="term-ref">global object</a>.</p>
 		</li>
 		<li><p>
 		Else
@@ -1328,12 +1328,12 @@
 		</li>
 		<li><p>
 		Let
-		<i>Object</i> be the standard built-in Object constructor (<a href="x15.html#x15.2.2">15.2.2</a>).</p>
+		<i>Object</i> be the standard built-in Object constructor (<a href="x15.2.html#x15.2.2">15.2.2</a>).</p>
 		</li>
 		<li><p>
 		Set
 		the [[Prototype]] internal property of <i>obj</i> to the standard
-		built-in Object prototype object (<a href="x15.html#x15.2.4">15.2.4</a>).</p>
+		built-in Object prototype object (<a href="x15.2.html#x15.2.4">15.2.4</a>).</p>
 		</li>
 		<li><p>
 		Call
@@ -1348,7 +1348,7 @@
 		<i>map</i> be the result of creating a new object as if by the
 		expression <code><b>new Object()</b></code>
 		where <code><b>Object</b></code> is
-		<a href="x15.html#x15.2">the standard built-in constructor with that name</a></p>
+		<a href="x15.2.html#x15.2">the standard built-in constructor with that name</a></p>
 		</li>
 		<li><p>
 		Let
@@ -1532,7 +1532,7 @@
 			 If
 			<i>P</i> is <code><b>"caller"
 			</b></code>and <i>v</i> is a strict mode Function object, throw a
-			<b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
+			<b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 			</li>
 			<li><p>
 			Return
@@ -1685,7 +1685,7 @@
 		<li><p>
 		Return
 		<i>result</i>.</p>
-	</li></ol><p class="sp"><b class="note">NOTE 1</b> For non-strict mode functions the array index (defined in <a href="x15.html#x15.4">15.4</a>)
+	</li></ol><p class="sp"><b class="note">NOTE 1</b> For non-strict mode functions the array index (defined in <a href="x15.4.html#x15.4">15.4</a>)
 	named data properties of an arguments object whose numeric name
 	values are less than the number of formal parameters of the
 	corresponding function object initially share their values with the
@@ -1708,7 +1708,7 @@
 	<p class="sp"><b class="note">NOTE 3</b> Arguments objects for strict mode functions define
 	non-configurable accessor properties named "<code><b>caller</b></code>"
 	and "<code><b>callee</b></code>"
-	which throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception on access. The "<code><b>callee</b></code>"
+	which throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception on access. The "<code><b>callee</b></code>"
 	property has a more specific meaning for non-strict mode functions
 	and a "<code><b>caller</b></code>"
 	property has historically been provided as an implementation-defined

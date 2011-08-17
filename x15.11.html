@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html class="split chapter"><head><meta charset="utf-8"><title>15.11 Error Objects # &#9417; &#9402; &#9312; &#9398; &#8212; Annotated ES5</title><link rel="stylesheet" href="style.css"><link rel="shortcut icon" href="favicon.ico"><link href="x15.10.html" title="15.10 RegExp (Regular Expression) Objects " rel="prev">
+  <link href="spec.html#contents" title="TOC" rel="index">
+  <link href="x15.12.html" title="15.12 The JSON Object " rel="next">
+  </head><body><div class="head">
+<h2 id="top">Annotated ECMAScript 5.1 <span id="timestamp"></span></h2>
+<div id="mascot-treehouse">
+	<img id="mascot" align="left" src="js-mascot.svg" alt=""><img id="bubble" src="bubble.svg" alt=""></div>
+<p id="slogan">&#8223;Ex igne vita&#8221;</p>
+<div id="annotations"></div>
+<script src="timestamp.js"></script></div>
+<nav>
+   <a href="x15.10.html">&#8592; 15.10 RegExp (Regular Expression) Objects </a> &#8211;
+   <a href="spec.html#contents">TOC</a> &#8211;
+   <a href="x15.12.html">15.12 The JSON Object  &#8594;</a>
+  <ol class="toc"><li><ol><li><a href="x15.11.html#x15.11" id="x15.11-toc">15.11 Error Objects</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.11.html#x15.11.1" id="x15.11.1-toc">15.11.1 The Error Constructor Called as a Function</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.11.html#x15.11.1.1" id="x15.11.1.1-toc">15.11.1.1 Error (message)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.11.html#x15.11.2" id="x15.11.2-toc">15.11.2 The Error Constructor</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.11.html#x15.11.2.1" id="x15.11.2.1-toc">15.11.2.1 new Error (message)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.11.html#x15.11.3" id="x15.11.3-toc">15.11.3 Properties of the Error Constructor</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.11.html#x15.11.3.1" id="x15.11.3.1-toc">15.11.3.1 Error.prototype</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.11.html#x15.11.4" id="x15.11.4-toc">15.11.4 Properties of the Error Prototype Object</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.11.html#x15.11.4.1" id="x15.11.4.1-toc">15.11.4.1 Error.prototype.constructor</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.11.html#x15.11.4.2" id="x15.11.4.2-toc">15.11.4.2 Error.prototype.name</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.11.html#x15.11.4.3" id="x15.11.4.3-toc">15.11.4.3 Error.prototype.message</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.11.html#x15.11.4.4" id="x15.11.4.4-toc">15.11.4.4 Error.prototype.toString ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.11.html#x15.11.5" id="x15.11.5-toc">15.11.5 Properties of Error Instances</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.11.html#x15.11.6" id="x15.11.6-toc">15.11.6 Native Error Types Used in This Standard</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.11.html#x15.11.6.1" id="x15.11.6.1-toc">15.11.6.1 EvalError</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.11.html#x15.11.6.2" id="x15.11.6.2-toc">15.11.6.2 RangeError</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.11.html#x15.11.6.3" id="x15.11.6.3-toc">15.11.6.3 ReferenceError</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.11.html#x15.11.6.4" id="x15.11.6.4-toc">15.11.6.4 SyntaxError</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.11.html#x15.11.6.5" id="x15.11.6.5-toc">15.11.6.5 TypeError</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.11.html#x15.11.6.6" id="x15.11.6.6-toc">15.11.6.6 URIError</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.11.html#x15.11.7" id="x15.11.7-toc">15.11.7 NativeError Object Structure</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.11.html#x15.11.7.1" id="x15.11.7.1-toc">15.11.7.1 NativeError Constructors Called as Functions</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.11.html#x15.11.7.2" id="x15.11.7.2-toc">15.11.7.2 NativeError (message)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.11.html#x15.11.7.3" id="x15.11.7.3-toc">15.11.7.3 The NativeError Constructors</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.11.html#x15.11.7.4" id="x15.11.7.4-toc">15.11.7.4 New NativeError (message)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.11.html#x15.11.7.5" id="x15.11.7.5-toc">15.11.7.5 Properties of the NativeError Constructors</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.11.html#x15.11.7.6" id="x15.11.7.6-toc">15.11.7.6 NativeError.prototype</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.11.html#x15.11.7.7" id="x15.11.7.7-toc">15.11.7.7 Properties of the NativeError Prototype Objects</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.11.html#x15.11.7.8" id="x15.11.7.8-toc">15.11.7.8 NativeError.prototype.constructor</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.11.html#x15.11.7.9" id="x15.11.7.9-toc">15.11.7.9 NativeError.prototype.name</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.11.html#x15.11.7.10" id="x15.11.7.10-toc">15.11.7.10 NativeError.prototype.message</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.11.html#x15.11.7.11" id="x15.11.7.11-toc">15.11.7.11 Properties of NativeError Instances</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li></ol></li></ol></li></ol></nav>
+
+  <h3 id="x15.11" class="splitme">15.11 Error Objects <a href="#x15.11">#</a> <a href="#x15.11-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	Instances
+	of Error objects are thrown as exceptions when runtime errors occur.
+	The Error objects may also serve as base objects for user-defined
+	exception classes.</p>
+	<h4 id="x15.11.1">15.11.1 The Error Constructor Called as a Function <a href="#x15.11.1">#</a> <a href="#x15.11.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	<code><b>Error</b></code> is
+	called as a function rather than as a constructor, it creates and
+	initialises a new Error object. Thus the function call <code><b>Error(</b></code><code>&#8230;</code><code><b>)</b></code>
+	is equivalent to the object creation expression <code><b>new
+	Error(</b></code><code>&#8230;</code><code><b>)</b></code>
+	with the same arguments.</p>
+	<h5 id="x15.11.1.1">15.11.1.1 Error (message) <a href="#x15.11.1.1">#</a> <a href="#x15.11.1.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	[[Prototype]] internal property of the newly constructed object is
+	set to the original Error prototype object, the one that is the
+	initial value of <code><b>Error.prototype</b></code>
+	(<a href="#x15.11.3.1">15.11.3.1</a>).</p>
+	<p>
+	The
+	[[Class]] internal property of the newly constructed object is set
+	to <code><b>"Error"</b></code>.</p>
+	<p>
+	The
+	[[Extensible]] internal property of the newly constructed object is
+	set to <b>true</b>.</p>
+	<p>
+	If
+	the argument <i>message</i>
+	is not <b>undefined</b>, the <code><b>message</b></code>
+	own property of the newly constructed object is set to
+	<a href="x9.html#x9.8">ToString</a>(<i>message</i>).</p>
+	<h4 id="x15.11.2">15.11.2 The Error Constructor <a href="#x15.11.2">#</a> <a href="#x15.11.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	<code><b>Error</b></code> is called as
+	part of a <code><b>new</b></code>
+	expression, it is a constructor: it initialises the newly created
+	object.</p>
+	<h5 id="x15.11.2.1">15.11.2.1 new Error (message) <a href="#x15.11.2.1">#</a> <a href="#x15.11.2.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	[[Prototype]] internal property of the newly constructed object is
+	set to the original Error prototype object, the one that is the
+	initial value of <code><b>Error.prototype</b></code>
+	(<a href="#x15.11.3.1">15.11.3.1</a>).</p>
+	<p>
+	The
+	[[Class]] internal property of the newly constructed Error object is
+	set to <code><b>"Error"</b></code>.</p>
+	<p>
+	The
+	[[Extensible]] internal property of the newly constructed object is
+	set to <b>true</b>.</p>
+	<p>
+	If
+	the argument <i>message</i>
+	is not <b>undefined</b>, the <code><b>message</b></code>
+	own property of the newly constructed object is set to
+	<a href="x9.html#x9.8">ToString</a>(<i>message</i>).</p>
+	<h4 id="x15.11.3">15.11.3 Properties of the Error Constructor <a href="#x15.11.3">#</a> <a href="#x15.11.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	value of the [[Prototype]] internal property of the Error
+	constructor is the Function prototype object (<a href="x15.3.html#x15.3.4">15.3.4</a>).</p>
+	<p>
+	Besides
+	the internal properties and the <code><b>length</b></code>
+	property (whose value is <b>1</b>), the Error constructor has the
+	following property:</p>
+	<h5 id="x15.11.3.1">15.11.3.1 Error.prototype <a href="#x15.11.3.1">#</a> <a href="#x15.11.3.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	initial value of <code><b>Error.prototype</b></code>
+	is the Error prototype object (<a href="#x15.11.4">15.11.4</a>).</p>
+	<p>
+	This
+	property has the attributes { [[Writable]]: <b>false</b>,
+	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b> }.</p>
+	<h4 id="x15.11.4">15.11.4 Properties of the Error Prototype Object <a href="#x15.11.4">#</a> <a href="#x15.11.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	Error prototype object is itself an Error object (its [[Class]] is
+	<code><b>"Error"</b></code>).</p>
+	<p>
+	The
+	value of the [[Prototype]] internal property of the Error prototype
+	object is the standard built-in Object prototype object (<a href="x15.2.html#x15.2.4">15.2.4</a>).</p>
+	<h5 id="x15.11.4.1">15.11.4.1 Error.prototype.constructor <a href="#x15.11.4.1">#</a> <a href="#x15.11.4.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	initial value of <code><b>Error.prototype.constructor</b></code>
+	is the built-in <code><b>Error</b></code>
+	constructor.</p>
+	<h5 id="x15.11.4.2">15.11.4.2 Error.prototype.name <a href="#x15.11.4.2">#</a> <a href="#x15.11.4.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	initial value of <code><b>Error.prototype.name</b></code>
+	is <code>"</code><code><b>Error</b></code><code>"</code>.</p>
+	<h5 id="x15.11.4.3">15.11.4.3 Error.prototype.message <a href="#x15.11.4.3">#</a> <a href="#x15.11.4.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	initial value of <code><b>Error.prototype.message</b></code>
+	is the empty String.</p>
+	<h5 id="x15.11.4.4">15.11.4.4 Error.prototype.toString ( ) <a href="#x15.11.4.4">#</a> <a href="#x15.11.4.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>O</i> be the <b>this</b> value.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>O</i>) is not Object, throw a <b><a href="#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
+		</li>
+		<li><p>
+		Let
+		<i>name</i> be the result of calling the [[Get]] internal method of
+		<i>O</i> with argument <code>"</code><code><b>name</b></code><code>"</code>.</p>
+		</li>
+		<li><p>
+		If
+		<i>name</i> is <b>undefined</b>, then let <i>name</i> be <code>"</code><code><b>Error</b></code><code>"</code>;
+		else let <i>name</i> be <a href="x9.html#x9.8">ToString</a>(<i>name</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>msg</i> be the result of calling the [[Get]] internal method of
+		<i>O</i> with argument <code>"</code><code><b>message</b></code><code>"</code>.</p>
+		</li>
+		<li><p>If
+		<i>msg</i> is undefined, then let
+		<i>msg</i>
+		be
+		the empty String; else let <i>msg</i> be <a href="x9.html#x9.8">ToString</a>(<i>msg</i>).</p></li>
+		<li><p>If name and <i>msg</i> are both the empty String, return <code>"Error"</code>.</p></li>
+		<li><p>If <i>name</i> is the empty String, return <i>msg</i>.</p></li>
+		<li><p>If <i>msg</i> is the empty String, return <i>name</i>.</p></li>
+		<li><p>Return the result of concatenating <i>name</i>, <code>":"</code>, a single space
+		character, and <i>msg</i>.</p></li>
+</ol><h4 id="x15.11.5">15.11.5 Properties of Error Instances <a href="#x15.11.5">#</a> <a href="#x15.11.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	Error
+	instances inherit properties from the Error prototype object and
+	their [[Class]] internal property value is <code><b>"Error"</b></code>.
+	 Error instances have no special properties.</p>
+	<h4 id="x15.11.6">15.11.6 Native Error Types Used in This Standard <a href="#x15.11.6">#</a> <a href="#x15.11.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	One
+	of the <i>NativeError</i> objects below is thrown when a runtime
+	error is detected. All of these objects share the same structure, as
+	described in <a href="#x15.11.7">15.11.7</a>.</p>
+	<h5 id="x15.11.6.1">15.11.6.1 EvalError <a href="#x15.11.6.1">#</a> <a href="#x15.11.6.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	This
+	exception is not currently used within this specification. This
+	object remains for compatibility with previous editions of this
+	specification.</p>
+	<h5 id="x15.11.6.2">15.11.6.2 RangeError <a href="#x15.11.6.2">#</a> <a href="#x15.11.6.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Indicates
+	a numeric value has exceeded the allowable range. See <a href="x15.4.html#x15.4.2.2">15.4.2.2</a>,
+	<a href="x15.4.html#x15.4.5.1">15.4.5.1</a>, <a href="x15.7.html#x15.7.4.2">15.7.4.2</a>, <a href="x15.7.html#x15.7.4.5">15.7.4.5</a>, <a href="x15.7.html#x15.7.4.6">15.7.4.6</a>, and <a href="x15.7.html#x15.7.4.7">15.7.4.7</a>, <a href="x15.9.html#x15.9.5.43">15.9.5.43</a>.</p>
+	<h5 id="x15.11.6.3">15.11.6.3 ReferenceError <a href="#x15.11.6.3">#</a> <a href="#x15.11.6.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Indicate
+	that an invalid reference value has been detected. See <a href="x8.html#x8.7.1">8.7.1</a>, <a href="x8.html#x8.7.2">8.7.2</a>,
+	<a href="x10.html#x10.2.1">10.2.1</a>, <a href="x10.html#x10.2.1.1.4">10.2.1.1.4</a>, <a href="x10.html#x10.2.1.2.4">10.2.1.2.4</a>, and <a href="x11.html#x11.13.1">11.13.1</a>.</p>
+	<h5 id="x15.11.6.4">15.11.6.4 SyntaxError <a href="#x15.11.6.4">#</a> <a href="#x15.11.6.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Indicates
+	that a parsing error has occurred. See <a href="x11.html#x11.1.5">11.1.5</a>, <a href="x11.html#x11.3.1">11.3.1</a>, <a href="x11.html#x11.3.2">11.3.2</a>,
+	<a href="x11.html#x11.4.1">11.4.1</a>, <a href="x11.html#x11.4.4">11.4.4</a>, <a href="x11.html#x11.4.5">11.4.5</a>, <a href="x11.html#x11.13.1">11.13.1</a>, <a href="x11.html#x11.13.2">11.13.2</a>, <a href="x12.html#x12.2.1">12.2.1</a>, <a href="x12.html#x12.10.1">12.10.1</a>, <a href="x12.html#x12.14.1">12.14.1</a>,
+	<a href="x13.html#x13.1">13.1</a>, <a href="x15.1.html#x15.1.2.1">15.1.2.1</a>, <a href="x15.3.html#x15.3.2.1">15.3.2.1</a>, <a href="x15.10.html#x15.10.2.2">15.10.2.2</a>, <a href="x15.10.html#x15.10.2.5">15.10.2.5</a>, <a href="x15.10.html#x15.10.2.9">15.10.2.9</a>,
+	<a href="x15.10.html#x15.10.2.15">15.10.2.15</a>, <a href="x15.10.html#x15.10.2.19">15.10.2.19</a>, <a href="x15.10.html#x15.10.4.1">15.10.4.1</a>, and <a href="x15.12.html#x15.12.2">15.12.2</a>.</p>
+	<h5 id="x15.11.6.5">15.11.6.5 TypeError <a href="#x15.11.6.5">#</a> <a href="#x15.11.6.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Indicates
+	the actual type of an operand is different than the expected type.
+	See <a href="x8.html#x8.6.2">8.6.2</a>, <a href="x8.html#x8.7.2">8.7.2</a>, <a href="x8.html#x8.10.5">8.10.5</a>, <a href="x8.html#x8.12.5">8.12.5</a>, <a href="x8.html#x8.12.7">8.12.7</a>, <a href="x8.html#x8.12.8">8.12.8</a>, <a href="x8.html#x8.12.9">8.12.9</a>, <a href="x9.html#x9.9">9.9</a>, <a href="x9.html#x9.10">9.10</a>,
+	<a href="x10.html#x10.2.1">10.2.1</a>, <a href="x10.html#x10.2.1.1.3">10.2.1.1.3</a>, <a href="x10.html#x10.6">10.6</a>, <a href="x11.html#x11.2.2">11.2.2</a>, <a href="x11.html#x11.2.3">11.2.3</a>, <a href="x11.html#x11.4.1">11.4.1</a>, <a href="x11.html#x11.8.6">11.8.6</a>, <a href="x11.html#x11.8.7">11.8.7</a>,
+	<a href="x11.html#x11.3.1">11.3.1</a>, <a href="x13.html#x13.2">13.2</a>, <a href="x13.html#x13.2.3">13.2.3</a>, <a href="x15.html#x15">15</a>, <a href="x15.2.html#x15.2.3.2">15.2.3.2</a>, <a href="x15.2.html#x15.2.3.3">15.2.3.3</a>, <a href="x15.2.html#x15.2.3.4">15.2.3.4</a>, <a href="x15.2.html#x15.2.3.5">15.2.3.5</a>,
+	<a href="x15.2.html#x15.2.3.6">15.2.3.6</a>, <a href="x15.2.html#x15.2.3.7">15.2.3.7</a>, <a href="x15.2.html#x15.2.3.8">15.2.3.8</a>, <a href="x15.2.html#x15.2.3.9">15.2.3.9</a>, <a href="x15.2.html#x15.2.3.10">15.2.3.10</a>, <a href="x15.2.html#x15.2.3.11">15.2.3.11</a>,
+	<a href="x15.2.html#x15.2.3.12">15.2.3.12</a>, <a href="x15.2.html#x15.2.3.13">15.2.3.13</a>, <a href="x15.2.html#x15.2.3.14">15.2.3.14</a>, <a href="x15.2.html#x15.2.4.3">15.2.4.3</a>, <a href="x15.3.html#x15.3.4.2">15.3.4.2</a>, <a href="x15.3.html#x15.3.4.3">15.3.4.3</a>,
+	<a href="x15.3.html#x15.3.4.4">15.3.4.4</a>, <a href="x15.3.html#x15.3.4.5">15.3.4.5</a>, <a href="x15.3.html#x15.3.4.5.2">15.3.4.5.2</a>, <a href="x15.3.html#x15.3.4.5.3">15.3.4.5.3</a>, <a href="x15.3.html#x15.3.5">15.3.5</a>, <a href="x15.3.html#x15.3.5.3">15.3.5.3</a>,
+	<a href="x15.3.html#x15.3.5.4">15.3.5.4</a>, <a href="x15.4.html#x15.4.4.3">15.4.4.3</a>, <a href="x15.4.html#x15.4.4.11">15.4.4.11</a>, <a href="x15.4.html#x15.4.4.16">15.4.4.16</a>, <a href="x15.4.html#x15.4.4.17">15.4.4.17</a>, <a href="x15.4.html#x15.4.4.18">15.4.4.18</a>,
+	<a href="x15.4.html#x15.4.4.19">15.4.4.19</a>, <a href="x15.4.html#x15.4.4.20">15.4.4.20</a>, <a href="x15.4.html#x15.4.4.21">15.4.4.21</a>, <a href="x15.4.html#x15.4.4.22">15.4.4.22</a>, <a href="x15.4.html#x15.4.5.1">15.4.5.1</a>, <a href="x15.5.html#x15.5.4.2">15.5.4.2</a>,
+	<a href="x15.5.html#x15.5.4.3">15.5.4.3</a>, <a href="x15.6.html#x15.6.4.2">15.6.4.2</a>, <a href="x15.6.html#x15.6.4.3">15.6.4.3</a>, <a href="x15.7.html#x15.7.4">15.7.4</a>, <a href="x15.7.html#x15.7.4.2">15.7.4.2</a>, <a href="x15.7.html#x15.7.4.4">15.7.4.4</a>, <a>15.7.4.8</a> [?]<!-- FIXME -->,
+	<a href="x15.9.html#x15.9.5">15.9.5</a>, <a href="x15.9.html#x15.9.5.44">15.9.5.44</a>, <a href="x15.10.html#x15.10.4.1">15.10.4.1</a>, <a href="x15.10.html#x15.10.6">15.10.6</a>, <a href="#x15.11.4.4">15.11.4.4</a> and <a href="x15.12.html#x15.12.3">15.12.3</a>.</p>
+	<h5 id="x15.11.6.6">15.11.6.6 URIError <a href="#x15.11.6.6">#</a> <a href="#x15.11.6.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Indicates
+	that one of the global URI handling functions was used in a way that
+	is incompatible with its definition. See <a href="x15.1.html#x15.1.3">15.1.3</a>.</p>
+	<h4 id="x15.11.7">15.11.7 NativeError Object Structure <a href="#x15.11.7">#</a> <a href="#x15.11.7-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	an ECMAScript implementation detects a runtime error, it throws an
+	instance of one of the <i>NativeError</i> objects defined in
+	<a href="#x15.11.6">15.11.6</a>. Each of these objects has the structure described below,
+	differing only in the name used as the constructor name instead of
+	<i>NativeError</i>, in the <b>name</b> property of the prototype
+	object, and in the implementation-defined <code><b>message</b></code>
+	property of the prototype object.</p>
+	<p>
+	For
+	each error object, references to <i>NativeError</i> in the
+	definition should be replaced with the appropriate error object name
+	from <a href="#x15.11.6">15.11.6</a>.</p>
+	<h5 id="x15.11.7.1">15.11.7.1 NativeError Constructors Called as Functions <a href="#x15.11.7.1">#</a> <a href="#x15.11.7.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	a <i><a href="#x15.11.6">NativeError</a></i> constructor is called as a function rather than
+	as a constructor, it creates and initialises a new object.  A call
+	of the object as a function is equivalent to calling it as a
+	constructor with the same arguments.</p>
+	<h5 id="x15.11.7.2">15.11.7.2 NativeError (message) <a href="#x15.11.7.2">#</a> <a href="#x15.11.7.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	[[Prototype]] internal property of the newly constructed object is
+	set to the prototype object for this error constructor.  The
+	[[Class]] internal property of the newly constructed object is set
+	to <code>"</code><code><b>Error</b></code><code>"</code>.
+	The [[Extensible]] internal property of the newly constructed object
+	is set to <b>true</b>.</p>
+	<p>
+	If
+	the argument <i>message</i>
+	is not <b>undefined</b>, the <code><b>message</b></code>
+	own property of the newly constructed object is set to
+	<a href="x9.html#x9.8">ToString</a>(<i>message</i>).</p>
+	<h5 id="x15.11.7.3">15.11.7.3 The NativeError Constructors <a href="#x15.11.7.3">#</a> <a href="#x15.11.7.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	a <i><a href="#x15.11.6">NativeError</a></i> constructor is called as part of a <code><b>new</b></code>
+	expression, it is a constructor: it initialises the newly created
+	object.</p>
+	<h5 id="x15.11.7.4">15.11.7.4 New NativeError (message) <a href="#x15.11.7.4">#</a> <a href="#x15.11.7.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	[[Prototype]] internal property of the newly constructed object is
+	set to the prototype object for this <i><a href="#x15.11.6">NativeError</a></i> constructor.
+	 The [[Class]] internal property of the newly constructed object is
+	set to <code>"</code><code><b>Error</b></code><code>"</code>.
+	The [[Extensible]] internal property of the newly constructed object
+	is set to <b>true</b>.</p>
+	<p>
+	If
+	the argument <i>message</i>
+	is not <b>undefined</b>, the <code><b>message
+	</b></code>property of the newly constructed object is set to
+	<a href="x9.html#x9.8">ToString</a>(<i>message</i>).</p>
+	<h5 id="x15.11.7.5">15.11.7.5 Properties of the NativeError Constructors <a href="#x15.11.7.5">#</a> <a href="#x15.11.7.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	value of the [[Prototype]] internal property of a <i><a href="#x15.11.6">NativeError</a></i>
+	constructor is the Function prototype object (<a href="x15.3.html#x15.3.4">15.3.4</a>).</p>
+	<p>
+	Besides
+	the internal properties and the <code><b>length</b></code>
+	property (whose value is <b>1</b>), each <i><a href="#x15.11.6">NativeError</a></i>
+	constructor has the following property:</p>
+	<h5 id="x15.11.7.6">15.11.7.6 NativeError.prototype <a href="#x15.11.7.6">#</a> <a href="#x15.11.7.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	initial value of <i><b><a href="#x15.11.6">NativeError</a></b></i><code><b>.prototype</b></code>
+	is a <i>NativeError</i> prototype object (<a href="#x15.11.7.7">15.11.7.7</a>). Each
+	<i><a href="#x15.11.6">NativeError</a></i> constructor has a separate prototype object.</p>
+	<p>
+	This
+	property has the attributes { [[Writable]]: <b>false</b>,
+	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b> }.</p>
+	<h5 id="x15.11.7.7">15.11.7.7 Properties of the NativeError Prototype Objects <a href="#x15.11.7.7">#</a> <a href="#x15.11.7.7-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Each
+	<i><a href="#x15.11.6">NativeError</a></i> prototype object is an Error object (its
+	[[Class]] is <code>"</code><code><b>Error</b></code><code>"</code>).</p>
+	<p>
+	The
+	value of the [[Prototype]] internal property of each <i><a href="#x15.11.6">NativeError</a></i>
+	prototype object is the standard built-in Error prototype object
+	(<a href="#x15.11.4">15.11.4</a>).</p>
+	<h5 id="x15.11.7.8">15.11.7.8 NativeError.prototype.constructor <a href="#x15.11.7.8">#</a> <a href="#x15.11.7.8-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	initial value of the <code><b>constructor</b></code>
+	property of the prototype for a given <i><a href="#x15.11.6">NativeError</a></i> constructor
+	is the <i><a href="#x15.11.6">NativeError</a></i> constructor function itself (<a href="#x15.11.7">15.11.7</a>).</p>
+	<h5 id="x15.11.7.9">15.11.7.9 NativeError.prototype.name <a href="#x15.11.7.9">#</a> <a href="#x15.11.7.9-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	initial value of the <code><b>name</b></code>
+	property of the prototype for a given <i><a href="#x15.11.6">NativeError</a></i> constructor
+	is the name of the constructor (the name used instead of
+	<i>NativeError</i>).</p>
+	<h5 id="x15.11.7.10">15.11.7.10 NativeError.prototype.message <a href="#x15.11.7.10">#</a> <a href="#x15.11.7.10-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	initial value of the <code><b>message</b></code>
+	property of the prototype for a given <i><a href="#x15.11.6">NativeError</a></i> constructor
+	is the empty String.</p>
+	<p><b class="note">NOTE</b> The
+	prototypes for the NativeError constructors do not themselves
+	provide a <code><b>toString </b></code>function,
+	but instances of errors will inherit it from the Error prototype
+	object.</p>
+	<h5 id="x15.11.7.11">15.11.7.11 Properties of NativeError Instances <a href="#x15.11.7.11">#</a> <a href="#x15.11.7.11-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	<i><a href="#x15.11.6">NativeError</a></i>
+	instances inherit properties from their <i><a href="#x15.11.6">NativeError</a></i> prototype
+	object and their [[Class]] internal property value is <code><b>"Error"</b></code>.
+	 <i><a href="#x15.11.6">NativeError</a></i> instances have no special properties.</p>
+	</body><script src="anno.js"></script></html>

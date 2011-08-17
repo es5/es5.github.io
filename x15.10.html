@@ -1,0 +1,2978 @@
+<!DOCTYPE html>
+<html class="split chapter"><head><meta charset="utf-8"><title>15.10 RegExp (Regular Expression) Objects # &#9417; &#9402; &#9312; &#9398; &#8212; Annotated ES5</title><link rel="stylesheet" href="style.css"><link rel="shortcut icon" href="favicon.ico"><link href="x15.9.html" title="15.9 Date Objects " rel="prev">
+  <link href="spec.html#contents" title="TOC" rel="index">
+  <link href="x15.11.html" title="15.11 Error Objects " rel="next">
+  </head><body><div class="head">
+<h2 id="top">Annotated ECMAScript 5.1 <span id="timestamp"></span></h2>
+<div id="mascot-treehouse">
+	<img id="mascot" align="left" src="js-mascot.svg" alt=""><img id="bubble" src="bubble.svg" alt=""></div>
+<p id="slogan">&#8223;Ex igne vita&#8221;</p>
+<div id="annotations"></div>
+<script src="timestamp.js"></script></div>
+<nav>
+   <a href="x15.9.html">&#8592; 15.9 Date Objects </a> &#8211;
+   <a href="spec.html#contents">TOC</a> &#8211;
+   <a href="x15.11.html">15.11 Error Objects  &#8594;</a>
+  <ol class="toc"><li><ol><li><a href="x15.10.html#x15.10" id="x15.10-toc">15.10 RegExp (Regular Expression) Objects</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.10.html#x15.10.1" id="x15.10.1-toc">15.10.1 Patterns</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.10.html#x15.10.2" id="x15.10.2-toc">15.10.2 Pattern Semantics</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.10.html#x15.10.2.1" id="x15.10.2.1-toc">15.10.2.1 Notation</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.10.html#x15.10.2.2" id="x15.10.2.2-toc">15.10.2.2 Pattern</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.10.html#x15.10.2.3" id="x15.10.2.3-toc">15.10.2.3 Disjunction</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.10.html#x15.10.2.4" id="x15.10.2.4-toc">15.10.2.4 Alternative</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.10.html#x15.10.2.5" id="x15.10.2.5-toc">15.10.2.5 Term</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.10.html#x15.10.2.6" id="x15.10.2.6-toc">15.10.2.6 Assertion</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.10.html#x15.10.2.7" id="x15.10.2.7-toc">15.10.2.7 Quantifier</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.10.html#x15.10.2.8" id="x15.10.2.8-toc">15.10.2.8 Atom</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.10.html#x15.10.2.9" id="x15.10.2.9-toc">15.10.2.9 AtomEscape</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.10.html#x15.10.2.10" id="x15.10.2.10-toc">15.10.2.10 CharacterEscape</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.10.html#x15.10.2.11" id="x15.10.2.11-toc">15.10.2.11 DecimalEscape</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.10.html#x15.10.2.12" id="x15.10.2.12-toc">15.10.2.12 CharacterClassEscape</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.10.html#x15.10.2.13" id="x15.10.2.13-toc">15.10.2.13 CharacterClass</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.10.html#x15.10.2.14" id="x15.10.2.14-toc">15.10.2.14 ClassRanges</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.10.html#x15.10.2.15" id="x15.10.2.15-toc">15.10.2.15 NonemptyClassRanges</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.10.html#x15.10.2.16" id="x15.10.2.16-toc">15.10.2.16 NonemptyClassRangesNoDash</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.10.html#x15.10.2.17" id="x15.10.2.17-toc">15.10.2.17 ClassAtom</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.10.html#x15.10.2.18" id="x15.10.2.18-toc">15.10.2.18 ClassAtomNoDash</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.10.html#x15.10.2.19" id="x15.10.2.19-toc">15.10.2.19 ClassEscape</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.10.html#x15.10.3" id="x15.10.3-toc">15.10.3 The RegExp Constructor Called as a Function</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.10.html#x15.10.3.1" id="x15.10.3.1-toc">15.10.3.1 RegExp(pattern, flags)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.10.html#x15.10.4" id="x15.10.4-toc">15.10.4 The RegExp Constructor</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.10.html#x15.10.4.1" id="x15.10.4.1-toc">15.10.4.1 new RegExp(pattern, flags)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.10.html#x15.10.5" id="x15.10.5-toc">15.10.5 Properties of the RegExp Constructor</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.10.html#x15.10.5.1" id="x15.10.5.1-toc">15.10.5.1 RegExp.prototype</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.10.html#x15.10.6" id="x15.10.6-toc">15.10.6 Properties of the RegExp Prototype Object</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.10.html#x15.10.6.1" id="x15.10.6.1-toc">15.10.6.1 RegExp.prototype.constructor</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.10.html#x15.10.6.2" id="x15.10.6.2-toc">15.10.6.2 RegExp.prototype.exec(string)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.10.html#x15.10.6.3" id="x15.10.6.3-toc">15.10.6.3 RegExp.prototype.test(string)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.10.html#x15.10.6.4" id="x15.10.6.4-toc">15.10.6.4 RegExp.prototype.toString()</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.10.html#x15.10.7" id="x15.10.7-toc">15.10.7 Properties of RegExp Instances</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.10.html#x15.10.7.1" id="x15.10.7.1-toc">15.10.7.1 source</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.10.html#x15.10.7.2" id="x15.10.7.2-toc">15.10.7.2 global</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.10.html#x15.10.7.3" id="x15.10.7.3-toc">15.10.7.3 ignoreCase</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.10.html#x15.10.7.4" id="x15.10.7.4-toc">15.10.7.4 multiline</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.10.html#x15.10.7.5" id="x15.10.7.5-toc">15.10.7.5 lastIndex</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li></ol></li></ol></li></ol></nav>
+
+  <h3 id="x15.10" class="splitme">15.10 RegExp (Regular Expression) Objects <a href="#x15.10">#</a> <a href="#x15.10-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	A
+	RegExp object contains a regular expression and the associated
+	flags.</p>
+	<p><b class="note">NOTE</b> The
+	form and functionality of regular expressions is modelled after the
+	regular expression facility in the Perl&#160;5 programming language.</p>
+	<h4 id="x15.10.1">15.10.1 Patterns <a href="#x15.10.1">#</a> <a href="#x15.10.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	<code><b>RegExp</b></code> constructor
+	applies the following grammar to the input pattern String. An error
+	occurs if the grammar cannot interpret the String as an expansion of
+	<i>Pattern</i>.</p>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>Pattern </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>Disjunction</i></p>
+	<p class="keep">
+	<i>Disjunction </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>Alternative<br>
+	Alternative </i><code><b>|</b></code> <i>Disjunction</i></p>
+	<p class="keep">
+	<i>Alternative </i><b>::</b></p>
+	<p class="def1-btm">
+	[empty]<i><br>Alternative
+	Term</i></p>
+	<p class="keep">
+	<i>Term </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>Assertion<br>Atom<br>Atom
+	Quantifier</i></p>
+	<p class="keep">
+	<i>Assertion </i><b>::</b></p>
+	<p class="def1-btm">
+	<code><b>^</b></code> <i><br></i><code><b>$</b></code> <i><br></i><code><b>\
+	b</b></code> <i><br></i><code><b>\
+	B<br>(</b></code> <i><b>
+	</b></i><code><b>?</b></code> <i><b>
+	</b></i><code><b>=</b></code> <i><b>
+	</b>Disjunction </i><code><b>)</b></code> <i><br></i><code><b>(</b></code> <i><b>
+	</b></i><code><b>?</b></code> <i><b>
+	</b></i><code><b>!</b></code> <i><b>
+	</b>Disjunction </i><code><b>)</b></code></p>
+	<p class="keep">
+	<i>Quantifier </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>QuantifierPrefix<br>QuantifierPrefix</i><code><b>
+	?</b></code></p>
+	<p class="keep">
+	<i>QuantifierPrefix </i><b>::</b></p>
+	<p class="def1-btm">
+	<code><b>*<br>+</b></code> <i><br></i><code><b>?</b></code> <i><br></i><code><b>{</b></code> <i>DecimalDigits </i><code><b>}</b></code> <i><br></i><code><b>{</b></code> <i>DecimalDigits<b>
+	</b></i><code><b>,</b></code> <i><b>
+	</b></i><code><b>}</b></code> <i><br></i><code><b>{</b></code> <i>DecimalDigits<b>
+	</b></i><code><b>,</b></code> <i>DecimalDigits </i><code><b>}</b></code></p>
+	<p class="keep">
+	<i>Atom </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>PatternCharacter<br></i><code>.</code><i><br></i><code><b>\
+	</b></code> <i>AtomEscape<br>CharacterClass</i><code><b><br>(</b></code> <i><b>
+	</b>Disjunction </i><code><b>)</b></code> <i><br></i><code><b>(</b></code> <i><b>
+	</b></i><code><b>?</b></code> <i><b>
+	</b></i><code><b>:</b></code> <i><b>
+	</b>Disjunction </i><code><b>)</b></code></p>
+	<p class="keep">
+	<i>PatternCharacter </i><b>::</b><i>SourceCharacter </i><b>but
+	not</b><i> </i><b>any
+	of:</b></p>
+	<p class="def1-btm">
+	<i>^ </i><code><b>$
+	 \  .  *  +  ?  (  )  [  ]  {  }  |</b></code></p>
+	<p class="keep">
+	<i>AtomEscape </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>DecimalEscape<br>CharacterEscape<br>CharacterClassEscape</i></p>
+	<p class="keep">
+	<i>CharacterEscape </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>ControlEscape<br></i><code><b>c
+	</b></code> <i>ControlLetter<br>HexEscapeSequence<br>UnicodeEscapeSequence<br>IdentityEscape</i></p>
+	<p class="keep">
+	<i>ControlEscape </i><b>::</b><i><b>
+	 </b></i><b>one
+	of</b></p>
+	<p class="def1-btm">
+	<code><b>f
+	 n  r  t  v</b></code></p>
+	<p class="keep">
+	<i>ControlLetter </i><b>::</b><i><b>
+	</b></i><b>one
+	of</b></p>
+	<p class="def1-btm">
+	<code><b>a
+	 b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x
+	 y  z<br>A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q  R  S  T 
+	U  V  W  X  Y  Z</b></code></p>
+	<p class="keep">
+	<i>IdentityEscape </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>SourceCharacter </i><b>but
+	not</b><i><b>
+	</b>IdentifierPart<br></i>&lt;ZWJ&gt;<br>&lt;ZWNJ&gt;</p>
+	<p class="keep">
+	<i>DecimalEscape </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>DecimalIntegerLiteral </i>[<a href="x5.html#lookahead-not-in">lookahead
+	<span class="symbol">&#8713;</span></a>
+	DecimalDigit]</p>
+	<p class="keep">
+	<i>CharacterClassEscape </i><b>::</b><i><b>
+	 </b></i><b>one
+	of</b></p>
+	<p class="def1-btm">
+	<code><b>d
+	 D  s  S  w  W</b></code></p>
+	<p class="keep">
+	<i>CharacterClass </i><b>::</b></p>
+	<p class="def1-btm">
+	<code><b>[
+	</b></code>[<a href="x5.html#lookahead-not-in">lookahead
+	<span class="symbol">&#8713;</span></a>
+	{<code><b>^</b></code>}]<code><b>
+	</b></code> <i>ClassRanges</i><code><b>
+	]</b></code> <i><br></i><code><b>[
+	^</b></code> <i>ClassRanges</i><code><b>
+	]</b></code></p>
+	<p class="keep">
+	<i>ClassRanges </i><b>::</b></p>
+	<p class="def1-btm">
+	[empty]<i><br>NonemptyClassRanges</i></p>
+	<p class="keep">
+	<i>NonemptyClassRanges </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>ClassAtom<br>ClassAtom
+	NonemptyClassRangesNoDash<br>ClassAtom</i><code><b>
+	-</b></code> <i>ClassAtom ClassRanges</i></p>
+	<p class="keep">
+	<i>NonemptyClassRangesNoDash </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>ClassAtom<br>ClassAtomNoDash
+	NonemptyClassRangesNoDash<br>ClassAtomNoDash</i><code><b>
+	-</b></code> <i>ClassAtom ClassRanges</i></p>
+	<p class="keep">
+	<i>ClassAtom </i><b>::</b></p>
+	<p class="def1-btm">
+	<code><b>-</b></code> <i><br>ClassAtomNoDash</i></p>
+	<p class="keep">
+	<i>ClassAtomNoDash </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>SourceCharacter </i><b>but
+	not</b><i> </i><b>one
+	of</b><i> </i><code><b>\</b></code> <b>or</b> <code><b>]</b></code> <b>or</b> <code><b>-</b></code> <i><br></i><code>\
+	</code><i>ClassEscape</i></p>
+	<p class="keep">
+	<i>ClassEscape </i><b>::</b></p>
+	<p class="def1-btm">
+	<i>DecimalEscape<br></i><code><b>b</b></code> <i><br>CharacterEscape</i><code><b><br></b></code> <i>CharacterClassEscape</i></p>
+	<h4 id="x15.10.2">15.10.2 Pattern Semantics <a href="#x15.10.2">#</a> <a href="#x15.10.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	A
+	regular expression pattern is converted into an internal procedure
+	using the process described below. An implementation is encouraged
+	to use more efficient algorithms than the ones listed below, as long
+	as the results are the same. The internal procedure is used as the
+	value of a RegExp object&#8217;s [[Match]] internal property.</p>
+	<h5 id="x15.10.2.1">15.10.2.1 Notation <a href="#x15.10.2.1">#</a> <a href="#x15.10.2.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p class="sm-btm">
+	The
+	descriptions below use the following variables:</p>
+	<ul><li><p>
+		<dfn id="Input-RegExp"><i>Input</i></dfn>
+		is the String being matched by the regular expression pattern. The
+		notation <i>input</i>[<i>n</i>]
+		means the <i>n</i><sup><i>th</i></sup>
+		character of <i>input</i>,
+		where <i>n</i> can range
+		between 0 (inclusive) and <i>InputLength</i>
+		(exclusive).</p>
+		</li>
+		<li><p>
+		<dfn id="InputLength"><i>InputLength</i></dfn>
+		is the number of characters in the <i>Input</i>
+		String.</p>
+		</li>
+		<li><p>
+		<dfn id="NcapturingParens"><i>NcapturingParens</i></dfn>
+		is the total number of left capturing parentheses (i.e. the total
+		number of times the <i>Atom</i>
+		<b>::</b> <code><b>(</b></code><b>
+		</b><i>Disjunction</i> <code><b>)</b></code>
+		production is expanded) in the pattern. A left capturing
+		parenthesis is any <code><b>(</b></code>
+		pattern character that is matched by the <code><b>(</b></code>
+		terminal of the <i>Atom</i>
+		<b>::</b> <code><b>(</b></code><b>
+		</b><i>Disjunction</i> <code><b>)</b></code>
+		production.</p>
+		</li>
+		<li><p>
+		<dfn id="IgnoreCase"><i>IgnoreCase</i></dfn>
+		is the setting of the RegExp object's <code><b>ignoreCase</b></code>
+		property.</p>
+		</li>
+		<li><p>
+		<dfn id="Multiline"><i>Multiline</i></dfn>
+		is the setting of the RegExp object&#8217;s <code><b>multiline</b></code>
+		property.</p>
+	</li></ul><p>
+	Furthermore,
+	the descriptions below use the following internal data structures:</p>
+	<ul><li><p>
+		A
+		<dfn id="CharSet"><i>CharSet</i></dfn> is a
+		mathematical set of characters.</p>
+		</li>
+		<li><p>
+		A
+		<dfn id="State"><i>State</i></dfn> is an
+		ordered pair (<i>endIndex</i>,
+		<i>captures</i>)
+		where <dfn id="endIndex"><i>endIndex</i></dfn> is
+		an integer and <dfn id="captures"><i>captures</i></dfn>
+		is an internal array of <i><a href="#NcapturingParens">NcapturingParens</a></i>
+		values. <i>States</i>
+		are used to represent partial match states in the regular
+		expression matching algorithms. The <i>endIndex</i>
+		is one plus the index of the last input character matched so far by
+		the pattern, while <i>captures</i>
+		holds the results of capturing parentheses. The <i>n</i><sup><i>th</i></sup>
+		element of <i>captures</i>
+		is either a String that represents the value obtained by the <i>n</i><sup><i>th</i></sup>
+		set of capturing parentheses or <b>undefined</b> if the <i>n</i><sup><i>th</i></sup>
+		set of capturing parentheses hasn&#8217;t been reached yet. Due to
+		backtracking, many <i>States</i>
+		may be in use at any time during the matching process.</p>
+		</li>
+		<li><p>
+		A
+		<dfn id="MatchResult"><i>MatchResult</i></dfn> is
+		either a <i><a href="#State">State</a></i> or
+		the special token <b>failure</b> that indicates that the match
+		failed.</p>
+		</li>
+		<li><p>
+		A
+		<dfn id="Continuation"><i>Continuation</i></dfn>
+		procedure is an internal closure (i.e. an internal procedure with
+		some arguments already bound to values) that takes one <i><a href="#State">State</a></i>
+		argument and returns a <i><a href="#MatchResult">MatchResult</a></i>
+		result. If an internal closure references variables bound in the
+		function that creates the closure, the closure uses the values that
+		these variables had at the time the closure was created. The
+		<i><a href="#Continuation">Continuation</a></i>
+		attempts to match the remaining portion (specified by the closure's
+		already-bound arguments) of the pattern against the input String,
+		starting at the intermediate state given by its <i><a href="#State">State</a></i>
+		argument. If the match succeeds, the <i><a href="#Continuation">Continuation</a></i>
+		returns the final <i><a href="#State">State</a></i>
+		that it reached; if the match fails, the <i><a href="#Continuation">Continuation</a></i>
+		returns <b>failure</b>.</p>
+		</li>
+		<li><p>
+		A
+		<dfn id="Matcher"><i>Matcher</i></dfn> procedure
+		is an internal closure that takes two arguments -- a <i><a href="#State">State</a></i>
+		and a <i><a href="#Continuation">Continuation</a></i>
+		-- and returns a <i><a href="#MatchResult">MatchResult</a></i>
+		result. A <i>Matcher</i>
+		attempts to match a middle subpattern (specified by the closure's
+		already-bound arguments) of the pattern against the input String,
+		starting at the intermediate state given by its <i><a href="#State">State</a></i>
+		argument. The <i><a href="#Continuation">Continuation</a></i>
+		argument should be a closure that matches the rest of the pattern.
+		After matching the subpattern of a pattern to obtain a new <i><a href="#State">State</a></i>,
+		the <i><a href="#Matcher">Matcher</a></i> then
+		calls <i><a href="#Continuation">Continuation</a></i>
+		on that new <i><a href="#State">State</a></i>
+		to test if the rest of the pattern can match as well. If it can,
+		the matcher returns the <i><a href="#State">State</a></i>
+		returned by <i><a href="#Continuation">Continuation</a></i>;
+		if not, the <i><a href="#Matcher">Matcher</a></i>
+		may try different choices at its choice points, repeatedly calling
+		<i><a href="#Continuation">Continuation</a></i>
+		until it either succeeds or all possibilities have been exhausted.</p>
+		</li>
+		<li><p>
+		An
+		<dfn id="AssertionTester"><i>AssertionTester</i></dfn>
+		procedure is an internal closure that takes a <i><a href="#State">State</a></i>
+		argument and returns a Boolean result. The assertion tester tests a
+		specific condition (specified by the closure's already-bound
+		arguments) against the current place in the input String and
+		returns <b>true</b> if the condition matched or <b>false</b> if
+		not.</p>
+		</li>
+		<li><p>
+		An
+		<dfn id="EscapeValue"><i>EscapeValue</i></dfn> is
+		either a character or an integer. An <i>EscapeValue</i>
+		is used to denote the interpretation of a <i>DecimalEscape</i>
+		escape sequence: a character <i>ch</i>
+		means that the escape sequence is interpreted as the character <i>ch</i>,
+		while an integer <i>n</i>
+		means that the escape sequence is interpreted as a backreference to
+		the <i>n</i><sup>th</sup>
+		set of capturing parentheses.</p>
+	</li></ul><h5 id="x15.10.2.2">15.10.2.2 Pattern <a href="#x15.10.2.2">#</a> <a href="#x15.10.2.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	production <i>Pattern</i><b>
+	:: </b><i>Disjunction</i><b>
+	</b>evaluates as follows:</p>
+	<ol><li><p>
+		Evaluate
+		<i>Disjunction</i> to obtain a <a href="#Matcher">Matcher</a> <i>m</i>.</p>
+		</li>
+		<li><p>
+		Return
+		an internal closure that takes two arguments, a String <i>str</i>
+		and an integer <i>index</i>, and performs the following:</p>
+		</li>
+</ol><ol class="indent1"><li><p>
+		Let
+		<i><a href="#Input-RegExp">Input</a></i> be the given String <i>str</i>. This variable will be
+		used throughout the algorithms in <a href="#x15.10.2">15.10.2</a>.</p>
+		</li>
+		<li><p>
+		Let
+		<i><a href="#InputLength">InputLength</a></i> be the length of <i><a href="#Input-RegExp">Input</a></i>. This variable
+		will be used throughout the algorithms in <a href="#x15.10.2">15.10.2</a>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>c</i> be a <a href="#Continuation">Continuation</a> that always returns its <a href="#State">State</a> argument
+		as a successful <a href="#MatchResult">MatchResult</a>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>cap</i> be an internal array of <i><a href="#NcapturingParens">NcapturingParens</a></i>
+		<b>undefined</b> values, indexed 1 through <i><a href="#NcapturingParens">NcapturingParens</a></i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>x</i> be the <a href="#State">State</a> (<i>index</i>, <i>cap</i>).</p>
+		</li>
+		<li><p>
+		Call
+		<i>m</i>(<i>x</i>, <i>c</i>) and return its result.</p>
+	</li>
+</ol><p><b class="note">NOTE</b> A
+	Pattern evaluates ("compiles") to an internal procedure
+	value. <code><b><a href="#x15.10.6.2">RegExp.prototype.exec</a></b></code>
+	can then apply this procedure to a String and an offset within the
+	String to determine whether the pattern would match starting at
+	exactly that offset within the String, and, if it does match, what
+	the values of the capturing parentheses would be. The algorithms in
+	<a href="#x15.10.2">15.10.2</a> are designed so that compiling a pattern may throw a
+	<b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception; on the other hand, once the pattern is
+	successfully compiled, applying its result internal procedure to
+	find a match in a String cannot throw an exception (except for any
+	host-defined exceptions that can occur anywhere such as
+	out-of-memory).</p>
+	<h5 id="x15.10.2.3">15.10.2.3 Disjunction <a href="#x15.10.2.3">#</a> <a href="#x15.10.2.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	production <i>Disjunction</i>
+	<b>:: </b><i>Alternative</i>
+	evaluates by evaluating <i>Alternative</i>
+	to obtain a <i><a href="#Matcher">Matcher</a></i>
+	and returning that <i><a href="#Matcher">Matcher</a></i>.</p>
+	<p>
+	The
+	production <i>Disjunction</i>
+	<b>:: </b><i>Alternative</i>
+	<code><b>|</b></code> <i>Disjunction</i>
+	evaluates as follows:</p>
+	<ol><li><p>
+		Evaluate
+		<i>Alternative</i> to obtain a <a href="#Matcher">Matcher</a> <i>m1</i>.</p>
+		</li>
+		<li><p>
+		Evaluate
+		<i>Disjunction</i> to obtain a <a href="#Matcher">Matcher</a> <i>m2</i>.</p>
+		</li>
+		<li><p>
+		Return
+		an internal <a href="#Matcher">Matcher</a> closure that takes two arguments, a <a href="#State">State</a> <i>x</i>
+		and a <a href="#Continuation">Continuation</a> <i>c</i>, and performs the following:</p>
+		<ol><ol><ol><li><p>
+					Call
+					<i>m1</i>(<i>x</i>, <i>c</i>) and let <i>r</i> be its result.</p>
+					</li>
+					<li><p>
+					If
+					<i>r</i> isn't <b>failure</b>, return <i>r</i>.</p>
+					</li>
+					<li><p>
+					Call
+					<i>m2</i>(<i>x</i>, <i>c</i>) and return its result.</p>
+				</li></ol></ol></ol></li></ol><p>
+	</p><p><b class="note">NOTE</b> The
+	<code><b>|</b></code> regular
+	expression operator separates two alternatives. The pattern first
+	tries to match the left <i>Alternative</i>
+	(followed by the sequel of the regular expression); if it fails, it
+	tries to match the right <i>Disjunction</i>
+	(followed by the sequel of the regular expression). If the left
+	<i>Alternative</i>, the
+	right <i>Disjunction</i>,
+	and the sequel all have choice points, all choices in the sequel are
+	tried before moving on to the next choice in the left <i>Alternative</i>.
+	If choices in the left <i>Alternative</i>
+	are exhausted, the right <i>Disjunction</i>
+	is tried instead of the left <i>Alternative</i>.
+	Any capturing parentheses inside a portion of the pattern skipped by
+	<code><b>|</b></code> produce
+	<b>undefined</b> values instead of Strings. Thus, for example,</p>
+	<p class="code-example">
+	<code><b>/a|ab/.exec("abc")</b></code></p>
+	<p>returns
+	the result <code><b>"a"</b></code>
+	and not <code><b>"ab"</b></code>.
+	Moreover,</p>
+	<p class="code-example">
+	<code><b>/((a)|(ab))((c)|(bc))/.exec("abc")</b></code></p>
+	<p>returns
+	the array</p>
+	<p class="code-example">
+	<code><b>["abc",
+	"a", "a", undefined, "bc", undefined,
+	"bc"]</b></code></p>
+	<p>and
+	not</p>
+	<p class="code-example">
+	<code><b>["abc",
+	"ab", undefined, "ab", "c", "c",
+	undefined]</b></code></p>
+	<h5 id="x15.10.2.4">15.10.2.4 Alternative <a href="#x15.10.2.4">#</a> <a href="#x15.10.2.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	production <i>Alternative</i>
+	<b>:: </b>[empty]
+	evaluates by returning a <a href="#Matcher">Matcher</a> that takes two arguments, a <a href="#State">State</a> <i>x</i>
+	and a <a href="#Continuation">Continuation</a> <i>c</i>,
+	and returns the result of calling <i>c</i>(<i>x</i>).</p>
+	<p>
+	The
+	production <i>Alternative</i>
+	<b>:: </b><i>Alternative</i>
+	<i>Term</i> evaluates as
+	follows:</p>
+	<ol><li><p>
+		Evaluate
+		<i>Alternative</i> to obtain a <a href="#Matcher">Matcher</a> <i>m1</i>.</p>
+		</li>
+		<li><p>
+		Evaluate
+		<i>Term</i> to obtain a <a href="#Matcher">Matcher</a> <i>m2</i>.</p>
+		</li>
+		<li><p>
+		Return
+		an internal <a href="#Matcher">Matcher</a> closure that takes two arguments, a <a href="#State">State</a> <i>x</i>
+		and a <a href="#Continuation">Continuation</a> <i>c</i>, and performs the following:</p>
+		<ol><ol><ol><li><p>
+					Create
+					a <a href="#Continuation">Continuation</a> <i>d</i> that takes a <a href="#State">State</a> argument <i>y</i> and
+					returns the result of calling <i>m2</i>(<i>y</i>, <i>c</i>).</p>
+					</li>
+					<li><p>
+					Call
+					<i>m1</i>(<i>x</i>, <i>d</i>) and return its result.</p>
+				</li></ol></ol></ol></li></ol><p><b class="note">NOTE</b> Consecutive
+	<i>Terms</i> try to
+	simultaneously match consecutive portions of the input String. If
+	the left <i>Alternative</i>,
+	the right <i>Term</i>,
+	and the sequel of the regular expression all have choice points, all
+	choices in the sequel are tried before moving on to the next choice
+	in the right <i>Term</i>,
+	and all choices in the right <i>Term</i>
+	are tried before moving on to the next choice in the left
+	<i>Alternative</i>.</p>
+	<h5 id="x15.10.2.5">15.10.2.5 Term <a href="#x15.10.2.5">#</a> <a href="#x15.10.2.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	production <i>Term</i> <b>::
+	</b><i>Assertion</i>
+	evaluates by returning an internal <a href="#Matcher">Matcher</a> closure that takes two
+	arguments, a <a href="#State">State</a> <i>x</i>
+	and a <a href="#Continuation">Continuation</a> <i>c</i>,
+	and performs the following:</p>
+	<ol><li><p>
+		Evaluate
+		<i>Assertion</i> to obtain an <a href="#AssertionTester">AssertionTester</a> <i>t</i>.</p>
+		</li>
+		<li><p>
+		Call
+		<i>t</i>(<i>x</i>) and let <i>r</i> be the resulting Boolean value.</p>
+		</li>
+		<li><p>
+		If
+		<i>r</i> is <b>false</b>, return <b>failure</b>.</p>
+		</li>
+		<li><p>
+		Call
+		<i>c</i>(<i>x</i>) and return its result.</p>
+	</li></ol><p>
+	The
+	production <i>Term</i> <b>::
+	</b><i>Atom</i> evaluates
+	by evaluating <i>Atom</i>
+	to obtain a <a href="#Matcher">Matcher</a> and returning that <a href="#Matcher">Matcher</a>.</p>
+	<p>
+	The
+	production <i>Term</i> <b>::
+	</b><i>Atom</i>
+	<i>Quantifier</i>
+	evaluates as follows:</p>
+	<ol><li><p>
+		Evaluate
+		<i>Atom</i> to obtain a <a href="#Matcher">Matcher</a> <i>m</i>.</p>
+		</li>
+		<li><p>
+		Evaluate
+		<i>Quantifier</i> to obtain the three results: an integer <i>min</i>,
+		an integer (or <span class="symbol">&#8734;</span>) <i>max</i>,
+		and Boolean <i>greedy</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>max</i> is finite and less than <i>min</i>, then throw a
+		<b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception.</p>
+		</li>
+		<li><p>
+		Let
+		<i>parenIndex</i> be the number of left capturing parentheses in
+		the entire regular expression that occur to the left of this
+		production expansion's <i>Term</i>. This is the total number of
+		times the <i>Atom</i> :: <code><b>(</b></code><b>
+		</b><i>Disjunction</i> <code><b>)</b></code>
+		production is expanded prior to this production's <i>Term</i> plus
+		the total number of <i>Atom</i> :: <code><b>(</b></code><b>
+		</b><i>Disjunction</i> <code><b>)</b></code>
+		productions enclosing this <i>Term</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>parenCount</i> be the number of left capturing parentheses in
+		the expansion of this production's <i>Atom</i>. This is the total
+		number of <i>Atom</i> :: <code><b>(</b></code><b>
+		</b><i>Disjunction</i> <code><b>)</b></code>
+		productions enclosed by this production's <i>Atom</i>.</p>
+		</li>
+		<li><p>
+		Return
+		an internal <a href="#Matcher">Matcher</a> closure that takes two arguments, a <a href="#State">State</a> <i>x</i>
+		and a <a href="#Continuation">Continuation</a> <i>c</i>, and performs the following:</p>
+		<ol><ol><ol><li><p>
+					Call
+					<a href="#RepeatMatcher">RepeatMatcher</a>(<i>m</i>, <i>min</i>, <i>max</i>, <i>greedy</i>,
+					<i>x</i>, <i>c</i>, <i>parenIndex</i>, <i>parenCount</i>) and
+					return its result.</p>
+				</li></ol></ol></ol></li></ol><p>
+	The
+	abstract operation <dfn id="RepeatMatcher"><i>RepeatMatcher</i></dfn> takes eight parameters, a
+	<a href="#Matcher">Matcher</a> <i>m</i>, an
+	integer <i>min</i>, an
+	integer (or <span class="symbol">&#8734;</span>) <i>max</i>,
+	a Boolean <i>greedy</i>,
+	a <a href="#State">State</a> <i>x</i>, a
+	<a href="#Continuation">Continuation</a> <i>c</i>, an
+	integer <i>parenIndex</i>,
+	and an integer <i>parenCount</i>,
+	and performs the following:</p>
+	<ol><li><p>
+		If
+		<i>max</i> is zero, then call <i>c</i>(<i>x</i>) and return its
+		result.</p>
+		</li>
+		<li><p>
+		Create
+		an internal <a href="#Continuation">Continuation</a> closure <i>d</i> that takes one <a href="#State">State</a> argument <i>y</i> and performs the following:</p>
+		<ol><ol><ol><li><p>
+					If
+					<i>min</i> is zero and <i>y</i>'s <i><a href="#endIndex">endIndex</a></i> is equal to
+					<i>x</i>'s <i><a href="#endIndex">endIndex</a></i>, then return <b>failure</b>.</p>
+					</li>
+					<li><p>
+					If
+					<i>min</i> is zero then let <i>min2</i> be zero; otherwise let
+					<i>min2</i> be <i>min</i>&#8211;1.</p>
+					</li>
+					<li><p>
+					If
+					<i>max</i> is <span class="symbol">&#8734;</span>, then let
+					<i>max2</i> be <span class="symbol">&#8734;</span>; otherwise
+					let <i>max2</i> be <i>max</i>&#8211;1.</p>
+					</li>
+					<li><p>
+					Call
+					<a href="#RepeatMatcher">RepeatMatcher</a>(<i>m</i>, <i>min2</i>, <i>max2</i>, <i>greedy</i>,
+					<i>y</i>, <i>c</i>, <i>parenIndex</i>, <i>parenCount</i>) and
+					return its result.</p>
+				</li></ol></ol></ol></li>
+		<li><p>
+		Let
+		<i>cap</i> be a fresh copy of <i>x</i>'s <i><a href="#captures">captures</a></i> internal
+		array.</p>
+		</li>
+		<li><p>
+		For
+		every integer <i>k</i> that satisfies <i>parenIndex</i> &lt; <i>k</i>
+		and <i>k</i> <span class="symbol">&#8804;</span>
+		<i>parenIndex</i>+<i>parenCount</i>, set <i>cap</i>[<i>k</i>] to
+		<b>undefined</b>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>e</i> be <i>x</i>'s <i><a href="#endIndex">endIndex</a></i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>xr</i> be the <a href="#State">State</a> (<i>e</i>, <i>cap</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>min</i> is not zero, then call <i>m</i>(<i>xr</i>, <i>d</i>) and
+		return its result.</p>
+		</li>
+		<li><p>
+		If
+		<i>greedy</i> is <b>false</b>, then</p>
+		<ol><li><p>
+			Call
+			<i>c</i>(<i>x</i>) and let <i>z</i> be its result.</p>
+			</li>
+			<li><p>
+			If
+			<i>z</i> is not <b>failure</b>, return <i>z</i>.</p>
+			</li>
+			<li><p>
+			Call
+			<i>m</i>(<i>xr</i>, <i>d</i>) and return its result.</p>
+		</li></ol></li>
+		<li><p>
+		Call
+		<i>m</i>(<i>xr</i>, <i>d</i>) and let <i>z</i> be its result.</p>
+		</li>
+		<li><p>
+		If
+		<i>z</i> is not <b>failure</b>, return <i>z</i>.</p>
+		</li>
+		<li><p>
+		Call
+		<i>c</i>(<i>x</i>) and return its result.</p>
+	</li></ol><p><b class="note">NOTE</b> An
+	<i>Atom</i> followed by a
+	<i>Quantifier</i> is
+	repeated the number of times specified by the <i>Quantifier</i>.
+	A <i>Quantifier</i> can
+	be non-greedy, in which case the <i>Atom</i>
+	pattern is repeated as few times as possible while still matching
+	the sequel, or it can be greedy, in which case the <i>Atom</i>
+	pattern is repeated as many times as possible while still matching
+	the sequel. The <i>Atom</i>
+	pattern is repeated rather than the input String that it matches, so
+	different repetitions of the <i>Atom</i>
+	can match different input substrings.</p>
+	<p class="sp"><b class="note">NOTE 2</b> If the <i>Atom</i> and
+	the sequel of the regular expression all have choice points, the
+	<i>Atom</i> is first
+	matched as many (or as few, if non-greedy) times as possible. All
+	choices in the sequel are tried before moving on to the next choice
+	in the last repetition of <i>Atom</i>.
+	All choices in the last (n<sup>th</sup>) repetition of <i>Atom</i>
+	are tried before moving on to the next choice in the next-to-last
+	(n&#8211;1)<sup>st</sup> repetition of <i>Atom</i>;
+	at which point it may turn out that more or fewer repetitions of
+	<i>Atom</i> are now
+	possible; these are exhausted (again, starting with either as few or
+	as many as possible) before moving on to the next choice in the
+	(n-1)<sup>st</sup> repetition of <i>Atom</i>
+	and so on.</p>
+	<p>Compare</p>
+	<p class="code-example">
+	<code><b>/a[a-z]{2,4}/.exec("abcdefghi")</b></code></p>
+	<p>which
+	returns <code><b>"abcde"</b></code>
+	with</p>
+	<p class="code-example">
+	<code><b>/a[a-z]{2,4}?/.exec("abcdefghi")</b></code></p>
+	<p class="sp">which
+	returns <code><b>"abc"</b></code>.</p>
+	<p>Consider
+	also</p>
+	<p class="code-example">
+	<code><b>/(aa|aabaac|ba|b|c)*/.exec("aabaac")</b></code></p>
+	<p>which,
+	by the choice point ordering above, returns the array</p>
+	<p class="code-example">
+	<code><b>["aaba",
+	"ba"]</b></code></p>
+	<p>and
+	not any of:</p>
+	<p class="code-example">
+	<code><b>["aabaac",
+	"aabaac"]</b></code></p>
+	<p class="code-example">
+	<code><b>["aabaac",
+	"c"]</b></code></p>
+	<p>The
+	above ordering of choice points can be used to write a regular
+	expression that calculates the greatest common divisor of two
+	numbers (represented in unary notation). The following example
+	calculates the gcd of 10 and 15:</p>
+	<p class="code-example">
+	<code><b>"aaaaaaaaaa,aaaaaaaaaaaaaaa".replace(/^(a+)\1*,\1+$/,"$1")</b></code></p>
+	<p>
+	which
+	returns the gcd in unary notation <code><b>"aaaaa"</b></code>.</p>
+	<p><b class="note">NOTE 3</b> Step 4 of the <a href="#RepeatMatcher">RepeatMatcher</a> clears <i>Atom's</i>
+	<a href="#captures">captures</a> each time <i>Atom</i>
+	is repeated. We can see its behaviour in the regular expression</p>
+	<p class="code-example">
+	<code><b>/(z)((a+)?(b+)?(c))*/.exec("zaacbbbcac")</b></code></p>
+	<p>which
+	returns the array</p>
+	<p class="code-example">
+	<code><b>["zaacbbbcac",
+	"z", "ac", "a", undefined, "c"]</b></code></p>
+	<p>and
+	not</p>
+	<p class="code-example">
+	<code><b>["zaacbbbcac",
+	"z", "ac", "a", "bbb", "c"]</b></code></p>
+	<p>
+	because
+	each iteration of the outermost <code><b>*</b></code>
+	clears all captured Strings contained in the quantified <i>Atom</i>,
+	which in this case includes capture Strings numbered 2, 3, and 4.</p>
+	<p><b class="note">NOTE 4</b> Step 1 of the <a href="#RepeatMatcher">RepeatMatcher</a>'s <i>d</i>
+	closure states that, once the minimum number of repetitions has been
+	satisfied, any more expansions of <i>Atom</i>
+	that match the empty String are not considered for further
+	repetitions. This prevents the regular expression engine from
+	falling into an infinite loop on patterns such as:</p>
+	<p class="code-example">
+	<code><b>/(a*)*/.exec("b")</b></code></p>
+	<p>or
+	the slightly more complicated:</p>
+	<p class="code-example">
+	<code><b>/(a*)b\1+/.exec("baaaac")</b></code></p>
+	<p>which
+	returns the array</p>
+	<p class="code-example">
+	<code><b>["b",
+	""]</b></code></p>
+	<h5 id="x15.10.2.6">15.10.2.6 Assertion <a href="#x15.10.2.6">#</a> <a href="#x15.10.2.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	production <i>Assertion</i>
+	<b>:: </b><code><b>^</b></code>
+	evaluates by returning an internal <a href="#AssertionTester">AssertionTester</a> closure that
+	takes a <a href="#State">State</a> argument <i>x</i>
+	and performs the following:</p>
+	<ol><li><p>
+		Let
+		<i>e</i> be <i>x</i>'s <i><a href="#endIndex">endIndex</a></i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>e</i> is zero, return <b>true</b>.</p>
+		</li>
+		<li><p>
+		If
+		<i><a href="#Multiline">Multiline</a></i> is <b>false</b>, return <b>false</b>.</p>
+		</li>
+		<li><p>
+		If
+		the character <i><a href="#Input-RegExp">Input</a></i>[<i>e</i>&#8211;1] is one of <i><a href="x7.html#LineTerminator">LineTerminator</a></i>,
+		return <b>true</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<b>false</b>.</p>
+	</li></ol><p>
+	The
+	production <i>Assertion</i>
+	<b>:: </b><code><b>$</b></code>
+	evaluates by returning an internal <a href="#AssertionTester">AssertionTester</a> closure that
+	takes a <a href="#State">State</a> argument <i>x</i>
+	and performs the following:</p>
+	<ol><li><p>
+		Let
+		<i>e</i> be <i>x</i>'s <i><a href="#endIndex">endIndex</a></i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>e</i> is equal to <i><a href="#InputLength">InputLength</a></i>, return <b>true</b>.</p>
+		</li>
+		<li><p>
+		If
+		<i>multiline</i> is <b>false</b>, return <b>false</b>.</p>
+		</li>
+		<li><p>
+		If
+		the character <i><a href="#Input-RegExp">Input</a></i>[<i>e</i>] is one of <i><a href="x7.html#LineTerminator">LineTerminator</a></i>,
+		return <b>true</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<b>false</b>.</p>
+	</li></ol><p>
+	The
+	production <i>Assertion</i>
+	<b>:: </b><code><b>\ b</b></code>
+	evaluates by returning an internal <a href="#AssertionTester">AssertionTester</a> closure that
+	takes a <a href="#State">State</a> argument <i>x</i>
+	and performs the following:</p>
+	<ol><li><p>
+		Let
+		<i>e</i> be <i>x</i>'s <i><a href="#endIndex">endIndex</a></i>.</p>
+		</li>
+		<li><p>
+		Call
+		<i><a href="#IsWordChar">IsWordChar</a></i>(<i>e</i>&#8211;1) and let <i>a</i> be the Boolean
+		result.</p>
+		</li>
+		<li><p>
+		Call
+		<i><a href="#IsWordChar">IsWordChar</a></i>(<i>e</i>) and let <i>b</i> be the Boolean result.</p>
+		</li>
+		<li><p>
+		If
+		<i>a</i> is <b>true</b> and <i>b</i> is <b>false</b>, return <b>true</b>.</p>
+		</li>
+		<li><p>
+		If
+		<i>a</i> is <b>false</b> and <i>b</i> is <b>true</b>, return <b>true</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<b>false</b>.</p>
+	</li></ol><p>
+	The
+	production <i>Assertion</i>
+	<b>:: </b><code><b>\ B</b></code>
+	evaluates by returning an internal <a href="#AssertionTester">AssertionTester</a> closure that
+	takes a <a href="#State">State</a> argument <i>x</i>
+	and performs the following:</p>
+	<ol><li><p>
+		Let
+		<i>e</i> be <i>x</i>'s <i><a href="#endIndex">endIndex</a></i>.</p>
+		</li>
+		<li><p>
+		Call
+		<i><a href="#IsWordChar">IsWordChar</a></i>(<i>e</i>&#8211;1) and let <i>a</i> be the Boolean
+		result.</p>
+		</li>
+		<li><p>
+		Call
+		<i><a href="#IsWordChar">IsWordChar</a></i>(<i>e</i>) and let b be the Boolean result.</p>
+		</li>
+		<li><p>
+		If
+		a is <b>true</b> and b is <b>false</b>, return <b>false</b>.</p>
+		</li>
+		<li><p>
+		If
+		a is <b>false</b> and b is <b>true</b>, return <b>false</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<b>true</b>.</p>
+	</li></ol><p>
+	The
+	production <i>Assertion</i>
+	<b>:: </b><code><b>( ? =</b></code> <i>Disjunction</i><code><b>
+	)</b></code> evaluates as follows:</p>
+	<ol><li><p>
+		Evaluate
+		<i>Disjunction</i> to obtain a <a href="#Matcher">Matcher</a> <i>m</i>.</p>
+		</li>
+		<li><p>
+		Return
+		an internal <a href="#Matcher">Matcher</a> closure that takes two arguments, a <a href="#State">State</a> <i>x</i>
+		and a <a href="#Continuation">Continuation</a> <i>c</i>, and performs the following steps:</p>
+		<ol><ol><ol><li><p>
+					Let
+					<i>d</i> be a <a href="#Continuation">Continuation</a> that always returns its <a href="#State">State</a> argument as a successful <a href="#MatchResult">MatchResult</a>.</p>
+					</li>
+					<li><p>
+					Call
+					<i>m</i>(<i>x</i>, <i>d</i>) and let <i>r</i> be its result.</p>
+					</li>
+					<li><p>
+					If
+					<i>r</i> is <b>failure</b>, return <b>failure</b>.</p>
+					</li>
+					<li><p>
+					Let
+					<i>y</i> be <i>r</i>'s State.</p>
+					</li>
+					<li><p>
+					Let
+					<i>cap</i> be <i>y</i>'s <i><a href="#captures">captures</a></i> internal array.</p>
+					</li>
+					<li><p>
+					Let
+					<i>xe</i> be <i>x</i>'s <i><a href="#endIndex">endIndex</a></i>.</p>
+					</li>
+					<li><p>
+					Let
+					<i>z</i> be the <a href="#State">State</a> (<i>xe</i>, <i>cap</i>).</p>
+					</li>
+					<li><p>
+					Call
+					<i>c</i>(<i>z</i>) and return its result.</p>
+				</li></ol></ol></ol></li></ol><p>
+	The
+	production <i>Assertion </i><b>::
+	</b><code><b>( ? !</b></code> <i>Disjunction</i><code><b>
+	)</b></code> evaluates as follows:</p>
+	<ol><li><p>
+		Evaluate
+		<i>Disjunction</i> to obtain a <a href="#Matcher">Matcher</a> <i>m</i>.</p>
+		</li>
+		<li><p>
+		Return
+		an internal <a href="#Matcher">Matcher</a> closure that takes two arguments, a <a href="#State">State</a> <i>x</i>
+		and a <a href="#Continuation">Continuation</a> <i>c</i>, and performs the following steps:</p>
+		<ol><ol><ol><li><p>
+					Let
+					<i>d</i> be a <a href="#Continuation">Continuation</a> that always returns its <a href="#State">State</a> argument as a successful <a href="#MatchResult">MatchResult</a>.</p>
+					</li>
+					<li><p>
+					Call
+					<i>m</i>(<i>x</i>, <i>d</i>) and let <i>r</i> be its result.</p>
+					</li>
+					<li><p>
+					If
+					<i>r</i> isn't <b>failure</b>, return <b>failure</b>.</p>
+					</li>
+					<li><p>
+					Call
+					<i>c</i>(<i>x</i>) and return its result.</p>
+				</li></ol></ol></ol></li></ol><p>
+	The
+	abstract operation <dfn id="IsWordChar"><i>IsWordChar</i></dfn>
+	takes an integer parameter <i>e</i>
+	and performs the following:</p>
+	<ol><li><p>
+		If
+		<i>e</i> == &#8211;1 or <i>e</i> == <i><a href="#InputLength">InputLength</a></i>, return <b>false</b>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>c</i> be the character <i><a href="#Input-RegExp">Input</a></i>[<i>e</i>].</p>
+		</li>
+		<li><p>
+		If
+		<i>c</i> is one of the sixty-three characters below, return <b>true</b>.</p>
+		<table width="582" border="0" cellpadding="0" cellspacing="0"><colgroup><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"></colgroup><thead><tr valign="TOP"><td width="22">
+						<p><code><b>a</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>b</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>c</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>d</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>e</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>f</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>g</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>h</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>i</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>j</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>k</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>l</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>m</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>n</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>o</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>p</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>q</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>r</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>s</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>t</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>u</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>v</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>w</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>x</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>y</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>z</b></code></p>
+					</td>
+				</tr></thead><tbody><tr valign="TOP"><td width="22">
+						<p><code><b>A</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>B</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>C</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>D</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>E</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>F</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>G</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>H</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>I</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>J</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>K</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>L</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>M</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>N</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>O</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>P</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>Q</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>R</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>S</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>T</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>U</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>V</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>W</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>X</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>Y</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>Z</b></code></p>
+					</td>
+				</tr><tr valign="TOP"><td width="22">
+						<p><code><b>0</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>1</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>2</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>3</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>4</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>5</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>6</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>7</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>8</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>9</b></code></p>
+					</td>
+					<td width="22">
+						<p><code><b>_</b></code></p>
+					</td>
+					<td width="22">
+					</td>
+					<td width="22">
+					</td>
+					<td width="22">
+					</td>
+					<td width="22">
+					</td>
+					<td width="22">
+					</td>
+					<td width="22">
+					</td>
+					<td width="22">
+					</td>
+					<td width="22">
+					</td>
+					<td width="22">
+					</td>
+					<td width="22">
+					</td>
+					<td width="22">
+					</td>
+					<td width="22">
+					</td>
+					<td width="22">
+					</td>
+					<td width="22">
+					</td>
+					<td width="22">
+					</td>
+				</tr></tbody></table></li>
+		<li><p>
+		Return
+		<b>false</b>.</p>
+	</li></ol><h5 id="x15.10.2.7">15.10.2.7 Quantifier <a href="#x15.10.2.7">#</a> <a href="#x15.10.2.7-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	production <i>Quantifier</i>
+	:: <i>QuantifierPrefix</i>
+	evaluates as follows:</p>
+	<ol><li><p>
+		Evaluate
+		<i>QuantifierPrefix</i> to obtain the two results: an integer <i>min</i>
+		and an integer (or <span class="symbol">&#8734;</span>) <i>max</i>.</p>
+		</li>
+		<li><p>
+		Return
+		the three results <i>min</i> , <i>max</i>, and <b>true</b>.</p>
+	</li></ol><p>
+	The
+	production <i>Quantifier</i>
+	<b>:: </b><i>QuantifierPrefix</i><code><b>
+	?</b></code> evaluates as follows:</p>
+	<ol><li><p>
+		Evaluate
+		<i>QuantifierPrefix</i> to obtain the two results: an integer <i>min</i>
+		and an integer (or <span class="symbol">&#8734;</span>) <i>max</i>.</p>
+		</li>
+		<li><p>
+		Return
+		the three results <i>min</i> , <i>max</i>, and <b>false</b>.</p>
+	</li></ol><p>
+	The
+	production <i>QuantifierPrefix</i>
+	<b>:: </b><code><b>*</b></code>
+	evaluates by returning the two results 0 and <span class="symbol">&#8734;</span>.</p>
+	<p>
+	The
+	production <i>QuantifierPrefix</i>
+	<b>:: </b><code><b>+</b></code>
+	evaluates by returning the two results 1 and <span class="symbol">&#8734;</span>.</p>
+	<p>
+	The
+	production <i>QuantifierPrefix</i>
+	<b>:: </b><code><b>?</b></code>
+	evaluates by returning the two results 0 and 1.</p>
+	<p>
+	The
+	production <i>QuantifierPrefix</i>
+	<b>:: </b><code><b>{</b></code> <i>DecimalDigits</i><code><b>
+	}</b></code> evaluates as follows:</p>
+	<ol><li><p>
+		Let
+		<i>i</i> be <a href="x7.html#mv">the MV of</a> <i>DecimalDigits</i> (see <a href="x7.html#x7.8.3">7.8.3</a>).</p>
+		</li>
+		<li><p>
+		Return
+		the two results <i>i</i> and <i>i</i>.</p>
+	</li></ol><p>
+	The
+	production <i>QuantifierPrefix</i>
+	<b>:: </b><code><b>{</b></code> <i>DecimalDigits</i><code><b>
+	, }</b></code> evaluates as follows:</p>
+	<ol><li><p>
+		Let
+		<i>i</i> be <a href="x7.html#mv">the MV of</a> <i>DecimalDigits</i>.</p>
+		</li>
+		<li><p>
+		Return
+		the two results <i>i</i> and <span class="symbol">&#8734;</span>.</p>
+	</li></ol><p>
+	The
+	production <i>QuantifierPrefix</i>
+	<b>:: </b><code><b>{</b></code> <i>DecimalDigits</i><code><b>
+	,</b></code> <i>DecimalDigits</i><code><b>
+	}</b></code> evaluates as follows:</p>
+	<ol><li><p>
+		Let
+		<i>i</i> be <a href="x7.html#mv">the MV of</a> the first <i>DecimalDigits</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>j</i> be <a href="x7.html#mv">the MV of</a> the second <i>DecimalDigits</i>.</p>
+		</li>
+		<li><p>
+		Return
+		the two results <i>i</i> and <i>j</i>.</p>
+	</li></ol><h5 id="x15.10.2.8">15.10.2.8 Atom <a href="#x15.10.2.8">#</a> <a href="#x15.10.2.8-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	production <i>Atom</i> <b>::
+	</b><i>PatternCharacter</i>
+	evaluates as follows:</p>
+	<ol><li><p>
+		Let
+		<i>ch</i> be the character represented by <i>PatternCharacter</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>A</i> be a one-element <a href="#CharSet">CharSet</a> containing the character <i>ch</i>.</p>
+		</li>
+		<li><p>
+		Call
+		<i><a href="#CharacterSetMatcher">CharacterSetMatcher</a></i>(<i>A</i>, <b>false</b>) and return its
+		<a href="#Matcher">Matcher</a> result.</p>
+	</li></ol><p>
+	The
+	production <i>Atom</i> <b>::
+	</b><code><b>.</b></code> evaluates as
+	follows:</p>
+	<ol><li><p>
+		Let
+		<i>A</i> be the set of all characters except <i><a href="x7.html#LineTerminator">LineTerminator</a></i>.</p>
+		</li>
+		<li><p>
+		Call
+		<i><a href="#CharacterSetMatcher">CharacterSetMatcher</a></i>(<i>A</i>, <b>false</b>) and return its
+		<a href="#Matcher">Matcher</a> result.</p>
+	</li></ol><p>
+	The
+	production <i>Atom</i> <b>::
+	</b><code><b>\</b></code> <i>AtomEscape</i>
+	evaluates by evaluating <i>AtomEscape</i>
+	to obtain a <a href="#Matcher">Matcher</a> and returning that <a href="#Matcher">Matcher</a>.</p>
+	<p>
+	The
+	production <i>Atom</i> <b>::
+	</b><i>CharacterClass</i>
+	evaluates as follows:</p>
+	<ol><li><p>
+		Evaluate
+		<i>CharacterClass</i> to obtain a <a href="#CharSet">CharSet</a> <i>A</i> and a Boolean
+		<i>invert</i>.</p>
+		</li>
+		<li><p>
+		Call
+		<i><a href="#CharacterSetMatcher">CharacterSetMatcher</a></i>(<i>A</i>, <i>invert</i>) and return its
+		<a href="#Matcher">Matcher</a> result.</p>
+	</li></ol><p>
+	The
+	production <i>Atom</i> <b>::
+	</b><code><b>(</b></code> <i>Disjunction</i><code><b>
+	)</b></code> evaluates as follows:</p>
+	<ol><li><p>
+		Evaluate
+		<i>Disjunction</i> to obtain a <a href="#Matcher">Matcher</a> <i>m</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>parenIndex</i> be the number of left capturing parentheses in
+		the entire regular expression that occur to the left of this
+		production expansion's initial left parenthesis. This is the total
+		number of times the <i>Atom</i>&#160;::&#160;<code><b>(</b></code><b>&#160;</b><i>Disjunction&#160;</i><code><b>)</b></code>
+		production is expanded prior to this production's <i>Atom</i> plus
+		the total number of <i>Atom</i>&#160;::&#160;<code><b>(</b></code><b>&#160;</b><i>Disjunction</i>&#160;<code><b>)</b></code>
+		productions enclosing this <i>Atom</i>.</p>
+		</li>
+		<li><p>
+		Return
+		an internal <a href="#Matcher">Matcher</a> closure that takes two arguments, a <a href="#State">State</a> <i>x</i>
+		and a <a href="#Continuation">Continuation</a> <i>c</i>, and performs the following steps:</p>
+		<ol><ol><ol><li><p>
+					Create
+					an internal <a href="#Continuation">Continuation</a> closure <i>d</i> that takes one <a href="#State">State</a> argument <i>y</i> and performs the following steps:</p>
+					<ol><ol><ol><li><p>
+								Let
+								<i>cap</i> be a fresh copy of <i>y</i>'s <i><a href="#captures">captures</a></i>
+								internal array.</p>
+								</li>
+								<li><p>
+								Let
+								<i>xe</i> be <i>x</i>'s <i><a href="#endIndex">endIndex</a></i>.</p>
+								</li>
+								<li><p>
+								Let
+								<i>ye</i> be <i>y</i>'s <i><a href="#endIndex">endIndex</a></i>.</p>
+								</li>
+								<li><p>
+								Let
+								<i>s</i> be a fresh String whose characters are the
+								characters of <i><a href="#Input-RegExp">Input</a></i> at positions <i>xe</i> (inclusive)
+								through <i>ye</i> (exclusive).</p>
+								</li>
+								<li><p>
+								Set
+								<i>cap</i>[<i>parenIndex</i>+1] to <i>s</i>.</p>
+								</li>
+								<li><p>
+								Let
+								<i>z</i> be the <a href="#State">State</a> (<i>ye</i>, <i>cap</i>).</p>
+								</li>
+								<li><p>
+								Call
+								<i>c</i>(<i>z</i>) and return its result.</p>
+							</li></ol></ol></ol></li>
+					<li><p>
+					Call
+					<i>m</i>(<i>x</i>, <i>d</i>) and return its result.</p>
+				</li></ol></ol></ol></li></ol><p>
+	The
+	production <i>Atom</i> <b>::
+	</b><code><b>( ? :</b></code> <i>Disjunction</i><code><b>
+	)</b></code> evaluates by evaluating <i>Disjunction</i>
+	to obtain a <a href="#Matcher">Matcher</a> and returning that <a href="#Matcher">Matcher</a>.</p>
+	<p>
+	The
+	abstract operation <dfn id="CharacterSetMatcher"><i>CharacterSetMatcher </i></dfn> takes two arguments, a <a href="#CharSet">CharSet</a> <i>A</i>
+	and a Boolean flag <i>invert</i>,
+	and performs the following:</p>
+	<ol><li value="1"><p>
+		Return
+		an internal <a href="#Matcher">Matcher</a> closure that takes two arguments, a <a href="#State">State</a> <i>x</i>
+		and a <a href="#Continuation">Continuation</a> <i>c</i>, and performs the following steps:</p>
+		<ol class="decimal"><li><p>
+					Let
+					<i>e</i> be <i>x</i>'s <i><a href="#endIndex">endIndex</a></i>.</p>
+					</li>
+					<li><p>
+					If
+					<i>e</i> == <i><a href="#InputLength">InputLength</a></i>, return <b>failure</b>.</p>
+					</li>
+					<li><p>
+					Let
+					<i>ch</i> be the character <i><a href="#Input-RegExp">Input</a></i>[<i>e</i>].</p>
+					</li>
+					<li><p>
+					Let
+					<i>cc</i> be the result of <i><a href="#Canonicalize">Canonicalize</a></i>(<i>ch</i>).</p>
+					</li>
+					<li><p>
+					If
+					<i>invert</i> is <b>false</b>, then</p>
+					<ol class="lower-alpha"><li><p>
+						If
+						there does not exist a member <i>a</i> of set <i>A</i> such
+						that <i><a href="#Canonicalize">Canonicalize</a></i>(<i>a</i>) == <i>cc</i>, return
+						<b>failure</b>.</p>
+					</li></ol></li>
+					<li><p>
+					Else
+					<i>invert</i> is <b>true</b>,</p>
+					<ol class="lower-alpha"><li><p>
+						If
+						there exists a member <i>a</i> of set <i>A</i> such that
+						<i><a href="#Canonicalize">Canonicalize</a></i>(<i>a</i>) == <i>cc</i>, return<b> failure.</b></p>
+					</li></ol></li>
+					<li><p>
+					Let
+					<i>cap</i> be <i>x</i>'s <i><a href="#captures">captures</a></i> internal array.</p>
+					</li>
+					<li><p>
+					Let
+					<i>y</i> be the <a href="#State">State</a> (<i>e</i>+1, <i>cap</i>).</p>
+					</li>
+					<li><p>
+					Call
+					<i>c</i>(<i>y</i>) and return its result.</p>
+				</li></ol></li></ol><p>
+	The
+	abstract operation <dfn id="Canonicalize"><i>Canonicalize </i></dfn> takes a character parameter <i>ch</i>
+	and performs the following steps:</p>
+	<ol><li><p>
+		If
+		<i><a href="#IgnoreCase">IgnoreCase</a></i> is <b>false</b>, return <i>ch</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>u</i> be <i>ch</i> converted to upper case as if by calling the
+		standard built-in method <code><b><a href="x15.5.html#x15.5.4.18">String.prototype.toUpperCase</a></b></code>
+		on the one-character String <i>ch</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>u</i> does not consist of a single character, return <i>ch</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>cu</i> be <i>u</i>'s character.</p>
+		</li>
+		<li><p>
+		If
+		<i>ch</i>'s code unit value is greater than or equal to decimal 128
+		and <i>cu</i>'s code unit value is less than decimal 128, then
+		return <i>ch</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>cu</i>.</p>
+	</li></ol><p class="sp"><b class="note">NOTE 1</b> Parentheses of the form <code><b>(
+	</b></code> <i>Disjunction</i><code><b>
+	)</b></code> serve both to group the components of the <i>Disjunction</i>
+	pattern together and to save the result of the match. The result can
+	be used either in a backreference (<code><b>\</b></code>
+	followed by a nonzero decimal number), referenced in a replace
+	String, or returned as part of an array from the regular expression
+	matching internal procedure. To inhibit the capturing behaviour of
+	parentheses, use the form <code><b>(?:
+	</b></code> <i>Disjunction</i><code><b>
+	)</b></code> instead.</p>
+	<p class="sp"><b class="note">NOTE 2</b> The form <code><b>(?=</b></code> <i>Disjunction</i><code><b>
+	)</b></code> specifies a zero-width positive lookahead. In order for
+	it to succeed, the pattern inside <i>Disjunction</i>
+	must match at the current position, but the current position is not
+	advanced before matching the sequel. If <i>Disjunction</i>
+	can match at the current position in several ways, only the first
+	one is tried. Unlike other regular expression operators, there is no
+	backtracking into a <code><b>(?=</b></code>
+	form (this unusual behaviour is inherited from Perl). This only
+	matters when the <i>Disjunction</i>
+	contains capturing parentheses and the sequel of the pattern
+	contains backreferences to those <a href="#captures">captures</a>.</p>
+	<p>For
+	example,</p>
+	<p class="code-example">
+	<code><b>/(?=(a+))/.exec("baaabac")</b></code></p>
+	<p>matches
+	the empty String immediately after the first <code><b>b</b></code>
+	and therefore returns the array:</p>
+	<p class="code-example">
+	<code><b>["",
+	"aaa"]</b></code></p>
+	<p>To
+	illustrate the lack of backtracking into the lookahead, consider:</p>
+	<p class="code-example">
+	<code><b>/(?=(a+))a*b\1/.exec("baaabac")</b></code></p>
+	<p>This
+	expression returns</p>
+	<p class="code-example">
+	<code><b>["aba",
+	"a"]</b></code></p>
+	<p>and
+	not:</p>
+	<p class="code-example">
+	<code><b>["aaaba",
+	"a"]</b></code></p>
+	<p><b class="note">NOTE 3</b> The form <code><b>(?!</b></code> <i>Disjunction</i><code><b>
+	)</b></code> specifies a zero-width negative lookahead. In order for
+	it to succeed, the pattern inside <i>Disjunction</i>
+	must fail to match at the current position. The current position is
+	not advanced before matching the sequel. <i>Disjunction</i>
+	can contain capturing parentheses, but backreferences to them only
+	make sense from within <i>Disjunction</i>
+	itself. Backreferences to these capturing parentheses from elsewhere
+	in the pattern always return <b>undefined</b> because the negative
+	lookahead must fail for the pattern to succeed. For example,</p>
+	<p class="code-example">
+	<code><b>/(.*?)a(?!(a+)b\2c)\2(.*)/.exec("baaabaac")</b></code></p>
+	<p>looks
+	for an <code><b>a</b></code> not
+	immediately followed by some positive number n of <code><b>a</b></code>'s,
+	a <code><b>b</b></code>, another n <code><b>a</b></code>'s
+	(specified by the first <code><b>\2</b></code>)
+	and a <code><b>c</b></code>. The
+	second <code><b>\2</b></code> is
+	outside the negative lookahead, so it matches against <b>undefined</b>
+	and therefore always succeeds. The whole expression returns the
+	array:</p>
+	<p class="code-example">
+	<code><b>["baaabaac",
+	"ba", undefined, "abaac"]</b></code></p>
+	<p>
+	In
+	case-insignificant matches all characters are implicitly converted
+	to upper case immediately before they are compared. However, if
+	converting a character to upper case would expand that character
+	into more than one character (such as converting <code><b>"&#223;"</b></code>
+	(<code>\u00DF</code>)
+	into <code><b>"SS"</b></code>),
+	then the character is left as-is instead. The character is also left
+	as-is if it is not an ASCII character but converting it to upper
+	case would make it into an ASCII character. This prevents Unicode
+	characters such as <code>\u0131</code>
+	and <code>\u017F</code>
+	from matching regular expressions such as <code><b>/[a&#160;z]/i</b></code>,
+	which are only intended to match ASCII letters. Furthermore, if
+	these conversions were allowed, then <code><b>/[^\W]/i</b></code>
+	would match each of <code><b>a</b></code>,
+	<code><b>b</b></code>,
+	&#8230;, <code><b>h</b></code>,
+	but not <code><b>i</b></code>
+	or <code><b>s</b></code>.</p>
+	<h5 id="x15.10.2.9">15.10.2.9 AtomEscape <a href="#x15.10.2.9">#</a> <a href="#x15.10.2.9-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	production <i>AtomEscape</i>
+	<b>:: </b><i>DecimalEscape</i>
+	evaluates as follows:</p>
+	<ol><li><p>
+		Evaluate
+		<i>DecimalEscape</i> to obtain an <a href="#EscapeValue">EscapeValue</a> <i>E</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>E</i> is a character, then</p>
+		<ol><li><p>
+			Let
+			<i>ch</i> be <i>E</i>'s character.</p>
+			</li>
+			<li><p>
+			Let
+			<i>A</i> be a one-element <a href="#CharSet">CharSet</a> containing the character <i>ch</i>.</p>
+			</li>
+			<li><p>
+			Call
+			<i><a href="#CharacterSetMatcher">CharacterSetMatcher</a></i>(<i>A</i>, <b>false</b>) and return its
+			<a href="#Matcher">Matcher</a> result.</p>
+		</li></ol></li>
+		<li><p>
+		<i>E</i>
+		must be an integer. Let <i>n</i> be that integer.</p>
+		</li>
+		<li><p>
+		If
+		<i>n</i>=0 or <i>n</i>&gt;<i><a href="#NcapturingParens">NCapturingParens</a></i> then throw a
+		<b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception.</p>
+		</li>
+		<li><p>
+		Return
+		an internal <a href="#Matcher">Matcher</a> closure that takes two arguments, a <a href="#State">State</a> <i>x</i>
+		and a <a href="#Continuation">Continuation</a> <i>c</i>, and performs the following:</p>
+		<ol><ol><ol><li><p>
+					Let
+					<i>cap</i> be <i>x</i>'s <i><a href="#captures">captures</a></i> internal array.</p>
+					</li>
+					<li><p>
+					Let
+					<i>s</i> be <i>cap</i>[<i>n</i>].</p>
+					</li>
+					<li><p>
+					If
+					<i>s</i> is <b>undefined</b>, then call <i>c</i>(<i>x</i>) and
+					return its result.</p>
+					</li>
+					<li><p>
+					Let
+					<i>e</i> be <i>x</i>'s <i><a href="#endIndex">endIndex</a></i>.</p>
+					</li>
+					<li><p>
+					Let
+					<i>len</i> be <i>s</i>'s length.</p>
+					</li>
+					<li><p>
+					Let
+					<i>f</i> be <i>e</i>+<i>len</i>.</p>
+					</li>
+					<li><p>
+					If
+					<i>f</i>&gt;<i><a href="#InputLength">InputLength</a></i>, return <b>failure</b>.</p>
+					</li>
+					<li><p>
+					If
+					there exists an integer <i>i</i> between 0 (inclusive) and <i>len</i>
+					(exclusive) such that <i><a href="#Canonicalize">Canonicalize</a></i>(<i>s</i>[<i>i</i>]) is
+					not the same character as <i><a href="#Canonicalize">Canonicalize</a></i>(<i><a href="#Input-RegExp">Input</a></i>
+					[<i>e</i>+<i>i</i>]), then return <b>failure</b>.</p>
+					</li>
+					<li><p>
+					Let
+					<i>y</i> be the <a href="#State">State</a> (<i>f</i>, <i>cap</i>).</p>
+					</li>
+					<li><p>
+					Call
+					<i>c</i>(<i>y</i>) and return its result.</p>
+				</li></ol></ol></ol></li></ol><p>
+	The
+	production <i>AtomEscape</i>
+	<b>:: </b><i>CharacterEscape</i>
+	evaluates as follows:</p>
+	<ol><li><p>
+		Evaluate
+		<i>CharacterEscape</i> to obtain a character <i>ch</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>A</i> be a one-element <a href="#CharSet">CharSet</a> containing the character <i>ch</i>.</p>
+		</li>
+		<li><p>
+		Call
+		<i><a href="#CharacterSetMatcher">CharacterSetMatcher</a></i>(<i>A</i>, <b>false</b>) and return its
+		<a href="#Matcher">Matcher</a> result.</p>
+	</li></ol><p>
+	The
+	production <i>AtomEscape</i>
+	<b>:: </b><i>CharacterClassEscape</i>
+	evaluates as follows:</p>
+	<ol><li><p>
+		Evaluate
+		<i>CharacterClassEscape</i> to obtain a <a href="#CharSet">CharSet</a> <i>A</i>.</p>
+		</li>
+		<li><p>
+		Call
+		<i><a href="#CharacterSetMatcher">CharacterSetMatcher</a></i>(<i>A</i>, <b>false</b>) and return its
+		<a href="#Matcher">Matcher</a> result.</p>
+	</li></ol><p><b class="note">NOTE</b> An
+	escape sequence of the form <code><b>\</b></code>
+	followed by a nonzero decimal number <i>n</i>
+	matches the result of the <i>n</i>th
+	set of capturing parentheses (see <a href="#x15.10.2.11">15.10.2.11</a>). It is an error if the
+	regular expression has fewer than <i>n</i>
+	capturing parentheses. If the regular expression has <i>n</i>
+	or more capturing parentheses but the <i>n</i>th
+	one is <b>undefined</b> because it has not captured anything, then
+	the backreference always succeeds.</p>
+	<h5 id="x15.10.2.10">15.10.2.10 CharacterEscape <a href="#x15.10.2.10">#</a> <a href="#x15.10.2.10-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p class="sm-btm">
+	The
+	production <i>CharacterEscape</i>
+	<b>:: </b><i>ControlEscape</i>
+	evaluates by returning the character according to Table 23 
+	</p>
+	<center>
+		<table width="507" border="1" bordercolor="#000000" cellpadding="8" cellspacing="0" rules="GROUPS"><caption>Table&#160;23 &#8212; ControlEscape Character Values</caption>
+			<colgroup><col width="130"><col width="117"><col width="131"><col width="62"></colgroup><tbody><tr valign="TOP"><td width="130" bgcolor="#c0c0c0">
+						<p>
+						<i><b>ControlEscape
+						</b></i>
+						</p>
+					</td>
+					<td width="117" bgcolor="#c0c0c0">
+						<p>
+						<i><b><span class="table-header">Code
+						Unit</span></b></i></p>
+					</td>
+					<td width="131" bgcolor="#c0c0c0">
+						<p>
+						<i><b><span class="table-header">Name</span></b></i></p>
+					</td>
+					<td width="62" bgcolor="#c0c0c0">
+						<p>
+						<i><b><span class="table-header">Symbol</span></b></i></p>
+					</td>
+				</tr></tbody><tbody><tr valign="TOP"><td width="130">
+						<p align="CENTER">
+						<code><b>t</b></code></p>
+					</td>
+					<td width="117">
+						<p>
+						<code><b>\u0009</b></code></p>
+					</td>
+					<td width="131">
+						<p>
+						horizontal
+						tab</p>
+					</td>
+					<td width="62">
+						<p>
+						&lt;HT&gt;</p>
+					</td>
+				</tr><tr valign="TOP"><td width="130">
+						<p align="CENTER">
+						<code><b>n</b></code></p>
+					</td>
+					<td width="117">
+						<p>
+						<code><b>\u000A</b></code></p>
+					</td>
+					<td width="131">
+						<p>
+						line
+						feed (new line)</p>
+					</td>
+					<td width="62">
+						<p>
+						&lt;LF&gt;</p>
+					</td>
+				</tr><tr valign="TOP"><td width="130">
+						<p align="CENTER">
+						<code><b>v</b></code></p>
+					</td>
+					<td width="117">
+						<p>
+						<code><b>\u000B</b></code></p>
+					</td>
+					<td width="131">
+						<p>
+						vertical
+						tab</p>
+					</td>
+					<td width="62">
+						<p>
+						&lt;VT&gt;</p>
+					</td>
+				</tr><tr valign="TOP"><td width="130">
+						<p align="CENTER">
+						<code><b>f</b></code></p>
+					</td>
+					<td width="117">
+						<p>
+						<code><b>\u000C</b></code></p>
+					</td>
+					<td width="131">
+						<p>
+						form
+						feed</p>
+					</td>
+					<td width="62">
+						<p>
+						&lt;FF&gt;</p>
+					</td>
+				</tr><tr valign="TOP"><td width="130">
+						<p align="CENTER">
+						<code><b>r</b></code></p>
+					</td>
+					<td width="117">
+						<p>
+						<code><b>\u000D</b></code></p>
+					</td>
+					<td width="131">
+						<p>
+						carriage
+						return</p>
+					</td>
+					<td width="62">
+						<p>
+						&lt;CR&gt;</p>
+					</td>
+				</tr></tbody></table></center>
+	<p>
+	The
+	production <i>CharacterEscape</i>
+	<b>:: </b><code><b>c</b></code> <i>ControlLetter</i>
+	evaluates as follows:</p>
+	<ol><li><p>
+		Let
+		<i>ch</i> be the character represented by <i>ControlLetter</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>i</i> be <i>ch</i>'s code unit value.</p>
+		</li>
+		<li><p>
+		Let
+		<i>j</i> be the remainder of dividing <i>i</i> by 32.</p>
+		</li>
+		<li><p>
+		Return
+		the code unit numbered <i>j</i>.</p>
+	</li></ol><p>
+	The
+	production <i>CharacterEscape</i>
+	<b>:: </b><i>HexEscapeSequence</i>
+	evaluates by evaluating the CV of the <i>HexEscapeSequence</i>
+	(see <a href="x7.html#x7.8.4">7.8.4</a>) and returning its character result.</p>
+	<p>
+	The
+	production <i>CharacterEscape</i>
+	<b>:: </b><i>UnicodeEscapeSequence</i>
+	evaluates by evaluating the CV of the <i>UnicodeEscapeSequence</i>
+	(see <a href="x7.html#x7.8.4">7.8.4</a>) and returning its character result.</p>
+	<p>
+	The
+	production <i>CharacterEscape</i>
+	<b>:: </b><i>IdentityEscape</i>
+	evaluates by returning the character represented by <i>IdentityEscape</i>.</p>
+	<h5 id="x15.10.2.11">15.10.2.11 DecimalEscape <a href="#x15.10.2.11">#</a> <a href="#x15.10.2.11-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	production <i>DecimalEscape</i>
+	<b>:: </b><i>DecimalIntegerLiteral</i>
+	[<a href="x5.html#lookahead-not-in">lookahead <span class="symbol">&#8713;</span></a>
+	<i>DecimalDigit</i>]
+	evaluates as follows.</p>
+	<ol><li><p>
+		Let
+		<i>i</i> be <a href="x7.html#mv">the MV of</a> <i>DecimalIntegerLiteral</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>i</i> is zero, return the <a href="#EscapeValue">EscapeValue</a> consisting of a &lt;NUL&gt;
+		character (Unicode value 0000).</p>
+		</li>
+		<li><p>
+		Return
+		the <a href="#EscapeValue">EscapeValue</a> consisting of the integer <i>i</i>.</p>
+	</li></ol><p>
+	The
+	definition of &#8220;<a href="x7.html#mv">the MV of</a> <i>DecimalIntegerLiteral</i>&#8221;
+	is in <a href="x7.html#x7.8.3">7.8.3</a>.</p>
+	<p><b class="note">NOTE</b> If
+	<code><b>\</b></code> is followed by a
+	decimal number <i>n</i>
+	whose first digit is not <code><b>0</b></code>,
+	then the escape sequence is considered to be a backreference. It is
+	an error if <i>n</i> is
+	greater than the total number of left capturing parentheses in the
+	entire regular expression. <code><b>\0</b></code>
+	represents the &lt;NUL&gt; character and cannot be followed by a
+	decimal digit.</p>
+	<h5 id="x15.10.2.12">15.10.2.12 CharacterClassEscape <a href="#x15.10.2.12">#</a> <a href="#x15.10.2.12-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	production <i>CharacterClassEscape</i>
+	<b>:: </b><code><b>d</b></code>
+	evaluates by returning the ten-element set of characters containing
+	the characters <code><b>0</b></code>
+	through <code><b>9</b></code>
+	inclusive.</p>
+	<p>
+	The
+	production <i>CharacterClassEscape</i>
+	<b>:: </b><code><b>D</b></code>
+	evaluates by returning the set of all characters not included in the
+	set returned by <i>CharacterClassEscape</i>
+	<b>:: </b><code><b>d</b></code>.</p>
+	<p>
+	The
+	production <i>CharacterClassEscape</i>
+	<b>:: </b><code><b>s</b></code>
+	evaluates by returning the set of characters containing the
+	characters that are on the right-hand side of the <i><a href="x7.html#WhiteSpace">WhiteSpace</a></i>
+	(<a href="x7.html#x7.2">7.2</a>) or <i><a href="x7.html#LineTerminator">LineTerminator</a></i>
+	(<a href="x7.html#x7.3">7.3</a>) productions.</p>
+	<p>
+	The
+	production <i>CharacterClassEscape</i>
+	<b>:: </b><code><b>S</b></code>
+	evaluates by returning the set of all characters not included in the
+	set returned by <i>CharacterClassEscape</i>
+	<b>:: </b><code><b>s</b></code>.</p>
+	<p>
+	The
+	production <i>CharacterClassEscape</i>
+	<b>:: </b><code><b>w</b></code>
+	evaluates by returning the set of characters containing the
+	sixty-three characters:</p>
+	<dl><dl><dl><dd>
+				<table width="582" border="0" cellpadding="0" cellspacing="0"><colgroup><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"><col width="22"></colgroup><thead><tr valign="TOP"><td width="22">
+								<p class="sm-btm">
+								<code><b>a</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>b</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>c</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>d</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>e</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>f</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>g</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>h</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>i</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>j</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>k</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>l</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>m</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>n</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>o</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>p</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>q</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>r</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>s</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>t</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>u</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>v</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>w</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>x</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>y</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>z</b></code></p>
+							</td>
+						</tr><tr valign="TOP"><td width="22">
+								<p class="sm-btm">
+								<code><b>A</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>B</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>C</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>D</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>E</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>F</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>G</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>H</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>I</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>J</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>K</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>L</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>M</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>N</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>O</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>P</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>Q</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>R</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>S</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>T</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>U</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>V</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>W</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>X</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>Y</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>Z</b></code></p>
+							</td>
+						</tr></thead><tbody><tr valign="TOP"><td width="22">
+								<p class="sm-btm">
+								<code><b>0</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>1</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>2</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>3</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>4</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>5</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>6</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>7</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>8</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>9</b></code></p>
+							</td>
+							<td width="22">
+								<p class="sm-btm">
+								<code><b>_</b></code></p>
+							</td>
+							<td width="22">
+							</td>
+							<td width="22">
+							</td>
+							<td width="22">
+							</td>
+							<td width="22">
+							</td>
+							<td width="22">
+							</td>
+							<td width="22">
+							</td>
+							<td width="22">
+							</td>
+							<td width="22">
+							</td>
+							<td width="22">
+							</td>
+							<td width="22">
+							</td>
+							<td width="22">
+							</td>
+							<td width="22">
+							</td>
+							<td width="22">
+							</td>
+							<td width="22">
+							</td>
+							<td width="22">
+							</td>
+						</tr></tbody></table></dd></dl></dl></dl><p>
+	The
+	production <i>CharacterClassEscape</i>
+	<b>:: </b><code><b>W</b></code>
+	evaluates by returning the set of all characters not included in the
+	set returned by <i>CharacterClassEscape</i>
+	<b>:: </b><code><b>w</b></code>.</p>
+	<h5 id="x15.10.2.13">15.10.2.13 CharacterClass <a href="#x15.10.2.13">#</a> <a href="#x15.10.2.13-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	production <i>CharacterClass</i>
+	<b>:: </b><code><b>[ </b></code>[<a href="x5.html#lookahead-not-in">lookahead
+	<span class="symbol">&#8713;</span></a>
+	{<b>^</b>}]<code><b>
+	</b></code> <i>ClassRanges</i><code><b>
+	]</b></code> evaluates by evaluating <i>ClassRanges</i>
+	to obtain a <a href="#CharSet">CharSet</a> and returning that <a href="#CharSet">CharSet</a> and the Boolean
+	<b>false</b>.</p>
+	<p>
+	The
+	production <i>CharacterClass</i>
+	 <b>:: </b><code><b>[ ^</b></code> <i>ClassRanges</i><code><b>
+	]</b></code> evaluates by evaluating <i>ClassRanges</i>
+	to obtain a <a href="#CharSet">CharSet</a> and returning that <a href="#CharSet">CharSet</a> and the Boolean <b>true</b>.</p>
+	<h5 id="x15.10.2.14">15.10.2.14 ClassRanges <a href="#x15.10.2.14">#</a> <a href="#x15.10.2.14-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	production <i>ClassRanges</i><code><b>
+	</b></code><b>:: </b>[empty]
+	evaluates by returning the empty <a href="#CharSet">CharSet</a>.</p>
+	<p>
+	The
+	production <i>ClassRanges</i><code><b>
+	</b></code><b>:: </b><i>NonemptyClassRanges</i>
+	evaluates by evaluating <i>NonemptyClassRanges</i>
+	to obtain a <a href="#CharSet">CharSet</a> and returning that <a href="#CharSet">CharSet</a>.</p>
+	<h5 id="x15.10.2.15">15.10.2.15 NonemptyClassRanges <a href="#x15.10.2.15">#</a> <a href="#x15.10.2.15-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	production <i>NonemptyClassRanges</i>
+	<b>:: </b><i>ClassAtom</i>
+	evaluates by evaluating <i>ClassAtom</i>
+	to obtain a <a href="#CharSet">CharSet</a> and returning that <a href="#CharSet">CharSet</a>.</p>
+	<p>
+	The
+	production NonemptyClassRanges <b>:: </b>ClassAtom
+	NonemptyClassRangesNoDash evaluates as follows:</p>
+	<ol><li><p>
+		Evaluate
+		<i>ClassAtom</i> to obtain a <a href="#CharSet">CharSet</a> <i>A</i>.</p>
+		</li>
+		<li><p>
+		Evaluate
+		<i>NonemptyClassRangesNoDash</i> to obtain a <a href="#CharSet">CharSet</a> <i>B</i>.</p>
+		</li>
+		<li><p>
+		Return
+		the union of <a href="#CharSet">CharSet</a>s <i>A</i> and <i>B</i>.</p>
+	</li></ol><p>
+	The
+	production NonemptyClassRanges <b>:: </b>ClassAtom<code><b>
+	- </b></code>ClassAtom ClassRanges evaluates as follows:</p>
+	<ol><li><p>
+		Evaluate
+		the first <i>ClassAtom</i> to obtain a <a href="#CharSet">CharSet</a> <i>A</i>.</p>
+		</li>
+		<li><p>
+		Evaluate
+		the second <i>ClassAtom</i> to obtain a <a href="#CharSet">CharSet</a> <i>B</i>.</p>
+		</li>
+		<li><p>
+		Evaluate
+		<i>ClassRanges</i> to obtain a <a href="#CharSet">CharSet</a> <i>C</i>.</p>
+		</li>
+		<li><p>
+		Call
+		<i><a href="#CharacterRange">CharacterRange</a></i>(<i>A</i>, <i>B</i>) and let <i>D</i> be the
+		resulting <a href="#CharSet">CharSet</a>.</p>
+		</li>
+		<li><p>
+		Return
+		the union of <a href="#CharSet">CharSet</a>s <i>D</i> and <i>C</i>.</p>
+	</li></ol><p>
+	The
+	abstract operation <dfn id="CharacterRange"><i>CharacterRange</i></dfn>
+	takes two <a href="#CharSet">CharSet</a> parameters <i>A</i>
+	and <i>B</i> and performs
+	the following:</p>
+	<ol><li><p>
+		If
+		<i>A</i> does not contain exactly one character or <i>B</i> does
+		not contain exactly one character then throw a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+		exception.</p>
+		</li>
+		<li><p>
+		Let
+		<i>a</i> be the one character in <a href="#CharSet">CharSet</a> <i>A</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>b</i> be the one character in <a href="#CharSet">CharSet</a> <i>B</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>i</i> be the code unit value of character <i>a</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>j</i> be the code unit value of character <i>b</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>i </i>&gt; <i>j</i> then throw a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception.</p>
+		</li>
+		<li><p>
+		Return
+		the set containing all characters numbered <i>i</i> through <i>j</i>,
+		inclusive.</p>
+	</li></ol><h5 id="x15.10.2.16">15.10.2.16 NonemptyClassRangesNoDash <a href="#x15.10.2.16">#</a> <a href="#x15.10.2.16-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	production <i>NonemptyClassRangesNoDash</i>
+	<b>:: </b><i>ClassAtom</i>
+	evaluates by evaluating <i>ClassAtom</i>
+	to obtain a <a href="#CharSet">CharSet</a> and returning that <a href="#CharSet">CharSet</a>.</p>
+	<p>
+	The
+	production <i>NonemptyClassRangesNoDash</i>
+	<b>:: </b><i>ClassAtomNoDash</i>
+	<i>NonemptyClassRangesNoDash</i>
+	evaluates as follows:</p>
+	<ol><li><p>
+		Evaluate
+		<i>ClassAtomNoDash</i> to obtain a <a href="#CharSet">CharSet</a> <i>A</i>.</p>
+		</li>
+		<li><p>
+		Evaluate
+		<i>NonemptyClassRangesNoDash</i> to obtain a <a href="#CharSet">CharSet</a> <i>B</i>.</p>
+		</li>
+		<li><p>
+		Return
+		the union of <a href="#CharSet">CharSet</a>s <i>A</i> and <i>B</i>.</p>
+	</li></ol><p>
+	The
+	production <i>NonemptyClassRangesNoDash</i>
+	<b>:: </b><i>ClassAtomNoDash</i><code><b>
+	-</b></code> <i>ClassAtom</i>
+	<i>ClassRanges</i>
+	evaluates as follows:</p>
+	<ol><li><p>
+		Evaluate
+		<i>ClassAtomNoDash</i> to obtain a <a href="#CharSet">CharSet</a> <i>A</i>.</p>
+		</li>
+		<li><p>
+		Evaluate
+		<i>ClassAtom</i> to obtain a <a href="#CharSet">CharSet</a> <i>B</i>.</p>
+		</li>
+		<li><p>
+		Evaluate
+		<i>ClassRanges</i> to obtain a <a href="#CharSet">CharSet</a> <i>C</i>.</p>
+		</li>
+		<li><p>
+		Call
+		<i><a href="#CharacterRange">CharacterRange</a></i>(<i>A</i>, <i>B</i>) and let <i>D</i> be the
+		resulting <a href="#CharSet">CharSet</a>.</p>
+		</li>
+		<li><p>
+		Return
+		the union of <a href="#CharSet">CharSet</a>s <i>D</i> and <i>C</i>.</p>
+	</li></ol><p class="sp"><b class="note">NOTE 1</b> <i>ClassRanges</i> can
+	expand into single <i>ClassAtoms</i>
+	and/or ranges of two <i>ClassAtoms</i>
+	separated by dashes. In the latter case the <i>ClassRanges</i>
+	includes all characters between the first <i>ClassAtom</i>
+	and the second <i>ClassAtom</i>,
+	inclusive; an error occurs if either <i>ClassAtom</i>
+	does not represent a single character (for example, if one is <code><b>\w</b></code>)
+	or if the first <i>ClassAtom's</i>
+	code unit value is greater than the second <i>ClassAtom's</i>
+	code unit value.</p>
+	<p class="sp"><b class="note">NOTE 2</b> Even if the pattern ignores case, the case of the two ends of a
+	range is significant in determining which characters belong to the
+	range. Thus, for example, the pattern <code><b>/[E-F]/i</b></code>
+	matches only the letters <code><b>E</b></code>,
+	<code><b>F</b></code>, <code><b>e</b></code>,
+	and <code><b>f</b></code>, while the
+	pattern <code><b>/[E-f]/i</b></code>
+	matches all upper and lower-case ASCII letters as well as the
+	symbols <code><b>[</b></code>, <code><b>\</b></code>,
+	<code><b>]</b></code>, <code><b>^</b></code>,
+	<code><b>_</b></code>, and <code><b>`</b></code>.</p>
+	<p><b class="note">NOTE 3</b> A <code><b>-</b></code>
+	character can be treated literally or it can denote a range. It is
+	treated literally if it is the first or last character of
+	<i>ClassRanges</i>,
+	the beginning or end limit of a range specification, or immediately
+	follows a range specification.</p>
+	<h5 id="x15.10.2.17">15.10.2.17 ClassAtom <a href="#x15.10.2.17">#</a> <a href="#x15.10.2.17-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	production <i>ClassAtom</i>
+	<b>:: </b><code><b>-</b></code>
+	evaluates by returning the <a href="#CharSet">CharSet</a> containing the one character <code><b>-</b></code>.</p>
+	<p>
+	The
+	production <i>ClassAtom</i>
+	<b>:: </b><i>ClassAtomNoDash</i>
+	evaluates by evaluating <i>ClassAtomNoDash</i>
+	to obtain a <a href="#CharSet">CharSet</a> and returning that <a href="#CharSet">CharSet</a>.</p>
+	<h5 id="x15.10.2.18">15.10.2.18 ClassAtomNoDash <a href="#x15.10.2.18">#</a> <a href="#x15.10.2.18-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	production <i>ClassAtomNoDash</i>
+	<b>:: </b><i>SourceCharacter</i>
+	<b>but not one of </b><code><b>\</b></code><b>
+	or </b><code><b>]</b></code><b> or </b><code><b>-
+	</b></code>evaluates by returning a one-element <a href="#CharSet">CharSet</a> containing
+	the character represented by <i>SourceCharacter</i>.</p>
+	<p>
+	The
+	production <i>ClassAtomNoDash</i>
+	<b>:: </b><code><b>\</b></code> <i>ClassEscape</i>
+	evaluates by evaluating <i>ClassEscape</i>
+	to obtain a <a href="#CharSet">CharSet</a> and returning that <a href="#CharSet">CharSet</a>.</p>
+	<h5 id="x15.10.2.19">15.10.2.19 ClassEscape <a href="#x15.10.2.19">#</a> <a href="#x15.10.2.19-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	production <i>ClassEscape</i>
+	<b>:: </b><i>DecimalEscape</i>
+	evaluates as follows:</p>
+	<ol><li><p>
+		Evaluate
+		<i>DecimalEscape</i> to obtain an <a href="#EscapeValue">EscapeValue</a> <i>E</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>E</i> is not a character then throw a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+		exception.</p>
+		</li>
+		<li><p>
+		Let
+		<i>ch</i> be <i>E</i>'s character.</p>
+		</li>
+		<li><p>
+		Return
+		the one-element <a href="#CharSet">CharSet</a> containing the character <i>ch</i>.</p>
+	</li></ol><p>
+	The
+	production <i>ClassEscape</i>
+	<b>:: </b><code><b>b</b></code>
+	evaluates by returning the <a href="#CharSet">CharSet</a> containing the one character &lt;BS&gt;
+	(Unicode value 0008).</p>
+	<p>
+	The
+	production <i>ClassEscape</i>
+	<b>:: </b><i>CharacterEscape</i>
+	evaluates by evaluating <i>CharacterEscape</i>
+	to obtain a character and returning a one-element <a href="#CharSet">CharSet</a> containing
+	that character.</p>
+	<p>
+	The
+	production <i>ClassEscape</i>
+	<b>:: </b><i>CharacterClassEscape</i>
+	evaluates by evaluating <i>CharacterClassEscape</i>
+	to obtain a <a href="#CharSet">CharSet</a> and returning that <a href="#CharSet">CharSet</a>.</p>
+	<p><b class="note">NOTE</b> A
+	<i>ClassAtom</i> can use
+	any of the escape sequences that are allowed in the rest of the
+	regular expression except for <code><b>\b</b></code>,
+	<code><b>\B</b></code>, and
+	backreferences. Inside a <i>CharacterClass</i>,
+	<code><b>\b</b></code> means the
+	backspace character, while <code><b>\B</b></code>
+	and backreferences raise errors. Using a backreference inside a
+	<i>ClassAtom</i> causes
+	an error.</p>
+	<h4 id="x15.10.3">15.10.3 The RegExp Constructor Called as a Function <a href="#x15.10.3">#</a> <a href="#x15.10.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<h5 id="x15.10.3.1">15.10.3.1 RegExp(pattern, flags) <a href="#x15.10.3.1">#</a> <a href="#x15.10.3.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	If
+	<i>pattern</i> is an
+	object <i>R</i> whose
+	[[Class]] internal property is <code><b>"RegExp"</b></code>
+	and <i>flags</i> is
+	<b>undefined</b>, then return <i>R</i>
+	unchanged. Otherwise call the standard built-in <code><b>RegExp</b></code>
+	constructor (<a href="#x15.10.4.1">15.10.4.1</a>) as if by the expression <code><b>new
+	RegExp(</b></code> <i>pattern</i><code><b>,
+	</b></code> <i>flags</i><code><b>)</b></code>
+	and return the object constructed by that constructor.</p>
+	<h4 id="x15.10.4">15.10.4 The RegExp Constructor <a href="#x15.10.4">#</a> <a href="#x15.10.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	<code><b>RegExp</b></code> is called
+	as part of a <code><b>new</b></code>
+	expression, it is a constructor: it initialises the newly created
+	object.</p>
+	<h5 id="x15.10.4.1">15.10.4.1 new RegExp(pattern, flags) <a href="#x15.10.4.1">#</a> <a href="#x15.10.4.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	If
+	<i>pattern</i> is an
+	object <i>R</i> whose
+	[[Class]] internal property is <code><b>"RegExp"</b></code>
+	and <i>flags</i> is
+	<b>undefined</b>, then let <i>P</i>
+	be the <i>pattern</i>
+	used to construct <i>R</i>
+	and let <i>F</i> be the
+	flags used to construct <i>R</i>.
+	If <i>pattern</i> is an
+	object <i>R</i> whose
+	[[Class]] internal property is <code><b>"RegExp"</b></code>
+	and <i>flags</i> is not
+	<b>undefined</b>, then throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.
+	Otherwise, let <i>P</i>
+	be the empty String if <i>pattern</i>
+	is <b>undefined</b> and <a href="x9.html#x9.8">ToString</a>(<i>pattern</i>)
+	otherwise, and let <i>F</i>
+	be the empty String if <i>flags</i>
+	is <b>undefined</b> and <a href="x9.html#x9.8">ToString</a>(<i>flags</i>)
+	otherwise.</p>
+	<p>
+	If
+	the characters of <i>P</i>
+	do not have the syntactic form <i>Pattern</i>,
+	then throw a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+	exception. Otherwise let the newly constructed object have a
+	[[Match]] internal property obtained by
+	evaluating ("compiling") the characters of <i>P</i>
+	as a <i>Pattern</i>
+	as described in <a href="#x15.10.2">15.10.2</a>. 
+	</p>
+	<p>
+	If
+	<i>F</i>
+	contains any character other than <code><b>"g"</b></code>,
+	<code><b>"i"</b></code>,
+	or <code><b>"m"</b></code>,
+	or if it contains the same character more than once, then throw a
+	<b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+	exception. 
+	</p>
+	<p>
+	If
+	a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+	exception is not thrown, then: 
+	</p>
+	<p>
+	Let
+	<i>S</i>
+	be a String in the form of a <i>Pattern</i>
+	equivalent to <i>P</i>,
+	in which certain characters are escaped as described below. <i>S</i>
+	may or may not be identical to <i>P</i>
+	or <i>pattern</i>;
+	however, the internal procedure that would result from evaluating <i>S</i>
+	as a <i>Pattern</i>
+	must behave identically to the internal procedure given by the
+	constructed object's [[Match]] internal property.
+	
+	</p>
+	<p>
+	The
+	characters <code><b>/</b></code>
+	or <i>backslash</i>
+	<code><b>\</b></code>
+	occurring in the pattern shall be escaped in <i>S</i>
+	as necessary to ensure that the String value formed by concatenating
+	the Strings <code><b>"/"</b></code>,
+	<i>S</i>,
+	<code><b>"/"</b></code>,
+	and <i>F</i>
+	can be parsed (in an appropriate lexical context) as a
+	<i><a href="x7.html#x7.8.5">RegularExpressionLiteral</a></i>
+	that behaves identically to the constructed regular expression. For
+	example, if <i>P</i>
+	is <code><b>"/"</b></code>,
+	then <i>S</i>
+	could be <code><b>"\/"</b></code>
+	or <code><b>"\u002F"</b></code>,
+	among other possibilities, but not <code><b>"/"</b></code>,
+	because <code><b>///</b></code>
+	followed by <i>F</i>
+	would be parsed as a <i>SingleLineComment</i>
+	rather than a <i><a href="x7.html#x7.8.5">RegularExpressionLiteral</a></i>.
+	If <i>P</i>
+	is the empty String, this specification can be met by letting <i>S</i>
+	be <code><b>"(?:)"</b></code>.
+	
+	</p>
+	<p>
+	The
+	following properties of the newly constructed object are data
+	properties with the attributes that are specified in <a href="#x15.10.7">15.10.7</a>. The
+	[[Value]] of each property is set as follows:</p>
+	<p>
+	The
+	<code><b>source</b></code> property of
+	the newly constructed object is set to <i>S</i>.</p>
+	<p>
+	The
+	<code><b>global</b></code> property of
+	the newly constructed object is set to a Boolean value that is <b>true</b>
+	if <i>F</i> contains the
+	character <code><b>"</b></code><code><b>g</b></code><code><b>"</b></code>
+	and <b>false</b> otherwise.</p>
+	<p>
+	The
+	<code><b>ignoreCase</b></code>
+	property of the newly constructed object is set to a Boolean value
+	that is <b>true</b> if <i>F</i>
+	contains the character <code><b>"</b></code><code><b>i</b></code><code><b>"</b></code>
+	and <b>false</b> otherwise.</p>
+	<p>
+	The
+	<code><b>multiline</b></code> property
+	of the newly constructed object is set to a Boolean value that is
+	<b>true</b> if <i>F</i>
+	contains the character <code><b>"</b></code><code><b>m</b></code><code><b>"</b></code>
+	and <b>false</b> otherwise.</p>
+	<p>
+	The
+	<code><b>lastIndex</b></code> property
+	of the newly constructed object is set to <b>0</b>.</p>
+	<p>
+	The
+	[[Prototype]] internal property of the newly constructed object is
+	set to the standard built-in RegExp prototype object as specified in
+	<a href="#x15.10.6">15.10.6</a>.</p>
+	<p>
+	The
+	[[Class]] internal property of the newly constructed object is set
+	to <code><b>"RegExp"</b></code>.</p>
+	<p><b class="note">NOTE</b> If
+	pattern is a <i><a href="x7.html#x7.8.4">StringLiteral</a></i>,
+	the usual escape sequence substitutions are performed before the
+	String is processed by RegExp. If pattern must contain an escape
+	sequence to be recognised by RegExp, any
+	backslash <code><b>\</b></code>
+	characters must be escaped within the <i><a href="x7.html#x7.8.4">StringLiteral</a></i>
+	to prevent them being removed when the contents of the <i><a href="x7.html#x7.8.4">StringLiteral</a></i>
+	are formed. 
+	</p>
+	<h4 id="x15.10.5">15.10.5 Properties of the RegExp Constructor <a href="#x15.10.5">#</a> <a href="#x15.10.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	value of the [[Prototype]] internal property of the RegExp
+	constructor is the standard built-in Function prototype object
+	(<a href="x15.3.html#x15.3.4">15.3.4</a>).</p>
+	<p>
+	Besides
+	the internal properties and the <code><b>length</b></code>
+	property (whose value is <b>2</b>), the RegExp constructor has the
+	following properties:</p>
+	<h5 id="x15.10.5.1">15.10.5.1 RegExp.prototype <a href="#x15.10.5.1">#</a> <a href="#x15.10.5.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	initial value of <code><b>RegExp.prototype</b></code>
+	is the RegExp prototype object (<a href="#x15.10.6">15.10.6</a>).</p>
+	<p>
+	This
+	property shall have the attributes {&#160;[[Writable]]: <b>false</b>,
+	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b>&#160;}.</p>
+	<h4 id="x15.10.6">15.10.6 Properties of the RegExp Prototype Object <a href="#x15.10.6">#</a> <a href="#x15.10.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	value of the [[Prototype]] internal property of the RegExp prototype
+	object is the standard built-in Object prototype object (<a href="x15.2.html#x15.2.4">15.2.4</a>).
+	The RegExp prototype object is itself a regular expression object;
+	its [[Class]] is <code>"</code><code><b>RegExp</b></code><code>"</code>.
+	The initial values of the RegExp prototype object&#8217;s data
+	properties (<a href="#x15.10.7">15.10.7</a>) are set as if the object was created by the
+	expression <code><b>new RegExp()</b></code>
+	where <code><b>RegExp</b></code> is
+	that standard built-in constructor with that name.</p>
+	<p>
+	The
+	RegExp prototype object does not have a <code><b>valueOf</b></code>
+	property of its own; however, it inherits the <code><b>valueOf</b></code>
+	property from the Object prototype object.</p>
+	<p>
+	In
+	the following descriptions of functions that are properties of the
+	RegExp prototype object, the phrase &#8220;this RegExp object&#8221; refers
+	to the object that is the <b>this</b> value for the invocation of
+	the function; a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception is thrown if the <b>this</b>
+	value is not an object or an object for which the value of the
+	[[Class]] internal property is not <code><b>"RegExp"</b></code>.</p>
+	<h5 id="x15.10.6.1">15.10.6.1 RegExp.prototype.constructor <a href="#x15.10.6.1">#</a> <a href="#x15.10.6.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	initial value of <code><b>RegExp.prototype.constructor</b></code>
+	is the standard built-in <code><b>RegExp</b></code>
+	constructor.</p>
+	<h5 id="x15.10.6.2">15.10.6.2 RegExp.prototype.exec(string) <a href="#x15.10.6.2">#</a> <a href="#x15.10.6.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Performs
+	a regular expression match of <i>string</i>
+	against the regular expression and returns an Array object
+	containing the results of the match, or <b>null</b> if <i>string</i>
+	did not match.</p>
+	<p>
+	The
+	String <a href="x9.html#x9.8">ToString</a>(<i>string</i>)
+	is searched for an occurrence of the regular expression pattern as
+	follows:</p>
+	<ol><li><p>
+		Let
+		<i>R</i> be this RegExp object.</p>
+		</li>
+		<li><p>
+		Let
+		<i>S</i> be the value of <a href="x9.html#x9.8">ToString</a>(<i>string</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>length</i> be the length of <i>S</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>lastIndex</i> be the result of calling the [[Get]] internal
+		method of <i>R</i> with argument "<code><b>lastIndex</b></code>"..</p>
+		</li>
+		<li><p>
+		Let
+		<i>i</i> be the value of <a href="x9.html#x9.4">ToInteger</a>(<i>lastIndex</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>global</i> be the result of calling the [[Get]] internal method
+		of <i>R</i> with argument "<code><b>global</b></code><code><b>"</b></code>.</p>
+		</li>
+		<li><p>
+		If
+		<i>global</i> is <b>false</b>, then let <i>i</i> = 0.</p>
+		</li>
+		<li><p>
+		Let
+		<i>matchSucceeded</i> be <b>false</b>.</p>
+		</li>
+		<li><p>
+		Repeat,
+		while <i>matchSucceeded</i> is <b>false</b></p>
+		<ol><li><p>
+			If
+			<i>i </i>&lt; 0 or <i>i </i>&gt; <i>length</i>, then</p>
+			<ol><li><p>
+				Call
+				the [[Put]] internal method of <i>R</i> with arguments
+				"<code><b>lastIndex</b></code><code><b>"</b></code>,
+				0, and <b>true</b>.</p>
+				</li>
+				<li><p>
+				Return
+				<code><b>null</b></code>.</p>
+			</li></ol></li>
+			<li><p>
+			Call
+			the [[Match]] <i>internal</i> method of <i>R</i> with arguments <i>S</i>
+			and <i>i</i>.</p>
+			</li>
+			<li><p>
+			If
+			[[Match]] returned <b>failure</b>, then 
+			</p>
+			<ol><li><p>
+				<i>Let
+				i = i+1.</i></p>
+			</li></ol></li>
+			<li><p>
+			else
+			
+			</p>
+			<ol><li><p>
+				Let
+				<i>r</i> be the <a href="#State">State</a> result of the call to [[Match]].</p>
+				</li>
+				<li><p>
+				Set
+				<i>matchSucceeded</i> to <b>true</b>.</p>
+			</li></ol></li>
+</ol></li>
+		<li><p>
+		Let
+		<i>e</i> be <i>r</i>'s <i><a href="#endIndex">endIndex</a></i> value.</p>
+		</li>
+		<li><p>
+		If
+		<i>global</i> is <b>true</b>,</p>
+		<ol><li><p>
+			Call
+			the [[Put]] internal method of <i>R</i> with arguments
+			"<code><b>lastIndex</b></code><code><b>"</b></code>,
+			<i>e</i>, and <b>true</b>.</p>
+		</li></ol></li>
+		<li><p>
+		Let
+		<i>n</i> be the length of <i>r</i>'s <i><a href="#captures">captures</a></i> array. (This
+		is the same value as <a href="#x15.10.2.1">15.10.2.1</a>'s <i><a href="#NcapturingParens">NCapturingParens</a></i>.)</p>
+		</li>
+		<li><p>
+		Let
+		<i>A</i> be a new array created as if by the expression <code><b>new
+		Array()</b></code> where <code><b>Array</b></code>
+		is the standard built-in constructor with that name.</p>
+		</li>
+		<li><p>
+		Let
+		<i>matchIndex</i> be the position of the matched substring within
+		the complete String <i>S</i>.</p>
+		</li>
+		<li><p>
+		Call
+		the [[DefineOwnProperty]] internal method of <i>A</i> with
+		arguments "<code><b>index</b></code><code><b>"</b></code>,
+	 <a href="x8.html#x8.10">Property Descriptor</a> {[[Value]]: <i>matchIndex</i>, [[Writable]:
+		<b>true</b>, [[Enumerable]]: <b>true</b>, [[Configurable]]: <b>true</b>},
+		and <b>true</b>.</p>
+		</li>
+		<li><p>
+		Call
+		the [[DefineOwnProperty]] internal method of <i>A</i> with
+		arguments "<code><b>input</b></code><code><b>"</b></code>,
+	 <a href="x8.html#x8.10">Property Descriptor</a> {[[Value]]: <i>S</i>, [[Writable]: <b>true</b>,
+		[[Enumerable]]: <b>true</b>, [[Configurable]]: <b>true</b>}, and
+		<b>true</b>.</p>
+		</li>
+		<li><p>
+		Call
+		the [[DefineOwnProperty]] internal method of <i>A</i> with
+		arguments "<code><b>length</b></code><code><b>"</b></code>,
+	 <a href="x8.html#x8.10">Property Descriptor</a> {[[Value]]: <i>n</i> + 1}, and <b>true</b>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>matchedSubstr</i> be the matched substring (i.e. the portion of
+		<i>S</i> between offset <i>i</i> inclusive and offset <i>e</i>
+		exclusive).</p>
+		</li>
+		<li><p>
+		Call
+		the [[DefineOwnProperty]] internal method of <i>A</i> with
+		arguments "<code><b>0</b></code><code><b>"</b></code>,
+	 <a href="x8.html#x8.10">Property Descriptor</a> {[[Value]]: <i>matchedSubstr</i>, [[Writable]:
+		<b>true</b>, [[Enumerable]]: <b>true</b>, [[Configurable]]: <b>true</b>},
+		and <b>true</b>.</p>
+		</li>
+		<li><p>
+		For
+		each integer <i>i</i> such that <i>I </i>&gt; 0 and <i>I </i><span class="symbol">&#8804;</span>
+		<i>n</i></p>
+		<ol><li><p>
+			Let
+			<i>captureI</i> be <i>i</i><sup>th</sup> element of <i>r</i>'s
+			<i><a href="#captures">captures</a></i> array.</p>
+			</li>
+			<li><p>
+			Call
+			the [[DefineOwnProperty]] internal method of <i>A</i> with
+			arguments <a href="x9.html#x9.8">ToString</a>(<i>i</i>), <a href="x8.html#x8.10">Property Descriptor</a> {[[Value]]:
+			<i>captureI</i>, [[Writable]: <b>true</b>, [[Enumerable]]: <b>true</b>,
+			[[Configurable]]: <b>true</b>}, and <b>true</b>.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		<i>A</i>.</p>
+	</li></ol><h5 id="x15.10.6.3">15.10.6.3 RegExp.prototype.test(string) <a href="#x15.10.6.3">#</a> <a href="#x15.10.6.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>match</i> be the result of evaluating the <code><b><a href="#x15.10.6.2">RegExp.prototype.exec</a></b></code>
+		(<a href="#x15.10.6.2">15.10.6.2</a>) algorithm upon this RegExp object using <i>string</i>
+		as the argument.</p>
+		</li>
+		<li><p>
+		If
+		<i>match</i> is not null, then return <b>true</b>; else return
+		<b>false</b>.</p>
+	</li></ol><h5 id="x15.10.6.4">15.10.6.4 RegExp.prototype.toString() <a href="#x15.10.6.4">#</a> <a href="#x15.10.6.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Return
+	the String value formed by concatenating the Strings <code>"</code><code><b>/</b></code><code>"</code>,
+	the String value of the <b>source</b> property of this RegExp
+	object, and <code>"</code><code><b>/</b></code><code>"</code>;
+	plus <code>"</code><code><b>g</b></code><code>"</code>
+	if the <code><b>global</b></code>
+	property is <b>true</b>, <code>"</code><code><b>i</b></code><code>"</code>
+	if the <code><b>ignoreCase</b></code>
+	property is <b>true</b>, and <code>"</code><code><b>m</b></code><code>"</code>
+	if the <code><b>multiline</b></code>
+	property is <b>true</b><code><b>.</b></code></p>
+	<p><b class="note">NOTE</b> The
+	returned String has the form of a
+	<i><a href="x7.html#x7.8.5">RegularExpressionLiteral</a></i>
+	that evaluates to another RegExp object with the same
+	behaviour as this object. 
+	</p>
+	<h4 id="x15.10.7">15.10.7 Properties of RegExp Instances <a href="#x15.10.7">#</a> <a href="#x15.10.7-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	RegExp
+	instances inherit properties from the RegExp prototype object and
+	their [[Class]] internal property value is <code><b>"RegExp"</b></code>.
+	RegExp instances also have a [[Match]] internal property and a
+	<code><b>length</b></code> property.</p>
+	<p>
+	The
+	value of the [[Match]] internal property is an implementation
+	dependent representation of the <i>Pattern</i>
+	of the RegExp object.</p>
+	<p>
+	RegExp
+	instances also have the following properties.</p>
+	<h5 id="x15.10.7.1">15.10.7.1 source <a href="#x15.10.7.1">#</a> <a href="#x15.10.7.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	value of the <code><b>source</b></code>
+	property is a String in the form of a <i>Pattern</i>
+	representing the current regular expression. This property shall
+	have the attributes {&#160;[[Writable]]: <b>false</b>,
+	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b>&#160;}.</p>
+	<h5 id="x15.10.7.2">15.10.7.2 global <a href="#x15.10.7.2">#</a> <a href="#x15.10.7.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	value of the <code><b>global</b></code>
+	property is a Boolean value indicating whether the flags contained
+	the character <code><b>&#8220;g&#8221;</b></code>.
+	This property shall have the attributes {&#160;[[Writable]]: <b>false</b>,
+	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b>&#160;}.</p>
+	<h5 id="x15.10.7.3">15.10.7.3 ignoreCase <a href="#x15.10.7.3">#</a> <a href="#x15.10.7.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	value of the <code><b>ignoreCase</b></code>
+	property is a Boolean value indicating whether the flags contained
+	the character <code><b>&#8220;i&#8221;</b></code>.
+	This property shall have the attributes {&#160;[[Writable]]: <b>false</b>,
+	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b>&#160;}.</p>
+	<h5 id="x15.10.7.4">15.10.7.4 multiline <a href="#x15.10.7.4">#</a> <a href="#x15.10.7.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	value of the <code><b>multiline</b></code>
+	property is a Boolean value indicating whether the flags contained
+	the character <code><b>&#8220;m&#8221;</b></code>.
+	This property shall have the attributes {&#160;[[Writable]]: <b>false</b>,
+	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b>&#160;}.</p>
+	<h5 id="x15.10.7.5">15.10.7.5 lastIndex <a href="#x15.10.7.5">#</a> <a href="#x15.10.7.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	value of the <code><b>lastIndex</b></code>
+	property specifies the String position at which to start the next
+	match. It is coerced to an integer when used (see
+	<a href="#x15.10.6.2">15.10.6.2</a>). This property shall have the attributes
+	{&#160;[[Writable]]: <b>true</b>, [[Enumerable]]: <b>false</b>,
+	[[Configurable]]: <b>false</b>&#160;}.</p>
+	<p><b class="note">NOTE</b> Unlike
+	the other standard built-in properties of RegExp instances,
+	<code><b>lastIndex</b></code> is
+	writable.</p>
+	</body><script src="anno.js"></script></html>

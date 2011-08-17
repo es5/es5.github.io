@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html class="split chapter"><head><meta charset="utf-8"><title>15.1 The Global Object # &#9417; &#9402; &#9312; &#9398; &#8212; Annotated ES5</title><link rel="stylesheet" href="style.css"><link rel="shortcut icon" href="favicon.ico"><link href="x15.html" title="15 Standard Built-in ECMAScript Objects " rel="prev">
+  <link href="spec.html#contents" title="TOC" rel="index">
+  <link href="x15.2.html" title="15.2 Object Objects " rel="next">
+  </head><body><div class="head">
+<h2 id="top">Annotated ECMAScript 5.1 <span id="timestamp"></span></h2>
+<div id="mascot-treehouse">
+	<img id="mascot" align="left" src="js-mascot.svg" alt=""><img id="bubble" src="bubble.svg" alt=""></div>
+<p id="slogan">&#8223;Ex igne vita&#8221;</p>
+<div id="annotations"></div>
+<script src="timestamp.js"></script></div>
+<nav>
+   <a href="x15.html">&#8592; 15 Standard Built-in ECMAScript Objects </a> &#8211;
+   <a href="spec.html#contents">TOC</a> &#8211;
+   <a href="x15.2.html">15.2 Object Objects  &#8594;</a>
+  <ol class="toc"><li><ol><li><a href="x15.1.html#x15.1" id="x15.1-toc">15.1 The Global Object</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.1.html#x15.1.1" id="x15.1.1-toc">15.1.1 Value Properties of the Global Object</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.1.html#x15.1.1.1" id="x15.1.1.1-toc">15.1.1.1 NaN</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.1.html#x15.1.1.2" id="x15.1.1.2-toc">15.1.1.2 Infinity</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.1.html#x15.1.1.3" id="x15.1.1.3-toc">15.1.1.3 undefined</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.1.html#x15.1.2" id="x15.1.2-toc">15.1.2 Function Properties of the Global Object</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.1.html#x15.1.2.1" id="x15.1.2.1-toc">15.1.2.1 eval (x)</a>
+                <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.1.html#x15.1.2.1.1" id="x15.1.2.1.1-toc">15.1.2.1.1 Direct Call to Eval</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.1.html#x15.1.2.2" id="x15.1.2.2-toc">15.1.2.2 parseInt (string , radix)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.1.html#x15.1.2.3" id="x15.1.2.3-toc">15.1.2.3 parseFloat (string)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.1.html#x15.1.2.4" id="x15.1.2.4-toc">15.1.2.4 isNaN (number)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.1.html#x15.1.2.5" id="x15.1.2.5-toc">15.1.2.5 isFinite (number)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.1.html#x15.1.3" id="x15.1.3-toc">15.1.3 URI Handling Function Properties</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.1.html#x15.1.3.1" id="x15.1.3.1-toc">15.1.3.1 decodeURI (encodedURI)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.1.html#x15.1.3.2" id="x15.1.3.2-toc">15.1.3.2 decodeURIComponent (encodedURIComponent)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.1.html#x15.1.3.3" id="x15.1.3.3-toc">15.1.3.3 encodeURI (uri)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.1.html#x15.1.3.4" id="x15.1.3.4-toc">15.1.3.4 encodeURIComponent (uriComponent)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.1.html#x15.1.4" id="x15.1.4-toc">15.1.4 Constructor Properties of the Global Object</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.1.html#x15.1.4.1" id="x15.1.4.1-toc">15.1.4.1 Object ( . . . )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.1.html#x15.1.4.2" id="x15.1.4.2-toc">15.1.4.2 Function ( . . . )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.1.html#x15.1.4.3" id="x15.1.4.3-toc">15.1.4.3 Array ( . . . )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.1.html#x15.1.4.4" id="x15.1.4.4-toc">15.1.4.4 String ( . . . )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.1.html#x15.1.4.5" id="x15.1.4.5-toc">15.1.4.5 Boolean ( . . . )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.1.html#x15.1.4.6" id="x15.1.4.6-toc">15.1.4.6 Number ( . . . )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.1.html#x15.1.4.7" id="x15.1.4.7-toc">15.1.4.7 Date ( . . . )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.1.html#x15.1.4.8" id="x15.1.4.8-toc">15.1.4.8 RegExp ( . . . )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.1.html#x15.1.4.9" id="x15.1.4.9-toc">15.1.4.9 Error ( . . . )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.1.html#x15.1.4.10" id="x15.1.4.10-toc">15.1.4.10 EvalError ( . . . )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.1.html#x15.1.4.11" id="x15.1.4.11-toc">15.1.4.11 RangeError ( . . . )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.1.html#x15.1.4.12" id="x15.1.4.12-toc">15.1.4.12 ReferenceError ( . . . )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.1.html#x15.1.4.13" id="x15.1.4.13-toc">15.1.4.13 SyntaxError ( . . . )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.1.html#x15.1.4.14" id="x15.1.4.14-toc">15.1.4.14 TypeError ( . . . )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.1.html#x15.1.4.15" id="x15.1.4.15-toc">15.1.4.15 URIError ( . . . )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.1.html#x15.1.5" id="x15.1.5-toc">15.1.5 Other Properties of the Global Object</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.1.html#x15.1.5.1" id="x15.1.5.1-toc">15.1.5.1 Math</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.1.html#x15.1.5.2" id="x15.1.5.2-toc">15.1.5.2 JSON</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li></ol></li></ol></li></ol></nav>
+
+  <h3 id="x15.1" class="splitme">15.1 The Global Object <a href="#x15.1">#</a> <a href="#x15.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	The
+	unique <i><a href="#x15.1" class="term-ref">global object</a></i> is created before control enters any
+	execution context. 
+	</p>
+	<p>
+	Unless
+	otherwise specified, the standard built-in properties of the global
+	object have attributes {[[Writable]]: <b>true</b>,  [[Enumerable]]:
+	<b>false</b>, [[Configurable]]: <b>true</b>}.</p>
+	<p>
+	The
+	<a href="#x15.1" class="term-ref">global object</a> does not have a [[Construct]] internal property; it is
+	not possible to use the <a href="#x15.1" class="term-ref">global object</a> as a constructor with the <code><b>new</b></code>
+	operator.</p>
+	<p>
+	The
+	<a href="#x15.1" class="term-ref">global object</a> does not have a [[Call]] internal property; it is not
+	possible to invoke the <a href="#x15.1" class="term-ref">global object</a> as a function.</p>
+	<p>
+	The
+	values of the [[Prototype]] and [[Class]] internal properties of the
+	<a href="#x15.1" class="term-ref">global object</a> are implementation-dependent.</p>
+	<p>
+	In
+	addition to the properties defined in this specification the global
+	object may have additional host defined properties. This may include
+	a property whose value is the <a href="#x15.1" class="term-ref">global object</a> itself; for example, in
+	the HTML document object model the <code><b>window</b></code>
+	property of the <a href="#x15.1" class="term-ref">global object</a> is the <a href="#x15.1" class="term-ref">global object</a> itself.</p>
+	<h4 id="x15.1.1">15.1.1 Value Properties of the Global Object <a href="#x15.1.1">#</a> <a href="#x15.1.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<h5 id="x15.1.1.1">15.1.1.1 NaN <a href="#x15.1.1.1">#</a> <a href="#x15.1.1.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	value of <code><b>NaN</b></code> is
+	<b>NaN</b> (see <a href="x8.html#x8.5">8.5</a>). This property has the attributes {
+	[[Writable]]: <b>false</b>, [[Enumerable]]: <b>false</b>,
+	[[Configurable]]: <b>false</b> }.</p>
+	<h5 id="x15.1.1.2">15.1.1.2 Infinity <a href="#x15.1.1.2">#</a> <a href="#x15.1.1.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	value of <code><b>Infinity</b></code>
+	is <b>+</b><span class="symbol"><b>&#8734;</b></span> (see <a href="x8.html#x8.5">8.5</a>).
+	This property has the attributes { [[Writable]]: <b>false</b>,
+	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b> }.</p>
+	<h5 id="x15.1.1.3">15.1.1.3 undefined <a href="#x15.1.1.3">#</a> <a href="#x15.1.1.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	value of <code><b>undefined</b></code>
+	is <b>undefined</b> (see <a href="x8.html#x8.1">8.1</a>). This property has the attributes {
+	[[Writable]]: <b>false</b>, [[Enumerable]]: <b>false</b>,
+	[[Configurable]]: <b>false</b> }.</p>
+	<h4 id="x15.1.2">15.1.2 Function Properties of the Global Object <a href="#x15.1.2">#</a> <a href="#x15.1.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<h5 id="x15.1.2.1">15.1.2.1 eval (x) <a href="#x15.1.2.1">#</a> <a href="#x15.1.2.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <code><b><a href="#x15.1.2.1">eval</a></b></code> function
+	is called with one argument <i>x</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>x</i>)
+		is not String, return <i>x</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>prog </i>be
+		the ECMAScript code that is the result of parsing <i>x </i>as a <i><a href="x14.html#x14">Program</a></i>.
+		If the parse fails, throw a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+		exception (but see also <a href="x16.html#x16">clause 16</a>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>evalCtx </i>be
+		the result of establishing a new execution context (<a href="x10.html#x10.4.2">10.4.2</a>) for the
+	 <a href="x10.html#eval-code">eval code</a> <i>prog</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>result </i>be
+		the result of evaluating the program <i>prog</i>.</p>
+		</li>
+		<li><p>
+		Exit
+		the running execution context evalCtx, restoring the previous
+		execution context.</p>
+		</li>
+		<li><p>
+		If
+		<i>result</i>.type
+		is normal and its
+		completion value is a value <i>V</i>,
+		then return the value <i>V</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>result</i>.type
+		is normal and its
+		completion value is empty,
+		then return the value <b>undefined</b>.</p>
+		</li>
+		<li><p>
+		Otherwise,
+		<i>result</i>.type
+		must be throw. Throw
+		<i>result</i>.value
+		as an exception.</p>
+	</li></ol><h6 id="x15.1.2.1.1">15.1.2.1.1 Direct Call to Eval <a href="#x15.1.2.1.1">#</a> <a href="#x15.1.2.1.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h6>
+	<p>
+	A
+	direct call to the eval function is one that is expressed as a
+	<i>CallExpression</i>
+	that meets the following two conditions:</p>
+	<p>
+	The
+	<a href="x8.html#x8.7">Reference</a> that is the result of evaluating the <i>MemberExpression</i>
+	in the <i>CallExpression</i>
+	has an <a href="x10.html#x10.2">environment record</a> as its base value and its reference name
+	is <code>"</code><code><b>eval</b></code><code>"</code>.</p>
+	<p>
+	The
+	result of calling the abstract operation <a href="x8.html#x8.7.1">GetValue</a> with that
+	<a href="x8.html#x8.7">Reference</a> as the argument is the standard built-in function defined
+	in <a href="#x15.1.2.1">15.1.2.1</a>.</p>
+	<h5 id="x15.1.2.2">15.1.2.2 parseInt (string , radix) <a href="#x15.1.2.2">#</a> <a href="#x15.1.2.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	<code><b>parseInt</b></code> function
+	produces an integer value dictated by interpretation of the contents
+	of the <i>string</i>
+	argument according to the specified <i>radix</i>.
+	Leading white space in <i>string</i>
+	is ignored. If <i>radix</i>
+	is <b>undefined</b> or 0, it is assumed to be 10
+	except when the number begins with the character pairs <code><b>0x</b></code>
+	or <code><b>0X</b></code>, in which
+	case a radix of 16 is assumed. If <i>radix</i>
+	is 16, number may also
+	optionally begin with the character pairs <code><b>0x</b></code>
+	or <code><b>0X</b></code>.</p>
+	<p>
+	When
+	the <code><b>parseInt</b></code>
+	function is called, the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>inputString</i> be <a href="x9.html#x9.8">ToString</a>(<i>string</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>S</i> be a newly created substring of <i>inputString</i>
+		consisting of the first character that is not a <i>StrWhiteSpaceChar</i>
+		and all characters following that character. (In other words,
+		remove leading white space.)
+If <i>inputString</i> does not contain any such characters, let <i>S</i> be the
+empty string.</p>
+		</li>
+		<li><p>
+		Let
+		<i>sign</i> be 1.</p>
+		</li>
+		<li><p>
+		If
+		<i>S</i> is not empty and the first character of <i>S</i> is a
+		minus sign <code><b>-</b></code>, let
+		<i>sign</i> be <span class="symbol">&#8722;</span>1.</p>
+		</li>
+		<li><p>
+		If
+		<i>S</i> is not empty and the first character of <i>S</i> is a plus
+		sign <code><b>+</b></code> or a minus
+		sign <code><b>-</b></code>, then
+		remove the first character from <i>S</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>R</i> = <a href="x9.html#x9.5">ToInt32</a>(<i>radix</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>stripPrefix</i> be <b>true</b>.</p>
+		</li>
+		<li><p>
+		If
+		<i>R</i> <span class="symbol">&#8800;</span> 0, then</p>
+		<ol><li><p>
+			If
+			<i>R</i> &lt; 2 or <i>R</i> &gt; 36, then return <b>NaN</b>.</p>
+			</li>
+			<li><p>
+			If
+			<i>R</i> <span class="symbol">&#8800;</span> 16, let <i>stripPrefix</i>
+			be <b>false</b>.</p>
+		</li></ol></li>
+		<li><p>
+		Else,
+		<i>R</i> = 0</p>
+		<ol><li><p>
+			Let
+			<i>R</i> = 10.</p>
+		</li></ol></li>
+		<li><p>
+		If
+		<i>stripPrefix</i> is <b>true</b>, then</p>
+		<ol><li><p>
+			If
+			the length of <i>S</i> is at least 2 and the first two characters
+			of <i>S</i> are either &#8220;<code><b>0x</b></code>&#8221;
+			or &#8220;<code><b>0X</b></code>&#8221;,
+			then remove the first two characters from <i>S</i> and let <i>R</i>
+			= 16.</p>
+		</li></ol></li>
+		<li><p>
+		If
+		<i>S</i> contains any character that is not a radix-<i>R</i> digit,
+		then let <i>Z</i> be the substring of <i>S</i> consisting of all
+		characters before the first such character; otherwise, let <i>Z</i>
+		be <i>S</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>Z</i> is empty, return <b>NaN</b>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>mathInt</i> be the mathematical integer value that is
+		represented by <i>Z</i> in radix-<i>R</i> notation, using the
+		letters <code><b>A</b></code>-<code><b>Z</b></code>
+		and <code><b>a</b></code>-<code><b>z</b></code>
+		for digits with values 10 through 35. (However, if <i>R</i> is 10
+		and <i>Z</i> contains more than 20 significant digits, every
+		significant digit after the 20th may be replaced by a <code><b>0
+		</b></code>digit, at the option of the implementation; and if <i>R</i>
+		is not 2, 4, 8, 10, 16, or 32, then <i>mathInt</i> may be an
+		implementation-dependent approximation to the mathematical integer
+		value that is represented by <i>Z</i> in radix-<i>R</i> notation.)</p>
+		</li>
+		<li><p>
+		Let
+		<i>number</i> be the Number value for <i>mathInt</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>sign</i> <span class="symbol">&#215;</span> <i>number</i>.</p>
+	</li></ol><p><b class="note">NOTE</b> <code><b>parseInt</b></code>
+	may interpret only a leading portion of <i>string</i>
+	as an integer value; it ignores any characters that cannot be
+	interpreted as part of the notation of an integer, and no indication
+	is given that any such characters were ignored.</p>
+	<h5 id="x15.1.2.3">15.1.2.3 parseFloat (string) <a href="#x15.1.2.3">#</a> <a href="#x15.1.2.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	<code><b>parseFloat</b></code>
+	function produces a Number value dictated by interpretation of the
+	contents of the <i>string</i>
+	argument as a decimal literal.</p>
+	<p>
+	When
+	the <code><b>parseFloat</b></code>
+	function is called, the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>inputString</i> be <a href="x9.html#x9.8">ToString</a>(<i>string</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>trimmedString</i> be a substring of <i>inputString</i>
+		consisting of the leftmost character that is not a
+		<i>StrWhiteSpaceChar</i> and all characters to the right of that
+		character. (In other words, remove leading white space.)
+If <i>inputString</i> does not contain any such characters, let
+<i>trimmedString</i> be the empty string.</p>
+		</li>
+		<li><p>
+		If
+		neither <i>trimmedString</i> nor any prefix of <i>trimmedString</i>
+		satisfies the syntax of a <i>StrDecimalLiteral</i> (see <a href="x9.html#x9.3.1">9.3.1</a>),
+		return <b>NaN</b>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>numberString</i> be the longest prefix of <i>trimmedString</i>,
+		which might be <i>trimmedString</i> itself, that satisfies the
+		syntax of a <i>StrDecimalLiteral</i>.</p>
+		</li>
+		<li><p>
+		Return
+		the Number value for <a href="x7.html#mv">the MV of</a> <i>numberString</i>.</p>
+	</li></ol><p><b class="note">NOTE</b> <code><b>parseFloat</b></code>
+	may interpret only a leading portion of <i>string</i>
+	as a Number value; it ignores any characters that cannot be
+	interpreted as part of the notation of an decimal literal, and no
+	indication is given that any such characters were ignored.</p>
+	<h5 id="x15.1.2.4">15.1.2.4 isNaN (number) <a href="#x15.1.2.4">#</a> <a href="#x15.1.2.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Returns
+	<b>true</b> if the argument coerces to <b>NaN</b>, and otherwise
+	returns <b>false</b>.</p>
+	<ol><li><p>
+		If
+		<a href="x9.html#x9.3">ToNumber</a>(<i>number</i>) is <b>NaN</b>, return <b>true</b>.</p>
+		</li>
+		<li><p>
+		Otherwise,
+		return <b>false</b>.</p>
+	</li></ol><p><b class="note">NOTE</b> A
+	reliable way for ECMAScript code to test if a value <code>X</code>
+	is a <b>NaN</b> is an expression of the form <code>X
+	!== X</code>. The result will be <b>true</b> if and only if <code>X</code>
+	is a <b>NaN</b>.</p>
+	<h5 id="x15.1.2.5">15.1.2.5 isFinite (number) <a href="#x15.1.2.5">#</a> <a href="#x15.1.2.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Returns
+	<b>false</b> if the argument coerces to <b>NaN</b>, <b>+</b><span class="symbol"><b>&#8734;</b></span>,
+	or <span class="symbol"><b>&#8722;&#8734;</b></span>, and otherwise
+	returns <b>true</b>.</p>
+	<ol><li><p>
+		If
+		<a href="x9.html#x9.3">ToNumber</a>(<i>number</i>) is <b>NaN</b>, <b>+</b><span class="symbol"><b>&#8734;</b></span>,
+		or <span class="symbol"><b>&#8722;&#8734;</b></span>, return <b>false</b>.</p>
+		</li>
+		<li><p>
+		Otherwise,
+		return <b>true</b>.</p>
+	</li></ol><h4 id="x15.1.3">15.1.3 URI Handling Function Properties <a href="#x15.1.3">#</a> <a href="#x15.1.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	Uniform
+	Resource Identifiers, or URIs, are Strings that identify resources
+	(e.g. web pages or files) and transport protocols by which to access
+	them (e.g. HTTP or FTP) on the Internet. The ECMAScript language
+	itself does not provide any support for using URIs except for
+	functions that encode and decode URIs as described in <a href="#x15.1.3.1">15.1.3.1</a>,
+	<a href="#x15.1.3.2">15.1.3.2</a>, <a href="#x15.1.3.3">15.1.3.3</a> and <a href="#x15.1.3.4">15.1.3.4</a>.</p>
+	<p><b class="note">NOTE</b> Many
+	implementations of ECMAScript provide additional functions and
+	methods that manipulate web pages; these functions are beyond the
+	scope of this standard.</p>
+	<p>
+	A URI
+	is composed of a sequence of components separated by component
+	separators. The general form is:</p>
+	<p>
+	     <i>Scheme</i><code>
+	</code><code><b>:</b></code><code>
+	</code><i>First</i><code>
+	</code><code><b>/</b></code><code>
+	</code><i>Second</i><code>
+	</code><code><b>;</b></code><code>
+	</code><i>Third</i><code>
+	</code><code><b>?</b></code><code>
+	</code><i>Fourth</i></p>
+	<p>
+	where
+	the italicised names represent components and the &#8220;<code><b>:</b></code>&#8221;,
+	&#8220;<code><b>/</b></code>&#8221;, &#8220;<code><b>;</b></code>&#8221;
+	and &#8220;<code><b>?</b></code>&#8221; are
+	reserved characters used as separators. The <code><b><a href="#x15.1.3.3">encodeURI</a></b></code>
+	and <code><b><a href="#x15.1.3.1">decodeURI</a></b></code>
+	functions are intended to work with complete URIs; they assume that
+	any reserved characters in the URI are intended to have special
+	meaning and so are not encoded. The  <code><b><a href="#x15.1.3.4">encodeURIComponent</a></b></code><b>
+	</b>and <code><b><a href="#x15.1.3.2">decodeURIComponent</a></b></code><b>
+	</b>functions are intended to work with the individual
+	component parts of a URI; they assume that any reserved characters
+	represent text and so must be encoded so that they are not
+	interpreted as reserved characters when the component is part of a
+	complete URI.</p>
+	<p>
+	The
+	following lexical grammar specifies the form of encoded URIs.</p>
+	<p class="keep">
+	<i>uri </i><b>:::</b></p>
+	<p class="def1-btm">
+	<i>uriCharacters</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>uriCharacters </i><b>:::</b></p>
+	<p class="def1-btm">
+	<i>uriCharacter
+	uriCharacters</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>uriCharacter </i><b>:::</b></p>
+	<p class="def1-btm">
+	<i>uriReserved<br>uriUnescaped<br>uriEscaped</i></p>
+	<p class="keep">
+	<i>uriReserved </i><b>:::</b> <b>one
+	of</b></p>
+	<p class="def1-btm">
+	<code><b>;
+	 /  ?  :  @  &amp;  =  +  $  ,</b></code></p>
+	<p class="keep">
+	<i>uriUnescaped </i><b>:::</b></p>
+	<p class="def1-btm">
+	<i>uriAlpha<br>DecimalDigit<br>uriMark</i></p>
+	<p class="keep">
+	<i>uriEscaped </i><b>:::</b></p>
+	<p class="def1-btm">
+	<code><b>%</b></code> <i>HexDigit HexDigit</i></p>
+	<p class="keep">
+	<i>uriAlpha </i><b>:::</b> <b>one
+	of</b></p>
+	<p class="def1-btm">
+	<code><b>a
+	 b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x
+	 y  z<br>A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q  R  S  T 
+	U  V  W  X  Y  Z</b></code></p>
+	<p class="keep">
+	<i>uriMark </i><b>:::</b> <b>one
+	of</b></p>
+	<p class="def1-btm">
+	<code><b>-
+	 _  .  !  ~  *  '  (  )</b></code></p>
+
+	<p><b class="note">NOTE</b> The above syntax is based upon RFC 2396
+	and does not reflect changes introduced by the more recent RFC 3986.</p>
+
+	<p>
+	When
+	a character to be included in a URI is not listed above or is not
+	intended to have the special meaning sometimes given to the reserved
+	characters, that character must be encoded. The character is
+	transformed into its UTF-8 encoding, with surrogate pairs first
+	converted from UTF-16 to the corresponding code point value. (Note
+	that for code units in the range [0,127] this results in a single
+	octet with the same value.) The resulting sequence of octets is then
+	transformed into a String with each octet represented by an escape
+	sequence of the form &#8220;<code><b>%</b></code><code>xx</code>&#8221;.</p>
+	<p>
+	The
+	encoding and escaping process is described by the abstract operation
+	<dfn id="Encode">Encode</dfn> taking two String arguments <i>string</i>
+	and <i>unescapedSet</i>.</p>
+	<ol><li><p>
+		Let
+		<i>strLen</i> be the number of characters in <i>string</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>R</i> be the empty String.</p>
+		</li>
+		<li><p>
+		Let
+		<i>k</i> be 0.</p>
+		</li>
+		<li><p>
+		Repeat</p>
+		<ol><li><p>
+			If
+			<i>k</i> equals <i>strLen</i>, return <i>R</i>.</p>
+			</li>
+			<li><p>
+			Let
+			<i>C</i> be the character at position <i>k</i> within <i>string</i>.</p>
+			</li>
+			<li><p>
+			If
+			<i>C</i> is in <i>unescapedSet</i>, then</p>
+			<ol><li><p>
+				Let
+				<i>S</i> be a String containing only the character <i>C</i>.</p>
+				</li>
+				<li><p>
+				Let
+				<i>R</i> be a new String value computed by concatenating the
+				previous value of <i>R</i> and <i>S</i>.</p>
+			</li></ol></li>
+			<li><p>
+			Else,
+			<i>C</i> is not in <i>unescapedSet</i></p>
+			<ol><li><p>
+				If
+				the code unit value of <i>C</i> is not less than 0xDC00 and not
+				greater than 0xDFFF, throw a <b><a href="x15.11.html#x15.11.6.6" class="term-ref">URIError</a></b> exception.</p>
+				</li>
+				<li><p>
+				If
+				the code unit value of <i>C</i> is less than 0xD800 or greater
+				than 0xDBFF, then</p>
+				<ol><li><p>
+					Let
+					<i>V</i> be the code unit value of <i>C</i>.</p>
+				</li></ol></li>
+				<li><p>
+				Else,
+				
+				</p>
+				<ol><li><p>
+					Increase
+					<i>k</i> by 1.</p>
+					</li>
+					<li><p>
+					If
+					<i>k</i> equals <i>strLen</i>, throw a <b><a href="x15.11.html#x15.11.6.6" class="term-ref">URIError</a></b>
+					exception.</p>
+					</li>
+					<li><p>
+					Let
+					<i>kChar</i> be the code unit value of the character at position
+					<i>k</i> within <i>string</i>.</p>
+					</li>
+					<li><p>
+					If
+					<i>kChar</i> is less than 0xDC00 or greater than 0xDFFF, throw a
+					<b><a href="x15.11.html#x15.11.6.6" class="term-ref">URIError</a></b> exception.</p>
+					</li>
+					<li><p>
+					Let
+					<i>V</i> be (((the code unit value of <i>C</i>) &#8211; 0xD800) *
+					0x400 + (<i>kChar</i> &#8211; 0xDC00) + 0x10000).</p>
+				</li></ol></li>
+				<li><p>
+				Let
+				<i>Octets</i> be the array of octets resulting by applying the
+				UTF-8 transformation to <i>V</i>, and let <i>L</i> be the array
+				size.</p>
+				</li>
+				<li><p>
+				Let
+				<i>j</i> be 0.</p>
+				</li>
+				<li><p>
+				Repeat,
+				while <i>j</i> &lt; <i>L</i></p>
+				<ol><li><p>
+					Let
+					<i>jOctet</i> be the value at position <i>j</i> within <i>Octets</i>.</p>
+					</li>
+					<li><p>
+					Let
+					<i>S</i> be a String containing three characters &#8220;<code><b>%</b></code><code><i>XY</i></code>&#8221;
+					where <i>XY</i> are two uppercase hexadecimal digits encoding
+					the value of <i>jOctet</i>.</p>
+					</li>
+					<li><p>
+					Let
+					<i>R</i> be a new String value computed by concatenating the
+					previous value of <i>R</i> and <i>S</i>.</p>
+					</li>
+					<li><p>
+					Increase
+					<i>j</i> by 1.</p>
+				</li></ol></li></ol></li>
+			<li><p>
+			Increase
+			<i>k</i> by 1.</p>
+		</li></ol></li></ol><p>
+	The
+	unescaping and decoding process is described by the abstract
+	operation <dfn id="Decode">Decode</dfn> taking two String arguments <i>string</i>
+	and <i>reservedSet</i>.</p>
+	<ol><li><p>
+		Let
+		<i>strLen</i> be the number of characters in <i>string</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>R</i> be the empty String.</p>
+		</li>
+		<li><p>
+		Let
+		<i>k</i> be 0.</p>
+		</li>
+		<li><p>
+		Repeat</p>
+		<ol><li><p>
+			If
+			<i>k</i> equals <i>strLen</i>, return <i>R</i>.</p>
+			</li>
+			<li><p>
+			Let
+			<i>C</i> be the character at position <i>k</i> within <i>string</i>.</p>
+			</li>
+			<li><p>
+			If
+			<i>C</i> is not &#8216;<code><b>%</b></code>&#8217;,
+			then</p>
+			<ol><li><p>
+				Let
+				<i>S</i> be the String containing only the character <i>C</i>.</p>
+			</li></ol></li>
+			<li><p>
+			Else,
+			<i>C</i> is &#8216;<code><b>%</b></code>&#8217;</p>
+			<ol><li><p>
+				Let
+				<i>start</i> be <i>k</i>.</p>
+				</li>
+				<li><p>
+				If
+				<i>k</i> + 2 is greater than or equal to <i>strLen</i>, throw a
+				<b><a href="x15.11.html#x15.11.6.6" class="term-ref">URIError</a></b> exception.</p>
+				</li>
+				<li><p>
+				If
+				the characters at position (<i>k</i>+1) and (<i>k</i> + 2) within
+				<i>string </i>do not represent hexadecimal digits, throw a
+				<b><a href="x15.11.html#x15.11.6.6" class="term-ref">URIError</a></b> exception.</p>
+				</li>
+				<li><p>
+				Let
+				<i>B</i> be the 8-bit value represented by the two hexadecimal
+				digits at position (<i>k</i> + 1) and (<i>k</i> + 2).</p>
+				</li>
+				<li><p>
+				Increment
+				<i>k</i> by 2.</p>
+				</li>
+				<li><p>
+				If
+				the most significant bit in <i>B</i> is 0, then</p>
+				<ol><li><p>
+					Let
+					<i>C</i> be the character with code unit value <i>B</i>.</p>
+					</li>
+					<li><p>
+					If
+					<i>C</i> is not in <i>reservedSet</i>, then</p>
+					<ol><li><p>
+						Let
+						<i>S</i> be the String containing only the character <i>C</i>.</p>
+					</li></ol></li>
+					<li><p>
+					Else,
+					<i>C</i> is in <i>reservedSet</i></p>
+					<ol><li><p>
+						Let
+						<i>S</i> be the substring of <i>string</i> from position <i>start</i>
+						to position <i>k</i> included.</p>
+					</li></ol></li></ol></li>
+				<li><p>
+				Else,
+				the most significant bit in <i>B</i> is 1</p>
+				<ol><li><p>
+					Let
+					<i>n</i> be the smallest non-negative number such that (<i>B</i>
+					&lt;&lt; <i>n</i>) &amp; 0x80 is equal to 0.</p>
+					</li>
+					<li><p>
+					If
+					<i>n</i> equals 1 or <i>n</i> is greater than 4, throw a
+					<b><a href="x15.11.html#x15.11.6.6" class="term-ref">URIError</a></b> exception.</p>
+					</li>
+					<li><p>
+					Let
+					<i>Octets</i> be an array of 8-bit integers of size <i>n</i>.</p>
+					</li>
+					<li><p>
+					Put
+					<i>B</i> into <i>Octets</i> at position 0.</p>
+					</li>
+					<li><p>
+					If
+					<i>k</i> + (3 * (<i>n</i> &#8211; 1)) is greater than or equal to
+					<i>strLen</i>, throw a <b><a href="x15.11.html#x15.11.6.6" class="term-ref">URIError</a></b> exception.</p>
+					</li>
+					<li><p>
+					Let
+					<i>j</i> be 1.</p>
+					</li>
+					<li><p>
+					Repeat,
+					while <i>j</i> &lt; <i>n</i></p>
+					<ol><li><p>
+						Increment
+						<i>k</i> by 1.</p>
+						</li>
+						<li><p>
+						If
+						the character at position <i>k</i> is not &#8216;%&#8217;, throw a
+						<b><a href="x15.11.html#x15.11.6.6" class="term-ref">URIError</a></b> exception.</p>
+						</li>
+						<li><p>
+						If
+						the characters at position (<i>k</i> +1) and (<i>k</i> + 2)
+						within <i>string</i> do not represent hexadecimal digits, throw
+						a <b><a href="x15.11.html#x15.11.6.6" class="term-ref">URIError</a></b> exception.</p>
+						</li>
+						<li><p>
+						Let
+						<i>B</i> be the 8-bit value represented by the two hexadecimal
+						digits at position (<i>k</i> + 1) and (<i>k</i> + 2).</p>
+						</li>
+						<li><p>
+						If
+						the two most significant bits in <i>B</i> are not 10, throw a
+						<b><a href="x15.11.html#x15.11.6.6" class="term-ref">URIError</a></b> exception.</p>
+						</li>
+						<li><p>
+						Increment
+						<i>k</i> by 2.</p>
+						</li>
+						<li><p>
+						Put
+						<i>B</i> into <i>Octets</i> at position <i>j</i>.</p>
+						</li>
+						<li><p>
+						Increment
+						<i>j</i> by 1.</p>
+					</li></ol></li>
+					<li><p>
+					Let
+					<i>V</i> be the value obtained by applying the UTF-8
+					transformation to <i>Octets</i>, that is, from an array of
+					octets into a 32-bit value. If <i>Octets</i> does not contain a
+					valid UTF-8 encoding of a Unicode code point throw a <b><a href="x15.11.html#x15.11.6.6" class="term-ref">URIError</a></b>
+					exception.</p>
+					</li>
+					<li><p>
+					If
+					<i>V</i> is less than 0x10000, then</p>
+					<ol><li><p>
+						Let
+						<i>C</i> be the character with code unit value <i>V</i>.</p>
+						</li>
+						<li><p>
+						If
+						<i>C</i> is not in <i>reservedSet</i>, then</p>
+						<ol><li><p>
+							Let
+							<i>S</i> be the String containing only the character <i>C</i>.</p>
+						</li></ol></li>
+						<li><p>
+						Else,
+						<i>C</i> is in <i>reservedSet</i></p>
+						<ol><li><p>
+							Let
+							<i>S</i> be the substring of <i>string</i> from position <i>start</i>
+							to position <i>k</i> included.</p>
+						</li></ol></li></ol></li>
+					<li><p>
+					Else,
+					<i>V</i> is &#8805; 0x10000</p>
+					<ol><li><p>
+						Let
+						<i>L</i> be (((<i>V</i> &#8211; 0x10000) &amp; 0x3FF) + 0xDC00).</p>
+						</li>
+						<li><p>
+						Let
+						<i>H</i> be ((((<i>V</i> &#8211; 0x10000) &gt;&gt; 10) &amp; 0x3FF)
+						+ 0xD800).</p>
+						</li>
+						<li><p>
+						Let
+						<i>S</i> be the String containing the two characters with code
+						unit values <i>H</i> and <i>L</i>.</p>
+					</li></ol></li></ol></li></ol></li>
+			<li><p>
+			Let
+			<i>R</i> be a new String value computed by concatenating the
+			previous value of <i>R</i> and <i>S</i>.</p>
+			</li>
+			<li><p>
+			Increase
+			<i>k</i> by 1.</p>
+		</li></ol></li></ol><p><b class="note">NOTE</b> The
+	syntax of Uniform Resource Identifiers is given in RFC 2396 and
+	does not reflect the more recent RFC 3986 which replaces RFC 2396. A
+	formal description and implementation of UTF-8 is given in RFC 3629.</p>
+
+	<p>
+	In
+	UTF-8, characters are encoded using sequences of 1 to 6 octets. The
+	only octet of a "sequence" of one has the higher-order bit
+	set to 0, the remaining 7 bits being used to encode the character
+	value. In a sequence of n octets, n&gt;1, the initial octet has the
+	n higher-order bits set to 1, followed by a bit set to 0. The
+	remaining bits of that octet contain bits from the value of the
+	character to be encoded. The following octets all have the
+	higher-order bit set to 1 and the following bit set to 0, leaving 6
+	bits in each to contain bits from the character to be encoded. The
+	possible UTF-8 encodings of ECMAScript characters are specified in
+	Table 21.</p>
+<center>
+	<table width="730" border="1" bordercolor="#000000" cellpadding="8" cellspacing="0" rules="ROWS"><caption>Table&#160;21 &#8212; UTF-8 Encodings<p>
+		</p></caption><colgroup><col width="152"><col width="166"><col width="82"><col width="82"><col width="75"><col width="75"></colgroup><tbody><tr valign="TOP"><td width="152" height="14" bgcolor="#c0c0c0">
+				<p class="keep">
+				<i><b>Code
+				Unit Value</b></i></p>
+			</td>
+			<td width="166" bgcolor="#c0c0c0">
+				<p class="keep">
+				<i><b>Representation</b></i></p>
+			</td>
+			<td width="82" bgcolor="#c0c0c0">
+				<p class="keep">
+				<i><b>1</b></i><sup><i><b>st</b></i></sup><i><b>
+				Octet</b></i></p>
+			</td>
+			<td width="82" bgcolor="#c0c0c0">
+				<p class="keep">
+				<i><b>2</b></i><sup><i><b>nd</b></i></sup><i><b>
+				Octet</b></i></p>
+			</td>
+			<td width="75" bgcolor="#c0c0c0">
+				<p class="keep">
+				<i><b>3</b></i><sup><i><b>rd</b></i></sup><i><b>
+				Octet</b></i></p>
+			</td>
+			<td width="75" bgcolor="#c0c0c0">
+				<p class="keep">
+				<i><b>4</b></i><sup><i><b>th</b></i></sup><i><b>
+				Octet</b></i></p>
+			</td>
+		</tr><tr valign="TOP"><td width="152">
+				<p align="CENTER" class="keep">
+				<code><b>0x0000
+				- 0x007F</b></code></p>
+			</td>
+			<td width="166">
+				<p align="CENTER" class="keep">
+				<code><b>00000000</b></code><code>
+				</code><code><b>0</b></code><code><i>zzzzzzz</i></code></p>
+			</td>
+			<td width="82">
+				<p align="CENTER" class="keep">
+				<code><b>0</b><i>zzzzzzz</i></code></p>
+			</td>
+			<td width="82">
+			</td>
+			<td width="75">
+			</td>
+			<td width="75">
+			</td>
+		</tr><tr valign="TOP"><td width="152">
+				<p align="CENTER" class="keep">
+				<code><b>0x0080
+				- 0x07FF</b></code></p>
+			</td>
+			<td width="166">
+				<p align="CENTER" class="keep">
+				<code><b>00000</b></code><code><i>yyy
+				yyzzzzzz</i></code></p>
+			</td>
+			<td width="82">
+				<p align="CENTER" class="keep">
+				<code><b>110</b><i>yyyyy</i></code></p>
+			</td>
+			<td width="82">
+				<p align="CENTER" class="keep">
+				<code><b>10</b><i>zzzzzz</i></code></p>
+			</td>
+			<td width="75">
+			</td>
+			<td width="75">
+			</td>
+		</tr><tr valign="TOP"><td width="152">
+				<p align="CENTER" class="keep">
+				<code><b>0x0800
+				- 0xD7FF</b></code></p>
+			</td>
+			<td width="166">
+				<p align="CENTER" class="keep">
+				<code><i>xxxxyyyy
+				yyzzzzzz</i></code></p>
+			</td>
+			<td width="82">
+				<p align="CENTER" class="keep">
+				<code><b>1110</b><i>xxxx</i></code></p>
+			</td>
+			<td width="82">
+				<p align="CENTER" class="keep">
+				<code><b>10</b><i>yyyyyy</i></code></p>
+			</td>
+			<td width="75">
+				<p align="CENTER" class="keep">
+				<code><b>10</b><i>zzzzzz</i></code></p>
+			</td>
+			<td width="75">
+			</td>
+		</tr><tr valign="TOP"><td width="152">
+				<p align="CENTER" class="keep">
+				<code><b>0xD800
+				- 0xDBFF</b></code></p>
+				<p align="CENTER" class="keep">
+				<i>followed
+				by</i></p>
+				<p align="CENTER" class="keep">
+				<code><b>0xDC00
+				&#8211; 0xDFFF</b></code></p>
+			</td>
+			<td width="166">
+				<p align="CENTER" class="keep">
+				<code><b>110110</b><i>vv
+				vvwwwwxx</i></code></p>
+				<p align="CENTER" class="keep">
+				<i>followed
+				by</i></p>
+				<p align="CENTER" class="keep">
+				<code><b>110111</b><i>yy
+				yyzzzzzz</i></code></p>
+			</td>
+			<td width="82">
+				<p align="CENTER" class="keep">
+				<code><b>11110</b><i>uuu</i></code></p>
+			</td>
+			<td width="82">
+				<p align="CENTER" class="keep">
+				<code><b>10</b><i>uuwwww</i></code></p>
+			</td>
+			<td width="75">
+				<p align="CENTER" class="keep">
+				<code><b>10</b><i>xxyyyy</i></code></p>
+			</td>
+			<td width="75">
+				<p align="CENTER" class="keep">
+				<code><b>10</b><i>zzzzzz</i></code></p>
+			</td>
+		</tr><tr valign="TOP"><td width="152">
+				<p align="CENTER" class="keep">
+				<code><b>0xD800
+				- 0xDBFF</b></code></p>
+				<p align="CENTER" class="keep">
+				<i>not
+				followed by</i></p>
+				<p align="CENTER" class="keep">
+				<code><b>0xDC00
+				&#8211; 0xDFFF</b></code></p>
+			</td>
+			<td width="166">
+				<p align="CENTER" class="keep">
+				<code><i>causes</i>
+				URIError</code></p>
+			</td>
+			<td width="82">
+			</td>
+			<td width="82">
+			</td>
+			<td width="75">
+			</td>
+			<td width="75">
+			</td>
+		</tr><tr valign="TOP"><td width="152">
+				<p align="CENTER" class="keep">
+				<code><b>0xDC00
+				&#8211; 0xDFFF</b></code></p>
+			</td>
+			<td width="166">
+				<p align="CENTER" class="keep">
+				<code><i>causes</i>
+				URIError</code></p>
+			</td>
+			<td width="82">
+			</td>
+			<td width="82">
+			</td>
+			<td width="75">
+			</td>
+			<td width="75">
+			</td>
+		</tr><tr valign="TOP"><td width="152">
+				<p align="CENTER">
+				<code><b>0xE000
+				- 0xFFFF</b></code></p>
+			</td>
+			<td width="166">
+				<p align="CENTER">
+				<code><i>xxxxyyyy
+				yyzzzzzz</i></code></p>
+			</td>
+			<td width="82">
+				<p align="CENTER">
+				<code><b>1110</b><i>xxxx</i></code></p>
+			</td>
+			<td width="82">
+				<p align="CENTER">
+				<code><b>10</b><i>yyyyyy</i></code></p>
+			</td>
+			<td width="75">
+				<p align="CENTER">
+				<code><b>10</b><i>zzzzzz</i></code></p>
+			</td>
+			<td width="75">
+			</td>
+		</tr></tbody></table></center>
+	<br><p class="sm-btm">
+	Where</p>
+	<p class="code-example">
+	<i><code>uuuuu</code></i>
+	=
+	<code><i>vvvv </i></code> +
+	1</p>
+	<p>
+	to
+	account for the addition of 0x10000 as in Surrogates, section 3.7,
+	of the Unicode Standard.</p>
+	<p>
+	The
+	range of code unit values 0xD800-0xDFFF is used to encode surrogate
+	pairs; the above transformation combines a UTF-16 surrogate pair
+	into a UTF-32 representation and encodes the resulting 21-bit value
+	in UTF-8. Decoding reconstructs the surrogate pair.</p>
+	<p>
+	RFC
+	3629 prohibits the decoding of invalid UTF-8 octet sequences. For
+	example, the invalid sequence C0 80 must not decode into the
+	character U+0000. Implementations of the Decode algorithm are
+	required to throw a <b><a href="x15.11.html#x15.11.6.6" class="term-ref">URIError</a></b>
+	when encountering such invalid sequences.</p>
+	<h5 id="x15.1.3.1">15.1.3.1 decodeURI (encodedURI) <a href="#x15.1.3.1">#</a> <a href="#x15.1.3.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	<code><b>decodeURI</b></code> function
+	computes a new version of a URI in which each escape sequence and
+	UTF-8 encoding of the sort that might be introduced by the <code><b><a href="#x15.1.3.1">encodeURI</a></b></code>
+	function is replaced with the character that it represents. Escape
+	sequences that could not have been introduced by <code><b><a href="#x15.1.3.1">encodeURI</a></b></code>
+	are not replaced.</p>
+	<p>
+	When
+	the <code><b>decodeURI</b></code>
+	function is called with one argument <i>encodedURI</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>uriString</i> be <a href="x9.html#x9.8">ToString</a>(<i>encodedURI</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>reservedURISet</i> be a String containing one instance of each
+		character valid in <i>uriReserved</i> plus &#8220;<code><b>#</b></code>&#8221;.</p>
+		</li>
+		<li><p>
+		Return
+		the result of calling <a href="#Decode">Decode</a>(<i>uriString</i>, <i>reservedURISet</i>)</p>
+	</li></ol><p><b class="note">NOTE</b> The
+	character &#8220;<code><b>#</b></code>&#8221;
+	is not decoded from escape sequences even though it is not a
+	reserved URI character.</p>
+	<h5 id="x15.1.3.2">15.1.3.2 decodeURIComponent (encodedURIComponent) <a href="#x15.1.3.2">#</a> <a href="#x15.1.3.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	<code><b>decodeURIComponent</b></code>
+	function computes a new version of a URI in which each escape
+	sequence and UTF-8 encoding of the sort that might be introduced by
+	the <code><b><a href="#x15.1.3.4">encodeURIComponent</a></b></code>
+	function is replaced with the character that it represents.</p>
+	<p>
+	When
+	the <code><b>decodeURIComponent</b></code>
+	function is called with one argument <i>encodedURIComponent</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>componentString</i> be <a href="x9.html#x9.8">ToString</a>(<i>encodedURIComponent</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>reservedURIComponentSet</i> be the empty String.</p>
+		</li>
+		<li><p>
+		Return
+		the result of calling <a href="#Decode">Decode</a>(<i>componentString</i>,
+		<i>reservedURIComponentSet</i>)</p>
+	</li></ol><h5 id="x15.1.3.3">15.1.3.3 encodeURI (uri) <a href="#x15.1.3.3">#</a> <a href="#x15.1.3.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	<code><b>encodeURI</b></code> function
+	computes a new version of a URI in which each instance of certain
+	characters is replaced by one, two or three escape sequences
+	representing the UTF-8 encoding of the character.</p>
+	<p>
+	When
+	the <code><b>encodeURI</b></code>
+	function is called with one argument <i>uri</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>uriString</i> be <a href="x9.html#x9.8">ToString</a>(<i>uri</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>unescapedURISet</i> be a String containing one instance of each
+		character valid in <i>uriReserved</i> and <i>uriUnescaped</i> plus
+		&#8220;<code><b>#</b></code>&#8221;.</p>
+		</li>
+		<li><p>
+		Return
+		the result of calling <a href="#Encode">Encode</a>(<i>uriString</i>, <i>unescapedURISet</i>)</p>
+	</li></ol><p><b class="note">NOTE</b> The
+	character &#8220;<code><b>#</b></code>&#8221;
+	is not encoded to an escape sequence even though it is not a
+	reserved or unescaped URI character.</p>
+	<h5 id="x15.1.3.4">15.1.3.4 encodeURIComponent (uriComponent) <a href="#x15.1.3.4">#</a> <a href="#x15.1.3.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	<code><b>encodeURIComponent</b></code>
+	function computes a new version of a URI in which each instance of
+	certain characters is replaced by one, two or three escape sequences
+	representing the UTF-8 encoding of the character.</p>
+	<p>
+	When
+	the <code><b>encodeURIComponent</b></code>
+	function is called with one argument <i>uriComponent</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>componentString</i> be <a href="x9.html#x9.8">ToString</a>(<i>uriComponent</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>unescapedURIComponentSet</i> be a String containing one instance
+		of each character valid in <i>uriUnescaped</i>.</p>
+		</li>
+		<li><p>
+		Return
+		the result of calling <a href="#Encode">Encode</a>(<i>componentString</i>,
+		<i>unescapedURIComponentSet</i>)</p>
+	</li></ol><h4 id="x15.1.4">15.1.4 Constructor Properties of the Global Object <a href="#x15.1.4">#</a> <a href="#x15.1.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<h5 id="x15.1.4.1">15.1.4.1 Object ( . . . ) <a href="#x15.1.4.1">#</a> <a href="#x15.1.4.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	See
+	<a href="x15.2.html#x15.2.1">15.2.1</a> and <a href="x15.2.html#x15.2.2">15.2.2</a>.</p>
+	<h5 id="x15.1.4.2">15.1.4.2 Function ( . . . ) <a href="#x15.1.4.2">#</a> <a href="#x15.1.4.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	See
+	<a href="x15.3.html#x15.3.1">15.3.1</a> and <a href="x15.3.html#x15.3.2">15.3.2</a>.</p>
+	<h5 id="x15.1.4.3">15.1.4.3 Array ( . . . ) <a href="#x15.1.4.3">#</a> <a href="#x15.1.4.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	See
+	<a href="x15.4.html#x15.4.1">15.4.1</a> and <a href="x15.4.html#x15.4.2">15.4.2</a>.</p>
+	<h5 id="x15.1.4.4">15.1.4.4 String ( . . . ) <a href="#x15.1.4.4">#</a> <a href="#x15.1.4.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	See
+	<a href="x15.5.html#x15.5.1">15.5.1</a> and <a href="x15.5.html#x15.5.2">15.5.2</a>.</p>
+	<h5 id="x15.1.4.5">15.1.4.5 Boolean ( . . . ) <a href="#x15.1.4.5">#</a> <a href="#x15.1.4.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	See
+	<a href="x15.6.html#x15.6.1">15.6.1</a> and <a href="x15.6.html#x15.6.2">15.6.2</a>.</p>
+	<h5 id="x15.1.4.6">15.1.4.6 Number ( . . . ) <a href="#x15.1.4.6">#</a> <a href="#x15.1.4.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	See
+	<a href="x15.7.html#x15.7.1">15.7.1</a> and <a href="x15.7.html#x15.7.2">15.7.2</a>.</p>
+	<h5 id="x15.1.4.7">15.1.4.7 Date ( . . . ) <a href="#x15.1.4.7">#</a> <a href="#x15.1.4.7-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	See
+	<a href="x15.9.html#x15.9.2">15.9.2</a>.</p>
+	<h5 id="x15.1.4.8">15.1.4.8 RegExp ( . . . ) <a href="#x15.1.4.8">#</a> <a href="#x15.1.4.8-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	See
+	<a href="x15.10.html#x15.10.3">15.10.3</a> and <a href="x15.10.html#x15.10.4">15.10.4</a>.</p>
+	<h5 id="x15.1.4.9">15.1.4.9 Error ( . . . ) <a href="#x15.1.4.9">#</a> <a href="#x15.1.4.9-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	See
+	<a href="x15.11.html#x15.11.1">15.11.1</a> and <a href="x15.11.html#x15.11.2">15.11.2</a>.</p>
+	<h5 id="x15.1.4.10">15.1.4.10 EvalError ( . . . ) <a href="#x15.1.4.10">#</a> <a href="#x15.1.4.10-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	See
+	<a href="x15.11.html#x15.11.6.1">15.11.6.1</a>.</p>
+	<h5 id="x15.1.4.11">15.1.4.11 RangeError ( . . . ) <a href="#x15.1.4.11">#</a> <a href="#x15.1.4.11-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	See
+	<a href="x15.11.html#x15.11.6.2">15.11.6.2</a>.</p>
+	<h5 id="x15.1.4.12">15.1.4.12 ReferenceError ( . . . ) <a href="#x15.1.4.12">#</a> <a href="#x15.1.4.12-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	See
+	<a href="x15.11.html#x15.11.6.3">15.11.6.3</a>.</p>
+	<h5 id="x15.1.4.13">15.1.4.13 SyntaxError ( . . . ) <a href="#x15.1.4.13">#</a> <a href="#x15.1.4.13-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	See
+	<a href="x15.11.html#x15.11.6.4">15.11.6.4</a>.</p>
+	<h5 id="x15.1.4.14">15.1.4.14 TypeError ( . . . ) <a href="#x15.1.4.14">#</a> <a href="#x15.1.4.14-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	See
+	<a href="x15.11.html#x15.11.6.5">15.11.6.5</a>.</p>
+	<h5 id="x15.1.4.15">15.1.4.15 URIError ( . . . ) <a href="#x15.1.4.15">#</a> <a href="#x15.1.4.15-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	See
+	<a href="x15.11.html#x15.11.6.6">15.11.6.6</a>.</p>
+	<h4 id="x15.1.5">15.1.5 Other Properties of the Global Object <a href="#x15.1.5">#</a> <a href="#x15.1.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<h5 id="x15.1.5.1">15.1.5.1 Math <a href="#x15.1.5.1">#</a> <a href="#x15.1.5.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	See
+	<a href="x15.8.html#x15.8">15.8</a>.</p>
+	<h5 id="x15.1.5.2">15.1.5.2 JSON <a href="#x15.1.5.2">#</a> <a href="#x15.1.5.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	See
+	<a href="x15.12.html#x15.12">15.12</a>.</p>
+	</body><script src="anno.js"></script></html>

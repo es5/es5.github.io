@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html class="split chapter"><head><meta charset="utf-8"><title>15.12 The JSON Object # &#9417; &#9402; &#9312; &#9398; &#8212; Annotated ES5</title><link rel="stylesheet" href="style.css"><link rel="shortcut icon" href="favicon.ico"><link href="x15.11.html" title="15.11 Error Objects " rel="prev">
+  <link href="spec.html#contents" title="TOC" rel="index">
+  <link href="x16.html" title="16 Errors " rel="next">
+  </head><body><div class="head">
+<h2 id="top">Annotated ECMAScript 5.1 <span id="timestamp"></span></h2>
+<div id="mascot-treehouse">
+	<img id="mascot" align="left" src="js-mascot.svg" alt=""><img id="bubble" src="bubble.svg" alt=""></div>
+<p id="slogan">&#8223;Ex igne vita&#8221;</p>
+<div id="annotations"></div>
+<script src="timestamp.js"></script></div>
+<nav>
+   <a href="x15.11.html">&#8592; 15.11 Error Objects </a> &#8211;
+   <a href="spec.html#contents">TOC</a> &#8211;
+   <a href="x16.html">16 Errors  &#8594;</a>
+  <ol class="toc"><li><ol><li><a href="x15.12.html#x15.12" id="x15.12-toc">15.12 The JSON Object</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.12.html#x15.12.1" id="x15.12.1-toc">15.12.1 The JSON Grammar  </a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.12.html#x15.12.1.1" id="x15.12.1.1-toc">15.12.1.1 The JSON Lexical Grammar</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.12.html#x15.12.1.2" id="x15.12.1.2-toc">15.12.1.2 The JSON Syntactic Grammar</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.12.html#x15.12.2" id="x15.12.2-toc">15.12.2 parse ( text [ , reviver ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.12.html#x15.12.3" id="x15.12.3-toc">15.12.3 stringify ( value [ , replacer [ , space ] ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li></ol></li></ol></nav>
+
+  <h3 id="x15.12" class="splitme">15.12 The JSON Object <a href="#x15.12">#</a> <a href="#x15.12-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	The
+	<b>JSON</b> object is a single object that contains two functions,
+	<b>parse </b>and <b>stringify</b>, that are used to parse and
+	construct JSON texts. The JSON Data Interchange Format is described
+	in RFC 4627 &lt;<a href="http://www.ietf.org/rfc/rfc4627.txt">http://www.ietf.org/rfc/rfc4627.txt</a>&gt;. The JSON
+	interchange format used in this specification is exactly that
+	described by RFC 4627 with two exceptions:</p>
+	<ul><li><p>
+		The
+		top level <i>JSONText</i>
+		production of the ECMAScript JSON grammar may consist of any
+		<i>JSONValue</i> rather
+		than being restricted to being  a <i>JSONObject</i>
+		or a <i>JSONArray</i> as
+		specified by RFC 4627. 
+		</p>
+		</li>
+		<li><p>
+		Conforming
+		implementations of <b>JSON.parse</b> and <b>JSON.stringify</b> must
+		support the exact interchange format described in this
+		specification without any deletions or extensions to the format.
+		This differs from RFC 4627 which permits a JSON parser to accept
+		non-JSON forms and extensions.</p>
+	</li></ul><p>
+	The
+	value of the [[Prototype]] internal property of the JSON object is
+	the standard built-in Object prototype object (<a href="x15.2.html#x15.2.4">15.2.4</a>). The value of
+	the [[Class]] internal property of the JSON object is <code><b>"JSON"</b></code>.
+	The value of the [[Extensible]] internal property of the JSON object
+	is set to <b>true</b>.</p>
+	<p>
+	The
+	JSON object does not have a [[Construct]] internal property; it is
+	not possible to use the JSON object as a constructor with the <code><b>new</b></code>
+	operator.</p>
+	<p>
+	The
+	JSON object does not have a [[Call]] internal property; it is not
+	possible to invoke the JSON object as a function.</p>
+	<h4 id="x15.12.1">15.12.1 The JSON Grammar <a href="#x15.12.1">#</a> <a href="#x15.12.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	JSON.stringify
+	produces a String that conforms to the following JSON grammar.
+	JSON.parse accepts a String that conforms to the JSON grammar.</p>
+	<h5 id="x15.12.1.1">15.12.1.1 The JSON Lexical Grammar <a href="#x15.12.1.1">#</a> <a href="#x15.12.1.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	JSON
+	is similar to ECMAScript source text in that it consists of a
+	sequence of characters conforming to the rules of <i>SourceCharacter</i>.
+	The JSON Lexical Grammar defines the tokens that make up a JSON text
+	similar to the manner that the ECMAScript lexical grammar defines
+	the tokens of an ECMAScript source test.  The JSON Lexical grammar
+	only recognizes the white space character specified by the
+	production <i>JSONWhiteSpace</i>.
+	 The JSON lexical grammar shares some productions with the
+	ECMAScript lexical grammar.  All nonterminal symbols of the grammar
+	that do not begin with the characters &#8220;JSON&#8221; are defined by
+	productions of the ECMAScript lexical grammar.</p>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>JSONWhiteSpace </i><b>::</b></p>
+	<p class="def1">
+	&lt;TAB&gt;<br>&lt;CR&gt;<br>&lt;LF&gt;<br>&lt;SP&gt;</p>
+	<p class="keep">
+	<i>JSONString </i><b>::</b></p>
+	<p class="def1">
+	<code><b>"</b></code> <i>JSONStringCharacters</i><sub>opt</sub><code><b>"</b></code></p>
+	<p class="keep">
+	<i>JSONStringCharacters </i><b>::</b></p>
+	<p class="def1">
+	<i>JSONStringCharacter
+	JSONStringCharacters</i><sub>opt</sub></p>
+	<p>
+	<i>JSONStringCharacter </i><b>::</b></p>
+	<p class="def1">
+	<i>SourceCharacter </i><b>but
+	not</b><i> double-quote </i><code><b>"</b></code> <b>or</b><i>backslash </i><code><b>\
+	</b></code><b>or</b><i>U+0000 thru U+001F</i></p>
+	<p class="def1">
+	<code><b>\</b></code> <i>JSONEscapeSequence</i></p>
+	<p class="keep">
+	<i>JSONEscapeSequence </i><b>::</b></p>
+	<p class="def1">
+	<i>JSONEscapeCharacter</i></p>
+	<p class="def1">
+	<i>UnicodeEscapeSequence </i>
+	</p>
+	<p class="keep">
+	<i>JSONEscapeCharacter </i><b>::</b> <b>one
+	of</b></p>
+	<p class="def1">
+	<code><b>"
+	/ \ b f n r t</b></code></p>
+	<p class="keep">
+	<i>JSONNumber </i><b>::</b></p>
+	<p class="def1">
+	<code><b>-</b></code><sub>opt</sub><i>DecimalIntegerLiteral JSONFraction</i><sub>opt</sub><i>ExponentPart</i><sub>opt</sub></p>
+	<p class="keep">
+	<i>JSONFraction </i><b>::</b></p>
+	<p class="def1">
+	<code><b>.</b></code> <i>DecimalDigits</i></p>
+	<p class="keep">
+	<i>JSONNullLiteral </i><b>::</b></p>
+	<p class="def1">
+	<i>NullLiteral</i></p>
+	<p class="keep">
+	<i>JSONBooleanLiteral </i><b>::</b></p>
+	<p class="def1">
+	<i>BooleanLiteral</i></p>
+	<h5 id="x15.12.1.2">15.12.1.2 The JSON Syntactic Grammar <a href="#x15.12.1.2">#</a> <a href="#x15.12.1.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	JSON Syntactic Grammar defines a valid JSON text in terms of tokens
+	defined by the JSON lexical grammar.  The goal symbol of the grammar
+	is <i>JSONText</i>. 
+	</p>
+	<p class="tiny-btm">
+	<b>Syntax</b></p>
+	<p class="keep">
+	<i>JSONText </i><b>:</b><i>	 </i>
+	</p>
+	<p class="def1">
+	<i>JSONValue</i></p>
+	<p class="keep">
+	<i>JSONValue </i><b>:</b><i>	 </i>
+	</p>
+	<p class="def1">
+	<i>JSONNullLiteral<br>JSONBooleanLiteral<br>JSONObject<br>JSONArray<br>JSONString<br>JSONNumber</i></p>
+	<p class="keep">
+	<i>JSONObject </i><b>:</b></p>
+	<p class="def1">
+	<code><b>{
+	}</b></code> <i><br></i><code><b>{</b></code> <i>JSONMemberList </i><code><b>}</b></code></p>
+	<p class="keep">
+	<i>JSONMember </i><b>:</b></p>
+	<p class="def1">
+	<i>JSONString </i><code><b>:</b></code> <i>JSONValue</i></p>
+	<p class="keep">
+	<i>JSONMemberList </i><b>:</b></p>
+	<p class="def1">
+	<i>JSONMember
+	<br>JSONMemberList </i><code><b>,</b></code> <i><b>
+	</b>JSONMember </i>
+	</p>
+	<p class="keep">
+	<i>JSONArray </i><b>:</b></p>
+	<p class="def1">
+	<code><b>[
+	]</b></code> <i><br></i><code><b>[</b></code> <i>JSONElementList</i><code><b>
+	]</b></code></p>
+	<p class="keep">
+	<i>JSONElementList </i><b>:</b></p>
+	<p class="def1">
+	<i>JSONValue<br>JSONElementList</i><code><b>
+	,</b></code> <i> JSONValue</i></p>
+	<h4 id="x15.12.2">15.12.2 parse ( text [ , reviver ] ) <a href="#x15.12.2">#</a> <a href="#x15.12.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	<code><b>parse</b></code> function
+	parses a JSON text (a JSON-formatted String) and produces an
+	ECMAScript value. The JSON format is a restricted form of ECMAScript
+	literal. JSON objects are realized as ECMAScript objects. JSON
+	arrays are realized as ECMAScript arrays. JSON strings, numbers,
+	booleans, and null are realized as ECMAScript Strings, Numbers,
+	Booleans, and <b>null</b>. JSON uses a more limited set of white
+	space characters than <i><a href="x7.html#WhiteSpace">WhiteSpace</a></i>
+	and allows Unicode code points U+2028 and U+2029 to directly appear
+	in <i>JSONString</i>
+	literals without using an escape sequence. The process of parsing is
+	similar to <a href="x11.html#x11.1.4">11.1.4</a> and <a href="x11.html#x11.1.5">11.1.5</a> as constrained by the JSON grammar.</p>
+	<p>
+	The
+	optional <i>reviver</i> parameter is a function that takes two
+	parameters, (<i>key</i> and <i>value</i>). It can filter and
+	transform the results. It is called with each of the <i>key</i>/<i>value</i>
+	pairs produced by the parse, and its return value is used instead of
+	the original value. If it returns what it received, the structure is
+	not modified. If it returns <b>undefined</b> then the property is
+	deleted from the result.</p>
+	<ol><li><p>
+		Let
+		<i>JText</i> be <a href="x9.html#x9.8">ToString</a>(<i>text</i>).</p>
+		</li>
+		<li><p>
+		Parse
+		<i>JText</i> using the grammars in <a href="#x15.12.1">15.12.1</a>. Throw a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+		exception if <i>JText</i> did not conform to the JSON grammar for
+		the goal symbol <i>JSONText</i>. 
+		</p>
+		</li>
+		<li><p>
+		Let
+		<i>unfiltered</i> be the result of parsing and evaluating <i>JText</i>
+		as if it was the source text of an ECMAScript <i><a href="x14.html#x14">Program</a></i> but
+		using<i> JSONString </i>in place<i> </i>of<i> <a href="x7.html#x7.8.4">StringLiteral</a></i>.
+		Note that since <i>JText</i> conforms to the JSON grammar this
+		result will be either a <a href="x4.html#primitive_value" class="term-ref">primitive value</a> or an object that is
+		defined by either an <i>ArrayLiteral</i> or an <i>ObjectLiteral</i>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x9.html#x9.11">IsCallable</a>(<i>reviver</i>) is <b>true</b>, then</p>
+		<ol><li><p>
+			Let
+			<i>root</i> be a new object created as if by the expression <code><b>new
+			Object()</b></code>, where <code><b>Object</b></code>
+			is the standard built-in constructor with that name.</p>
+			</li>
+			<li><p>
+			Call
+			the [[DefineOwnProperty]] internal method of <i>root</i> with the
+			empty String, the PropertyDescriptor {[[Value]]: <i>unfiltered</i>,
+			[[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b>,
+			[[Configurable]]: <b>true</b>}, and <b>false</b> as arguments.</p>
+			</li>
+			<li><p>
+			Return
+			the result of calling the abstract operation <a href="#Walk">Walk</a>, passing <i>root</i>
+			and the empty String. The abstract operation <a href="#Walk">Walk</a> is described
+			below.</p>
+		</li></ol></li>
+		<li><p>
+		Else</p>
+		<ol><li><p>
+			Return
+			<i>unfiltered</i>.</p>
+		</li></ol></li></ol><p>
+	The
+	abstract operation <dfn id="Walk">Walk</dfn> is a recursive abstract operation that takes
+	two parameters: a <i>holder</i>
+	object and the String <i>name</i>
+	of a property in that object. Walk uses the value of <i>reviver</i>
+	that was originally passed to the above parse function.</p>
+	<ol><li><p>
+		Let
+		<i>val</i> be the result of calling the [[Get]] internal method of
+		<i>holder</i> with argument <i>name</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>val</i> is an object, then</p>
+		<ol><li><p>
+			If
+			the [[Class]] internal property of <i>val</i> is <code><b>"Array"</b></code></p>
+			<ol><li><p>
+				Set
+				<i>I</i> to 0.</p>
+				</li>
+				<li><p>
+				Let
+				<i>len</i> be the result of calling the [[Get]] internal method
+				of <i>val</i> with argument <code><b>"length"</b></code>.</p>
+				</li>
+				<li><p>
+				Repeat
+				while <i>I </i>&lt; <i>len</i>, 
+				</p>
+				<ol><li><p>
+					Let
+					<i>newElement</i> be the result of calling the abstract
+					operation <a href="#Walk">Walk</a>, passing <i>val</i> and <a href="x9.html#x9.8">ToString</a>(<i>I</i>).</p>
+					</li>
+					<li><p>
+					If
+					<i>newElement</i> is <b>undefined</b>, then</p>
+					<ol><li><p>
+						Call
+						the [[Delete]] internal method of <i>val</i> with <a href="x9.html#x9.8">ToString</a>(<i>I</i>)
+						and <b>false</b> as arguments. 
+						</p>
+					</li></ol></li>
+					<li><p>
+					Else</p>
+					<ol><li><p>
+						Call
+						the [[DefineOwnProperty]] internal method of <i>val</i> with
+						arguments <a href="x9.html#x9.8">ToString</a>(<i>I</i>), the <a href="x8.html#x8.10">Property Descriptor</a>
+						{[[Value]]: <i>newElement</i>, [[Writable]]: true,
+						[[Enumerable]]: true, [[Configurable]]: true}, and <b>false</b>.</p>
+					</li></ol></li>
+					<li><p>
+					Add
+					1 to <i>I</i>.</p>
+				</li></ol></li></ol></li>
+			<li><p>
+			Else</p>
+			<ol><li><p>
+				Let
+				<i>keys</i> be an internal <a href="x8.html#x8.8">List</a> of String values consisting of
+				the names of all the own properties of <i>val</i> whose
+				[[Enumerable]] attribute is <b>true</b>. The ordering of the
+				Strings should be the same as that used by the
+				<b><a href="x15.2.html#x15.2.3.14">Object.keys</a></b>
+				standard built-in function.</p>
+				</li>
+				<li><p>
+				For
+				each String <i>P</i> in <i>keys</i> do, 
+				</p>
+				<ol><li><p>
+					Let
+					<i>newElement</i> be the result of calling the abstract
+					operation <a href="#Walk">Walk</a>, passing <i>val</i> and <i>P</i>. 
+					</p>
+					</li>
+					<li><p>
+					If
+					<i>newElement</i> is <b>undefined</b>, then</p>
+					<ol><li><p>
+						Call
+						the [[Delete]] internal method of <i>val</i> with <i>P</i> and
+						<b>false</b> as arguments. 
+						</p>
+					</li></ol></li>
+					<li><p>
+					Else</p>
+					<ol><li><p>
+						Call
+						the [[DefineOwnProperty]] internal method of <i>val</i> with
+						arguments <i>P</i>, the <a href="x8.html#x8.10">Property Descriptor</a> {[[Value]]:
+						<i>newElement</i>, [[Writable]]: <b>true</b>, [[Enumerable]]:
+						<b>true</b>, [[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
+					</li></ol></li></ol></li></ol></li></ol></li>
+		<li><p>
+		Return
+		the result of calling the [[Call]] internal method of <i>reviver</i>
+		passing <i>holder</i> as the <b>this</b> value and with an argument
+		list consisting of <i>name </i>and <i>val</i>.</p>
+	</li></ol><p>
+	It is
+	not permitted for a conforming implementation of <code><b>JSON.parse</b></code>
+	to extend the JSON grammars. If an implementation wishes to support
+	a modified or extended JSON interchange format it must do so by
+	defining a different parse function. 
+	</p>
+	<p><b class="note">NOTE</b> In
+	the case where there are duplicate name Strings within an object,
+	lexically preceding values for the same key shall be overwritten.</p>
+	<h4 id="x15.12.3">15.12.3 stringify ( value [ , replacer [ , space ] ] ) <a href="#x15.12.3">#</a> <a href="#x15.12.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	<code><b>stringify</b></code> function
+	returns a String in JSON format representing an ECMAScript value. It
+	can take three parameters. The first parameter is required. The
+	<i>value</i> parameter is
+	an ECMAScript value, which is usually an object or array, although
+	it can also be a String, Boolean, Number or <b>null</b>. The
+	optional <i>replacer</i>
+	parameter is either a function that alters the way objects and
+	arrays are stringified, or an array of Strings and Numbers that acts
+	as a white list for selecting the object properties that will be
+	stringified. The optional <i>space</i>
+	parameter is a String or Number that allows the result to have white
+	space injected into it to improve human readability.</p>
+	<p>
+	These
+	are the steps in stringifying an object:</p>
+	<ol><li><p>
+		Let
+		<i>stack</i> be an empty <a href="x8.html#x8.8">List</a>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>indent</i> be the empty String.</p>
+		</li>
+		<li><p>
+		Let
+		<i>PropertyList</i> and <i>ReplacerFunction</i> be <b>undefined</b>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>replacer</i>) is Object, then</p>
+		<ol><li><p>
+			If
+			<a href="x9.html#x9.11">IsCallable</a>(<i>replacer</i>) is <b>true</b>, then</p>
+			<ol><li><p>
+				Let
+				<i>ReplacerFunction </i>be<i> replacer</i>.</p>
+			</li></ol></li>
+			<li><p>
+			Else
+			if the [[Class]] internal property of <i>replacer</i> is <code><b>"Array"</b></code>,
+			then</p>
+			<ol><li><p>
+				Let
+				<i>PropertyList </i> be an empty internal <a href="x8.html#x8.8">List</a></p>
+				</li>
+				<li><p>
+				For
+				each value <i>v</i> of a property of <i>replacer</i> that has an
+				array index property name. The properties are enumerated in the
+				ascending array index order of their names.</p>
+				<ol><li><p>
+					Let
+					<i>item</i> be <b>undefined</b>.</p>
+					</li>
+					<li><p>
+					If
+					<a href="x8.html#Type">Type</a>(<i>v</i>) is String then let <i>item</i> be <i>v.</i></p>
+					</li>
+					<li><p>
+					Else
+					if <a href="x8.html#Type">Type</a>(<i>v</i>) is Number then let <i>item</i> be <a href="x9.html#x9.8">ToString</a>(<i>v</i>).</p>
+					</li>
+					<li><p>
+					Else
+					if <a href="x8.html#Type">Type</a>(<i>v</i>) is Object then,</p>
+					<ol><li><p>
+						If
+						the [[Class]] internal property of <i>v</i> is <code><b>"String"</b></code>
+						or <code><b>"Number"
+						</b></code>then let <i>item</i> be <a href="x9.html#x9.8">ToString</a>(<i>v</i>).</p>
+					</li></ol></li>
+					<li><p>
+					If
+					<i>item</i> is not undefined and <i>item</i> is not currently an
+					element of <i>PropertyList</i> then,</p>
+					<ol><li><p>
+						Append
+						<i>item</i> to the end of <i>PropertyList</i>.</p>
+					</li></ol></li></ol></li></ol></li></ol></li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>space</i>) is Object then,</p>
+		<ol><li><p>
+			If
+			the [[Class]] internal property of <i>space</i> is <code><b>"Number"</b></code>
+			then,</p>
+			<ol><li><p>
+				Let
+				<i>space</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>space</i>).</p>
+			</li></ol></li>
+			<li><p>
+			Else
+			if the [[Class]] internal property of <i>space</i> is <code><b>"String"</b></code>
+			then,</p>
+			<ol><li><p>
+				Let
+				<i>space</i> be <a href="x9.html#x9.8">ToString</a>(<i>space</i>).</p>
+			</li></ol></li></ol></li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>space</i>) is Number</p>
+		<ol><li><p>
+			Let
+			<i>space</i> be min(10, <a href="x9.html#x9.4">ToInteger</a>(<i>space</i>)).</p>
+			</li>
+			<li><p>
+			Set
+			<i>gap</i> to a String containing <i>space</i> space characters.
+			This will be the empty String if <i>space</i> is less than 1.</p>
+		</li></ol></li>
+		<li><p>
+		Else
+		if <a href="x8.html#Type">Type</a>(<i>space)</i> is String</p>
+		<ol><li><p>
+			If
+			the number of characters in <i>space</i> is 10 or less, set <i>gap</i>
+			to <i>space</i> otherwise set <i>gap</i> to a String consisting of
+			the first 10 characters of <i>space</i>.</p>
+		</li></ol></li>
+		<li><p>
+		Else</p>
+		<ol><li><p>
+			Set
+			<i>gap</i> to the empty String.</p>
+		</li></ol></li>
+		<li><p>
+		Let
+		<i>wrapper</i> be a new object created as if by the expression <code><b>new
+		Object()</b></code>, where <code><b>Object</b></code>
+		is the standard built-in constructor with that name.</p>
+		</li>
+		<li><p>
+		Call
+		the [[DefineOwnProperty]]  internal method of <i>wrapper</i> with
+		arguments the empty String, the <a href="x8.html#x8.10">Property Descriptor</a> {[[Value]]:
+		<i>value</i>, [[Writable]]: <b>true</b>, [[Enumerable]]: <b>true</b>,
+		[[Configurable]]: <b>true</b>}, and <b>false</b>.</p>
+		</li>
+		<li><p>
+		Return
+		the result of calling the abstract operation <a href="#Str"><i>Str</i></a> with the
+		empty String and <i>wrapper</i>.</p>
+	</li></ol><p>
+	The
+	abstract operation <dfn id="Str"><i>Str</i>(<i>key</i>,
+	<i>holder</i>)</dfn>
+	has access to <i>ReplacerFunction </i>from the invocation of the <code><b>stringify</b></code>
+	method. Its algorithm is as follows:</p>
+	<ol><li><p>
+		Let
+		<i>value</i> be the result of calling the [[Get]] internal method
+		of <i>holder</i> with argument <i>key</i>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>value</i>) is Object, then</p>
+		<ol><li><p>
+			Let
+			<i>toJSON</i> be the result of calling the [[Get]] internal method
+			of <i>value</i> with argument <code><b>"toJSON"</b></code>.</p>
+			</li>
+			<li><p>
+			If
+			<a href="x9.html#x9.11">IsCallable</a>(<i>toJSON</i>) is <b>true</b></p>
+			<ol><li><p>
+				Let
+				<i>value</i> be the result of calling the [[Call]] internal
+				method of <i>toJSON </i>passing <i>value</i> as the <b>this</b>
+				value and with an argument list consisting of <i>key</i>.</p>
+			</li></ol></li></ol></li>
+		<li><p>
+		If
+		<i>ReplacerFunction</i> is not <b>undefined</b>, then</p>
+		<ol><li><p>
+			Let
+			<i>value</i> be the result of calling the [[Call]] internal method
+			of <i>ReplacerFunction </i>passing <i>holder</i> as the <b>this</b>
+			value and with an argument list consisting of <i>key</i> and
+			<i>value</i>.</p>
+		</li></ol></li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>value</i>) is Object then,</p>
+		<ol><li><p>
+			If
+			the [[Class]] internal property of <i>value</i> is <code><b>"Number"</b></code>
+			then,</p>
+			<ol><li><p>
+				Let
+				<i>value</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>value</i>).</p>
+			</li></ol></li>
+			<li><p>
+			Else
+			if the [[Class]] internal property of <i>value</i> is <code><b>"String"</b></code>
+			then,</p>
+			<ol><li><p>
+				Let
+				<i>value</i> be <a href="x9.html#x9.8">ToString</a>(<i>value</i>).</p>
+			</li></ol></li>
+			<li><p>
+			Else
+			if the [[Class]] internal property of <i>value</i> is <code><b>"Boolean"</b></code>
+			then,</p>
+			<ol><li><p>
+				Let
+				<i>value</i> be the value of the [[PrimitiveValue]] internal
+				property of <i>value</i>.</p>
+			</li></ol></li></ol></li>
+		<li><p>
+		If
+		<i>value</i> is <b>null</b> then return <code><b>"null"</b></code>.</p>
+		</li>
+		<li><p>
+		If
+		<i>value</i> is <b>true</b> then return <code><b>"true"</b></code>.</p>
+		</li>
+		<li><p>
+		If
+		<i>value</i> is <b>false</b> then return <code><b>"false"</b></code>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>value</i>) is String, then return the result of calling the
+		abstract operation <i><a href="#Quote">Quote</a></i> with argument <i>value</i>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>value</i>) is Number</p>
+		<ol><li><p>
+			If
+			<i>value </i>is finite then return <a href="x9.html#x9.8">ToString</a>(<i>value</i>).</p>
+			</li>
+			<li><p>
+			Else,
+			return <code><b>"null"</b></code>.</p>
+		</li></ol></li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>value</i>) is Object, and <a href="x9.html#x9.11">IsCallable</a>(<i>value</i>) is <b>false</b></p>
+		<ol><li><p>
+			If
+			the [[Class]] internal property of <i>value</i> is <code><b>"Array"
+			</b></code>then</p>
+			<ol><li><p>
+				Return
+				the result of calling the abstract operation <i><a href="#JA">JA</a></i> with
+				argument <i>value</i>.</p>
+			</li></ol></li>
+			<li><p>
+			Else,
+			return the result of calling the abstract operation <i><a href="#JO">JO</a></i> with
+			argument <i>value</i>.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		<b>undefined</b>.</p>
+	</li></ol><p>
+	The
+	abstract operation <dfn id="Quote"><i>Quote</i>(<i>value</i>)</dfn>
+	wraps a String value in double quotes and escapes characters within
+	it. 
+	</p>
+	<ol><li><p>
+		Let
+		<i>product</i> be the double quote character.</p>
+		</li>
+		<li><p>
+		For
+		each character <i>C</i> in <i>value</i></p>
+		<ol><li><p>
+			If
+			<i>C</i> is the double quote character or the backslash character</p>
+			<ol><li><p>
+				Let
+				<i>product</i> be the concatenation of <i>product</i> and the
+				backslash character.</p>
+				</li>
+				<li><p>
+				Let
+				<i>product</i> be the concatenation of <i>product</i> and <i>C</i>.</p>
+			</li></ol></li>
+			<li><p>
+			Else
+			if <i>C</i> is backspace, formfeed, newline, carriage return, or
+			tab</p>
+			<ol><li><p>
+				Let
+				<i>product</i> be the concatenation of <i>product</i> and the
+				backslash character.</p>
+				</li>
+				<li><p>
+				Let
+				<i>abbrev</i> be the character corresponding to the value of <i>C</i>
+				as follows:</p>
+	<p class="pre">backspace		<code><b>"b"</b></code></p>
+	<p class="pre">formfeed			<code><b>"f"</b></code></p>
+	<p class="pre">newline			<code><b>"n"</b></code></p>
+	<p class="pre">carriage return	<code><b>"r"</b></code></p>
+	<p class="pre">tab				<code><b>"t"</b></code></p>
+				</li>
+				<li><p>
+				Let
+				<i>product</i> be the concatenation of <i>product</i> and <i>abbrev</i>.</p>
+			</li></ol></li>
+			<li><p>
+			Else
+			if <i>C</i> is a control character having a code unit value less
+			than the space character</p>
+			<ol><li><p>
+				Let
+				<i>product</i> be the concatenation of <i>product</i> and the
+				backslash character.</p>
+				</li>
+				<li><p>
+				Let
+				<i>product</i> be the concatenation of <i>product</i> and <code><b>"u"</b></code>.</p>
+				</li>
+				<li><p>
+				Let
+				<i>hex</i> be the result of converting the numeric code unit
+				value of <i>C</i> to a String of four hexadecimal digits.</p>
+				</li>
+				<li><p>
+				Let
+				<i>product</i> be the concatenation of <i>product</i> and <i>hex</i>.</p>
+			</li></ol></li>
+			<li><p>
+			Else</p>
+			<ol><li><p>
+				Let
+				<i>product</i> be the concatenation of <i>product</i> and <i>C</i>.</p>
+			</li></ol></li></ol></li>
+		<li><p>
+		Let
+		<i>product</i> be the concatenation of <i>product</i> and the
+		double quote character.</p>
+		</li>
+		<li><p>
+		Return
+		<i>product</i>.</p>
+	</li></ol><p>
+	The
+	abstract operation <dfn id="JO"><i>JO</i>(<i>value</i>)</dfn>
+	serializes an object. It has access to the <i>stack</i>,
+	<i>indent</i>, <i>gap</i>,
+	<i>PropertyList</i>,
+	<i>ReplacerFunction</i>,
+	and <i>space</i> of the
+	invocation of the stringify method.</p>
+	<ol><li><p>
+		If
+		<i>stack</i> contains <i>value</i> then throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		exception because the structure is cyclical.</p>
+		</li>
+		<li><p>
+		Append
+		<i>value</i> to <i>stack</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>stepback</i> be <i>indent</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>indent</i> be the concatenation of <i>indent</i> and <i>gap</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>PropertyList </i>is not <b>undefined</b>, then</p>
+		<ol><li><p>
+			Let
+			<i>K</i> be <i>PropertyList</i>.</p>
+		</li></ol></li>
+		<li><p>
+		Else</p>
+		<ol><li><p>
+			Let
+			<i>K</i> be an internal <a href="x8.html#x8.8">List</a> of Strings consisting of the names of
+			all the own properties of <i>value</i> whose [[Enumerable]]
+			attribute is <b>true</b>. The ordering of the Strings should be
+			the same as that used by the <b><a href="x15.2.html#x15.2.3.14">Object.keys</a></b> standard built-in
+			function.</p>
+		</li></ol></li>
+		<li><p>
+		Let
+		<i>partial</i> be an empty <a href="x8.html#x8.8">List</a>.</p>
+		</li>
+		<li><p>
+		For
+		each element <i>P</i> of <i>K</i>.</p>
+		<ol><li><p>
+			Let
+			<i>strP</i> be the result of calling the abstract operation <i>Str</i>
+			with arguments <i>P</i> and <i>value</i>.</p>
+			</li>
+			<li><p>
+			If
+			<i>strP</i> is not <b>undefined</b></p>
+			<ol><li><p>
+				Let
+				<i>member</i> be the result of calling the abstract operation
+				<i><a href="#Quote">Quote</a></i> with argument <i>P</i>.</p>
+				</li>
+				<li><p>
+				Let
+				<i>member</i> be the concatenation of <i>member</i> and the colon
+				character.</p>
+				</li>
+				<li><p>
+				If
+				<i>gap</i> is not the empty String</p>
+				<ol><li><p>
+					Let
+					<i>member</i> be the concatenation of <i>member</i> and the
+					<i>space</i> character.</p>
+				</li></ol></li>
+				<li><p>
+				Let
+				<i>member</i> be the concatenation of <i>member</i> and <i>strP</i>.</p>
+				</li>
+				<li><p>
+				Append
+				<i>member</i> to <i>partial</i>.</p>
+			</li></ol></li></ol></li>
+		<li><p>
+		If
+		<i>partial</i> is empty, then</p>
+		<ol><li><p>
+			Let
+			<i>final</i> be <code><b>"{}"</b></code>.</p>
+		</li></ol></li>
+		<li><p>
+		Else</p>
+		<ol><li><p>
+			If
+			<i>gap</i> is the empty String</p>
+			<ol><li><p>
+				Let
+				<i>properties</i> be a String formed by concatenating all the
+				element Strings of <i>partial</i> with each adjacent pair of
+				Strings separated with the comma character. A comma is not
+				inserted either before the first String or after the last String.
+				
+				</p>
+				</li>
+				<li><p>
+				Let
+				<i>final</i> be the result of concatenating <code><b>"{"</b></code><b>,</b>
+				<i>properties</i>, and <code><b>"}"</b></code>.</p>
+			</li></ol></li>
+			<li><p>
+			Else
+			<i>gap</i> is not the empty String</p>
+			<ol><li><p>
+				Let
+				<i>separator</i> be the result of concatenating the comma
+				character, the line feed character, and <i>indent</i>.</p>
+				</li>
+				<li><p>
+				Let
+				<i>properties</i> be a String formed by concatenating all the
+				element Strings of <i>partial</i> with each adjacent pair of
+				Strings separated with <i>separator</i>. The <i>separator</i>
+				String is not inserted either before the first String or after
+				the last String.</p>
+				</li>
+				<li><p>
+				Let
+				<i>final</i> be the result of concatenating <code><b>"{"</b></code>,
+				the line feed character, <i>indent</i>, <i>properties</i>, the
+				line feed character, <i>stepback</i>, and <code><b>"}</b></code>".</p>
+			</li></ol></li></ol></li>
+		<li><p>
+		Remove
+		the last element of <i>stack</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>indent</i> be <i>stepback</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>final</i>.</p>
+	</li></ol><p>
+	The
+	abstract operation <dfn id="JA"><i>JA</i>(<i>value</i>)</dfn>
+	serializes an array. It has access to the <i>stack</i>,
+	<i>indent</i>, <i>gap</i>,
+	and <i>space</i> of the
+	invocation of the stringify method. The representation of arrays
+	includes only the elements between zero and <code><b>array.length</b></code>
+	&#8211; 1 inclusive. Named
+	properties are excluded from the stringification. An array is
+	stringified as an open left bracket, elements separated by comma,
+	and a closing right bracket.</p>
+	<ol><li><p>
+		If
+		<i>stack</i> contains <i>value</i> then throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		exception because the structure is cyclical.</p>
+		</li>
+		<li><p>
+		Append
+		<i>value</i> to <i>stack</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>stepback</i> be <i>indent</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>indent</i> be the concatenation of <i>indent</i> and <i>gap</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>partial</i> be an empty <a href="x8.html#x8.8">List</a>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>len</i> be the result of calling the [[Get]] internal method of
+		value with argument <code><b>"length"</b></code>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>index</i> be 0.</p>
+		</li>
+		<li><p>
+		Repeat
+		while <i>index</i> &lt; <i>len</i></p>
+		<ol><li><p>
+			Let
+			<i>strP</i> be the result of calling the abstract operation <i>Str</i>
+			with arguments <a href="x9.html#x9.8">ToString</a>(<i>index</i>) and <i>value</i>. 
+			</p>
+			</li>
+			<li><p>
+			If
+			<i>strP</i> is <b>undefined</b></p>
+			<ol><li><p>
+				Append
+				<code><b>"null"</b></code>
+				to <i>partial</i>.</p>
+			</li></ol></li>
+			<li><p>
+			Else</p>
+			<ol><li><p>
+				Append
+				 <i>strP</i> to <i>partial</i>.</p>
+			</li></ol></li>
+			<li><p>
+			Increment
+			<i>index</i> by 1.</p>
+		</li></ol></li>
+		<li><p>
+		If
+		<i>partial</i> is empty ,then</p>
+		<ol><li><p>
+			Let
+			<i>final</i> be <code><b>"[]"</b></code>.</p>
+		</li></ol></li>
+		<li><p>
+		Else</p>
+		<ol><li><p>
+			If
+			<i>gap</i> is the empty String</p>
+			<ol><li><p>
+				Let
+				<i>properties</i> be a String formed by concatenating all the
+				element Strings of <i>partial</i> with each adjacent pair of
+				Strings separated with the comma character. A comma is not
+				inserted either before the first String or after the last String.
+				
+				</p>
+				</li>
+				<li><p>
+				Let
+				<i>final</i> be the result of concatenating <code><b>"["</b></code><b>,</b>
+				<i>properties</i>, and <code><b>"]"</b></code>.</p>
+			</li></ol></li>
+			<li><p>
+			Else</p>
+			<ol><li><p>
+				Let
+				<i>separator</i> be the result of concatenating the comma
+				character, the line feed character, and <i>indent</i>.</p>
+				</li>
+				<li><p>
+				Let
+				<i>properties</i> be a String formed by concatenating all the
+				element Strings of <i>partial</i> with each adjacent pair of
+				Strings separated with <i>separator</i>. The <i>separator</i>
+				String is not inserted either before the first String or after
+				the last String.</p>
+				</li>
+				<li><p>
+				Let
+				<i>final</i> be the result of concatenating "<code><b>[</b></code>",
+				the line feed character, <i>indent</i>, <i>properties</i>, the
+				line feed character, <i>stepback</i>, and "<code><b>]</b></code>".</p>
+			</li></ol></li></ol></li>
+		<li><p>
+		Remove
+		the last element of <i>stack</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>indent</i> be <i>stepback</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>final</i>.</p>
+	</li></ol><p><b class="note">NOTE 1</b> JSON structures are allowed to be nested to any depth, but they
+	must be acyclic. If <i>value</i>
+	is or contains a cyclic structure, then the stringify function must
+	throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception. This is an example of a value
+	that cannot be stringified:</p>
+	<p class="code-example"><code><b>a = [];</b></code></p>
+	<p class="code-example"><code><b>a[0] = a;</b></code></p>
+	<p class="code-example"><code><b>my_text = JSON.stringify(a); // This must throw an TypeError.</b></code></p>
+	<br><p><b class="note">NOTE 2</b> Symbolic <a href="x4.html#primitive_value" class="term-ref">primitive value</a>s are rendered as follows:</p>
+	<ul><li><p>The
+		<b>null</b> value is rendered in JSON text as the String <code>null</code>.</p>
+		</li>
+		<li><p>The
+		<b>undefined</b> value is not rendered.</p>
+		</li>
+		<li><p>The
+		<b>true</b> value is rendered in JSON text as the String <code>true</code>.</p>
+		</li>
+		<li><p class="sp">The
+		<b>false</b> value is rendered in JSON text as the String <code>false</code>.</p>
+	</li></ul><p class="sp"><b class="note">NOTE 3</b> String values are wrapped in double quotes. The characters <code><b>"</b></code>
+	and <code><b>\</b></code> are escaped
+	with <code><b>\</b></code> prefixes.
+	Control characters are replaced with escape sequences <code><b>\u</b></code>HHHH,
+	or with the shorter forms, <code><b>\b</b></code>
+	(backspace), <code><b>\f</b></code>
+	(formfeed), <code><b>\n</b></code>
+	(newline), <code><b>\r</b></code>
+	(carriage return), <code><b>\t</b></code>
+	(tab).</p>
+	<p class="sp"><b class="note">NOTE 4</b> Finite numbers are stringified as if by calling <a href="x9.html#x9.8">ToString</a><b>(</b><i>number</i><b>)</b>.
+	<b>NaN</b> and Infinity regardless of sign are represented as the
+	String <code><b>null</b></code>.</p>
+	<p class="sp"><b class="note">NOTE 5</b> Values that do not have a JSON representation (such as <b>undefined</b>
+	and functions) do not produce a String. Instead they produce the
+	undefined value. In arrays these values are represented as the
+	String <code><b>null</b></code>.
+	In objects an unrepresentable value causes the property to be
+	excluded from stringification.</p>
+	<p class="sp"><b class="note">NOTE 6</b> An object is rendered as an opening left brace followed by zero or
+	more properties, separated with commas, closed with a right brace. A
+	property is a quoted String representing the key or property name, a
+	colon, and then the stringified property value. An array is rendered
+	as an opening left bracket followed by zero or more values,
+	separated with commas, closed with a right bracket.</p>
+	</body><script src="anno.js"></script></html>

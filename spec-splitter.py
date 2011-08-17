@@ -48,9 +48,9 @@ if w3c:
 else:
     index_page = 'spec'
 
-# The document is split on all <h2> elements, plus the following specific elements
+# The document is split on all <h2> elements and on any class=splitme
+# elements, plus the following specific elements
 split_exceptions = [ ]
-
 
 print "Parsing..."
 
@@ -166,7 +166,8 @@ page_body = page.find('body')
 # Keep copying stuff from the front of the source document into this
 # page, until we find the first heading that isn't class="no-toc"
 for e in child_iter:
-    if e.getnext().tag == 'h2' and 'no-toc' not in (e.getnext().get('class') or '').split(' '):
+    if (e.getnext().tag == 'h2' or e.getnext().get('class') == 'splitme')\
+        and 'no-toc' not in (e.getnext().get('class') or '').split(' '):
         page_body.append(e)
         break
     page_body.append(e)
@@ -183,12 +184,12 @@ pages.append( (index_page, page, 'Front cover') )
 # Section/subsection pages:
 
 def should_split(e):
-    if e.tag == 'h2': return True
+    if e.tag == 'h2' or e.get('class') == 'splitme': return True
     if e.get('id') in split_exceptions: return True
     if e.tag == 'div':
         c = e.getchildren()
         if len(c):
-            if c[0].tag == 'h2': return True
+            if c[0].tag == 'h2' or c[0].get('class') == 'splitme': return True
             if c[0].get('id') in split_exceptions: return True
     return False
 

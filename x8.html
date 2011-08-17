@@ -542,7 +542,7 @@ and
 	the manner described here. The names of internal properties are
 	enclosed in double square brackets [[ ]]. When an algorithm uses an
 	internal property of an object and the object does not implement the
-	indicated internal property, a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception is thrown.</p>
+	indicated internal property, a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception is thrown.</p>
 	<p>
 	The
 	Table 8 summarises the internal properties used by this
@@ -778,7 +778,7 @@ and
 	Every
 	object (including host objects) must implement all of the internal
 	properties listed in Table 8. However, the [[DefaultValue]] internal
-	method may, for some objects, simply throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+	method may, for some objects, simply throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
 	exception.</p>
 	<p>
 	All
@@ -832,18 +832,18 @@ and
 	The value of a [[Class]] internal property is used internally to
 	distinguish different kinds of objects. Note that this specification
 	does not provide any means for a program to access that value except
-	through <code><b><a href="x15.html#x15.2.4.2">Object.prototype.toString</a></b></code>
-	(see <a href="x15.html#x15.2.4.2">15.2.4.2</a>).</p>
+	through <code><b><a href="x15.2.html#x15.2.4.2">Object.prototype.toString</a></b></code>
+	(see <a href="x15.2.html#x15.2.4.2">15.2.4.2</a>).</p>
 	<p>
 	Unless
 	otherwise specified, the common internal methods of native
 	ECMAScript objects behave as described in <a href="#x8.12">8.12</a>. Array objects have a
 	slightly different implementation of the [[DefineOwnProperty]]
-	internal method (see <a href="x15.html#x15.4.5.1">15.4.5.1</a>) and String objects have a slightly
+	internal method (see <a href="x15.4.html#x15.4.5.1">15.4.5.1</a>) and String objects have a slightly
 	different implementation of the [[GetOwnProperty]] internal method
-	(see <a href="x15.html#x15.5.5.2">15.5.5.2</a>). Arguments objects (<a href="x10.html#x10.6">10.6</a>) have different
+	(see <a href="x15.5.html#x15.5.5.2">15.5.5.2</a>). Arguments objects (<a href="x10.html#x10.6">10.6</a>) have different
 	implementations of [[Get]], [[GetOwnProperty]],
-	[[DefineOwnProperty]], and [[Delete]]. Function objects (<a href="x15.html#x15.3">15.3</a>) have
+	[[DefineOwnProperty]], and [[Delete]]. Function objects (<a href="x15.3.html#x15.3">15.3</a>) have
 	a different implementation of [[Get]].</p>
 	<p>
 	Host
@@ -853,7 +853,7 @@ and
 	property values but [[HasProperty]] always generates <b>false</b>.
 	However, if any specified manipulation of a host object's internal
 	properties is not supported by an implementation, that manipulation
-	must throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception when attempted.</p>
+	must throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception when attempted.</p>
 	<p class="sm-btm">
 	The
 	[[GetOwnProperty]] internal method of a host object must conform to
@@ -1049,8 +1049,8 @@ and
 					<p class="keep">
 					The
 					target function of a function object created using the standard
-					built-in <a href="x15.html#x15.3.4.5">Function.prototype.bind</a> method. Only ECMAScript objects
-					created using <a href="x15.html#x15.3.4.5">Function.prototype.bind</a> have a [[TargetFunction]]
+					built-in <a href="x15.3.html#x15.3.4.5">Function.prototype.bind</a> method. Only ECMAScript objects
+					created using <a href="x15.3.html#x15.3.4.5">Function.prototype.bind</a> have a [[TargetFunction]]
 					internal property.</p>
 				</td>
 			</tr><tr valign="TOP"><td width="153">
@@ -1065,8 +1065,8 @@ and
 					<p class="keep">
 					The
 					pre-bound this value of a function Object created using the
-					standard built-in <a href="x15.html#x15.3.4.5">Function.prototype.bind</a> method. Only
-					ECMAScript objects created using <a href="x15.html#x15.3.4.5">Function.prototype.bind</a> have a
+					standard built-in <a href="x15.3.html#x15.3.4.5">Function.prototype.bind</a> method. Only
+					ECMAScript objects created using <a href="x15.3.html#x15.3.4.5">Function.prototype.bind</a> have a
 					[[BoundThis]] internal property.</p>
 				</td>
 			</tr><tr valign="TOP"><td width="153">
@@ -1082,8 +1082,8 @@ and
 					<p>
 					The
 					pre-bound argument values of a function Object created using the
-					standard built-in <a href="x15.html#x15.3.4.5">Function.prototype.bind</a> method. Only
-					ECMAScript objects created using <a href="x15.html#x15.3.4.5">Function.prototype.bind</a> have a
+					standard built-in <a href="x15.3.html#x15.3.4.5">Function.prototype.bind</a> method. Only
+					ECMAScript objects created using <a href="x15.3.html#x15.3.4.5">Function.prototype.bind</a> have a
 					[[BoundArguments]] internal property.</p>
 				</td>
 			</tr><tr valign="TOP"><td width="153">
@@ -1094,13 +1094,13 @@ and
 					<p class="keep">
 					<a href="#SpecOp">SpecOp</a>(<i>String</i>,
 					<i>index</i>) <i><b>&#8594;</b></i>
-					<i><a href="x15.html#MatchResult">MatchResult</a></i></p>
+					<i><a href="x15.10.html#MatchResult">MatchResult</a></i></p>
 				</td>
 				<td width="418">
 					<p class="keep">
 					Tests
-					for a regular expression match and returns a <a href="x15.html#MatchResult">MatchResult</a> value
-					(see <a href="x15.html#x15.10.2.1">15.10.2.1</a>). Of the standard built-in ECMAScript objects,
+					for a regular expression match and returns a <a href="x15.10.html#MatchResult">MatchResult</a> value
+					(see <a href="x15.10.html#x15.10.2.1">15.10.2.1</a>). Of the standard built-in ECMAScript objects,
 					only RegExp objects implement [[Match]].</p>
 				</td>
 			</tr><tr valign="TOP"><td width="153">
@@ -1186,7 +1186,7 @@ and
 		</li>
 		<li><p>
 		If
-		<a href="#IsUnresolvableReference">IsUnresolvableReference</a>(<i>V</i>), throw a <b><a href="x15.html#x15.11.6.3" class="term-ref">ReferenceError</a></b>
+		<a href="#IsUnresolvableReference">IsUnresolvableReference</a>(<i>V</i>), throw a <b><a href="x15.11.html#x15.11.6.3" class="term-ref">ReferenceError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -1259,7 +1259,7 @@ and
 	<ol><li><p>
 		If
 		<a href="#Type">Type</a>(<i>V</i>) is not <a href="#x8.7">Reference</a>,
- throw a <b><a href="x15.html#x15.11.6.3" class="term-ref">ReferenceError</a></b>
+ throw a <b><a href="x15.11.html#x15.11.6.3" class="term-ref">ReferenceError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -1274,11 +1274,11 @@ and
 			<a href="#IsStrictReference">IsStrictReference</a>(<i>V</i>) is <b>true</b>, then</p>
 			<ol><li><p>
 				Throw
-				<b><a href="x15.html#x15.11.6.3" class="term-ref">ReferenceError</a></b> exception.</p>
+				<b><a href="x15.11.html#x15.11.6.3" class="term-ref">ReferenceError</a></b> exception.</p>
 			</li></ol></li>
 			<li><p>
 			Call
-			the [[Put]] internal method of the <a href="x15.html#x15.1" class="term-ref">global object</a>, passing
+			the [[Put]] internal method of the <a href="x15.1.html#x15.1" class="term-ref">global object</a>, passing
 			<a href="#GetReferencedName">GetReferencedName</a>(<i>V</i>) for the property name, <i>W</i> for
 			the value, and <b>false</b> for the <i>Throw</i> flag.</p>
 		</li></ol></li>
@@ -1328,7 +1328,7 @@ and
 		with argument <i>P</i> is <b>false</b>, then</p>
 		<ol><li><p>
 			If
-			<i>Throw</i> is <b>true</b>, then throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+			<i>Throw</i> is <b>true</b>, then throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
 			exception.</p>
 			</li>
 			<li><p>
@@ -1345,7 +1345,7 @@ and
 		<a href="#x8.10.2">IsDataDescriptor</a>(<i>ownDesc</i>) is <b>true</b>, then</p>
 		<ol><li><p>
 			If
-			<i>Throw</i> is <b>true</b>, then throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+			<i>Throw</i> is <b>true</b>, then throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
 			exception.</p>
 			</li>
 			<li><p>
@@ -1377,7 +1377,7 @@ and
 		<i>O</i></p>
 		<ol><li><p>
 			If
-			<i>Throw</i> is <b>true</b>, then throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+			<i>Throw</i> is <b>true</b>, then throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
 			exception.</p>
 		</li></ol></li>
 		<li><p>
@@ -1739,7 +1739,7 @@ and
 			<li><p>
 			If
 			<a href="x9.html#x9.11">IsCallable</a>(<i>setter</i>) is <b>false </b>and <i>setter</i> is not
-			<b>undefined</b>, then throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
+			<b>undefined</b>, then throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 			</li>
 			<li><p>
 			Set
@@ -1751,7 +1751,7 @@ and
 		<ol><li><p>
 			If
 			either <i>desc</i>.[[Value]] or <i>desc</i>.[[Writable]] are
-			present, then throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
+			present, then throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 		</li></ol></li>
 		<li><p>
 		Return
@@ -1830,7 +1830,7 @@ and
 	However,
 	if <i>O </i>is a String
 	object it has a more elaborate [[GetOwnProperty]] internal method
-	defined in <a href="x15.html#x15.5.5.2">15.5.5.2</a>.</p>
+	defined in <a href="x15.5.html#x15.5.5.2">15.5.5.2</a>.</p>
 	<h4 id="x8.12.2">8.12.2 [[GetProperty]] (P) <a href="#x8.12.2">#</a> <a href="#x8.12.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
 	<p>
 	When
@@ -2088,7 +2088,7 @@ and
 		</li></ol></li>
 		<li><p>
 		Else
-		if <i>Throw</i>, then throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
+		if <i>Throw</i>, then throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 		</li>
 		<li><p>
 		Return
@@ -2137,7 +2137,7 @@ and
 		</li></ol></li>
 		<li><p>
 		Throw
-		a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
+		a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 	</li></ol><p>
 	When
 	the [[DefaultValue]] internal method of <i>O</i>
@@ -2186,7 +2186,7 @@ and
 	the [[DefaultValue]] internal method of <i>O</i>
 	is called with no hint, then it behaves as if the hint were Number,
 	unless <i>O</i> is a Date
-	object (see <a href="x15.html#x15.9.6">15.9.6</a>), in which case it behaves as if the hint were
+	object (see <a href="x15.9.html#x15.9.6">15.9.6</a>), in which case it behaves as if the hint were
 	String.</p>
 	<p>
 	The
@@ -2198,7 +2198,7 @@ and
 	<p>
 	In
 	the following algorithm, the term <dfn id="reject-DefineOwnProperty">&#8220;Reject&#8221;</dfn> means &#8220;If <i>Throw</i>
-	is <b>true</b>, then throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception, otherwise
+	is <b>true</b>, then throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception, otherwise
 	return <b>false</b>&#8221;. The algorithm contains steps that test
 	various fields of the <a href="#x8.10">Property Descriptor</a> <i>Desc</i>
 	for specific values. The fields that are tested in this manner need
@@ -2374,7 +2374,7 @@ and
 	However,
 	if <i>O</i> is an Array
 	object, it has a more elaborate [[DefineOwnProperty]] internal
-	method defined in <a href="x15.html#x15.4.5.1">15.4.5.1</a>.</p>
+	method defined in <a href="x15.4.html#x15.4.5.1">15.4.5.1</a>.</p>
 	<p><b class="note">NOTE</b> Step
 	10.b allows any field of Desc to be different from the corresponding
 	field of current if current&#8217;s [[Configurable]] field is <b>true</b>.

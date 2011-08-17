@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html class="split chapter"><head><meta charset="utf-8"><title>15.9 Date Objects # &#9417; &#9402; &#9312; &#9398; &#8212; Annotated ES5</title><link rel="stylesheet" href="style.css"><link rel="shortcut icon" href="favicon.ico"><link href="x15.8.html" title="15.8 The Math Object " rel="prev">
+  <link href="spec.html#contents" title="TOC" rel="index">
+  <link href="x15.10.html" title="15.10 RegExp (Regular Expression) Objects " rel="next">
+  </head><body><div class="head">
+<h2 id="top">Annotated ECMAScript 5.1 <span id="timestamp"></span></h2>
+<div id="mascot-treehouse">
+	<img id="mascot" align="left" src="js-mascot.svg" alt=""><img id="bubble" src="bubble.svg" alt=""></div>
+<p id="slogan">&#8223;Ex igne vita&#8221;</p>
+<div id="annotations"></div>
+<script src="timestamp.js"></script></div>
+<nav>
+   <a href="x15.8.html">&#8592; 15.8 The Math Object </a> &#8211;
+   <a href="spec.html#contents">TOC</a> &#8211;
+   <a href="x15.10.html">15.10 RegExp (Regular Expression) Objects  &#8594;</a>
+  <ol class="toc"><li><ol><li><a href="x15.9.html#x15.9" id="x15.9-toc">15.9 Date Objects</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.9.html#x15.9.1" id="x15.9.1-toc">15.9.1 Overview of Date Objects and Definitions of Abstract Operators</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.9.html#x15.9.1.1" id="x15.9.1.1-toc">15.9.1.1 Time Values and Time Range</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.1.2" id="x15.9.1.2-toc">15.9.1.2 Day Number and Time within Day</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.1.3" id="x15.9.1.3-toc">15.9.1.3 Year Number</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.1.4" id="x15.9.1.4-toc">15.9.1.4 Month Number</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.1.5" id="x15.9.1.5-toc">15.9.1.5 Date Number</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.1.6" id="x15.9.1.6-toc">15.9.1.6 Week Day</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.1.7" id="x15.9.1.7-toc">15.9.1.7 Local Time Zone Adjustment</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.1.8" id="x15.9.1.8-toc">15.9.1.8 Daylight Saving Time Adjustment</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.1.9" id="x15.9.1.9-toc">15.9.1.9 Local Time</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.1.10" id="x15.9.1.10-toc">15.9.1.10 Hours, Minutes, Second, and Milliseconds</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.1.11" id="x15.9.1.11-toc">15.9.1.11 MakeTime (hour, min, sec, ms)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.1.12" id="x15.9.1.12-toc">15.9.1.12 MakeDay (year, month, date)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.1.13" id="x15.9.1.13-toc">15.9.1.13 MakeDate (day, time)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.1.14" id="x15.9.1.14-toc">15.9.1.14 TimeClip (time)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.1.15" id="x15.9.1.15-toc">15.9.1.15 Date Time String Format</a>
+                <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.9.html#x15.9.1.15.1" id="x15.9.1.15.1-toc">15.9.1.15.1 Extended years</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li></ol></li><li><a href="x15.9.html#x15.9.2" id="x15.9.2-toc">15.9.2 The Date Constructor Called as a Function</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.9.html#x15.9.2.1" id="x15.9.2.1-toc">15.9.2.1 Date ( [ year [, month [, date [, hours [, minutes [, seconds [, ms ] ] ] ] ] ] ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.9.html#x15.9.3" id="x15.9.3-toc">15.9.3 The Date Constructor</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.9.html#x15.9.3.1" id="x15.9.3.1-toc">15.9.3.1 new Date (year, month [, date [, hours [, minutes [, seconds [, ms ] ] ] ] ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.3.2" id="x15.9.3.2-toc">15.9.3.2 new Date (value)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.3.3" id="x15.9.3.3-toc">15.9.3.3 new Date ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.9.html#x15.9.4" id="x15.9.4-toc">15.9.4 Properties of the Date Constructor</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.9.html#x15.9.4.1" id="x15.9.4.1-toc">15.9.4.1 Date.prototype</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.4.2" id="x15.9.4.2-toc">15.9.4.2 Date.parse (string)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.4.3" id="x15.9.4.3-toc">15.9.4.3 Date.UTC (year, month [, date [, hours [, minutes [, seconds [, ms ] ] ] ] ])</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.4.4" id="x15.9.4.4-toc">15.9.4.4 Date.now ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.9.html#x15.9.5" id="x15.9.5-toc">15.9.5 Properties of the Date Prototype Object</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.9.html#x15.9.5.1" id="x15.9.5.1-toc">15.9.5.1 Date.prototype.constructor</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.2" id="x15.9.5.2-toc">15.9.5.2 Date.prototype.toString ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.3" id="x15.9.5.3-toc">15.9.5.3 Date.prototype.toDateString ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.4" id="x15.9.5.4-toc">15.9.5.4 Date.prototype.toTimeString ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.5" id="x15.9.5.5-toc">15.9.5.5 Date.prototype.toLocaleString ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.6" id="x15.9.5.6-toc">15.9.5.6 Date.prototype.toLocaleDateString ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.7" id="x15.9.5.7-toc">15.9.5.7 Date.prototype.toLocaleTimeString ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.8" id="x15.9.5.8-toc">15.9.5.8 Date.prototype.valueOf ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.9" id="x15.9.5.9-toc">15.9.5.9 Date.prototype.getTime ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.10" id="x15.9.5.10-toc">15.9.5.10 Date.prototype.getFullYear ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.11" id="x15.9.5.11-toc">15.9.5.11 Date.prototype.getUTCFullYear ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.12" id="x15.9.5.12-toc">15.9.5.12 Date.prototype.getMonth ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.13" id="x15.9.5.13-toc">15.9.5.13 Date.prototype.getUTCMonth ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.14" id="x15.9.5.14-toc">15.9.5.14 Date.prototype.getDate ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.15" id="x15.9.5.15-toc">15.9.5.15 Date.prototype.getUTCDate ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.16" id="x15.9.5.16-toc">15.9.5.16 Date.prototype.getDay ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.17" id="x15.9.5.17-toc">15.9.5.17 Date.prototype.getUTCDay ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.18" id="x15.9.5.18-toc">15.9.5.18 Date.prototype.getHours ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.19" id="x15.9.5.19-toc">15.9.5.19 Date.prototype.getUTCHours ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.20" id="x15.9.5.20-toc">15.9.5.20 Date.prototype.getMinutes ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.21" id="x15.9.5.21-toc">15.9.5.21 Date.prototype.getUTCMinutes ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.22" id="x15.9.5.22-toc">15.9.5.22 Date.prototype.getSeconds ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.23" id="x15.9.5.23-toc">15.9.5.23 Date.prototype.getUTCSeconds ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.24" id="x15.9.5.24-toc">15.9.5.24 Date.prototype.getMilliseconds ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.25" id="x15.9.5.25-toc">15.9.5.25 Date.prototype.getUTCMilliseconds ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.26" id="x15.9.5.26-toc">15.9.5.26 Date.prototype.getTimezoneOffset ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.27" id="x15.9.5.27-toc">15.9.5.27 Date.prototype.setTime (time)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.28" id="x15.9.5.28-toc">15.9.5.28 Date.prototype.setMilliseconds (ms)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.29" id="x15.9.5.29-toc">15.9.5.29 Date.prototype.setUTCMilliseconds (ms)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.30" id="x15.9.5.30-toc">15.9.5.30 Date.prototype.setSeconds (sec [, ms ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.31" id="x15.9.5.31-toc">15.9.5.31 Date.prototype.setUTCSeconds (sec [, ms ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.32" id="x15.9.5.32-toc">15.9.5.32 Date.prototype.setMinutes (min [, sec [, ms ] ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.33" id="x15.9.5.33-toc">15.9.5.33 Date.prototype.setUTCMinutes (min [, sec [, ms ] ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.34" id="x15.9.5.34-toc">15.9.5.34 Date.prototype.setHours (hour [, min [, sec [, ms ] ] ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.35" id="x15.9.5.35-toc">15.9.5.35 Date.prototype.setUTCHours (hour [, min [, sec [, ms ] ] ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.36" id="x15.9.5.36-toc">15.9.5.36 Date.prototype.setDate (date)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.37" id="x15.9.5.37-toc">15.9.5.37 Date.prototype.setUTCDate (date)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.38" id="x15.9.5.38-toc">15.9.5.38 Date.prototype.setMonth (month [, date ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.39" id="x15.9.5.39-toc">15.9.5.39 Date.prototype.setUTCMonth (month [, date ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.40" id="x15.9.5.40-toc">15.9.5.40 Date.prototype.setFullYear (year [, month [, date ] ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.41" id="x15.9.5.41-toc">15.9.5.41 Date.prototype.setUTCFullYear (year [, month [, date ] ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.42" id="x15.9.5.42-toc">15.9.5.42 Date.prototype.toUTCString ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.43" id="x15.9.5.43-toc">15.9.5.43 Date.prototype.toISOString ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.9.html#x15.9.5.44" id="x15.9.5.44-toc">15.9.5.44 Date.prototype.toJSON ( key )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.9.html#x15.9.6" id="x15.9.6-toc">15.9.6 Properties of Date Instances</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li></ol></li></ol></nav>
+
+  <h3 id="x15.9" class="splitme">15.9 Date Objects <a href="#x15.9">#</a> <a href="#x15.9-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<h4 id="x15.9.1">15.9.1 Overview of Date Objects and Definitions of Abstract Operators <a href="#x15.9.1">#</a> <a href="#x15.9.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	following functions are abstract operations that operate on time
+	values (defined in <a href="#x15.9.1.1">15.9.1.1</a>). Note that, in every case, if any
+	argument to one of these functions is <b>NaN</b>, the result will be
+	<b>NaN</b>.</p>
+	<h5 id="x15.9.1.1">15.9.1.1 Time Values and Time Range <a href="#x15.9.1.1">#</a> <a href="#x15.9.1.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	A
+	Date object contains a Number indicating a particular instant in
+	time to within a millisecond. Such a Number is called a <i>time
+	value</i>. A time value may also be <b>NaN</b>, indicating that the
+	Date object does not represent a specific instant of time.</p>
+	<p>
+	Time
+	is measured in ECMAScript in milliseconds since 01 January, 1970
+	UTC. In time values leap seconds are ignored. It is assumed that
+	there are exactly 86,400,000 milliseconds per day. ECMAScript Number
+	values can represent all integers from &#8211;9,007,199,254,740,991 to
+	9,007,199,254,740,991; this range suffices to measure times to
+	millisecond precision for any instant that is within approximately
+	285,616 years, either forward or backward, from 01 January, 1970
+	UTC.</p>
+	<p>
+	The
+	actual range of times supported by ECMAScript Date objects is
+	slightly smaller: exactly &#8211;100,000,000 days to 100,000,000 days
+	measured relative to midnight at the beginning of 01 January, 1970
+	UTC. This gives a range of 8,640,000,000,000,000 milliseconds to
+	either side of 01 January, 1970 UTC.</p>
+	<p>
+	The
+	exact moment of midnight at the beginning of 01 January, 1970 UTC is
+	represented by the value <b>+0</b>.</p>
+	<h5 id="x15.9.1.2">15.9.1.2 Day Number and Time within Day <a href="#x15.9.1.2">#</a> <a href="#x15.9.1.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p class="sm-btm">
+	A
+	given time value <i>t</i> belongs to day number</p>
+	<p class="code-example">
+	<a href="#x15.9.1.2">Day</a>(<i>t</i>)
+	= <a href="x5.html#floor">floor</a>(<i>t</i> / msPerDay)</p>
+	<p class="sm-btm">
+	where
+	the number of milliseconds per day is</p>
+	<p class="code-example">
+	msPerDay
+	= 86400000</p>
+	<p class="sm-btm">
+	The
+	remainder is called the time within the day:</p>
+	<p class="code-example">
+	TimeWithinDay(<i>t</i>)
+	= <i>t </i><a href="x5.html#modulo">modulo</a> msPerDay</p>
+	<h5 id="x15.9.1.3">15.9.1.3 Year Number <a href="#x15.9.1.3">#</a> <a href="#x15.9.1.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p class="sm-btm">
+	ECMAScript
+	uses an extrapolated Gregorian system to map a day number to a year
+	number and to determine the month and date within that year. In this
+	system, leap years are precisely those which are (divisible by 4)
+	and ((not divisible by 100)
+	or (divisible by 400)).
+	The number of days in year number <i>y</i>
+	is therefore defined by</p>
+	<p class="code-example">
+	DaysInYear(<i>y</i>)
+		= 365  if (<i>y</i> <a href="x5.html#modulo">modulo</a> 4) <span class="symbol">&#8800;</span>
+	0<br>= 366  if (<i>y</i> <a href="x5.html#modulo">modulo</a> 4) = 0 and (y <a href="x5.html#modulo">modulo</a> 100) <span class="symbol">&#8800;</span>
+	0<br>= 365  if (<i>y</i> <a href="x5.html#modulo">modulo</a> 100) = 0 and (y <a href="x5.html#modulo">modulo</a> 400) <span class="symbol">&#8800;</span>
+	0<br>= 366  if (<i>y</i> <a href="x5.html#modulo">modulo</a> 400) = 0</p>
+	<p class="sm-btm">
+	All
+	non-leap years have 365
+	days with the usual number of days per month and leap years have an
+	extra day in February. The <dfn id="DayFromYear">day number of the first day of year <i>y</i></dfn>
+	is given by:</p>
+	<p class="code-example">
+	DayFromYear(<i>y</i>)	=
+	365 <span class="symbol">&#215;</span> (<i>y</i><span class="symbol">&#8722;</span>1970)
+	+ <a href="x5.html#floor">floor</a>((<i>y</i><span class="symbol">&#8722;</span>1969)/4) <span class="symbol">&#8722;</span>
+	<a href="x5.html#floor">floor</a>((<i>y</i><span class="symbol">&#8722;</span>1901)/100) +
+	<a href="x5.html#floor">floor</a>((<i>y</i><span class="symbol">&#8722;</span>1601)/400)</p>
+	<p class="sm-btm">
+	The
+	<dfn id="TimeFromYear">time value of the start of a year</dfn> is:</p>
+	<p class="code-example">
+	TimeFromYear(<i>y</i>)	=
+	msPerDay <span class="symbol">&#215;</span> <a href="#DayFromYear">DayFromYear</a>(<i>y</i>)</p>
+	<p class="sm-btm">
+	<dfn id="YearFromTime">A
+	time value determines a year by</dfn>:</p>
+	<p class="code-example">
+	YearFromTime(<i>t</i>)	=
+	 the largest integer <i>y</i> (closest to positive infinity) such
+	that <a href="#TimeFromYear">TimeFromYear</a>(<i>y</i>) <span class="symbol">&#8804;</span> <i>t</i></p>
+	<p class="sm-btm">
+	The
+	<dfn id="InLeapYear">leap-year</dfn> function is 1 for a time within a leap year and otherwise
+	is zero:</p>
+	<p class="code-example">
+	<a href="#InLeapYear">InLeapYear</a>(<i>t</i>)	=
+	0  if DaysInYear(<a href="#YearFromTime">YearFromTime</a>(<i>t</i>)) = 365<br>= 1  if
+	DaysInYear(<a href="#YearFromTime">YearFromTime</a><i>(t</i>)) = 366</p>
+	<h5 id="x15.9.1.4">15.9.1.4 Month Number <a href="#x15.9.1.4">#</a> <a href="#x15.9.1.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p class="sm-btm">
+	Months
+	are identified by an integer in the range 0
+	to 11, inclusive. The
+	mapping MonthFromTime(<i>t</i>) from a time value <i>t</i> to a
+	month number is defined by:</p>
+	<p class="date-definition">
+		MonthFromTime(<i>t</i>)	=
+	0	if	0	<span class="symbol">&#8804;</span> DayWithinYear(<i>t</i>)
+	&lt; 31<br>			= 1	if	31	<span class="symbol">&#8804;</span>
+	DayWithinYear (<i>t</i>) &lt; 59+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>)<br>			=
+	2	if	59+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>) 	<span class="symbol">&#8804;</span>
+	DayWithinYear (<i>t</i>) &lt; 90+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>)<br>			=
+	3	if	90+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>) 	<span class="symbol">&#8804;</span>
+	DayWithinYear (<i>t</i>) &lt; 120+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>)<br>			=
+	4	if	120+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>) 	<span class="symbol">&#8804;</span>
+	DayWithinYear (<i>t</i>) &lt; 151+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>)<br>			=
+	5	if	151+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>) 	<span class="symbol">&#8804;</span>
+	DayWithinYear (<i>t</i>) &lt; 181+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>)<br>			=
+	6	if	181+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>) 	<span class="symbol">&#8804;</span>
+	DayWithinYear (<i>t</i>) &lt; 212+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>)<br>			=
+	7	if	212+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>) 	<span class="symbol">&#8804;</span>
+	DayWithinYear (<i>t</i>) &lt; 243+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>)<br>			=
+	8	if	243+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>) 	<span class="symbol">&#8804;</span>
+	DayWithinYear (<i>t</i>) &lt; 273+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>)<br>			=
+	9	if	273+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>) 	<span class="symbol">&#8804;</span>
+	DayWithinYear (<i>t</i>) &lt; 304+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>)<br>			=
+	10	if	304+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>) 	<span class="symbol">&#8804;</span>
+	DayWithinYear (<i>t</i>) &lt; 334+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>)<br>			=
+	11	if	334+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>) 	<span class="symbol">&#8804;</span>
+	DayWithinYear (<i>t</i>) &lt; 365+<a href="#InLeapYear">InLeapYear</a>(<i>t</i>)</p>
+	<p>where</p>
+	<p class="date-definition">
+	<dfn id="DayWithinYear">DayWithinYear(<i>t</i>)</dfn>	=
+	<a href="#x15.9.1.2">Day</a>(<i>t</i>)<span class="symbol">&#8722;</span><a href="#DayFromYear">DayFromYear</a>(<a href="#YearFromTime">YearFromTime</a>(<i>t)</i>)</p>
+	<p>
+	A
+	month value of 0
+	specifies January; 1
+	specifies February; 2
+	specifies March; 3
+	specifies April; 4&#160;specifies
+	May; 5 specifies June; 6
+	specifies July; 7
+	specifies August; 8
+	specifies September; 9
+	specifies October; 10
+	specifies November; and 11
+	specifies December. Note that <a href="#x15.9.1.4">MonthFromTime</a>(0)
+	= 0, corresponding to Thursday, 01 January, 1970.</p>
+	<h5 id="x15.9.1.5">15.9.1.5 Date Number <a href="#x15.9.1.5">#</a> <a href="#x15.9.1.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	A
+	date number is identified by an integer in the range 1
+	through 31, inclusive.
+	The mapping DateFromTime(<i>t</i>) from a time value <i>t</i> to a
+	month number is defined by:</p>
+	<p class="date-definition">
+	DateFromTime(<i>t</i>)	=
+	<a href="#DayWithinYear">DayWithinYear</a>(<i>t</i>)+1	if <a href="#x15.9.1.4">MonthFromTime</a>(<i>t</i>)=0<br>	=
+	<a href="#DayWithinYear">DayWithinYear</a>(<i>t</i>)<span class="symbol">&#8722;</span>30	if
+	<a href="#x15.9.1.4">MonthFromTime</a>(<i>t</i>)=1<br>	= <a href="#DayWithinYear">DayWithinYear</a>(<i>t</i>)<span class="symbol">&#8722;</span>58<span class="symbol">&#8722;</span><a href="#InLeapYear">InLeapYear</a>(<i>t</i>)	if
+	<a href="#x15.9.1.4">MonthFromTime</a>(<i>t</i>)=2<br>	= <a href="#DayWithinYear">DayWithinYear</a>(<i>t</i>)<span class="symbol">&#8722;</span>89<span class="symbol">&#8722;</span><a href="#InLeapYear">InLeapYear</a>(<i>t</i>)	if
+	<a href="#x15.9.1.4">MonthFromTime</a>(<i>t</i>)=3<br>	=
+	<a href="#DayWithinYear">DayWithinYear</a>(<i>t</i>)<span class="symbol">&#8722;</span>119<span class="symbol">&#8722;</span><a href="#InLeapYear">InLeapYear</a>(<i>t</i>)	if
+	<a href="#x15.9.1.4">MonthFromTime</a>(<i>t</i>)=4<br>	=
+	<a href="#DayWithinYear">DayWithinYear</a>(<i>t</i>)<span class="symbol">&#8722;</span>150<span class="symbol">&#8722;</span><a href="#InLeapYear">InLeapYear</a>(<i>t</i>)	if
+	<a href="#x15.9.1.4">MonthFromTime</a>(<i>t</i>)=5<br>	=
+	<a href="#DayWithinYear">DayWithinYear</a>(<i>t</i>)<span class="symbol">&#8722;</span>180<span class="symbol">&#8722;</span><a href="#InLeapYear">InLeapYear</a>(<i>t</i>)	if
+	<a href="#x15.9.1.4">MonthFromTime</a>(<i>t</i>)=6<br>	=
+	<a href="#DayWithinYear">DayWithinYear</a>(<i>t</i>)<span class="symbol">&#8722;</span>211<span class="symbol">&#8722;</span><a href="#InLeapYear">InLeapYear</a>(<i>t</i>)	if
+	<a href="#x15.9.1.4">MonthFromTime</a>(<i>t</i>)=7<br>	=
+	<a href="#DayWithinYear">DayWithinYear</a>(<i>t</i>)<span class="symbol">&#8722;</span>242<span class="symbol">&#8722;</span><a href="#InLeapYear">InLeapYear</a>(<i>t</i>)	if
+	<a href="#x15.9.1.4">MonthFromTime</a>(<i>t</i>)=8<br>	=
+	<a href="#DayWithinYear">DayWithinYear</a>(<i>t</i>)<span class="symbol">&#8722;</span>272<span class="symbol">&#8722;</span><a href="#InLeapYear">InLeapYear</a>(<i>t</i>)	if
+	<a href="#x15.9.1.4">MonthFromTime</a>(<i>t</i>)=9<br>	=
+	<a href="#DayWithinYear">DayWithinYear</a>(<i>t</i>)<span class="symbol">&#8722;</span>303<span class="symbol">&#8722;</span><a href="#InLeapYear">InLeapYear</a>(<i>t</i>)	if
+	<a href="#x15.9.1.4">MonthFromTime</a>(<i>t</i>)=10<br>	=
+	<a href="#DayWithinYear">DayWithinYear</a>(<i>t</i>)<span class="symbol">&#8722;</span>333<span class="symbol">&#8722;</span><a href="#InLeapYear">InLeapYear</a>(<i>t</i>)	if
+	<a href="#x15.9.1.4">MonthFromTime</a>(<i>t</i>)=11</p>
+	<h5 id="x15.9.1.6">15.9.1.6 Week Day <a href="#x15.9.1.6">#</a> <a href="#x15.9.1.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p class="sm-btm">
+	The
+	weekday for a particular time value <i>t</i>
+	is defined as</p>
+	<p class="code-example">
+	WeekDay(<i>t</i>)	
+	= (<a href="#x15.9.1.2">Day</a>(<i>t</i>) + 4) <a href="x5.html#modulo">modulo</a> 7</p>
+	<p>
+	A
+	weekday value of 0
+	specifies Sunday; 1
+	specifies Monday; 2
+	specifies Tuesday; 3
+	specifies Wednesday; 4&#160;specifies
+	Thursday; 5 specifies
+	Friday; and 6 specifies
+	Saturday. Note that <a href="#x15.9.1.6">WeekDay</a>(0) =
+	4, corresponding to Thursday, 01 January, 1970.</p>
+	<h5 id="x15.9.1.7">15.9.1.7 Local Time Zone Adjustment <a href="#x15.9.1.7">#</a> <a href="#x15.9.1.7-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	An
+	implementation of ECMAScript is expected to determine the local time
+	zone adjustment. The local time zone adjustment is a value LocalTZA
+	measured in milliseconds which when added to UTC represents the
+	local <i>standard</i> time. Daylight saving time is <i>not</i>
+	reflected by LocalTZA. The value LocalTZA does not vary with time
+	but depends only on the geographic location.</p>
+	<h5 id="x15.9.1.8">15.9.1.8 Daylight Saving Time Adjustment <a href="#x15.9.1.8">#</a> <a href="#x15.9.1.8-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	An
+	implementation of ECMAScript is expected to determine the daylight
+	saving time algorithm. The algorithm to determine the daylight
+	saving time adjustment DaylightSavingTA(<i>t</i>), measured in
+	milliseconds, must depend only on four things:</p>
+	<p class="sm-btm">
+	(1)
+	the time since the beginning of the year</p>
+	<p class="code-example">
+	<i>t</i>
+	&#8211; <a href="#TimeFromYear">TimeFromYear</a>(<a href="#YearFromTime">YearFromTime</a>(<i>t</i>))</p>
+	<p class="sm-btm">
+	(2)
+	whether <i>t</i> is in a
+	leap year</p>
+	<p class="code-example">
+	<a href="#InLeapYear">InLeapYear</a>(<i>t</i>)</p>
+	<p class="sm-btm">
+	(3)
+	the week day of the beginning of the year</p>
+	<p class="code-example">
+	<a href="#x15.9.1.6">WeekDay</a>(<a href="#TimeFromYear">TimeFromYear</a>(<a href="#YearFromTime">YearFromTime</a>(<i>t</i>))</p>
+	<p>
+	and
+	(4) the geographic location.</p>
+	<p>
+	The
+	implementation of ECMAScript should not try to determine whether the
+	exact time was subject to daylight saving time, but just whether
+	daylight saving time would have been in effect if the current
+	daylight saving time algorithm had been used at the time. This
+	avoids complications such as taking into account the years that the
+	locale observed daylight saving time year round.</p>
+	<p>
+	If
+	the host environment provides functionality for determining daylight
+	saving time, the implementation of ECMAScript is free to map the
+	year in question to an equivalent year (same leap-year-ness and same
+	starting week day for the year) for which the host environment
+	provides daylight saving time information. The only restriction is
+	that all equivalent years should produce the same result.</p>
+	<h5 id="x15.9.1.9">15.9.1.9 Local Time <a href="#x15.9.1.9">#</a> <a href="#x15.9.1.9-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p class="sm-btm">
+	Conversion
+	from UTC to local time is defined by</p>
+	<p class="code-example">
+	LocalTime(<i>t</i>)
+	= <i>t</i> + <a href="#x15.9.1.7">LocalTZA</a> + DaylightSavingTA(<i>t</i>)</p>
+	<p class="sm-btm">
+	Conversion
+	from local time to UTC is defined by</p>
+	<p class="code-example">
+	UTC(<i>t</i>)
+	= <i>t</i> &#8211;
+	<a href="#x15.9.1.7">LocalTZA</a> &#8211; DaylightSavingTA(<i>t</i>
+	&#8211; <a href="#x15.9.1.7">LocalTZA</a>)</p>
+	<p>
+	Note
+	that <a href="#x15.9.1.9">UTC</a>(<a href="#x15.9.1.9">LocalTime</a>(<i>t</i>))
+	is not necessarily always equal to <i>t</i>.</p>
+	<h5 id="x15.9.1.10">15.9.1.10 Hours, Minutes, Second, and Milliseconds <a href="#x15.9.1.10">#</a> <a href="#x15.9.1.10-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p class="sm-btm">
+	The
+	following functions are useful in decomposing time values:</p>
+	<p class="code-example">
+	HourFromTime(<i>t</i>)	=
+	<a href="x5.html#floor">floor</a>(<i>t</i> / msPerHour) <a href="x5.html#modulo">modulo</a> HoursPerDay</p>
+	<p class="code-example">
+	MinFromTime(<i>t</i>)	=
+	<a href="x5.html#floor">floor</a>(<i>t</i> / msPerMinute) <a href="x5.html#modulo">modulo</a> MinutesPerHour</p>
+	<p class="code-example">
+	SecFromTime(<i>t</i>)	=
+	<a href="x5.html#floor">floor</a>(<i>t</i> / msPerSecond) <a href="x5.html#modulo">modulo</a> SecondsPerMinute</p>
+	<p class="code-example">
+	msFromTime(<i>t</i>)	=
+	t <a href="x5.html#modulo">modulo</a> msPerSecond</p>
+	<p class="sm-btm">
+	where</p>
+	<p class="code-example">
+	HoursPerDay	=
+	24</p>
+	<p class="code-example">
+	MinutesPerHour	=
+	60</p>
+	<p class="code-example">
+	SecondsPerMinute	=
+	60</p>
+	<p class="code-example">
+	<dfn id="msPerSecond">msPerSecond</dfn>	=
+	1000</p>
+	<p class="code-example">
+	<dfn id="msPerMinute">msPerMinute</dfn>	=
+	60000	= msPerSecond <span class="symbol">&#215;</span>
+	SecondsPerMinute</p>
+	<p class="code-example">
+	<dfn id="msPerHour">msPerHour</dfn>	=
+	3600000	= msPerMinute <span class="symbol">&#215;</span>
+	MinutesPerHour</p>
+	<h5 id="x15.9.1.11">15.9.1.11 MakeTime (hour, min, sec, ms) <a href="#x15.9.1.11">#</a> <a href="#x15.9.1.11-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	operator MakeTime calculates a number of milliseconds from its four
+	arguments, which must be ECMAScript Number values. This operator
+	functions as follows:</p>
+	<ol><li><p>
+		If
+		<i>hour</i> is not finite or <i>min</i> is not finite or <i>sec</i>
+		is not finite or <i>ms</i> is not finite, return <b>NaN</b>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>h</i> be <a href="x9.html#x9.4">ToInteger</a>(<i>hour</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>m</i> be <a href="x9.html#x9.4">ToInteger</a>(<i>min</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>s</i> be <a href="x9.html#x9.4">ToInteger</a>(<i>sec</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>milli</i> be <a href="x9.html#x9.4">ToInteger</a>(<i>ms</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>t</i> be <i>h</i> <code><b>*</b></code>
+		<a href="#msPerHour">msPerHour</a> <code><b>+</b></code> <i>m</i>
+		<code><b>*</b></code> <a href="#msPerMinute">msPerMinute</a> <code><b>+</b></code>
+		<i>s</i> <code><b>*</b></code>
+		<a href="#msPerSecond">msPerSecond</a> <code><b>+</b></code>
+		<i>milli</i>, performing the arithmetic according to IEEE 754 rules
+		(that is, as if using the ECMAScript operators <code><b>*</b></code>
+		and <code><b>+</b></code>).</p>
+		</li>
+		<li><p>
+		Return
+		<i>t</i>.</p>
+	</li></ol><h5 id="x15.9.1.12">15.9.1.12 MakeDay (year, month, date) <a href="#x15.9.1.12">#</a> <a href="#x15.9.1.12-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	operator MakeDay calculates a number of days from its three
+	arguments, which must be ECMAScript Number values. This operator
+	functions as follows:</p>
+	<ol><li><p>
+		If
+		<i>year</i> is not finite or <i>month</i> is not finite or <i>date</i>
+		is not finite, return <b>NaN</b>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>y</i> be <a href="x9.html#x9.4">ToInteger</a>(<i>year</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>m</i> be <a href="x9.html#x9.4">ToInteger</a>(<i>month</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>dt</i> be <a href="x9.html#x9.4">ToInteger</a>(<i>date</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>ym</i> be <i>y</i> + <a href="x5.html#floor">floor</a>(<i>m</i> /12).</p>
+		</li>
+		<li><p>
+		Let
+		<i>mn</i> be <i>m</i> <a href="x5.html#modulo">modulo</a> 12.</p>
+		</li>
+		<li><p>
+		Find
+		a value <i>t</i> such that <a href="#YearFromTime">YearFromTime</a>(<i>t</i>) <code><b>==</b></code>
+		<i>ym</i> and <a href="#x15.9.1.4">MonthFromTime</a>(<i>t</i>) <code><b>==</b></code>
+		<i>mn</i>) and <a href="#x15.9.1.5">DateFromTime</a>(<i>t</i>) <code><b>==</b></code>
+		1; but if this is not possible (because some argument is out of
+		range), return <b>NaN</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<a href="#x15.9.1.2">Day</a>(<i>t</i>) + <i>dt</i> <span class="symbol">&#8722;</span> 1.</p>
+	</li></ol><h5 id="x15.9.1.13">15.9.1.13 MakeDate (day, time) <a href="#x15.9.1.13">#</a> <a href="#x15.9.1.13-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	operator MakeDate calculates a number of milliseconds from its two
+	arguments, which must be ECMAScript Number values. This operator
+	functions as follows:</p>
+	<ol><li><p>
+		If
+		<i>day</i> is not finite or <i>time</i> is not finite, return <b>NaN</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>day</i> <span class="symbol">&#215;</span> msPerDay + <i>time</i>.</p>
+	</li></ol><h5 id="x15.9.1.14">15.9.1.14 TimeClip (time) <a href="#x15.9.1.14">#</a> <a href="#x15.9.1.14-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	operator TimeClip calculates a number of milliseconds from its
+	argument, which must be an ECMAScript Number value. This operator
+	functions as follows:</p>
+	<ol><li><p>
+		If
+		<i>time</i> is not finite, return <b>NaN</b>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x5.html#abs">abs</a>(<i>time</i>) &gt; 8.64&#160;x&#160;10<sup>15</sup>,
+		return <b>NaN</b>.</p>
+		</li>
+		<li><p>
+		Return
+		an implementation-dependent choice of either <a href="x9.html#x9.4">ToInteger</a>(<i>time</i>)
+		or <a href="x9.html#x9.4">ToInteger</a>(<i>time</i>) + (<b>+0</b>). (Adding a positive zero
+		converts <span class="symbol"><b>&#8722;</b></span><b>0</b> to
+		<b>+0</b>.)</p>
+	</li></ol><p class="sp">
+	</p><p><b class="note">NOTE</b> The point of
+	step 3 is that an implementation is permitted a choice of internal
+	representations of time values, for example as a 64-bit signed
+	integer or as a 64-bit floating-point value. Depending on the
+	implementation, this internal representation may or may not
+	distinguish <span class="symbol"><b>&#8722;</b></span><b>0</b> and
+	<b>+0</b>.</p>
+	<h5 id="x15.9.1.15">15.9.1.15 Date Time String Format <a href="#x15.9.1.15">#</a> <a href="#x15.9.1.15-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	ECMAScript
+	defines a string interchange format for date-times based upon a
+	simplification of the ISO 8601 Extended Format.  The format is as
+	follows: <code><b>YYYY-MM-DDTHH:mm:ss.sss</b></code><code><i><b>Z</b></i></code></p>
+	<p>
+	Where
+	the fields are as follows:</p>
+<table id="date-format"><tbody><tr><td><code><b>YYYY</b></code></td><td>is the decimal digits of the year in the Gregorian calendar.</td></tr><tr><td><code><b>-</b></code></td><td>&#8220;<code><b>:</b></code>&#8221; (hyphen) appears literally twice in the string.</td></tr><tr><td><code><b>MM</b></code></td><td>is the month of the year from 01 (January) to 12 (December).</td></tr><tr><td><code><b>DD</b></code></td><td>is the day of the month from 01 to 31.</td></tr><tr><td><code><b>T</b></code></td><td>&#8220;<code><b>T</b></code>&#8221; appears literally in the string, to indicate the beginning of the time element.</td></tr><tr><td><code><b>HH</b></code></td><td>is the number of complete hours that have passed since midnight as two decimal digits.</td></tr><tr><td><code><b>:</b></code></td><td>&#8220;<code><b>:</b></code>&#8221; (colon) appears literally twice in the string.</td></tr><tr><td><code><b>mm</b></code></td><td>is the number of complete minutes since the start of the hour as two decimal digits.</td></tr><tr><td><code><b>ss</b></code></td><td>is the number of complete seconds since the start of the minute as two decimal digits.</td></tr><tr><td><code><b>.</b></code></td><td>&#8220;<code><b>.</b></code>&#8221; (dot) appears literally in the string.</td></tr><tr><td><code><b>sss</b></code></td><td>is the number of complete milliseconds since the start of the second as three decimal digits.</td></tr><tr><td><code><b>Z</b></code></td><td>is the time zone offset specified as &#8220;<code><b>Z</b></code>&#8221; (for UTC) or either
+	&#8220;<code><b>+</b></code>&#8221; or &#8220;<code><b>-</b></code>&#8221; followed by a time expression <code><b>hh:mm</b></code></td></tr></tbody></table><p class="sp">This
+	format includes date-only forms:</p>
+	<p class="sp"><code><b>YYYY<br>YYYY-MM<br>YYYY-MM-DD</b></code></p>
+	<p>It also includes &#8220;date-time&#8221; forms that consist of one of the above
+date-only forms immediately followed by &#8220;<code>T</code>&#8221;
+and one of the following time forms with an optional time zone offset
+appended:</p>
+	<p>
+	<code><b>THH:mm<br>THH:mm:ss<br>THH:mm:ss.sss</b></code></p>
+
+
+	<p>All
+	numbers must be base 10.
+If the <code>MM</code> or <code>DD</code> fields are absent
+&#8220;<code>01</code>&#8221; is used as the value. If the <code>mm</code> or
+<code>ss</code> fields are absent &#8220;<code>00</code>&#8221; is used as the value
+and the value of an absent <code>sss</code> file is &#8220;<code>000</code>&#8221;. The
+value of an absent time zone offset is &#8220;<code>Z</code>&#8221;.</p>
+
+	<p>
+	Illegal
+	values (out-of-bounds as well as syntax errors) in a format string
+	means that the format string is not a valid instance of this format.</p>
+	<p class="sp"><b class="note">NOTE 1</b> As every day both starts and ends with
+	midnight, the two notations <code>00:00</code>
+	and <code>24:00</code>
+	are available to distinguish the two midnights that can be
+	associated with one date. This means that the following two
+	notations refer to exactly the same point in time: <code>1995-02-04T24:00</code>
+	and <code>1995-02-05T00:00</code></p>
+	<p class="sp"><b class="note">NOTE 2</b> There exists no international standard that
+	specifies abbreviations for civil time zones like CET, EST, etc. and
+	sometimes the same abbreviation is even used for two very different
+	time zones. For this reason, ISO 8601 and this format specifies
+	numeric representations of date and time.</p>
+	<h6 id="x15.9.1.15.1">15.9.1.15.1 Extended years <a href="#x15.9.1.15.1">#</a> <a href="#x15.9.1.15.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h6>
+	<p>
+	ECMAScript
+	requires the ability to specify 6
+	digit years (extended years); approximately 285,616
+	years, either forward or backward, from 01 January, 1970 UTC. To
+	represent years before 0
+	or after 9999, ISO 8601
+	permits the expansion of the year representation, but only by prior
+	agreement between the sender and the receiver. In the simplified
+	ECMAScript format such an expanded year representation shall have 2
+	extra year digits and is always prefixed with a + or &#8211; sign. The
+	year 0 is considered
+	positive and hence prefixed with a + sign.</p>
+	<h4 id="x15.9.2">15.9.2 The Date Constructor Called as a Function <a href="#x15.9.2">#</a> <a href="#x15.9.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	<code><b>Date</b></code> is called as
+	a function rather than as a constructor, it returns a String
+	representing the current time (UTC).</p>
+	<p><b class="note">NOTE</b> The
+	function call <code><b>Date(</b></code><code>&#8230;</code><code><b>)</b></code>
+	is not equivalent to the object creation expression <code><b>new&#160;Date(</b></code><code>&#8230;</code><code><b>)</b></code>
+	with the same arguments.</p>
+	<h5 id="x15.9.2.1">15.9.2.1 Date ( [ year [, month [, date [, hours [, minutes [, seconds [, ms ] ] ] ] ] ] ] ) <a href="#x15.9.2.1">#</a> <a href="#x15.9.2.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	All
+	of the arguments are optional; any arguments supplied are accepted
+	but are completely ignored. A String is created and returned as if
+	by the expression <code><b>(new
+	Date()).toString()</b></code> where <code><b>Date</b></code>
+	is the standard built-in constructor with that name and <code><b>toString</b></code>
+	is the standard built-in method <code><b><a href="#x15.9.5.2">Date.prototype.toString</a></b></code>.</p>
+	<h4 id="x15.9.3">15.9.3 The Date Constructor <a href="#x15.9.3">#</a> <a href="#x15.9.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	<code><b>Date</b></code> is called as
+	part of a <code><b>new</b></code>
+	expression, it is a constructor: it initialises the newly created
+	object.</p>
+	<h5 id="x15.9.3.1">15.9.3.1 new Date (year, month [, date [, hours [, minutes [, seconds [, ms ] ] ] ] ] ) <a href="#x15.9.3.1">#</a> <a href="#x15.9.3.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	<b>Date</b> is called with two to seven arguments, it computes the
+	date from <i>year</i>, <i>month</i>, and (optionally) <i>date</i>,
+	<i>hours</i>, <i>minutes</i>, <i>seconds</i> and <i>ms</i>.</p>
+	<p>
+	The
+	[[Prototype]] internal property of the newly constructed object is
+	set to the original Date prototype object, the one that is the
+	initial value of <code><b>Date.prototype</b></code>
+	(<a href="#x15.9.4.1">15.9.4.1</a>).</p>
+	<p>
+	The
+	[[Class]] internal property of the newly constructed object is set
+	to <code><b>"Date"</b></code>.</p>
+	<p>
+	The
+	[[Extensible]] internal property of the newly constructed object is
+	set to <b>true</b>.</p>
+	<p>
+	The
+	[[PrimitiveValue]] internal property of the newly constructed object
+	is set as follows:</p>
+	<ol><li><p>
+		Let
+		<i>y</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>year</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>m</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>month</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>date</i> is supplied then let <i>dt</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>date</i>);
+		else let <i>dt</i> be <b>1</b>.</p>
+		</li>
+		<li><p>
+		If
+		<i>hours</i> is supplied then let <i>h</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>hours</i>);
+		else let <i>h</i> be <b>0</b>.</p>
+		</li>
+		<li><p>
+		If
+		<i>minutes</i> is supplied then let <i>min</i> be
+		<a href="x9.html#x9.3">ToNumber</a>(<i>minutes</i>); else let <i>min</i> be <b>0</b>.</p>
+		</li>
+		<li><p>
+		If
+		<i>seconds</i> is supplied then let <i>s</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>seconds</i>);
+		else let <i>s</i> be <b>0</b>.</p>
+		</li>
+		<li><p>
+		If
+		<i>ms</i> is supplied then let <i>milli</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>ms</i>);
+		else let <i>milli</i> be <b>0</b>.</p>
+		</li>
+		<li><p>
+		If&#160;<i>y</i>&#160;is&#160;not&#160;<b>NaN</b>&#160;and&#160;0&#160;<span class="symbol">&#8804;</span>&#160;<a href="x9.html#x9.4">ToInteger</a>(<i>y</i>)&#160;<span class="symbol">&#8804;</span>&#160;99,&#160;then
+		let <i>yr</i> be&#160;1900+<a href="x9.html#x9.4">ToInteger</a>(<i>y</i>); otherwise, let <i>yr</i>
+		be <i>y</i>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>finalDate</i> be  <a href="#x15.9.1.13">MakeDate</a>(<a href="#x15.9.1.12">MakeDay</a>(<i>yr</i>, <i>m</i>, <i>dt</i>),
+		<a href="#x15.9.1.11">MakeTime</a>(<i>h</i>, <i>min</i>, <i>s</i>, <i>milli</i>)).</p>
+		</li>
+		<li><p>
+		Set
+		the [[PrimitiveValue]] internal property of the newly constructed
+		object to <a href="#x15.9.1.14">TimeClip</a>(<a href="#x15.9.1.9">UTC</a>(<i>finalDate</i>)).</p>
+	</li></ol><h5 id="x15.9.3.2">15.9.3.2 new Date (value) <a href="#x15.9.3.2">#</a> <a href="#x15.9.3.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	[[Prototype]] internal property of the newly constructed object is
+	set to the original Date prototype object, the one that is the
+	initial value of <code><b>Date.prototype</b></code>
+	(<a href="#x15.9.4.1">15.9.4.1</a>).</p>
+	<p>
+	The
+	[[Class]] internal property of the newly constructed object is set
+	to <code><b>"Date"</b></code>.</p>
+	<p>
+	The
+	[[Extensible]] internal property of the newly constructed object is
+	set to <b>true</b>.</p>
+	<p>
+	The
+	[[PrimitiveValue]] internal property of the newly constructed object
+	is set as follows:</p>
+	<ol><li><p>
+		Let
+		<i>v</i> be <a href="x9.html#x9.1">ToPrimitive</a>(<i>value</i>).</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>v</i>) is String, then 
+		</p>
+		<ol><li><p>
+			Parse
+			<i>v</i> as a date, in exactly the same manner as for the <code><b>parse</b></code>
+			method (<a href="#x15.9.4.2">15.9.4.2</a>); let <i>V</i> be the time value for this date.</p>
+		</li></ol></li>
+		<li><p>
+		Else,
+		let <i>V</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>v</i>).</p>
+		</li>
+		<li><p>
+		Set
+		the [[PrimitiveValue]] internal property of the newly constructed
+		object to <a href="#x15.9.1.14">TimeClip</a>(<i>V</i>) and return.</p>
+	</li></ol><h5 id="x15.9.3.3">15.9.3.3 new Date ( ) <a href="#x15.9.3.3">#</a> <a href="#x15.9.3.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	[[Prototype]] internal property of the newly constructed object is
+	set to the original Date prototype object, the one that is the
+	initial value of <code><b>Date.prototype</b></code>
+	(<a href="#x15.9.4.1">15.9.4.1</a>).</p>
+	<p>
+	The
+	[[Class]] internal property of the newly constructed object is set
+	to <code><b>"Date"</b></code>.</p>
+	<p>
+	The
+	[[Extensible]] internal property of the newly constructed object is
+	set to <b>true</b>.</p>
+	<p>
+	The
+	[[PrimitiveValue]] internal property of the newly constructed object
+	is set to the time value (UTC) identifying the current time.</p>
+	<h4 id="x15.9.4">15.9.4 Properties of the Date Constructor <a href="#x15.9.4">#</a> <a href="#x15.9.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	value of the [[Prototype]] internal property of the Date constructor
+	is the Function prototype object (<a href="x15.3.html#x15.3.4">15.3.4</a>).</p>
+	<p>
+	Besides
+	the internal properties and the <code><b>length</b></code>
+	property (whose value is <code><b>7</b></code>),
+	the Date constructor has the following properties:</p>
+	<h5 id="x15.9.4.1">15.9.4.1 Date.prototype <a href="#x15.9.4.1">#</a> <a href="#x15.9.4.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	initial value of <code><b>Date.prototype</b></code>
+	is the built-in Date prototype object (<a href="#x15.9.5">15.9.5</a>).</p>
+	<p>
+	This
+	property has the attributes { [[Writable]]: <b>false</b>,
+	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b> }.</p>
+	<h5 id="x15.9.4.2">15.9.4.2 Date.parse (string) <a href="#x15.9.4.2">#</a> <a href="#x15.9.4.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	<code><b>parse</b></code> function
+	applies the <a href="x9.html#x9.8">ToString</a> operator to its argument and interprets the
+	resulting String as a date and time; it returns a Number, the UTC
+	time value corresponding to the date and time. The String may be
+	interpreted as a local time, a UTC time, or a time in some other
+	time zone, depending on the contents of the String. The function
+	first attempts to parse the format of the String according to the
+	rules called out in Date Time String Format (<a href="#x15.9.1.15">15.9.1.15</a>). If the
+	String does not conform to that format the function may fall back to
+	any implementation-specific heuristics or implementation-specific
+	date formats. Unrecognizable Strings or dates containing illegal
+	element values in the format String shall cause <code><b>Date.parse</b></code>
+	to return <b>NaN</b>.</p>
+	<p>If
+	<i>x</i> is any Date
+	object whose milliseconds amount is zero within a particular
+	implementation of ECMAScript, then all of the following expressions
+	should produce the same numeric value in that implementation, if all
+	the properties referenced have their initial values:</p>
+	<p class="code-example">
+	<code><i><b>x</b></i></code><code><b>.valueOf()</b></code></p>
+	<p class="code-example">
+	<code><b>Date.parse(</b></code><code><i><b>x</b></i></code><code><b>.toString())</b></code></p>
+	<p class="code-example">
+	<code><b>Date.parse(</b></code><code><i><b>x</b></i></code><code><b>.toUTCString())</b></code></p>
+	<p class="code-example">
+	<code><b>Date.parse(</b></code><code><i><b>x</b></i></code><code><b>.toISOString())</b></code></p>
+	<p>However,
+	the expression</p>
+	<p class="code-example">
+	<code><b>Date.parse(</b></code> <i>x</i><code><b>.toLocaleString())</b></code></p>
+	<p>
+	is
+	not required to produce the same Number value as the preceding three
+	expressions and, in general, the value produced by <code><b>Date.parse</b></code>
+	is implementation-dependent when given any String value that does
+	not conform to the Date Time String Format (<a href="#x15.9.1.15">15.9.1.15</a>) and that
+	could not be produced in that implementation by the <code><b>toString</b></code>
+	or <code><b>toUTCString</b></code>
+	method.</p>
+	<h5 id="x15.9.4.3">15.9.4.3 Date.UTC (year, month [, date [, hours [, minutes [, seconds [, ms ] ] ] ] ] ) <a href="#x15.9.4.3">#</a> <a href="#x15.9.4.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <code><b>UTC</b></code> function
+	is called with fewer than two arguments, the behaviour is
+	implementation-dependent. When the <code><b>UTC</b></code>
+	function is called with two to seven arguments, it computes the date
+	from <i>year</i>, <i>month</i>
+	and (optionally) <i>date</i>,
+	<i>hours</i>, <i>minutes</i>,
+	<i>seconds</i> and <i>ms</i>.
+	The following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>y</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>year</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>m</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>month</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>date</i> is supplied then let <i>dt</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>date</i>);
+		else let <i>dt</i> be <b>1</b>.</p>
+		</li>
+		<li><p>
+		If
+		<i>hours</i> is supplied then let <i>h</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>hours</i>);
+		else let <i>h</i> be <b>0</b>.</p>
+		</li>
+		<li><p>
+		If
+		<i>minutes</i> is supplied then let <i>min</i> be
+		<a href="x9.html#x9.3">ToNumber</a>(<i>minutes</i>); else let <i>min</i> be <b>0</b>.</p>
+		</li>
+		<li><p>
+		If
+		<i>seconds</i> is supplied then let <i>s</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>seconds</i>);
+		else let <i>s</i> be <b>0</b>.</p>
+		</li>
+		<li><p>
+		If
+		<i>ms</i> is supplied then let <i>milli</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>ms</i>);
+		else let <i>milli</i> be <b>0</b>.</p>
+		</li>
+		<li><p>
+		If&#160;<i>y</i>&#160;is&#160;not&#160;<b>NaN</b>&#160;and&#160;0&#160;<span class="symbol">&#8804;</span>&#160;<a href="x9.html#x9.4">ToInteger</a>(<i>y</i>)&#160;<span class="symbol">&#8804;</span>&#160;99,&#160;then
+		let <i>yr</i> be&#160;1900+<a href="x9.html#x9.4">ToInteger</a>(<i>y</i>); otherwise, let <i>yr</i>
+		be <i>y</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<a href="#x15.9.1.14">TimeClip</a>(<a href="#x15.9.1.13">MakeDate</a>(<a href="#x15.9.1.12">MakeDay</a>(<i>yr</i>, <i>m</i>, <i>dt</i>),
+		<a href="#x15.9.1.11">MakeTime</a>(<i>h</i>, <i>min</i>, <i>s</i>, <i>milli</i>))).</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>UTC</b></code> function
+	is <b>7</b>.</p>
+	<p><b class="note">NOTE</b> The
+	<code>UTC</code> function differs from
+	the <code>Date</code> constructor in
+	two ways: it returns a time value as a Number, rather than creating
+	a Date object, and it interprets the arguments in UTC rather than as
+	local time.</p>
+	<h5 id="x15.9.4.4">15.9.4.4 Date.now ( ) <a href="#x15.9.4.4">#</a> <a href="#x15.9.4.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	<code><b>now</b></code> function
+	return a Number value that is the time value designating the UTC
+	date and time of the occurrence of the call to <code><b>now</b></code>.</p>
+	<h4 id="x15.9.5">15.9.5 Properties of the Date Prototype Object <a href="#x15.9.5">#</a> <a href="#x15.9.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	Date prototype object is itself a Date object (its [[Class]] is
+	<code><b>"Date"</b></code>)
+	whose [[PrimitiveValue]] is <b>NaN</b>.</p>
+	<p>
+	The
+	value of the [[Prototype]] internal property of the Date prototype
+	object is the standard built-in Object prototype object (<a href="x15.2.html#x15.2.4">15.2.4</a>).</p>
+	<p>
+	In
+	following descriptions of functions that are properties of the Date
+	prototype object, the phrase &#8220;<dfn id="this-date-object">this Date object</dfn>&#8221; refers to the
+	object that is the <b>this</b> value for the invocation of the
+	function. Unless explicitly noted otherwise, none of these functions
+	are generic; a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception is thrown if the <b>this</b>
+	value is not an object for which the value of the [[Class]] internal
+	property is <code><b>"Date"</b></code>.
+	Also, the phrase &#8220;<dfn id="this-time-value">this time value</dfn>&#8221; refers to the Number value
+	for the time represented by this Date object, that is, the value of
+	the [[PrimitiveValue]] internal property of this Date object.</p>
+	<h5 id="x15.9.5.1">15.9.5.1 Date.prototype.constructor <a href="#x15.9.5.1">#</a> <a href="#x15.9.5.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	initial value of <code><b>Date.prototype.constructor</b></code>
+	is the built-in <code><b>Date</b></code>
+	constructor.</p>
+	<h5 id="x15.9.5.2">15.9.5.2 Date.prototype.toString ( ) <a href="#x15.9.5.2">#</a> <a href="#x15.9.5.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	This
+	function returns a String value. The contents of the String are
+	implementation-dependent, but are intended to represent the Date in
+	the current time zone in a convenient, human-readable form.</p>
+	<p><b class="note">NOTE</b> For
+	any Date value <code><i>d</i></code>
+	whose milliseconds amount is zero, the result of
+	<code>Date.parse(</code><code><i>d</i></code><code>.toString())</code>
+	is equal to <code><i>d</i></code><code>.valueOf()</code>.
+	See <a href="#x15.9.4.2">15.9.4.2</a>.</p>
+	<h5 id="x15.9.5.3">15.9.5.3 Date.prototype.toDateString ( ) <a href="#x15.9.5.3">#</a> <a href="#x15.9.5.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	This
+	function returns a String value. The contents of the String are
+	implementation-dependent, but are intended to represent the &#8220;date&#8221;
+	portion of the Date in the current time zone in a convenient,
+	human-readable form.</p>
+	<h5 id="x15.9.5.4">15.9.5.4 Date.prototype.toTimeString ( ) <a href="#x15.9.5.4">#</a> <a href="#x15.9.5.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	This
+	function returns a String value. The contents of the String are
+	implementation-dependent, but are intended to represent the &#8220;time&#8221;
+	portion of the Date in the current time zone in a convenient,
+	human-readable form.</p>
+	<h5 id="x15.9.5.5">15.9.5.5 Date.prototype.toLocaleString ( ) <a href="#x15.9.5.5">#</a> <a href="#x15.9.5.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	This
+	function returns a String value. The contents of the String are
+	implementation-dependent, but are intended to represent the Date in
+	the current time zone in a convenient, human-readable form that
+	corresponds to the conventions of the host environment&#8217;s current
+	locale.</p>
+	<p><b class="note">NOTE</b> The
+	first parameter to this function is likely to be used in a future
+	version of this standard; it is recommended that implementations do
+	not use this parameter position for anything else.</p>
+	<h5 id="x15.9.5.6">15.9.5.6 Date.prototype.toLocaleDateString ( ) <a href="#x15.9.5.6">#</a> <a href="#x15.9.5.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	This
+	function returns a String value. The contents of the String are
+	implementation-dependent, but are intended to represent the &#8220;date&#8221;
+	portion of the Date in the current time zone in a convenient,
+	human-readable form that corresponds to the conventions of the host
+	environment&#8217;s current locale.</p>
+	<p><b class="note">NOTE</b> The
+	first parameter to this function is likely to be used in a future
+	version of this standard; it is recommended that implementations do
+	not use this parameter position for anything else.</p>
+	<h5 id="x15.9.5.7">15.9.5.7 Date.prototype.toLocaleTimeString ( ) <a href="#x15.9.5.7">#</a> <a href="#x15.9.5.7-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	This
+	function returns a String value. The contents of the String are
+	implementation-dependent, but are intended to represent the &#8220;time&#8221;
+	portion of the Date in the current time zone in a convenient,
+	human-readable form that corresponds to the conventions of the host
+	environment&#8217;s current locale.</p>
+	<p><b class="note">NOTE</b> The
+	first parameter to this function is likely to be used in a future
+	version of this standard; it is recommended that implementations do
+	not use this parameter position for anything else.</p>
+	<h5 id="x15.9.5.8">15.9.5.8 Date.prototype.valueOf ( ) <a href="#x15.9.5.8">#</a> <a href="#x15.9.5.8-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	<code><b>valueOf</b></code> function
+	returns a Number, which is <a href="#this-time-value">this time value</a>.</p>
+	<h5 id="x15.9.5.9">15.9.5.9 Date.prototype.getTime ( ) <a href="#x15.9.5.9">#</a> <a href="#x15.9.5.9-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<ol><li><p>
+		Return
+		<a href="#this-time-value">this time value</a>.</p>
+	</li></ol><h5 id="x15.9.5.10">15.9.5.10 Date.prototype.getFullYear ( ) <a href="#x15.9.5.10">#</a> <a href="#x15.9.5.10-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<ol><li><p>
+		Let
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
+		</li>
+		<li><p>
+		If
+		<i>t</i> is <b>NaN</b>, return <b>NaN</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<a href="#YearFromTime">YearFromTime</a>(<a href="#x15.9.1.9">LocalTime</a>(<i>t</i>)).</p>
+	</li></ol><h5 id="x15.9.5.11">15.9.5.11 Date.prototype.getUTCFullYear ( ) <a href="#x15.9.5.11">#</a> <a href="#x15.9.5.11-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<ol><li><p>
+		Let
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
+		</li>
+		<li><p>
+		If
+		<i>t</i> is <b>NaN</b>, return <b>NaN</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<a href="#YearFromTime">YearFromTime</a>(<i>t</i>).</p>
+	</li></ol><h5 id="x15.9.5.12">15.9.5.12 Date.prototype.getMonth ( ) <a href="#x15.9.5.12">#</a> <a href="#x15.9.5.12-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<ol><li><p>
+		Let
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
+		</li>
+		<li><p>
+		If
+		<i>t</i> is <b>NaN</b>, return <b>NaN</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<a href="#x15.9.1.4">MonthFromTime</a>(<a href="#x15.9.1.9">LocalTime</a>(<i>t</i>)).</p>
+	</li></ol><h5 id="x15.9.5.13">15.9.5.13 Date.prototype.getUTCMonth ( ) <a href="#x15.9.5.13">#</a> <a href="#x15.9.5.13-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<ol><li><p>
+		Let
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
+		</li>
+		<li><p>
+		If
+		<i>t</i> is <b>NaN</b>, return <b>NaN</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<a href="#x15.9.1.4">MonthFromTime</a>(<i>t</i>).</p>
+	</li></ol><h5 id="x15.9.5.14">15.9.5.14 Date.prototype.getDate ( ) <a href="#x15.9.5.14">#</a> <a href="#x15.9.5.14-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<ol><li><p>
+		Let
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
+		</li>
+		<li><p>
+		If
+		<i>t</i> is <b>NaN</b>, return <b>NaN</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<a href="#x15.9.1.5">DateFromTime</a>(<a href="#x15.9.1.9">LocalTime</a>(<i>t</i>)).</p>
+	</li></ol><h5 id="x15.9.5.15">15.9.5.15 Date.prototype.getUTCDate ( ) <a href="#x15.9.5.15">#</a> <a href="#x15.9.5.15-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<ol><li><p>
+		Let
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
+		</li>
+		<li><p>
+		If
+		<i>t</i> is <b>NaN</b>, return <b>NaN</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<a href="#x15.9.1.5">DateFromTime</a>(<i>t</i>).</p>
+	</li></ol><h5 id="x15.9.5.16">15.9.5.16 Date.prototype.getDay ( ) <a href="#x15.9.5.16">#</a> <a href="#x15.9.5.16-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<ol><li><p>
+		Let
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
+		</li>
+		<li><p>
+		If
+		<i>t</i> is <b>NaN</b>, return <b>NaN</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<a href="#x15.9.1.6">WeekDay</a>(<a href="#x15.9.1.9">LocalTime</a>(<i>t</i>)).</p>
+	</li></ol><h5 id="x15.9.5.17">15.9.5.17 Date.prototype.getUTCDay ( ) <a href="#x15.9.5.17">#</a> <a href="#x15.9.5.17-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<ol><li><p>
+		Let
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
+		</li>
+		<li><p>
+		If
+		<i>t</i> is <b>NaN</b>, return <b>NaN</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<a href="#x15.9.1.6">WeekDay</a>(<i>t</i>).</p>
+	</li></ol><h5 id="x15.9.5.18">15.9.5.18 Date.prototype.getHours ( ) <a href="#x15.9.5.18">#</a> <a href="#x15.9.5.18-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<ol><li><p>
+		Let
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
+		</li>
+		<li><p>
+		If
+		<i>t</i> is <b>NaN</b>, return <b>NaN</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<a href="#x15.9.1.10">HourFromTime</a>(<a href="#x15.9.1.9">LocalTime</a>(<i>t</i>)).</p>
+	</li></ol><h5 id="x15.9.5.19">15.9.5.19 Date.prototype.getUTCHours ( ) <a href="#x15.9.5.19">#</a> <a href="#x15.9.5.19-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<ol><li><p>
+		Let
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
+		</li>
+		<li><p>
+		If
+		<i>t</i> is <b>NaN</b>, return <b>NaN</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<a href="#x15.9.1.10">HourFromTime</a>(<i>t</i>).</p>
+	</li></ol><h5 id="x15.9.5.20">15.9.5.20 Date.prototype.getMinutes ( ) <a href="#x15.9.5.20">#</a> <a href="#x15.9.5.20-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<ol><li><p>
+		Let
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
+		</li>
+		<li><p>
+		If
+		<i>t</i> is <b>NaN</b>, return <b>NaN</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<a href="#x15.9.1.10">MinFromTime</a>(<a href="#x15.9.1.9">LocalTime</a>(<i>t</i>)).</p>
+	</li></ol><h5 id="x15.9.5.21">15.9.5.21 Date.prototype.getUTCMinutes ( ) <a href="#x15.9.5.21">#</a> <a href="#x15.9.5.21-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<ol><li><p>
+		Let
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
+		</li>
+		<li><p>
+		If
+		<i>t</i> is <b>NaN</b>, return <b>NaN</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<a href="#x15.9.1.10">MinFromTime</a>(<i>t</i>).</p>
+	</li></ol><h5 id="x15.9.5.22">15.9.5.22 Date.prototype.getSeconds ( ) <a href="#x15.9.5.22">#</a> <a href="#x15.9.5.22-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<ol><li><p>
+		Let
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
+		</li>
+		<li><p>
+		If
+		<i>t</i> is <b>NaN</b>, return <b>NaN</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<a href="#x15.9.1.10">SecFromTime</a>(<a href="#x15.9.1.9">LocalTime</a>(<i>t</i>)).</p>
+	</li></ol><h5 id="x15.9.5.23">15.9.5.23 Date.prototype.getUTCSeconds ( ) <a href="#x15.9.5.23">#</a> <a href="#x15.9.5.23-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<ol><li><p>
+		Let
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
+		</li>
+		<li><p>
+		If
+		<i>t</i> is <b>NaN</b>, return <b>NaN</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<a href="#x15.9.1.10">SecFromTime</a>(<i>t</i>).</p>
+	</li></ol><h5 id="x15.9.5.24">15.9.5.24 Date.prototype.getMilliseconds ( ) <a href="#x15.9.5.24">#</a> <a href="#x15.9.5.24-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<ol><li><p>
+		Let
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
+		</li>
+		<li><p>
+		If
+		<i>t</i> is <b>NaN</b>, return <b>NaN</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<a href="#x15.9.1.10">msFromTime</a>(<a href="#x15.9.1.9">LocalTime</a>(<i>t</i>)).</p>
+	</li></ol><h5 id="x15.9.5.25">15.9.5.25 Date.prototype.getUTCMilliseconds ( ) <a href="#x15.9.5.25">#</a> <a href="#x15.9.5.25-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<ol><li><p>
+		Let
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
+		</li>
+		<li><p>
+		If
+		<i>t</i> is <b>NaN</b>, return <b>NaN</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<a href="#x15.9.1.10">msFromTime</a>(<i>t</i>).</p>
+	</li></ol><h5 id="x15.9.5.26">15.9.5.26 Date.prototype.getTimezoneOffset ( ) <a href="#x15.9.5.26">#</a> <a href="#x15.9.5.26-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Returns
+	the difference between local time and UTC time in minutes.</p>
+	<ol><li><p>
+		Let
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
+		</li>
+		<li><p>
+		If
+		<i>t</i> is <b>NaN</b>, return <b>NaN</b>.</p>
+		</li>
+		<li><p>
+		Return
+		(<i>t</i> <span class="symbol">&#8722;</span> <a href="#x15.9.1.9">LocalTime</a>(<i>t</i>))
+		/ <a href="#msPerMinute">msPerMinute</a>.</p>
+	</li></ol><h5 id="x15.9.5.27">15.9.5.27 Date.prototype.setTime (time) <a href="#x15.9.5.27">#</a> <a href="#x15.9.5.27-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<ol><li><p>
+		Let
+		<i>v</i> be <a href="#x15.9.1.14">TimeClip</a>(<a href="x9.html#x9.3">ToNumber</a>(<i>time</i>)).</p>
+		</li>
+		<li><p>
+		Set
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>v</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>v</i>.</p>
+	</li></ol><h5 id="x15.9.5.28">15.9.5.28 Date.prototype.setMilliseconds (ms) <a href="#x15.9.5.28">#</a> <a href="#x15.9.5.28-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<ol><li><p>
+		Let
+		<i>t</i> be the result of <a href="#x15.9.1.9">LocalTime</a>(<a href="#this-time-value">this time value</a>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>time</i> be <a href="#x15.9.1.11">MakeTime</a>(<a href="#x15.9.1.10">HourFromTime</a>(<i>t</i>), <a href="#x15.9.1.10">MinFromTime</a>(<i>t</i>),
+		<a href="#x15.9.1.10">SecFromTime</a>(<i>t</i>), <a href="x9.html#x9.3">ToNumber</a>(<i>ms</i>)).</p>
+		</li>
+		<li><p>
+		Let
+		<i>u</i> be <a href="#x15.9.1.14">TimeClip</a>(<a href="#x15.9.1.9">UTC</a>(<a href="#x15.9.1.13">MakeDate</a>(<a href="#x15.9.1.2">Day</a>(<i>t</i>), <i>time</i>))).</p>
+		</li>
+		<li><p>
+		Set
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>u</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>u</i>.</p>
+	</li></ol><h5 id="x15.9.5.29">15.9.5.29 Date.prototype.setUTCMilliseconds (ms) <a href="#x15.9.5.29">#</a> <a href="#x15.9.5.29-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<ol><li><p>
+		Let
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>time</i> be <a href="#x15.9.1.11">MakeTime</a>(<a href="#x15.9.1.10">HourFromTime</a>(<i>t</i>), <a href="#x15.9.1.10">MinFromTime</a>(<i>t</i>),
+		<a href="#x15.9.1.10">SecFromTime</a>(<i>t</i>), <a href="x9.html#x9.3">ToNumber</a>(<i>ms</i>)).</p>
+		</li>
+		<li><p>
+		Let
+		<i>v</i> be <a href="#x15.9.1.14">TimeClip</a>(<a href="#x15.9.1.13">MakeDate</a>(<a href="#x15.9.1.2">Day</a>(<i>t</i>), <i>time</i>)).</p>
+		</li>
+		<li><p>
+		Set
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>v</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>v</i>.</p>
+	</li></ol><h5 id="x15.9.5.30">15.9.5.30 Date.prototype.setSeconds (sec [, ms ] ) <a href="#x15.9.5.30">#</a> <a href="#x15.9.5.30-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	If <i>ms</i>
+	is not specified, this behaves as if <i>ms</i>
+	were specified with the value <code><b>getMilliseconds()</b></code>.</p>
+	<ol><li><p>
+		Let
+		<i>t</i> be the result of <a href="#x15.9.1.9">LocalTime</a>(<a href="#this-time-value">this time value</a>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>s</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>sec</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>ms</i> is not specified, then let <i>milli</i> be <a href="#x15.9.1.10">msFromTime</a>(<i>t</i>);
+		otherwise, let <i>milli</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>ms</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>date</i> be <a href="#x15.9.1.13">MakeDate</a>(<a href="#x15.9.1.2">Day</a>(<i>t</i>), <a href="#x15.9.1.11">MakeTime</a>(<a href="#x15.9.1.10">HourFromTime</a>(<i>t</i>),
+		<a href="#x15.9.1.10">MinFromTime</a>(<i>t</i>), <i>s</i>, <i>milli</i>)).</p>
+		</li>
+		<li><p>
+		Let
+		<i>u</i> be <a href="#x15.9.1.14">TimeClip</a>(<a href="#x15.9.1.9">UTC</a>(<i>date</i>)).</p>
+		</li>
+		<li><p>
+		Set
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>u</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>u</i>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>setSeconds</b></code>
+	method is <b>2</b>.</p>
+	<h5 id="x15.9.5.31">15.9.5.31 Date.prototype.setUTCSeconds (sec [, ms ] ) <a href="#x15.9.5.31">#</a> <a href="#x15.9.5.31-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	If <i>ms</i>
+	is not specified, this behaves as if <i>ms</i>
+	were specified with the value <code><b>getUTCMilliseconds()</b></code>.</p>
+	<ol><li><p>
+		Let
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>s</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>sec</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>ms</i> is not specified, then let <i>milli</i> be <a href="#x15.9.1.10">msFromTime</a>(<i>t</i>);
+		otherwise, let <i>milli</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>ms</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>date</i> be <a href="#x15.9.1.13">MakeDate</a>(<a href="#x15.9.1.2">Day</a>(<i>t</i>), <a href="#x15.9.1.11">MakeTime</a>(<a href="#x15.9.1.10">HourFromTime</a>(<i>t</i>),
+		<a href="#x15.9.1.10">MinFromTime</a>(<i>t</i>), <i>s</i>, <i>milli</i>)).</p>
+		</li>
+		<li><p>
+		Let
+		<i>v</i> be <a href="#x15.9.1.14">TimeClip</a>(<i>date</i>).</p>
+		</li>
+		<li><p>
+		Set
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>v</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>v</i>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>setUTCSeconds</b></code>
+	method is <b>2</b>.</p>
+	<h5 id="x15.9.5.32">15.9.5.32 Date.prototype.setMinutes (min [, sec [, ms ] ] ) <a href="#x15.9.5.32">#</a> <a href="#x15.9.5.32-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	If
+	<i>sec</i> is not
+	specified, this behaves as if <i>sec</i>
+	were specified with the value <code><b>getSeconds()</b></code>.</p>
+	<p>
+	If <i>ms</i>
+	is not specified, this behaves as if <i>ms</i>
+	were specified with the value <code><b>getMilliseconds()</b></code>.</p>
+	<ol><li><p>
+		Let
+		<i>t</i> be the result of <a href="#x15.9.1.9">LocalTime</a>(<a href="#this-time-value">this time value</a>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>m</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>min</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>sec</i> is not specified, then let <i>s</i> be <a href="#x15.9.1.10">SecFromTime</a>(<i>t</i>);
+		otherwise, let <i>s</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>sec</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>ms</i> is not specified, then let <i>milli</i> be <a href="#x15.9.1.10">msFromTime</a>(<i>t</i>);
+		otherwise, let <i>milli</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>ms</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>date</i> be <a href="#x15.9.1.13">MakeDate</a>(<a href="#x15.9.1.2">Day</a>(<i>t</i>), <a href="#x15.9.1.11">MakeTime</a>(<a href="#x15.9.1.10">HourFromTime</a>(<i>t</i>),
+		<i>m</i>, <i>s</i>, <i>milli</i>)).</p>
+		</li>
+		<li><p>
+		Let
+		<i>u</i> be <a href="#x15.9.1.14">TimeClip</a>(<a href="#x15.9.1.9">UTC</a>(<i>date</i>)).</p>
+		</li>
+		<li><p>
+		Set
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>u</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>u</i>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>setMinutes</b></code>
+	method is <b>3</b>.</p>
+	<h5 id="x15.9.5.33">15.9.5.33 Date.prototype.setUTCMinutes (min [, sec [, ms ] ] ) <a href="#x15.9.5.33">#</a> <a href="#x15.9.5.33-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	If
+	<i>sec</i> is not
+	specified, this behaves as if <i>sec</i>
+	were specified with the value <code><b>getUTCSeconds()</b></code>.</p>
+	<p>
+	If <i>ms</i>
+	is not specified, this function behaves as if <i>ms</i>
+	were specified with the value return by <code><b>getUTCMilliseconds()</b></code>.</p>
+	<ol><li><p>
+		Let
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>m</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>min</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>sec</i> is not specified, then let <i>s</i> be <a href="#x15.9.1.10">SecFromTime</a>(<i>t</i>);
+		otherwise, let <i>s</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>sec</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>ms</i> is not specified, then let <i>milli</i> be <a href="#x15.9.1.10">msFromTime</a>(<i>t</i>);
+		otherwise, let <i>milli</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>ms</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>date</i> be <a href="#x15.9.1.13">MakeDate</a>(<a href="#x15.9.1.2">Day</a>(<i>t</i>), <a href="#x15.9.1.11">MakeTime</a>(<a href="#x15.9.1.10">HourFromTime</a>(<i>t</i>),
+		<i>m</i>, <i>s</i>, <i>milli</i>)).</p>
+		</li>
+		<li><p>
+		Let
+		<i>v</i> be <a href="#x15.9.1.14">TimeClip</a>(<i>date</i>).</p>
+		</li>
+		<li><p>
+		Set
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>v</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>v</i>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>setUTCMinutes</b></code>
+	method is <b>3</b>.</p>
+	<h5 id="x15.9.5.34">15.9.5.34 Date.prototype.setHours (hour [, min [, sec [, ms ] ] ] ) <a href="#x15.9.5.34">#</a> <a href="#x15.9.5.34-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	If
+	<i>min</i> is not
+	specified, this behaves as if <i>min</i>
+	were specified with the value <code><b>getMinutes()</b></code>.</p>
+	<p>
+	If
+	<i>sec</i> is not
+	specified, this behaves as if <i>sec</i>
+	were specified with the value <code><b>getSeconds()</b></code>.</p>
+	<p>
+	If <i>ms</i>
+	is not specified, this behaves as if <i>ms</i>
+	were specified with the value <code><b>getMilliseconds()</b></code>.</p>
+	<ol><li><p>
+		Let
+		<i>t</i> be the result of <a href="#x15.9.1.9">LocalTime</a>(<a href="#this-time-value">this time value</a>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>h</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>hour</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>min</i> is not specified, then let <i>m</i> be <a href="#x15.9.1.10">MinFromTime</a>(<i>t</i>);
+		otherwise, let <i>m</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>min</i>).</p>
+		</li>
+		<li><p>
+		If
+		If <i>sec</i> is not specified, then let <i>s</i> be
+		<a href="#x15.9.1.10">SecFromTime</a>(<i>t</i>); otherwise, let <i>s</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>sec</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>ms</i> is not specified, then let <i>milli</i> be <a href="#x15.9.1.10">msFromTime</a>(<i>t</i>);
+		otherwise, let <i>milli</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>ms</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>date</i> be <a href="#x15.9.1.13">MakeDate</a>(<a href="#x15.9.1.2">Day</a>(<i>t</i>), <a href="#x15.9.1.11">MakeTime</a>(<i>h</i>, <i>m</i>,
+		<i>s</i>, <i>milli</i>)).</p>
+		</li>
+		<li><p>
+		Let
+		<i>u</i> be <a href="#x15.9.1.14">TimeClip</a>(<a href="#x15.9.1.9">UTC</a>(<i>date</i>)).</p>
+		</li>
+		<li><p>
+		Set
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>u</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>u</i>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>setHours</b></code>
+	method is <b>4</b>.</p>
+	<h5 id="x15.9.5.35">15.9.5.35 Date.prototype.setUTCHours (hour [, min [, sec [, ms ] ] ] ) <a href="#x15.9.5.35">#</a> <a href="#x15.9.5.35-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	If
+	<i>min</i> is not
+	specified, this behaves as if <i>min</i>
+	were specified with the value <code><b>getUTCMinutes()</b></code>.</p>
+	<p>
+	If
+	<i>sec</i> is not
+	specified, this behaves as if <i>sec</i>
+	were specified with the value <code><b>getUTCSeconds()</b></code>.</p>
+	<p>
+	If <i>ms</i>
+	is not specified, this behaves as if <i>ms</i>
+	were specified with the value <code><b>getUTCMilliseconds()</b></code>.</p>
+	<ol><li><p>
+		Let
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>h</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>hour</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>min</i> is not specified, then let <i>m</i> be <a href="#x15.9.1.10">MinFromTime</a>(<i>t</i>);
+		otherwise, let <i>m</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>min</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>sec</i> is not specified, then let <i>s</i> be <a href="#x15.9.1.10">SecFromTime</a>(<i>t</i>);
+		otherwise, let <i>s</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>sec</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>ms</i> is not specified, then let <i>milli</i> be <a href="#x15.9.1.10">msFromTime</a>(<i>t</i>);
+		otherwise, let <i>milli</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>ms</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>newDate</i> be <a href="#x15.9.1.13">MakeDate</a>(<a href="#x15.9.1.2">Day</a>(<i>t</i>), <a href="#x15.9.1.11">MakeTime</a>(<i>h</i>, <i>m</i>,
+		<i>s</i>, <i>milli</i>)).</p>
+		</li>
+		<li><p>
+		Let
+		<i>v</i> be <a href="#x15.9.1.14">TimeClip</a>(<i>newDate</i>).</p>
+		</li>
+		<li><p>
+		Set
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>v</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>v</i>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>setUTCHours</b></code>
+	method is <b>4</b>.</p>
+	<h5 id="x15.9.5.36">15.9.5.36 Date.prototype.setDate (date) <a href="#x15.9.5.36">#</a> <a href="#x15.9.5.36-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<ol><li><p>
+		Let
+		<i>t</i> be the result of <a href="#x15.9.1.9">LocalTime</a>(<a href="#this-time-value">this time value</a>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>dt</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>date</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>newDate</i> be <a href="#x15.9.1.13">MakeDate</a>(<a href="#x15.9.1.12">MakeDay</a>(<a href="#YearFromTime">YearFromTime</a>(<i>t</i>),
+		<a href="#x15.9.1.4">MonthFromTime</a>(<i>t</i>), <i>dt</i>), <a href="#x15.9.1.2">TimeWithinDay</a>(<i>t</i>)).</p>
+		</li>
+		<li><p>
+		Let
+		<i>u</i> be <a href="#x15.9.1.14">TimeClip</a>(<a href="#x15.9.1.9">UTC</a>(<i>newDate</i>)).</p>
+		</li>
+		<li><p>
+		Set
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>u</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>u</i>.</p>
+	</li></ol><h5 id="x15.9.5.37">15.9.5.37 Date.prototype.setUTCDate (date) <a href="#x15.9.5.37">#</a> <a href="#x15.9.5.37-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<ol><li><p>
+		Let
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>dt</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>date</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>newDate</i> be <a href="#x15.9.1.13">MakeDate</a>(<a href="#x15.9.1.12">MakeDay</a>(<a href="#YearFromTime">YearFromTime</a>(<i>t</i>),
+		<a href="#x15.9.1.4">MonthFromTime</a>(<i>t</i>), <i>dt</i>), <a href="#x15.9.1.2">TimeWithinDay</a>(<i>t</i>)).</p>
+		</li>
+		<li><p>
+		Let
+		<i>v</i> be <a href="#x15.9.1.14">TimeClip</a>(<i>newDate</i>).</p>
+		</li>
+		<li><p>
+		Set
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>v</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>v</i>.</p>
+	</li></ol><h5 id="x15.9.5.38">15.9.5.38 Date.prototype.setMonth (month [, date ] ) <a href="#x15.9.5.38">#</a> <a href="#x15.9.5.38-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	If
+	<i>date</i> is not
+	specified, this behaves as if <i>date</i>
+	were specified with the value <code><b>getDate()</b></code>.</p>
+	<ol><li><p>
+		Let
+		<i>t</i> be the result of <a href="#x15.9.1.9">LocalTime</a>(<a href="#this-time-value">this time value</a>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>m</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>month</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>date</i> is not specified, then let <i>dt</i> be
+		<a href="#x15.9.1.5">DateFromTime</a>(<i>t</i>); otherwise, let <i>dt</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>date</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>newDate</i> be <a href="#x15.9.1.13">MakeDate</a>(<a href="#x15.9.1.12">MakeDay</a>(<a href="#YearFromTime">YearFromTime</a>(<i>t</i>), <i>m</i>,
+		<i>dt</i>), <a href="#x15.9.1.2">TimeWithinDay</a>(<i>t</i>)).</p>
+		</li>
+		<li><p>
+		Let
+		<i>u</i> be <a href="#x15.9.1.14">TimeClip</a>(<a href="#x15.9.1.9">UTC</a>(<i>newDate</i>)).</p>
+		</li>
+		<li><p>
+		Set
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>u</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>u</i>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>setMonth</b></code>
+	method is <b>2</b>.</p>
+	<h5 id="x15.9.5.39">15.9.5.39 Date.prototype.setUTCMonth (month [, date ] ) <a href="#x15.9.5.39">#</a> <a href="#x15.9.5.39-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	If
+	<i>date</i> is not
+	specified, this behaves as if <i>date</i>
+	were specified with the value <code><b>getUTCDate()</b></code>.</p>
+	<ol><li><p>
+		Let
+		<i>t</i> be <a href="#this-time-value">this time value</a>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>m</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>month</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>date</i> is not specified, then let <i>dt</i> be
+		<a href="#x15.9.1.5">DateFromTime</a>(<i>t</i>); otherwise, let <i>dt</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>date</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>newDate</i> be <a href="#x15.9.1.13">MakeDate</a>(<a href="#x15.9.1.12">MakeDay</a>(<a href="#YearFromTime">YearFromTime</a>(<i>t</i>), <i>m</i>,
+		<i>dt</i>), <a href="#x15.9.1.2">TimeWithinDay</a>(<i>t</i>)).</p>
+		</li>
+		<li><p>
+		Let
+		<i>v</i> be <a href="#x15.9.1.14">TimeClip</a>(<i>newDate</i>).</p>
+		</li>
+		<li><p>
+		Set
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>v</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>v</i>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>setUTCMonth</b></code>
+	method is <b>2</b>.</p>
+	<h5 id="x15.9.5.40">15.9.5.40 Date.prototype.setFullYear (year [, month [, date ] ] ) <a href="#x15.9.5.40">#</a> <a href="#x15.9.5.40-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	If
+	<i>month</i> is not
+	specified, this behaves as if <i>month</i>
+	were specified with the value <code><b>getMonth()</b></code>.</p>
+	<p>
+	If
+	<i>date</i> is not
+	specified, this behaves as if <i>date</i>
+	were specified with the value <code><b>getDate()</b></code>.</p>
+	<ol><li><p>
+		Let
+		<i>t</i> be the result of <a href="#x15.9.1.9">LocalTime</a>(<a href="#this-time-value">this time value</a>); but if <a href="#this-time-value">this time value</a> is <b>NaN</b>, let <i>t</i> be <b>+0</b>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>y</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>year</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>month</i> is not specified, then let <i>m</i> be
+		<a href="#x15.9.1.4">MonthFromTime</a>(<i>t</i>); otherwise, let <i>m</i> be
+		<a href="x9.html#x9.3">ToNumber</a>(<i>month</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>date</i> is not specified, then let <i>dt</i> be
+		<a href="#x15.9.1.5">DateFromTime</a>(<i>t</i>); otherwise, let <i>dt</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>date</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>newDate</i> be <a href="#x15.9.1.13">MakeDate</a>(<a href="#x15.9.1.12">MakeDay</a>(<i>y</i>, <i>m</i>, <i>dt</i>),
+		<a href="#x15.9.1.2">TimeWithinDay</a>(<i>t</i>)).</p>
+		</li>
+		<li><p>
+		Let
+		<i>u</i> be <a href="#x15.9.1.14">TimeClip</a>(<a href="#x15.9.1.9">UTC</a>(<i>newDate</i>)).</p>
+		</li>
+		<li><p>
+		Set
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>u</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>u</i>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>setFullYear</b></code>
+	method is <b>3</b>.</p>
+	<h5 id="x15.9.5.41">15.9.5.41 Date.prototype.setUTCFullYear (year [, month [, date ] ] ) <a href="#x15.9.5.41">#</a> <a href="#x15.9.5.41-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	If
+	<i>month</i> is not
+	specified, this behaves as if <i>month</i>
+	were specified with the value <code><b>getUTCMonth()</b></code>.</p>
+	<p>
+	If
+	<i>date</i> is not
+	specified, this behaves as if <i>date</i>
+	were specified with the value <code><b>getUTCDate()</b></code>.</p>
+	<ol><li><p>
+		Let
+		<i>t</i> be <a href="#this-time-value">this time value</a>; but if <a href="#this-time-value">this time value</a> is <b>NaN</b>,
+		let <i>t</i> be <b>+0</b>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>y</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>year</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>month</i> is not specified, then let <i>m</i> be
+		<a href="#x15.9.1.4">MonthFromTime</a>(<i>t</i>); otherwise, let <i>m</i> be
+		<a href="x9.html#x9.3">ToNumber</a>(<i>month</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>date</i> is not specified, then let <i>dt</i> be
+		<a href="#x15.9.1.5">DateFromTime</a>(<i>t</i>); otherwise, let <i>dt</i> be <a href="x9.html#x9.3">ToNumber</a>(<i>date</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>newDate</i> be <a href="#x15.9.1.13">MakeDate</a>(<a href="#x15.9.1.12">MakeDay</a>(<i>y</i>, <i>m</i>, <i>dt</i>),
+		<a href="#x15.9.1.2">TimeWithinDay</a>(<i>t</i>)).</p>
+		</li>
+		<li><p>
+		Let
+		<i>v</i> be <a href="#x15.9.1.14">TimeClip</a>(<i>newDate</i>).</p>
+		</li>
+		<li><p>
+		Set
+		the [[PrimitiveValue]] internal property of <a href="#this-date-object">this Date object</a> to <i>v</i>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>v</i>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>setUTCFullYear</b></code>
+	method is <b>3</b>.</p>
+	<h5 id="x15.9.5.42">15.9.5.42 Date.prototype.toUTCString ( ) <a href="#x15.9.5.42">#</a> <a href="#x15.9.5.42-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	This
+	function returns a String value. The contents of the String are
+	implementation-dependent, but are intended to represent the Date in
+	a convenient, human-readable form in UTC.</p>
+	<p><b class="note">NOTE</b> The
+	intent is to produce a String representation of a date that is more
+	readable than the format specified in <a href="#x15.9.1.15">15.9.1.15</a>. It is not essential
+	that the chosen format be unambiguous or easily machine parsable. If
+	an implementation does not have a preferred human-readable format it
+	is recommended to use the format defined in <a href="#x15.9.1.15">15.9.1.15</a> but with a
+	space rather than a &#8220;<code>T</code>&#8221;
+	used to separate the date and time elements.</p>
+	<h5 id="x15.9.5.43">15.9.5.43 Date.prototype.toISOString ( ) <a href="#x15.9.5.43">#</a> <a href="#x15.9.5.43-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	This
+	function returns a String value represent the instance in time
+	represented by <a href="#this-date-object">this Date object</a>. The format of the String is the
+	Date Time string format defined in <a href="#x15.9.1.15">15.9.1.15</a>. All fields are present
+	in the String. The time zone is always UTC, denoted by the suffix Z.
+	If the time value of this object is not a finite Number a <b><a href="x15.11.html#x15.11.6.2" class="term-ref">RangeError</a></b>
+	exception is thrown.</p>
+	<h5 id="x15.9.5.44">15.9.5.44 Date.prototype.toJSON ( key ) <a href="#x15.9.5.44">#</a> <a href="#x15.9.5.44-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	This
+	function provides a String representation of a Date object for use
+	by <code><b>JSON.stringify</b></code>
+	(<a href="x15.12.html#x15.12.3">15.12.3</a>).</p>
+	<p>
+	When
+	the <code><b>toJSON</b></code> method
+	is called with argument <i>key</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>O</i> be the result of calling <a href="x9.html#x9.9">ToObject</a>, giving it the <b>this</b>
+		value as its argument.</p>
+		</li>
+		<li><p>
+		Let
+		<i>tv</i> be <a href="x9.html#x9.1">ToPrimitive</a>(<i>O</i>, hint Number).</p>
+		</li>
+		<li><p>
+		If
+		<i>tv</i> is a Number and is not finite, return <b>null</b>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>toISO</i> be the result of calling the [[Get]] internal method
+		of <i>O </i>with argument "<code><b>toISOString</b></code>".</p>
+		</li>
+		<li><p>
+		If
+		<a href="x9.html#x9.11">IsCallable</a>(<i>toISO</i>) is <b>false</b>, throw a <b>TypeError
+		</b>exception.</p>
+		</li>
+		<li><p>
+		Return
+		the result of calling the [[Call]] internal method of <i>toISO</i>
+		with <i>O </i>as the <b>this </b>value and an empty argument list.</p>
+	</li></ol><p class="sp"><b class="note">NOTE 1</b> The argument is ignored.</p>
+	<p class="sp"><b class="note">NOTE 2</b> The <code><b>toJSON</b></code>
+	function is intentionally generic; it does not require that its <b>this</b>
+	value be a Date object. Therefore, it can be transferred to other
+	kinds of objects for use as a method. However, it does require that
+	any such object have a <code><b>toISOString</b></code>
+	method. An object is free to use the argument <i>key</i>
+	to filter its stringification. 
+	</p>
+	<h4 id="x15.9.6">15.9.6 Properties of Date Instances <a href="#x15.9.6">#</a> <a href="#x15.9.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	Date
+	instances inherit properties from the Date prototype object and
+	their [[Class]] internal property value is <code><b>"Date"</b></code>.
+	Date instances also have a [[PrimitiveValue]] internal property.</p>
+	<p>
+	The
+	[[PrimitiveValue]] internal property is time value represented by
+	<a href="#this-date-object">this Date object</a>.</p>
+	</body><script src="anno.js"></script></html>

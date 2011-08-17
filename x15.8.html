@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html class="split chapter"><head><meta charset="utf-8"><title>15.8 The Math Object # &#9417; &#9402; &#9312; &#9398; &#8212; Annotated ES5</title><link rel="stylesheet" href="style.css"><link rel="shortcut icon" href="favicon.ico"><link href="x15.7.html" title="15.7 Number Objects " rel="prev">
+  <link href="spec.html#contents" title="TOC" rel="index">
+  <link href="x15.9.html" title="15.9 Date Objects " rel="next">
+  </head><body><div class="head">
+<h2 id="top">Annotated ECMAScript 5.1 <span id="timestamp"></span></h2>
+<div id="mascot-treehouse">
+	<img id="mascot" align="left" src="js-mascot.svg" alt=""><img id="bubble" src="bubble.svg" alt=""></div>
+<p id="slogan">&#8223;Ex igne vita&#8221;</p>
+<div id="annotations"></div>
+<script src="timestamp.js"></script></div>
+<nav>
+   <a href="x15.7.html">&#8592; 15.7 Number Objects </a> &#8211;
+   <a href="spec.html#contents">TOC</a> &#8211;
+   <a href="x15.9.html">15.9 Date Objects  &#8594;</a>
+  <ol class="toc"><li><ol><li><a href="x15.8.html#x15.8" id="x15.8-toc">15.8 The Math Object</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.8.html#x15.8.1" id="x15.8.1-toc">15.8.1 Value Properties of the Math Object</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.8.html#x15.8.1.1" id="x15.8.1.1-toc">15.8.1.1 E</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.8.html#x15.8.1.2" id="x15.8.1.2-toc">15.8.1.2 LN10</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.8.html#x15.8.1.3" id="x15.8.1.3-toc">15.8.1.3 LN2</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.8.html#x15.8.1.4" id="x15.8.1.4-toc">15.8.1.4 LOG2E</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.8.html#x15.8.1.5" id="x15.8.1.5-toc">15.8.1.5 LOG10E</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.8.html#x15.8.1.6" id="x15.8.1.6-toc">15.8.1.6 PI</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.8.html#x15.8.1.7" id="x15.8.1.7-toc">15.8.1.7 SQRT1_2</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.8.html#x15.8.1.8" id="x15.8.1.8-toc">15.8.1.8 SQRT2</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.8.html#x15.8.2" id="x15.8.2-toc">15.8.2 Function Properties of the Math Object</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.8.html#x15.8.2.1" id="x15.8.2.1-toc">15.8.2.1 abs (x)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.8.html#x15.8.2.2" id="x15.8.2.2-toc">15.8.2.2 acos (x)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.8.html#x15.8.2.3" id="x15.8.2.3-toc">15.8.2.3 asin (x)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.8.html#x15.8.2.4" id="x15.8.2.4-toc">15.8.2.4 atan (x)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.8.html#x15.8.2.5" id="x15.8.2.5-toc">15.8.2.5 atan2 (y, x)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.8.html#x15.8.2.6" id="x15.8.2.6-toc">15.8.2.6 ceil (x)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.8.html#x15.8.2.7" id="x15.8.2.7-toc">15.8.2.7 cos (x)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.8.html#x15.8.2.8" id="x15.8.2.8-toc">15.8.2.8 exp (x)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.8.html#x15.8.2.9" id="x15.8.2.9-toc">15.8.2.9 floor (x)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.8.html#x15.8.2.10" id="x15.8.2.10-toc">15.8.2.10 log (x)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.8.html#x15.8.2.11" id="x15.8.2.11-toc">15.8.2.11 max ( [ value1 [ , value2 [ , &#8230; ] ] ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.8.html#x15.8.2.12" id="x15.8.2.12-toc">15.8.2.12 min ( [ value1 [ , value2 [ , &#8230; ] ] ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.8.html#x15.8.2.13" id="x15.8.2.13-toc">15.8.2.13 pow (x, y)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.8.html#x15.8.2.14" id="x15.8.2.14-toc">15.8.2.14 random ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.8.html#x15.8.2.15" id="x15.8.2.15-toc">15.8.2.15 round (x)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.8.html#x15.8.2.16" id="x15.8.2.16-toc">15.8.2.16 sin (x)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.8.html#x15.8.2.17" id="x15.8.2.17-toc">15.8.2.17 sqrt (x)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.8.html#x15.8.2.18" id="x15.8.2.18-toc">15.8.2.18 tan (x)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li></ol></li></ol></li></ol></nav>
+
+  <h3 id="x15.8" class="splitme">15.8 The Math Object <a href="#x15.8">#</a> <a href="#x15.8-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<p>
+	The
+	Math object is a single object that has some named properties, some
+	of which are functions.</p>
+	<p>
+	The
+	value of the [[Prototype]] internal property of the Math object is
+	the standard built-in Object prototype object (<a href="x15.2.html#x15.2.4">15.2.4</a>). The value of
+	the [[Class]] internal property of the Math object is <code><b>"Math"</b></code>.</p>
+	<p>
+	The
+	Math object does not have a [[Construct]] internal property; it is
+	not possible to use the Math object as a constructor with the <code><b>new</b></code>
+	operator.</p>
+	<p>
+	The
+	Math object does not have a [[Call]] internal property; it is not
+	possible to invoke the Math object as a function.</p>
+	<p><b class="note">NOTE</b> In
+	this specification, the phrase &#8220;the Number value for <i>x</i>&#8221;
+	has a technical meaning defined in <a href="x8.html#x8.5">8.5</a>.</p>
+	<h4 id="x15.8.1">15.8.1 Value Properties of the Math Object <a href="#x15.8.1">#</a> <a href="#x15.8.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<h5 id="x15.8.1.1">15.8.1.1 E <a href="#x15.8.1.1">#</a> <a href="#x15.8.1.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	Number value for <i>e</i>,
+	the base of the natural logarithms, which is approximately
+	2.7182818284590452354.</p>
+	<p>
+	This
+	property has the attributes { [[Writable]]: <b>false</b>,
+	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b> }.</p>
+	<h5 id="x15.8.1.2">15.8.1.2 LN10 <a href="#x15.8.1.2">#</a> <a href="#x15.8.1.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	Number value for the natural logarithm of 10, which is approximately
+	2.302585092994046.</p>
+	<p>
+	This
+	property has the attributes { [[Writable]]: <b>false</b>,
+	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b> }.</p>
+	<h5 id="x15.8.1.3">15.8.1.3 LN2 <a href="#x15.8.1.3">#</a> <a href="#x15.8.1.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	Number value for the natural logarithm of 2, which is approximately
+	0.6931471805599453.</p>
+	<p>
+	This
+	property has the attributes { [[Writable]]: <b>false</b>,
+	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b> }.</p>
+	<h5 id="x15.8.1.4">15.8.1.4 LOG2E <a href="#x15.8.1.4">#</a> <a href="#x15.8.1.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	Number value for the base-2
+	logarithm of <i>e</i>,
+	the base of the natural logarithms; this value is approximately
+	1.4426950408889634.</p>
+	<p>
+	This
+	property has the attributes { [[Writable]]: <b>false</b>,
+	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b> }.</p>
+	<p><b class="note">NOTE</b> The
+	value of <code><b>Math.LOG2E</b></code>
+	is approximately the reciprocal of the value of <code><b>Math.LN2</b></code>.</p>
+	<h5 id="x15.8.1.5">15.8.1.5 LOG10E <a href="#x15.8.1.5">#</a> <a href="#x15.8.1.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	Number value for the base-10
+	logarithm of <i>e</i>,
+	the base of the natural logarithms; this value is approximately
+	0.4342944819032518.</p>
+	<p>
+	This
+	property has the attributes { [[Writable]]: <b>false</b>,
+	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b> }.</p>
+	<p><b class="note">NOTE</b> The
+	value of <code><b>Math.LOG10E</b></code>
+	is approximately the reciprocal of the value of <code><b>Math.LN10</b></code>.</p>
+	<h5 id="x15.8.1.6">15.8.1.6 PI <a href="#x15.8.1.6">#</a> <a href="#x15.8.1.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	Number value for <span class="symbol">&#960;</span>, the ratio of
+	the circumference of a circle to its diameter, which is
+	approximately 3.1415926535897932.</p>
+	<p>
+	This
+	property has the attributes { [[Writable]]: <b>false</b>,
+	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b> }.</p>
+	<h5 id="x15.8.1.7">15.8.1.7 SQRT1_2 <a href="#x15.8.1.7">#</a> <a href="#x15.8.1.7-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	Number value for the square root of &#189;,
+	which is approximately 0.7071067811865476.</p>
+	<p>
+	This
+	property has the attributes { [[Writable]]: <b>false</b>,
+	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b> }.</p>
+	<p><b class="note">NOTE</b> The
+	value of <code><b>Math.SQRT1_2</b></code>
+	is approximately the reciprocal of the value of <code><b>Math.SQRT2</b></code>.</p>
+	<h5 id="x15.8.1.8">15.8.1.8 SQRT2 <a href="#x15.8.1.8">#</a> <a href="#x15.8.1.8-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	Number value for the square root of 2,
+	which is approximately 1.4142135623730951.</p>
+	<p>
+	This
+	property has the attributes { [[Writable]]: <b>false</b>,
+	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b> }.</p>
+	<h4 id="x15.8.2">15.8.2 Function Properties of the Math Object <a href="#x15.8.2">#</a> <a href="#x15.8.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	Each
+	of the following <code><b><a href="#x15.8" class="term-ref">Math</a></b></code> object functions applies the <a href="x9.html#x9.3">ToNumber</a> abstract operator to each of
+	its arguments (in left-to-right order if there is more than one) and
+	then performs a computation on the resulting Number value(s).</p>
+	<p>
+	In
+	the function descriptions below, the symbols NaN, <span class="symbol">&#8722;</span>0,
+	+0, <span class="symbol">&#8722;&#8734;</span> and +<span class="symbol">&#8734;</span>
+	refer to the Number values described in <a href="x8.html#x8.5">8.5</a>.</p>
+	<p><b class="note">NOTE</b> The
+	behaviour of the functions <code><b>acos</b></code>,
+	<code><b>asin</b></code>, <code><b>atan</b></code>,
+	<code><b>atan2</b></code>, <code><b>cos</b></code>,
+	<code><b>exp</b></code>, <code><b>log</b></code>,
+	<code><b>pow</b></code>, <code><b>sin</b></code>,
+	and <code><b>sqrt</b></code> is not
+	precisely specified here except to require specific results for
+	certain argument values that represent boundary cases of interest.
+	For other argument values, these functions are intended to compute
+	approximations to the results of familiar mathematical functions,
+	but some latitude is allowed in the choice of approximation
+	algorithms. The general intent is that an implementer should be able
+	to use the same mathematical library for ECMAScript on a given
+	hardware platform that is available to C programmers on that
+	platform.</p>
+	<p>
+	Although
+	the choice of algorithms is left to the implementation, it is
+	recommended (but not specified by this standard) that
+	implementations use the approximation algorithms for IEEE 754
+	arithmetic contained in <code><b>fdlibm</b></code>,
+	the freely distributable mathematical library from Sun Microsystems
+	(<a href="http://www.netlib.org/fdlibm">http://www.netlib.org/fdlibm</a>).
+	
+	</p>
+	<h5 id="x15.8.2.1">15.8.2.1 abs (x) <a href="#x15.8.2.1">#</a> <a href="#x15.8.2.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Returns
+	the absolute value of <i>x</i>;
+	the result has the same magnitude as <i>x</i>
+	but has positive sign.</p>
+	<ul><li><p>
+		If
+		<i>x</i>
+		is NaN, the result is NaN.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is <span class="symbol">&#8722;</span>0,
+		the result is +0.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is <span class="symbol">&#8722;&#8734;</span>,
+		the result is +<span class="symbol">&#8734;</span>.</p>
+	</li></ul><h5 id="x15.8.2.2">15.8.2.2 acos (x) <a href="#x15.8.2.2">#</a> <a href="#x15.8.2.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Returns
+	an implementation-dependent approximation to the arc cosine of <i>x</i>.
+	The result is expressed in radians and ranges from +0
+	to +<span class="symbol">&#960;</span>.</p>
+	<ul><li><p>
+		If
+		<i>x</i>
+		is NaN, the result is NaN.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is greater than 1, the result is NaN.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is less than <span class="symbol"><b>&#8722;</b></span>1,
+		the result is NaN.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is exactly 1, the result is +0.</p>
+	</li></ul><h5 id="x15.8.2.3">15.8.2.3 asin (x) <a href="#x15.8.2.3">#</a> <a href="#x15.8.2.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Returns
+	an implementation-dependent approximation to the arc sine of <i>x</i>.
+	The result is expressed in radians and ranges from <span class="symbol">&#8722;&#960;</span>/2
+	to +<span class="symbol">&#960;</span>/2.</p>
+	<ul><li><p>
+		If
+		<i>x</i>
+		is NaN, the result is NaN.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is greater than 1, the result is NaN.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is less than &#8211;1, the result is NaN.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is +0, the result is +0.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is <span class="symbol">&#8722;</span>0,
+		the result is <span class="symbol">&#8722;</span>0.</p>
+	</li></ul><h5 id="x15.8.2.4">15.8.2.4 atan (x) <a href="#x15.8.2.4">#</a> <a href="#x15.8.2.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Returns
+	an implementation-dependent approximation to the arc tangent of <i>x</i>.
+	The result is expressed in radians and ranges from <span class="symbol">&#8722;&#960;</span>/2
+	to +<span class="symbol">&#960;</span>/2.</p>
+	<ul><li><p>
+		If
+		<i>x</i>
+		is NaN, the result is NaN.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is +0, the result is +0.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is <span class="symbol">&#8722;</span>0,
+		the result is <span class="symbol">&#8722;</span>0.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is +<span class="symbol">&#8734;</span>,
+		the result is an implementation-dependent approximation to +<span class="symbol">&#960;</span>/2.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is <span class="symbol">&#8722;&#8734;</span>,
+		the result is an implementation-dependent approximation to <span class="symbol">&#8722;&#960;</span>/2.</p>
+	</li></ul><h5 id="x15.8.2.5">15.8.2.5 atan2 (y, x) <a href="#x15.8.2.5">#</a> <a href="#x15.8.2.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Returns
+	an implementation-dependent approximation to the arc tangent of the
+	quotient <i>y</i><b>/</b><i>x</i>
+	of the arguments <i>y</i>
+	and <i>x</i>, where the
+	signs of <i>y</i> and <i>x</i>
+	are used to determine the quadrant of the result. Note that it is
+	intentional and traditional for the two-argument arc tangent
+	function that the argument named <i>y</i>
+	be first and the argument named <i>x</i>
+	be second. The result is expressed in radians and ranges from <span class="symbol">&#8722;&#960;</span>
+	to +<span class="symbol">&#960;</span>.</p>
+	<ul><li><p>
+		If
+		either <i>x</i>
+		or <i>y</i>
+		is NaN, the result is NaN.</p>
+		</li>
+		<li><p>
+		If
+		<i>y</i>&gt;0
+		and <i>x</i>
+		is +0, the result is an implementation-dependent approximation to 
+		+<span class="symbol">&#960;</span>/2.</p>
+		</li>
+		<li><p>
+		If
+		<i>y</i>&gt;0
+		and <i>x</i>
+		is <span class="symbol">&#8722;</span>0,
+		the result is an implementation-dependent approximation to  +<span class="symbol">&#960;</span>/2.</p>
+		</li>
+		<li><p>
+		If
+		<i>y</i>
+		is +0 and <i>x</i>&gt;0,
+		the result is +0.</p>
+		</li>
+		<li><p>
+		If
+		<i>y</i>
+		is +0 and <i>x</i>
+		is +0, the result is +0.</p>
+		</li>
+		<li><p>
+		If
+		<i>y</i>
+		is +0 and <i>x</i>
+		is <span class="symbol">&#8722;</span>0,
+		the result is an implementation-dependent approximation to  +<span class="symbol">&#960;</span>.</p>
+		</li>
+		<li><p>
+		If
+		<i>y</i>
+		is +0 and <i>x</i>&lt;0,
+		the result is an implementation-dependent approximation to  +<span class="symbol">&#960;</span>.</p>
+		</li>
+		<li><p>
+		If
+		<i>y</i>
+		is <span class="symbol">&#8722;</span>0
+		and <i>x</i>&gt;0,
+		the result is <span class="symbol">&#8722;</span>0.</p>
+		</li>
+		<li><p>
+		If
+		<i>y</i>
+		is <span class="symbol">&#8722;</span>0
+		and <i>x</i>
+		is +0, the result is <span class="symbol">&#8722;</span>0.</p>
+		</li>
+		<li><p>
+		If
+		<i>y</i>
+		is <span class="symbol">&#8722;</span>0
+		and <i>x</i>
+		is <span class="symbol">&#8722;</span>0,
+		the result is an implementation-dependent approximation to  <span class="symbol">&#8722;&#960;</span>.</p>
+		</li>
+		<li><p>
+		If
+		<i>y</i>
+		is <span class="symbol">&#8722;</span>0
+		and <i>x</i>&lt;0,
+		the result is an implementation-dependent approximation to  <span class="symbol">&#8722;&#960;</span>.</p>
+		</li>
+		<li><p>
+		If
+		<i>y</i>&lt;0
+		and <i>x</i>
+		is +0, the result is an implementation-dependent approximation to 
+		<span class="symbol">&#8722;&#960;</span>/2.</p>
+		</li>
+		<li><p>
+		If
+		<i>y</i>&lt;0
+		and <i>x</i>
+		is <span class="symbol">&#8722;</span>0,
+		the result is an implementation-dependent approximation to  <span class="symbol">&#8722;&#960;</span>/2.</p>
+		</li>
+		<li><p>
+		If
+		<i>y</i>&gt;0
+		and <i>y</i>
+		is finite and <i>x</i>
+		is +<span class="symbol">&#8734;</span>,
+		the result is +0.</p>
+		</li>
+		<li><p>
+		If
+		<i>y</i>&gt;0
+		and <i>y</i>
+		is finite and <i>x</i>
+		is <span class="symbol">&#8722;&#8734;</span>,
+		the result if an implementation-dependent approximation to  +<span class="symbol">&#960;</span>.</p>
+		</li>
+		<li><p>
+		If
+		<i>y</i>&lt;0
+		and <i>y</i>
+		is finite and <i>x</i>
+		is +<span class="symbol">&#8734;</span>,
+		the result is <span class="symbol">&#8722;</span>0.</p>
+		</li>
+		<li><p>
+		If
+		<i>y</i>&lt;0
+		and <i>y</i>
+		is finite and <i>x</i>
+		is <span class="symbol">&#8722;&#8734;</span>,
+		the result is an implementation-dependent approximation to <span class="symbol">&#8722;&#960;</span>.</p>
+		</li>
+		<li><p>
+		If
+		<i>y</i>
+		is +<span class="symbol">&#8734;</span>
+		and <i>x</i>
+		is finite, the result is an implementation-dependent approximation
+		to  +<span class="symbol">&#960;</span>/2.</p>
+		</li>
+		<li><p>
+		If
+		<i>y</i>
+		is <span class="symbol">&#8722;&#8734;</span>
+		and <i>x</i>
+		is finite, the result is an implementation-dependent approximation
+		to  <span class="symbol">&#8722;&#960;</span>/2.</p>
+		</li>
+		<li><p>
+		If
+		<i>y</i>
+		is +<span class="symbol">&#8734;</span>
+		and <i>x</i>
+		is +<span class="symbol">&#8734;</span>,
+		the result is an implementation-dependent approximation to  +<span class="symbol">&#960;</span>/4.</p>
+		</li>
+		<li><p>
+		If
+		<i>y</i>
+		is +<span class="symbol">&#8734;</span>
+		and <i>x</i>
+		is <span class="symbol">&#8722;&#8734;</span>,
+		the result is an implementation-dependent approximation to  +3<span class="symbol">&#960;</span>/4.</p>
+		</li>
+		<li><p>
+		If
+		<i>y</i>
+		is <span class="symbol">&#8722;&#8734;</span>
+		and <i>x</i>
+		is +<span class="symbol">&#8734;</span>,
+		the result is an implementation-dependent approximation to  <span class="symbol">&#8722;&#960;</span>/4.</p>
+		</li>
+		<li><p>
+		If
+		<i>y</i>
+		is <span class="symbol">&#8722;&#8734;</span>
+		and <i>x</i>
+		is <span class="symbol">&#8722;&#8734;</span>,
+		the result is an implementation-dependent approximation to  <span class="symbol">&#8722;</span>3<span class="symbol">&#960;</span>/4.</p>
+	</li></ul><h5 id="x15.8.2.6">15.8.2.6 ceil (x) <a href="#x15.8.2.6">#</a> <a href="#x15.8.2.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Returns
+	the smallest (closest to <span class="symbol"><b>&#8722;&#8734;</b></span>)
+	Number value that is not less than <i>x</i>
+	and is equal to a mathematical integer. If <i>x</i>
+	is already an integer, the result is <i>x</i>.</p>
+	<ul><li><p>
+		If
+		<i>x</i>
+		is NaN, the result is NaN.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is +0, the result is +0.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is <span class="symbol">&#8722;</span>0,
+		the result is <span class="symbol">&#8722;</span>0.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is +<span class="symbol">&#8734;</span>,
+		the result is +<span class="symbol">&#8734;</span>.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is <span class="symbol">&#8722;&#8734;</span>,
+		the result is <span class="symbol">&#8722;&#8734;</span>.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is less than 0 but greater than -1, the result is <span class="symbol">&#8722;</span>0.</p>
+	</li></ul><p>
+	The
+	value of <code><b>Math.ceil(x)</b></code>
+	is the same as the value of <code><b>-Math.floor(-x)</b></code>.</p>
+	<h5 id="x15.8.2.7">15.8.2.7 cos (x) <a href="#x15.8.2.7">#</a> <a href="#x15.8.2.7-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Returns
+	an implementation-dependent approximation to the cosine of <i>x</i>.
+	The argument is expressed in radians.</p>
+	<ul><li><p>
+		If
+		<i>x</i>
+		is NaN, the result is NaN.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is +0, the result is 1.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is <span class="symbol">&#8722;</span>0,
+		the result is 1.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is +<span class="symbol">&#8734;</span>,
+		the result is NaN.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is <span class="symbol">&#8722;&#8734;</span>,
+		the result is NaN.</p>
+	</li></ul><h5 id="x15.8.2.8">15.8.2.8 exp (x) <a href="#x15.8.2.8">#</a> <a href="#x15.8.2.8-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Returns
+	an implementation-dependent approximation to the exponential
+	function of <i>x</i> (<i>e</i>
+	raised to the power of <i>x</i>,
+	where <i>e</i> is the
+	base of the natural logarithms).</p>
+	<ul><li><p>
+		If
+		<i>x</i>
+		is NaN, the result is NaN.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is +0, the result is 1.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is <span class="symbol">&#8722;</span>0,
+		the result is 1.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is +<span class="symbol">&#8734;</span>,
+		the result is +<span class="symbol">&#8734;</span>.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is <span class="symbol">&#8722;&#8734;</span>,
+		the result is +0.</p>
+	</li></ul><h5 id="x15.8.2.9">15.8.2.9 floor (x) <a href="#x15.8.2.9">#</a> <a href="#x15.8.2.9-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Returns
+	the greatest (closest to <b>+</b><span class="symbol"><b>&#8734;</b></span>)
+	Number value that is not greater than <i>x</i>
+	and is equal to a mathematical integer. If <i>x</i>
+	is already an integer, the result is <i>x</i>.</p>
+	<ul><li><p>
+		If
+		<i>x</i>
+		is NaN, the result is NaN.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is +0, the result is +0.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is <span class="symbol">&#8722;</span>0,
+		the result is <span class="symbol">&#8722;</span>0.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is +<span class="symbol">&#8734;</span>,
+		the result is +<span class="symbol">&#8734;</span>.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is <span class="symbol">&#8722;&#8734;</span>,
+		the result is <span class="symbol">&#8722;&#8734;</span>.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is greater than 0 but less than 1, the result is +0.</p>
+	</li></ul><p><b class="note">NOTE</b> The
+	value of <code><b>Math.floor(x)</b></code>
+	is the same as the value of <code><b>-Math.ceil(-x)</b></code>.</p>
+	<h5 id="x15.8.2.10">15.8.2.10 log (x) <a href="#x15.8.2.10">#</a> <a href="#x15.8.2.10-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<ul><li><p>
+		Returns
+		an implementation-dependent approximation to the natural logarithm
+		of <i>x</i>.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is NaN, the result is NaN.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is less than 0, the result is NaN.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is +0 or <span class="symbol">&#8722;</span>0,
+		the result is <span class="symbol">&#8722;&#8734;</span>.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is 1, the result is +0.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is +<span class="symbol">&#8734;</span>,
+		the result is +<span class="symbol">&#8734;</span>.</p>
+	</li></ul><h5 id="x15.8.2.11">15.8.2.11 max ( [ value1 [ , value2 [ , &#8230; ] ] ] ) <a href="#x15.8.2.11">#</a> <a href="#x15.8.2.11-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Given
+	zero or more arguments, calls <a href="x9.html#x9.3">ToNumber</a> on each of the arguments and
+	returns the largest of the resulting values.</p>
+	<ul><li><p>
+		If
+		no arguments are given, the result is <span class="symbol">&#8722;&#8734;</span>.</p>
+		</li>
+		<li><p>
+		If
+		any value is NaN, the result is NaN.</p>
+		</li>
+		<li><p>
+		The
+		comparison of values to determine the largest value is done as in
+		<a href="x11.html#x11.8.5">11.8.5</a> except that +0 is considered to be larger than <span class="symbol">&#8722;</span>0.</p>
+	</li></ul><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>max</b></code> method is
+	<b>2</b>.</p>
+	<h5 id="x15.8.2.12">15.8.2.12 min ( [ value1 [ , value2 [ , &#8230; ] ] ] ) <a href="#x15.8.2.12">#</a> <a href="#x15.8.2.12-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Given
+	zero or more arguments, calls <a href="x9.html#x9.3">ToNumber</a> on each of the arguments and
+	returns the smallest of the resulting values.</p>
+	<ul><li><p>
+		If
+		no arguments are given, the result is +<span class="symbol">&#8734;</span>.</p>
+		</li>
+		<li><p>
+		If
+		any value is NaN, the result is NaN.</p>
+		</li>
+		<li><p>
+		The
+		comparison of values to determine the smallest value is done as in
+		<a href="x11.html#x11.8.5">11.8.5</a> except that +0 is considered to be larger than <span class="symbol">&#8722;</span>0.</p>
+	</li></ul><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>min</b></code> method is
+	<b>2</b>.</p>
+	<h5 id="x15.8.2.13">15.8.2.13 pow (x, y) <a href="#x15.8.2.13">#</a> <a href="#x15.8.2.13-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Returns
+	an implementation-dependent approximation to the result of raising <i>x</i>
+	to the power <i>y</i>.</p>
+	<ul><li><p>
+		If
+		<i>y</i>
+		is NaN, the result is NaN.</p>
+		</li>
+		<li><p>
+		If
+		<i>y</i>
+		is +0, the result is 1, even if <i>x</i>
+		is NaN.</p>
+		</li>
+		<li><p>
+		If
+		<i>y</i>
+		is <span class="symbol">&#8722;</span>0,
+		the result is 1, even if <i>x</i>
+		is NaN.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is NaN and <i>y</i>
+		is nonzero, the result is NaN.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x5.html#abs">abs</a>(<i>x</i>)&gt;1
+		and <i>y</i>
+		is +<span class="symbol">&#8734;</span>,
+		the result is +<span class="symbol">&#8734;</span>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x5.html#abs">abs</a>(<i>x</i>)&gt;1
+		and <i>y</i>
+		is <span class="symbol">&#8722;&#8734;</span>,
+		the result is +0.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x5.html#abs">abs</a>(<i>x</i>)==1
+		and <i>y</i>
+		is +<span class="symbol">&#8734;</span>,
+		the result is NaN.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x5.html#abs">abs</a>(<i>x</i>)==1
+		and <i>y</i>
+		is <span class="symbol">&#8722;&#8734;</span>,
+		the result is NaN.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x5.html#abs">abs</a>(<i>x</i>)&lt;1
+		and <i>y</i>
+		is +<span class="symbol">&#8734;</span>,
+		the result is +0.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x5.html#abs">abs</a>(<i>x</i>)&lt;1
+		and <i>y</i>
+		is <span class="symbol">&#8722;&#8734;</span>,
+		the result is +<span class="symbol">&#8734;</span>.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is +<span class="symbol">&#8734;</span>
+		and <i>y</i>&gt;0,
+		the result is +<span class="symbol">&#8734;</span>.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is +<span class="symbol">&#8734;</span>
+		and <i>y</i>&lt;0,
+		the result is +0.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is <span class="symbol">&#8722;&#8734;</span>
+		and <i>y</i>&gt;0
+		and <i>y</i>
+		is an odd integer, the result is <span class="symbol">&#8722;&#8734;</span>.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is <span class="symbol">&#8722;&#8734;</span>
+		and <i>y</i>&gt;0
+		and <i>y</i>
+		is not an odd integer, the result is +<span class="symbol">&#8734;</span>.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is <span class="symbol">&#8722;&#8734;</span>
+		and <i>y</i>&lt;0
+		and <i>y</i>
+		is an odd integer, the result is <span class="symbol">&#8722;</span>0.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is <span class="symbol">&#8722;&#8734;</span>
+		and <i>y</i>&lt;0
+		and <i>y</i>
+		is not an odd integer, the result is +0.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is +0 and <i>y</i>&gt;0,
+		the result is +0.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is +0 and <i>y</i>&lt;0,
+		the result is +<span class="symbol">&#8734;</span>.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is <span class="symbol">&#8722;</span>0
+		and <i>y</i>&gt;0
+		and <i>y</i>
+		is an odd integer, the result is <span class="symbol">&#8722;</span>0.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is <span class="symbol">&#8722;</span>0
+		and <i>y</i>&gt;0
+		and <i>y</i>
+		is not an odd integer, the result is +0.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is <span class="symbol">&#8722;</span>0
+		and <i>y</i>&lt;0
+		and <i>y</i>
+		is an odd integer, the result is <span class="symbol">&#8722;&#8734;</span>.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is <span class="symbol">&#8722;</span>0
+		and <i>y</i>&lt;0
+		and <i>y</i>
+		is not an odd integer, the result is +<span class="symbol">&#8734;</span>.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>&lt;0
+		and <i>x</i>
+		is finite and <i>y</i>
+		is finite and <i>y</i>
+		is not an integer, the result is NaN.</p>
+	</li></ul><h5 id="x15.8.2.14">15.8.2.14 random ( ) <a href="#x15.8.2.14">#</a> <a href="#x15.8.2.14-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Returns
+	a Number value with positive sign, greater than or equal to 0 but
+	less than 1, chosen randomly or pseudo randomly with approximately
+	uniform distribution over that range, using an
+	implementation-dependent algorithm or strategy. This function takes
+	no arguments.</p>
+	<h5 id="x15.8.2.15">15.8.2.15 round (x) <a href="#x15.8.2.15">#</a> <a href="#x15.8.2.15-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Returns
+	the Number value that is closest to <i>x</i>
+	and is equal to a mathematical integer. If two integer Number values
+	are equally close to <i>x</i>,
+	then the result is the Number value that is closer to +<span class="symbol">&#8734;</span>.
+	If <i>x</i> is already an
+	integer, the result is <i>x</i>.</p>
+	<ul><li><p>
+		If
+		<i>x</i>
+		is NaN, the result is NaN.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is +0, the result is +0.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is <span class="symbol">&#8722;</span>0,
+		the result is <span class="symbol">&#8722;</span>0.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is +<span class="symbol">&#8734;</span>,
+		the result is +<span class="symbol">&#8734;</span>.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is <span class="symbol">&#8722;&#8734;</span>,
+		the result is <span class="symbol">&#8722;&#8734;</span>.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is greater than 0 but less than 0.5, the result is +0.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is less than 0 but greater than or equal to -0.5, the result is <span class="symbol">&#8722;</span>0.</p>
+	</li></ul><p class="sp"><b class="note">NOTE 1</b> <code><b>Math.round(3.5)</b></code>
+	returns 4, but
+	<code><b>Math.round(&#8211;3.5)</b></code>
+	returns &#8211;3.</p>
+	<p class="sp"><b class="note">NOTE 2</b> The value of <code><b>Math.round(x)</b></code>
+	is the same as the value of <code><b>Math.floor(x+0.5)</b></code>,
+	except when <code><b>x</b></code> is
+	<span class="symbol">&#8722;</span>0<b>
+	</b>or is less than 0
+	but greater than or equal to -0.5;
+	for these cases <code><b>Math.round(x)</b></code>
+	returns <span class="symbol">&#8722;</span>0,
+	but <code><b>Math.floor(x+0.5)</b></code>
+	returns +0.</p>
+	<h5 id="x15.8.2.16">15.8.2.16 sin (x) <a href="#x15.8.2.16">#</a> <a href="#x15.8.2.16-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Returns
+	an implementation-dependent approximation to the sine of <i>x</i>.
+	The argument is expressed in radians.</p>
+	<ul><li><p>
+		If
+		<i>x</i>
+		is NaN, the result is NaN.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is +0, the result is +0.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is <span class="symbol">&#8722;</span>0,
+		the result is <span class="symbol">&#8722;</span>0.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is +<span class="symbol">&#8734;</span>
+		or <span class="symbol">&#8722;&#8734;</span>,
+		the result is NaN.</p>
+	</li></ul><h5 id="x15.8.2.17">15.8.2.17 sqrt (x) <a href="#x15.8.2.17">#</a> <a href="#x15.8.2.17-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Returns
+	an implementation-dependent approximation to the square root of <i>x</i>.</p>
+	<ul><li><p>
+		If
+		<i>x</i>
+		is NaN, the result is NaN.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is less than 0, the result is NaN.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is +0, the result is +0.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is <span class="symbol">&#8722;</span>0,
+		the result is <span class="symbol">&#8722;</span>0.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is +<span class="symbol">&#8734;</span>,
+		the result is +<span class="symbol">&#8734;</span>.</p>
+	</li></ul><h5 id="x15.8.2.18">15.8.2.18 tan (x) <a href="#x15.8.2.18">#</a> <a href="#x15.8.2.18-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Returns
+	an implementation-dependent approximation to the tangent of <i>x</i>.
+	The argument is expressed in radians.</p>
+	<ul><li><p>
+		If
+		<i>x</i>
+		is NaN, the result is NaN.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is +0, the result is +0.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is <span class="symbol">&#8722;</span>0,
+		the result is <span class="symbol">&#8722;</span>0.</p>
+		</li>
+		<li><p>
+		If
+		<i>x</i>
+		is +<span class="symbol">&#8734;</span>
+		or <span class="symbol">&#8722;&#8734;</span>,
+		the result is NaN.</p>
+	</li></ul></body><script src="anno.js"></script></html>

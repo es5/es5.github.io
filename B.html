@@ -268,7 +268,7 @@
 	<p>
 	The
 	<code><b>escape</b></code> function is
-	a property of the <a href="x15.html#x15.1" class="term-ref">global object</a>. It computes a new version of a
+	a property of the <a href="x15.1.html#x15.1" class="term-ref">global object</a>. It computes a new version of a
 	String value in which certain characters have been replaced by a
 	hexadecimal escape sequence.</p>
 	<p>
@@ -365,7 +365,7 @@
 	<p>
 	The
 	<code><b>unescape</b></code> function
-	is a property of the <a href="x15.html#x15.1" class="term-ref">global object</a>. It computes a new version of a
+	is a property of the <a href="x15.1.html#x15.1" class="term-ref">global object</a>. It computes a new version of a
 	String value in which each escape sequence of the sort that might be
 	introduced by the <code><b>escape</b></code>
 	function is replaced with the character that it represents.</p>
@@ -535,7 +535,7 @@
 	steps are taken:</p>
 	<ol><li><p>
 		Let
-		<i>t</i> be <a href="x15.html#this-time-value">this time value</a>.</p>
+		<i>t</i> be <a href="x15.9.html#this-time-value">this time value</a>.</p>
 		</li>
 		<li><p>
 		If
@@ -543,7 +543,7 @@
 		</li>
 		<li><p>
 		Return
-		<a href="x15.html#YearFromTime">YearFromTime</a>(<a href="x15.html#x15.9.1.9">LocalTime</a>(<i>t</i>)) <span class="symbol">&#8722;</span>
+		<a href="x15.9.html#YearFromTime">YearFromTime</a>(<a href="x15.9.html#x15.9.1.9">LocalTime</a>(<i>t</i>)) <span class="symbol">&#8722;</span>
 		1900.</p>
 	</li></ol><h4 id="B.2.5">B.2.5 Date.prototype.setYear (year) <a href="#B.2.5">#</a> <a href="#B.2.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
 	<p><b class="note">NOTE</b> The
@@ -556,7 +556,7 @@
 	the following steps are taken:</p>
 	<ol><li><p>
 		Let
-		<i>t</i> be the result of <a href="x15.html#x15.9.1.9">LocalTime</a>(<a href="x15.html#this-time-value">this time value</a>); but if <a href="x15.html#this-time-value">this time value</a> is <b>NaN</b>, let <i>t</i> be <b>+0</b>.</p>
+		<i>t</i> be the result of <a href="x15.9.html#x15.9.1.9">LocalTime</a>(<a href="x15.9.html#this-time-value">this time value</a>); but if <a href="x15.9.html#this-time-value">this time value</a> is <b>NaN</b>, let <i>t</i> be <b>+0</b>.</p>
 		</li>
 		<li><p>
 		Call
@@ -576,16 +576,16 @@
 		</li>
 		<li><p>
 		Compute
-		<a href="x15.html#x15.9.1.12">MakeDay</a>(Result(4), <a href="x15.html#x15.9.1.4">MonthFromTime</a>(<i>t</i>), <a href="x15.html#x15.9.1.5">DateFromTime</a>(<i>t</i>)).</p>
+		<a href="x15.9.html#x15.9.1.12">MakeDay</a>(Result(4), <a href="x15.9.html#x15.9.1.4">MonthFromTime</a>(<i>t</i>), <a href="x15.9.html#x15.9.1.5">DateFromTime</a>(<i>t</i>)).</p>
 		</li>
 		<li><p>
 		Compute
-		<a href="x15.html#x15.9.1.9">UTC</a>(<a href="x15.html#x15.9.1.13">MakeDate</a>(Result(5), <a href="x15.html#x15.9.1.2">TimeWithinDay</a>(<i>t</i>))).</p>
+		<a href="x15.9.html#x15.9.1.9">UTC</a>(<a href="x15.9.html#x15.9.1.13">MakeDate</a>(Result(5), <a href="x15.9.html#x15.9.1.2">TimeWithinDay</a>(<i>t</i>))).</p>
 		</li>
 		<li><p>
 		Set
 		the [[PrimitiveValue]] internal property of the <b>this</b> value
-		to <a href="x15.html#x15.9.1.14">TimeClip</a>(Result(6)).</p>
+		to <a href="x15.9.html#x15.9.1.14">TimeClip</a>(Result(6)).</p>
 		</li>
 		<li><p>
 		Return
@@ -603,5 +603,5 @@
 	Function object that is the initial value of
 	<code><b>Date.prototype.toGMTString</b></code>
 	is the same Function object that is the initial value of
-	<code><b><a href="x15.html#x15.9.5.42">Date.prototype.toUTCString</a></b></code>.</p>
+	<code><b><a href="x15.9.html#x15.9.5.42">Date.prototype.toUTCString</a></b></code>.</p>
 	</body><script src="anno.js"></script></html>

@@ -133,9 +133,9 @@ an object is a member of the remaining built-in type
 	ECMAScript
 	defines a collection of <i><b>built-in objects</b></i> that round
 	out the definition of ECMAScript entities. These built-in objects
-	include the <a href="x15.html#x15.1" class="term-ref">global object</a>, the <b><a href="x15.html#x15.2" class="term-ref">Object</a></b> object, the <b><a href="x15.html#x15.3" class="term-ref">Function</a></b> object, the <b><a href="x15.html#x15.4" class="term-ref">Array</a></b> object, the <b><a href="x15.html#x15.5" class="term-ref">String</a></b> object, the
-	<b><a href="x15.html#x15.6" class="term-ref">Boolean</a></b> object, the <b><a href="x15.html#x15.7" class="term-ref">Number</a></b> object, the <b><a href="x15.html#x15.8" class="term-ref">Math</a></b> object, the <b><a href="x15.html#x15.9" class="term-ref">Date</a></b> object, the <b><a href="x15.html#x15.10" class="term-ref">RegExp</a></b> object, the <b><a href="x15.html#x15.12" class="term-ref">JSON</a></b> object, and the Error objects <b><a href="x15.html#x15.11" class="term-ref">Error</a></b>, <b><a href="x15.html#x15.11.6.1" class="term-ref">EvalError</a></b>, <b><a href="x15.html#x15.11.6.2" class="term-ref">RangeError</a></b>,
-	<b><a href="x15.html#x15.11.6.3" class="term-ref">ReferenceError</a></b>, <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>, <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> and <b><a href="x15.html#x15.11.6.6" class="term-ref">URIError</a></b>.</p>
+	include the <a href="x15.1.html#x15.1" class="term-ref">global object</a>, the <b><a href="x15.2.html#x15.2" class="term-ref">Object</a></b> object, the <b><a href="x15.3.html#x15.3" class="term-ref">Function</a></b> object, the <b><a href="x15.4.html#x15.4" class="term-ref">Array</a></b> object, the <b><a href="x15.5.html#x15.5" class="term-ref">String</a></b> object, the
+	<b><a href="x15.6.html#x15.6" class="term-ref">Boolean</a></b> object, the <b><a href="x15.7.html#x15.7" class="term-ref">Number</a></b> object, the <b><a href="x15.8.html#x15.8" class="term-ref">Math</a></b> object, the <b><a href="x15.9.html#x15.9" class="term-ref">Date</a></b> object, the <b><a href="x15.10.html#x15.10" class="term-ref">RegExp</a></b> object, the <b><a href="x15.12.html#x15.12" class="term-ref">JSON</a></b> object, and the Error objects <b><a href="x15.11.html#x15.11" class="term-ref">Error</a></b>, <b><a href="x15.11.html#x15.11.6.1" class="term-ref">EvalError</a></b>, <b><a href="x15.11.html#x15.11.6.2" class="term-ref">RangeError</a></b>,
+	<b><a href="x15.11.html#x15.11.6.3" class="term-ref">ReferenceError</a></b>, <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>, <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> and <b><a href="x15.11.html#x15.11.6.6" class="term-ref">URIError</a></b>.</p>
 	<p>
 	ECMAScript
 	also defines a set of built-in <i><b>operators</b></i>. ECMAScript
@@ -322,7 +322,7 @@ an object is a member of the remaining built-in type
 	and properties added to an object&#8217;s prototype are shared, through
 	inheritance, by all objects sharing the prototype. Alternatively, a
 	new object may be created with an explicitly specified prototype by
-	using the <code><b><a href="x15.html#x15.2.3.5">Object.create</a></b></code>
+	using the <code><b><a href="x15.2.html#x15.2.3.5">Object.create</a></b></code>
 	built-in function.</p>
 	<h4 id="x4.3.6">4.3.6<br><dfn id="native_object">native object</dfn> <a href="#x4.3.6">#</a> <a href="#x4.3.6-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
 	<p>
@@ -414,7 +414,7 @@ an object is a member of the remaining built-in type
 	expression, supplying a String value as an argument. The resulting
 	object has an internal property whose value is the String value. A
 	String object can be coerced to a String value by calling the <code><b>String</b></code>
-	constructor as a function (<a href="x15.html#x15.5.1">15.5.1</a>).</p>
+	constructor as a function (<a href="x15.5.html#x15.5.1">15.5.1</a>).</p>
 	<h4 id="x4.3.19">4.3.19<br><dfn id="Number_value">Number value</dfn> <a href="#x4.3.19">#</a> <a href="#x4.3.19-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
 	<p>
 	<a href="#primitive_value" class="term-ref">primitive value</a> corresponding to a double-precision 64-bit binary format IEEE
@@ -439,7 +439,7 @@ an object is a member of the remaining built-in type
 	expression, supplying a Number value as an argument. The resulting
 	object has an internal property whose value is the Number value. A
 	Number object can be coerced to a Number value by calling the <code><b>Number</b></code>
-	constructor as a function (<a href="x15.html#x15.7.1">15.7.1</a>).</p>
+	constructor as a function (<a href="x15.7.html#x15.7.1">15.7.1</a>).</p>
 	<h4 id="x4.3.22">4.3.22<br><dfn id="Infinity">Infinity</dfn> <a href="#x4.3.22">#</a> <a href="#x4.3.22-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
 	<p>
 	Number
@@ -465,7 +465,7 @@ an object is a member of the remaining built-in type
 	object that is a function.</p>
 	<p><b class="note">NOTE</b> Examples
 	of built-in functions include <code><b>parseInt</b></code>
-	and <code><b><a href="x15.html#x15.8.2.8">Math.exp</a></b></code>. An
+	and <code><b><a href="x15.8.html#x15.8.2.8">Math.exp</a></b></code>. An
 	implementation may provide implementation-dependent built-in
 	functions that are not described in this specification.
 	

@@ -59,16 +59,16 @@
 	An
 	array initialiser is an expression describing the initialisation of
 	an Array object, written in a form of a literal. It is a list of
-	zero or more expressions, each of which represents an <a href="x15.html#array-element">array element</a>,
+	zero or more expressions, each of which represents an <a href="x15.4.html#array-element">array element</a>,
 	enclosed in square brackets. The elements need not be literals; they
 	are evaluated each time the array initialiser is evaluated.</p>
 	<p>
- <a href="x15.html#array-element">Array element</a>s may be elided at the beginning, middle or end of the
+ <a href="x15.4.html#array-element">Array element</a>s may be elided at the beginning, middle or end of the
 	element list. Whenever a comma in the element list is not preceded
 	by an <i>AssignmentExpression</i>
 	(i.e., a comma at the beginning or after another comma), the missing
- <a href="x15.html#array-element">array element</a> contributes to the length of the Array and increases
-	the index of subsequent elements. Elided <a href="x15.html#array-element">array element</a>s are not
+ <a href="x15.4.html#array-element">array element</a> contributes to the length of the Array and increases
+	the index of subsequent elements. Elided <a href="x15.4.html#array-element">array element</a>s are not
 	defined. If an element is elided at the end of an array, that
 	element does not contribute to the length of the Array.</p>
 	<p class="tiny-btm">
@@ -319,7 +319,7 @@
 		Return
 		a new object created as if by the expression <code><b>new
 		Object() </b></code>where <code><b>Object</b></code>
-		is <a href="x15.html#x15.2">the standard built-in constructor with that name</a>.</p>
+		is <a href="x15.2.html#x15.2">the standard built-in constructor with that name</a>.</p>
 	</li></ol><p>
 	The
 	productions <i>ObjectLiteral</i>
@@ -344,7 +344,7 @@
 		<i>obj </i>be the result of creating a new object as if by the
 		expression <code><b>new Object()
 		</b></code>where <code><b>Object</b></code>
-		is <a href="x15.html#x15.2">the standard built-in constructor with that name</a>.</p>
+		is <a href="x15.2.html#x15.2">the standard built-in constructor with that name</a>.</p>
 		</li>
 		<li><p>
 		Let
@@ -379,7 +379,7 @@
 		</li>
 		<li><p>
 		If
-		<i>previous</i> is not <b>undefined</b> then throw a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+		<i>previous</i> is not <b>undefined</b> then throw a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 		exception if any of the following conditions are true</p>
 		<ol><li><p>
 			This
@@ -413,7 +413,7 @@
 		<i>obj</i>.</p>
 	</li></ol><p>
 	If
-	the above steps would throw a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> then an
+	the above steps would throw a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> then an
 	implementation must treat the error as an early error (<a href="x16.html#x16">Clause 16</a>).</p>
 	<p>
 	The
@@ -506,7 +506,7 @@
 	 <a href="x8.html#property-identifier">Property Identifier</a> (<i>propName</i>, <i>desc</i>).</p>
 	</li></ol><p>
 	It is
-	a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> if the <i>Identifier</i>
+	a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> if the <i>Identifier</i>
 	<code><b>"eval"</b></code>
 	or the <i>Identifier </i><code><b>"arguments"</b></code>
 	occurs as the <i>Identifier</i>
@@ -693,13 +693,13 @@
 		</li>
 		<li><p>
 		If
-		<a href="x8.html#Type">Type</a>(<i>constructor</i>) is not Object, throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		<a href="x8.html#Type">Type</a>(<i>constructor</i>) is not Object, throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
 		If
 		<i>constructor</i> does not implement the [[Construct]] internal
-		method, throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
+		method, throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 		</li>
 		<li><p>
 		Return
@@ -728,13 +728,13 @@
 		</li>
 		<li><p>
 		If
-		<a href="x8.html#Type">Type</a>(<i>constructor</i>) is not Object, throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		<a href="x8.html#Type">Type</a>(<i>constructor</i>) is not Object, throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
 		If
 		<i>constructor</i> does not implement the [[Construct]] internal
-		method, throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
+		method, throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 		</li>
 		<li><p>
 		Return
@@ -763,12 +763,12 @@
 		</li>
 		<li><p>
 		If
-		<a href="x8.html#Type">Type</a>(<i>func</i>) is not Object, throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		<a href="x8.html#Type">Type</a>(<i>func</i>) is not Object, throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
 		If
-		<a href="x9.html#x9.11">IsCallable</a>(<i>func</i>) is <b>false</b>, throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		<a href="x9.html#x9.11">IsCallable</a>(<i>func</i>) is <b>false</b>, throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -908,7 +908,7 @@
 		</li>
 		<li><p>
 		Throw
-		a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception if the following conditions are all
+		a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception if the following conditions are all
 		true:</p>
 	<ul><li><p>
 		<a href="x8.html#Type">Type</a>(<i>lhs</i>)
@@ -957,7 +957,7 @@
 		</li>
 		<li><p>
 		Throw
-		a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception if the following conditions are all
+		a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception if the following conditions are all
 		true:</p>
 	<ul><li><p>
 		<a href="x8.html#Type">Type</a>(<i>lhs</i>)
@@ -1020,7 +1020,7 @@
 		<a href="x8.html#IsUnresolvableReference">IsUnresolvableReference</a>(<i>ref</i>) then,</p>
 		<ol><li><p>
 			If
-			<a href="x8.html#IsStrictReference">IsStrictReference</a>(<i>ref</i>) is <b>true</b>, throw a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+			<a href="x8.html#IsStrictReference">IsStrictReference</a>(<i>ref</i>) is <b>true</b>, throw a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 			exception.</p>
 			</li>
 			<li><p>
@@ -1041,7 +1041,7 @@
 		<i>ref</i> is a <a href="x8.html#x8.10">Reference</a> to an <a href="x10.html#x10.2.1">Environment Record</a> binding, so</p>
 		<ol><li><p>
 			If
-			<a href="x8.html#IsStrictReference">IsStrictReference</a>(<i>ref</i>) is <b>true</b>, throw a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
+			<a href="x8.html#IsStrictReference">IsStrictReference</a>(<i>ref</i>) is <b>true</b>, throw a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 			exception.</p>
 			</li>
 			<li><p>
@@ -1055,7 +1055,7 @@
 			argument.</p>
 		</li></ol></li></ol><p><b class="note">NOTE</b> When
 	a <code><b>delete</b></code> operator
-	occurs within <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a>, a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception is
+	occurs within <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a>, a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception is
 	thrown if its <i>UnaryExpression</i>
 	is a direct reference to a variable, function argument, or function
 	name. In addition, if a <code><b>delete</b></code>
@@ -1200,7 +1200,7 @@
 		</li>
 		<li><p>
 		Throw
-		a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception if the following conditions are all
+		a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception if the following conditions are all
 		true:</p>
 	<ul><li><p>
 		<a href="x8.html#Type">Type</a>(<i>expr</i>)
@@ -1247,7 +1247,7 @@
 		</li>
 		<li><p>
 		Throw
-		a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception if the following conditions are all
+		a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception if the following conditions are all
 		true:</p>
 	<ul><li><p>
 		<a href="x8.html#Type">Type</a>(<i>expr</i>)
@@ -2232,13 +2232,13 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		If
-		<a href="x8.html#Type">Type</a>(<i>rval</i>) is not Object, throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		<a href="x8.html#Type">Type</a>(<i>rval</i>) is not Object, throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
 		If
 		<i>rval</i> does not have a [[HasInstance]] internal method, throw
-		a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
+		a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
 		</li>
 		<li><p>
 		Return
@@ -2269,7 +2269,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		If
-		<a href="x8.html#Type">Type</a>(<i>rval</i>) is not Object, throw a <b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		<a href="x8.html#Type">Type</a>(<i>rval</i>) is not Object, throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
 		exception.</p>
 		</li>
 		<li><p>
@@ -2978,7 +2978,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Throw
-		a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception if the following conditions are all
+		a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception if the following conditions are all
 		true:</p>
 	<ul><li><p>
 		 <a href="x8.html#Type">Type</a>(<i>lref</i>)
@@ -3007,7 +3007,7 @@ IEEE 754 round-to-nearest mode.
 	</li></ol><p><b class="note">NOTE</b> When
 	an assignment occurs within <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a>, its <i>LeftHandSide</i>
 	must not evaluate to an <a href="x8.html#IsUnresolvableReference">unresolvable reference</a>. If it does a
-	<b><a href="x15.html#x15.11.6.3" class="term-ref">ReferenceError</a></b> exception is thrown upon assignment. The
+	<b><a href="x15.11.html#x15.11.6.3" class="term-ref">ReferenceError</a></b> exception is thrown upon assignment. The
 	<i>LeftHandSide</i> also
 	may not be a reference to a data property with the attribute value
 	{[[Writable]]:<b>false</b>},
@@ -3015,7 +3015,7 @@ IEEE 754 round-to-nearest mode.
 	{[[Set]]:<b>undefined</b>},<b>
 	</b>nor to a non-existent property of an object whose [[Extensible]]
 	internal property has the value <b>false</b>. In these cases a
-	<b><a href="x15.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception is thrown.</p>
+	<b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception is thrown.</p>
 	<h4 id="x11.13.2">11.13.2 Compound Assignment ( op= ) <a href="#x11.13.2">#</a> <a href="#x11.13.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
 	<p>
 	The
@@ -3045,7 +3045,7 @@ IEEE 754 round-to-nearest mode.
 		</li>
 		<li><p>
 		Throw
-		a <b><a href="x15.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception if the following conditions are all
+		a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception if the following conditions are all
 		true:</p>
 	<ul><li><p>
 		 <a href="x8.html#Type">Type</a>(<i>lref</i>)

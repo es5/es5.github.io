@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html class="split chapter"><head><meta charset="utf-8"><title>15.3 Function Objects # &#9417; &#9402; &#9312; &#9398; &#8212; Annotated ES5</title><link rel="stylesheet" href="style.css"><link rel="shortcut icon" href="favicon.ico"><link href="x15.2.html" title="15.2 Object Objects " rel="prev">
+  <link href="spec.html#contents" title="TOC" rel="index">
+  <link href="x15.4.html" title="15.4 Array Objects " rel="next">
+  </head><body><div class="head">
+<h2 id="top">Annotated ECMAScript 5.1 <span id="timestamp"></span></h2>
+<div id="mascot-treehouse">
+	<img id="mascot" align="left" src="js-mascot.svg" alt=""><img id="bubble" src="bubble.svg" alt=""></div>
+<p id="slogan">&#8223;Ex igne vita&#8221;</p>
+<div id="annotations"></div>
+<script src="timestamp.js"></script></div>
+<nav>
+   <a href="x15.2.html">&#8592; 15.2 Object Objects </a> &#8211;
+   <a href="spec.html#contents">TOC</a> &#8211;
+   <a href="x15.4.html">15.4 Array Objects  &#8594;</a>
+  <ol class="toc"><li><ol><li><a href="x15.3.html#x15.3" id="x15.3-toc">15.3 Function Objects</a>
+        <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.3.html#x15.3.1" id="x15.3.1-toc">15.3.1 The Function Constructor Called as a Function</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.3.html#x15.3.1.1" id="x15.3.1.1-toc">15.3.1.1 Function (p1, p2, &#8230; , pn, body)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.3.html#x15.3.2" id="x15.3.2-toc">15.3.2 The Function Constructor</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.3.html#x15.3.2.1" id="x15.3.2.1-toc">15.3.2.1 new Function (p1, p2, &#8230; , pn, body)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.3.html#x15.3.3" id="x15.3.3-toc">15.3.3 Properties of the Function Constructor</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.3.html#x15.3.3.1" id="x15.3.3.1-toc">15.3.3.1 Function.prototype</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.3.html#x15.3.3.2" id="x15.3.3.2-toc">15.3.3.2 Function.length</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li><li><a href="x15.3.html#x15.3.4" id="x15.3.4-toc">15.3.4 Properties of the Function Prototype Object</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.3.html#x15.3.4.1" id="x15.3.4.1-toc">15.3.4.1 Function.prototype.constructor</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.3.html#x15.3.4.2" id="x15.3.4.2-toc">15.3.4.2 Function.prototype.toString ( )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.3.html#x15.3.4.3" id="x15.3.4.3-toc">15.3.4.3 Function.prototype.apply (thisArg, argArray)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.3.html#x15.3.4.4" id="x15.3.4.4-toc">15.3.4.4 Function.prototype.call (thisArg [ , arg1 [ , arg2, &#8230; ] ] )</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.3.html#x15.3.4.5" id="x15.3.4.5-toc">15.3.4.5 Function.prototype.bind (thisArg [, arg1 [, arg2, &#8230;]])</a>
+                <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.3.html#x15.3.4.5.1" id="x15.3.4.5.1-toc">15.3.4.5.1 [[Call]]</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.3.html#x15.3.4.5.2" id="x15.3.4.5.2-toc">15.3.4.5.2 [[Construct]]</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.3.html#x15.3.4.5.3" id="x15.3.4.5.3-toc">15.3.4.5.3 [[HasInstance]] (V)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li></ol></li><li><a href="x15.3.html#x15.3.5" id="x15.3.5-toc">15.3.5 Properties of Function Instances</a>
+            <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> <ol><li><a href="x15.3.html#x15.3.5.1" id="x15.3.5.1-toc">15.3.5.1 length</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.3.html#x15.3.5.2" id="x15.3.5.2-toc">15.3.5.2 prototype</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.3.html#x15.3.5.3" id="x15.3.5.3-toc">15.3.5.3 [[HasInstance]] (V)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li><li><a href="x15.3.html#x15.3.5.4" id="x15.3.5.4-toc">15.3.5.4 [[Get]] (P)</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b> </li></ol></li></ol></li></ol></li></ol></nav>
+
+  <h3 id="x15.3" class="splitme">15.3 Function Objects <a href="#x15.3">#</a> <a href="#x15.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
+	<h4 id="x15.3.1">15.3.1 The Function Constructor Called as a Function <a href="#x15.3.1">#</a> <a href="#x15.3.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	<code><b>Function</b></code> is called
+	as a function rather than as a constructor, it creates and
+	initialises a new Function object. Thus the function call
+	<code><b>Function(</b></code><code>&#8230;</code><code><b>)</b></code>
+	is equivalent to the object creation expression <code><b>new
+	Function(</b></code><code>&#8230;</code><code><b>)</b></code>
+	with the same arguments.</p>
+	<h5 id="x15.3.1.1">15.3.1.1 Function (p1, p2, &#8230; , pn, body) <a href="#x15.3.1.1">#</a> <a href="#x15.3.1.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <code><b>Function</b></code>
+	function is called with some arguments <i>p1</i>,
+	<i>p2</i>, &#8230; , <i>pn</i>,
+	<i>body</i> (where <i>n</i>
+	might be 0, that is,
+	there are no &#8220;<i>p</i>&#8221;
+	arguments, and where <i>body</i>
+	might also not be provided), the following steps are taken:</p>
+	<ol><li><p>
+		Create
+		and return a new Function object as if the standard built-in
+		constructor Function was used in a <b>new </b>expression with the
+		same arguments (<a href="#x15.3.2.1">15.3.2.1</a>).</p>
+	</li></ol><h4 id="x15.3.2">15.3.2 The Function Constructor <a href="#x15.3.2">#</a> <a href="#x15.3.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	When
+	<code><b>Function</b></code> is called
+	as part of a <code><b>new</b></code>
+	expression, it is a constructor: it initialises the newly created
+	object.</p>
+	<h5 id="x15.3.2.1">15.3.2.1 new Function (p1, p2, &#8230; , pn, body) <a href="#x15.3.2.1">#</a> <a href="#x15.3.2.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	last argument specifies the body (executable code) of a function;
+	any preceding arguments specify formal parameters.</p>
+	<p>
+	When
+	the <code><b>Function</b></code>
+	constructor is called with some arguments <i>p1</i>,
+	<i>p2</i>, &#8230; , <i>pn</i>,
+	<i>body</i> (where <i>n</i>
+	might be 0, that is,
+	there are no &#8220;<i>p</i>&#8221;
+	arguments, and where <i>body</i>
+	might also not be provided), the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>argCount</i> be the total number of arguments passed to this
+		function invocation.</p>
+		</li>
+		<li><p>
+		Let
+		<i>P</i> be the empty String.</p>
+		</li>
+		<li><p>
+		If
+		<i>argCount</i> = 0, let <i>body</i> be the empty String.</p>
+		</li>
+		<li><p>
+		Else
+		if <i>argCount</i> = 1, let <i>body</i> be that argument.</p>
+		</li>
+		<li><p>
+		Else,
+		<i>argCount</i> &gt; 1</p>
+		<ol><li><p>
+			Let
+			<i>firstArg</i> be the first argument.</p>
+			</li>
+			<li><p>
+			Let
+			<i>P</i> be <a href="x9.html#x9.8">ToString</a>(<i>firstArg</i>).</p>
+			</li>
+			<li><p>
+			Let
+			<i>k</i> be 2.</p>
+			</li>
+			<li><p>
+			Repeat,
+			while <i>k</i> &lt; <i>argCount</i></p>
+			<ol><li><p>
+				Let
+				<i>nextArg</i> be the <i>k</i>&#8217;<sup>th</sup> argument.</p>
+				</li>
+				<li><p>
+				Let
+				<i>P</i> be the result of concatenating the previous value of <i>P</i>,
+				the String <code><b>","</b></code>
+				(a comma), and <a href="x9.html#x9.8">ToString</a>(<i>nextArg</i>).</p>
+				</li>
+				<li><p>
+				Increase
+				<i>k</i> by 1.</p>
+			</li></ol></li>
+			<li><p>
+			Let
+			<i>body</i> be the <i>k</i>&#8217;<sup>th</sup> argument.</p>
+		</li></ol></li>
+		<li><p>
+		Let
+		<i>body</i> be <a href="x9.html#x9.8">ToString</a>(<i>body</i>).</p>
+		</li>
+		<li><p>
+		If
+		<i>P</i> is not parsable as a <i>FormalParameterList</i><sub>opt</sub>
+		then throw a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception.</p>
+		</li>
+		<li><p>
+		If
+		<i>body</i> is not parsable as <i><a href="x13.html#x13">FunctionBody</a></i> then throw a
+		<b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b> exception.</p>
+		</li>
+		<li><p>
+		If<i>body </i>is <a href="x10.html#x10.1.1" class="term-ref">strict mode code</a> (see <a href="x10.html#x10.1.1">10.1.1</a>) then let <i>strict</i> be
+		<b>true</b>, else let <i>strict</i> be <b>false</b>.</p>
+		</li>
+		<li><p>
+		If
+		<i>strict</i> is <b>true</b>, throw any exceptions specified in
+		<a href="x13.html#x13.1">13.1</a> that apply. 
+		</p>
+		</li>
+		<li><p>
+		Return
+		a new Function object created as specified in <a href="x13.html#x13.2">13.2</a> passing <i>P</i>
+		as the <i>FormalParameterList</i> and <i>body</i> as the
+		<i><a href="x13.html#x13">FunctionBody</a></i>. Pass in the <a href="x10.html#x10.2.3">Global Environment</a> as the <i>Scope</i>
+		parameter and <i>strict</i> as the <i>Strict</i> flag.</p>
+	</li></ol><p>
+	A
+	<code><b>prototype</b></code> property
+	is automatically created for every function, to provide for the
+	possibility that the function will be used as a constructor.</p>
+	<p>
+	</p><p><b class="note">NOTE</b> It
+	is permissible but not necessary to have one argument for each
+	formal parameter to be specified. For example, all three of the
+	following expressions produce the same result:</p>
+	<p class="code-example">
+	<code><b>new
+	Function("a", "b", "c", "return
+	a+b+c")</b></code></p>
+	<p class="code-example">
+	<code><b>new
+	Function("a, b, c", "return a+b+c")</b></code></p>
+	<p class="code-example">
+	<code><b>new
+	Function("a,b", "c", "return a+b+c")</b></code></p>
+	<h4 id="x15.3.3">15.3.3 Properties of the Function Constructor <a href="#x15.3.3">#</a> <a href="#x15.3.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	Function constructor is itself a Function object and its [[Class]]
+	is <code><b>"Function"</b></code>.
+	The value of the [[Prototype]] internal property of the Function
+	constructor is the standard built-in Function prototype object
+	(<a href="#x15.3.4">15.3.4</a>).</p>
+	<p>
+	The
+	value of the [[Extensible]] internal property of the Function
+	constructor is <b>true</b>.</p>
+	<p>
+	The
+	Function constructor has the following properties:</p>
+	<h5 id="x15.3.3.1">15.3.3.1 Function.prototype <a href="#x15.3.3.1">#</a> <a href="#x15.3.3.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	initial value of <code><b>Function.prototype</b></code>
+	is the standard built-in Function prototype object (<a href="#x15.3.4">15.3.4</a>).</p>
+	<p>
+	This
+	property has the attributes { [[Writable]]: <b>false</b>,
+	[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b> }.</p>
+	<h5 id="x15.3.3.2">15.3.3.2 Function.length <a href="#x15.3.3.2">#</a> <a href="#x15.3.3.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	This
+	is a data property with a value of 1. This property has the
+	attributes { [[Writable]]: <b>false</b>, [[Enumerable]]: <b>false</b>,
+	[[Configurable]]: <b>false</b> }.</p>
+	<h4 id="x15.3.4">15.3.4 Properties of the Function Prototype Object <a href="#x15.3.4">#</a> <a href="#x15.3.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	The
+	Function prototype object is itself a Function object (its [[Class]]
+	is <code><b>"Function"</b></code>)
+	that, when invoked, accepts any arguments and returns <b>undefined</b>.</p>
+	<p>
+	The
+	value of the [[Prototype]] internal property of the Function
+	prototype object is the standard built-in Object prototype object
+	(<a href="x15.2.html#x15.2.4">15.2.4</a>). The initial value of the [[Extensible]] internal property
+	of the Function prototype object is <b>true</b>.</p>
+	<p>
+	The
+	Function prototype object does not have a <code><b>valueOf</b></code>
+	property of its own; however, it inherits the <code><b>valueOf</b></code>
+	property from the Object prototype Object.</p>
+	<p>
+	The
+	<code><b>length</b></code> property of
+	the Function prototype object is <b>0</b>.</p>
+	<h5 id="x15.3.4.1">15.3.4.1 Function.prototype.constructor <a href="#x15.3.4.1">#</a> <a href="#x15.3.4.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	initial value of <code><b>Function.prototype.constructor</b></code>
+	is the built-in <code><b>Function</b></code>
+	constructor.</p>
+	<h5 id="x15.3.4.2">15.3.4.2 Function.prototype.toString ( ) <a href="#x15.3.4.2">#</a> <a href="#x15.3.4.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	An
+	implementation-dependent representation of the function is returned.
+	This representation has the syntax of a <i><a href="x13.html#x13">FunctionDeclaration</a></i>.
+	Note in particular that the use and placement of white space, line
+	terminators, and semicolons within the representation String is
+	implementation-dependent.</p>
+	<p>
+	The
+	<code><b>toString</b></code> function
+	is not generic; it throws a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception if its <b>this</b>
+	value is not a Function object. Therefore, it cannot be transferred
+	to other kinds of objects for use as a method.</p>
+	<h5 id="x15.3.4.3">15.3.4.3 Function.prototype.apply (thisArg, argArray) <a href="#x15.3.4.3">#</a> <a href="#x15.3.4.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <code><b>apply</b></code> method
+	is called on an object <i>func</i>
+	with arguments <i>thisArg</i>
+	and <i>argArray</i>, the
+	following steps are taken: 
+	</p>
+	<ol><li><p>
+		If
+		<a href="x9.html#x9.11">IsCallable</a>(<i>func</i>) is <b>false</b>, then throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		exception.</p>
+		</li>
+		<li><p>
+		If
+		<i>argArray</i> is <b>null</b> or <b>undefined</b>, then</p>
+		<ol><li><p>
+			Return
+			the result of calling the [[Call]] internal method of <i>func</i>,
+			providing <i>thisArg</i> as the <b>this</b> value and an empty
+			list of arguments.</p>
+		</li></ol></li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>argArray</i>) is not Object, then throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		exception.</p>
+		</li>
+		<li><p>
+		Let
+		<i>len</i> be the result of calling the [[Get]] internal method of
+		<i>argArray</i> with argument <code><b>"length"</b></code>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>n</i> be <a href="x9.html#x9.6">ToUint32</a>(<i>len</i>).</p>
+		</li>
+		<li><p>
+		Let
+		<i>argList</i>  be an empty <a href="x8.html#x8.8">List</a>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>index</i> be 0.</p>
+		</li>
+		<li><p>
+		Repeat
+		while <i>index</i> &lt; <i>n</i></p>
+		<ol><li><p>
+			Let
+			<i>indexName</i> be <a href="x9.html#x9.8">ToString</a>(<i>index</i>).</p>
+			</li>
+			<li><p>
+			Let
+			<i>nextArg</i> be the result of calling the [[Get]] internal
+			method of <i>argArray</i> with <i>indexName</i> as the argument.</p>
+			</li>
+			<li><p>
+			Append
+			<i>nextArg</i> as the last element of <i>argList</i>.</p>
+			</li>
+			<li><p>
+			Set
+			<i>index</i> to <i>index</i> + 1.</p>
+		</li></ol></li>
+		<li><p>
+		Return
+		the result of calling the [[Call]] internal method of <i>func</i>,
+		providing <i>thisArg</i> as the <b>this</b> value and <i>argList</i>
+		as the list of arguments.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>apply</b></code> method
+	is <b>2</b>.</p>
+	<p><b class="note">NOTE</b> The
+	thisArg value is passed without modification as the <b>this</b>
+	value. This is a change from Edition 3, where a <b>undefined</b> or
+	<b>null</b> thisArg is replaced with the <a href="x15.1.html#x15.1" class="term-ref">global object</a> and <a href="x9.html#x9.9">ToObject</a>
+	is applied to all other values and that result is passed as the <b>this</b>
+	value.</p>
+	<h5 id="x15.3.4.4">15.3.4.4 Function.prototype.call (thisArg [ , arg1 [ , arg2, &#8230; ] ] ) <a href="#x15.3.4.4">#</a> <a href="#x15.3.4.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	When
+	the <code><b>call</b></code> method is
+	called on an object <i>func</i>
+	with argument <i>thisArg</i>
+	and optional arguments <i>arg1</i>,
+	<i>arg2</i> etc, the
+	following steps are taken:</p>
+	<ol><li><p>
+		 If
+		<a href="x9.html#x9.11">IsCallable</a>(<i>func</i>) is <b>false</b>, then throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		exception.</p>
+		</li>
+		<li><p>
+		Let
+		<i>argList</i> be an empty <a href="x8.html#x8.8">List</a>.</p>
+		</li>
+		<li><p>
+		If
+		this method was called with more than one argument then in left to
+		right order starting with <i>arg1</i> append each argument as the
+		last element of <i>argList</i></p>
+		</li>
+		<li><p>
+		Return
+		the result of calling the [[Call]] internal method of <i>func</i>,
+		providing <i>thisArg</i> as the <b>this</b> value and <i>argList</i>
+		as the list of arguments.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>call</b></code> method is
+	<b>1</b>.</p>
+	<p><b class="note">NOTE</b> The
+	thisArg value is passed without modification as the <b>this</b>
+	value. This is a change from Edition 3, where a <b>undefined</b> or
+	<b>null</b> thisArg is replaced with the <a href="x15.1.html#x15.1" class="term-ref">global object</a> and <a href="x9.html#x9.9">ToObject</a>
+	is applied to all other values and that result is passed as the <b>this</b>
+	value.</p>
+	<h5 id="x15.3.4.5">15.3.4.5 Function.prototype.bind (thisArg [, arg1 [, arg2, &#8230;]]) <a href="#x15.3.4.5">#</a> <a href="#x15.3.4.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	bind method takes one or more arguments, <i>thisArg</i>
+	and (optionally) <i>arg1</i>,
+	<i>arg2</i>, etc, and
+	returns a new function object by performing the following steps:</p>
+	<ol><li><p>
+		Let
+		<i>Target </i>be the <b>this </b>value.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x9.html#x9.11">IsCallable</a>(<i>Target</i>) is <b>false</b>, throw a <b>TypeError
+		</b>exception.</p>
+		</li>
+		<li><p>
+		Let
+		<i>A </i>be a new (possibly empty) internal list of all of the
+		argument values provided after <i>thisArg </i>(<i>arg1</i>, <i>arg2</i>
+		etc), in order.</p>
+		</li>
+		<li><p>
+		Let
+		<i>F</i> be a new native ECMAScript object .</p>
+		</li>
+		<li><p>
+		Set
+		all the internal methods, except for [[Get]], of <i>F</i> as
+		specified in <a href="x8.html#x8.12">8.12</a>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[Get]] internal property of <i>F </i>as specified in <a href="#x15.3.5.4">15.3.5.4</a>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[TargetFunction]] internal property of <i>F </i>to <i>Target</i>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[BoundThis]] internal property of <i>F</i> to the value of
+		<i>thisArg</i>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[BoundArgs]] internal property of <i>F </i>to <i>A</i>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[Class]] internal property of <i>F</i> to <b>"Function"</b>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[Prototype]] internal property of <i>F </i>to the standard
+		built-in Function prototype object as specified in <a href="#x15.3.3.1">15.3.3.1</a>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[Call]] internal property of <i>F </i>as described in
+		<a href="#x15.3.4.5.1">15.3.4.5.1</a>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[Construct]] internal property of <i>F </i>as described in
+		<a href="#x15.3.4.5.2">15.3.4.5.2</a>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[HasInstance]] internal property of <i>F </i>as described in
+		<a href="#x15.3.4.5.3">15.3.4.5.3</a>.</p>
+		</li>
+		<li><p>
+		If
+		the [[Class]] internal property of <i>Target </i>is <b>"Function"</b>,
+		then</p>
+		<ol><li><p>
+			Let
+			<i>L </i>be the <b>length </b>property of <i>Target </i>minus the
+			length of <i>A</i>.</p>
+			</li>
+			<li><p>
+			Set
+			the <b>length </b>own property of <i>F </i>to either 0 or
+			<i>L</i>, whichever is larger. 
+			</p>
+		</li></ol></li>
+		<li><p>
+		Else
+		set the <b>length </b>own property of <i>F </i>to 0.</p>
+		</li>
+		<li><p>
+		Set
+		the  attributes of the <b>length</b> own property of <i>F</i>  to
+		the values specified in <a href="#x15.3.5.1">15.3.5.1</a>.</p>
+		</li>
+		<li><p>
+		Set
+		the [[Extensible]] internal property of <i>F</i> to <b>true</b>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>thrower</i> be the [[ThrowTypeError]] function Object (<a href="x13.html#x13.2.3">13.2.3</a>).</p>
+		</li>
+		<li><p>
+		Call
+		the [[DefineOwnProperty]] internal method of <i>F</i> with
+		arguments <code><b>"caller"</b></code>,
+		PropertyDescriptor {[[Get]]: <i>thrower</i>, [[Set]]: <i>thrower</i>,
+		[[Enumerable]]: <b>false</b>, [[Configurable]]:<b> false</b>}, and
+		<b>false</b>.</p>
+		</li>
+		<li><p>
+		Call
+		the [[DefineOwnProperty]] internal method of <i>F</i> with
+		arguments <code><b>"arguments"</b></code>,
+		PropertyDescriptor {[[Get]]: <i>thrower</i>, [[Set]]: <i>thrower</i>,
+		[[Enumerable]]: <b>false</b>, [[Configurable]]: <b>false</b>}, and
+		<b>false</b>.</p>
+		</li>
+		<li><p>
+		Return
+		<i>F</i>.</p>
+	</li></ol><p>
+	The
+	<code><b>length</b></code> property of
+	the <code><b>bind</b></code> method is
+	<b>1</b>.</p>
+	<p><b class="note">NOTE</b> Function
+	objects created using <code><b>Function.prototype.bind</b></code>
+	do not have a <code><b>prototype</b></code>
+	property or the [[Code]], [[FormalParameters]], and [[Scope]]
+	internal properties.</p>
+	<h6 id="x15.3.4.5.1">15.3.4.5.1 [[Call]] <a href="#x15.3.4.5.1">#</a> <a href="#x15.3.4.5.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h6>
+	<p>
+	When
+	the [[Call]] internal method of a function object, <i>F</i>,
+	which was created using the bind function is called with a <b>this</b>
+	value and a list of arguments <i>ExtraArgs</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>boundArgs</i> be the value of <i>F&#8217;s</i> [[BoundArgs]]
+		internal property.</p>
+		</li>
+		<li><p>
+		Let
+		<i>boundThis</i> be the value of <i>F&#8217;s</i> [[BoundThis]]
+		internal property.</p>
+		</li>
+		<li><p>
+		Let
+		<i>target</i> be the value of <i>F&#8217;s</i> [[TargetFunction]]
+		internal property.</p>
+		</li>
+		<li><p>
+		Let
+		<i>args</i> be a new list containing the same values as the list
+		<i>boundArgs</i> in the same order followed by the same values as
+		the list <i>ExtraArgs</i> in the same order.</p>
+		</li>
+		<li><p>
+		Return
+		the result of  calling the [[Call]] internal method of <i>target</i>
+		providing <i>boundThis</i> as the <b>this </b>value and providing
+		<i>args</i> as the arguments.</p>
+	</li></ol><h6 id="x15.3.4.5.2">15.3.4.5.2 [[Construct]] <a href="#x15.3.4.5.2">#</a> <a href="#x15.3.4.5.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h6>
+	<p>
+	When
+	the [[Construct]] internal method of a function object, <i>F</i>
+	that was created using the bind function is called with a list of
+	arguments <i>ExtraArgs</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>target</i> be the value of <i>F&#8217;s</i> [[TargetFunction]]
+		internal property.</p>
+		</li>
+		<li><p>
+		If
+		<i>target</i> has no [[Construct]] internal method, a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		exception is thrown.</p>
+		</li>
+		<li><p>
+		Let
+		<i>boundArgs</i> be the value of <i>F&#8217;s</i> [[BoundArgs]]
+		internal property.</p>
+		</li>
+		<li><p>
+		Let
+		<i>args</i> be a new list containing the same values as the list
+		<i>boundArgs</i> in the same order followed by the same values as
+		the list <i>ExtraArgs</i> in the same order.</p>
+		</li>
+		<li><p>
+		Return
+		the result of calling the [[Construct]] internal method of<i>target</i> providing <i>args</i> as the arguments.</p>
+	</li></ol><h6 id="x15.3.4.5.3">15.3.4.5.3 [[HasInstance]] (V) <a href="#x15.3.4.5.3">#</a> <a href="#x15.3.4.5.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h6>
+	<p>
+	When
+	the [[HasInstance]] internal method of a function object <i>F</i>,
+	that was created using the bind function is called with argument <i>V</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>target</i> be the value of <i>F&#8217;s</i> [[TargetFunction]]
+		internal property.</p>
+		</li>
+		<li><p>
+		If
+		<i>target</i> has no [[HasInstance]] internal method, a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b>
+		exception is thrown.</p>
+		</li>
+		<li><p>
+		Return
+		the result of  calling the [[HasInstance]] internal method of<i>target</i> providing <i>V</i> as the argument.</p>
+	</li></ol><h4 id="x15.3.5">15.3.5 Properties of Function Instances <a href="#x15.3.5">#</a> <a href="#x15.3.5-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
+	<p>
+	In
+	addition to the required internal properties, every function
+	instance has a [[Call]] internal property and in most cases use a
+	different version of the [[Get]] internal property. Depending on how
+	they are created (see <a href="x8.html#x8.6.2">8.6.2</a> ,<a href="x13.html#x13.2">13.2</a>, 15, and <a href="#x15.3.4.5">15.3.4.5</a>), function
+	instances may have a [[HasInstance]] internal property, a [[Scope]]
+	internal property, a [[Construct]] internal property, a
+	[[FormalParameters]] internal property, a [[Code]] internal
+	property, a [[TargetFunction]] internal property, a [[BoundThis]]
+	internal property, and a [[BoundArgs]] internal property.</p>
+	<p>
+	The
+	value of the [[Class]] internal property is <b>"Function"</b>.</p>
+	<p>
+	Function
+	instances that correspond to strict mode functions (<a href="x13.html#x13.2">13.2</a>) and
+	function instances created using the <b>Function.prototype.bind
+	method</b> (<a href="#x15.3.4.5">15.3.4.5</a>) have properties named &#8220;caller&#8221; and
+	&#8220;arguments&#8221; that throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception. An
+	ECMAScript implementation must not associate any implementation
+	specific behaviour  with accesses of these properties from strict
+	mode <a href="x10.html#function-code">function code</a>. 
+	</p>
+	<h5 id="x15.3.5.1">15.3.5.1 length <a href="#x15.3.5.1">#</a> <a href="#x15.3.5.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	value of the <code><b>length</b></code>
+	property is an integer that indicates the &#8220;typical&#8221; number of
+	arguments expected by the function. However, the language permits
+	the function to be invoked with some other number of arguments. The
+	behaviour of a function when invoked on a number of arguments other
+	than the number specified by its <code><b>length</b></code>
+	property depends on the function. This property has the attributes
+	{&#160;[[Writable]]: <b>false</b>,
+	[[Enumerable]]: <b>false</b>,
+	[[Configurable]]: <b>false</b>&#160;}.</p>
+	<h5 id="x15.3.5.2">15.3.5.2 prototype <a href="#x15.3.5.2">#</a> <a href="#x15.3.5.2-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	The
+	value of the <code><b>prototype</b></code>
+	property is used to initialise the [[Prototype]] internal property
+	of a newly created object before the Function object is invoked as a
+	constructor for that newly created object. This property has the
+	attribute {&#160;[[Writable]]: <b>true</b>,
+	[[Enumerable]]: <b>false</b>,
+	[[Configurable]]: <b>false</b>
+	}.</p>
+	<p><b class="note">NOTE</b> Function
+	objects created using <code><b><a href="#x15.3.4.5">Function.prototype.bind</a></b></code>
+	do not have a <code><b>prototype</b></code>
+	property.</p>
+	<h5 id="x15.3.5.3">15.3.5.3 [[HasInstance]] (V) <a href="#x15.3.5.3">#</a> <a href="#x15.3.5.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Assume
+	<i>F</i> is a Function
+	object.</p>
+	<p>
+	When
+	the [[HasInstance]] internal method of <i>F</i>
+	is called with value <i>V</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		If
+		<i>V</i> is not an object, return <b>false</b>.</p>
+		</li>
+		<li><p>
+		Let
+		<i>O</i> be the result of calling the [[Get]] internal method of <i>F</i>
+		with property name <code><b>"prototype"</b></code>.</p>
+		</li>
+		<li><p>
+		If
+		<a href="x8.html#Type">Type</a>(<i>O</i>) is not Object, throw a <b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception.</p>
+		</li>
+		<li><p>
+		Repeat</p>
+		<ol><li><p>
+			Let
+			<i>V</i> be the value of the [[Prototype]] internal property of <i>V</i>.</p>
+			</li>
+			<li><p>
+			If
+			<i>V</i> is <code><b>null</b></code>,
+			return <b>false</b>.</p>
+			</li>
+			<li><p>
+			If
+			<i>O</i> and <i>V</i> refer to the same object, return <b>true</b>.</p>
+		</li></ol></li></ol><p class="sp">
+	</p><p><b class="note">NOTE</b> Function
+	objects created using <code><b><a href="#x15.3.4.5">Function.prototype.bind</a></b></code>
+	have a different implementation of [[HasInstance]] defined in
+	<a href="#x15.3.4.5.3">15.3.4.5.3</a>.</p>
+	<h5 id="x15.3.5.4">15.3.5.4 [[Get]] (P) <a href="#x15.3.5.4">#</a> <a href="#x15.3.5.4-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h5>
+	<p>
+	Function
+	objects use a variation of the [[Get]] internal method used for
+	other native ECMAScript objects (<a href="x8.html#x8.12.3">8.12.3</a>).</p>
+	<p>
+	Assume
+	<i>F</i> is a Function
+	object. When the [[Get]] internal method of <i>F</i>
+	is called with property name <i>P</i>,
+	the following steps are taken:</p>
+	<ol><li><p>
+		Let
+		<i>v</i> be the result of calling the default [[Get]] internal
+		method (<a href="x8.html#x8.12.3">8.12.3</a>) on <i>F</i> passing <i>P</i> as the property name
+		argument.</p>
+		</li>
+		<li><p>
+		If
+		<i>P</i> is <code><b>"caller"
+		</b></code>and <i>v</i> is a strict mode Function object, throw a
+		<b><a href="x15.11.html#x15.11.6.5" class="term-ref">TypeError</a></b> exception. 
+		</p>
+		</li>
+		<li><p>
+		Return
+		<i>v</i>.</p>
+	</li></ol><p><b class="note">NOTE</b> Function
+	objects created using <code><b><a href="#x15.3.4.5">Function.prototype.bind</a></b></code>
+	use the default [[Get]] internal method.</p>
+	</body><script src="anno.js"></script></html>
