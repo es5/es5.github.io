@@ -46,7 +46,7 @@ if use_html5lib_parser or use_html5lib_serialiser:
 if w3c:
     index_page = 'Overview'
 else:
-    index_page = 'index'
+    index_page = 'spec'
 
 # The document is split on all <h2> elements, plus the following specific elements
 split_exceptions = [ ]
@@ -173,7 +173,7 @@ for e in child_iter:
 
 alt_version_notice = page_body.find('.//*[@id="alt-version-notice"]')
 replacement = etree.XML(u'<p id="alt-version-notice"><a href="#toc" title="skip to TOC">toc</a>\
- · <a href="spec.html">single-page version</a>\
+ · <a href="index.html">single-page version</a>\
  · <a href="key.html">key</a>\
  · <a href="https://github.com/es5/es5.github.com">source</a></p> ')
 alt_version_notice.getparent().replace(alt_version_notice, replacement)

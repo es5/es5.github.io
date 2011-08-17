@@ -3,15 +3,17 @@ PYTHON=python
 PYTHONFLAGS=
 SPECSPLITTER=spec-splitter.py
 SPECSPLITTERFLAGS=
+SINGLEPAGE=index.html
+MULTIPAGE=spec.html
 
-all: index.html README.md
+all: $(MULTIPAGE) README.md
 
 README.md: README.html
 	$(HTML2MARKDOWN) $(HTML2MARKDOWNFLAGS) $< > $@
 
-index.html: spec.html
+$(MULTIPAGE): index.html
 	$(PYTHON)$(PYTHONFLAGS) $(SPECSPLITTER) $(SPECSPLITTERFLAGS) $< .
 
 clean:
-	$(RM) index.html
+	$(RM) $(MULTIPAGE)
 	$(RM) README.md
