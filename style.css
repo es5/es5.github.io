@@ -32,9 +32,11 @@ a:hover {
 a.mdcr,
 a.mdcg,
 a.dmas,
+a.bugs,
 a.mdcr:visited,
 a.mdcg:visited,
-a.dmas:visited
+a.dmas:visited,
+a.bugs:visited
 {
   color: green;
 }
