@@ -276,14 +276,14 @@ and
 		<i>named accessor property</i> associates a name with one or two
 		accessor functions, and a set of Boolean attributes. The accessor
 		functions are used to store or retrieve an ECMAScript language
-		value that is associated with the property. 
+		value that is associated with the property.
 		</p>
 		</li>
 		<li><p>
 		An
 		<i>internal property</i> has no name and is not directly accessible
 		via ECMAScript language operators. Internal properties exist purely
-		for specification purposes. 
+		for specification purposes.
 		</p>
 	</li></ul><p>
 	There
@@ -315,7 +315,7 @@ and
 			</tr><tr valign="TOP"><td width="115" height="8">
 					<p>
 					[[Value]]
-					
+
 					</p>
 				</td>
 				<td width="134">
@@ -331,7 +331,7 @@ and
 			</tr><tr valign="TOP"><td width="115" height="17">
 					<p>
 					[[Writable]]
-					
+
 					</p>
 				</td>
 				<td width="134">
@@ -896,7 +896,7 @@ and
 	[[DefineOwnProperty]] internal method of a host object must not
 	permit the addition of a new property to a host object if the
 	[[Extensible]] internal property of that host object has been
-	observed by ECMAScript code to be <b>false</b>. 
+	observed by ECMAScript code to be <b>false</b>.
 	</p>
 	<p>
 	If
@@ -1461,7 +1461,7 @@ and
 	<dfn id="property-identifier">Property Identifier</dfn> type is used to associate a property name with a
 	Property Descriptor.  Values of the Property Identifier type are
 	pairs of the form (name, descriptor), where name is a String and
-	descriptor is a Property Descriptor value. 
+	descriptor is a Property Descriptor value.
 	</p>
 	<p>
 	The
@@ -2123,7 +2123,7 @@ and
 		</li>
 		<li><p>
 		If
-		<a href="x9.html#x9.11">IsCallable</a>(<i>valueOf)</i> is <b>true</b> then, 
+		<a href="x9.html#x9.11">IsCallable</a>(<i>valueOf)</i> is <b>true</b> then,
 		</p>
 		<ol><li><p>
 			Let
@@ -2293,7 +2293,7 @@ and
 		have different results, then</p>
 		<ol><li><p>
 			<a href="#reject-DefineOwnProperty">Reject</a>,
-			if the [[Configurable]] field of <i>current</i> is <b>false</b>. 
+			if the [[Configurable]] field of <i>current</i> is <b>false</b>.
 			</p>
 			</li>
 			<li><p>
@@ -2336,7 +2336,7 @@ and
 					<a href="#reject-DefineOwnProperty">Reject</a>,
 					if the [[Value]] field of <i>Desc</i> is present and
 					<a href="x9.html#x9.12">SameValue</a>(<i>Desc</i>.[[Value]], <i>current</i>.[[Value]]) is
-					<b>false</b>. 
+					<b>false</b>.
 					</p>
 				</li></ol></li></ol></li>
 			<li><p>

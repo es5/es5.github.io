@@ -79,7 +79,7 @@
 	 <a href="#eval-code">Eval code</a> is strict eval code if it begins with a Directive Prologue
 		that contains a Use Strict Directive or if the call to eval is a
 		direct call (see <a href="x15.1.html#x15.1.2.1.1">15.1.2.1.1</a>) to the <a href="x15.1.html#x15.1.2.1">eval function</a> that is contained
-		in <a href="#x10.1.1" class="term-ref">strict mode code</a>. 
+		in <a href="#x10.1.1" class="term-ref">strict mode code</a>.
 		</p>
 		</li>
 		<li><p>
@@ -124,7 +124,7 @@
 	Lexical Environment values. The outer reference of a (inner) Lexical
 	Environment is a reference to the Lexical Environment that logically
 	surrounds the inner Lexical Environment. An outer Lexical
-	Environment may, of course, have its own outer Lexical Environment. 
+	Environment may, of course, have its own outer Lexical Environment.
 	A Lexical Environment may serve as the outer environment for
 	multiple inner Lexical Environments. For example, if a
 	<i><a href="x13.html#x13">FunctionDeclaration</a></i>
@@ -163,7 +163,7 @@
  and object environment record. The
 	abstract class includes the abstract specification methods defined
 	in Table 17. These abstract methods have distinct concrete
-	algorithms for each of the concrete subclasses. 
+	algorithms for each of the concrete subclasses.
 	</p>
 	<center>
 		<table width="690" border="1" bordercolor="#000000" cellpadding="8" cellspacing="0" rules="ROWS"><caption>Table&#160;17 &#8212; Abstract Methods of Environment Records</caption>
@@ -199,7 +199,7 @@
 					a new mutable binding in an environment record. The String value
 					<i>N</i> is the text
 					of the bound name. If the optional Boolean argument <i>D</i>
-					is <b>true</b> the binding is may be subsequently deleted.  
+					is <b>true</b> the binding is may be subsequently deleted.
 					</p>
 				</td>
 			</tr><tr valign="TOP"><td width="211" height="76">
@@ -233,7 +233,7 @@
 					is used to identify strict mode references. If <i>S</i>
 					is <b>true</b> and
 					the binding does not exist or is uninitialized throw a
-					<b><a href="x15.11.html#x15.11.6.3" class="term-ref">ReferenceError</a></b> exception. 
+					<b><a href="x15.11.html#x15.11.6.3" class="term-ref">ReferenceError</a></b> exception.
 					</p>
 				</td>
 			</tr><tr valign="TOP"><td width="211" height="58">
@@ -256,7 +256,7 @@
 					<p>Returns
 					the value to use as the <b>this</b> value on calls to function
 					objects that are obtained as binding values from this
-					environment record. 
+					environment record.
 					</p>
 				</td>
 			</tr></tbody></table></center>
@@ -307,7 +307,7 @@
 					the value of an already existing but uninitialized <a href="#immutable-binding">immutable binding</a> in an environment record. The String value <i>N</i>
 					is the text of the bound name. <i>V</i>
 					is the value for the binding and is a value of any ECMAScript
-					<a href="x8.html#language-type">language type</a>. 
+					<a href="x8.html#language-type">language type</a>.
 					</p>
 				</td>
 			</tr></tbody></table></center>
@@ -374,7 +374,7 @@
 	must already exist. If the binding is an <a href="#immutable-binding">immutable binding</a>, a
 	<b>TypeError</b> is
 	thrown
-	if <i>S</i> is <b>true</b>. 
+	if <i>S</i> is <b>true</b>.
 	</p>
 
 	<ol><li><p>
@@ -496,7 +496,7 @@
 	argument <i>N</i> to the
 	value of argument <i>V</i>.
 	An uninitialized <a href="#immutable-binding">immutable binding</a> for <i>N</i>
-	must already exist. 
+	must already exist.
 	</p>
 	<ol><li><p>
 		Let
@@ -819,7 +819,7 @@
 	As
 	ECMAScript code is executed, additional properties may be added to
 	the <a href="x15.1.html#x15.1" class="term-ref">global object</a> and the initial properties may be modified.
-	
+
 	</p>
 	<h3 id="x10.3">10.3 Execution Contexts <a href="#x10.3">#</a> <a href="#x10.3-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h3>
 	<p>
@@ -902,7 +902,7 @@
 	execution context is purely a specification mechanism and need not
 	correspond to any particular artefact of an ECMAScript
 	implementation.  It is impossible for an ECMAScript program to
-	access an execution context. 
+	access an execution context.
 	</p>
 	<h4 id="x10.3.1">10.3.1 Identifier Resolution <a href="#x10.3.1">#</a> <a href="#x10.3.1-toc" class="bak">&#9417;</a> <b class="erra">&#9402;</b> <b class="rev1">&#9312;</b> <b class="anno">&#9398;</b></h4>
 	<p>
@@ -1066,7 +1066,7 @@
 		</li>
 		<li><p>
 		Let
-		<i>localEnv</i> be the result of calling <a href="#x10.2.2.2">NewDeclarativeEnvironment</a> 
+		<i>localEnv</i> be the result of calling <a href="#x10.2.2.2">NewDeclarativeEnvironment</a>
 		passing the value of the [[Scope]] internal property of <i>F</i> as
 		the argument.</p>
 		</li>
@@ -1124,7 +1124,7 @@
 			Let
 			<i>func </i>be the function whose [[Call]] internal method
 			initiated execution of <i>code</i>. Let <i>names</i> be the value
-			of <i>func</i>&#8217;s [[FormalParameters]] internal property.  
+			of <i>func</i>&#8217;s [[FormalParameters]] internal property.
 			</p>
 			</li>
 			<li><p>
@@ -1236,7 +1236,7 @@
 			</li>
 			<li><p>
 			If
-			<i>strict</i> is <b>true</b>, then 
+			<i>strict</i> is <b>true</b>, then
 			</p>
 			<ol><li><p>
 				Call
@@ -1360,7 +1360,7 @@
 		</li>
 		<li><p>
 		Repeat
-		while <i>indx</i> &gt;= 0, 
+		while <i>indx</i> &gt;= 0,
 		</p>
 		<ol><li><p>
 			Let
@@ -1540,7 +1540,7 @@
 		</li></ol></li>
 		<li><p>
 		Else,
-		<i>map</i> contains a formal parameter mapping for <i>P</i> so, 
+		<i>map</i> contains a formal parameter mapping for <i>P</i> so,
 		</p>
 		<ol><li><p>
 			Return
@@ -1582,7 +1582,7 @@
 		</li></ol></li>
 		<li><p>
 		Return
-		<i>desc</i>. 
+		<i>desc</i>.
 		</p>
 	</li></ol><p>
 	The
