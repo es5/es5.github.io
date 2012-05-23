@@ -33,7 +33,7 @@
 		<i>JSONValue</i> rather
 		than being restricted to being  a <i>JSONObject</i>
 		or a <i>JSONArray</i> as
-		specified by RFC 4627. 
+		specified by RFC 4627.
 		</p>
 		</li>
 		<li><p>
@@ -135,7 +135,7 @@
 	The
 	JSON Syntactic Grammar defines a valid JSON text in terms of tokens
 	defined by the JSON lexical grammar.  The goal symbol of the grammar
-	is <i>JSONText</i>. 
+	is <i>JSONText</i>.
 	</p>
 	<p class="tiny-btm">
 	<b>Syntax</b></p>
@@ -208,7 +208,7 @@
 		Parse
 		<i>JText</i> using the grammars in <a href="#x15.12.1">15.12.1</a>. Throw a <b><a href="x15.11.html#x15.11.6.4" class="term-ref">SyntaxError</a></b>
 		exception if <i>JText</i> did not conform to the JSON grammar for
-		the goal symbol <i>JSONText</i>. 
+		the goal symbol <i>JSONText</i>.
 		</p>
 		</li>
 		<li><p>
@@ -276,7 +276,7 @@
 				</li>
 				<li><p>
 				Repeat
-				while <i>I </i>&lt; <i>len</i>, 
+				while <i>I </i>&lt; <i>len</i>,
 				</p>
 				<ol><li><p>
 					Let
@@ -289,7 +289,7 @@
 					<ol><li><p>
 						Call
 						the [[Delete]] internal method of <i>val</i> with <a href="x9.html#x9.8">ToString</a>(<i>I</i>)
-						and <b>false</b> as arguments. 
+						and <b>false</b> as arguments.
 						</p>
 					</li></ol></li>
 					<li><p>
@@ -318,12 +318,12 @@
 				</li>
 				<li><p>
 				For
-				each String <i>P</i> in <i>keys</i> do, 
+				each String <i>P</i> in <i>keys</i> do,
 				</p>
 				<ol><li><p>
 					Let
 					<i>newElement</i> be the result of calling the abstract
-					operation <a href="#Walk">Walk</a>, passing <i>val</i> and <i>P</i>. 
+					operation <a href="#Walk">Walk</a>, passing <i>val</i> and <i>P</i>.
 					</p>
 					</li>
 					<li><p>
@@ -332,7 +332,7 @@
 					<ol><li><p>
 						Call
 						the [[Delete]] internal method of <i>val</i> with <i>P</i> and
-						<b>false</b> as arguments. 
+						<b>false</b> as arguments.
 						</p>
 					</li></ol></li>
 					<li><p>
@@ -354,7 +354,7 @@
 	not permitted for a conforming implementation of <code><b>JSON.parse</b></code>
 	to extend the JSON grammars. If an implementation wishes to support
 	a modified or extended JSON interchange format it must do so by
-	defining a different parse function. 
+	defining a different parse function.
 	</p>
 	<p><b class="note">NOTE</b> In
 	the case where there are duplicate name Strings within an object,
@@ -623,7 +623,7 @@
 	The
 	abstract operation <dfn id="Quote"><i>Quote</i>(<i>value</i>)</dfn>
 	wraps a String value in double quotes and escapes characters within
-	it. 
+	it.
 	</p>
 	<ol><li><p>
 		Let
@@ -805,7 +805,7 @@
 				element Strings of <i>partial</i> with each adjacent pair of
 				Strings separated with the comma character. A comma is not
 				inserted either before the first String or after the last String.
-				
+
 				</p>
 				</li>
 				<li><p>
@@ -894,7 +894,7 @@
 		<ol><li><p>
 			Let
 			<i>strP</i> be the result of calling the abstract operation <i>Str</i>
-			with arguments <a href="x9.html#x9.8">ToString</a>(<i>index</i>) and <i>value</i>. 
+			with arguments <a href="x9.html#x9.8">ToString</a>(<i>index</i>) and <i>value</i>.
 			</p>
 			</li>
 			<li><p>
@@ -933,7 +933,7 @@
 				element Strings of <i>partial</i> with each adjacent pair of
 				Strings separated with the comma character. A comma is not
 				inserted either before the first String or after the last String.
-				
+
 				</p>
 				</li>
 				<li><p>
