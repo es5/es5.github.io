@@ -1,8 +1,8 @@
 # Annotated ECMAScript 5
 
-This repo holds a document that provides an annotated HTML view of ECMA 262,
-the ECMAScript Language Specification (5th edition). The annotations are
-intended to be collaboratively maintained.
+This repo holds a document that provides an annotated HTML view of ECMA 262, the
+ECMAScript Language Specification (5th edition). The annotations are intended to
+be collaboratively maintained.
 
 ## How to contribute annotations
 
@@ -29,8 +29,8 @@ and `body` elements).
 name and e-mail address to that file, you are agreeing to contribute your
 annotations under the terms of the license described in that file.
 
-  7. Commit the new annotation and updated `anno/LICENSE.txt` to your local
-git repository, then push it to your GitHub es5-spec fork.
+  7. Commit the new annotation and updated `anno/LICENSE.txt` to your local git
+repository, then push it to your GitHub es5-spec fork.
 
   8. Send a [GitHub es5-spec pull request][3] so that your change can be
 committed into the upstream source.
@@ -44,10 +44,10 @@ committed into the upstream source.
 ## Important
 
 It is important to note that Annotated ECMAScript 5 is **not** a normative
-version of the ECMAScript spec. Though it does include the **full text** of
-the spec, it is in fact a completely **non-normative** derivative work _based
-on_ the spec—strictly for the purpose of explaining the spec and assisting in
-its implementation.
+version of the ECMAScript spec. Though it does include the **full text** of the
+spec, it is in fact a completely **non-normative** derivative work _based on_
+the spec—strictly for the purpose of explaining the spec and assisting in its
+implementation.
 
 ![][4]
 
