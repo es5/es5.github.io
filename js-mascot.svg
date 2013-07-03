@@ -1,9 +1,7 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- http://www.openclipart.org/people/johnny_automatic/johnny_automatic_grinning_globe.svg -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="grinning_world_xA0_Image_1_"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="215.526px"
-	 height="213.257px" viewBox="0 0 215.526 213.257" style="enable-background:new 0 0 215.526 213.257;" xml:space="preserve">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="215.526px" height="213.257px" viewBox="0 0 215.526 213.257">
 <g>
 	<path fill="green" style="fill-rule:evenodd;clip-rule:evenodd;" d="M89.492,1.772c10.07-1.395,29.998-2.753,41.973-0.792
 		c3.63,0.594,8.393,3.109,12.671,4.751c9.746,3.742,16.89,7.858,25.343,13.463c13.277,8.805,19.456,14.89,29.302,30.886
@@ -84,7 +82,6 @@
 		c1.585,2.902,5.576,3.398,5.543,7.919c-9.63-0.947-16.07-14.098-11.087-22.174c-4.777-0.768-7.01-4.078-10.295-6.336
 		C36.148,144.342,39.688,155.584,43.559,166.498z M82.364,179.96c12.343,2.164,31.335,3.998,41.974,0.792
 		c0.536-5.271,2.949-8.665,3.167-14.255c-13.537,2.751-32.676,2.062-46.725-2.376C80.854,169.856,82.756,173.761,82.364,179.96z"/>
-	<path style="fill-rule:evenodd;clip-rule:evenodd;" d="M144.136,119.773c0.372,2.747-4.297,0.454-4.751,2.376
-		C137.205,120.676,142.793,120.34,144.136,119.773z"/>
+	<path fill="green" d="M144.136,119.773c0.372,2.747-4.297,0.454-4.751,2.376 C137.205,120.676,142.793,120.34,144.136,119.773z"/>
 </g>
 </svg>
