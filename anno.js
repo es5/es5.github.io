@@ -96,7 +96,7 @@ function annoShow(event) {
       titleI.textContent = " Changes in 5.1";
     } else if (node.className === "erra") {
       titleI.textContent = " Errata";
-    } 
+    }
     panel.appendChild(permalinkP);
     closeBox = document.createElement('span');
     closeBox.id = "closeBox";
@@ -567,6 +567,7 @@ annotateHeadings(
     "x15.4.4.4":          [ "129", "131" ],
     "x15.4.4.6":          [ "162" ],
     "x15.4.4.7":          [ "131" ],
+    "x15.4.4.12":         [ "429" ],
     "x15.5.2.1":          [ "84" ],
     "x15.5.4.11":         [ "97" ],
     "x15.9.1.15":         [ "112" ],
